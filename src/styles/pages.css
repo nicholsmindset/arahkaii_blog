@@ -228,6 +228,20 @@
   .cb-name{ font-size:23px; }
 }
 
+/* ---------- CONTACT ----------------------------------------------------- */
+.contact-form{ max-width:560px; margin:56px 0 0; display:flex; flex-direction:column; gap:28px; }
+.cf-row{ display:flex; flex-direction:column; gap:10px; }
+.cf-row label{ font-family:var(--sans); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.cf-row input, .cf-row textarea{ background:none; border:0; border-bottom:1px solid var(--ink); font-family:var(--read); font-size:18px; color:var(--ink); padding:6px 0; outline:none; }
+.cf-row textarea{ min-height:120px; line-height:1.6; resize:vertical; }
+.cf-row input::placeholder, .cf-row textarea::placeholder{ color:var(--muted); opacity:.6; }
+.cf-row input:focus, .cf-row textarea:focus{ border-color:var(--accent); }
+.cf-submit{ align-self:flex-start; display:inline-flex; align-items:center; gap:10px; font-family:var(--sans); font-size:12px; letter-spacing:.16em; text-transform:uppercase; background:var(--ink); color:var(--surface); border:1px solid var(--ink); padding:14px 28px; border-radius:999px; cursor:pointer; transition:background var(--settle), color var(--settle); }
+.cf-submit:hover{ background:transparent; color:var(--ink); }
+.contact-alt{ font-family:var(--sans); font-size:13px; letter-spacing:.02em; color:var(--muted); line-height:1.7; margin:44px 0 0; }
+.contact-alt a{ color:var(--ink); border-bottom:1px solid var(--hairline); transition:border-color var(--settle); }
+.contact-alt a:hover{ border-color:var(--accent); }
+
 /* ---------- GUIDE / LISTICLE -------------------------------------------- */
 .guide-head{ max-width:900px; margin:0 auto; padding:148px var(--gutter) 0; display:flex; flex-direction:column; align-items:center; text-align:center; }
 .guide-head .eyebrow{ margin-bottom:8px; }

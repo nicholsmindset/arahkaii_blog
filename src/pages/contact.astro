@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Contact — quiet editorial page with a Netlify-powered form (captured in the
+// Netlify dashboard once deployed; no backend needed) plus a direct address.
+---
+
+<BaseLayout
+	title="Contact — Arahkaii"
+	description="Pitches, partnerships, or a quiet word — how to reach the Arahkaii desk."
+>
+	<main class="wrap">
+		<div class="mw-640">
+			<header class="cb-head">
+				<span class="eyebrow">Say hello</span>
+				<h1 class="cb-title">Contact</h1>
+				<p class="cb-dek">
+					Pitches, partnerships, corrections or a quiet word — the desk reads everything, and
+					replies to what it can.
+				</p>
+			</header>
+
+			<form
+				class="contact-form"
+				name="contact"
+				method="POST"
+				data-netlify="true"
+				netlify-honeypot="bot-field"
+				action="/contact?sent=1"
+			>
+				<input type="hidden" name="form-name" value="contact" />
+				<p hidden>
+					<label>Leave this empty: <input name="bot-field" /></label>
+				</p>
+
+				<div class="cf-row">
+					<label for="cf-name">Your name</label>
+					<input id="cf-name" name="name" type="text" required placeholder="First and last" />
+				</div>
+				<div class="cf-row">
+					<label for="cf-email">Email</label>
+					<input id="cf-email" name="email" type="email" required placeholder="your@email.com" />
+				</div>
+				<div class="cf-row">
+					<label for="cf-subject">Subject</label>
+					<input id="cf-subject" name="subject" type="text" placeholder="Pitch · partnership · note" />
+				</div>
+				<div class="cf-row">
+					<label for="cf-message">Message</label>
+					<textarea id="cf-message" name="message" required placeholder="Tell us, unhurried."></textarea>
+				</div>
+				<button class="cf-submit" type="submit">Send <span aria-hidden="true">→</span></button>
+			</form>
+
+			<p class="contact-alt">
+				Prefer email? Write to <a href="mailto:hello@arahkaii.com">hello@arahkaii.com</a>. For press
+				and partnerships, <a href="mailto:partnerships@arahkaii.com">partnerships@arahkaii.com</a>.
+			</p>
+		</div>
+	</main>
+</BaseLayout>
