@@ -138,7 +138,7 @@
 }
 
 /* ---------- CATEGORY ----------------------------------------------------- */
-.cat-masthead{ padding:160px 0 0; }
+.cat-masthead{ padding:120px 0 0; }
 .cat-title{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(56px,10vw,96px); line-height:.98; letter-spacing:-.02em; margin:0; }
 .cat-dek{ font-family:var(--serif); font-style:italic; font-variation-settings:'opsz' 96; font-size:clamp(20px,2.4vw,26px); color:var(--muted); margin:18px 0 0; }
 /* Per-pillar accent keyline — the masthead's one confident stroke of colour. */
@@ -157,6 +157,8 @@
 .chip.active{ border-color:var(--accent-local); color:var(--surface); background:var(--accent-local); }
 
 .cat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px 56px; }
+.cat-fill{ margin-top:88px; padding-top:8px; }
+.cat-news{ margin-top:88px; }
 .cat-grid .headline{ font-size:27px; margin:22px 0 12px; }
 .cat-card[hidden]{ display:none; }
 

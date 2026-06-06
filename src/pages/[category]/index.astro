@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import InlineNewsletter from '../../components/InlineNewsletter.astro';
 import { getCards } from '../../lib/articles';
 import { cap, fmtDate } from '../../lib/format';
 import { organizationSchema, websiteSchema, collectionPageSchema } from '../../lib/seo';
@@ -44,6 +45,12 @@ const cards = all.filter((c) => c.category === category);
 const pick = cards[0];
 const rest = cards.slice(1);
 
+// Thin categories (few stories) look half-empty — fill with a cross-category
+// "more to explore" rail so the page always reads complete.
+const fill = rest.length < 4
+	? all.filter((c) => c.category !== category).slice(0, 6)
+	: [];
+
 // Tag chips: most common tags in this category (max 6), prettified for display.
 const counts = new Map<string, number>();
 for (const c of cards) for (const t of c.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
@@ -62,7 +69,7 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={`${label} — Arahkaii`} activeCategory={label} jsonLd={jsonLd}>
+<BaseLayout title={`${label} — Arahkaii`} description={dek} activeCategory={label} jsonLd={jsonLd}>
 	<main class="wrap" data-cat={category}>
 		<header class="cat-masthead">
 			<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: label }]} />
@@ -121,6 +128,37 @@ const jsonLd = [
 		</div>
 
 		{rest.length === 0 && !pick && <p class="lede" style="padding:48px 0">No stories here yet — check back soon.</p>}
+
+		{
+			fill.length > 0 && (
+				<section class="cat-fill">
+					<div class="sec-head rise">
+						<span class="eyebrow">More across Arahkaii</span>
+						<a class="link-more" href="/latest">All stories</a>
+					</div>
+					<div class="cat-grid">
+						{fill.map((c) => (
+							<StoryCard
+								class="cat-card"
+								href={c.url}
+								title={c.title}
+								byline={`${c.categoryLabel} · ${c.byline}`}
+								image={c.image}
+								tone={c.tone}
+								ratio="3x2"
+								category={c.category}
+							/>
+						))}
+					</div>
+				</section>
+			)
+		}
+
+		<InlineNewsletter
+			class="cat-news"
+			source={`category-${category}`}
+			line={`Get the best of ${label} — and the rest of the week's edit — every Sunday.`}
+		/>
 	</main>
 
 	<script>
