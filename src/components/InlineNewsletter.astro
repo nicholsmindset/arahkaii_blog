@@ -1,0 +1,16 @@
+---
+// Mid-article newsletter module. For use inside .mdx article bodies.
+import NewsletterSignup from './NewsletterSignup.astro';
+interface Props {
+	line?: string;
+}
+const {
+	line = 'Enjoying this? The same eye, once a week — Sundays, in your inbox.',
+} = Astro.props;
+---
+
+<div class="inline-news">
+	<span class="eyebrow in-eyebrow">Arahkaii Weekly</span>
+	<p class="in-line">{line}</p>
+	<NewsletterSignup />
+</div>

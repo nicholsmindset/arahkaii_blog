@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+
+// Focused signup hero — footer suppressed for a single-minded page.
+---
+
+<BaseLayout title="Arahkaii Weekly — Subscribe" noFooter={true}>
+	<main class="sub-wrap">
+		<span class="eyebrow sub-eyebrow">The Newsletter</span>
+		<h1 class="sub-h1">Arahkaii Weekly</h1>
+		<p class="sub-promise">
+			One edit, gathered slowly and sent on Sundays — the week's most considered
+			things, in your inbox.
+		</p>
+
+		<NewsletterSignup class="sub-form">
+			<p slot="note" class="sub-note field-note">
+				Sundays. One edit.<br />Free, and unsubscribe anytime.
+			</p>
+		</NewsletterSignup>
+
+		<a class="link-more" href="/latest" style="margin-top:30px">See the latest</a>
+
+		<figure class="sub-image">
+			<div class="img ph tone-b r-16x9 blurup in">
+				<span class="lab">Quiet supporting image — still life, soft 4200K light · 16:9</span>
+			</div>
+		</figure>
+	</main>
+</BaseLayout>

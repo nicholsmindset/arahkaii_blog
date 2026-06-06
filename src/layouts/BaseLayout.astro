@@ -4,7 +4,9 @@ import { getImage } from 'astro:assets';
 import Seo from '../components/Seo.astro';
 import { organizationSchema, websiteSchema } from '../lib/seo';
 import defaultOgAsset from '../assets/blog-placeholder-1.jpg';
+import { getSearchIndex } from '../lib/articles';
 import '../styles/global.css';
+import '../styles/pages.css';
 
 // Self-hosted variable fonts (Fontsource). Fraunces `full` carries the
 // opsz/SOFT/WONK axes the display type relies on; Newsreader `opsz` powers
@@ -20,6 +22,7 @@ interface Props {
 	description?: string;
 	activeCategory?: string;
 	overHero?: boolean;
+	noFooter?: boolean;
 	/** Absolute URL to an OG/Twitter image. Falls back to a branded default. */
 	image?: string;
 	ogType?: 'website' | 'article';
@@ -37,6 +40,7 @@ const {
 	description = "Asia's modern-luxury edit — modestly told.",
 	activeCategory,
 	overHero = false,
+	noFooter = false,
 	image,
 	ogType = 'website',
 	noindex = false,
@@ -68,6 +72,9 @@ const categories = [
 ];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+
+// Slim JSON index for the client search overlay.
+const searchIndex = await getSearchIndex();
 ---
 
 <!doctype html>
@@ -145,6 +152,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 							><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg
 						>
 					</button>
+					<a class="icon-btn nav-saved" href="/reading-list" aria-label="Reading list">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+							><path d="M6 3h12v18l-6-4-6 4V3Z"></path></svg
+						>
+						<span class="js-saved-count saved-badge"></span>
+					</a>
 					<a class="icon-btn" href="/subscribe" aria-label="Newsletter">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
 							><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3.5 6.5 12 13l8.5-6.5"
@@ -161,6 +174,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
 			<div class="mobile-menu">
 				{categories.map((c) => <a href={`/${c.toLowerCase()}`}>{c}</a>)}
+				<a href="/latest">Latest</a>
+				<a href="/reading-list">Reading list</a>
 				<a href="/about">About</a>
 				<a href="/subscribe">Subscribe</a>
 			</div>
@@ -170,6 +185,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 			<slot />
 		</main>
 
+		{!noFooter && (
 		<footer class="footer">
 			<div class="wrap">
 				<div class="footer-grid">
@@ -195,6 +211,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 					<div>
 						<h4>Editorial</h4>
 						<ul>
+							<li><a href="/latest">Latest</a></li>
 							<li><a href="/style">Style</a></li>
 							<li><a href="/travel">Travel</a></li>
 							<li><a href="/culture">Culture</a></li>
@@ -211,6 +228,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 					<div>
 						<h4>Follow</h4>
 						<ul>
+							<li><a href="/reading-list">Reading list</a></li>
 							<li><a href="/rss.xml">RSS</a></li>
 							<li><a href="https://instagram.com">Instagram</a></li>
 							<li><a href="https://x.com">X / Twitter</a></li>
@@ -224,36 +242,346 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 				</div>
 			</div>
 		</footer>
+		)}
+
+		<!-- Full-screen search overlay (wired in the script below) -->
+		<div class="search-overlay">
+			<div class="search-top">
+				<button class="icon-btn js-search-close" aria-label="Close search" type="button">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+						><path d="M6 6l12 12M18 6 6 18"></path></svg
+					>
+				</button>
+			</div>
+			<div class="search-body">
+				<span class="eyebrow">Search the archive</span>
+				<label
+					><input
+						class="search-input"
+						type="text"
+						placeholder="What are you looking for?"
+						autocomplete="off"
+					/></label
+				>
+				<div class="search-sugs">
+					{categories.map((c) => <button class="chip" type="button">{c}</button>)}
+				</div>
+				<div class="search-results" hidden></div>
+			</div>
+		</div>
+
+		<!-- Build-time article index, read by the client search overlay -->
+		<script
+			is:inline
+			type="application/json"
+			id="arahkaii-index"
+			set:html={JSON.stringify(searchIndex)}
+		/>
 
 		<script>
-			// Chrome behaviours ported from design/assets/arahkaii.js — runs on
-			// first load and after each View Transition navigation.
+			// Chrome + interaction layer ported from design/assets/arahkaii.js.
+			// DOM-creating behaviours run on every astro:page-load; document-level
+			// listeners are bound once (the document persists across View Transitions).
+			type SavedItem = { title: string; href: string; tone: string; byline: string };
+
+			const SKEY = 'arahkaii:saved';
+			const SUBKEY = 'arahkaii:subscribed';
+			const BOOKMARK =
+				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg>';
+			const SUBSCRIBED_HTML =
+				'<span class="news-done"><span class="nd-tick">✓</span> You’re subscribed. See you Sunday.</span>';
+
+			const getSaved = (): SavedItem[] => {
+				try {
+					return JSON.parse(localStorage.getItem(SKEY) || '[]');
+				} catch {
+					return [];
+				}
+			};
+			const setSaved = (a: SavedItem[]) => {
+				try {
+					localStorage.setItem(SKEY, JSON.stringify(a));
+				} catch {}
+				updateSavedBadge();
+			};
+			const isSaved = (title: string) => getSaved().some((x) => x.title === title);
+			const toggleSave = (item: SavedItem) => {
+				const a = getSaved();
+				const i = a.findIndex((x) => x.title === item.title);
+				let on: boolean;
+				if (i >= 0) {
+					a.splice(i, 1);
+					on = false;
+				} else {
+					a.unshift(item);
+					on = true;
+				}
+				setSaved(a);
+				return on;
+			};
+			function updateSavedBadge() {
+				const b = document.querySelector<HTMLElement>('.js-saved-count');
+				if (b) {
+					const n = getSaved().length;
+					b.textContent = String(n);
+					b.style.display = n ? 'flex' : 'none';
+				}
+			}
+
+			let toastEl: HTMLElement | null = null;
+			let toastT: ReturnType<typeof setTimeout>;
+			function toast(msg: string) {
+				if (!toastEl) {
+					toastEl = document.createElement('div');
+					toastEl.className = 'toast';
+					document.body.appendChild(toastEl);
+				}
+				toastEl.textContent = msg;
+				toastEl.classList.add('show');
+				clearTimeout(toastT);
+				toastT = setTimeout(() => toastEl && toastEl.classList.remove('show'), 1800);
+			}
+
+			(window as any).ARAHKAII = Object.assign((window as any).ARAHKAII || {}, {
+				getSaved,
+				setSaved,
+				isSaved,
+				toggleSave,
+				toast,
+			});
+
+			const isSubscribed = () => {
+				try {
+					return !!localStorage.getItem(SUBKEY);
+				} catch {
+					return false;
+				}
+			};
+			function renderSubscribedForms() {
+				document.querySelectorAll<HTMLElement>('.js-news').forEach((form) => {
+					const field = form.querySelector<HTMLElement>('.field');
+					if (field && !field.dataset.locked) {
+						field.dataset.locked = '1';
+						field.classList.add('done');
+						field.innerHTML = SUBSCRIBED_HTML;
+					}
+					const note = form.querySelector<HTMLElement>('.field-note');
+					if (note) note.textContent = 'Manage your preferences anytime.';
+				});
+			}
+
+			function injectSaves() {
+				document.querySelectorAll<HTMLElement>('.story').forEach((card) => {
+					const img = card.querySelector<HTMLElement>('.img');
+					const head = card.querySelector<HTMLElement>('.headline');
+					if (!img || !head || img.querySelector('.save-btn')) return;
+					const title = head.textContent?.trim() || '';
+					const href = card.getAttribute('href') || '#';
+					const tone = (img.className.match(/tone-\w/) || ['tone-b'])[0];
+					const byEl = card.querySelector<HTMLElement>('.byline');
+					const byline = byEl ? byEl.textContent?.trim() || '' : '';
+					const btn = document.createElement('span');
+					btn.className = 'save-btn' + (isSaved(title) ? ' on' : '');
+					btn.setAttribute('role', 'button');
+					btn.setAttribute('tabindex', '0');
+					btn.setAttribute('aria-label', 'Save for later');
+					btn.innerHTML = BOOKMARK;
+					const act = (e: Event) => {
+						e.preventDefault();
+						e.stopPropagation();
+						const on = toggleSave({ title, href, tone, byline });
+						btn.classList.toggle('on', on);
+						toast(on ? 'Saved to your reading list' : 'Removed from your reading list');
+					};
+					btn.addEventListener('click', act);
+					btn.addEventListener('keydown', (e) => {
+						if (e.key === 'Enter' || e.key === ' ') act(e);
+					});
+					img.appendChild(btn);
+				});
+			}
+
+			function getIndex(): any[] {
+				const el = document.getElementById('arahkaii-index');
+				if (!el) return [];
+				try {
+					return JSON.parse(el.textContent || '[]');
+				} catch {
+					return [];
+				}
+			}
+			function fmtShort(iso: string) {
+				try {
+					return new Intl.DateTimeFormat('en-GB', {
+						day: 'numeric',
+						month: 'long',
+						year: 'numeric',
+					}).format(new Date(iso));
+				} catch {
+					return iso;
+				}
+			}
+			function wireSearch() {
+				const ov = document.querySelector<HTMLElement>('.search-overlay');
+				if (!ov) return;
+				const input = ov.querySelector<HTMLInputElement>('.search-input');
+				const results = ov.querySelector<HTMLElement>('.search-results');
+				const sugs = ov.querySelector<HTMLElement>('.search-sugs');
+				const idx = getIndex();
+				const open = () => {
+					ov.classList.add('open');
+					setTimeout(() => input && input.focus(), 120);
+				};
+				const close = () => ov.classList.remove('open');
+				function run(q: string) {
+					if (!results) return;
+					q = (q || '').trim().toLowerCase();
+					if (!q) {
+						results.hidden = true;
+						if (sugs) sugs.hidden = false;
+						results.innerHTML = '';
+						return;
+					}
+					if (sugs) sugs.hidden = true;
+					results.hidden = false;
+					const hits = idx
+						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q))
+						.slice(0, 7);
+					results.innerHTML = hits.length
+						? hits
+								.map(
+									(x) =>
+										`<a class="sr-item" href="${x.h}"><span class="sr-cat">${x.c}</span><span class="sr-title">${x.t}</span><span class="sr-meta">${x.a} · ${fmtShort(x.d)}</span></a>`,
+								)
+								.join('')
+						: `<p class="sr-empty">No stories yet for “${q}”. Try a category, an author, or a place.</p>`;
+				}
+				document.querySelectorAll('.js-search').forEach((b) => b.addEventListener('click', open));
+				ov.querySelector('.js-search-close')?.addEventListener('click', close);
+				input?.addEventListener('input', () => run(input.value));
+				sugs?.querySelectorAll<HTMLElement>('.chip').forEach((c) =>
+					c.addEventListener('click', () => {
+						if (input) {
+							input.value = c.textContent || '';
+							run(input.value);
+							input.focus();
+						}
+					}),
+				);
+				ov.addEventListener('click', (e) => {
+					if (e.target === ov) close();
+				});
+			}
+
+			function wireFollow() {
+				document.querySelectorAll<HTMLElement>('.follow-btn[data-follow-id]').forEach((btn) => {
+					if (btn.dataset.wired) return;
+					btn.dataset.wired = '1';
+					const id = btn.dataset.followId!;
+					const name = btn.dataset.followName || '';
+					const key = 'arahkaii:follow:' + id;
+					const label = btn.querySelector<HTMLElement>('.fb-label');
+					const on = () => {
+						try {
+							return !!localStorage.getItem(key);
+						} catch {
+							return false;
+						}
+					};
+					const set = (v: boolean) => {
+						try {
+							if (v) localStorage.setItem(key, '1');
+							else localStorage.removeItem(key);
+						} catch {}
+					};
+					const reflect = () => {
+						const f = on();
+						btn.classList.toggle('on', f);
+						if (label) label.textContent = f ? 'Following' : 'Follow' + (name ? ' ' + name : '');
+					};
+					reflect();
+					btn.addEventListener('click', () => {
+						const f = !on();
+						set(f);
+						reflect();
+						toast(f ? 'Following — their stories will lead your Sunday edit' : 'Unfollowed');
+					});
+				});
+			}
+
+			function wireShare() {
+				const rail = document.querySelector<HTMLElement>('.share-rail');
+				const h1 = document.querySelector<HTMLElement>('.art-h1');
+				if (!rail || !h1) return;
+				const item: SavedItem = {
+					title: h1.textContent?.trim() || '',
+					href: location.pathname,
+					tone: 'tone-c',
+					byline: document.querySelector('.art-byline')?.textContent?.trim() || '',
+				};
+				const saveBtn = rail.querySelector<HTMLElement>('.share-item[data-act="save"]');
+				const reflect = () => {
+					if (!saveBtn) return;
+					const on = isSaved(item.title);
+					saveBtn.classList.toggle('saved', on);
+					saveBtn.querySelector('svg')?.setAttribute('fill', on ? 'currentColor' : 'none');
+					const sp = saveBtn.querySelector('span');
+					if (sp) sp.textContent = on ? 'Saved' : 'Save';
+				};
+				reflect();
+				rail.querySelectorAll<HTMLElement>('.share-item').forEach((b) => {
+					if (b.dataset.wired) return;
+					b.dataset.wired = '1';
+					b.addEventListener('click', () => {
+						const act = b.dataset.act;
+						if (act === 'copy') {
+							navigator.clipboard?.writeText(location.href).catch(() => {});
+							toast('Link copied to clipboard');
+						} else if (act === 'save') {
+							const on = toggleSave(item);
+							reflect();
+							toast(on ? 'Saved to your reading list' : 'Removed from your reading list');
+						} else if (act === 'x') {
+							window.open(
+								'https://twitter.com/intent/tweet?text=' +
+									encodeURIComponent(item.title) +
+									'&url=' +
+									encodeURIComponent(location.href),
+								'_blank',
+							);
+						} else if (act === 'fb') {
+							window.open(
+								'https://www.facebook.com/sharer/sharer.php?u=' +
+									encodeURIComponent(location.href),
+								'_blank',
+							);
+						}
+					});
+				});
+			}
+
+			let io: IntersectionObserver | null = null;
+			function observe() {
+				if (!io)
+					io = new IntersectionObserver(
+						(entries) => {
+							entries.forEach((e) => {
+								if (e.isIntersecting) {
+									e.target.classList.add('in');
+									io!.unobserve(e.target);
+								}
+							});
+						},
+						{ rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+					);
+				document
+					.querySelectorAll('.blurup:not(.in), .rise:not(.in)')
+					.forEach((el) => io!.observe(el));
+			}
+			(window as any).ARAHKAII.observe = observe;
+
 			function initChrome() {
 				const nav = document.querySelector<HTMLElement>('.nav');
-				const prog = document.querySelector<HTMLElement>('.progress');
-
-				// nav settles to solid on scroll when sitting over a hero
-				if (nav && nav.hasAttribute('data-over-hero')) {
-					const onScroll = () => {
-						if (window.scrollY > 40) nav.classList.add('solid');
-						else nav.classList.remove('solid');
-					};
-					onScroll();
-					window.addEventListener('scroll', onScroll, { passive: true });
-				}
-
-				// reading-progress bar
-				if (prog) {
-					const upd = () => {
-						const h = document.documentElement.scrollHeight - window.innerHeight;
-						prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-					};
-					upd();
-					window.addEventListener('scroll', upd, { passive: true });
-					window.addEventListener('resize', upd);
-				}
-
-				// mobile menu toggle
 				const burger = document.querySelector<HTMLElement>('.js-burger');
 				const menu = document.querySelector<HTMLElement>('.mobile-menu');
 				if (burger && menu) {
@@ -262,22 +590,71 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 						nav?.classList.toggle('solid', open || !nav.hasAttribute('data-over-hero'));
 					});
 				}
+				injectSaves();
+				updateSavedBadge();
+				wireSearch();
+				wireFollow();
+				wireShare();
+				observe();
+				if (isSubscribed()) renderSubscribedForms();
+				(window as any).__arahkaiiScroll?.();
+			}
 
-				// blur-up + rise on scroll
-				const io = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((e) => {
-							if (e.isIntersecting) {
-								e.target.classList.add('in');
-								io.unobserve(e.target);
-							}
-						});
-					},
-					{ rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
-				);
-				document
-					.querySelectorAll('.blurup:not(.in), .rise:not(.in)')
-					.forEach((el) => io.observe(el));
+			// One-time, document-level bindings (document survives navigations).
+			if (!(window as any).__arahkaiiBound) {
+				(window as any).__arahkaiiBound = true;
+
+				const onScroll = () => {
+					const nav = document.querySelector<HTMLElement>('.nav');
+					if (nav && nav.hasAttribute('data-over-hero')) {
+						if (window.scrollY > 40) nav.classList.add('solid');
+						else nav.classList.remove('solid');
+					}
+					const prog = document.querySelector<HTMLElement>('.progress');
+					if (prog) {
+						const h = document.documentElement.scrollHeight - window.innerHeight;
+						prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+					}
+				};
+				(window as any).__arahkaiiScroll = onScroll;
+				window.addEventListener('scroll', onScroll, { passive: true });
+				window.addEventListener('resize', onScroll);
+
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape')
+						document.querySelector('.search-overlay.open')?.classList.remove('open');
+				});
+
+				document.addEventListener('submit', (e) => {
+					const form = (e.target as HTMLElement).closest<HTMLFormElement>('.js-news');
+					if (!form) return;
+					e.preventDefault();
+					const field = form.querySelector<HTMLElement>('.field');
+					const input = form.querySelector<HTMLInputElement>('input');
+					const v = (input?.value || '').trim();
+					const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+					const note = form.querySelector<HTMLElement>('.field-note');
+					if (!ok) {
+						if (note) {
+							note.textContent = 'Please enter a valid email address.';
+							note.style.color = 'var(--clay)';
+						}
+						input?.focus();
+						return;
+					}
+					try {
+						localStorage.setItem(SUBKEY, v);
+					} catch {}
+					if (field) {
+						field.classList.add('done');
+						field.dataset.locked = '1';
+						field.innerHTML = SUBSCRIBED_HTML;
+					}
+					if (note) {
+						note.textContent = 'A confirmation is on its way to ' + v + '.';
+						note.style.color = 'var(--muted)';
+					}
+				});
 			}
 
 			document.addEventListener('astro:page-load', initChrome);

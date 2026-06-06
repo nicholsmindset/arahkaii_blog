@@ -71,3 +71,31 @@
 }
 @media (max-width:900px){ .more-grid{ grid-template-columns:1fr; gap:44px; } }
 @media (max-width:760px){ .article-head{ padding-top:104px; } .article-body{ margin-top:56px; } }
+
+/* ---------- MARKDOWN BODY -------------------------------------------------
+   Imported posts are plain markdown; style the generated elements to the
+   same register as the prototype's hand-authored article. */
+.article-body > p:first-child::first-letter{
+  font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:430;
+  float:left; font-size:88px; line-height:.74; padding:8px 14px 0 0; color:var(--accent);
+}
+.article-body h2{
+  font-family:var(--serif); font-variation-settings:'opsz' 90; font-weight:450;
+  font-size:28px; line-height:1.16; letter-spacing:-.01em; margin:50px 0 22px;
+}
+.article-body h3{
+  font-family:var(--serif); font-variation-settings:'opsz' 72; font-weight:450;
+  font-size:22px; line-height:1.2; letter-spacing:-.01em; margin:40px 0 16px;
+}
+.article-body a{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--hairline);
+  text-underline-offset:3px; transition:text-decoration-color var(--settle); }
+.article-body a:hover{ text-decoration-color:var(--accent); }
+.article-body ul, .article-body ol{ margin:0 0 26px; padding-left:1.3em; }
+.article-body li{ margin:0 0 10px; }
+.article-body blockquote{ margin:44px 0; padding-left:32px; border-left:1px solid var(--accent); }
+.article-body blockquote p{ font-style:italic; font-size:22px; line-height:1.46; color:var(--ink); }
+.article-body img{ width:100%; border-radius:0; margin:46px 0; }
+.article-body hr{ border:0; height:1px; background:var(--hairline); margin:48px 0; }
+.article-body figcaption{ font-family:var(--sans); font-size:12px; letter-spacing:.04em; color:var(--muted); margin-top:12px; }
+.article-body strong{ font-weight:600; }
+.article-body em{ font-style:italic; }

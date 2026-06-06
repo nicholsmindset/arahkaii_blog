@@ -4,6 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 import Headline from '../components/article/Headline.astro';
 import Standfirst from '../components/article/Standfirst.astro';
 import Byline from '../components/article/Byline.astro';
+import StoryCard from '../components/StoryCard.astro';
 import {
 	SITE,
 	articleSchema,
@@ -24,6 +25,15 @@ interface RelatedItem {
 	href: string;
 	byline: string;
 	tone?: string;
+	image?: ImageMetadata;
+}
+interface ReadNextItem {
+	title: string;
+	href: string;
+	categoryLabel: string;
+	byline: string;
+	tone?: string;
+	image?: ImageMetadata;
 }
 interface Props {
 	title: string;
@@ -38,6 +48,7 @@ interface Props {
 	author: AuthorData;
 	authorHref?: string;
 	related?: RelatedItem[];
+	readNext?: ReadNextItem;
 	// SEO overrides (optional, threaded from frontmatter).
 	seoTitle?: string;
 	metaDescription?: string;
@@ -58,6 +69,7 @@ const {
 	author,
 	authorHref = '/people',
 	related = [],
+	readNext,
 	seoTitle,
 	metaDescription,
 	updatedDate,
@@ -171,6 +183,33 @@ const jsonLd = [
 		</div>
 
 		{
+			readNext && (
+				<section class="read-next">
+					<div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px">
+						<span class="eyebrow">Read next</span>
+						<span class="meta">Chosen for you</span>
+					</div>
+					<a class="story rn-card" href={readNext.href}>
+						{readNext.image ? (
+							<div class="img real rn-img blurup">
+								<Image src={readNext.image} alt={readNext.title} />
+							</div>
+						) : (
+							<div class={`img ph ${readNext.tone ?? 'tone-d'} rn-img blurup`}>
+								<span class="lab">{readNext.categoryLabel} · 16:9</span>
+							</div>
+						)}
+						<div class="rn-body">
+							<span class="eyebrow accent rn-eyebrow">{readNext.categoryLabel}</span>
+							<h2 class="rn-title">{readNext.title}</h2>
+							<p class="byline rn-meta">{readNext.byline}</p>
+						</div>
+					</a>
+				</section>
+			)
+		}
+
+		{
 			related.length > 0 && (
 				<section class="more-from">
 					<div class="rule" />
@@ -184,15 +223,45 @@ const jsonLd = [
 					</div>
 					<div class="more-grid">
 						{related.slice(0, 3).map((r) => (
-							<a class="story" href={r.href}>
-								<div class={`img ph ${r.tone ?? 'tone-c'} r-3x2 blurup`} />
-								<h3 class="headline">{r.title}</h3>
-								<p class="byline">{r.byline}</p>
-							</a>
+							<StoryCard
+								href={r.href}
+								title={r.title}
+								byline={r.byline}
+								image={r.image}
+								tone={r.tone ?? 'tone-c'}
+								ratio="3x2"
+							/>
 						))}
 					</div>
 				</section>
 			)
 		}
 	</article>
+
+	<aside class="share-rail">
+		<p class="sr-label">Share</p>
+		<button class="share-item" data-act="x" type="button"
+			><svg viewBox="0 0 24 24" fill="currentColor"
+				><path d="M17.5 3h3l-6.5 7.4L21.7 21h-5.9l-4.6-6-5.3 6H3l7-8L2.6 3h6l4.2 5.5L17.5 3Zm-1 16h1.6L8 4.8H6.3L16.5 19Z"
+				></path></svg
+			><span>Share on X</span></button
+		>
+		<button class="share-item" data-act="fb" type="button"
+			><svg viewBox="0 0 24 24" fill="currentColor"
+				><path d="M14 9h2.5l.5-3H14V4.3c0-.9.3-1.5 1.6-1.5H17V.1C16.7.1 15.7 0 14.6 0 12.2 0 10.6 1.4 10.6 4v2H8v3h2.6v9H14V9Z"
+				></path></svg
+			><span>Share on Facebook</span></button
+		>
+		<button class="share-item" data-act="copy" type="button"
+			><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+				><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"></path><path
+					d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"></path></svg
+			><span>Copy link</span></button
+		>
+		<button class="share-item" data-act="save" type="button"
+			><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+				><path d="M6 3h12v18l-6-4-6 4V3Z"></path></svg
+			><span>Save</span></button
+		>
+	</aside>
 </BaseLayout>

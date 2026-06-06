@@ -1,0 +1,31 @@
+---
+import type { PostCard } from '../lib/articles';
+
+// "Most read this week" — numbered two-column rail. Items are .story but carry
+// no .img/.headline, so the save-button injection deliberately skips them.
+interface Props {
+	items: PostCard[];
+}
+const { items } = Astro.props;
+---
+
+<section class="sec mostread">
+	<div class="sec-head rise">
+		<span class="eyebrow">Most read this week</span>
+		<a class="link-more" href="/latest">See all latest</a>
+	</div>
+	<div class="mr-list">
+		{
+			items.map((x) => (
+				<a class="story mr-item" href={x.url}>
+					<div class="mr-c">
+						<div class="mr-t">{x.title}</div>
+						<div class="mr-m">
+							{x.categoryLabel} · {x.byline}
+						</div>
+					</div>
+				</a>
+			))
+		}
+	</div>
+</section>
