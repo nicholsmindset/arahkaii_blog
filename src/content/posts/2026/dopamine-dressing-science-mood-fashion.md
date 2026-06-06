@@ -5,7 +5,7 @@ category: style
 tags:
   - "beauty-science"
   - "gen-z-fashion"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-19
 heroImage: "../../../assets/images/archive/dopamine-dressing-science-mood-fashion/colors-e1768657493547.jpg"
 heroCaption: ""

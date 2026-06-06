@@ -6,7 +6,7 @@ tags:
   - "gen-z-fashion"
   - "street-style"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-02-04
 heroImage: "../../../assets/images/archive/wired-earphones-fashion-trend-comeback-2026/Gemini_Generated_Image_unlhxlunlhxlunlh-scaled-e1770203468513.png"
 heroCaption: ""

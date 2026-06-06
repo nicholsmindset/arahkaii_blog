@@ -8,7 +8,7 @@ tags:
   - "k-fashion"
   - "korean-brands"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-02-21
 heroImage: "../../../assets/images/archive/seoul-fashion-week-fw-2026/seoul-fashion-week-scaled-e1771680919108.png"
 heroCaption: ""

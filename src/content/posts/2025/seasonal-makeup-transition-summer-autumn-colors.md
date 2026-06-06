@@ -5,7 +5,7 @@ category: beauty
 tags:
   - "beauty-science"
   - "makeup"
-author: nadra-nichols
+author: natalia-amir
 date: 2025-11-08
 heroImage: "../../../assets/images/archive/seasonal-makeup-transition-summer-autumn-colors/summer_to_autumn_makeup_fnsj2.jpg"
 heroCaption: ""

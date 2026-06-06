@@ -5,7 +5,7 @@ category: living
 tags:
   - "quiet-luxury"
   - "sustainable-fashion"
-author: nadra-nichols
+author: robert
 date: 2025-11-08
 heroImage: "../../../assets/images/archive/the-conscious-luxury-manifesto-sustainable-living/sustainable_luxury_lifestyle_choices_vk4zm.jpg"
 heroCaption: ""

@@ -4,7 +4,7 @@ standfirst: "Welcome to the Arahkaii editorial—a space where Southeast Asian s
 category: culture
 tags:
   - "the-journal"
-author: nadra-nichols
+author: lina
 date: 2025-11-02
 heroImage: "../../../assets/images/archive/editors-note-the-beginning-of-something-new/editor-s-note-the-beginning-of-something-new-.png"
 heroCaption: ""

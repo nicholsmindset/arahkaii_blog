@@ -4,7 +4,7 @@ standfirst: "Home cooling in tropical Southeast Asia is more than a comfort ques
 category: living
 tags:
   - "digital-nomad"
-author: nadra-nichols
+author: robert
 date: 2025-11-16
 heroImage: "../../../assets/images/archive/energy-efficient-home-cooling-tropical-southeast-asia/tropical_building_energy_efficiency_7z0wf.jpg"
 heroCaption: ""

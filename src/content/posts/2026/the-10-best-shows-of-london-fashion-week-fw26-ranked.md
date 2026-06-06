@@ -6,7 +6,7 @@ tags:
   - "fashion-week"
   - "industry-news"
   - "street-style"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-03-18
 heroImage: "../../../assets/images/archive/the-10-best-shows-of-london-fashion-week-fw26-ranked/london-fashion-week-scaled-e1773667441753.png"
 heroCaption: ""

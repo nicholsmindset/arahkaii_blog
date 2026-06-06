@@ -7,7 +7,7 @@ tags:
   - "industry-news"
   - "street-style"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-03-19
 heroImage: "../../../assets/images/archive/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/new-york-fashion-week-scaled-e1773667816274.png"
 heroCaption: ""

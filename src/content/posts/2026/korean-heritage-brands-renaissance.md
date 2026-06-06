@@ -15,7 +15,7 @@ tags:
   - "songzio"
   - "trending"
   - "wooyoungmi"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-05-16
 heroImage: "../../../assets/images/archive/korean-heritage-brands-renaissance/korean-design.png"
 heroCaption: ""

@@ -5,7 +5,7 @@ category: beauty
 tags:
   - "c-beauty"
   - "makeup"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-30
 heroImage: "../../../assets/images/archive/beauty-best-chinese-makeup-brands/c-beauty-scaled-e1769763785863.png"
 heroCaption: ""

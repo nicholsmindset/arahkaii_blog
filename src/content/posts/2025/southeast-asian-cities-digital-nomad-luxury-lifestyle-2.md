@@ -5,7 +5,7 @@ category: travel
 tags:
   - "digital-nomad"
   - "sea-fashion"
-author: nadra-nichols
+author: robert
 date: 2025-11-16
 heroImage: "../../../assets/images/archive/southeast-asian-cities-digital-nomad-luxury-lifestyle-2/tropical_work_life_balance_paradise_aaz2g.jpg"
 heroCaption: ""

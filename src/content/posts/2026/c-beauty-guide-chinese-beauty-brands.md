@@ -2,7 +2,7 @@
 title: "Chinese Beauty: The Complete Guide to C-Beauty Brands, Trends & Culture"
 standfirst: "A sophisticated exploration of the $18.7 billion industry Western fashion publications have overlooked—and why that's about to change."
 category: beauty
-author: nadra-nichols
+author: natalia-amir
 date: 2026-06-06
 heroImage: "../../../assets/images/archive/c-beauty-guide-chinese-beauty-brands/unnamed-e1768646147118.jpg"
 heroCaption: ""

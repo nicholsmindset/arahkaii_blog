@@ -6,7 +6,7 @@ tags:
   - "fashion-week"
   - "street-style"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-03-16
 heroImage: "../../../assets/images/archive/the-10-best-shows-of-milan-fashion-week-fw26-ranked/Screenshot-2026-03-16-at-9.08.00-PM-scaled.png"
 heroCaption: ""

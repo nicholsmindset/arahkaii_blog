@@ -5,7 +5,7 @@ category: style
 tags:
   - "designer-collaborations"
   - "quiet-luxury"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-04
 heroImage: "../../../assets/images/archive/kering-reports-revenue-decline-gucci-struggles/gucci_s_revenue_decline_struggles_gfinh.jpg"
 heroCaption: ""

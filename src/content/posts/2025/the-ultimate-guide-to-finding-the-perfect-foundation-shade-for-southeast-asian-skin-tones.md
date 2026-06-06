@@ -6,7 +6,7 @@ tags:
   - "beauty-science"
   - "skincare"
   - "the-journal"
-author: nadra-nichols
+author: natalia-amir
 date: 2025-11-08
 heroImage: "../../../assets/images/archive/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/The_Ultimate_Guide_to_Finding_the_Perfect_Foundation_Shade_for_Southeast_Asian_Skin_Tones.jpg"
 heroCaption: ""

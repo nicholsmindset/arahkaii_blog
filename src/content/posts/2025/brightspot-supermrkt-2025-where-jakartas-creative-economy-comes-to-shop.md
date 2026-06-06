@@ -6,7 +6,7 @@ tags:
   - "indonesian-fashion"
   - "industry-news"
   - "sea-fashion"
-author: nadra-nichols
+author: natalia-amir
 date: 2025-12-18
 heroImage: "../../../assets/images/archive/brightspot-supermrkt-2025-where-jakartas-creative-economy-comes-to-shop/Untitled-design-scaled.png"
 heroCaption: ""

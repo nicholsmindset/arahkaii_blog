@@ -4,7 +4,7 @@ standfirst: "The quiet luxury contradiction sits at the heart of fashion's most 
 category: style
 tags:
   - "quiet-luxury"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-01
 heroImage: "../../../assets/images/archive/why-quiet-luxury-is-fashion-biggest-contradiction/subtle_elegance_over_ostentation_m40lg.jpg"
 heroCaption: ""

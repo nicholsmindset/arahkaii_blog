@@ -7,7 +7,7 @@ tags:
   - "c-beauty"
   - "k-beauty"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-17
 heroImage: "../../../assets/images/archive/c-beauty-vs-k-beauty-2026/kbeauty-c-beauty-e1768654668366.jpg"
 heroCaption: ""

@@ -5,7 +5,7 @@ category: beauty
 tags:
   - "beauty-science"
   - "makeup"
-author: nadra-nichols
+author: natalia-amir
 date: 2025-11-24
 heroImage: "../../../assets/images/archive/humidity-resistant-makeup-science-tropical-climate/humidity_resistant_makeup_science_xtqnv.jpg"
 heroCaption: ""

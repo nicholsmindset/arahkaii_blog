@@ -6,7 +6,7 @@ tags:
   - "modest-fashion"
   - "sea-fashion"
   - "street-style"
-author: nadra-nichols
+author: natalia-amir
 date: 2025-11-08
 heroImage: "../../../assets/images/archive/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/1cinematic-street-photography-golden-hour-in-kuala.jpg"
 heroCaption: ""

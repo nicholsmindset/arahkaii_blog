@@ -7,7 +7,7 @@ tags:
   - "k-fashion"
   - "korean-brands"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-02-16
 heroImage: "../../../assets/images/archive/bts-individual-style-identities-luxury-brand-partnerships/korean-brands-e1771232226702.jpg"
 heroCaption: ""

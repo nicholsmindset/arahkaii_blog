@@ -8,7 +8,7 @@ tags:
   - "industry-news"
   - "sea-fashion"
   - "the-journal"
-author: nadra-nichols
+author: natalia-amir
 date: 2025-11-16
 heroImage: "../../../assets/images/archive/jakarta-fashion-week-2025/Screenshot-2025-11-13-at-1.49.03-PM.png"
 heroCaption: ""

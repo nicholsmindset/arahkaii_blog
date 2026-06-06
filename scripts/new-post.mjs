@@ -136,10 +136,25 @@ if (tags.length) {
 }
 fm.push(`author: ${author}`);
 fm.push(`date: ${date}`);
+if (flags['seo-title'] && flags['seo-title'] !== true) {
+	if (String(flags['seo-title']).length > 70) die('--seo-title exceeds 70 chars');
+	fm.push(`seoTitle: ${yamlStr(flags['seo-title'])}`);
+}
+if (flags['meta-description'] && flags['meta-description'] !== true) {
+	if (String(flags['meta-description']).length > 160) die('--meta-description exceeds 160 chars');
+	fm.push(`metaDescription: ${yamlStr(flags['meta-description'])}`);
+}
 fm.push(`heroImage: ${yamlStr(heroRel)}`);
 fm.push(`heroCaption: ${yamlStr(heroCaption)}`);
 fm.push(`heroCredit: ${yamlStr(heroCredit)}`);
 if (draft) fm.push('draft: true');
+// Raw-YAML splice for structured-data fields (faq / howTo / listItems …).
+// The routine writes valid YAML lines to this file; we insert them verbatim.
+if (flags['fm-extra'] && flags['fm-extra'] !== true) {
+	if (!fs.existsSync(flags['fm-extra'])) die(`--fm-extra file not found: ${flags['fm-extra']}`);
+	const extra = fs.readFileSync(flags['fm-extra'], 'utf8').replace(/\s+$/, '');
+	if (extra) fm.push(extra);
+}
 fm.push('---');
 const file = `${fm.join('\n')}\n\n${body}\n`;
 

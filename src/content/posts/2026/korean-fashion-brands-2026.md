@@ -5,7 +5,7 @@ category: style
 tags:
   - "k-fashion"
   - "korean-brands"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-02-23
 heroImage: "../../../assets/images/archive/korean-fashion-brands-2026/fashion-barands-e1771682229986.png"
 heroCaption: ""

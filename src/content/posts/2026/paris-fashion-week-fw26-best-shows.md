@@ -5,7 +5,7 @@ category: style
 tags:
   - "designer-collaborations"
   - "fashion-week"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-06-06
 heroImage: "../../../assets/blog-placeholder-1.jpg"
 heroCaption: ""

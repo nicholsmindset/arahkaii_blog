@@ -4,7 +4,7 @@ standfirst: "Hear me out. You've been landing in Singapore for years — possibl
 category: travel
 tags:
   - "digital-nomad"
-author: nadra-nichols
+author: robert
 date: 2026-06-06
 heroImage: "../../../assets/blog-placeholder-1.jpg"
 heroCaption: ""

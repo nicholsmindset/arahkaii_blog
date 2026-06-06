@@ -10,7 +10,7 @@ tags:
   - "korean-brands"
   - "songzio"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-03-24
 heroImage: "../../../assets/images/archive/bts-songzio-lyrical-armor-arirang-concert/Screenshot-2026-03-24-at-7.52.27-PM.png"
 heroCaption: ""

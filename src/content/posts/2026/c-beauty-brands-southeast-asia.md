@@ -5,7 +5,7 @@ category: beauty
 tags:
   - "c-beauty"
   - "k-beauty"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-06-06
 heroImage: "../../../assets/images/archive/c-beauty-brands-southeast-asia/c-beauty.png"
 heroCaption: ""

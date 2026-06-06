@@ -4,7 +4,7 @@ standfirst: "These quiet luxury brands define stealth wealth in 2026, offering t
 category: style
 tags:
   - "quiet-luxury"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-05
 heroImage: "../../../assets/images/archive/quiet-luxury-brands-worn-by-wealthy-insiders/wealthy_insiders_luxury_brands_lrynn.jpg"
 heroCaption: ""

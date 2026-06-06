@@ -6,7 +6,7 @@ tags:
   - "designer-collaborations"
   - "gen-z-fashion"
   - "trending"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-03-20
 heroImage: "../../../assets/images/archive/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/traders-joe-scaled-e1773668342541.png"
 heroCaption: ""

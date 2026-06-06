@@ -2,7 +2,7 @@
 title: "The Art of Asian Minimalism: Living Well With Less in Small Spaces"
 standfirst: "When you walk into a room designed with Asian minimalism in mind, you'll notice something feels different—calmer, clearer, more intentional."
 category: living
-author: nadra-nichols
+author: robert
 date: 2026-06-06
 heroImage: "../../../assets/images/archive/the-art-of-asian-minimalism-2/minimalist_living_in_asia_uvgj2.jpg"
 heroCaption: ""

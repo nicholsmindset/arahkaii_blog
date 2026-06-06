@@ -5,7 +5,7 @@ category: style
 tags:
   - "designer-collaborations"
   - "quiet-luxury"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-03
 heroImage: "../../../assets/images/archive/why-designer-collaborations-keep-failing-hm-gets-wrong/designer_collaboration_pitfalls_explained_e1gk8.jpg"
 heroCaption: ""

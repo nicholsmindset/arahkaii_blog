@@ -6,7 +6,7 @@ tags:
   - "beauty-science"
   - "k-beauty"
   - "skincare"
-author: nadra-nichols
+author: natalia-amir
 date: 2026-01-06
 heroImage: "../../../assets/images/archive/k-beauty-broke-the-algorithm/Gemini_Generated_Image_ook2wtook2wtook2-e1767612179881.png"
 heroCaption: ""
