@@ -21,8 +21,23 @@
 .hero-cap .epigraph{ font-size:clamp(22px,2.6vw,28px); margin:28px auto 0; max-width:30ch; }
 .hero-cap .byline{ margin-top:30px; }
 
-.sec{ padding-top:112px; }
+.sec{ padding-top:88px; }
 .sec-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:40px; }
+
+/* Brand-promise + wayfinding strip directly under the hero — states what the
+   site is and offers a path in, high on the page. */
+.brand-strip{ display:flex; justify-content:space-between; align-items:center; gap:24px 40px;
+  flex-wrap:wrap; padding:34px 0 0; border-bottom:1px solid var(--hairline); padding-bottom:28px; }
+.bs-line{ font-family:var(--serif); font-variation-settings:'opsz' 72; font-size:clamp(19px,2.2vw,24px);
+  letter-spacing:-.01em; color:var(--ink); margin:0; }
+.bs-line em{ font-style:italic; color:var(--accent); }
+.bs-nav{ display:flex; align-items:center; gap:22px; font-family:var(--sans); font-size:12px;
+  letter-spacing:.14em; text-transform:uppercase; }
+.bs-nav .bs-label{ color:var(--muted); }
+.bs-nav a{ color:var(--ink); transition:color var(--settle); }
+.bs-nav a:hover{ color:var(--accent); }
+.bs-nav .bs-sub{ color:var(--accent); }
+@media (max-width:760px){ .brand-strip{ gap:14px; } .bs-nav{ gap:16px; flex-wrap:wrap; } }
 
 .edit-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:44px; }
 .edit-grid .headline{ font-size:26px; margin:22px 0 12px; }
@@ -47,6 +62,22 @@
 .news-line{ text-align:center; padding:24px 0; }
 .news-line .sentence{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(26px,3.4vw,40px); line-height:1.18; letter-spacing:-.01em; max-width:18ch; margin:0 auto 40px; }
 .news-line form{ display:flex; justify-content:center; }
+
+/* Homepage closing CTA — full-bleed aubergine band, paper type, the one
+   confident colour block that ends the scroll on a conversion. */
+.home-cta{ margin-inline:calc(50% - 50vw); margin-top:120px; background:var(--accent); color:var(--surface);
+  padding:clamp(72px,9vw,112px) var(--gutter); text-align:center; }
+.home-cta-inner{ max-width:600px; margin:0 auto; display:flex; flex-direction:column; align-items:center; }
+.home-cta-eyebrow{ color:rgba(246,241,233,.62); }
+.home-cta-line{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380;
+  font-size:clamp(30px,4.4vw,52px); line-height:1.08; letter-spacing:-.015em; color:var(--surface); margin:18px 0 0; }
+.home-cta-sub{ font-family:var(--read); font-size:16px; line-height:1.55; color:rgba(246,241,233,.7); margin:18px 0 0; max-width:44ch; }
+.home-cta-form{ margin-top:38px; width:100%; max-width:440px; }
+.home-cta .field{ border-color:rgba(246,241,233,.5); }
+.home-cta .field input{ color:var(--surface); }
+.home-cta .field input::placeholder{ color:rgba(246,241,233,.55); }
+.home-cta .field button{ color:var(--surface); }
+.home-cta .home-cta-note{ color:rgba(246,241,233,.6); text-align:center; }
 
 /* ---------- HOME — rhythm sections --------------------------------------- */
 /* Feature pair: large lead + stacked horizontal mini-cards (asymmetric). */

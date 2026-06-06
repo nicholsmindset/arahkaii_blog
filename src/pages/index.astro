@@ -57,6 +57,18 @@ const mostRead = cards.slice(0, 6); // recency; text list, may overlap features
 	{hero && <Hero card={hero} />}
 
 	<main class="wrap">
+		<section class="brand-strip rise" aria-label="About Arahkaii">
+			<p class="bs-line">Asia's modern-luxury edit — <em>modestly told</em>.</p>
+			<nav class="bs-nav" aria-label="This week">
+				<span class="bs-label">This week</span>
+				<a href="/style">Style</a>
+				<a href="/beauty">Beauty</a>
+				<a href="/dining">Dining</a>
+				<a href="/culture">Culture</a>
+				<a class="bs-sub" href="/subscribe">Subscribe <span aria-hidden="true">→</span></a>
+			</nav>
+		</section>
+
 		{
 			edit.length > 0 && (
 				<section class="sec">
@@ -84,6 +96,8 @@ const mostRead = cards.slice(0, 6); // recency; text list, may overlap features
 
 		{featureLead && <FeaturePair lead={featureLead} rest={featureRest} />}
 
+		{mostRead.length > 0 && <MostRead items={mostRead} pick={pick} />}
+
 		{styleLane.length >= 2 && (
 			<section class="sec" style="padding-top:96px">
 				<EditLane title="Style" href="/style" items={styleLane} />
@@ -98,8 +112,6 @@ const mostRead = cards.slice(0, 6); // recency; text list, may overlap features
 			</section>
 		)}
 
-		{mostRead.length > 0 && <MostRead items={mostRead} pick={pick} />}
-
 		{mosaicItems.length > 0 && <Mosaic items={mosaicItems} />}
 
 		{
@@ -111,11 +123,14 @@ const mostRead = cards.slice(0, 6); // recency; text list, may overlap features
 			)
 		}
 
-		<section class="sec">
-			<div class="rule"></div>
-			<div class="news-line" style="padding-top:80px">
-				<p class="sentence">Sign up for Arahkaii Weekly. Sundays, in your inbox.</p>
-				<NewsletterSignup />
+		<section class="home-cta">
+			<div class="home-cta-inner">
+				<span class="eyebrow home-cta-eyebrow">Arahkaii Weekly</span>
+				<p class="home-cta-line">One considered edit. Sundays. Free.</p>
+				<p class="home-cta-sub">The week's most thoughtful style, beauty, dining and culture — gathered slowly, sent once.</p>
+				<NewsletterSignup class="home-cta-form" source="home-cta">
+					<p slot="note" class="home-cta-note field-note">No noise — one edit, on Sundays. Unsubscribe anytime.</p>
+				</NewsletterSignup>
 			</div>
 		</section>
 	</main>
