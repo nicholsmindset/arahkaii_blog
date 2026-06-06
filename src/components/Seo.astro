@@ -85,6 +85,6 @@ const twitter = SITE.twitter.trim();
 {/* Structured data */}
 {
 	jsonLd.map((obj) => (
-		<script type="application/ld+json" set:html={JSON.stringify(obj)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(obj)} />
 	))
 }

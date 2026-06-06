@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
+import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
 // Tailwind v4 is wired via PostCSS (postcss.config.mjs), not @tailwindcss/vite,
@@ -21,7 +21,7 @@ export default defineConfig({
 			serialize: (item) => ({
 				...item,
 				lastmod: new Date().toISOString(),
-				changefreq: 'weekly',
+				changefreq: ChangeFreqEnum.WEEKLY,
 				priority: 0.7,
 			}),
 			i18n: {
