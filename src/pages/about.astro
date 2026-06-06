@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+
+const pillars: [string, string][] = [
+	['Style', 'Modern wardrobes, modestly told.'],
+	['Dining', 'Halal tables and the kitchens keeping faith with the calendar.'],
+	['Travel', 'Slow journeys, soft light, the unhurried itinerary.'],
+	['Culture', 'Architecture, craft, literature and the long view.'],
+	['Living', 'Homes built around light, family and quiet.'],
+	['People', 'The makers, and the long apprenticeships behind them.'],
+	['Guides', 'Considered lists, sourced and credited with care.'],
+];
+---
+
+<BaseLayout
+	title="About — Arahkaii"
+	description="Arahkaii is a modern-luxury edit, modestly told — Asia's style, food, travel and culture, paid attention in full."
+>
+	<article class="manifesto">
+		<span class="eyebrow mf-eyebrow">About Arahkaii</span>
+		<p class="mf-open">
+			We started Arahkaii on a simple conviction: that the most luxurious thing a
+			publication can offer its reader is attention — unhurried, undivided, and
+			paid in full.
+		</p>
+		<div class="mf-body">
+			<p class="dropcap">
+				There is no shortage of places to read about Asia's style, its tables, its
+				houses and its makers. What felt missing was a place that moved at the
+				speed of the things it admired — that let a story breathe, that printed a
+				photograph large because the light deserved it, that treated restraint not
+				as an absence but as a discipline.
+			</p>
+			<p>
+				Arahkaii is a modern-luxury edit, modestly told. We write about fashion and
+				food, travel and culture, the people who make beautiful things and the
+				rooms they make them in. We do it from a Muslim point of view that is
+				rarely an explicit subject and always a quiet frame: a sensibility shaped
+				by modesty, by generosity, by an attention to the seam as much as the
+				silhouette.
+			</p>
+			<p>
+				We publish less than we could. Each piece is reported slowly, edited
+				closely, and laid out by hand. We would rather bring you one story worth
+				your Sunday than ten worth your scroll. That is the whole of our ambition,
+				and it is harder than it sounds.
+			</p>
+			<p>
+				What you will not find here is noise. No autoplay, no infinite feed, no
+				urgency manufactured to keep you. Just a small, considered publication that
+				hopes to be read the way a good book is read — once, carefully, and then
+				again.
+			</p>
+		</div>
+	</article>
+
+	<figure class="mf-image">
+		<div class="img ph tone-c r-16x9 blurup">
+			<span class="lab">Brand image — atelier light, modest dress, negative space · 16:9</span>
+		</div>
+		<figcaption class="caption">
+			Soft, even light. Generous negative space. The grammar of the brand.
+		</figcaption>
+	</figure>
+
+	<section class="pillars">
+		<span class="eyebrow pillars-label">What we cover</span>
+		{
+			pillars.map(([name, desc]) => (
+				<div class="pillar">
+					<div class="p-name">{name}</div>
+					<div class="p-desc">{desc}</div>
+				</div>
+			))
+		}
+	</section>
+
+	<section class="mf-news">
+		<div class="chapter ornament"><span>✦</span></div>
+		<p class="sentence">If any of this sounds like your kind of quiet, join us on Sundays.</p>
+		<NewsletterSignup />
+	</section>
+</BaseLayout>

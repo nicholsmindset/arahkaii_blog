@@ -1,39 +1,100 @@
 ---
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import StoryCard from '../components/StoryCard.astro';
+import Hero from '../components/home/Hero.astro';
+import EditLane from '../components/home/EditLane.astro';
+import Spotlight from '../components/home/Spotlight.astro';
+import MostRead from '../components/MostRead.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { getCards, type PostCard } from '../lib/articles';
 
-// Minimal interim landing — a quiet "Latest" list. The full designed homepage
-// (Hero / EditLane / Spotlight) is a next-session deliverable.
-const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
-const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+// The designed homepage: cover hero → the edit → category lanes → most read →
+// long-form spotlight → newsletter. Everything is fed by the real content
+// collection and degrades gracefully when a category is thin.
+const cards = await getCards();
+const hero = cards[0];
+const edit = cards.slice(1, 4);
+
+const LANES: { key: string; label: string }[] = [
+	{ key: 'style', label: 'Style' },
+	{ key: 'dining', label: 'Dining' },
+	{ key: 'travel', label: 'Travel' },
+	{ key: 'culture', label: 'Culture' },
+	{ key: 'living', label: 'Living' },
+	{ key: 'people', label: 'People' },
+	{ key: 'guides', label: 'Guides' },
+];
+const lanes = LANES.map((l) => ({
+	...l,
+	items: cards.filter((c) => c.category === l.key).slice(0, 8),
+})).filter((l) => l.items.length > 0);
+
+const mostRead = cards.slice(0, 6);
+// Prefer a long read for the spotlight: a Living/Culture piece, else the 5th card.
+const spotlight: PostCard | undefined =
+	cards.find((c) => ['living', 'culture'].includes(c.category) && c !== hero) ??
+	cards[4] ??
+	cards[1];
 ---
 
-<BaseLayout title="Arahkaii — Asia's modern-luxury edit, modestly told">
-	<div class="wrap" style="padding-top:148px">
-		<div class="sec-head rise" style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:40px">
-			<span class="eyebrow">Latest</span>
-			<span class="meta">Asia's modern-luxury edit — modestly told</span>
-		</div>
-		<div class="edit-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:44px">
-			{
-				posts.map((post) => (
-					<a
-						class="story rise"
-						href={`/${post.data.category}/${post.id.split('/').pop()}`}
-					>
-						<div class="img real r-4x5 blurup">
-							<Image src={post.data.heroImage} alt={post.data.heroCaption} />
-						</div>
-						<h3 class="headline" style="font-size:26px; margin:22px 0 12px">
-							{post.data.title}
-						</h3>
-						<p class="byline">{cap(post.data.category)}</p>
-					</a>
-				))
-			}
-		</div>
-	</div>
+<BaseLayout
+	title="Arahkaii — Asia's modern-luxury edit, modestly told"
+	overHero={true}
+>
+	{hero && <Hero card={hero} />}
+
+	<main class="wrap">
+		{
+			edit.length > 0 && (
+				<section class="sec">
+					<div class="sec-head rise">
+						<span class="eyebrow">The Edit</span>
+						<span class="meta">Selected this week</span>
+					</div>
+					<div class="edit-grid">
+						{edit.map((c) => (
+							<StoryCard
+								class="rise"
+								href={c.url}
+								title={c.title}
+								byline={`${c.byline} · ${c.categoryLabel}`}
+								image={c.image}
+								tone={c.tone}
+								ratio="4x5"
+							/>
+						))}
+					</div>
+				</section>
+			)
+		}
+
+		{
+			lanes.length > 0 && (
+				<section class="sec" style="padding-top:24px">
+					{lanes.map((l) => (
+						<EditLane title={l.label} href={`/${l.key}`} items={l.items} />
+					))}
+				</section>
+			)
+		}
+
+		{mostRead.length > 0 && <MostRead items={mostRead} />}
+
+		{
+			spotlight && (
+				<section class="sec">
+					<div class="chapter ornament rise"><span>✦</span></div>
+					<Spotlight card={spotlight} />
+				</section>
+			)
+		}
+
+		<section class="sec">
+			<div class="rule"></div>
+			<div class="news-line" style="padding-top:80px">
+				<p class="sentence">Sign up for Arahkaii Weekly. Sundays, in your inbox.</p>
+				<NewsletterSignup />
+			</div>
+		</section>
+	</main>
 </BaseLayout>

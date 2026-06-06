@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { getCards } from '../../lib/articles';
+import { fmtDate } from '../../lib/format';
+
+export async function getStaticPaths() {
+	const authors = await getCollection('authors');
+	return authors.map((author) => ({
+		params: { id: author.id },
+		props: { author },
+	}));
+}
+
+const { author } = Astro.props;
+const a = author.data;
+const firstName = a.name.split(' ')[0];
+
+const work = (await getCards()).filter((c) => c.author === author.id);
+const count = work.length;
+---
+
+<BaseLayout
+	title={`${a.name} — Arahkaii`}
+	description={a.bio}
+	activeCategory="People"
+>
+	<main class="wrap">
+		<header class="author-head">
+			<div>
+				<h1 class="ah-name">{a.name}</h1>
+				<p class="ah-role">{a.role}</p>
+				<p class="ah-bio">{a.bio}</p>
+				<div style="margin-top:30px">
+					<button
+						class="follow-btn js-follow"
+						type="button"
+						data-follow-id={author.id}
+						data-follow-name={firstName}
+					>
+						<span class="fb-plus" aria-hidden="true">+</span>
+						<span class="fb-label">Follow {firstName}</span>
+					</button>
+				</div>
+				<div class="ah-socials">
+					<a href="/subscribe">Newsletter</a>
+					<a href="https://instagram.com">Instagram</a>
+					<a href="https://x.com">X / Twitter</a>
+				</div>
+			</div>
+			{
+				a.avatar ? (
+					<div class="img real r-4x5 ah-portrait blurup in">
+						<Image src={a.avatar} alt={a.name} />
+					</div>
+				) : (
+					<div class="img ph tone-b r-4x5 ah-portrait blurup in">
+						<span class="lab">Portrait — {a.name} · 4:5</span>
+					</div>
+				)
+			}
+		</header>
+
+		<section class="author-work">
+			<div class="aw-head">
+				<span class="eyebrow">Selected writing</span>
+				<span class="meta">{count} {count === 1 ? 'story' : 'stories'}</span>
+			</div>
+			<div class="aw-grid">
+				{
+					work.map((c) => (
+						<StoryCard
+							href={c.url}
+							title={c.title}
+							byline={`${c.categoryLabel} · ${fmtDate(c.date)}`}
+							image={c.image}
+							tone={c.tone}
+							ratio="3x2"
+						/>
+					))
+				}
+			</div>
+		</section>
+	</main>
+</BaseLayout>

@@ -1,6 +1,8 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { getCards } from '../../lib/articles';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -18,9 +20,46 @@ if (!author) {
 }
 const { Content } = await render(post);
 const d = post.data;
+
+// Recirculation, drawn from the shared card index.
+const cards = await getCards();
+const currentUrl = `/${d.category}/${post.id.split('/').pop()}/`;
+const others = cards.filter((c) => c.url !== currentUrl);
+const sameCat = others.filter((c) => c.category === d.category);
+
+const related = sameCat.slice(0, 3).map((c) => ({
+	title: c.title,
+	href: c.url,
+	byline: c.byline,
+	image: c.image,
+	tone: c.tone,
+}));
+
+// Read-next: prefer a piece from another category, else the next in-category.
+const rn = others.find((c) => c.category !== d.category) ?? sameCat[0] ?? others[0];
+const readNext = rn
+	? {
+			title: rn.title,
+			href: rn.url,
+			categoryLabel: rn.categoryLabel,
+			byline: rn.byline,
+			image: rn.image,
+			tone: rn.tone,
+		}
+	: undefined;
+
+const moreGuides = others
+	.filter((c) => c.category === 'guides')
+	.slice(0, 3)
+	.map((c) => ({ title: c.title, href: c.url, byline: c.byline, image: c.image, tone: c.tone }));
+
+const authorHref = `/authors/${post.data.author}`;
+const Layout = d.category === 'guides' ? GuideLayout : ArticleLayout;
+const layoutExtra =
+	d.category === 'guides' ? { moreGuides } : { related, readNext };
 ---
 
-<ArticleLayout
+<Layout
 	title={d.title}
 	standfirst={d.standfirst}
 	category={d.category}
@@ -31,10 +70,12 @@ const d = post.data;
 	heroCaption={d.heroCaption}
 	heroCredit={d.heroCredit}
 	author={author.data}
+	authorHref={authorHref}
 	seoTitle={d.seoTitle}
 	metaDescription={d.metaDescription}
 	updatedDate={d.updatedDate}
 	noindex={d.noindex}
+	{...layoutExtra}
 >
 	<Content />
-</ArticleLayout>
+</Layout>

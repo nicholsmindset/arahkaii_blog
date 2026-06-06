@@ -1,0 +1,131 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { getCards } from '../../lib/articles';
+import { cap, fmtDate } from '../../lib/format';
+
+// Category archive: masthead → editor's pick → tag chips → 2-col grid.
+// One static page per category in the schema enum.
+const DEKS: Record<string, string> = {
+	style: 'Modern wardrobes, modestly told.',
+	dining: 'Halal tables and the kitchens keeping faith with the calendar.',
+	travel: 'Slow journeys, soft light, the unhurried itinerary.',
+	culture: 'Architecture, craft, literature and the long view.',
+	living: 'Homes built around light, family and quiet.',
+	people: 'The makers, and the long apprenticeships behind them.',
+	guides: 'Considered lists, sourced and credited with care.',
+};
+
+export async function getStaticPaths() {
+	// Self-contained: getStaticPaths is extracted to its own build chunk and
+	// can't see module-scope consts from the frontmatter.
+	return ['style', 'dining', 'travel', 'culture', 'living', 'people', 'guides'].map(
+		(category) => ({ params: { category } }),
+	);
+}
+
+const { category } = Astro.params;
+const label = cap(category!);
+const dek = DEKS[category!] ?? '';
+
+const all = await getCards();
+const cards = all.filter((c) => c.category === category);
+const pick = cards[0];
+const rest = cards.slice(1);
+
+// Tag chips: most common tags in this category (max 6), prettified for display.
+const counts = new Map<string, number>();
+for (const c of cards) for (const t of c.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
+const topTags = [...counts.entries()]
+	.sort((a, b) => b[1] - a[1])
+	.slice(0, 6)
+	.map(([t]) => t);
+const prettify = (t: string) =>
+	t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+---
+
+<BaseLayout title={`${label} — Arahkaii`} activeCategory={label}>
+	<main class="wrap">
+		<header class="cat-masthead">
+			<h1 class="cat-title">{label}</h1>
+			<p class="cat-dek">{dek}</p>
+		</header>
+
+		{
+			pick && (
+				<a class="story editors-pick rise" href={pick.url}>
+					<div class="ep-tag">
+						<span class="eyebrow accent">Editor's Pick · {pick.categoryLabel}</span>
+						<span class="meta">{fmtDate(pick.date)}</span>
+					</div>
+					<div class="img real r-16x9 blurup">
+						<Image src={pick.image} alt={pick.heroCaption || pick.title} loading="eager" />
+					</div>
+					<div class="ep-body">
+						<h2 class="headline">{pick.title}</h2>
+						<div>
+							<p class="ep-stand">{pick.standfirst}</p>
+							<p class="byline">{pick.byline}</p>
+						</div>
+					</div>
+				</a>
+			)
+		}
+
+		{
+			topTags.length > 0 && (
+				<div class="tag-row">
+					<span class="tr-label">Browse</span>
+					<button class="chip active" data-tag="all" type="button">All</button>
+					{topTags.map((t) => (
+						<button class="chip" data-tag={t} type="button">{prettify(t)}</button>
+					))}
+				</div>
+			)
+		}
+
+		<div class="cat-grid">
+			{
+				rest.map((c) => (
+					<StoryCard
+						class="cat-card"
+						href={c.url}
+						title={c.title}
+						byline={c.byline}
+						image={c.image}
+						tone={c.tone}
+						ratio="3x2"
+						dataTag={c.tags.join(' ')}
+					/>
+				))
+			}
+		</div>
+
+		{rest.length === 0 && !pick && <p class="lede" style="padding:48px 0">No stories here yet — check back soon.</p>}
+	</main>
+
+	<script>
+		// Tag-chip filtering (client). Cards carry a space-separated data-tag list.
+		function initCategoryFilter() {
+			const chips = Array.from(document.querySelectorAll<HTMLElement>('.tag-row .chip'));
+			const cards = Array.from(document.querySelectorAll<HTMLElement>('.cat-card'));
+			if (!chips.length) return;
+			chips.forEach((chip) => {
+				chip.addEventListener('click', () => {
+					chips.forEach((x) => x.classList.remove('active'));
+					chip.classList.add('active');
+					const t = chip.dataset.tag;
+					cards.forEach((card) => {
+						const tags = (card.dataset.tag || '').split(' ');
+						const show = t === 'all' || tags.includes(t!);
+						card.hidden = !show;
+						if (show) card.classList.remove('in');
+					});
+					(window as any).ARAHKAII?.observe?.();
+				});
+			});
+		}
+		document.addEventListener('astro:page-load', initCategoryFilter);
+	</script>
+</BaseLayout>

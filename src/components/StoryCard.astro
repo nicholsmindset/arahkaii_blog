@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+
+// The standard story card: photo (real crop or tonal placeholder) + headline
+// + byline. Markup mirrors the prototype's `.story` so the client save-button
+// injection (reads `.img` + `.headline`) works unchanged. Headline sizing is
+// controlled by the parent container (.edit-grid, .lane-card, .cat-grid, …).
+interface Props {
+	href: string;
+	title: string;
+	byline?: string;
+	image?: ImageMetadata;
+	tone?: string;
+	ratio?: '16x9' | '3x2' | '4x5' | '1x1';
+	label?: string;
+	class?: string;
+	dataTag?: string;
+}
+const {
+	href,
+	title,
+	byline,
+	image,
+	tone = 'tone-b',
+	ratio = '3x2',
+	label,
+	class: cls,
+	dataTag,
+} = Astro.props;
+const ratioClass = `r-${ratio}`;
+---
+
+<a class:list={['story', cls]} href={href} data-tag={dataTag}>
+	<div class:list={['img', image ? 'real' : `ph ${tone}`, ratioClass, 'blurup']}>
+		{
+			image ? (
+				<Image src={image} alt={title} />
+			) : (
+				label && <span class="lab">{label}</span>
+			)
+		}
+	</div>
+	<h3 class="headline">{title}</h3>
+	{byline && <p class="byline">{byline}</p>}
+</a>

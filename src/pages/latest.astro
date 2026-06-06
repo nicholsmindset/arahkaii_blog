@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCards } from '../lib/articles';
+import { fmtDate } from '../lib/format';
+
+// Reverse-chronological feed: a lead card, then dated rows.
+const cards = await getCards();
+const lead = cards[0];
+const rest = cards.slice(1);
+---
+
+<BaseLayout title="Latest — Arahkaii">
+	<main class="wrap">
+		<header class="lt-head">
+			<h1 class="lt-title">Latest</h1>
+			<p class="lt-dek">Everything we’ve published, newest first.</p>
+		</header>
+
+		{
+			lead && (
+				<a class="story lt-lead" href={lead.url}>
+					<div class="img real r-16x9 blurup in">
+						<Image src={lead.image} alt={lead.heroCaption || lead.title} loading="eager" />
+					</div>
+					<div>
+						<span class="eyebrow accent" style="display:block; margin-bottom:14px">
+							{lead.categoryLabel} · Newest
+						</span>
+						<h2 class="headline">{lead.title}</h2>
+						<p class="ll-dek">{lead.standfirst}</p>
+						<p class="byline" style="margin-top:18px">
+							{lead.byline} · {fmtDate(lead.date)}
+							{lead.readingMinutes ? ` · ${lead.readingMinutes} min read` : ''}
+						</p>
+					</div>
+				</a>
+			)
+		}
+
+		<div class="lt-feed">
+			{
+				rest.map((x) => (
+					<a class="story lt-row" href={x.url}>
+						<span class="lr-date">{fmtDate(x.date)}</span>
+						<div class="lr-mid">
+							<span class="lr-cat">{x.categoryLabel}</span>
+							<div class="lr-title">{x.title}</div>
+						</div>
+						<span class="lr-read">
+							{x.authorName}
+							{x.readingMinutes ? ` · ${x.readingMinutes} min` : ''}
+						</span>
+					</a>
+				))
+			}
+		</div>
+	</main>
+</BaseLayout>

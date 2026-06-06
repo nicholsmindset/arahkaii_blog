@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Saved stories live in localStorage, so the grid is rendered on the client
+// from window.ARAHKAII.getSaved(). Server renders only the shell.
+---
+
+<BaseLayout title="Your reading list — Arahkaii" noindex={true}>
+	<main class="wrap">
+		<header class="rl-head">
+			<h1 class="rl-title">Reading list</h1>
+			<p class="rl-dek">Saved for a slower moment.</p>
+			<p class="rl-count" id="rl-count"></p>
+		</header>
+		<div id="rl-container"></div>
+	</main>
+
+	<script>
+		function initReadingList() {
+			const A = (window as any).ARAHKAII;
+			const c = document.getElementById('rl-container');
+			const count = document.getElementById('rl-count');
+			if (!A || !c || !count) return;
+			// Narrowed locals the nested render() closure can see as non-null.
+			const container = c;
+			const countEl = count;
+
+			function render() {
+				const items = A.getSaved();
+				countEl.textContent = items.length
+					? items.length + (items.length === 1 ? ' story' : ' stories') + ' saved'
+					: '';
+				if (!items.length) {
+					container.innerHTML = `<div class="rl-empty">
+						<svg class="e-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg>
+						<p>Nothing saved yet.</p>
+						<p class="sub">Tap the bookmark on any story and it will wait for you here — across visits, on this device.</p>
+						<a class="link-more" href="/latest">Browse the latest</a>
+					</div>`;
+					return;
+				}
+				const grid = document.createElement('div');
+				grid.className = 'rl-grid';
+				items.forEach((it: any) => {
+					const card = document.createElement('div');
+					card.className = 'rl-card';
+					card.innerHTML = `<a class="story" href="${it.href}">
+							<div class="img ph ${it.tone || 'tone-b'} r-3x2"></div>
+							<h3 class="headline">${it.title}</h3>
+							<p class="byline">${it.byline || ''}</p>
+						</a>
+						<button class="rl-remove" aria-label="Remove from reading list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`;
+					card.querySelector('.rl-remove')!.addEventListener('click', (e) => {
+						e.preventDefault();
+						e.stopPropagation();
+						A.toggleSave({ title: it.title });
+						A.toast('Removed from your reading list');
+						render();
+					});
+					grid.appendChild(card);
+				});
+				container.innerHTML = '';
+				container.appendChild(grid);
+			}
+			render();
+		}
+		document.addEventListener('astro:page-load', initReadingList);
+	</script>
+</BaseLayout>

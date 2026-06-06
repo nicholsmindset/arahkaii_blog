@@ -32,3 +32,6 @@ pnpm-debug.log*
 # WordPress migration sources (kept local; migrated content lives in src/)
 wp-import/
 real-export.xml
+
+# Playwright MCP artifacts
+.playwright-mcp/
