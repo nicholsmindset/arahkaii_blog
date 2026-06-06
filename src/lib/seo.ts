@@ -99,3 +99,61 @@ export function breadcrumbSchema(items: BreadcrumbItem[]): JsonLd {
 		})),
 	};
 }
+
+// — GEO / AIO builders: explicit, citable structure for AI Overviews, AI Mode
+//   and LLM answer engines. Driven by additive post frontmatter. —
+
+export interface FaqItem {
+	q: string;
+	a: string;
+}
+
+/** FAQPage — for guides/explainers with genuine question intent. */
+export function faqSchema(items: FaqItem[]): JsonLd {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: items.map((item) => ({
+			'@type': 'Question',
+			name: item.q,
+			acceptedAnswer: { '@type': 'Answer', text: item.a },
+		})),
+	};
+}
+
+export interface HowToStep {
+	name: string;
+	text: string;
+}
+
+/** HowTo — for step-by-step guides. */
+export function howToSchema(name: string, steps: HowToStep[]): JsonLd {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'HowTo',
+		name,
+		step: steps.map((s, i) => ({
+			'@type': 'HowToStep',
+			position: i + 1,
+			name: s.name,
+			text: s.text,
+		})),
+	};
+}
+
+/** ItemList — for "ranked"/numbered listicles. Items are ordered names. */
+export function itemListSchema(name: string, items: string[], url: string): JsonLd {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'ItemList',
+		name,
+		itemListOrder: 'https://schema.org/ItemListOrderDescending',
+		numberOfItems: items.length,
+		url,
+		itemListElement: items.map((item, i) => ({
+			'@type': 'ListItem',
+			position: i + 1,
+			name: item,
+		})),
+	};
+}

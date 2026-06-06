@@ -11,6 +11,11 @@ import {
 	breadcrumbSchema,
 	organizationSchema,
 	websiteSchema,
+	faqSchema,
+	howToSchema,
+	itemListSchema,
+	type FaqItem,
+	type HowToStep,
 } from '../lib/seo';
 import '../styles/article.css';
 
@@ -54,6 +59,12 @@ interface Props {
 	metaDescription?: string;
 	updatedDate?: Date;
 	noindex?: boolean;
+	// GEO / AIO structured data (optional, threaded from frontmatter).
+	faq?: FaqItem[];
+	howToName?: string;
+	howTo?: HowToStep[];
+	listName?: string;
+	listItems?: string[];
 }
 
 const {
@@ -74,6 +85,11 @@ const {
 	metaDescription,
 	updatedDate,
 	noindex = false,
+	faq,
+	howToName,
+	howTo,
+	listName,
+	listItems,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -120,6 +136,11 @@ const jsonLd = [
 	}),
 	breadcrumbSchema(crumbs),
 ];
+// GEO / AIO schema — appended only when the frontmatter supplies the data.
+if (faq?.length) jsonLd.push(faqSchema(faq));
+if (howTo?.length) jsonLd.push(howToSchema(howToName ?? title, howTo));
+if (listItems?.length)
+	jsonLd.push(itemListSchema(listName ?? title, listItems, canonical.toString()));
 ---
 
 <BaseLayout

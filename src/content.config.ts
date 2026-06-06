@@ -32,6 +32,17 @@ const posts = defineCollection({
 			metaDescription: z.string().max(160).optional(),
 			updatedDate: z.coerce.date().optional(),
 			noindex: z.boolean().default(false),
+			// GEO / AIO structured data — additive. Presence drives the schema:
+			//   faq → FAQPage · howTo → HowTo · listItems → ItemList.
+			faq: z
+				.array(z.object({ q: z.string(), a: z.string() }))
+				.optional(),
+			howToName: z.string().optional(),
+			howTo: z
+				.array(z.object({ name: z.string(), text: z.string() }))
+				.optional(),
+			listName: z.string().optional(),
+			listItems: z.array(z.string()).optional(),
 		}),
 });
 
