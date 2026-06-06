@@ -6,7 +6,7 @@ tags:
   - "designer-collaborations"
   - "quiet-luxury"
   - "trending"
-author: nadra-nichols
+author: zara-chen-okafor
 date: 2025-12-24
 heroImage: "../../../assets/images/archive/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/Screenshot-2025-12-24-at-7.09.25-PM.png"
 heroCaption: ""

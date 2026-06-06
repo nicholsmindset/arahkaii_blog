@@ -5,7 +5,7 @@ category: culture
 tags:
   - "sea-fashion"
   - "the-journal"
-author: nadra-nichols
+author: zara-chen-okafor
 date: 2026-02-11
 heroImage: "../../../assets/images/archive/from-foundation-to-house/Arahkaiieditorialteam.jpg"
 heroCaption: ""

@@ -6,7 +6,7 @@ tags:
   - "batik"
   - "indonesian-fashion"
   - "sea-fashion"
-author: nadra-nichols
+author: zara-chen-okafor
 date: 2025-11-24
 heroImage: "../../../assets/images/archive/batik-blockchain-indonesia-textile-authenticity-technology/traditional_textiles_embrace_technology_vjtya.jpg"
 heroCaption: ""

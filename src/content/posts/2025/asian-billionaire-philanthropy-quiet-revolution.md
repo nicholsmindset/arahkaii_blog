@@ -5,7 +5,7 @@ category: culture
 tags:
   - "philanthropy"
   - "the-journal"
-author: nadra-nichols
+author: zara-chen-okafor
 date: 2025-11-02
 heroImage: "../../../assets/images/archive/asian-billionaire-philanthropy-quiet-revolution/photorealistic-architectural-photograph-modern-gl.png"
 heroCaption: ""

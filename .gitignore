@@ -39,3 +39,6 @@ real-export.xml
 
 # Source working docs
 *.docx
+
+# loose source images (avatars copied into src/assets/authors/)
+images/
