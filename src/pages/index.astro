@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Minimal interim landing — a quiet "Latest" list. The full designed homepage
+// (Hero / EditLane / Spotlight) is a next-session deliverable.
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+---
+
+<BaseLayout title="Arahkaii — Asia's modern-luxury edit, modestly told">
+	<div class="wrap" style="padding-top:148px">
+		<div class="sec-head rise" style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:40px">
+			<span class="eyebrow">Latest</span>
+			<span class="meta">Asia's modern-luxury edit — modestly told</span>
+		</div>
+		<div class="edit-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:44px">
+			{
+				posts.map((post) => (
+					<a
+						class="story rise"
+						href={`/${post.data.category}/${post.id.split('/').pop()}`}
+					>
+						<div class="img real r-4x5 blurup">
+							<Image src={post.data.heroImage} alt={post.data.heroCaption} />
+						</div>
+						<h3 class="headline" style="font-size:26px; margin:22px 0 12px">
+							{post.data.title}
+						</h3>
+						<p class="byline">{cap(post.data.category)}</p>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</BaseLayout>

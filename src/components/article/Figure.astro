@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+
+// Inline editorial figure. `breakout` widens the image beyond the 640px
+// column to ~1024px. Caption sits below in sans micro; credit is required
+// (magazine discipline — the schema/components fail loudly without it).
+interface Props {
+	src: ImageMetadata;
+	alt: string;
+	caption?: string;
+	credit: string;
+	ratio?: '3x2' | '16x9' | '4x5' | '1x1';
+	breakout?: boolean;
+	prefix?: string;
+}
+const {
+	src,
+	alt,
+	caption,
+	credit,
+	ratio = '3x2',
+	breakout = false,
+	prefix = 'Above',
+} = Astro.props;
+const ratioClass = `r-${ratio}`;
+---
+<figure class:list={['inline-fig', { breakout }]}>
+	<div class:list={['img', 'real', ratioClass, 'blurup']}>
+		<Image src={src} alt={alt} />
+	</div>
+	<figcaption class="caption">
+		{caption ? `${prefix}: ${caption} ` : ''}(Photo: {credit})
+	</figcaption>
+</figure>

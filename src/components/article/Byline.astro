@@ -1,0 +1,25 @@
+---
+// Byline row: By {author} · {date} · {n} min read — sans micro, middot separators.
+interface Props {
+	author: string;
+	date: Date;
+	readingMinutes?: number;
+}
+const { author, date, readingMinutes } = Astro.props;
+// British English date, e.g. "16 May 2026".
+const formattedDate = new Intl.DateTimeFormat('en-GB', {
+	day: 'numeric',
+	month: 'long',
+	year: 'numeric',
+}).format(date);
+---
+<p class="art-byline meta">
+	By {author}<span class="dot">·</span>{formattedDate}{
+		readingMinutes ? (
+			<>
+				<span class="dot">·</span>
+				{readingMinutes} min read
+			</>
+		) : null
+	}
+</p>

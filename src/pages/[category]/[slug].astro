@@ -1,0 +1,36 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts', ({ data }) => !data.draft);
+	return posts.map((post) => ({
+		// id is e.g. "2026/quiet-renaissance-…"; slug is the final segment.
+		params: { category: post.data.category, slug: post.id.split('/').pop() },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const author = await getEntry('authors', post.data.author);
+if (!author) {
+	throw new Error(`Unknown author "${post.data.author}" in ${post.id}`);
+}
+const { Content } = await render(post);
+const d = post.data;
+---
+
+<ArticleLayout
+	title={d.title}
+	standfirst={d.standfirst}
+	category={d.category}
+	tags={d.tags}
+	date={d.date}
+	readingMinutes={d.readingMinutes}
+	heroImage={d.heroImage}
+	heroCaption={d.heroCaption}
+	heroCredit={d.heroCredit}
+	author={author.data}
+>
+	<Content />
+</ArticleLayout>

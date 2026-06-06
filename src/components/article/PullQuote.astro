@@ -1,0 +1,13 @@
+---
+// Pull quote as marginalia — floats into the wide right margin beside the
+// text column on desktop (≥1200px), centred below the column on smaller
+// screens. No quote marks; thin accent rule above.
+interface Props {
+	text?: string;
+}
+const { text } = Astro.props;
+---
+<aside class="marginalia">
+	<div class="mq-rule"></div>
+	<p class="mq">{text ?? <slot />}</p>
+</aside>

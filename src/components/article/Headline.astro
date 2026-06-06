@@ -1,0 +1,8 @@
+---
+// Article headline — display serif, opsz 144 (see .art-h1 in article.css).
+interface Props {
+	text?: string;
+}
+const { text } = Astro.props;
+---
+<h1 class="art-h1">{text ?? <slot />}</h1>

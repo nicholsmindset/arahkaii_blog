@@ -1,0 +1,8 @@
+---
+// Standfirst set as an italic display-serif epigraph (book chapter opening).
+interface Props {
+	text?: string;
+}
+const { text } = Astro.props;
+---
+<p class="art-standfirst epigraph">{text ?? <slot />}</p>

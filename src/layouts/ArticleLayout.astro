@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Headline from '../components/article/Headline.astro';
+import Standfirst from '../components/article/Standfirst.astro';
+import Byline from '../components/article/Byline.astro';
+import '../styles/article.css';
+
+interface AuthorData {
+	name: string;
+	role: string;
+	bio: string;
+	avatar?: ImageMetadata;
+}
+interface RelatedItem {
+	title: string;
+	href: string;
+	byline: string;
+	tone?: string;
+}
+interface Props {
+	title: string;
+	standfirst: string;
+	category: string;
+	tags?: string[];
+	date: Date;
+	readingMinutes?: number;
+	heroImage: ImageMetadata;
+	heroCaption: string;
+	heroCredit: string;
+	author: AuthorData;
+	authorHref?: string;
+	related?: RelatedItem[];
+}
+
+const {
+	title,
+	standfirst,
+	category,
+	tags = [],
+	date,
+	readingMinutes,
+	heroImage,
+	heroCaption,
+	heroCredit,
+	author,
+	authorHref = '/people',
+	related = [],
+} = Astro.props;
+
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const categoryLabel = cap(category);
+const primaryTag = tags[0];
+const eyebrow = primaryTag ? `${categoryLabel} · ${primaryTag}` : categoryLabel;
+---
+
+<BaseLayout
+	title={`${title} — Arahkaii`}
+	description={standfirst}
+	activeCategory={categoryLabel}
+>
+	<article>
+		<header class="article-head">
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Arahkaii</a><span class="sep">/</span><a href={`/${category}`}
+					>{categoryLabel}</a
+				>{primaryTag && (<><span class="sep">/</span><span>{primaryTag}</span></>)}
+			</nav>
+			<span class="eyebrow accent" style="margin-top:18px">{eyebrow}</span>
+			<Headline text={title} />
+			<Standfirst text={standfirst} />
+			<Byline author={author.name} date={date} readingMinutes={readingMinutes} />
+		</header>
+
+		<figure class="hero-fig">
+			<div class="img real r-16x9 blurup">
+				<Image src={heroImage} alt={heroCaption} loading="eager" />
+			</div>
+			<figcaption class="fig-cap caption">
+				Above: {heroCaption} (Photo: {heroCredit})
+			</figcaption>
+		</figure>
+
+		<div class="article-body">
+			<slot />
+		</div>
+
+		<div class="chapter ornament end-orn"><span>✦</span></div>
+
+		<div class="author-bio">
+			{
+				author.avatar ? (
+					<div class="img real avatar">
+						<Image src={author.avatar} alt={author.name} width={152} height={152} />
+					</div>
+				) : (
+					<div class="img ph tone-b avatar" />
+				)
+			}
+			<div>
+				<p class="ab-name">{author.name}</p>
+				<p class="ab-role">{author.role}</p>
+				<p>{author.bio}</p>
+				<a class="link-more" href={authorHref}>Read more by {author.name}</a>
+			</div>
+		</div>
+
+		{
+			related.length > 0 && (
+				<section class="more-from">
+					<div class="rule" />
+					<div
+						style="display:flex; justify-content:space-between; align-items:baseline; margin-top:34px"
+					>
+						<span class="eyebrow">More from {categoryLabel}</span>
+						<a class="link-more" href={`/${category}`}>
+							All {categoryLabel}
+						</a>
+					</div>
+					<div class="more-grid">
+						{related.slice(0, 3).map((r) => (
+							<a class="story" href={r.href}>
+								<div class={`img ph ${r.tone ?? 'tone-c'} r-3x2 blurup`} />
+								<h3 class="headline">{r.title}</h3>
+								<p class="byline">{r.byline}</p>
+							</a>
+						))}
+					</div>
+				</section>
+			)
+		}
+	</article>
+</BaseLayout>

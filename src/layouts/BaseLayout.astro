@@ -1,0 +1,249 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+// Self-hosted variable fonts (Fontsource). Fraunces `full` carries the
+// opsz/SOFT/WONK axes the display type relies on; Newsreader `opsz` powers
+// the reading serif + italics; Inter for UI/meta.
+import '@fontsource-variable/fraunces/full.css';
+import '@fontsource-variable/fraunces/full-italic.css';
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/newsreader/opsz-italic.css';
+import '@fontsource-variable/inter/wght.css';
+
+interface Props {
+	title: string;
+	description?: string;
+	activeCategory?: string;
+	overHero?: boolean;
+	image?: string;
+}
+
+const {
+	title,
+	description = "Asia's modern-luxury edit — modestly told.",
+	activeCategory,
+	overHero = false,
+	image,
+} = Astro.props;
+
+const categories = [
+	'Style',
+	'Dining',
+	'Travel',
+	'Culture',
+	'Living',
+	'People',
+	'Guides',
+];
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="Arahkaii"
+			href={new URL('rss.xml', Astro.site)}
+		/>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		{image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+
+		<ClientRouter />
+	</head>
+
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+
+		<div class="progress"></div>
+
+		<header class={`nav${overHero ? '' : ' solid'}`} data-over-hero={overHero ? '' : null}>
+			<div class="nav-inner">
+				<a class="wordmark" href="/" aria-label="Arahkaii — home">
+					<svg viewBox="0 0 168 18" role="img" aria-label="ARAHKAII">
+						<text
+							x="0"
+							y="14"
+							font-family="'Fraunces Variable', Fraunces, Georgia, serif"
+							font-size="17"
+							font-weight="500"
+							letter-spacing="3.4"
+							fill="#1C1815"
+							style="font-variation-settings:'opsz' 40">ARAHKAII</text
+						>
+					</svg>
+				</a>
+
+				<nav class="nav-links" aria-label="Categories">
+					{
+						categories.map((c) => (
+							<a
+								href={`/${c.toLowerCase()}`}
+								class={c === activeCategory ? 'active' : undefined}
+							>
+								{c}
+							</a>
+						))
+					}
+				</nav>
+
+				<div class="nav-tools">
+					<button class="icon-btn js-search" aria-label="Search" type="button">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+							><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg
+						>
+					</button>
+					<a class="icon-btn" href="/subscribe" aria-label="Newsletter">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+							><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3.5 6.5 12 13l8.5-6.5"
+							></path></svg
+						>
+					</a>
+					<button class="icon-btn nav-burger js-burger" aria-label="Menu" type="button">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+							><path d="M4 8h16M4 16h16"></path></svg
+						>
+					</button>
+				</div>
+			</div>
+
+			<div class="mobile-menu">
+				{categories.map((c) => <a href={`/${c.toLowerCase()}`}>{c}</a>)}
+				<a href="/about">About</a>
+				<a href="/subscribe">Subscribe</a>
+			</div>
+		</header>
+
+		<main id="main">
+			<slot />
+		</main>
+
+		<footer class="footer">
+			<div class="wrap">
+				<div class="footer-grid">
+					<div class="mast">
+						<a class="wordmark" href="/" aria-label="Arahkaii — home">
+							<svg viewBox="0 0 168 18" role="img" aria-label="ARAHKAII">
+								<text
+									x="0"
+									y="14"
+									font-family="'Fraunces Variable', Fraunces, Georgia, serif"
+									font-size="17"
+									font-weight="500"
+									letter-spacing="3.4"
+									fill="#1C1815"
+									style="font-variation-settings:'opsz' 40">ARAHKAII</text
+								>
+							</svg>
+						</a>
+						<p class="epigraph" style="font-size:18px; margin:20px 0 0; max-width:240px">
+							Asia's modern-luxury edit — modestly told.
+						</p>
+					</div>
+					<div>
+						<h4>Editorial</h4>
+						<ul>
+							<li><a href="/style">Style</a></li>
+							<li><a href="/travel">Travel</a></li>
+							<li><a href="/culture">Culture</a></li>
+							<li><a href="/guides">Guides</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4>About</h4>
+						<ul>
+							<li><a href="/about">Our story</a></li>
+							<li><a href="/subscribe">Newsletter</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4>Follow</h4>
+						<ul>
+							<li><a href="/rss.xml">RSS</a></li>
+							<li><a href="https://instagram.com">Instagram</a></li>
+							<li><a href="https://x.com">X / Twitter</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="rule" style="margin-top:48px"></div>
+				<div class="footer-base">
+					<span class="meta">© {new Date().getFullYear()} Arahkaii. All rights reserved.</span>
+					<span class="meta">Made in Singapore · 4200K</span>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Chrome behaviours ported from design/assets/arahkaii.js — runs on
+			// first load and after each View Transition navigation.
+			function initChrome() {
+				const nav = document.querySelector<HTMLElement>('.nav');
+				const prog = document.querySelector<HTMLElement>('.progress');
+
+				// nav settles to solid on scroll when sitting over a hero
+				if (nav && nav.hasAttribute('data-over-hero')) {
+					const onScroll = () => {
+						if (window.scrollY > 40) nav.classList.add('solid');
+						else nav.classList.remove('solid');
+					};
+					onScroll();
+					window.addEventListener('scroll', onScroll, { passive: true });
+				}
+
+				// reading-progress bar
+				if (prog) {
+					const upd = () => {
+						const h = document.documentElement.scrollHeight - window.innerHeight;
+						prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+					};
+					upd();
+					window.addEventListener('scroll', upd, { passive: true });
+					window.addEventListener('resize', upd);
+				}
+
+				// mobile menu toggle
+				const burger = document.querySelector<HTMLElement>('.js-burger');
+				const menu = document.querySelector<HTMLElement>('.mobile-menu');
+				if (burger && menu) {
+					burger.addEventListener('click', () => {
+						const open = menu.classList.toggle('open');
+						nav?.classList.toggle('solid', open || !nav.hasAttribute('data-over-hero'));
+					});
+				}
+
+				// blur-up + rise on scroll
+				const io = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((e) => {
+							if (e.isIntersecting) {
+								e.target.classList.add('in');
+								io.unobserve(e.target);
+							}
+						});
+					},
+					{ rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+				);
+				document
+					.querySelectorAll('.blurup:not(.in), .rise:not(.in)')
+					.forEach((el) => io.observe(el));
+			}
+
+			document.addEventListener('astro:page-load', initChrome);
+		</script>
+	</body>
+</html>
