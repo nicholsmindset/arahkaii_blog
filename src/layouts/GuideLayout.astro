@@ -132,7 +132,7 @@ const byline = `By ${author.name} · ${fmtDate(date)}${readingMinutes ? ` · ${r
 	tags={tags}
 	jsonLd={jsonLd}
 >
-	<article>
+	<article data-cat="guides">
 		<header class="guide-head">
 			<span class="eyebrow accent">{primaryTag ? `${categoryLabel} · ${cap(primaryTag)}` : categoryLabel}</span>
 			<h1 class="guide-h1 art-h1">{title}</h1>
@@ -177,6 +177,7 @@ const byline = `By ${author.name} · ${fmtDate(date)}${readingMinutes ? ` · ${r
 							image={g.image}
 							tone={g.tone ?? 'tone-c'}
 							ratio="3x2"
+							category="guides"
 						/>
 					))}
 				</div>

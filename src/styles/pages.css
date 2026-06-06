@@ -110,6 +110,8 @@
 .cat-masthead{ padding:160px 0 0; }
 .cat-title{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(56px,10vw,96px); line-height:.98; letter-spacing:-.02em; margin:0; }
 .cat-dek{ font-family:var(--serif); font-style:italic; font-variation-settings:'opsz' 96; font-size:clamp(20px,2.4vw,26px); color:var(--muted); margin:18px 0 0; }
+/* Per-pillar accent keyline — the masthead's one confident stroke of colour. */
+.cat-masthead::after{ content:''; display:block; width:64px; height:3px; background:var(--accent-local); margin-top:30px; border-radius:2px; }
 
 .editors-pick{ margin-top:72px; }
 .editors-pick .ep-tag{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px; }
@@ -121,7 +123,7 @@
 
 .tag-row{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:92px 0 48px; padding-top:30px; border-top:1px solid var(--hairline); }
 .tag-row .tr-label{ font-family:var(--sans); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-right:8px; }
-.chip.active{ border-color:var(--accent); color:var(--surface); background:var(--accent); }
+.chip.active{ border-color:var(--accent-local); color:var(--surface); background:var(--accent-local); }
 
 .cat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px 56px; }
 .cat-grid .headline{ font-size:27px; margin:22px 0 12px; }

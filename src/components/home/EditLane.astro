@@ -11,7 +11,7 @@ interface Props {
 const { title, href, items } = Astro.props;
 ---
 
-<div class="lane">
+<div class="lane" data-cat={title.toLowerCase()}>
 	<div class="lane-head rise">
 		<h2 class="lane-title">{title}</h2>
 		<a class="link-more" href={href}>All {title}</a>
@@ -27,6 +27,7 @@ const { title, href, items } = Astro.props;
 					image={x.image}
 					tone={x.tone}
 					ratio="3x2"
+					category={x.category}
 				/>
 			))
 		}

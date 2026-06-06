@@ -51,7 +51,7 @@
   text-transform:uppercase;
   color:var(--muted);
 }
-.eyebrow.accent{ color:var(--accent); }
+.eyebrow.accent{ color:var(--accent-local); }
 .meta{
   font-family:var(--sans);
   font-size:13px;
@@ -213,7 +213,7 @@
   letter-spacing:-.01em; line-height:1.08; color:var(--ink); margin:0;
   text-wrap:pretty;
 }
-.story:hover .headline{ color:var(--accent); }
+.story:hover .headline{ color:var(--accent-local); }
 .byline{ font-family:var(--sans); font-size:13px; letter-spacing:.03em; color:var(--muted); }
 
 /* ---------- BUTTONS / FIELDS ---------------------------------------------- */
@@ -238,7 +238,7 @@
   display:inline-flex; align-items:center; gap:8px; color:var(--ink);
   border-top:1px solid var(--ink); padding-top:12px; transition:gap var(--settle);
 }
-.link-more:hover,.link-more:focus-visible{ gap:14px; }
+.link-more:hover,.link-more:focus-visible{ gap:14px; color:var(--accent-local); border-color:var(--accent-local); }
 
 /* ---------- FOOTER --------------------------------------------------------- */
 /* Ink footer — the "back cover": grounds the scroll, paper-coloured type. */
@@ -282,14 +282,14 @@
   border:1px solid var(--hairline); border-radius:999px; padding:9px 16px; cursor:pointer;
   background:none; transition:border-color var(--settle), color var(--settle);
 }
-.chip:hover{ border-color:var(--accent); color:var(--accent); }
+.chip:hover{ border-color:var(--accent-local); color:var(--accent-local); }
 
 /* ---------- UTIL ----------------------------------------------------------- */
 .center{ text-align:center; }
 .mw-720{ max-width:720px; }
 .mw-640{ max-width:640px; }
 .muted{ color:var(--muted); }
-.accent{ color:var(--accent); }
+.accent{ color:var(--accent-local); }
 
 /* ---------- RESPONSIVE ----------------------------------------------------- */
 @media (max-width:760px){
@@ -349,12 +349,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role=button]:focus-
 
 /* read next (single big recommendation) */
 .read-next{ max-width:1280px; margin:104px auto 0; padding:0 var(--gutter); }
-.read-next .rn-card{ display:grid; grid-template-columns:1.1fr 1fr; gap:0; border:1px solid var(--hairline); align-items:stretch; }
+.read-next .rn-card{ display:grid; grid-template-columns:1.1fr 1fr; gap:0; border:1px solid color-mix(in srgb, var(--accent-local) 35%, var(--hairline)); align-items:stretch; background:color-mix(in srgb, var(--accent-local) 5%, var(--surface)); transition:border-color var(--settle); }
+.read-next .rn-card:hover{ border-color:var(--accent-local); }
 .read-next .rn-img{ width:100%; height:100%; min-height:340px; }
 .read-next .rn-body{ padding:56px; display:flex; flex-direction:column; justify-content:center; }
 .read-next .rn-eyebrow{ display:block; margin-bottom:22px; }
 .read-next .rn-title{ font-family:var(--serif); font-variation-settings:'opsz' 110; font-weight:400; font-size:clamp(28px,3.2vw,40px); line-height:1.06; letter-spacing:-.015em; margin:0; transition:color var(--settle); }
-.read-next:hover .rn-title{ color:var(--accent); }
+.read-next:hover .rn-title{ color:var(--accent-local); }
 .read-next .rn-meta{ margin-top:20px; }
 @media (max-width:860px){ .read-next .rn-card{ grid-template-columns:1fr; } .read-next .rn-img{ min-height:0; aspect-ratio:16/9; } .read-next .rn-body{ padding:36px 28px; } }
 

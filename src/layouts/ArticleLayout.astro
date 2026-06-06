@@ -157,7 +157,7 @@ if (listItems?.length)
 	tags={tags}
 	jsonLd={jsonLd}
 >
-	<article>
+	<article data-cat={category}>
 		<header class="article-head">
 			<nav class="crumbs" aria-label="Breadcrumb">
 				<a href="/">Arahkaii</a><span class="sep">/</span><a href={`/${category}`}
@@ -210,7 +210,7 @@ if (listItems?.length)
 						<span class="eyebrow">Read next</span>
 						<span class="meta">Chosen for you</span>
 					</div>
-					<a class="story rn-card" href={readNext.href}>
+					<a class="story rn-card" href={readNext.href} data-cat={readNext.categoryLabel.toLowerCase()}>
 						{readNext.image ? (
 							<div class="img real rn-img blurup">
 								<Image src={readNext.image} alt={readNext.title} />
@@ -251,6 +251,7 @@ if (listItems?.length)
 								image={r.image}
 								tone={r.tone ?? 'tone-c'}
 								ratio="3x2"
+								category={category}
 							/>
 						))}
 					</div>

@@ -13,8 +13,24 @@
   --muted:#6E6457;          /* AA-legible on paper at small sizes */
   --muted-soft:#857B6E;     /* large/decorative only */
   --hairline:#E2D9CA;
-  --accent:#4A2C3A;   /* aubergine — rare */
+  --accent:#4A2C3A;   /* aubergine — the house accent / mixed-context default */
   --clay:#B06B4E;     /* clay — very rare */
+
+  /* per-pillar accents — muted, paper-friendly. Used for eyebrows, tags,
+     section rules, link arrows, card hover, category mastheads. Each pillar
+     reads distinct without abandoning the warm-paper canvas. */
+  --c-style:#4A2C3A;    /* aubergine */
+  --c-beauty:#A8615E;   /* dusty rose */
+  --c-dining:#B06B4E;   /* burnt clay */
+  --c-travel:#2F4A45;   /* deep teal */
+  --c-culture:#2C3A4A;  /* indigo ink */
+  --c-living:#6E7359;   /* sage */
+  --c-people:#5A3A4A;   /* plum */
+  --c-guides:#9A7B3F;   /* ochre gold */
+
+  /* Resolved accent for the current context; falls back to the house aubergine
+     on mixed surfaces (homepage). Set per-pillar via [data-cat] below. */
+  --accent-local:var(--accent);
 
   /* type — Fontsource variable families, with graceful fallbacks */
   --serif:'Fraunces Variable','Fraunces',Georgia,'Times New Roman',serif;
@@ -45,6 +61,18 @@ body{
 ::selection{ background:rgba(74,44,58,.20); }
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
+
+/* Per-pillar accent scoping. Put data-cat on a category masthead, an article
+   root, or a single StoryCard, and everything inside inherits that accent via
+   var(--accent-local). Mixed surfaces (homepage) leave it unset → aubergine. */
+[data-cat="style"]{   --accent-local:var(--c-style); }
+[data-cat="beauty"]{  --accent-local:var(--c-beauty); }
+[data-cat="dining"]{  --accent-local:var(--c-dining); }
+[data-cat="travel"]{  --accent-local:var(--c-travel); }
+[data-cat="culture"]{ --accent-local:var(--c-culture); }
+[data-cat="living"]{  --accent-local:var(--c-living); }
+[data-cat="people"]{  --accent-local:var(--c-people); }
+[data-cat="guides"]{  --accent-local:var(--c-guides); }
 
 /* page cross-fade */
 @keyframes pageIn{ from{ opacity:0; } to{ opacity:1; } }

@@ -63,7 +63,7 @@ const jsonLd = [
 ---
 
 <BaseLayout title={`${label} — Arahkaii`} activeCategory={label} jsonLd={jsonLd}>
-	<main class="wrap">
+	<main class="wrap" data-cat={category}>
 		<header class="cat-masthead">
 			<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: label }]} />
 			<h1 class="cat-title">{label}</h1>
