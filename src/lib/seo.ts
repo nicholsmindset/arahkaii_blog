@@ -9,9 +9,14 @@ export const SITE = {
 	// Raster logo for Organization schema (Google prefers raster over SVG).
 	// Falls back to the favicon if public/logo.png is not yet added.
 	logoUrl: 'https://arahkaii.com/logo.png',
-	// Leave empty until real accounts are confirmed — tags are omitted gracefully.
-	twitter: '', // e.g. '@arahkaii'
-	sameAs: [] as string[], // social profile URLs
+	twitter: '@arahkaii',
+	email: 'hello@arahkaii.com',
+	sameAs: [
+		'https://www.facebook.com/arahkaii',
+		'https://www.instagram.com/arahkaii/',
+		'https://www.x.com/arahkaii',
+		'https://www.tiktok.com/@arahkaii',
+	] as string[], // social profile URLs → Organization.sameAs
 } as const;
 
 type JsonLd = Record<string, unknown>;
