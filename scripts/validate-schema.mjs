@@ -31,6 +31,9 @@ const REQUIRED = {
 	HowTo: ['name', 'step'],
 	ItemList: ['itemListElement'],
 	CollectionPage: ['name', 'url'],
+	WebPage: ['name', 'url'],
+	AboutPage: ['name', 'url'],
+	ContactPage: ['name', 'url'],
 };
 
 const htmlFiles = walk(DIST).filter((p) => p.endsWith('.html'));

@@ -1,0 +1,70 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import {
+	SITE,
+	organizationSchema,
+	websiteSchema,
+	webPageSchema,
+	breadcrumbSchema,
+} from '../lib/seo';
+
+// Shared wrapper for static informational pages (advertise, faqs, join-us,
+// privacy, terms…). Masthead + breadcrumb + a readable prose column + schema.
+interface Props {
+	title: string;
+	dek?: string;
+	eyebrow?: string;
+	breadcrumb?: string; // trail label (defaults to title)
+	description?: string;
+	pageType?: 'WebPage' | 'AboutPage' | 'ContactPage';
+	noindex?: boolean;
+	/** Extra JSON-LD nodes (e.g. FAQPage) appended to the head graph. */
+	extraSchema?: Record<string, unknown>[];
+}
+const {
+	title,
+	dek,
+	eyebrow,
+	breadcrumb,
+	description,
+	pageType = 'WebPage',
+	noindex = false,
+	extraSchema = [],
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	webPageSchema({ name: `${title} — Arahkaii`, url: canonical, description, type: pageType }),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: breadcrumb ?? title, url: canonical },
+	]),
+	...extraSchema,
+];
+---
+
+<BaseLayout
+	title={`${title} — Arahkaii`}
+	description={description}
+	noindex={noindex}
+	jsonLd={jsonLd}
+>
+	<main class="wrap">
+		<header class="pg-head">
+			<Breadcrumbs
+				schema={false}
+				class="page-crumbs"
+				items={[{ name: 'Arahkaii', href: '/' }, { name: breadcrumb ?? title }]}
+			/>
+			{eyebrow && <span class="eyebrow">{eyebrow}</span>}
+			<h1 class="pg-title">{title}</h1>
+			{dek && <p class="pg-dek">{dek}</p>}
+		</header>
+		<div class="pg-body">
+			<slot />
+		</div>
+	</main>
+</BaseLayout>

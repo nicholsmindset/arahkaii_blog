@@ -254,6 +254,8 @@
 .footer .rule{ background:rgba(246,241,233,.16); }
 .footer-base{ display:flex; justify-content:space-between; align-items:center; margin-top:56px; }
 .footer-base .meta{ font-size:12px; color:rgba(246,241,233,.5); }
+.footer-base .meta a{ color:rgba(246,241,233,.7); text-decoration:underline; text-decoration-color:rgba(246,241,233,.25); text-underline-offset:2px; transition:color var(--settle); }
+.footer-base .meta a:hover{ color:var(--surface); }
 
 /* ---------- SEARCH OVERLAY ------------------------------------------------- */
 .search-overlay{

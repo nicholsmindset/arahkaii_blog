@@ -139,6 +139,26 @@ export function personSchema(input: PersonSchemaInput): JsonLd {
 	return person;
 }
 
+/** WebPage / AboutPage / ContactPage — static informational pages. */
+export function webPageSchema(input: {
+	name: string;
+	url: string;
+	description?: string;
+	type?: 'WebPage' | 'AboutPage' | 'ContactPage';
+}): JsonLd {
+	const page: JsonLd = {
+		'@context': 'https://schema.org',
+		'@type': input.type ?? 'WebPage',
+		name: input.name,
+		url: input.url,
+		isPartOf: { '@id': WEBSITE_ID },
+		publisher: { '@id': ORG_ID },
+		inLanguage: 'en-GB',
+	};
+	if (input.description) page.description = input.description;
+	return page;
+}
+
 /** CollectionPage — category / author / index listing pages. */
 export function collectionPageSchema(input: {
 	name: string;

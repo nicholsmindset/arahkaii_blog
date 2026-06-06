@@ -242,6 +242,37 @@
 .contact-alt a{ color:var(--ink); border-bottom:1px solid var(--hairline); transition:border-color var(--settle); }
 .contact-alt a:hover{ border-color:var(--accent); }
 
+/* ---------- STATIC / UTILITY PAGES (PageLayout) -------------------------- */
+.pg-head{ max-width:760px; padding:160px 0 0; }
+.pg-head .eyebrow{ display:block; margin:18px 0 0; }
+.pg-title{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(40px,7vw,64px); line-height:1; letter-spacing:-.02em; margin:14px 0 0; }
+.pg-dek{ font-family:var(--serif); font-style:italic; font-variation-settings:'opsz' 96; font-size:clamp(19px,2.4vw,25px); color:var(--muted); margin:18px 0 0; max-width:40ch; }
+.pg-body{ max-width:720px; margin:56px 0 0; font-size:18px; line-height:1.7; }
+.pg-body > p:first-child{ font-size:20px; color:var(--muted); margin-bottom:28px; }
+.pg-body h2{ font-family:var(--serif); font-variation-settings:'opsz' 90; font-weight:450; font-size:26px; line-height:1.16; letter-spacing:-.01em; margin:48px 0 16px; }
+.pg-body h3{ font-family:var(--serif); font-variation-settings:'opsz' 72; font-weight:450; font-size:20px; margin:32px 0 12px; }
+.pg-body p{ margin:0 0 22px; }
+.pg-body ul, .pg-body ol{ margin:0 0 22px; padding-left:1.3em; }
+.pg-body li{ margin:0 0 10px; }
+.pg-body a{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--hairline); text-underline-offset:3px; transition:text-decoration-color var(--settle); }
+.pg-body a:hover{ text-decoration-color:var(--accent); }
+.pg-body strong{ font-weight:600; }
+.pg-body .pg-updated{ font-family:var(--sans); font-size:12px; letter-spacing:.04em; color:var(--muted); margin-top:48px; }
+
+/* FAQ accordion */
+.faq-item{ border-top:1px solid var(--hairline); }
+.faq-list .faq-item:last-child{ border-bottom:1px solid var(--hairline); }
+.faq-item summary{ cursor:pointer; list-style:none; padding:22px 0; display:flex; justify-content:space-between; gap:24px; align-items:baseline; font-family:var(--serif); font-variation-settings:'opsz' 60; font-size:20px; line-height:1.25; letter-spacing:-.01em; color:var(--ink); transition:color var(--settle); }
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{ content:'+'; font-family:var(--sans); color:var(--muted); flex:none; }
+.faq-item[open] summary::after{ content:'–'; }
+.faq-item summary:hover{ color:var(--accent); }
+.faq-item .faq-a{ padding:0 0 24px; margin:0; max-width:64ch; font-size:17px; line-height:1.7; }
+
+@media (max-width:760px){
+  .pg-head{ padding-top:108px; }
+}
+
 /* ---------- GUIDE / LISTICLE -------------------------------------------- */
 .guide-head{ max-width:900px; margin:0 auto; padding:148px var(--gutter) 0; display:flex; flex-direction:column; align-items:center; text-align:center; }
 .guide-head .eyebrow{ margin-bottom:8px; }

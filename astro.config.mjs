@@ -65,7 +65,12 @@ export default defineConfig({
 	site: 'https://arahkaii.com',
 	// Directory output → canonical URLs carry a trailing slash; the per-page
 	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
-	redirects: legacyRedirects(),
+	redirects: {
+		...legacyRedirects(),
+		// Renamed WordPress pages → our canonical paths.
+		'/about-us': '/about',
+		'/contact-us': '/contact',
+	},
 	integrations: [
 		mdx(),
 		sitemap({

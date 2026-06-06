@@ -1,0 +1,78 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { faqSchema } from '../lib/seo';
+
+const faqs = [
+	{
+		q: 'What is Arahkaii?',
+		a: "Arahkaii is a Muslim-owned, Asian modern-luxury publication across eight pillars — Style, Beauty, Dining, Travel, Living, People, Culture and Guides — from Seoul runways to Singapore's halal-certified fine dining to the founders quietly reshaping Asian luxury.",
+	},
+	{
+		q: 'Who is Arahkaii for?',
+		a: 'Readers who want modest luxury treated as a primary editorial position, not a footnote — and who expect halal status declared plainly in Dining, Travel and Guides coverage.',
+	},
+	{
+		q: 'What are the eight editorial pillars?',
+		a: "Style (modest-luxury fashion through an Asian lens), Beauty (Asian skin and science, halal-aware), Dining (halal-certified, Muslim-owned, alcohol-free — declared plainly), Travel (halal-aware guides at locals' granularity), Living (home and conscious luxury), People (founders and designers), Culture (the ideas and movements shaping Asian luxury), and Guides (reference content built to be bookmarked).",
+	},
+	{
+		q: 'Does Arahkaii cover alcohol, bars or nightlife?',
+		a: 'No. We never produce alcohol, bar, nightclub or nightlife content. Dining and Travel pieces state halal status — halal-certified, Muslim-owned, alcohol-free, or alcohol in cooking — plainly in the body of the article.',
+	},
+	{
+		q: 'Who produces the content?',
+		a: 'Our in-house editorial team, working with industry experts, brand founders and contributors who understand the modest-luxury reader. Every piece passes a halal-alignment and anti-AI-slop check before publication.',
+	},
+	{
+		q: 'Can brands or creators contribute?',
+		a: 'Yes — for features, founder profiles and special projects that align with our values of craft, ethics and Asia-rooted storytelling. Write to hello@arahkaii.com or see our Join us page.',
+	},
+	{
+		q: 'How often do you publish?',
+		a: "Weekly across the eight pillars, with the Arahkaii Evening Edit and occasional Editor's Letters threaded throughout.",
+	},
+	{
+		q: 'Do you feature Singapore brands?',
+		a: 'Yes. Singapore and Southeast Asia are central to our coverage, alongside Korea, Japan, Indonesia, Malaysia and the wider Asian luxury landscape.',
+	},
+	{
+		q: 'Is Arahkaii free to read?',
+		a: 'Yes. All editorial content is freely accessible worldwide, with no subscription fee.',
+	},
+	{
+		q: 'How do you choose brands and topics?',
+		a: 'By three filters: quality (made with care, built to last), ethics (how it was made, and by whom) and cultural fit (does it speak to the Asian modern-luxury reader). Halal status is a standing requirement for Dining, Travel and Guides recommendations.',
+	},
+	{
+		q: 'Can I subscribe for updates?',
+		a: 'Yes — the Arahkaii Weekly newsletter brings new features, the Evening Edit and pillar-specific deep dives to your inbox on Sundays.',
+	},
+	{
+		q: 'Do you offer advertising or sponsored content?',
+		a: 'Yes, within our editorial guidelines — and never for alcohol or nightlife. Sponsored work is written in the pillar voice and clearly labelled. See our Advertise page.',
+	},
+	{
+		q: 'How do you keep editorial independence?',
+		a: 'Sponsored content is always labelled, and brand partnerships never override our halal and quality standards.',
+	},
+];
+---
+
+<PageLayout
+	title="FAQs"
+	eyebrow="Good to know"
+	dek="What Arahkaii is, who it's for, and how we work."
+	description="Frequently asked questions about Arahkaii — our eight pillars, halal-aware editorial standards, contributing, advertising and more."
+	extraSchema={[faqSchema(faqs)]}
+>
+	<div class="faq-list">
+		{
+			faqs.map((f, i) => (
+				<details class="faq-item" open={i === 0}>
+					<summary>{f.q}</summary>
+					<p class="faq-a">{f.a}</p>
+				</details>
+			))
+		}
+	</div>
+</PageLayout>

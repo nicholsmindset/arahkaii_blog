@@ -1,19 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import {
+	SITE,
+	organizationSchema,
+	websiteSchema,
+	webPageSchema,
+	breadcrumbSchema,
+} from '../lib/seo';
 
 // Contact — quiet editorial page with a Netlify-powered form (captured in the
 // Netlify dashboard once deployed; no backend needed) plus a direct address.
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	webPageSchema({
+		name: 'Contact — Arahkaii',
+		url: canonical,
+		description: 'How to reach the Arahkaii desk — pitches, partnerships, press.',
+		type: 'ContactPage',
+	}),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'Contact', url: canonical },
+	]),
+];
 ---
 
 <BaseLayout
 	title="Contact — Arahkaii"
 	description="Pitches, partnerships, or a quiet word — how to reach the Arahkaii desk."
+	jsonLd={jsonLd}
 >
 	<main class="wrap">
 		<div class="mw-640">
 			<header class="cb-head">
-				<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Contact' }]} />
+				<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Contact' }]} />
 				<span class="eyebrow">Say hello</span>
 				<h1 class="cb-title">Contact</h1>
 				<p class="cb-dek">

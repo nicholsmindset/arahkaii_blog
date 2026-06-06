@@ -2,6 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import {
+	SITE,
+	organizationSchema,
+	websiteSchema,
+	webPageSchema,
+	breadcrumbSchema,
+} from '../lib/seo';
+
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	webPageSchema({
+		name: 'About — Arahkaii',
+		url: canonical,
+		description: "Arahkaii is a modern-luxury edit, modestly told — Asia's style, food, travel and culture, paid attention in full.",
+		type: 'AboutPage',
+	}),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'About', url: canonical },
+	]),
+];
 
 const pillars: [string, string][] = [
 	['Style', 'Modern wardrobes, modestly told.'],
@@ -18,9 +41,11 @@ const pillars: [string, string][] = [
 <BaseLayout
 	title="About — Arahkaii"
 	description="Arahkaii is a modern-luxury edit, modestly told — Asia's style, food, travel and culture, paid attention in full."
+	ogType="article"
+	jsonLd={jsonLd}
 >
 	<article class="manifesto">
-		<Breadcrumbs center class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'About' }]} />
+		<Breadcrumbs schema={false} center class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'About' }]} />
 		<span class="eyebrow mf-eyebrow">About Arahkaii</span>
 		<p class="mf-open">
 			We started Arahkaii on a simple conviction: that the most luxurious thing a
@@ -42,6 +67,12 @@ const pillars: [string, string][] = [
 				rarely an explicit subject and always a quiet frame: a sensibility shaped
 				by modesty, by generosity, by an attention to the seam as much as the
 				silhouette.
+			</p>
+			<p>
+				The name is a compass. <em>Arah</em> means <em>direction</em> in Bahasa;
+				<em>Kaii</em> stands for <em>kind, artful, independent, inspired</em>. Together
+				it points the reader toward brands doing things right, stories worth their
+				time, and a way of living that feels good without trying too hard.
 			</p>
 			<p>
 				We publish less than we could. Each piece is reported slowly, edited
