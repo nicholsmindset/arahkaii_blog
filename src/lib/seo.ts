@@ -11,6 +11,14 @@ export const SITE = {
 	logoUrl: 'https://arahkaii.com/logo.png',
 	twitter: '@arahkaii',
 	email: 'hello@arahkaii.com',
+	// Legal publisher behind the Arahkaii brand.
+	legalName: 'ONN GROUP LLP',
+	address: {
+		street: '60 Paya Lebar Road, #06-28 Paya Lebar Square',
+		locality: 'Singapore',
+		postalCode: '409051',
+		country: 'SG',
+	},
 	sameAs: [
 		'https://www.facebook.com/arahkaii',
 		'https://www.instagram.com/arahkaii/',
@@ -36,10 +44,18 @@ export function organizationSchema(): JsonLd {
 			'@type': 'ImageObject',
 			url: SITE.logoUrl,
 		},
+		legalName: SITE.legalName,
 		contactPoint: {
 			'@type': 'ContactPoint',
 			email: SITE.email,
 			contactType: 'editorial',
+		},
+		address: {
+			'@type': 'PostalAddress',
+			streetAddress: SITE.address.street,
+			addressLocality: SITE.address.locality,
+			postalCode: SITE.address.postalCode,
+			addressCountry: SITE.address.country,
 		},
 	};
 	if (SITE.sameAs.length) org.sameAs = SITE.sameAs;
