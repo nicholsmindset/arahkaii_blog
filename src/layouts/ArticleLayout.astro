@@ -5,6 +5,7 @@ import Headline from '../components/article/Headline.astro';
 import Standfirst from '../components/article/Standfirst.astro';
 import Byline from '../components/article/Byline.astro';
 import StoryCard from '../components/StoryCard.astro';
+import InlineNewsletter from '../components/InlineNewsletter.astro';
 import {
 	SITE,
 	articleSchema,
@@ -183,6 +184,13 @@ if (listItems?.length)
 			<slot />
 		</div>
 
+		{/* Mid-article capture — relocated by script to sit after the 2nd H2. */}
+		<InlineNewsletter
+			class="js-mid-news mid-news"
+			source="article-mid"
+			line="Stories like this, gathered once a week — Sundays, in your inbox."
+		/>
+
 		<div class="chapter ornament end-orn"><span>✦</span></div>
 
 		<div class="author-bio">
@@ -202,6 +210,12 @@ if (listItems?.length)
 				<a class="link-more" href={authorHref}>Read more by {author.name}</a>
 			</div>
 		</div>
+
+		<InlineNewsletter
+			class="end-news"
+			source="article-end"
+			line="If this was your kind of quiet, join us on Sundays."
+		/>
 
 		{
 			readNext && (
@@ -286,4 +300,23 @@ if (listItems?.length)
 			><span>Save</span></button
 		>
 	</aside>
+
+	<script>
+		// Relocate the mid-article newsletter to sit after the 2nd H2 in the body
+		// (a natural pause for an engaged reader). If the piece is short (<2 H2s),
+		// drop it — the end-of-article unit already covers the high-intent moment.
+		function placeMidNews() {
+			const mid = document.querySelector<HTMLElement>('.js-mid-news');
+			if (!mid || mid.dataset.placed) return;
+			const body = document.querySelector('.article-body');
+			const h2s = body ? Array.from(body.querySelectorAll(':scope > h2')) : [];
+			if (h2s.length >= 2) {
+				h2s[1].insertAdjacentElement('beforebegin', mid);
+				mid.dataset.placed = '1';
+			} else {
+				mid.remove();
+			}
+		}
+		document.addEventListener('astro:page-load', placeMidNews);
+	</script>
 </BaseLayout>

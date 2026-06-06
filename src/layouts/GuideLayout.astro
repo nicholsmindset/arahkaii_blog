@@ -1,6 +1,7 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import StoryCard from '../components/StoryCard.astro';
+import InlineNewsletter from '../components/InlineNewsletter.astro';
 import {
 	SITE,
 	articleSchema,
@@ -158,6 +159,12 @@ const byline = `By ${author.name} · ${fmtDate(date)}${readingMinutes ? ` · ${r
 		<div class="guide-end">
 			<div class="chapter ornament"><span>✦</span></div>
 		</div>
+
+		<InlineNewsletter
+			class="end-news"
+			source="guide-end"
+			line="If this was your kind of quiet, join us on Sundays."
+		/>
 	</article>
 
 	{

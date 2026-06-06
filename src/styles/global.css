@@ -257,6 +257,39 @@
 .footer-base .meta a{ color:rgba(246,241,233,.7); text-decoration:underline; text-decoration-color:rgba(246,241,233,.25); text-underline-offset:2px; transition:color var(--settle); }
 .footer-base .meta a:hover{ color:var(--surface); }
 
+/* Footer newsletter band — prime capture real estate on the ink "back cover". */
+.footer-news{ display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:end; }
+.footer-news .fn-eyebrow{ display:block; color:rgba(246,241,233,.5); margin-bottom:14px; }
+.fn-line{ font-family:var(--serif); font-variation-settings:'opsz' 96; font-weight:400; font-size:clamp(26px,3vw,38px); line-height:1.08; letter-spacing:-.01em; color:var(--surface); margin:0; }
+.fn-sub{ font-family:var(--read); font-size:15px; line-height:1.55; color:rgba(246,241,233,.66); margin:14px 0 0; max-width:48ch; }
+.footer-news .field{ border-color:rgba(246,241,233,.42); max-width:none; }
+.footer-news .field input{ color:var(--surface); }
+.footer-news .field input::placeholder{ color:rgba(246,241,233,.5); }
+.footer-news .field button{ color:var(--surface); }
+.footer-news .fn-note{ color:rgba(246,241,233,.5); }
+.footer-news-rule{ margin:44px 0; }
+@media (max-width:760px){ .footer-news{ grid-template-columns:1fr; gap:26px; } }
+
+/* Slim dismissible newsletter bar — bottom-fixed, paper type on ink. */
+.nl-bar{ position:fixed; left:0; right:0; bottom:0; z-index:70; background:var(--ink); color:var(--surface);
+  transform:translateY(100%); transition:transform var(--settle); box-shadow:0 -8px 30px rgba(28,24,21,.2); }
+.nl-bar.show{ transform:translateY(0); }
+.nl-bar-inner{ max-width:var(--maxw); margin:0 auto; padding:14px var(--gutter); display:flex; align-items:center; gap:24px; }
+.nl-bar-copy{ font-family:var(--read); font-size:15px; color:var(--surface); margin:0; flex:1; }
+.nl-bar-copy strong{ font-weight:600; }
+.nl-bar-form .field{ border-color:rgba(246,241,233,.42); padding-bottom:6px; max-width:300px; margin-left:auto; }
+.nl-bar-form .field input{ color:var(--surface); font-size:16px; }
+.nl-bar-form .field input::placeholder{ color:rgba(246,241,233,.5); }
+.nl-bar-form .field button{ color:var(--surface); }
+.nl-bar-close{ color:var(--surface); flex:0 0 auto; }
+@media (max-width:760px){
+  .nl-bar-inner{ flex-wrap:wrap; gap:8px 14px; padding:12px var(--gutter); }
+  .nl-bar-copy{ flex:1 1 70%; font-size:13px; }
+  .nl-bar-close{ order:2; }
+  .nl-bar-form{ flex:1 1 100%; }
+  .nl-bar-form .field{ margin-left:0; max-width:none; }
+}
+
 /* ---------- SEARCH OVERLAY ------------------------------------------------- */
 .search-overlay{
   position:fixed; inset:0; z-index:90; background:rgba(246,241,233,.98);
@@ -341,8 +374,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role=button]:focus-
 .page-crumbs{ margin-bottom:22px; }
 
 /* inline newsletter module (mid-article) */
-.inline-news{ border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); padding:40px 0; margin:48px 0; text-align:center; }
-.inline-news .in-eyebrow{ display:block; margin-bottom:16px; }
+.inline-news{ max-width:640px; margin:56px auto; padding:44px 36px; text-align:center;
+  border-top:1px solid color-mix(in srgb, var(--accent-local) 32%, var(--hairline));
+  border-bottom:1px solid color-mix(in srgb, var(--accent-local) 32%, var(--hairline));
+  background:color-mix(in srgb, var(--accent-local) 5%, var(--surface)); }
+.inline-news .in-eyebrow{ display:block; margin-bottom:16px; color:var(--accent-local); }
 .inline-news .in-line{ font-family:var(--serif); font-variation-settings:'opsz' 72; font-weight:400; font-size:25px; line-height:1.2; letter-spacing:-.01em; margin:0 auto 24px; max-width:24ch; }
 .inline-news form{ display:flex; justify-content:center; }
 .inline-news .field{ max-width:400px; }

@@ -2,6 +2,7 @@
 import { ClientRouter } from 'astro:transitions';
 import { getImage } from 'astro:assets';
 import Seo from '../components/Seo.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { organizationSchema, websiteSchema } from '../lib/seo';
 import defaultOgAsset from '../assets/blog-placeholder-1.jpg';
 import { getSearchIndex } from '../lib/articles';
@@ -192,6 +193,17 @@ const searchIndex = await getSearchIndex();
 		{!noFooter && (
 		<footer class="footer">
 			<div class="wrap">
+				<div class="footer-news">
+					<div class="fn-copy">
+						<span class="eyebrow fn-eyebrow">Arahkaii Weekly</span>
+						<p class="fn-line">One considered edit, every Sunday.</p>
+						<p class="fn-sub">The week's most thoughtful style, beauty, dining and culture — gathered slowly, sent once. Free, unsubscribe anytime.</p>
+					</div>
+					<NewsletterSignup class="fn-form" source="footer">
+						<p slot="note" class="field-note fn-note">No noise. One edit, on Sundays.</p>
+					</NewsletterSignup>
+				</div>
+				<div class="rule footer-news-rule"></div>
 				<div class="footer-grid">
 					<div class="mast">
 						<a class="wordmark" href="/" aria-label="Arahkaii — home">
@@ -282,6 +294,18 @@ const searchIndex = await getSearchIndex();
 			</div>
 		</div>
 
+		<!-- Slim, dismissible newsletter bar — appears after ~50% scroll, remembers
+		     dismissal, and never shows once subscribed. Wired in the script below. -->
+		<aside class="nl-bar" aria-label="Subscribe to Arahkaii Weekly" hidden>
+			<div class="nl-bar-inner">
+				<p class="nl-bar-copy"><strong>Arahkaii Weekly</strong> — the week's edit, every Sunday. Free.</p>
+				<NewsletterSignup class="nl-bar-form" source="sticky-bar" />
+				<button class="nl-bar-close icon-btn" type="button" aria-label="Dismiss">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+				</button>
+			</div>
+		</aside>
+
 		<!-- Build-time article index, read by the client search overlay -->
 		<script
 			is:inline
@@ -298,6 +322,7 @@ const searchIndex = await getSearchIndex();
 
 			const SKEY = 'arahkaii:saved';
 			const SUBKEY = 'arahkaii:subscribed';
+			const NLBAR_KEY = 'arahkaii:nlbar-dismissed';
 			const BOOKMARK =
 				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg>';
 			const SUBSCRIBED_HTML =
@@ -630,6 +655,21 @@ const searchIndex = await getSearchIndex();
 						const h = document.documentElement.scrollHeight - window.innerHeight;
 						prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
 					}
+					// Reveal the slim newsletter bar past ~50% scroll (once), unless
+					// dismissed or already subscribed.
+					const bar = document.querySelector<HTMLElement>('.nl-bar');
+					if (bar && !bar.classList.contains('show')) {
+						let dismissed = false;
+						try {
+							dismissed = !!localStorage.getItem(NLBAR_KEY) || isSubscribed();
+						} catch {}
+						const h2 = document.documentElement.scrollHeight - window.innerHeight;
+						const pct = h2 > 0 ? window.scrollY / h2 : 0;
+						if (!dismissed && pct > 0.5) {
+							bar.hidden = false;
+							requestAnimationFrame(() => bar.classList.add('show'));
+						}
+					}
 				};
 				(window as any).__arahkaiiScroll = onScroll;
 				window.addEventListener('scroll', onScroll, { passive: true });
@@ -638,6 +678,17 @@ const searchIndex = await getSearchIndex();
 				document.addEventListener('keydown', (e) => {
 					if (e.key === 'Escape')
 						document.querySelector('.search-overlay.open')?.classList.remove('open');
+				});
+
+				// Newsletter bar: dismiss (remembered) closes it for good.
+				document.addEventListener('click', (e) => {
+					const close = (e.target as HTMLElement).closest('.nl-bar-close');
+					if (!close) return;
+					const bar = document.querySelector<HTMLElement>('.nl-bar');
+					bar?.classList.remove('show');
+					try {
+						localStorage.setItem(NLBAR_KEY, '1');
+					} catch {}
 				});
 
 				document.addEventListener('submit', (e) => {
@@ -660,6 +711,10 @@ const searchIndex = await getSearchIndex();
 					try {
 						localStorage.setItem(SUBKEY, v);
 					} catch {}
+					// MailerLite adapter slots in HERE: await fetch('/api/subscribe',
+					// { method:'POST', body: JSON.stringify({ email:v,
+					// source: form.dataset.source }) }) before the confirmation UI.
+					document.querySelector('.nl-bar')?.classList.remove('show');
 					if (field) {
 						field.classList.add('done');
 						field.dataset.locked = '1';

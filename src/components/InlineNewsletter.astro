@@ -1,16 +1,21 @@
 ---
-// Mid-article newsletter module. For use inside .mdx article bodies.
+// Newsletter module for article bodies — used mid-article (relocated by script
+// after the 2nd H2) and at the end of an article, and droppable in .mdx bodies.
 import NewsletterSignup from './NewsletterSignup.astro';
 interface Props {
 	line?: string;
+	source?: string;
+	class?: string;
 }
 const {
 	line = 'Enjoying this? The same eye, once a week — Sundays, in your inbox.',
+	source = 'article',
+	class: cls,
 } = Astro.props;
 ---
 
-<div class="inline-news">
+<div class:list={['inline-news', cls]}>
 	<span class="eyebrow in-eyebrow">Arahkaii Weekly</span>
 	<p class="in-line">{line}</p>
-	<NewsletterSignup />
+	<NewsletterSignup source={source} />
 </div>
