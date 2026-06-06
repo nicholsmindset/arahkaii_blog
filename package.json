@@ -27,5 +27,8 @@
     "@tailwindcss/postcss": "^4.3.0",
     "gray-matter": "^4.0.3",
     "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
