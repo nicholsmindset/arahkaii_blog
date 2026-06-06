@@ -99,3 +99,24 @@
 .article-body figcaption{ font-family:var(--sans); font-size:12px; letter-spacing:.04em; color:var(--muted); margin-top:12px; }
 .article-body strong{ font-weight:600; }
 .article-body em{ font-style:italic; }
+
+/* ---------- PRINT — clean paper, no chrome ------------------------------- */
+@media print {
+  /* Hide all interactive / navigational chrome */
+  .nav, .progress, .skip-link, .search-overlay, .footer,
+  .share-rail, .toast, .save-btn, .follow-btn,
+  .read-next, .more-from, .end-orn, .inline-news, .art-news,
+  .mobile-menu, .nav-tools {
+    display: none !important;
+  }
+  /* Ink on white; let the column run full width */
+  :root { --surface: #fff; --ink: #000; }
+  body { background: #fff; color: #000; }
+  main, .wrap, .article-body { max-width: none; width: auto; margin: 0; }
+  .art-hero img, .article-body img { break-inside: avoid; filter: none; }
+  /* Underline links and reveal their targets */
+  .article-body a { text-decoration: underline; color: #000; }
+  .article-body a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 11px; color: #555; }
+  h1, h2, h3 { break-after: avoid; }
+  p, blockquote, figure { orphans: 3; widows: 3; }
+}

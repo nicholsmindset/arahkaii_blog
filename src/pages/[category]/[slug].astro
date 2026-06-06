@@ -2,7 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import GuideLayout from '../../layouts/GuideLayout.astro';
-import { getCards } from '../../lib/articles';
+import { getCards, estimateReadingMinutes } from '../../lib/articles';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -20,6 +20,9 @@ if (!author) {
 }
 const { Content } = await render(post);
 const d = post.data;
+
+// Reading time: honour an explicit frontmatter value, else estimate from the body.
+const readingMinutes = d.readingMinutes ?? estimateReadingMinutes(post.body);
 
 // Recirculation, drawn from the shared card index.
 const cards = await getCards();
@@ -65,7 +68,7 @@ const layoutExtra =
 	category={d.category}
 	tags={d.tags}
 	date={d.date}
-	readingMinutes={d.readingMinutes}
+	readingMinutes={readingMinutes}
 	heroImage={d.heroImage}
 	heroCaption={d.heroCaption}
 	heroCredit={d.heroCredit}

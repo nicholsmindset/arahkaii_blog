@@ -34,7 +34,12 @@ const ratioClass = `r-${ratio}`;
 	<div class:list={['img', image ? 'real' : `ph ${tone}`, ratioClass, 'blurup']}>
 		{
 			image ? (
-				<Image src={image} alt={title} />
+				<Image
+					src={image}
+					alt={title}
+					widths={[400, 800, 1200]}
+					sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
+				/>
 			) : (
 				label && <span class="lab">{label}</span>
 			)

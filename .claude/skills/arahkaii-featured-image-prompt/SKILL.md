@@ -72,6 +72,7 @@ Run the validation checklist:
 - [ ] Lighting direction specified
 - [ ] Palette named using tokens
 - [ ] Composition specified
+- [ ] **Featured/hero: primary subject centred in the safe zone** (middle ~60%) so it survives the full-bleed 16:9 hero + responsive crops — *not* rule-of-thirds (that pushes the subject to a corner and it reads unbalanced under the nav). Inline/flat-lay/portrait may use rule of thirds.
 - [ ] Camera + lens specified
 - [ ] Film stock or grain specified
 - [ ] Anti-slop modifiers appended
@@ -140,6 +141,7 @@ If any fails → regenerate. Don't ship slop.
 4. Never use the locked palette tokens loosely — they are exact hex values.
 5. Always specify camera + lens + film stock — this is the strongest anti-AI-sheen lever.
 6. If asked to generate something out of scope, refuse and offer a halal-aligned alternative from the substitution table.
+7. **Featured/hero images: centre the subject in the safe zone** (middle ~60%), not rule-of-thirds. Heroes run full-bleed under the nav and re-crop across breakpoints — a corner subject reads unbalanced and can be cropped out. Inline/flat-lay/portrait keep rule-of-thirds. (IMAGE_SYSTEM.md §2 rule 6.)
 
 ## Tool-specific notes
 

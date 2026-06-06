@@ -35,7 +35,7 @@ Every image must read in one of these palette families. If the dominant colours 
 3. **No symmetrical perfection on faces.** Editorial faces have asymmetry, pores, real skin texture.
 4. **No generic "wellness woman in a robe with a green smoothie".** No "businesswoman with a folder smiling at the camera". No "happy diverse group laughing over salad". These are AI-slop and stock-slop tells.
 5. **No cluttered compositions.** Editorial = negative space. If you can't see at least 30% of the frame as breathing room, it's too busy.
-6. **Composition follows rule of thirds, never centred mug-shot framing** (unless it's an intentional portrait with editorial styling).
+6. **Composition follows rule of thirds for inline, flat-lay and portrait shots** — never centred mug-shot framing (unless it's an intentional portrait with editorial styling). **EXCEPTION — featured / hero images:** keep the primary subject **centred and within the central safe zone** (roughly the middle 60% horizontally and vertically). Hero images run full-bleed under the transparent nav and are re-cropped across breakpoints (16:9 desktop → tighter on mobile); an off-centre, rule-of-thirds subject reads as unbalanced and can be cropped out of frame entirely. Centre the focal point; let the negative space sit *around* it, not push the subject to a corner.
 7. **No text in the image.** All text overlays are done in post (Canva/Figma).
 8. **One subject focus per image.** Multiple competing focal points = scroll-past.
 
@@ -262,7 +262,7 @@ Always include `aspect ratio [X:Y]` in the prompt.
 - [ ] Subject is named specifically (not "a woman" but "a modern Asian woman in a wool coat")
 - [ ] Lighting direction is specified
 - [ ] Palette is named (use the tokens above)
-- [ ] Composition is specified (rule of thirds, negative space side)
+- [ ] Composition is specified (rule of thirds + negative-space side for inline; **centred subject in the safe zone for featured/hero**)
 - [ ] Camera + lens specified
 - [ ] Film stock or grain specified
 - [ ] Anti-slop modifiers appended (Section 4)
@@ -283,6 +283,7 @@ For every generated image, before using:
 2. Are the hands and faces anatomically correct?
 3. Is the palette inside the locked tokens?
 4. Is there at least 30% breathing room (negative space)?
+4b. **If this is a featured/hero image: is the focal subject centred in the safe zone?** Imagine it cropped tighter on mobile and full-bleed under the nav — does the subject stay in frame and balanced? If it drifts to a corner, regenerate or recrop.
 5. Is there any alcohol, club lighting, or banned subject?
 6. Would this look at home in *Tatler Asia* or *Vogue Arabia*?
 7. Is there grain / texture, or is it that smooth AI plasticness?

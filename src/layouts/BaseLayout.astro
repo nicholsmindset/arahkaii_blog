@@ -84,6 +84,9 @@ const searchIndex = await getSearchIndex();
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#F6F1E9" />
 		<meta name="generator" content={Astro.generator} />
 		<link
 			rel="alternate"
@@ -165,7 +168,7 @@ const searchIndex = await getSearchIndex();
 							></path></svg
 						>
 					</a>
-					<button class="icon-btn nav-burger js-burger" aria-label="Menu" type="button">
+					<button class="icon-btn nav-burger js-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
 							><path d="M4 8h16M4 16h16"></path></svg
 						>
@@ -173,7 +176,7 @@ const searchIndex = await getSearchIndex();
 				</div>
 			</div>
 
-			<div class="mobile-menu">
+			<div class="mobile-menu" id="mobile-menu">
 				{categories.map((c) => <a href={`/${c.toLowerCase()}`}>{c}</a>)}
 				<a href="/latest">Latest</a>
 				<a href="/reading-list">Reading list</a>
@@ -254,7 +257,7 @@ const searchIndex = await getSearchIndex();
 		)}
 
 		<!-- Full-screen search overlay (wired in the script below) -->
-		<div class="search-overlay">
+		<div class="search-overlay" role="dialog" aria-modal="true" aria-label="Search the archive">
 			<div class="search-top">
 				<button class="icon-btn js-search-close" aria-label="Close search" type="button">
 					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
@@ -275,7 +278,7 @@ const searchIndex = await getSearchIndex();
 				<div class="search-sugs">
 					{categories.map((c) => <button class="chip" type="button">{c}</button>)}
 				</div>
-				<div class="search-results" hidden></div>
+				<div class="search-results" role="region" aria-live="polite" aria-label="Search results" hidden></div>
 			</div>
 		</div>
 
@@ -343,6 +346,9 @@ const searchIndex = await getSearchIndex();
 				if (!toastEl) {
 					toastEl = document.createElement('div');
 					toastEl.className = 'toast';
+					toastEl.setAttribute('role', 'status');
+					toastEl.setAttribute('aria-live', 'polite');
+					toastEl.setAttribute('aria-atomic', 'true');
 					document.body.appendChild(toastEl);
 				}
 				toastEl.textContent = msg;

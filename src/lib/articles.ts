@@ -12,6 +12,16 @@ export function toneFor(i: number): Tone {
 	return TONES[i % TONES.length];
 }
 
+/**
+ * Estimate reading time from raw MDX body at ~225 wpm (average adult prose
+ * speed). Strips nothing fancy — frontmatter is already excluded from `.body`,
+ * and the small overcount from markdown/JSX tokens is negligible at this rate.
+ */
+export function estimateReadingMinutes(body: string | undefined): number {
+	const words = (body ?? '').trim().split(/\s+/).filter(Boolean).length;
+	return Math.max(1, Math.round(words / 225));
+}
+
 export interface PostCard {
 	id: string;
 	slug: string;
@@ -64,7 +74,7 @@ export async function getCards(): Promise<PostCard[]> {
 			authorName,
 			byline: `By ${authorName}`,
 			date: p.data.date,
-			readingMinutes: p.data.readingMinutes,
+			readingMinutes: p.data.readingMinutes ?? estimateReadingMinutes(p.body),
 			tone: toneFor(i),
 			image: p.data.heroImage,
 			heroCaption: p.data.heroCaption,

@@ -71,6 +71,15 @@
 .il-attr{ font-family:var(--sans); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
   color:var(--surface); opacity:.66; margin:28px 0 0; }
 
+/* Most read — base list (no pick): two readable columns of titled rows. */
+.mr-list{ display:grid; grid-template-columns:1fr 1fr; gap:0 56px; }
+.mr-item{ display:block; padding:20px 0; border-top:1px solid var(--hairline); }
+.mr-t{ font-family:var(--serif); font-variation-settings:'opsz' 72; font-weight:420;
+  font-size:19px; line-height:1.22; letter-spacing:-.005em; color:var(--ink);
+  transition:color var(--settle); }
+.mr-item:hover .mr-t{ color:var(--accent); }
+.mr-m{ font-family:var(--sans); font-size:12px; letter-spacing:.04em; color:var(--muted); margin-top:6px; }
+
 /* Most read paired with an editor's pick. */
 .mostread.has-pick .mr-layout{ display:grid; grid-template-columns:1.5fr 1fr; gap:72px; align-items:start; }
 .mostread.has-pick .mr-list{ grid-template-columns:1fr; }

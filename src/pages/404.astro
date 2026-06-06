@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// On-brand not-found page. noindex (it's an error surface, never a destination),
+// and a quiet way back: home, the eight categories, and the search overlay.
+const categories = [
+	'Style',
+	'Beauty',
+	'Dining',
+	'Travel',
+	'Culture',
+	'Living',
+	'People',
+	'Guides',
+];
+---
+
+<BaseLayout title="Page not found — Arahkaii" description="The page you were looking for has wandered off the path." noindex={true}>
+	<main class="wrap nf">
+		<span class="eyebrow nf-eyebrow">Error 404</span>
+		<h1 class="nf-title">This page has wandered off the path.</h1>
+		<p class="nf-dek">
+			The story you were looking for may have moved, been renamed, or never quite
+			made it to print. Find your way back below — or search the archive.
+		</p>
+
+		<div class="nf-actions">
+			<a class="link-more" href="/">Return home</a>
+			<button class="link-more js-search" type="button">Search the archive</button>
+		</div>
+
+		<nav class="nf-cats" aria-label="Browse categories">
+			{categories.map((c) => <a href={`/${c.toLowerCase()}`}>{c}</a>)}
+		</nav>
+	</main>
+</BaseLayout>
+
+<style>
+	.nf {
+		min-height: 56vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding-block: clamp(80px, 14vh, 160px);
+	}
+	.nf-eyebrow {
+		color: var(--muted);
+	}
+	.nf-title {
+		font-family: var(--serif);
+		font-variation-settings: 'opsz' 144;
+		font-weight: 380;
+		font-size: clamp(30px, 5vw, 56px);
+		line-height: 1.1;
+		letter-spacing: -0.015em;
+		color: var(--ink);
+		text-wrap: balance;
+		max-width: 14ch;
+		margin: 18px 0 0;
+	}
+	.nf-dek {
+		font-family: var(--serif);
+		font-size: 18px;
+		line-height: 1.6;
+		color: var(--muted);
+		max-width: 52ch;
+		margin: 22px 0 0;
+	}
+	.nf-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 28px;
+		justify-content: center;
+		margin-top: 34px;
+	}
+	.nf-actions .link-more {
+		background: none;
+		border: 0;
+		cursor: pointer;
+		font: inherit;
+	}
+	.nf-cats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 26px;
+		justify-content: center;
+		margin-top: 52px;
+		padding-top: 30px;
+		border-top: 1px solid var(--hairline);
+		max-width: 620px;
+	}
+	.nf-cats a {
+		font-family: var(--sans);
+		font-size: 12px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--muted);
+		transition: color var(--settle);
+	}
+	.nf-cats a:hover {
+		color: var(--ink);
+	}
+</style>

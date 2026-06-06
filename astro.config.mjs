@@ -11,6 +11,7 @@ import netlify from '@astrojs/netlify';
 
 const CATEGORIES = new Set([
 	'style',
+	'beauty',
 	'dining',
 	'travel',
 	'culture',
