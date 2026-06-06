@@ -12,6 +12,8 @@ heroImage: "../../../assets/images/archive/modest-fashion-streetwear-southeast-a
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "modest-fashion-streetwear-southeast-asia-muslim-fashion-2025"
+seoTitle: "Modest fashion trends reshaping Southeast Asia"
+metaDescription: "How a new generation of Southeast Asian designers is reshaping modest fashion — where streetwear, faith and tropical-climate dressing quietly meet."
 ---
 
 Modest fashion in Southeast Asia is undergoing a creative revolution, driven by designers who refuse to choose between faith and style. For further reading, see [The Modist](https://themodist.com).

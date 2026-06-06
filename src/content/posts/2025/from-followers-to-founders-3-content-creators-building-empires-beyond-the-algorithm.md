@@ -11,6 +11,13 @@ heroImage: "../../../assets/images/archive/from-followers-to-founders-3-content-
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "from-followers-to-founders-3-content-creators-building-empires-beyond-the-algorithm"
+seoTitle: "From followers to founders: 3 creator-led brands"
+metaDescription: "How three content creators turned audiences into companies — Nami Matcha, Little Puffy and Alchemai — and the quiet playbook behind creator-led brands."
+listName: "Three creator-led brands built beyond the algorithm"
+listItems:
+  - "Nami Matcha"
+  - "Little Puffy"
+  - "Alchemai"
 ---
 
 The shift from content creators to founders in fashion represents the biggest power transfer in the industry since social media itself. The playbook for creator success is being rewritten. Where once a million subscribers signaled the pinnacle of digital achievement, today's most ambitious influencers are asking a different question: what happens when you stop selling someone else's products and start building your own?

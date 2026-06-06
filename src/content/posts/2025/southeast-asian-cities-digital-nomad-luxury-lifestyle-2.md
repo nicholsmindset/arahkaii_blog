@@ -11,6 +11,15 @@ heroImage: "../../../assets/images/archive/southeast-asian-cities-digital-nomad-
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "southeast-asian-cities-digital-nomad-luxury-lifestyle-2"
+seoTitle: "The best digital nomad cities in Southeast Asia"
+metaDescription: "Five Southeast Asian cities for remote workers, weighed on cost, community, connectivity and lifestyle — from Chiang Mai's ease to Singapore's polish."
+listName: "The best digital nomad cities in Southeast Asia"
+listItems:
+  - "Chiang Mai"
+  - "Bali"
+  - "Ho Chi Minh City"
+  - "Kuala Lumpur"
+  - "Singapore"
 ---
 
 Choosing between the best digital nomad cities in Southeast Asia comes down to cost, community, connectivity, and lifestyle. From Chiang Mai’s legendary affordability to Singapore’s cutting-edge infrastructure, these five cities offer everything remote workers need to thrive in the tropics. For the latest city rankings, visit [Nomad List](https://nomadlist.com).

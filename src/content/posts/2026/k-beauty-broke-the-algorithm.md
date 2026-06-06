@@ -12,6 +12,17 @@ heroImage: "../../../assets/images/archive/k-beauty-broke-the-algorithm/Gemini_G
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "k-beauty-broke-the-algorithm"
+seoTitle: "Why is Korean skincare so good? Inside K-beauty"
+metaDescription: "Why is Korean skincare so good? How Seoul's eight-week product cycles, weird ingredients and the Olive Young machine rewired global beauty."
+faq:
+  - q: "Why is Korean skincare so good?"
+    a: "Korea built an entire system around skincare — fast eight-week development cycles, government-backed exports, dedicated cosmetic science programmes and a concentrated supply chain all optimised for speed. The result is better products, tested by some of the world's most demanding consumers, at prices that make trying them easy."
+  - q: "Why is Korean skincare cheaper than Western brands?"
+    a: "Korean brands operate more like fast fashion than traditional beauty, taking products from concept to shelf in around eight weeks rather than 12 to 18 months. Constant competition and shared OEM manufacturers keep prices reasonable, so impulse-buying becomes a reasonable life choice."
+  - q: "What is PDRN, the salmon DNA ingredient in K-beauty?"
+    a: "PDRN — polydeoxyribonucleotide — is derived from salmon reproductive cells and is being positioned as the next big anti-ageing breakthrough. Korean brands are already deep into PDRN serums, under-eye patches and ampoules while Western brands are still catching up."
+  - q: "Why do K-beauty products go viral on TikTok?"
+    a: "K-beauty was already perfectly formatted for the platform — visually interesting textures, ingredients that demand explanation, affordable price points and routines designed to be documented. Products like the COSRX Snail Mucin Essence spread because they were engineered, probably unintentionally, for exactly how beauty content travels."
 ---
 
 K-beauty didn't just change skincare routines—it rewired the entire global beauty industry from Seoul outward. _Your entire skincare routine was probably invented in Seoul. That's not an accident._

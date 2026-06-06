@@ -11,6 +11,8 @@ heroImage: "../../../assets/images/archive/asian-billionaire-philanthropy-quiet-
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "asian-billionaire-philanthropy-quiet-revolution"
+seoTitle: "Asian billionaire philanthropy: the quiet revolution"
+metaDescription: "How Asia's wealthiest are reshaping global giving — $3.7 trillion, given quietly. Inside a philanthropy that prizes results over recognition."
 ---
 
 Asian billionaire philanthropy is reshaping global giving at an unprecedented scale, driven by a new generation that views wealth as responsibility rather than achievement. In 2013, Azim Premji walked into a conference room in Bangalore and announced he would give away $21 billion—nearly his entire fortune—to transform education across India. There were no television cameras, no press releases timed for maximum impact, no celebrity gala to commemorate the moment. The decision had been made quietly, within his family, and would be executed the same way: through trusted networks, modest administrative overhead, and an almost pathological aversion to publicity.

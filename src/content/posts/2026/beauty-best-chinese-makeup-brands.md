@@ -11,6 +11,14 @@ heroImage: "../../../assets/images/archive/beauty-best-chinese-makeup-brands/c-b
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "beauty-best-chinese-makeup-brands"
+seoTitle: "The best Chinese makeup brands worth knowing in 2026"
+metaDescription: "From Judydoll to Florasis, the Chinese makeup brands shaping C-beauty — what to buy, where they sit, and why the world is paying attention."
+listName: "The best Chinese makeup brands, 2026"
+listItems:
+  - "Judydoll"
+  - "Flower Knows"
+  - "Joocyee"
+  - "Florasis"
 ---
 
 _K-beauty had its moment. Now Chinese makeup brands are taking over your FYP—and honestly? We're here for it._

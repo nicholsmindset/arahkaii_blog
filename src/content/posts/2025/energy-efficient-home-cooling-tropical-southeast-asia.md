@@ -10,6 +10,17 @@ heroImage: "../../../assets/images/archive/energy-efficient-home-cooling-tropica
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "energy-efficient-home-cooling-tropical-southeast-asia"
+seoTitle: "How to keep a house cool without AC in the tropics"
+metaDescription: "The science of staying cool for less — how air movement, passive design and a wiser thermostat cut tropical cooling bills by a third, without losing comfort."
+faq:
+  - q: "How can I keep a house cool without AC in the tropics?"
+    a: "Lean on passive design and air movement. Shade east and west facades with overhangs and trees to block heat before it enters, use thermal mass and cross-ventilation, and run ceiling fans — moving air accelerates heat loss from the skin, so a room feels cooler at a higher temperature."
+  - q: "What temperature should I set my air conditioner to in a tropical climate?"
+    a: "Around 25°C, the setpoint recommended by Singapore's Building and Construction Authority. Paired with ceiling fans, a room at 26.5°C feels as comfortable as a still room at 24°C while using roughly a third less energy."
+  - q: "Do ceiling fans actually save energy versus air conditioning?"
+    a: "Yes, considerably. A ceiling fan draws around 75 watts against 1,000–3,000 watts for an air conditioner. Running fans lets you raise the thermostat, and the saving from the higher setpoint more than offsets the fan's consumption — hybrid cooling delivers energy reductions of up to 32%."
+  - q: "Why does my house feel hot even with the air conditioner running?"
+    a: "Thermal comfort depends on more than air temperature. Radiant heat from sun-warmed surfaces, high humidity and still air all make a room feel warmer, so two rooms at the same thermostat setting can feel very different. Adding air movement and external shading addresses the causes the thermostat alone cannot."
 ---
 
 Home cooling in tropical Southeast Asia is more than a comfort question—it’s an energy crisis, a design challenge, and a cultural negotiation all at once. There's a thermostat battle happening in homes across Southeast Asia. One person wants 22°C. Another insists 24°C is cold enough. Someone else quietly bumps it to 20°C when no one's looking. The electricity bill arrives, and everyone blames everyone else.

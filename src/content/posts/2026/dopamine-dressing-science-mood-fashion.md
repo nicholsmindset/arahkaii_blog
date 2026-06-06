@@ -11,6 +11,8 @@ heroImage: "../../../assets/images/archive/dopamine-dressing-science-mood-fashio
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "dopamine-dressing-science-mood-fashion"
+seoTitle: "Dopamine dressing: the science of dressing for joy"
+metaDescription: "Dopamine dressing is more than a trend. The neuroscience of colour, mood and enclothed cognition — and how to build a personal palette that genuinely lifts you."
 faq:
   - q: "What is dopamine dressing?"
     a: "Dopamine dressing is the intentional selection of clothing based on the emotional response it triggers. Coined by fashion psychologist Dr. Dawnn Karen in 2020, it involves wearing colours and styles that spark joy or confidence. While named after the neurotransmitter dopamine, the practice works through psychological association rather than direct neurochemical effects."

@@ -12,6 +12,8 @@ heroImage: "../../../assets/images/archive/brightspot-supermrkt-2025-where-jakar
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "brightspot-supermrkt-2025-where-jakartas-creative-economy-comes-to-shop"
+seoTitle: "Brightspot SuperMRKT 2025: Jakarta's creative market"
+metaDescription: "Inside Brightspot SuperMRKT 2025 at Agora Lifestyle Mall — 220+ Indonesian local brands, emerging designers and the labels worth seeking out in Jakarta."
 ---
 
 Brightspot SuperMRKT Jakarta returns as Indonesia's most influential creative market, and the 2025 edition is its most ambitious yet. _Indonesia's most influential creative market returns with a bold new concept, transforming Agora Lifestyle Mall into a retro-futuristic playground for 220+ of the nation's most exciting local brands._

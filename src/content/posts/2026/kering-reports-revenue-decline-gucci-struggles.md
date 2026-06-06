@@ -11,6 +11,17 @@ heroImage: "../../../assets/images/archive/kering-reports-revenue-decline-gucci-
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "kering-reports-revenue-decline-gucci-struggles"
+seoTitle: "Why Gucci sales are declining — and Kering's plan"
+metaDescription: "Kering's revenue fell 15% as Gucci sales declined sharply. Inside the deliberate repositioning trading volume for the scarcity that once defined the house."
+faq:
+  - q: "Why are Gucci sales declining?"
+    a: "The decline is largely deliberate repositioning rather than simple failure. Kering is strangling the wholesale channel — down 25% at Gucci — to trade volume for exclusivity, while creative director Sabato De Sarno shifts the house toward a quieter aesthetic after years of maximalism."
+  - q: "How much did Kering's revenue fall?"
+    a: "Kering reported a 15% revenue decline, with group revenue falling to €4.4 billion. Gucci contributed €1.6 billion — a 14% comparable decline that nonetheless improved on the brutal first half of the year."
+  - q: "Is Gucci actually in financial trouble?"
+    a: "The figures point to deliberate transformation, not survival mode. Kering's first-half free cash flow reached €2.4 billion, helped by €1.3 billion in real estate transactions and a €4 billion beauty division sale to L'Oréal — the reserves of a company funding a turnaround, not scrambling."
+  - q: "Will Gucci recover?"
+    a: "Recovery timelines stretch toward late 2026 and depend on patience. Early signals encourage — De Sarno's La Famiglia and Giglio bags show traction, and North America and Western Europe showed stronger momentum — but luxury rehabilitation typically takes years rather than quarters."
 ---
 
 The Kering revenue decline and Gucci's struggles have become the fashion industry's most-watched corporate story of 2025. Kering's 15% revenue decline has dominated financial headlines, with Gucci absorbing most of the blame. The reality proves more nuanced.

@@ -19,6 +19,22 @@ heroImage: "../../../assets/images/archive/halal-fine-dining-singapore-2026/best
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "halal-fine-dining-singapore-2026"
+seoTitle: "Halal fine dining in Singapore: 12 best for 2026"
+metaDescription: "Singapore's twelve finest halal dining rooms for 2026 — Michelin stars, Asia's 50 Best, A5 wagyu — each with its halal status declared plainly."
+listName: "Best halal fine dining restaurants in Singapore, 2026"
+listItems:
+  - "Restaurant Fiz"
+  - "Seroja"
+  - "The White Label Restaurant"
+  - "Restaurant Espoir"
+  - "Oud Restaurant"
+  - "Permata at Gedung Kuning"
+  - "The Malayan Council at Fullerton"
+  - "Malayan Settlement"
+  - "Charr'd"
+  - "Gyusei Gyukatsu Wagyu Steakhouse"
+  - "Ammakase"
+  - "Rempapa by Chef Damian D'Silva"
 ---
 
 The kitchen at Restaurant Fiz is ten steps from your table. You can hear the ladle touch the bottom of the copper pot. The room is narrow. The lighting is low. The tasting menu has eleven dishes, arranged in a sequence that Chef Hafizzul Hashim calls — without ceremony — a story.
