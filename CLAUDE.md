@@ -97,6 +97,21 @@ Two sources, **one human gate**:
   and the article components in `src/components/article/` — match the prototype,
   don't reinvent it.
 
+## Publishing — `/publish`
+
+Claude Code is the CMS. Run **`/publish`** (`.claude/commands/publish.md`) to
+turn a finished draft into a live post: write the MDX, source/generate images
+behind the **human review gate**, validate, commit. Helper scripts:
+
+- `scripts/new-post.mjs` — writes a schema-valid post + places the hero into
+  `src/assets/images/<slug>/` (local-first). Refuses without a `--hero-credit`.
+- `scripts/image-prompt.mjs` — the editorial prompt base (modest-luxury, 4200K).
+- `scripts/image-gen.mjs` — OpenRouter generation (key-gated; sourcing via the
+  Firecrawl MCP works without a key).
+
+Image rules unchanged: official site first; **never commit a sourced image
+without approval + a logged licence**; generate when rights are unclear.
+
 ## Project layout
 
 ```
@@ -108,12 +123,17 @@ src/
   layouts/                    # BaseLayout (nav/footer/progress) · ArticleLayout
   pages/[category]/[...slug].astro
   styles/                     # tokens.css · global.css · article.css
-scripts/                      # publish automation — NOT built yet
+scripts/                      # new-post.mjs · image-prompt.mjs · image-gen.mjs · migrate-wp.mjs
+.claude/commands/publish.md   # the /publish runbook
 ```
 
-## Not yet built (deferred, in priority order)
+## Not yet wired (deferred)
 
-Homepage + home components (Hero/EditLane/Spotlight), category index pages,
-search/save/reading-list JS, RSS feed wiring, the `scripts/` publish automation
-(OpenRouter / Firecrawl / Cloudflare R2 / MailerLite), and the WordPress import
-of the remaining ~30 posts.
+- **AI image generation** — `scripts/image-gen.mjs` ready; needs
+  `OPENROUTER_API_KEY` in `.env` (sourcing via Firecrawl works now).
+- **Cloudflare R2** — local-first today; migrate when volume justifies it.
+- **MailerLite** — the signup form is presentational; RSS digest + capture API
+  reserved (`MAILERLITE_API_KEY`).
+- **Content** — real per-author bylines (all migrated posts are `nadra-nichols`),
+  replacement images for the 4 placeholder posts, finishing the hidden drafts.
+- **`netlify.toml` 301s** are generated from `legacyWpSlug` via `astro.config.mjs`.
