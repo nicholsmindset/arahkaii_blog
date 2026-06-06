@@ -4,7 +4,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const posts = defineCollection({
-	loader: glob({ pattern: '**/*.mdx', base: './src/content/posts' }),
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
 	schema: ({ image }) =>
 		z.object({
 			title: z.string().max(110),
@@ -27,6 +27,11 @@ const posts = defineCollection({
 			heroCredit: z.string(), // required
 			draft: z.boolean().default(false),
 			legacyWpSlug: z.string().optional(),
+			// SEO overrides — all optional, additive (existing posts still build).
+			seoTitle: z.string().max(70).optional(),
+			metaDescription: z.string().max(160).optional(),
+			updatedDate: z.coerce.date().optional(),
+			noindex: z.boolean().default(false),
 		}),
 });
 

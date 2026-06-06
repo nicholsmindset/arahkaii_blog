@@ -1,5 +1,9 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { getImage } from 'astro:assets';
+import Seo from '../components/Seo.astro';
+import { organizationSchema, websiteSchema } from '../lib/seo';
+import defaultOgAsset from '../assets/blog-placeholder-1.jpg';
 import '../styles/global.css';
 
 // Self-hosted variable fonts (Fontsource). Fraunces `full` carries the
@@ -16,7 +20,16 @@ interface Props {
 	description?: string;
 	activeCategory?: string;
 	overHero?: boolean;
+	/** Absolute URL to an OG/Twitter image. Falls back to a branded default. */
 	image?: string;
+	ogType?: 'website' | 'article';
+	noindex?: boolean;
+	publishedTime?: string;
+	modifiedTime?: string;
+	authorName?: string;
+	section?: string;
+	tags?: string[];
+	jsonLd?: Record<string, unknown>[];
 }
 
 const {
@@ -25,7 +38,24 @@ const {
 	activeCategory,
 	overHero = false,
 	image,
+	ogType = 'website',
+	noindex = false,
+	publishedTime,
+	modifiedTime,
+	authorName,
+	section,
+	tags,
+	jsonLd = [organizationSchema(), websiteSchema()],
 } = Astro.props;
+
+// Default social card when a page supplies none (homepage, index pages).
+const defaultOg = await getImage({
+	src: defaultOgAsset,
+	width: 1200,
+	height: 630,
+	format: 'jpg',
+});
+const ogImage = image ?? new URL(defaultOg.src, Astro.site).toString();
 
 const categories = [
 	'Style',
@@ -41,16 +71,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href={canonical} />
 		<link
 			rel="alternate"
 			type="application/rss+xml"
@@ -58,11 +84,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 			href={new URL('rss.xml', Astro.site)}
 		/>
 
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:url" content={canonical} />
-		{image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+		<Seo
+			title={title}
+			description={description}
+			canonical={canonical}
+			image={ogImage}
+			imageWidth={1200}
+			imageHeight={630}
+			ogType={ogType}
+			noindex={noindex}
+			publishedTime={publishedTime}
+			modifiedTime={modifiedTime}
+			authorName={authorName}
+			section={section}
+			tags={tags}
+			jsonLd={jsonLd}
+		/>
 
 		<ClientRouter />
 	</head>

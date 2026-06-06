@@ -1,9 +1,16 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
 import Headline from '../components/article/Headline.astro';
 import Standfirst from '../components/article/Standfirst.astro';
 import Byline from '../components/article/Byline.astro';
+import {
+	SITE,
+	articleSchema,
+	breadcrumbSchema,
+	organizationSchema,
+	websiteSchema,
+} from '../lib/seo';
 import '../styles/article.css';
 
 interface AuthorData {
@@ -31,6 +38,11 @@ interface Props {
 	author: AuthorData;
 	authorHref?: string;
 	related?: RelatedItem[];
+	// SEO overrides (optional, threaded from frontmatter).
+	seoTitle?: string;
+	metaDescription?: string;
+	updatedDate?: Date;
+	noindex?: boolean;
 }
 
 const {
@@ -46,18 +58,71 @@ const {
 	author,
 	authorHref = '/people',
 	related = [],
+	seoTitle,
+	metaDescription,
+	updatedDate,
+	noindex = false,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const categoryLabel = cap(category);
 const primaryTag = tags[0];
 const eyebrow = primaryTag ? `${categoryLabel} · ${primaryTag}` : categoryLabel;
+
+// — SEO data layer —
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const seoDescription = metaDescription ?? standfirst;
+
+// 1200×630 social crop from the hero, as an absolute URL.
+const ogCrop = await getImage({
+	src: heroImage,
+	width: 1200,
+	height: 630,
+	format: 'jpg',
+});
+const ogImage = new URL(ogCrop.src, Astro.site).toString();
+
+const datePublished = date.toISOString();
+const dateModified = (updatedDate ?? date).toISOString();
+const authorUrl = new URL(authorHref, SITE.url).toString();
+
+const crumbs = [
+	{ name: SITE.name, url: SITE.url },
+	{ name: categoryLabel, url: new URL(`/${category}`, SITE.url).toString() },
+];
+if (primaryTag) crumbs.push({ name: primaryTag, url: canonical.toString() });
+
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	articleSchema({
+		headline: title,
+		description: seoDescription,
+		image: ogImage,
+		datePublished,
+		dateModified,
+		authorName: author.name,
+		authorUrl,
+		section: categoryLabel,
+		url: canonical.toString(),
+	}),
+	breadcrumbSchema(crumbs),
+];
 ---
 
 <BaseLayout
-	title={`${title} — Arahkaii`}
-	description={standfirst}
+	title={seoTitle ?? `${title} — Arahkaii`}
+	description={seoDescription}
 	activeCategory={categoryLabel}
+	image={ogImage}
+	ogType="article"
+	noindex={noindex}
+	publishedTime={datePublished}
+	modifiedTime={dateModified}
+	authorName={author.name}
+	section={categoryLabel}
+	tags={tags}
+	jsonLd={jsonLd}
 >
 	<article>
 		<header class="article-head">
@@ -77,7 +142,7 @@ const eyebrow = primaryTag ? `${categoryLabel} · ${primaryTag}` : categoryLabel
 				<Image src={heroImage} alt={heroCaption} loading="eager" />
 			</div>
 			<figcaption class="fig-cap caption">
-				Above: {heroCaption} (Photo: {heroCredit})
+				{heroCaption ? `Above: ${heroCaption} ` : ''}(Photo: {heroCredit})
 			</figcaption>
 		</figure>
 
