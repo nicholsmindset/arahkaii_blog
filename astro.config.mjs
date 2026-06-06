@@ -1,4 +1,6 @@
 // @ts-check
+import fs from 'node:fs';
+import path from 'node:path';
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
@@ -7,9 +9,63 @@ import netlify from '@astrojs/netlify';
 // Tailwind v4 is wired via PostCSS (postcss.config.mjs), not @tailwindcss/vite,
 // to sidestep the Astro 6 rolldown build bug (withastro/astro#16542).
 
+const CATEGORIES = new Set([
+	'style',
+	'dining',
+	'travel',
+	'culture',
+	'living',
+	'people',
+	'guides',
+]);
+
+/**
+ * 301s from the legacy WordPress permalink (root-level `/<legacyWpSlug>`) to the
+ * canonical category path `/<category>/<slug>/`. Read straight from post
+ * frontmatter at config load so it stays in sync as content changes. The
+ * Netlify adapter renders these into `_redirects` as 301 (permanent).
+ */
+function legacyRedirects() {
+	const dir = path.resolve('src/content/posts');
+	/** @type {Record<string, string>} */
+	const out = {};
+	const fmField = (fm, key) =>
+		(fm.match(new RegExp(`^${key}:\\s*(.+)$`, 'm')) || [])[1]
+			?.trim()
+			.replace(/^['"]|['"]$/g, '');
+	const walk = (d) => {
+		for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
+			const p = path.join(d, entry.name);
+			if (entry.isDirectory()) {
+				walk(p);
+			} else if (/\.(md|mdx)$/.test(entry.name)) {
+				const src = fs.readFileSync(p, 'utf8');
+				const fm = src.split('---')[1] ?? '';
+				const category = fmField(fm, 'category');
+				const legacy = fmField(fm, 'legacyWpSlug');
+				if (!category || !legacy) continue;
+				if (/^draft:\s*true/m.test(fm)) continue;
+				if (CATEGORIES.has(legacy)) continue; // never shadow a category index
+				const slug = entry.name.replace(/\.(md|mdx)$/, '');
+				const dest = `/${category}/${slug}/`;
+				if (`/${legacy}` !== dest) out[`/${legacy}`] = dest;
+			}
+		}
+	};
+	try {
+		walk(dir);
+	} catch {
+		// no posts yet — nothing to redirect
+	}
+	return out;
+}
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://arahkaii.com',
+	// Directory output → canonical URLs carry a trailing slash; the per-page
+	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
+	redirects: legacyRedirects(),
 	integrations: [
 		mdx(),
 		sitemap({
