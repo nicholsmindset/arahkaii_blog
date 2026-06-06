@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arahkaii — Asia's modern-luxury edit, modestly told</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  /* ---- homepage layout ---- */
+  .hero{ position:relative; }
+  .hero-full{ position:relative; width:100%; aspect-ratio:16/9; max-height:78vh; }
+  .hero-full::after{ /* soft top scrim for nav legibility */
+    content:''; position:absolute; inset:0 0 auto 0; height:160px;
+    background:linear-gradient(180deg, rgba(246,241,233,.55), rgba(246,241,233,0));
+    z-index:1; pointer-events:none;
+  }
+  .hero-cap{ max-width:960px; margin:0 auto; padding:56px var(--gutter) 0; text-align:center; }
+  .hero-cap .eyebrow{ display:block; margin-bottom:26px; }
+  .hero-headline{ font-size:clamp(40px,6vw,72px); margin:0 auto; max-width:14ch; }
+  .hero-cap .epigraph{ font-size:clamp(22px,2.6vw,28px); margin:28px auto 0; max-width:30ch; }
+  .hero-cap .byline{ margin-top:30px; }
+
+  .sec{ padding-top:112px; }
+  .sec-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:40px; }
+  .sec-eyebrow{ } /* eyebrow already styled */
+
+  .edit-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:44px; }
+  .edit-grid .headline{ font-size:26px; margin:22px 0 12px; }
+
+  .lane{ margin-top:104px; }
+  .lane-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:30px; }
+  .lane-title{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:400; font-size:36px; letter-spacing:-.01em; margin:0; }
+  .lane-scroll{
+    display:grid; grid-auto-flow:column; grid-auto-columns:330px; gap:32px;
+    overflow-x:auto; scroll-snap-type:x proximity; padding-bottom:10px;
+    scrollbar-width:thin; scrollbar-color:var(--hairline) transparent;
+  }
+  .lane-scroll::-webkit-scrollbar{ height:3px; }
+  .lane-scroll::-webkit-scrollbar-thumb{ background:var(--hairline); }
+  .lane-scroll > *{ scroll-snap-align:start; }
+  .lane-card .headline{ font-size:21px; margin:18px 0 10px; }
+
+  .spotlight{ display:grid; grid-template-columns:7fr 5fr; gap:72px; align-items:center; }
+  .spotlight .headline{ font-size:clamp(30px,3.4vw,44px); margin:20px 0 22px; }
+  .spotlight .dek{ font-size:18px; color:var(--muted); max-width:34ch; margin:0 0 24px; }
+
+  .news-line{ text-align:center; padding:24px 0; }
+  .news-line .sentence{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(26px,3.4vw,40px); line-height:1.18; letter-spacing:-.01em; max-width:18ch; margin:0 auto 40px; }
+  .news-line form{ display:flex; justify-content:center; }
+
+  @media (max-width:900px){
+    .edit-grid{ grid-template-columns:1fr; gap:48px; }
+    .spotlight{ grid-template-columns:1fr; gap:32px; }
+  }
+  @media (max-width:760px){
+    .sec{ padding-top:72px; }
+    .lane{ margin-top:72px; }
+    .lane-scroll{ grid-auto-columns:78vw; }
+    .hero-cap{ padding-top:40px; }
+  }
+</style>
+</head>
+<body data-overhero>
+
+  <!-- HERO — cover story, whole block clickable -->
+  <a class="hero story" href="article.html" data-screen-label="Home / Hero">
+    <div class="hero-full img ph tone-c blurup in" role="img" aria-label="Cover story photograph">
+      <span class="lab">Cover — Wooyoungmi atelier, soft 4200K daylight · 16:9</span>
+    </div>
+    <div class="hero-cap">
+      <span class="eyebrow">Style · The Cover Story</span>
+      <h1 class="hero-headline display">The quiet renaissance of Korean heritage brands</h1>
+      <p class="epigraph">How a generation of Seoul ateliers learned that the loudest thing a label can do is whisper.</p>
+      <p class="byline">By Nadra Nichols</p>
+    </div>
+  </a>
+
+  <main class="wrap">
+
+    <!-- THE EDIT -->
+    <section class="sec">
+      <div class="sec-head rise">
+        <span class="eyebrow">The Edit</span>
+        <span class="meta">Selected this week</span>
+      </div>
+      <div class="edit-grid">
+        <a class="story rise" href="article.html">
+          <div class="img ph tone-b r-4x5 blurup"><span class="lab">Portrait — Kyoto hills · 4:5</span></div>
+          <h3 class="headline">A slow morning in Kyoto's northern hills</h3>
+          <p class="byline">By Yusra Rahman · Travel</p>
+        </a>
+        <a class="story rise" href="article.html">
+          <div class="img ph tone-d r-4x5 blurup"><span class="lab">Interior — Jakarta light · 4:5</span></div>
+          <h3 class="headline">Inside a collector's light-filled Jakarta home</h3>
+          <p class="byline">By Daniyal Osman · Living</p>
+        </a>
+        <a class="story rise" href="article.html">
+          <div class="img ph tone-c r-4x5 blurup"><span class="lab">Portrait — calligrapher's hand · 4:5</span></div>
+          <h3 class="headline">The calligrapher reviving a lost hand</h3>
+          <p class="byline">By Sana Mahmood · People</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CATEGORY LANES -->
+    <section class="sec" style="padding-top:24px">
+      <div class="lane">
+        <div class="lane-head rise"><h2 class="lane-title">Style</h2><a class="link-more" href="style.html">All Style</a></div>
+        <div class="lane-scroll">
+          <a class="story lane-card" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Investment dressing · 3:2</span></div><h3 class="headline">The case for buying once, beautifully</h3><p class="byline">By Leïla Haddad</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">K-fashion · 3:2</span></div><h3 class="headline">Seoul's new guard of modest tailoring</h3><p class="byline">By Nadra Nichols</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Heritage · 3:2</span></div><h3 class="headline">A weaver's archive, reopened</h3><p class="byline">By Imran Yusof</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph r-3x2 blurup"><span class="lab">Fashion week · 3:2</span></div><h3 class="headline">Notes from a quieter Paris</h3><p class="byline">By Leïla Haddad</p></a>
+        </div>
+      </div>
+
+      <div class="lane">
+        <div class="lane-head rise"><h2 class="lane-title">Dining</h2><a class="link-more" href="guide-halal-fine-dining.html">All Dining</a></div>
+        <div class="lane-scroll">
+          <a class="story lane-card" href="guide-halal-fine-dining.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Fine dining · 3:2</span></div><h3 class="headline">The 10 best halal fine-dining rooms in Singapore</h3><p class="byline">By Farah Idris</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Tea · 3:2</span></div><h3 class="headline">An afternoon inside a single-origin tearoom</h3><p class="byline">By Hana Sulaiman</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph r-3x2 blurup"><span class="lab">Pastry · 3:2</span></div><h3 class="headline">The pâtissier rewriting the kaya tart</h3><p class="byline">By Farah Idris</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Market · 3:2</span></div><h3 class="headline">Dawn at the spice halls of George Town</h3><p class="byline">By Aiman Tan</p></a>
+        </div>
+      </div>
+
+      <div class="lane">
+        <div class="lane-head rise"><h2 class="lane-title">Travel</h2><a class="link-more" href="index.html">All Travel</a></div>
+        <div class="lane-scroll">
+          <a class="story lane-card" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Kyoto · 3:2</span></div><h3 class="headline">A slow morning in the northern hills</h3><p class="byline">By Yusra Rahman</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Uzbekistan · 3:2</span></div><h3 class="headline">The blue cities, off-season</h3><p class="byline">By Daniyal Osman</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Hokkaido · 3:2</span></div><h3 class="headline">A ryokan that keeps no clocks</h3><p class="byline">By Yusra Rahman</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph r-3x2 blurup"><span class="lab">Oman · 3:2</span></div><h3 class="headline">Driving the frankincense road</h3><p class="byline">By Imran Yusof</p></a>
+        </div>
+      </div>
+
+      <div class="lane">
+        <div class="lane-head rise"><h2 class="lane-title">Culture</h2><a class="link-more" href="index.html">All Culture</a></div>
+        <div class="lane-scroll">
+          <a class="story lane-card" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Architecture · 3:2</span></div><h3 class="headline">The mosque that learned to hold silence</h3><p class="byline">By Sana Mahmood</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Literature · 3:2</span></div><h3 class="headline">A new translation of an old longing</h3><p class="byline">By Aiman Tan</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Craft · 3:2</span></div><h3 class="headline">The last indigo dyer of West Java</h3><p class="byline">By Hana Sulaiman</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph r-3x2 blurup"><span class="lab">Film · 3:2</span></div><h3 class="headline">Quiet cinema's unhurried year</h3><p class="byline">By Imran Yusof</p></a>
+        </div>
+      </div>
+
+      <div class="lane">
+        <div class="lane-head rise"><h2 class="lane-title">People</h2><a class="link-more" href="author-nadra-nichols.html">All People</a></div>
+        <div class="lane-scroll">
+          <a class="story lane-card" href="author-nadra-nichols.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Portrait · 3:2</span></div><h3 class="headline">The calligrapher reviving a lost hand</h3><p class="byline">By Sana Mahmood</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Portrait · 3:2</span></div><h3 class="headline">A perfumer who works only with memory</h3><p class="byline">By Leïla Haddad</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Portrait · 3:2</span></div><h3 class="headline">The chef who closed her restaurant to teach</h3><p class="byline">By Farah Idris</p></a>
+          <a class="story lane-card" href="article.html"><div class="img ph r-3x2 blurup"><span class="lab">Portrait · 3:2</span></div><h3 class="headline">A ceramicist's forty-year apprenticeship</h3><p class="byline">By Aiman Tan</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOST READ THIS WEEK -->
+    <section class="sec mostread">
+      <div class="sec-head rise">
+        <span class="eyebrow">Most read this week</span>
+        <a class="link-more" href="latest.html">See all latest</a>
+      </div>
+      <div class="mr-list" id="mostread"></div>
+    </section>
+
+    <!-- LONG-FORM SPOTLIGHT -->
+    <section class="sec">
+      <div class="chapter ornament rise"><span>✦</span></div>
+      <a class="story spotlight" href="article.html">
+        <div class="img ph tone-d r-3x2 blurup"><span class="lab">Long-form spotlight — atelier interior · 3:2</span></div>
+        <div class="rise">
+          <span class="eyebrow accent">Living · The Long Read</span>
+          <h2 class="headline">The house that was built around a single window</h2>
+          <p class="dek">An architect in Bandung spent four years designing a home for light alone — and in doing so, made a quiet argument about how a family should live, eat, and pray together.</p>
+          <p class="byline">By Daniyal Osman · 14 min read</p>
+        </div>
+      </a>
+    </section>
+
+    <!-- NEWSLETTER LINE -->
+    <section class="sec">
+      <div class="rule"></div>
+      <div class="news-line" style="padding-top:80px">
+        <p class="sentence">Sign up for Arahkaii Weekly. Sundays, in your inbox.</p>
+        <form class="js-news" novalidate>
+          <div class="field">
+            <input type="email" placeholder="your@email.com" aria-label="Email address">
+            <button type="submit">Subscribe <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="assets/arahkaii.js"></script>
+  <script>
+    (function(){
+      const A=window.ARAHKAII; const el=document.getElementById('mostread');
+      if(!A||!el) return;
+      const top=[...A.articles].filter(x=>x.pop).sort((a,b)=>a.pop-b.pop).slice(0,6);
+      el.innerHTML=top.map(x=>`
+        <a class="story mr-item" href="${x.h}">
+          <div class="mr-c">
+            <div class="mr-t">${x.t}</div>
+            <div class="mr-m">${x.c} · By ${x.a}</div>
+          </div>
+        </a>`).join('');
+    })();
+  </script>
+</body>
+</html>

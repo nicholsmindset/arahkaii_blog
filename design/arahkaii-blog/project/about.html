@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Arahkaii</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  .manifesto{ max-width:640px; margin:0 auto; padding:168px var(--gutter) 0; }
+  .mf-eyebrow{ text-align:center; display:block; margin-bottom:44px; }
+  .mf-open{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(28px,3.6vw,40px); line-height:1.22; letter-spacing:-.01em; text-align:center; margin:0 0 56px; text-wrap:pretty; }
+  .mf-body{ font-size:19px; line-height:1.66; }
+  .mf-body p{ margin:0 0 26px; }
+  .mf-body p.dropcap::first-letter{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:430; float:left; font-size:84px; line-height:.74; padding:8px 14px 0 0; color:var(--accent); }
+
+  .mf-image{ margin:84px 0; }
+  .mf-image .img{ width:100%; }
+  .mf-image .caption{ max-width:1280px; margin:0 auto; padding:14px var(--gutter) 0; text-align:center; }
+
+  .pillars{ max-width:640px; margin:0 auto; padding:0 var(--gutter); }
+  .pillars-label{ text-align:center; display:block; margin-bottom:36px; }
+  .pillar{ display:grid; grid-template-columns:130px 1fr; gap:24px; align-items:baseline; padding:20px 0; border-top:1px solid var(--hairline); }
+  .pillar:last-child{ border-bottom:1px solid var(--hairline); }
+  .pillar .p-name{ font-family:var(--serif); font-variation-settings:'opsz' 60; font-size:21px; }
+  .pillar .p-desc{ font-family:var(--sans); font-size:13px; letter-spacing:.02em; color:var(--muted); line-height:1.5; }
+
+  .mf-news{ max-width:640px; margin:104px auto 0; padding:0 var(--gutter); text-align:center; }
+  .mf-news .sentence{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(24px,3vw,32px); line-height:1.2; max-width:20ch; margin:0 auto 36px; }
+  .mf-news form{ display:flex; justify-content:center; }
+
+  @media (max-width:760px){
+    .manifesto{ padding-top:108px; }
+    .pillar{ grid-template-columns:1fr; gap:6px; }
+  }
+</style>
+</head>
+<body data-screen-label="About">
+
+  <article class="manifesto">
+    <span class="eyebrow mf-eyebrow">About Arahkaii</span>
+    <p class="mf-open">We started Arahkaii on a simple conviction: that the most luxurious thing a publication can offer its reader is attention — unhurried, undivided, and paid in full.</p>
+    <div class="mf-body">
+      <p class="dropcap">There is no shortage of places to read about Asia's style, its tables, its houses and its makers. What felt missing was a place that moved at the speed of the things it admired — that let a story breathe, that printed a photograph large because the light deserved it, that treated restraint not as an absence but as a discipline.</p>
+      <p>Arahkaii is a modern-luxury edit, modestly told. We write about fashion and food, travel and culture, the people who make beautiful things and the rooms they make them in. We do it from a Muslim point of view that is rarely an explicit subject and always a quiet frame: a sensibility shaped by modesty, by generosity, by an attention to the seam as much as the silhouette.</p>
+      <p>We publish less than we could. Each piece is reported slowly, edited closely, and laid out by hand. We would rather bring you one story worth your Sunday than ten worth your scroll. That is the whole of our ambition, and it is harder than it sounds.</p>
+      <p>What you will not find here is noise. No autoplay, no infinite feed, no urgency manufactured to keep you. Just a small, considered publication that hopes to be read the way a good book is read — once, carefully, and then again.</p>
+    </div>
+  </article>
+
+  <figure class="mf-image">
+    <div class="img ph tone-c r-16x9 blurup"><span class="lab">Brand image — atelier light, modest dress, negative space · 16:9</span></div>
+    <figcaption class="caption">Soft, even light. Generous negative space. The grammar of the brand.</figcaption>
+  </figure>
+
+  <section class="pillars">
+    <span class="eyebrow pillars-label">What we cover</span>
+    <div class="pillar"><div class="p-name">Style</div><div class="p-desc">Modern wardrobes, modestly told.</div></div>
+    <div class="pillar"><div class="p-name">Dining</div><div class="p-desc">Halal tables and the kitchens keeping faith with the calendar.</div></div>
+    <div class="pillar"><div class="p-name">Travel</div><div class="p-desc">Slow journeys, soft light, the unhurried itinerary.</div></div>
+    <div class="pillar"><div class="p-name">Culture</div><div class="p-desc">Architecture, craft, literature and the long view.</div></div>
+    <div class="pillar"><div class="p-name">Living</div><div class="p-desc">Homes built around light, family and quiet.</div></div>
+    <div class="pillar"><div class="p-name">People</div><div class="p-desc">The makers, and the long apprenticeships behind them.</div></div>
+    <div class="pillar"><div class="p-name">Guides</div><div class="p-desc">Considered lists, sourced and credited with care.</div></div>
+  </section>
+
+  <section class="mf-news">
+    <div class="chapter ornament"><span>✦</span></div>
+    <p class="sentence">If any of this sounds like your kind of quiet, join us on Sundays.</p>
+    <form class="js-news" novalidate>
+      <div class="field"><input type="email" placeholder="your@email.com" aria-label="Email address"><button type="submit">Subscribe <span aria-hidden="true">→</span></button></div>
+    </form>
+  </section>
+
+  <script src="assets/arahkaii.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nadra Nichols — Arahkaii</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  .author-head{ display:grid; grid-template-columns:1.5fr 1fr; gap:72px; align-items:start; padding:160px 0 0; }
+  .ah-name{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(46px,7vw,76px); line-height:1; letter-spacing:-.02em; margin:0; }
+  .ah-role{ font-family:var(--sans); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:22px 0 0; }
+  .ah-bio{ font-size:19px; line-height:1.62; max-width:30em; margin:28px 0 0; }
+  .ah-socials{ display:flex; gap:24px; margin-top:30px; }
+  .ah-socials a{ font-family:var(--sans); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); padding-bottom:3px; border-bottom:1px solid var(--hairline); transition:border-color var(--settle); }
+  .ah-socials a:hover{ border-color:var(--accent); }
+  .ah-portrait{ width:100%; }
+
+  .author-work{ margin-top:120px; }
+  .aw-head{ display:flex; justify-content:space-between; align-items:baseline; padding-top:30px; border-top:1px solid var(--hairline); margin-bottom:48px; }
+  .aw-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px 56px; }
+  .aw-grid .headline{ font-size:27px; margin:22px 0 12px; }
+
+  @media (max-width:860px){
+    .author-head{ grid-template-columns:1fr; gap:40px; padding-top:108px; }
+    .ah-portrait{ max-width:300px; }
+    .aw-grid{ grid-template-columns:1fr; gap:56px; }
+  }
+</style>
+</head>
+<body data-cat="People">
+
+  <main class="wrap">
+    <header class="author-head" data-screen-label="Author">
+      <div>
+        <h1 class="ah-name">Nadra Nichols</h1>
+        <p class="ah-role">Style Editor · Seoul & Singapore</p>
+        <p class="ah-bio">Nadra Nichols writes on fashion, craft and the slow economies of luxury across Asia. Over a decade of reporting, she has followed the ateliers, weavers and quiet houses building a more considered idea of how to dress — and argued, patiently, that restraint is its own kind of ambition.</p>
+        <div style="margin-top:30px"><button class="follow-btn js-follow"><span class="fb-plus" aria-hidden="true">+</span><span class="fb-label">Follow Nadra</span></button></div>
+        <div class="ah-socials">
+          <a href="subscribe.html">Newsletter</a>
+          <a href="index.html">Instagram</a>
+          <a href="index.html">X / Twitter</a>
+          <a href="index.html">Email</a>
+        </div>
+      </div>
+      <div class="img ph tone-b r-4x5 ah-portrait blurup in"><span class="lab">Portrait — Nadra Nichols · 4:5</span></div>
+    </header>
+
+    <section class="author-work">
+      <div class="aw-head">
+        <span class="eyebrow">Selected writing</span>
+        <span class="meta">24 stories</span>
+      </div>
+      <div class="aw-grid">
+        <a class="story" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Korean heritage · 3:2</span></div><h3 class="headline">The quiet renaissance of Korean heritage brands</h3><p class="byline">Style · 16 May 2026</p></a>
+        <a class="story" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">K-fashion · 3:2</span></div><h3 class="headline">Seoul's new guard of modest tailoring</h3><p class="byline">Style · 28 April 2026</p></a>
+        <a class="story" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Heritage · 3:2</span></div><h3 class="headline">The Seoul label that retired its logo</h3><p class="byline">Style · 12 April 2026</p></a>
+        <a class="story" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Investment dressing · 3:2</span></div><h3 class="headline">A coat to keep for twenty winters</h3><p class="byline">Style · 30 March 2026</p></a>
+        <a class="story" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Craft · 3:2</span></div><h3 class="headline">The weavers keeping a lost colour alive</h3><p class="byline">Culture · 14 March 2026</p></a>
+        <a class="story" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Modest dressing · 3:2</span></div><h3 class="headline">The new grammar of covered dressing</h3><p class="byline">Style · 26 February 2026</p></a>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/arahkaii.js"></script>
+  <script>
+    (function(){
+      const KEY='arahkaii:follow:nadra';
+      const btn=document.querySelector('.js-follow');
+      const label=btn.querySelector('.fb-label');
+      const on=()=>{ try{ return !!localStorage.getItem(KEY); }catch(e){ return false; } };
+      const set=(v)=>{ try{ v?localStorage.setItem(KEY,'1'):localStorage.removeItem(KEY); }catch(e){} };
+      const reflect=()=>{ const f=on(); btn.classList.toggle('on',f); label.textContent=f?'Following':'Follow Nadra'; };
+      reflect();
+      btn.addEventListener('click',()=>{ const f=!on(); set(f); reflect(); if(window.ARAHKAII&&window.ARAHKAII.toast) window.ARAHKAII.toast(f?'Following — her stories will lead your Sunday edit':'Unfollowed Nadra Nichols'); });
+    })();
+  </script>
+</body>
+</html>

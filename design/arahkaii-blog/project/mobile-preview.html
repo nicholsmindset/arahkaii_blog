@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arahkaii — Mobile (390px)</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  body{ background:#e8e2d7; }
+  .mp-head{ max-width:1280px; margin:0 auto; padding:56px 48px 8px; }
+  .mp-head h1{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:40px; letter-spacing:-.02em; margin:0; }
+  .mp-head p{ font-family:var(--sans); font-size:13px; letter-spacing:.04em; color:var(--muted); margin:12px 0 0; }
+  .mp-grid{ max-width:1320px; margin:0 auto; padding:40px 48px 96px; display:grid; grid-template-columns:repeat(auto-fill, 406px); gap:56px 40px; justify-content:center; }
+  .phone .pl{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px; padding:0 8px; }
+  .phone .pl .t{ font-family:var(--sans); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); }
+  .phone .pl .n{ font-family:var(--sans); font-size:11px; letter-spacing:.04em; color:var(--muted); }
+  .device{ width:406px; height:796px; border-radius:38px; background:#1c1815; padding:8px; box-shadow:0 40px 80px -36px rgba(40,30,22,.5); }
+  .device .screen{ width:390px; height:780px; border-radius:30px; overflow:hidden; background:var(--surface); position:relative; }
+  .device iframe{ width:390px; height:780px; border:0; display:block; }
+</style>
+</head>
+<body data-nochrome>
+  <header class="mp-head">
+    <h1>Arahkaii — on the phone</h1>
+    <p>Every screen at 390px. Scroll inside any device. Each page is one responsive file, 1440 → 390.</p>
+  </header>
+  <div class="mp-grid" id="grid"></div>
+
+  <script>
+    const screens=[
+      ['Homepage','index.html'],
+      ['Article','article.html'],
+      ['Category — Style','style.html'],
+      ['Listicle — Guides','guide-halal-fine-dining.html'],
+      ['Latest','latest.html'],
+      ['Reading list','reading-list.html'],
+      ['Author','author-nadra-nichols.html'],
+      ['About','about.html'],
+      ['Subscribe','subscribe.html'],
+      ['Email','email.html'],
+      ['How we publish','pipeline.html'],
+    ];
+    const grid=document.getElementById('grid');
+    screens.forEach(([t,href],i)=>{
+      const card=document.createElement('div'); card.className='phone';
+      card.innerHTML=`<div class="pl"><span class="t">${t}</span><span class="n">0${i+1}</span></div>
+        <div class="device"><div class="screen"><iframe src="${href}" title="${t}"></iframe></div></div>`;
+      grid.appendChild(card);
+      const fr=card.querySelector('iframe');
+      fr.addEventListener('load',()=>{
+        try{
+          const d=fr.contentDocument, b=d&&d.body;
+          if(b){ b.style.opacity='1'; b.style.animation='none'; }
+          // reveal scroll-gated content so the static preview shows imagery
+          d.querySelectorAll('.rise,.blurup').forEach(e=>e.classList.add('in'));
+        }catch(e){}
+      });
+    });
+  </script>
+</body>
+</html>

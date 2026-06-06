@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arahkaii Weekly — Email Template</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  body{ background:#ddd3c2; }
+  .inbox{ max-width:760px; margin:0 auto; padding:48px 24px 72px; }
+  .inbox-meta{ display:flex; flex-direction:column; gap:8px; margin:0 auto 22px; max-width:600px; }
+  .im-row{ display:flex; align-items:baseline; gap:10px; font-family:var(--sans); font-size:12px; letter-spacing:.02em; color:#6f6457; }
+  .im-row .k{ width:54px; color:#8c8273; text-transform:uppercase; letter-spacing:.12em; font-size:10px; }
+  .im-row .subj{ color:var(--ink); font-size:13px; }
+
+  .email{ max-width:600px; margin:0 auto; background:var(--surface); border:1px solid var(--hairline); box-shadow:0 24px 60px -28px rgba(40,30,22,.34); }
+  .email-pad{ padding:44px 48px; }
+  .email-mast{ text-align:center; padding:40px 48px 0; }
+  .email-mast svg{ height:15px; }
+  .email-mast .issue{ font-family:var(--sans); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-top:14px; }
+  .email .rule{ margin:32px 0; }
+  .email .img{ width:100%; }
+
+  .email .eyebrow{ display:block; margin-bottom:16px; }
+  .email .lead-h{ font-family:var(--serif); font-variation-settings:'opsz' 90; font-weight:440; font-size:30px; line-height:1.1; letter-spacing:-.01em; margin:0; }
+  .email .lead-dek{ font-family:var(--read); font-size:17px; line-height:1.55; color:var(--ink); margin:16px 0 0; }
+  .email .read{ display:inline-flex; align-items:center; gap:8px; margin-top:18px; font-family:var(--sans); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:3px; }
+
+  .estory{ display:grid; grid-template-columns:150px 1fr; gap:22px; align-items:start; padding:26px 0; border-top:1px solid var(--hairline); }
+  .estory:first-of-type{ border-top:0; }
+  .estory .img{ width:100%; }
+  .estory h3{ font-family:var(--serif); font-variation-settings:'opsz' 60; font-weight:440; font-size:19px; line-height:1.14; letter-spacing:-.005em; margin:0; }
+  .estory .ed{ font-family:var(--read); font-size:14.5px; line-height:1.5; color:var(--muted); margin:8px 0 0; }
+  .estory .er{ font-family:var(--sans); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-top:10px; display:inline-block; white-space:nowrap; }
+
+  .email-foot{ background:var(--quiet); padding:32px 48px; text-align:center; }
+  .email-foot p{ font-family:var(--sans); font-size:11px; letter-spacing:.04em; color:var(--muted); line-height:1.7; margin:0 0 6px; }
+  .email-foot a{ color:var(--muted); text-decoration:underline; text-underline-offset:2px; }
+
+  @media (max-width:560px){
+    .email-pad{ padding:28px 24px; }
+    .estory{ grid-template-columns:104px 1fr; gap:16px; }
+  }
+</style>
+</head>
+<body data-nochrome>
+
+  <div class="inbox">
+    <div class="inbox-meta">
+      <div class="im-row"><span class="k">From</span><span>Arahkaii &lt;weekly@arahkaii.com&gt;</span></div>
+      <div class="im-row"><span class="k">Subject</span><span class="subj">This week: a quiet renaissance, and ten tables worth your Sunday</span></div>
+      <div class="im-row"><span class="k">Date</span><span>Sunday, 17 May 2026 · 07:00</span></div>
+    </div>
+
+    <div class="email">
+      <div class="email-mast">
+        <svg viewBox="0 0 168 18" role="img" aria-label="ARAHKAII"><text x="0" y="14" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="500" letter-spacing="3.4" fill="#1C1815" style="font-variation-settings:'opsz' 40">ARAHKAII</text></svg>
+        <p class="issue">Weekly · Issue No. 47</p>
+      </div>
+
+      <div class="email-pad">
+        <div class="img ph tone-c r-16x9 blurup in" style="margin-bottom:32px"><span class="lab">Hero — cover image · 16:9</span></div>
+
+        <span class="eyebrow accent">This week's cover</span>
+        <h1 class="lead-h">The quiet renaissance of Korean heritage brands</h1>
+        <p class="lead-dek">A generation of Seoul ateliers is learning that the loudest thing a label can do is whisper — and building a quieter luxury in the process.</p>
+        <a class="read" href="article.html">Read the story <span aria-hidden="true">→</span></a>
+
+        <div class="rule"></div>
+        <span class="eyebrow" style="display:block; margin-bottom:20px">Also in this edit</span>
+
+        <a class="estory" href="guide-halal-fine-dining.html">
+          <div class="img ph tone-d r-3x2 blurup in"><span class="lab">Dining · 3:2</span></div>
+          <div>
+            <h3>The 10 best halal fine-dining rooms in Singapore</h3>
+            <p class="ed">A year of unhurried tables, sourced and credited with care.</p>
+            <span class="er">Guides →</span>
+          </div>
+        </a>
+        <a class="estory" href="article.html">
+          <div class="img ph tone-b r-3x2 blurup in"><span class="lab">Travel · 3:2</span></div>
+          <div>
+            <h3>A slow morning in Kyoto's northern hills</h3>
+            <p class="ed">Soft light, fewer clocks, and a ryokan that keeps none.</p>
+            <span class="er">Travel →</span>
+          </div>
+        </a>
+        <a class="estory" href="article.html">
+          <div class="img ph tone-c r-3x2 blurup in"><span class="lab">Living · 3:2</span></div>
+          <div>
+            <h3>The house that was built around a single window</h3>
+            <p class="ed">Four years designing a home for light alone.</p>
+            <span class="er">Living →</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="email-foot">
+        <p>You are receiving this because you subscribed to Arahkaii Weekly.</p>
+        <p><a href="subscribe.html">Update preferences</a> · <a href="subscribe.html">Unsubscribe</a></p>
+        <p>Arahkaii · Singapore · © 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/arahkaii.js"></script>
+</body>
+</html>

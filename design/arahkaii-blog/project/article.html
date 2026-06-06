@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The quiet renaissance of Korean heritage brands — Arahkaii</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  .article-head{ max-width:820px; margin:0 auto; padding:148px var(--gutter) 0; display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .article-head .eyebrow{ margin-bottom:6px; }
+  .art-h1{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:400; font-size:clamp(34px,4.8vw,56px); line-height:1.1; letter-spacing:-.015em; margin:24px 0 0; max-width:560px; }
+  .art-standfirst{ font-size:clamp(20px,2.3vw,26px); max-width:680px; margin:34px auto 0; }
+  .art-byline{ margin-top:30px; }
+  .art-byline{ margin-top:34px; }
+
+  .hero-fig{ margin:68px 0 0; }
+  .hero-fig .img{ width:100%; }
+  .fig-cap{ max-width:1280px; margin:0 auto; padding:14px var(--gutter) 0; }
+
+  .article-body{ max-width:640px; margin:84px auto 0; }
+  .article-body p{ margin:0 0 26px; }
+  .article-body p.dropcap::first-letter{
+    font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:430;
+    float:left; font-size:88px; line-height:.74; padding:8px 14px 0 0; color:var(--accent);
+  }
+  .subhead{ font-family:var(--serif); font-variation-settings:'opsz' 90; font-weight:450; font-size:28px; line-height:1.16; letter-spacing:-.01em; margin:50px 0 22px; }
+
+  /* pull quote in the wide right margin (book marginalia) */
+  .marginalia{ float:right; clear:right; width:232px; margin-right:-304px; margin-top:.5em; }
+  .marginalia .mq-rule{ width:36px; height:1px; background:var(--accent); margin-bottom:18px; }
+  .marginalia .mq{ font-family:var(--serif); font-variation-settings:'opsz' 72; font-size:27px; line-height:1.22; font-weight:390; letter-spacing:-.012em; color:var(--ink); }
+
+  .inline-fig{ margin:46px 0; }
+  .inline-fig.breakout{ width:min(1024px,92vw); margin-left:50%; transform:translateX(-50%); }
+  .inline-fig .caption{ max-width:640px; }
+  .inline-fig.breakout .caption{ max-width:none; }
+
+  .blockquote{ margin:44px 0; padding-left:32px; border-left:1px solid var(--accent); }
+  .blockquote p{ font-family:var(--read); font-style:italic; font-size:22px; line-height:1.46; margin:0 0 14px; color:var(--ink); }
+  .blockquote cite{ font-family:var(--sans); font-size:12px; letter-spacing:.06em; font-style:normal; color:var(--muted); }
+
+  .readmore-inline{ display:block; border-top:1px solid var(--ink); padding-top:13px; margin:40px 0; }
+  .readmore-inline .k{ font-family:var(--sans); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
+  .readmore-inline .h{ display:block; font-family:var(--serif); font-variation-settings:'opsz' 72; font-size:22px; letter-spacing:-.01em; margin-top:9px; color:var(--ink); transition:color var(--settle); }
+  .readmore-inline:hover .h{ color:var(--accent); }
+
+  .end-orn{ margin:84px 0; }
+  .author-bio{ max-width:640px; margin:0 auto; display:flex; gap:26px; align-items:flex-start; }
+  .author-bio .avatar{ width:76px; height:76px; border-radius:50%; flex:none; }
+  .author-bio .ab-name{ font-family:var(--serif); font-variation-settings:'opsz' 60; font-size:22px; margin:0 0 4px; }
+  .author-bio .ab-role{ font-family:var(--sans); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+  .author-bio p{ margin:0 0 14px; font-size:16.5px; }
+
+  .more-from{ max-width:1280px; margin:104px auto 0; padding:0 var(--gutter); }
+  .more-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:44px; margin-top:36px; }
+  .more-grid .headline{ font-size:23px; margin:20px 0 10px; }
+
+  /* floating left share rail ≥1200px */
+  .share-rail{ position:fixed; left:34px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:4px; z-index:40; align-items:flex-start; }
+  .share-rail .sr-label{ font-family:var(--sans); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 10px 9px; }
+  .share-item{ display:flex; align-items:center; gap:11px; background:none; border:0; cursor:pointer; color:var(--ink); padding:9px; border-radius:999px; transition:background var(--settle); }
+  .share-item svg{ width:17px; height:17px; opacity:.62; transition:opacity var(--settle); }
+  .share-item span{ font-family:var(--sans); font-size:11px; letter-spacing:.1em; text-transform:uppercase; white-space:nowrap; max-width:0; overflow:hidden; opacity:0; transition:max-width var(--settle), opacity var(--settle); }
+  .share-item:hover{ background:var(--quiet); }
+  .share-item:hover svg{ opacity:1; }
+  .share-item:hover span{ max-width:150px; opacity:1; }
+  .share-item.saved svg{ opacity:1; color:var(--clay); }
+
+  .toast{ position:fixed; left:50%; bottom:40px; translate:-50% 20px; background:var(--ink); color:var(--surface); font-family:var(--sans); font-size:12px; letter-spacing:.04em; padding:12px 20px; border-radius:4px; opacity:0; pointer-events:none; transition:opacity var(--settle), translate var(--settle); z-index:95; }
+  .toast.show{ opacity:1; translate:-50% 0; }
+
+  @media (max-width:1200px){
+    .share-rail{ display:none; }
+    .inline-fig.breakout{ width:100%; margin-left:0; transform:none; }
+    .marginalia{ float:none; width:auto; margin:40px auto; text-align:center; max-width:520px; }
+    .marginalia .mq-rule{ margin:0 auto 16px; }
+  }
+  @media (max-width:900px){ .more-grid{ grid-template-columns:1fr; gap:44px; } }
+  @media (max-width:760px){ .article-head{ padding-top:104px; } .article-body{ margin-top:56px; } }
+</style>
+</head>
+<body data-cat="Style">
+
+  <article data-screen-label="Article">
+    <header class="article-head">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Arahkaii</a><span class="sep">/</span><a href="style.html">Style</a><span class="sep">/</span><span>Fashion</span></nav>
+      <span class="eyebrow accent" style="margin-top:18px">Style · Fashion</span>
+      <h1 class="art-h1">The quiet renaissance of Korean heritage brands</h1>
+      <p class="art-standfirst epigraph">How a generation of Seoul ateliers learned that the loudest thing a label can do is whisper — and built a quieter kind of luxury in the process.</p>
+      <p class="art-byline meta">By Nadra Nichols<span class="dot">·</span>16 May 2026<span class="dot">·</span>6 min read</p>
+    </header>
+
+    <figure class="hero-fig">
+      <div class="img ph tone-c r-16x9 blurup"><span class="lab">Hero — Wooyoungmi FW26 backstage · 16:9</span></div>
+      <figcaption class="fig-cap caption">Above: Wooyoungmi FW26 backstage. (Photo: Courtesy of the brand)</figcaption>
+    </figure>
+
+    <div class="article-body">
+      <p class="dropcap">There is a particular hush to the showroom on the third floor of a converted hanok in Seoul's Bukchon district — the kind of quiet that costs money. No music. No press wall. Only a rail of unhurried tailoring and a pot of barley tea cooling by the window, and the sense that everything here has been considered twice and then left alone.</p>
+
+      <p>For two decades, the story of Korean fashion abroad was a story of volume: the wattage of K-pop, the saturation of street style, the relentless forward motion of trend. But a smaller movement has been gathering in the margins, among labels that measure success not in reach but in restraint. They are reviving heritage techniques — natural dyeing, hand-finished seams, the slow architecture of the hanbok — and translating them into a wardrobe built to be kept.</p>
+
+      <aside class="marginalia">
+        <div class="mq-rule"></div>
+        <p class="mq">The most radical thing a young label can do in Seoul right now is refuse to shout.</p>
+      </aside>
+
+      <p>What unites them is less an aesthetic than a temperament. Where the previous generation chased the runway's velocity, these designers have made a virtue of patience. A coat takes a season to develop and a decade to wear out. A colour is chosen because it flatters skin in the soft, even light of a northern afternoon, not because it photographs well under flash. The clothes are quiet, and the quiet is the point.</p>
+
+      <h2 class="subhead">A vocabulary of restraint</h2>
+
+      <p>Consider the house of Wooyoungmi, whose autumn collection retired the logo almost entirely. In its place: a discreet bartack at the inner cuff, visible only to the person wearing it. It is a small gesture, but it reorganises the whole proposition of a luxury garment — away from the gaze of others and toward the private knowledge of the wearer.</p>
+
+      <figure class="inline-fig">
+        <div class="img ph tone-b r-3x2 blurup"><span class="lab">Inline — atelier detail, hand-finished seam · 3:2</span></div>
+        <figcaption class="caption">Above: A hand-finished seam in the atelier, photographed in natural 4200K light. (Photo: Arahkaii)</figcaption>
+      </figure>
+
+      <p>The same instinct runs through the work of younger studios — labels with fewer than ten employees, often run out of a single room, who have decided that scale is a kind of noise. They produce in editions, not seasons. They sell to people who return, not to people who scroll. And they have found, somewhat to their own surprise, that there is an audience hungry for exactly this: a way to dress that asks nothing of an algorithm.</p>
+
+      <div class="inline-news">
+        <span class="eyebrow in-eyebrow">Arahkaii Weekly</span>
+        <p class="in-line">Enjoying this? The same eye, once a week — Sundays, in your inbox.</p>
+        <form class="js-news" novalidate>
+          <div class="field"><input type="email" placeholder="your@email.com" aria-label="Email address"><button type="submit">Subscribe <span aria-hidden="true">→</span></button></div>
+        </form>
+      </div>
+
+      <div class="chapter"><span>02</span></div>
+
+      <h2 class="subhead">The economics of patience</h2>
+
+      <p>None of this is easy to sustain. Slow production is expensive, and the modest-luxury customer, while loyal, is not infinite. Several of the designers I spoke to described the same tightrope: how to grow without growing loud, how to be discovered without being consumed. The answer, increasingly, is to treat the brand less like a fashion house and more like a small publisher — a name that stands for a sensibility, released in considered instalments.</p>
+
+      <figure class="inline-fig breakout">
+        <div class="img ph tone-d r-16x9 blurup"><span class="lab">Breakout — showroom interior, Bukchon hanok · 16:9</span></div>
+        <figcaption class="caption">Above: The third-floor showroom of a converted hanok in Bukchon, where the collection is shown without music or press. (Photo: Courtesy of the studio)</figcaption>
+      </figure>
+
+      <p>It is a posture with deep roots. The hanbok tradition has always prized the line over the embellishment, the drape over the detail. What feels new is the confidence to carry that inheritance into a global market that has, until recently, rewarded the opposite.</p>
+
+      <blockquote class="blockquote">
+        <p>"We are not trying to be seen from across the room. We are trying to be understood up close. That is a different kind of ambition, and it takes longer."</p>
+        <cite>— Designer, in conversation with Arahkaii, Seoul, April 2026</cite>
+      </blockquote>
+
+      <p>Whether the movement survives contact with success is an open question. Quiet luxury has a way of becoming loud the moment it is named, and the names are now being named. But for the moment, in a third-floor room with the tea going cold, it is possible to believe that restraint might be more than a trend — that it might be a way of working that lasts.</p>
+
+      <a class="readmore-inline" href="guide-halal-fine-dining.html">
+        <span class="k">Read more</span>
+        <span class="h">The 10 best halal fine-dining rooms in Singapore (2026)</span>
+      </a>
+
+      <p>For now, the ateliers keep their hours. The rail is restocked, one piece at a time. And the hush on the third floor holds — a small, deliberate silence in a very noisy industry.</p>
+    </div>
+
+    <div class="chapter ornament end-orn"><span>✦</span></div>
+
+    <div class="author-bio">
+      <div class="img ph tone-b avatar"></div>
+      <div>
+        <p class="ab-name">Nadra Nichols</p>
+        <p class="ab-role">Style Editor</p>
+        <p>Nadra Nichols writes on fashion, craft and the slow economies of luxury across Asia. Based between Seoul and Singapore, she has spent a decade reporting on the ateliers and makers shaping a quieter idea of what it means to dress well.</p>
+        <a class="link-more" href="author-nadra-nichols.html">Read more by Nadra Nichols</a>
+      </div>
+    </div>
+
+    <section class="read-next">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px">
+        <span class="eyebrow">Read next</span>
+        <span class="meta">Chosen for you</span>
+      </div>
+      <a class="story rn-card" href="article.html">
+        <div class="img ph tone-d rn-img blurup"><span class="lab">Living · The Long Read · 16:9</span></div>
+        <div class="rn-body">
+          <span class="eyebrow accent rn-eyebrow">Living · The Long Read</span>
+          <h2 class="rn-title">The house that was built around a single window</h2>
+          <p class="byline rn-meta">By Daniyal Osman<span class="dot">·</span>14 min read</p>
+        </div>
+      </a>
+    </section>
+
+    <section class="more-from">
+      <div class="rule"></div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:34px">
+        <span class="eyebrow">More from Style</span>
+        <a class="link-more" href="style.html">All Style</a>
+      </div>
+      <div class="more-grid">
+        <a class="story" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Investment dressing · 3:2</span></div><h3 class="headline">The case for buying once, beautifully</h3><p class="byline">By Leïla Haddad</p></a>
+        <a class="story" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Heritage · 3:2</span></div><h3 class="headline">A weaver's archive, reopened</h3><p class="byline">By Imran Yusof</p></a>
+        <a class="story" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Modest dressing · 3:2</span></div><h3 class="headline">The new grammar of covered dressing</h3><p class="byline">By Sana Mahmood</p></a>
+      </div>
+    </section>
+  </article>
+
+  <aside class="share-rail">
+    <p class="sr-label">Share</p>
+    <button class="share-item" data-act="x"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.5 7.4L21.7 21h-5.9l-4.6-6-5.3 6H3l7-8L2.6 3h6l4.2 5.5L17.5 3Zm-1 16h1.6L8 4.8H6.3L16.5 19Z"/></svg><span>Share on X</span></button>
+    <button class="share-item" data-act="fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h2.5l.5-3H14V4.3c0-.9.3-1.5 1.6-1.5H17V.1C16.7.1 15.7 0 14.6 0 12.2 0 10.6 1.4 10.6 4v2H8v3h2.6v9H14V9Z"/></svg><span>Share on Facebook</span></button>
+    <button class="share-item" data-act="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg><span>Copy link</span></button>
+    <button class="share-item" data-act="save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg><span>Save</span></button>
+  </aside>
+
+  <div class="toast" id="toast">Link copied to clipboard</div>
+
+  <script src="assets/arahkaii.js"></script>
+  <script>
+    (function(){
+      const A=window.ARAHKAII;
+      const article={ title:document.querySelector('.art-h1').textContent.trim(), href:'article.html', tone:'tone-c', byline:'By Nadra Nichols · Style' };
+      const toastEl=document.getElementById('toast');
+      const show=(m)=>{ if(A&&A.toast){ A.toast(m); } else { toastEl.textContent=m; toastEl.classList.add('show'); setTimeout(()=>toastEl.classList.remove('show'),1800);} };
+      const saveBtn=document.querySelector('.share-item[data-act=save]');
+      const reflect=()=>{ const on=A.isSaved(article.title); saveBtn.classList.toggle('saved',on); saveBtn.querySelector('svg').setAttribute('fill', on?'currentColor':'none'); saveBtn.querySelector('span').textContent = on?'Saved':'Save'; };
+      reflect();
+      document.querySelectorAll('.share-item').forEach(b=>{
+        b.addEventListener('click',()=>{
+          const act=b.dataset.act;
+          if(act==='copy'){ navigator.clipboard && navigator.clipboard.writeText(location.href).catch(()=>{}); show('Link copied to clipboard'); }
+          else if(act==='save'){ const on=A.toggleSave(article); reflect(); show(on?'Saved to your reading list':'Removed from your reading list'); }
+          else { show('Opening share…'); }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arahkaii Weekly — Subscribe</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  .sub-wrap{ min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:140px var(--gutter) 64px; }
+  .sub-eyebrow{ display:block; margin-bottom:30px; }
+  .sub-h1{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(48px,7vw,84px); line-height:1; letter-spacing:-.02em; margin:0; }
+  .sub-promise{ font-family:var(--serif); font-style:italic; font-variation-settings:'opsz' 96; font-size:clamp(20px,2.6vw,27px); color:var(--muted); margin:26px 0 0; max-width:24ch; }
+  .sub-form{ margin-top:52px; width:100%; display:flex; justify-content:center; }
+  .sub-form .field{ max-width:440px; width:100%; }
+  .sub-note{ font-family:var(--sans); font-size:12.5px; letter-spacing:.05em; color:var(--muted); line-height:1.7; margin-top:26px; }
+  .sub-image{ width:min(960px,100%); margin:88px auto 0; }
+  .sub-image .caption{ text-align:center; }
+</style>
+</head>
+<body data-cat="" data-nofoot data-screen-label="Subscribe">
+
+  <main class="sub-wrap">
+    <span class="eyebrow sub-eyebrow">The Newsletter</span>
+    <h1 class="sub-h1">Arahkaii Weekly</h1>
+    <p class="sub-promise">One edit, gathered slowly and sent on Sundays — the week's most considered things, in your inbox.</p>
+
+    <form class="sub-form js-news" novalidate>
+      <div class="field">
+        <input type="email" placeholder="your@email.com" aria-label="Email address">
+        <button type="submit">Subscribe <span aria-hidden="true">→</span></button>
+      </div>
+    </form>
+    <p class="sub-note field-note">Sundays. One edit.<br>Free, and unsubscribe anytime.</p>
+    <a class="link-more" href="email.html" style="margin-top:30px">See a recent issue</a>
+
+    <figure class="sub-image">
+      <div class="img ph tone-b r-16x9 blurup in"><span class="lab">Quiet supporting image — still life, soft 4200K light · 16:9</span></div>
+    </figure>
+  </main>
+
+  <script src="assets/arahkaii.js"></script>
+</body>
+</html>

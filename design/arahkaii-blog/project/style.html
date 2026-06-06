@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style — Arahkaii</title>
+<link rel="stylesheet" href="assets/arahkaii.css">
+<style>
+  .cat-masthead{ padding:160px 0 0; }
+  .cat-title{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(56px,10vw,96px); line-height:.98; letter-spacing:-.02em; margin:0; }
+  .cat-dek{ font-family:var(--serif); font-style:italic; font-variation-settings:'opsz' 96; font-size:clamp(20px,2.4vw,26px); color:var(--muted); margin:18px 0 0; }
+
+  .editors-pick{ margin-top:72px; }
+  .editors-pick .ep-tag{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px; }
+  .editors-pick .img{ width:100%; }
+  .ep-body{ display:grid; grid-template-columns:1.5fr 1fr; gap:56px; align-items:end; margin-top:30px; }
+  .ep-body .headline{ font-size:clamp(30px,3.6vw,44px); }
+  .ep-body .ep-stand{ font-size:19px; color:var(--muted); margin:16px 0 0; max-width:42ch; }
+  .ep-body .byline{ margin-top:20px; }
+
+  .tag-row{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:92px 0 48px; padding-top:30px; border-top:1px solid var(--hairline); }
+  .tag-row .tr-label{ font-family:var(--sans); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-right:8px; }
+  .chip.active{ border-color:var(--accent); color:var(--surface); background:var(--accent); }
+
+  .cat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px 56px; }
+  .cat-grid .headline{ font-size:27px; margin:22px 0 12px; }
+  .cat-card[hidden]{ display:none; }
+
+  @media (max-width:860px){
+    .ep-body{ grid-template-columns:1fr; gap:18px; }
+    .cat-grid{ grid-template-columns:1fr; gap:56px; }
+    .cat-masthead{ padding-top:108px; }
+  }
+</style>
+</head>
+<body data-cat="Style">
+
+  <main class="wrap">
+    <header class="cat-masthead">
+      <h1 class="cat-title">Style</h1>
+      <p class="cat-dek">Modern wardrobes, modestly told.</p>
+    </header>
+
+    <!-- EDITOR'S PICK -->
+    <a class="story editors-pick" href="article.html" data-screen-label="Editor's pick">
+      <div class="ep-tag">
+        <span class="eyebrow accent">Editor's Pick · Fashion</span>
+        <span class="meta">16 May 2026</span>
+      </div>
+      <div class="img ph tone-c r-16x9 blurup"><span class="lab">Editor's pick — Wooyoungmi FW26 backstage · 16:9</span></div>
+      <div class="ep-body">
+        <h2 class="headline">The quiet renaissance of Korean heritage brands</h2>
+        <div>
+          <p class="ep-stand">How a generation of Seoul ateliers learned that the loudest thing a label can do is whisper.</p>
+          <p class="byline">By Nadra Nichols · 6 min read</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- SUB-TAG CHIPS -->
+    <div class="tag-row">
+      <span class="tr-label">Browse</span>
+      <button class="chip active" data-tag="all">All</button>
+      <button class="chip" data-tag="investment">Investment Dressing</button>
+      <button class="chip" data-tag="fashion-week">Fashion Week</button>
+      <button class="chip" data-tag="k-fashion">K-Fashion</button>
+      <button class="chip" data-tag="heritage">Heritage Brands</button>
+      <button class="chip" data-tag="modest">Modest Dressing</button>
+    </div>
+
+    <!-- 2-COL GRID -->
+    <div class="cat-grid">
+      <a class="story cat-card" data-tag="investment" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Investment dressing · 3:2</span></div><h3 class="headline">The case for buying once, beautifully</h3><p class="byline">By Leïla Haddad</p></a>
+      <a class="story cat-card" data-tag="k-fashion" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">K-fashion · 3:2</span></div><h3 class="headline">Seoul's new guard of modest tailoring</h3><p class="byline">By Nadra Nichols</p></a>
+      <a class="story cat-card" data-tag="heritage" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Heritage · 3:2</span></div><h3 class="headline">A weaver's archive, reopened in Kyoto</h3><p class="byline">By Imran Yusof</p></a>
+      <a class="story cat-card" data-tag="modest" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Modest dressing · 3:2</span></div><h3 class="headline">The new grammar of covered dressing</h3><p class="byline">By Sana Mahmood</p></a>
+      <a class="story cat-card" data-tag="fashion-week" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Fashion week · 3:2</span></div><h3 class="headline">Notes from a quieter Paris</h3><p class="byline">By Leïla Haddad</p></a>
+      <a class="story cat-card" data-tag="investment" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Investment dressing · 3:2</span></div><h3 class="headline">A coat to keep for twenty winters</h3><p class="byline">By Farah Idris</p></a>
+      <a class="story cat-card" data-tag="k-fashion" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">K-fashion · 3:2</span></div><h3 class="headline">The Seoul label that retired its logo</h3><p class="byline">By Nadra Nichols</p></a>
+      <a class="story cat-card" data-tag="heritage" href="article.html"><div class="img ph tone-c r-3x2 blurup"><span class="lab">Heritage · 3:2</span></div><h3 class="headline">Inside a natural-dye house in West Java</h3><p class="byline">By Hana Sulaiman</p></a>
+      <a class="story cat-card" data-tag="modest" href="article.html"><div class="img ph tone-d r-3x2 blurup"><span class="lab">Modest dressing · 3:2</span></div><h3 class="headline">How to wear a season without chasing it</h3><p class="byline">By Sana Mahmood</p></a>
+      <a class="story cat-card" data-tag="fashion-week" href="article.html"><div class="img ph tone-b r-3x2 blurup"><span class="lab">Fashion week · 3:2</span></div><h3 class="headline">The shows that whispered in Milan</h3><p class="byline">By Imran Yusof</p></a>
+    </div>
+  </main>
+
+  <script src="assets/arahkaii.js"></script>
+  <script>
+    const chips=[...document.querySelectorAll('.tag-row .chip')];
+    const cards=[...document.querySelectorAll('.cat-card')];
+    chips.forEach(c=>c.addEventListener('click',()=>{
+      chips.forEach(x=>x.classList.remove('active')); c.classList.add('active');
+      const t=c.dataset.tag;
+      cards.forEach(card=>{
+        const show = (t==='all' || card.dataset.tag===t);
+        card.hidden = !show;
+        if(show){ card.classList.remove('in'); }
+      });
+      // re-trigger blur-up for newly shown cards
+      if(window.ARAHKAII) window.ARAHKAII.observe();
+    }));
+  </script>
+</body>
+</html>
