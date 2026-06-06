@@ -1,31 +1,52 @@
 ---
+import { Image } from 'astro:assets';
 import type { PostCard } from '../lib/articles';
 
-// "Most read this week" — numbered two-column rail. Items are .story but carry
-// no .img/.headline, so the save-button injection deliberately skips them.
+// "Most read this week" — numbered rail. When an editor's `pick` is supplied it
+// renders asymmetrically (single-column list + one pick image card) for rhythm;
+// without a pick it falls back to the full-width two-column list.
+// List items are .story but carry no .img/.headline, so the save-button
+// injection deliberately skips them.
 interface Props {
 	items: PostCard[];
+	pick?: PostCard;
 }
-const { items } = Astro.props;
+const { items, pick } = Astro.props;
 ---
 
-<section class="sec mostread">
+<section class:list={['sec', 'mostread', { 'has-pick': pick }]}>
 	<div class="sec-head rise">
 		<span class="eyebrow">Most read this week</span>
 		<a class="link-more" href="/latest">See all latest</a>
 	</div>
-	<div class="mr-list">
-		{
-			items.map((x) => (
-				<a class="story mr-item" href={x.url}>
-					<div class="mr-c">
-						<div class="mr-t">{x.title}</div>
-						<div class="mr-m">
-							{x.categoryLabel} · {x.byline}
+
+	<div class="mr-layout">
+		<div class="mr-list">
+			{
+				items.map((x) => (
+					<a class="story mr-item" href={x.url}>
+						<div class="mr-c">
+							<div class="mr-t">{x.title}</div>
+							<div class="mr-m">
+								{x.categoryLabel} · {x.byline}
+							</div>
 						</div>
+					</a>
+				))
+			}
+		</div>
+
+		{
+			pick && (
+				<a class="story mr-pick rise" href={pick.url}>
+					<div class="img real r-4x5 blurup">
+						<Image src={pick.image} alt={pick.heroCaption || pick.title} />
 					</div>
+					<span class="eyebrow accent mr-pick-eyebrow">Editor’s pick · {pick.categoryLabel}</span>
+					<h3 class="headline">{pick.title}</h3>
+					<p class="byline">{pick.byline}</p>
 				</a>
-			))
+			)
 		}
 	</div>
 </section>

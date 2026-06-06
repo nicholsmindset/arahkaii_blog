@@ -48,6 +48,55 @@
 .news-line .sentence{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(26px,3.4vw,40px); line-height:1.18; letter-spacing:-.01em; max-width:18ch; margin:0 auto 40px; }
 .news-line form{ display:flex; justify-content:center; }
 
+/* ---------- HOME — rhythm sections --------------------------------------- */
+/* Feature pair: large lead + stacked horizontal mini-cards (asymmetric). */
+.feature-pair{ display:grid; grid-template-columns:1.5fr 1fr; gap:56px; align-items:start; }
+.fp-lead .fp-eyebrow{ display:block; margin-top:24px; }
+.fp-headline{ font-size:clamp(28px,3.4vw,40px); margin:14px 0 16px; }
+.fp-stand{ font-size:18px; color:var(--muted); max-width:42ch; margin:0 0 18px; }
+.fp-side{ display:flex; flex-direction:column; gap:36px; }
+.fp-item{ display:grid; grid-template-columns:160px 1fr; gap:22px; align-items:center; }
+.fp-item .headline{ font-size:19px; margin:0 0 8px; }
+.fp-item-eyebrow{ display:block; margin-bottom:8px; }
+
+/* Interlude: the one full-bleed aubergine anchor. */
+.interlude{ margin-inline:calc(50% - 50vw); background:var(--accent); color:var(--surface);
+  padding:clamp(84px,12vw,140px) var(--gutter); margin-top:120px; overflow:hidden; }
+.interlude-inner{ max-width:780px; margin:0 auto; text-align:center; }
+.il-orn{ margin:0 0 26px; }
+.il-orn span{ color:var(--surface); opacity:.7; }
+.il-line{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380;
+  font-size:clamp(28px,4vw,50px); line-height:1.14; letter-spacing:-.01em; color:var(--surface);
+  text-wrap:balance; margin:0; }
+.il-attr{ font-family:var(--sans); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--surface); opacity:.66; margin:28px 0 0; }
+
+/* Most read paired with an editor's pick. */
+.mostread.has-pick .mr-layout{ display:grid; grid-template-columns:1.5fr 1fr; gap:72px; align-items:start; }
+.mostread.has-pick .mr-list{ grid-template-columns:1fr; }
+.mr-pick .mr-pick-eyebrow{ display:block; margin-top:20px; }
+.mr-pick .headline{ font-size:24px; margin:18px 0 10px; }
+
+/* Mosaic: mixed-density collage for the thinner categories. */
+.mosaic-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:56px 44px; grid-auto-flow:dense; }
+.mz-lead{ grid-column:span 2; }
+.mz-lead .headline{ font-size:26px; margin:18px 0 10px; }
+.mz-lead .mz-eyebrow{ display:block; margin-top:20px; }
+.mz-item .headline{ font-size:18px; margin:14px 0 8px; }
+.mz-item .mz-eyebrow{ display:block; margin-top:14px; }
+
+@media (max-width:900px){
+  .feature-pair{ grid-template-columns:1fr; gap:40px; }
+  .mostread.has-pick .mr-layout{ grid-template-columns:1fr; gap:48px; }
+  .mosaic-grid{ grid-template-columns:repeat(2,1fr); }
+  .mz-lead{ grid-column:span 2; }
+}
+@media (max-width:600px){
+  .mosaic-grid{ grid-template-columns:1fr; }
+  .mz-lead{ grid-column:span 1; }
+  .fp-item{ grid-template-columns:120px 1fr; gap:16px; }
+}
+
 /* ---------- CATEGORY ----------------------------------------------------- */
 .cat-masthead{ padding:160px 0 0; }
 .cat-title{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(56px,10vw,96px); line-height:.98; letter-spacing:-.02em; margin:0; }

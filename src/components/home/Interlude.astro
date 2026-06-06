@@ -1,0 +1,21 @@
+---
+// The one signature anchor: a full-bleed aubergine band with an oversized
+// display-serif editorial line. The single moment of colour/scale change in an
+// otherwise paper-quiet scroll. Type only — no CTA, in keeping with restraint.
+interface Props {
+	text?: string;
+	attribution?: string;
+}
+const {
+	text = 'The most luxurious thing a publication can do is feel unhurried.',
+	attribution = 'The Arahkaii editors',
+} = Astro.props;
+---
+
+<section class="interlude rise">
+	<div class="interlude-inner">
+		<div class="chapter ornament il-orn"><span>✦</span></div>
+		<p class="il-line">{text}</p>
+		<p class="il-attr">{attribution}</p>
+	</div>
+</section>

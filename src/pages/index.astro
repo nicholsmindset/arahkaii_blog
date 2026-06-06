@@ -3,44 +3,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import StoryCard from '../components/StoryCard.astro';
 import Hero from '../components/home/Hero.astro';
 import EditLane from '../components/home/EditLane.astro';
+import FeaturePair from '../components/home/FeaturePair.astro';
+import Interlude from '../components/home/Interlude.astro';
+import Mosaic from '../components/home/Mosaic.astro';
 import Spotlight from '../components/home/Spotlight.astro';
 import MostRead from '../components/MostRead.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { getCards, type PostCard } from '../lib/articles';
 
-// The designed homepage: cover hero → the edit → category lanes → most read →
-// long-form spotlight → newsletter. Everything is fed by the real content
-// collection and degrades gracefully when a category is thin.
+// Editorial-rhythm homepage: every section differs in shape from its
+// neighbours (image ↔ type, varied scale/density), punctuated once by a
+// full-bleed aubergine interlude. Image-card sections never repeat a story —
+// a `used` set reserves cards as we go; the most-read text list may overlap.
 const cards = await getCards();
-const hero = cards[0];
-const edit = cards.slice(1, 4);
+const used = new Set<string>();
+const reserve = (cs: PostCard[]) => {
+	cs.forEach((c) => used.add(c.id));
+	return cs;
+};
+const free = (pred: (c: PostCard) => boolean = () => true, n = Infinity) =>
+	cards.filter((c) => !used.has(c.id) && pred(c)).slice(0, n);
 
-const LANES: { key: string; label: string }[] = [
-	{ key: 'style', label: 'Style' },
-	{ key: 'dining', label: 'Dining' },
-	{ key: 'travel', label: 'Travel' },
-	{ key: 'culture', label: 'Culture' },
-	{ key: 'living', label: 'Living' },
-	{ key: 'people', label: 'People' },
-	{ key: 'guides', label: 'Guides' },
-];
-const lanes = LANES.map((l) => ({
-	...l,
-	items: cards.filter((c) => c.category === l.key).slice(0, 8),
-})).filter((l) => l.items.length > 0);
+const hero = reserve(free(() => true, 1))[0];
+const edit = reserve(free(() => true, 3));
+const fp = reserve(free(() => true, 3));
+const featureLead = fp[0];
+const featureRest = fp.slice(1, 3);
 
-const mostRead = cards.slice(0, 6);
-// Prefer a long read for the spotlight: a Living/Culture piece, else the 5th card.
-const spotlight: PostCard | undefined =
-	cards.find((c) => ['living', 'culture'].includes(c.category) && c !== hero) ??
-	cards[4] ??
-	cards[1];
+const styleLane = reserve(free((c) => c.category === 'style', 6));
+const cultureLane = reserve(free((c) => c.category === 'culture', 6));
+
+const pick = reserve(
+	free((c) => ['guides', 'people', 'dining', 'travel', 'living'].includes(c.category), 1)
+		.concat(free(() => true, 1))
+		.slice(0, 1),
+)[0];
+
+const spotlight = reserve(
+	free((c) => ['guides', 'culture', 'living'].includes(c.category), 1)
+		.concat(free(() => true, 1))
+		.slice(0, 1),
+)[0];
+
+const thinCats = ['dining', 'travel', 'living', 'people'];
+const mosaicItems = reserve(
+	[...free((c) => thinCats.includes(c.category)), ...free()].slice(0, 7),
+);
+
+const mostRead = cards.slice(0, 6); // recency; text list, may overlap features
 ---
 
-<BaseLayout
-	title="Arahkaii — Asia's modern-luxury edit, modestly told"
-	overHero={true}
->
+<BaseLayout title="Arahkaii — Asia's modern-luxury edit, modestly told" overHero={true}>
 	{hero && <Hero card={hero} />}
 
 	<main class="wrap">
@@ -68,17 +81,25 @@ const spotlight: PostCard | undefined =
 			)
 		}
 
-		{
-			lanes.length > 0 && (
-				<section class="sec" style="padding-top:24px">
-					{lanes.map((l) => (
-						<EditLane title={l.label} href={`/${l.key}`} items={l.items} />
-					))}
-				</section>
-			)
-		}
+		{featureLead && <FeaturePair lead={featureLead} rest={featureRest} />}
 
-		{mostRead.length > 0 && <MostRead items={mostRead} />}
+		{styleLane.length >= 2 && (
+			<section class="sec" style="padding-top:96px">
+				<EditLane title="Style" href="/style" items={styleLane} />
+			</section>
+		)}
+
+		<Interlude />
+
+		{cultureLane.length >= 2 && (
+			<section class="sec">
+				<EditLane title="Culture" href="/culture" items={cultureLane} />
+			</section>
+		)}
+
+		{mostRead.length > 0 && <MostRead items={mostRead} pick={pick} />}
+
+		{mosaicItems.length > 0 && <Mosaic items={mosaicItems} />}
 
 		{
 			spotlight && (

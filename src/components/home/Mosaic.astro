@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import type { PostCard } from '../../lib/articles';
+
+// Mixed-density collage that gathers the thinner categories into one
+// intentional section instead of several sparse single-card lanes. The first
+// item leads large (3:2, span 2); the rest are smaller with alternating
+// portrait/square crops for a magazine-collage feel. Each card keeps its
+// category eyebrow so those sections stay represented.
+interface Props {
+	title?: string;
+	href?: string;
+	items: PostCard[];
+}
+const { title = 'Across Arahkaii', href = '/latest', items } = Astro.props;
+const [lead, ...rest] = items;
+const ratioFor = (i: number) => (i % 2 === 0 ? '4x5' : '1x1');
+---
+
+<section class="sec mosaic">
+	<div class="sec-head rise">
+		<span class="eyebrow">{title}</span>
+		<a class="link-more" href={href}>All stories</a>
+	</div>
+
+	<div class="mosaic-grid">
+		{
+			lead && (
+				<a class="story mz-lead" href={lead.url}>
+					<div class="img real r-3x2 blurup">
+						<Image src={lead.image} alt={lead.heroCaption || lead.title} />
+					</div>
+					<span class="eyebrow accent mz-eyebrow">{lead.categoryLabel}</span>
+					<h3 class="headline">{lead.title}</h3>
+					<p class="byline">{lead.byline}</p>
+				</a>
+			)
+		}
+		{
+			rest.map((c, i) => (
+				<a class="story mz-item" href={c.url}>
+					<div class:list={['img', 'real', `r-${ratioFor(i)}`, 'blurup']}>
+						<Image src={c.image} alt={c.heroCaption || c.title} />
+					</div>
+					<span class="eyebrow mz-eyebrow">{c.categoryLabel}</span>
+					<h3 class="headline">{c.title}</h3>
+					<p class="byline">{c.byline}</p>
+				</a>
+			))
+		}
+	</div>
+</section>
