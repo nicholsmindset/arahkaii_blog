@@ -82,6 +82,50 @@ export function articleSchema(input: ArticleSchemaInput): JsonLd {
 	};
 }
 
+export interface PersonSchemaInput {
+	name: string;
+	jobTitle?: string;
+	description?: string;
+	url: string; // author page URL
+	image?: string; // absolute avatar URL
+	sameAs?: string[];
+}
+
+/** Person — author pages + citable byline identity. worksFor → publisher. */
+export function personSchema(input: PersonSchemaInput): JsonLd {
+	const person: JsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		'@id': `${input.url}#person`,
+		name: input.name,
+		url: input.url,
+		worksFor: { '@id': ORG_ID },
+	};
+	if (input.jobTitle) person.jobTitle = input.jobTitle;
+	if (input.description) person.description = input.description;
+	if (input.image) person.image = { '@type': 'ImageObject', url: input.image };
+	if (input.sameAs?.length) person.sameAs = input.sameAs;
+	return person;
+}
+
+/** CollectionPage — category / author / index listing pages. */
+export function collectionPageSchema(input: {
+	name: string;
+	url: string;
+	description?: string;
+}): JsonLd {
+	const page: JsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: input.name,
+		url: input.url,
+		isPartOf: { '@id': WEBSITE_ID },
+		inLanguage: 'en-GB',
+	};
+	if (input.description) page.description = input.description;
+	return page;
+}
+
 export interface BreadcrumbItem {
 	name: string;
 	url: string;

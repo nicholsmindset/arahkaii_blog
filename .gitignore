@@ -36,3 +36,6 @@ real-export.xml
 
 # Playwright MCP artifacts
 .playwright-mcp/
+
+# Source working docs
+*.docx

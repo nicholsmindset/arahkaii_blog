@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCards } from '../lib/articles';
+import { organizationSchema, websiteSchema, collectionPageSchema } from '../lib/seo';
 
 // The contributors index — a quiet directory of the writers behind Arahkaii,
 // each linking to their author page. Grows as the masthead does.
@@ -14,12 +15,24 @@ for (const c of cards) countById.set(c.author, (countById.get(c.author) ?? 0) + 
 const contributors = authors
 	.map((a) => ({ ...a, count: countById.get(a.id) ?? 0 }))
 	.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({
+		name: 'Contributors — Arahkaii',
+		url: canonical,
+		description: 'The writers behind Arahkaii.',
+	}),
+];
 ---
 
 <BaseLayout
 	title="Contributors — Arahkaii"
 	description="The writers behind Arahkaii — reporting a quieter idea of modern luxury across Asia."
 	activeCategory="People"
+	jsonLd={jsonLd}
 >
 	<main class="wrap">
 		<header class="cb-head">

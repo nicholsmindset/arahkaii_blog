@@ -1,7 +1,7 @@
 ---
 title: "The 6 Beauty Trends From FW26 Runways That Actually Matter"
 standfirst: "Fashion month beauty is a mixed bag."
-category: style
+category: beauty
 tags:
   - "beauty-science"
   - "fashion-week"

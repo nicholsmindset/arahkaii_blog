@@ -1,7 +1,7 @@
 ---
 title: "The Warmth Question: Why Your Summer Makeup Suddenly Feels Wrong (And What to Do About It)"
 standfirst: "Mastering the seasonal makeup transition from summer to autumn is about more than swapping coral for berry—it’s about understanding how light, skin chemistry, and colour theory intersect."
-category: style
+category: beauty
 tags:
   - "beauty-science"
   - "makeup"

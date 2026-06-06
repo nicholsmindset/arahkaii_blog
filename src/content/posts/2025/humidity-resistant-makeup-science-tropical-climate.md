@@ -1,7 +1,7 @@
 ---
 title: "The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works"
 standfirst: "Finding humidity resistant makeup that survives tropical heat requires understanding the science behind why conventional formulas fail in Southeast Asian climates."
-category: style
+category: beauty
 tags:
   - "beauty-science"
   - "makeup"

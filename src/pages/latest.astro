@@ -3,14 +3,26 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCards } from '../lib/articles';
 import { fmtDate } from '../lib/format';
+import { organizationSchema, websiteSchema, collectionPageSchema } from '../lib/seo';
 
 // Reverse-chronological feed: a lead card, then dated rows.
 const cards = await getCards();
 const lead = cards[0];
 const rest = cards.slice(1);
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({
+		name: 'Latest — Arahkaii',
+		url: canonical,
+		description: 'The latest from Arahkaii.',
+	}),
+];
 ---
 
-<BaseLayout title="Latest — Arahkaii">
+<BaseLayout title="Latest — Arahkaii" jsonLd={jsonLd}>
 	<main class="wrap">
 		<header class="lt-head">
 			<h1 class="lt-title">Latest</h1>

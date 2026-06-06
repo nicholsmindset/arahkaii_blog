@@ -1,7 +1,7 @@
 ---
 title: "C-Beauty's Second Wave: How Florasis, Flower Knows, and Joocyee Are Rewriting Southeast Asia's Beauty Map"
 standfirst: "The narrative that dominated Singapore's beauty industry through the 2010s was simple enough to retell: Korean skincare conquered everything it touched."
-category: culture
+category: beauty
 tags:
   - "c-beauty"
   - "k-beauty"

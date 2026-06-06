@@ -31,7 +31,7 @@ const featureLead = fp[0];
 const featureRest = fp.slice(1, 3);
 
 const styleLane = reserve(free((c) => c.category === 'style', 6));
-const cultureLane = reserve(free((c) => c.category === 'culture', 6));
+const beautyLane = reserve(free((c) => c.category === 'beauty', 6));
 
 const pick = reserve(
 	free((c) => ['guides', 'people', 'dining', 'travel', 'living'].includes(c.category), 1)
@@ -91,9 +91,9 @@ const mostRead = cards.slice(0, 6); // recency; text list, may overlap features
 
 		<Interlude />
 
-		{cultureLane.length >= 2 && (
+		{beautyLane.length >= 2 && (
 			<section class="sec">
-				<EditLane title="Culture" href="/culture" items={cultureLane} />
+				<EditLane title="Beauty" href="/beauty" items={beautyLane} />
 			</section>
 		)}
 

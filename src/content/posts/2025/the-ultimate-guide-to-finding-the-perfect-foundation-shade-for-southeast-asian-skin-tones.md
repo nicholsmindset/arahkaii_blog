@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian Skin Tones"
 standfirst: "Finding the right foundation shade for Southeast Asian skin tones requires navigating a beauty industry that still hasn’t caught up with the region’s incredible diversity."
-category: guides
+category: beauty
 tags:
   - "beauty-science"
   - "skincare"

@@ -1,7 +1,7 @@
 ---
 title: "8 K-Beauty Brands You Should Know Before Everyone Else Does"
 standfirst: "Okay, real talk: the Western beauty industry is just now catching up to what Asian beauty lovers have known for years."
-category: style
+category: beauty
 tags:
   - "beauty-science"
   - "k-beauty"

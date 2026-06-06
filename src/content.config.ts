@@ -11,6 +11,7 @@ const posts = defineCollection({
 			standfirst: z.string().max(220),
 			category: z.enum([
 				'style',
+				'beauty',
 				'dining',
 				'travel',
 				'culture',

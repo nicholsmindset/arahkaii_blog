@@ -4,11 +4,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
 import { getCards } from '../../lib/articles';
 import { cap, fmtDate } from '../../lib/format';
+import { organizationSchema, websiteSchema, collectionPageSchema } from '../../lib/seo';
 
 // Category archive: masthead → editor's pick → tag chips → 2-col grid.
 // One static page per category in the schema enum.
 const DEKS: Record<string, string> = {
 	style: 'Modern wardrobes, modestly told.',
+	beauty: 'Skincare science, halal-certified, and the rituals behind a considered face.',
 	dining: 'Halal tables and the kitchens keeping faith with the calendar.',
 	travel: 'Slow journeys, soft light, the unhurried itinerary.',
 	culture: 'Architecture, craft, literature and the long view.',
@@ -20,9 +22,16 @@ const DEKS: Record<string, string> = {
 export async function getStaticPaths() {
 	// Self-contained: getStaticPaths is extracted to its own build chunk and
 	// can't see module-scope consts from the frontmatter.
-	return ['style', 'dining', 'travel', 'culture', 'living', 'people', 'guides'].map(
-		(category) => ({ params: { category } }),
-	);
+	return [
+		'style',
+		'beauty',
+		'dining',
+		'travel',
+		'culture',
+		'living',
+		'people',
+		'guides',
+	].map((category) => ({ params: { category } }));
 }
 
 const { category } = Astro.params;
@@ -43,9 +52,16 @@ const topTags = [...counts.entries()]
 	.map(([t]) => t);
 const prettify = (t: string) =>
 	t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({ name: `${label} — Arahkaii`, url: canonical, description: dek }),
+];
 ---
 
-<BaseLayout title={`${label} — Arahkaii`} activeCategory={label}>
+<BaseLayout title={`${label} — Arahkaii`} activeCategory={label} jsonLd={jsonLd}>
 	<main class="wrap">
 		<header class="cat-masthead">
 			<h1 class="cat-title">{label}</h1>

@@ -1,7 +1,7 @@
 ---
 title: "K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine"
 standfirst: "K-beauty didn't just change skincare routines—it rewired the entire global beauty industry from Seoul outward."
-category: culture
+category: beauty
 tags:
   - "beauty-science"
   - "k-beauty"

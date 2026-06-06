@@ -1,7 +1,7 @@
 ---
 title: "C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown"
 standfirst: "The C-Beauty vs K-Beauty rivalry is reshaping the global skincare industry, and choosing sides has never been harder."
-category: style
+category: beauty
 tags:
   - "beauty-science"
   - "c-beauty"

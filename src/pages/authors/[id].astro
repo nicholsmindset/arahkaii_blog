@@ -1,10 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
 import { getCards } from '../../lib/articles';
 import { fmtDate } from '../../lib/format';
+import {
+	SITE,
+	organizationSchema,
+	websiteSchema,
+	personSchema,
+	breadcrumbSchema,
+} from '../../lib/seo';
 
 export async function getStaticPaths() {
 	const authors = await getCollection('authors');
@@ -20,12 +27,38 @@ const firstName = a.name.split(' ')[0];
 
 const work = (await getCards()).filter((c) => c.author === author.id);
 const count = work.length;
+
+// — SEO / Person schema —
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+let avatarUrl: string | undefined;
+if (a.avatar) {
+	const img = await getImage({ src: a.avatar, width: 600, height: 600, format: 'jpg' });
+	avatarUrl = new URL(img.src, Astro.site).toString();
+}
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	personSchema({
+		name: a.name,
+		jobTitle: a.role,
+		description: a.bio,
+		url: canonical,
+		image: avatarUrl,
+	}),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'Contributors', url: new URL('/contributors', SITE.url).toString() },
+		{ name: a.name, url: canonical },
+	]),
+];
 ---
 
 <BaseLayout
 	title={`${a.name} — Arahkaii`}
 	description={a.bio}
 	activeCategory="People"
+	image={avatarUrl}
+	jsonLd={jsonLd}
 >
 	<main class="wrap">
 		<header class="author-head">
