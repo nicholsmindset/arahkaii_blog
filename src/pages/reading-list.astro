@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 // Saved stories live in localStorage, so the grid is rendered on the client
 // from window.ARAHKAII.getSaved(). Server renders only the shell.
@@ -8,6 +9,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Your reading list — Arahkaii" noindex={true}>
 	<main class="wrap">
 		<header class="rl-head">
+			<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Reading list' }]} />
 			<h1 class="rl-title">Reading list</h1>
 			<p class="rl-dek">Saved for a slower moment.</p>
 			<p class="rl-count" id="rl-count"></p>

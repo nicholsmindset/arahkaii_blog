@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 
 const pillars: [string, string][] = [
 	['Style', 'Modern wardrobes, modestly told.'],
+	['Beauty', 'Skincare science, halal-certified, and the rituals behind a considered face.'],
 	['Dining', 'Halal tables and the kitchens keeping faith with the calendar.'],
 	['Travel', 'Slow journeys, soft light, the unhurried itinerary.'],
 	['Culture', 'Architecture, craft, literature and the long view.'],
@@ -18,6 +20,7 @@ const pillars: [string, string][] = [
 	description="Arahkaii is a modern-luxury edit, modestly told — Asia's style, food, travel and culture, paid attention in full."
 >
 	<article class="manifesto">
+		<Breadcrumbs center class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'About' }]} />
 		<span class="eyebrow mf-eyebrow">About Arahkaii</span>
 		<p class="mf-open">
 			We started Arahkaii on a simple conviction: that the most luxurious thing a

@@ -334,6 +334,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role=button]:focus-
 .crumbs a{ color:var(--muted); transition:color var(--settle); }
 .crumbs a:hover{ color:var(--accent); }
 .crumbs .sep{ opacity:.5; }
+.crumbs.center{ justify-content:center; }
+.crumbs [aria-current="page"]{ color:var(--muted); }
+.page-crumbs{ margin-bottom:22px; }
 
 /* inline newsletter module (mid-article) */
 .inline-news{ border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); padding:40px 0; margin:48px 0; text-align:center; }

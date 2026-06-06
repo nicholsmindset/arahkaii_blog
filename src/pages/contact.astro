@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 // Contact — quiet editorial page with a Netlify-powered form (captured in the
 // Netlify dashboard once deployed; no backend needed) plus a direct address.
@@ -12,6 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	<main class="wrap">
 		<div class="mw-640">
 			<header class="cb-head">
+				<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Contact' }]} />
 				<span class="eyebrow">Say hello</span>
 				<h1 class="cb-title">Contact</h1>
 				<p class="cb-dek">

@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { getCards } from '../lib/articles';
 import { fmtDate } from '../lib/format';
 import { organizationSchema, websiteSchema, collectionPageSchema } from '../lib/seo';
@@ -25,6 +26,7 @@ const jsonLd = [
 <BaseLayout title="Latest — Arahkaii" jsonLd={jsonLd}>
 	<main class="wrap">
 		<header class="lt-head">
+			<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Latest' }]} />
 			<h1 class="lt-title">Latest</h1>
 			<p class="lt-dek">Everything we’ve published, newest first.</p>
 		</header>

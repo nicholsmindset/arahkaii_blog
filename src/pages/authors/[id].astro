@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import StoryCard from '../../components/StoryCard.astro';
 import { getCards } from '../../lib/articles';
 import { fmtDate } from '../../lib/format';
@@ -63,6 +64,15 @@ const jsonLd = [
 	<main class="wrap">
 		<header class="author-head">
 			<div>
+				<Breadcrumbs
+					schema={false}
+					class="page-crumbs"
+					items={[
+						{ name: 'Arahkaii', href: '/' },
+						{ name: 'Contributors', href: '/contributors' },
+						{ name: a.name },
+					]}
+				/>
 				<h1 class="ah-name">{a.name}</h1>
 				<p class="ah-role">{a.role}</p>
 				<p class="ah-bio">{a.bio}</p>

@@ -1,0 +1,49 @@
+---
+import { SITE, breadcrumbSchema } from '../lib/seo';
+
+// Reusable breadcrumb trail + BreadcrumbList JSON-LD. Pass the full trail
+// including the "Arahkaii" root; the last item is the current page (no link).
+//   <Breadcrumbs items={[{name:'Arahkaii', href:'/'}, {name:'Style', href:'/style'}, {name:'…'}]} />
+// Set schema={false} on pages that already emit BreadcrumbList in <head>.
+interface Crumb {
+	name: string;
+	href?: string;
+}
+interface Props {
+	items: Crumb[];
+	schema?: boolean;
+	center?: boolean;
+	class?: string;
+}
+const { items, schema = true, center = false, class: cls } = Astro.props;
+
+const here = new URL(Astro.url.pathname, SITE.url).toString();
+const schemaItems = items.map((c) => ({
+	name: c.name,
+	url: c.href ? new URL(c.href, SITE.url).toString() : here,
+}));
+---
+
+<nav class:list={['crumbs', { center }, cls]} aria-label="Breadcrumb">
+	{
+		items.map((c, i) => (
+			<>
+				{c.href ? (
+					<a href={c.href}>{c.name}</a>
+				) : (
+					<span aria-current="page">{c.name}</span>
+				)}
+				{i < items.length - 1 && <span class="sep">/</span>}
+			</>
+		))
+	}
+</nav>
+{
+	schema && (
+		<script
+			is:inline
+			type="application/ld+json"
+			set:html={JSON.stringify(breadcrumbSchema(schemaItems))}
+		/>
+	)
+}
