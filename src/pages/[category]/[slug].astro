@@ -53,7 +53,7 @@ const moreGuides = others
 	.slice(0, 3)
 	.map((c) => ({ title: c.title, href: c.url, byline: c.byline, image: c.image, tone: c.tone }));
 
-const authorHref = `/authors/${post.data.author}`;
+const authorHref = `/authors/${post.data.author}/`;
 const Layout = d.category === 'guides' ? GuideLayout : ArticleLayout;
 const layoutExtra =
 	d.category === 'guides' ? { moreGuides } : { related, readNext };

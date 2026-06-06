@@ -36,6 +36,11 @@ export function organizationSchema(): JsonLd {
 			'@type': 'ImageObject',
 			url: SITE.logoUrl,
 		},
+		contactPoint: {
+			'@type': 'ContactPoint',
+			email: SITE.email,
+			contactType: 'editorial',
+		},
 	};
 	if (SITE.sameAs.length) org.sameAs = SITE.sameAs;
 	return org;
@@ -68,8 +73,13 @@ export interface ArticleSchemaInput {
 }
 
 export function articleSchema(input: ArticleSchemaInput): JsonLd {
+	// Link the byline to the author's Person entity (their /authors/<id>/ node)
+	// so the graph resolves to one identity across the site.
 	const author: JsonLd = { '@type': 'Person', name: input.authorName };
-	if (input.authorUrl) author.url = input.authorUrl;
+	if (input.authorUrl) {
+		author.url = input.authorUrl;
+		author['@id'] = `${input.authorUrl}#person`;
+	}
 
 	return {
 		'@context': 'https://schema.org',
