@@ -29,11 +29,11 @@ function legacyRedirects() {
 	const dir = path.resolve('src/content/posts');
 	/** @type {Record<string, string>} */
 	const out = {};
-	const fmField = (fm, key) =>
+	const fmField = (/** @type {string} */ fm, /** @type {string} */ key) =>
 		(fm.match(new RegExp(`^${key}:\\s*(.+)$`, 'm')) || [])[1]
 			?.trim()
 			.replace(/^['"]|['"]$/g, '');
-	const walk = (d) => {
+	const walk = (/** @type {string} */ d) => {
 		for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
 			const p = path.join(d, entry.name);
 			if (entry.isDirectory()) {
