@@ -90,6 +90,18 @@
 .hero-fig .media {
 	width: 100%;
 }
+/* A full-width 3:2 lead runs ~850px tall and dominates the page. Cap it to a
+   contained band, and bias the crop toward the top so faces/subjects stay in
+   frame (a centred crop of a tall portrait chops the eyes). */
+.hero-fig .media,
+.hero-fig .img {
+	aspect-ratio: auto !important;
+	height: clamp(300px, 42vw, 520px);
+}
+.hero-fig .media img,
+.hero-fig .img img {
+	object-position: center 28%;
+}
 .fig-cap {
 	max-width: var(--maxw);
 	margin: 0 auto;
