@@ -11,7 +11,7 @@ date: 2026-06-06
 heroImage: "../../../assets/blog-placeholder-1.jpg"
 heroCaption: ""
 heroCredit: "Arahkaii"
-draft: true
+draft: false
 legacyWpSlug: "fw26-beauty-trends-runways"
 ---
 
