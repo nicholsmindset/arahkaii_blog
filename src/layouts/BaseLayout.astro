@@ -301,18 +301,6 @@ const searchIndex = await getSearchIndex();
 					return [];
 				}
 			}
-			function fmtShort(iso: string) {
-				try {
-					return new Intl.DateTimeFormat('en-GB', {
-						day: 'numeric',
-						month: 'long',
-						year: 'numeric',
-					}).format(new Date(iso));
-				} catch {
-					return iso;
-				}
-			}
-
 			// ---- inline search ----
 			function wireSearch() {
 				const bar = document.querySelector<HTMLElement>('.searchbar');

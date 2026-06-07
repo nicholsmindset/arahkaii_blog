@@ -64,12 +64,15 @@ via `legacyWpSlug` for 301s.
 | ink          | `#111111` | text                                  |
 | ink-2        | `#5A5A5A` | deks, metadata, captions              |
 | hairline     | `#E6E2DC` | rules                                 |
-| emerald      | `#0F3D33` | the single accent — eyebrows, hovers, underlines, footer edge |
+| emerald      | `#0F3D33` | cool UI-signpost accent — eyebrows, focus, footer top edge |
+| accent2      | `#4A2D3A` | warm editorial accent (aubergine) — footer, drop cap, pull-quote rule, section ✦, headline/link hover |
 | bone         | `#F6F1EA` | warm-bone tint card — max ~twice/page |
-| footer-bg    | `#111111` | the one dark section                  |
+| footer-bg    | `#4A2D3A` | the one rich aubergine section        |
 
-Emerald is the only accent — no purple/violet, no per-pillar colours. Use it
-sparingly (long-read eyebrow/✦, hover underlines, footer top rule). Tokens live
+Two accents only, with a clear division of labour: **emerald** = cool UI
+signposts (small eyebrows, focus rings, footer top hairline, chips); **aubergine
+`#4A2D3A`** = warm editorial moments (footer field, drop cap, pull-quote rule,
+section ✦, headline/link hover). No per-pillar colours. Tokens live
 in `src/styles/tokens.css` (v1 token names are aliased there for back-compat);
 primitives + chrome in `src/styles/global.css`.
 

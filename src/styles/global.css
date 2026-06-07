@@ -182,7 +182,7 @@
 }
 .hl-link:hover .hl,
 .hl-link:focus-visible .hl {
-	color: var(--emerald);
+	color: var(--accent2);
 }
 
 /* ---------- MEDIA / PLACEHOLDER ---------- */
@@ -573,8 +573,11 @@ a.card:hover .media img {
 	width: fit-content;
 	transition: color var(--t-ui) var(--ease);
 }
+.footer__links a {
+	color: rgba(255, 255, 255, 0.85);
+}
 .footer__links a:hover {
-	color: var(--emerald);
+	color: #fff;
 }
 .footer__news input {
 	width: 100%;
@@ -614,7 +617,25 @@ a.card:hover .media img {
 	color: #fff;
 }
 .footer__news a.tlink::after {
-	background: var(--emerald);
+	background: #fff;
+}
+/* the footer newsletter form sits on the dark aubergine band — light it up so
+   the input, rule and submit stay legible (the default .field is ink-on-light). */
+.footer__news .field {
+	border-bottom-color: rgba(255, 255, 255, 0.4);
+	max-width: none;
+}
+.footer__news .field input {
+	color: #fff;
+}
+.footer__news .field input::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+.footer__news .field button {
+	color: #fff;
+}
+.footer__news .field:focus-within {
+	border-bottom-color: #fff;
 }
 
 /* ---------- BYLINE ROW ---------- */
@@ -827,7 +848,7 @@ a.card:hover .media img {
 	text-wrap: pretty;
 }
 .story:hover .headline {
-	color: var(--emerald);
+	color: var(--accent2);
 }
 .byline {
 	font-family: var(--sans);
@@ -1058,7 +1079,7 @@ a.card:hover .media img {
 	transition: color var(--t-ui) var(--ease);
 }
 .read-next:hover .rn-title {
-	color: var(--emerald);
+	color: var(--accent2);
 }
 .read-next .rn-meta {
 	margin-top: 20px;

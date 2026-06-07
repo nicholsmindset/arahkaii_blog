@@ -120,7 +120,7 @@
 	font-size: 4.2em;
 	line-height: 0.84;
 	padding: 6px 14px 0 0;
-	color: var(--ink);
+	color: var(--accent2);
 }
 .subhead,
 .article-body h2 {
@@ -201,7 +201,7 @@
 .blockquote {
 	margin: 48px 0;
 	padding: 0 0 0 32px;
-	border-left: 2px solid var(--emerald);
+	border-left: 2px solid var(--accent2);
 }
 .art-pull p,
 .marginalia .mq,
@@ -382,7 +382,12 @@
 }
 .article-body a:hover,
 .art-body a:hover {
-	text-decoration-color: var(--emerald);
+	text-decoration-color: var(--accent2);
+}
+
+/* section-break ornament uses the warm editorial accent */
+.sectionbreak .star {
+	color: var(--accent2);
 }
 .article-body ul,
 .article-body ol {
