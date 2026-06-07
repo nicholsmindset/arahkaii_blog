@@ -173,8 +173,10 @@
 .mf-body p{ margin:0 0 26px; }
 .mf-body p.dropcap::first-letter{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:430; float:left; font-size:84px; line-height:.74; padding:8px 14px 0 0; color:var(--accent); }
 
-.mf-image{ margin:84px 0; }
-.mf-image .img{ width:100%; }
+.mf-image{ margin:48px 0; }
+/* brand image is a placeholder — keep it a short, contained band, not a
+   full-height 16:9 block that dominates the page */
+.mf-image .img{ width:100%; aspect-ratio:auto; height:clamp(180px,26vw,320px); }
 .mf-image .caption{ max-width:1280px; margin:0 auto; padding:14px var(--gutter) 0; text-align:center; }
 
 .pillars{ max-width:640px; margin:0 auto; padding:0 var(--gutter); }
