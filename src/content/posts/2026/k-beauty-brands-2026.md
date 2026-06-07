@@ -9,8 +9,8 @@ tags:
   - "skincare"
 author: natalia-amir
 date: 2026-06-06
-heroImage: "../../../assets/blog-placeholder-1.jpg"
-heroCaption: ""
+heroImage: "../../../assets/images/k-beauty-brands-2026/hero.png"
+heroCaption: "The next wave of Korean beauty — skin-first formulas and collectible packaging."
 heroCredit: "Arahkaii"
 draft: false
 legacyWpSlug: "k-beauty-brands-2026"

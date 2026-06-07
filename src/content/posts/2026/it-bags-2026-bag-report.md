@@ -8,8 +8,8 @@ tags:
   - "quiet-luxury"
 author: natalia-amir
 date: 2026-06-06
-heroImage: "../../../assets/blog-placeholder-1.jpg"
-heroCaption: ""
+heroImage: "../../../assets/images/it-bags-2026-bag-report/hero.png"
+heroCaption: "The 2026 bag landscape — from debut silhouettes to archive revivals."
 heroCredit: "Arahkaii"
 draft: false
 legacyWpSlug: "it-bags-2026-bag-report"

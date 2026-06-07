@@ -7,8 +7,8 @@ tags:
   - "fashion-week"
 author: natalia-amir
 date: 2026-06-06
-heroImage: "../../../assets/blog-placeholder-1.jpg"
-heroCaption: ""
+heroImage: "../../../assets/images/paris-fashion-week-fw26-best-shows/hero.png"
+heroCaption: "Paris closes fashion month — the sophomore collections that earned their ranking."
 heroCredit: "Arahkaii"
 draft: false
 legacyWpSlug: "paris-fashion-week-fw26-best-shows"

@@ -8,8 +8,8 @@ tags:
   - "makeup"
 author: natalia-amir
 date: 2026-06-06
-heroImage: "../../../assets/blog-placeholder-1.jpg"
-heroCaption: ""
+heroImage: "../../../assets/images/fw26-beauty-trends-runways/hero.png"
+heroCaption: "FW26's most wearable beauty: blurred lips, diffused blush, intentional ease."
 heroCredit: "Arahkaii"
 draft: false
 legacyWpSlug: "fw26-beauty-trends-runways"

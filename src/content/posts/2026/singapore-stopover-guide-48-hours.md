@@ -6,8 +6,8 @@ tags:
   - "digital-nomad"
 author: robert
 date: 2026-06-06
-heroImage: "../../../assets/blog-placeholder-1.jpg"
-heroCaption: ""
+heroImage: "../../../assets/images/singapore-stopover-guide-48-hours/hero.png"
+heroCaption: "Singapore in 48 hours — the stopover, done properly."
 heroCredit: "Arahkaii"
 draft: false
 legacyWpSlug: "singapore-stopover-guide-48-hours"
