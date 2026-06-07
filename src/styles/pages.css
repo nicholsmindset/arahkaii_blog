@@ -97,6 +97,22 @@
   .mosaic .card{ grid-column:1 / -1 !important; }
 }
 
+/* ---------- MOBILE: collapse every 12-col grid module to one column --------
+   The homepage and category modules position children with explicit inline
+   grid-column spans (1/8, 6/13, …). Below the tablet breakpoint, force every
+   direct child of a .grid to span the full width so modules stack cleanly
+   instead of cramming into half-columns. */
+@media (max-width:768px){
+  .grid > *{ grid-column:1 / -1 !important; }
+  /* the brief's tall numeral list + edit teasers tighten up a touch */
+  .brief__item{ padding:16px 0; }
+  /* the cover hero is full-screen-tall on desktop; ease it on phones */
+  .home-cover-media{ height:62vh !important; }
+  /* the Edit lead portrait has a fixed 600px height → with aspect-ratio 5/7 that
+     forces a 429px width and overflows the column. Let the ratio drive it. */
+  .edit-lead-media{ height:auto !important; }
+}
+
 /* ---------- LATEST ------------------------------------------------------- */
 .lt-head{ padding:clamp(48px,7vw,84px) 0 0; }
 .lt-title{ font-family:var(--serif); font-variation-settings:'opsz' 144; font-weight:380; font-size:clamp(48px,8vw,76px); line-height:1; letter-spacing:-.02em; margin:0; }
