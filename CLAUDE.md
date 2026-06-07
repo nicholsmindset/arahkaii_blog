@@ -2,8 +2,13 @@
 
 Standing rules for working in this repo. The full reasoning lives in
 [ARAHKAII-Master-Plan.md](./ARAHKAII-Master-Plan.md); this file is the
-distilled, always-on guidance. The HTML/CSS in `design/arahkaii-blog/project/`
-(especially `assets/arahkaii.css`) is the **design source of truth**.
+distilled, always-on guidance.
+
+**Design system (v2, June 2026):** the live design is the bright-white,
+single-emerald-accent, Didone-display "arahkaii-blog-v2" system. The source of
+truth is the ported CSS in `src/styles/` (`tokens.css` · `global.css` ·
+`pages.css` · `article.css`) — these mirror the v2 prototype bundle. The earlier
+warm-paper / aubergine / Fraunces look ("The Quiet Authority") has been retired.
 
 ## What this is
 
@@ -15,10 +20,11 @@ Code _is_ the CMS.
 ## Brand voice
 
 - **British English.** Em-dashes, not hyphens, for parenthetical breaks.
-- Quiet, literary, considered — "The Quiet Authority." A publication that reads
-  like a beautifully made book that happens to live on the web.
-- **Restraint over decoration.** Whitespace is the brand. Nothing loud or
-  flashy. The most luxurious thing the site can do is feel unhurried.
+- Quiet, literary, considered. A bright-white, Tatler-grade editorial that aims
+  to read as more disciplined and engaging than mass-luxury titles.
+- **Restraint over decoration.** Whitespace is the brand. No filled buttons, no
+  drop shadows, no gradients — all CTAs are emerald-underlined text links. The
+  most luxurious thing the site can do is feel unhurried.
 - Sentence case for headlines (never Title Case display).
 
 ## Modest-luxury guardrails (positive identity, not just subtraction)
@@ -29,51 +35,60 @@ Code _is_ the CMS.
   sophistication mass-luxury titles lack. The guardrail applies to **both**
   generated and sourced images.
 
-## The seven categories (this is the schema enum — do not invent others)
+## The eight categories (this is the schema enum — do not invent others)
 
-`style` · `dining` · `travel` · `culture` · `living` · `people` · `guides`
+`style` · `beauty` · `dining` · `travel` · `culture` · `living` · `people` ·
+`guides`
 
-URLs are `/<category>/<slug>/`. Preserve legacy WordPress slugs via
-`legacyWpSlug` for 301s.
+All eight stay in the nav (v2-styled), plus a curated **"The Long Read"** link
+(→ `/latest`). URLs are `/<category>/<slug>/`. Preserve legacy WordPress slugs
+via `legacyWpSlug` for 301s.
 
-## Typography — "serif speaks, sans signposts"
+## Typography — "Didone speaks, sans signposts" (one display + one serif + one sans)
 
-- **Display/headlines:** Fraunces (variable, opsz axis). Literary serif.
-- **Body/long-form:** Newsreader. A bookish reading serif — _not_ sans. This is
-  a signature; body is never set in sans.
-- **UI / eyebrows / captions / bylines / meta:** Inter. Sans only signposts —
-  navigation and labels. It never carries editorial content.
-- These are the **free placeholder stack**. Licensed registers later: GT Sectra
-  / Canela (display), Tiempos / Lyon (body), Söhne / Suisse (sans).
-- **Never use Forma DJR** (Tatler's typeface). Avoid Playfair / Didot / Bodoni
-  ("wedding invitation", not "literary press").
+- **Display/headlines/masthead:** **Bodoni Moda** (variable, opsz). A modern
+  Didone with high contrast — the v2 signature. (Supersedes the old "avoid
+  Bodoni" rule; still avoid Playfair / Didot / Forma DJR.)
+- **Body/long-form:** **Source Serif 4**. An editorial reading serif — _not_
+  sans. Body is never set in sans.
+- **UI / eyebrows / captions / bylines / meta:** **Inter**. Sans only signposts.
+- All three are self-hosted via `@fontsource-variable/*`. Licensed registers
+  later: GT Sectra / Canela (display), Tiempos / Lyon (body), Söhne (sans).
+- One serif + one Didone + one sans — never introduce a fourth family.
 
-## Palette (warm uncoated paper — never pure white/black)
+## Palette (Tatler-bright white — never cream/off-white; single emerald accent)
 
-| Token        | Hex       | Use                       |
-| ------------ | --------- | ------------------------- |
-| surface      | `#F6F1E9` | paper background          |
-| ink          | `#1C1815` | text                      |
-| quiet        | `#EFE8DB` | cards / quiet surfaces    |
-| muted        | `#6E6457` | meta                      |
-| hairline     | `#E2D9CA` | rules                     |
-| accent       | `#4A2C3A` | aubergine — **rare**      |
-| clay         | `#B06B4E` | terracotta — **very rare**|
+| Token        | Hex       | Use                                   |
+| ------------ | --------- | ------------------------------------- |
+| bg           | `#FFFFFF` | the canvas, everywhere                |
+| ink          | `#111111` | text                                  |
+| ink-2        | `#5A5A5A` | deks, metadata, captions              |
+| hairline     | `#E6E2DC` | rules                                 |
+| emerald      | `#0F3D33` | the single accent — eyebrows, hovers, underlines, footer edge |
+| bone         | `#F6F1EA` | warm-bone tint card — max ~twice/page |
+| footer-bg    | `#111111` | the one dark section                  |
 
-Ratios: surface ≥60%, ink ≥25%, muted ~8%, accent <2%, highlight <1%.
-Tokens live in `src/styles/tokens.css`; primitives in `src/styles/global.css`.
+Emerald is the only accent — no purple/violet, no per-pillar colours. Use it
+sparingly (long-read eyebrow/✦, hover underlines, footer top rule). Tokens live
+in `src/styles/tokens.css` (v1 token names are aliased there for back-compat);
+primitives + chrome in `src/styles/global.css`.
 
 ## Structural signatures
 
+- Article hero is **centred, no-image by default** (T-Magazine pattern): emerald
+  eyebrow, Bodoni headline, italic dek, hairline byline row, lead image below.
 - Standfirst set as an italic display-serif epigraph (`<Standfirst>`).
-- Pull quotes as **marginalia** in the wide margin beside the column on desktop
-  (`<PullQuote>`) — not breaking the column.
-- **One** drop cap, at the article open only (`<DropCap>`).
-- Chapter-like section breaks: generous space + small centred numeral/ornament.
-- Photography filter `contrast(1.02) saturate(0.96)`; ratios only 16:9 hero,
-  3:2 inline, 4:5 portrait, 1:1 carousel. Captions always below in sans micro.
-- Motion is felt, not noticed: ~400ms cross-fades, blur-up on scroll, hairline
-  reading-progress bar, hover states that settle slowly.
+- Pull quotes as a **full-column breakout with a 2px emerald left rule**
+  (`<PullQuote>`), italic Didone — max two per article.
+- **One** drop cap, at the article open only (`<DropCap>`), in ink (not emerald).
+- Section breaks: centred emerald **✦**, generous padding above/below.
+- The homepage runs **twelve distinct modules** in a deliberate cadence — no two
+  consecutive modules share a grid signature, image ratio or rhythm.
+- Image ratios vary per module: 3:2, 4:5, 16:9, 1:1, 5:7, 3:4. Natural colour,
+  no heavy filters. Captions below in italic serif micro.
+- Motion is felt, not noticed: `cubic-bezier(.22,1,.36,1)`, scroll reveals
+  (once, staggered, `prefers-reduced-motion`-aware), 1.02× image hover, emerald
+  underline-from-left on links, Vogue-style hide/show sticky bar.
 
 ## Image pipeline (deferred — automation not yet built)
 

@@ -9,13 +9,13 @@ import { getSearchIndex } from '../lib/articles';
 import '../styles/global.css';
 import '../styles/pages.css';
 
-// Self-hosted variable fonts (Fontsource). Fraunces `full` carries the
-// opsz/SOFT/WONK axes the display type relies on; Newsreader `opsz` powers
-// the reading serif + italics; Inter for UI/meta.
-import '@fontsource-variable/fraunces/full.css';
-import '@fontsource-variable/fraunces/full-italic.css';
-import '@fontsource-variable/newsreader/opsz.css';
-import '@fontsource-variable/newsreader/opsz-italic.css';
+// Self-hosted variable fonts (Fontsource) for the v2 system:
+// Bodoni Moda (Didone display + italics), Source Serif 4 (editorial body +
+// italics), Inter (UI/meta). opsz axes power optical sizing.
+import '@fontsource-variable/bodoni-moda/opsz.css';
+import '@fontsource-variable/bodoni-moda/opsz-italic.css';
+import '@fontsource-variable/source-serif-4/opsz.css';
+import '@fontsource-variable/source-serif-4/opsz-italic.css';
 import '@fontsource-variable/inter/wght.css';
 
 interface Props {
@@ -40,7 +40,6 @@ const {
 	title,
 	description = "Asia's modern-luxury edit — modestly told.",
 	activeCategory,
-	overHero = false,
 	noFooter = false,
 	image,
 	ogType = 'website',
@@ -62,6 +61,8 @@ const defaultOg = await getImage({
 });
 const ogImage = image ?? new URL(defaultOg.src, Astro.site).toString();
 
+// All eight categories stay reachable (v2-styled nav), plus a curated
+// "The Long Read" entry pointing at the latest features feed.
 const categories = [
 	'Style',
 	'Beauty',
@@ -71,6 +72,10 @@ const categories = [
 	'Living',
 	'People',
 	'Guides',
+];
+const navItems = [
+	...categories.map((c) => ({ label: c, href: `/${c.toLowerCase()}`, active: c === activeCategory })),
+	{ label: 'The Long Read', href: '/latest', active: false },
 ];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -84,10 +89,13 @@ const searchIndex = await getSearchIndex();
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script is:inline>
+			document.documentElement.classList.add('js');
+		</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
-		<meta name="theme-color" content="#F6F1E9" />
+		<meta name="theme-color" content="#FFFFFF" />
 		<meta name="generator" content={Astro.generator} />
 		<link
 			rel="alternate"
@@ -119,192 +127,134 @@ const searchIndex = await getSearchIndex();
 	<body>
 		<a class="skip-link" href="#main">Skip to content</a>
 
-		<div class="progress"></div>
+		<!-- article scroll-progress (set by the script; invisible elsewhere) -->
+		<div class="progress"><span data-progress></span></div>
 
-		<header class={`nav${overHero ? '' : ' solid'}`} data-over-hero={overHero ? '' : null}>
-			<div class="nav-inner">
-				<a class="wordmark" href="/" aria-label="Arahkaii — home">
-					<svg viewBox="0 0 168 18" role="img" aria-label="ARAHKAII">
-						<text
-							x="0"
-							y="14"
-							font-family="'Fraunces Variable', Fraunces, Georgia, serif"
-							font-size="17"
-							font-weight="500"
-							letter-spacing="3.4"
-							fill="#1C1815"
-							style="font-variation-settings:'opsz' 40">ARAHKAII</text
-						>
-					</svg>
-				</a>
+		<!-- sticky condensed bar (Vogue hide-on-down / show-on-up) -->
+		<div class="stickybar" role="banner">
+			<a class="stickybar__mark" href="/">ARAHKAII</a>
+			<nav class="stickybar__nav" aria-label="Sections">
+				{navItems.map((n) => <a class="navlink" href={n.href}>{n.label.toUpperCase()}</a>)}
+			</nav>
+			<div class="stickybar__right">
+				<button class="masthead__util" data-search-toggle type="button">SEARCH</button>
+				<button class="masthead__util" data-menu-open type="button">MENU</button>
+			</div>
+		</div>
 
-				<nav class="nav-links" aria-label="Categories">
+		<!-- masthead -->
+		<header class="masthead">
+			<div class="wrap">
+				<div class="masthead__top">
+					<button class="masthead__util" data-menu-open type="button">MENU</button>
+					<button class="masthead__util" data-search-toggle type="button">SEARCH</button>
+				</div>
+				<a href="/" aria-label="Arahkaii — home"><h1 class="wordmark">ARAHKAII</h1></a>
+				<hr class="rule" />
+				<nav class="masthead__nav" aria-label="Primary">
 					{
-						categories.map((c) => (
-							<a
-								href={`/${c.toLowerCase()}`}
-								class={c === activeCategory ? 'active' : undefined}
-							>
-								{c}
+						navItems.map((n) => (
+							<a class="navlink" href={n.href} aria-current={n.active ? 'page' : undefined}>
+								{n.label.toUpperCase()}
 							</a>
 						))
 					}
 				</nav>
-
-				<div class="nav-tools">
-					<button class="icon-btn js-search" aria-label="Search" type="button">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-							><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg
-						>
-					</button>
-					<a class="icon-btn nav-saved" href="/reading-list" aria-label="Reading list">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-							><path d="M6 3h12v18l-6-4-6 4V3Z"></path></svg
-						>
-						<span class="js-saved-count saved-badge"></span>
-					</a>
-					<a class="icon-btn" href="/subscribe" aria-label="Newsletter">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-							><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3.5 6.5 12 13l8.5-6.5"
-							></path></svg
-						>
-					</a>
-					<button class="icon-btn nav-burger js-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-							><path d="M4 8h16M4 16h16"></path></svg
-						>
-					</button>
+				<hr class="rule d-only" />
+			</div>
+			<!-- inline search -->
+			<div class="searchbar">
+				<div class="wrap">
+					<div class="searchbar__inner">
+						<span class="eyebrow">Search</span>
+						<input
+							class="search-input"
+							type="search"
+							placeholder="Search essays, places, people…"
+							aria-label="Search"
+							autocomplete="off"
+						/>
+						<button class="masthead__util" data-search-toggle type="button">CLOSE</button>
+					</div>
+					<div class="search-results" role="region" aria-live="polite" hidden></div>
 				</div>
 			</div>
-
-			<div class="mobile-menu" id="mobile-menu">
-				{categories.map((c) => <a href={`/${c.toLowerCase()}`}>{c}</a>)}
-				<a href="/latest">Latest</a>
-				<a href="/reading-list">Reading list</a>
-				<a href="/about">About</a>
-				<a href="/subscribe">Subscribe</a>
-			</div>
 		</header>
+
+		<!-- full-screen overlay menu -->
+		<div class="overlay" role="dialog" aria-modal="true" aria-label="Menu">
+			<button class="overlay__close" data-menu-close type="button">CLOSE ✕</button>
+			<nav class="overlay__list" aria-label="Full menu">
+				{navItems.map((n) => <a href={n.href}>{n.label}</a>)}
+			</nav>
+		</div>
 
 		<main id="main">
 			<slot />
 		</main>
 
-		{!noFooter && (
-		<footer class="footer">
-			<div class="wrap">
-				<div class="footer-news">
-					<div class="fn-copy">
-						<span class="eyebrow fn-eyebrow">Arahkaii Weekly</span>
-						<p class="fn-line">One considered edit, every Sunday.</p>
-						<p class="fn-sub">The week's most thoughtful style, beauty, dining and culture — gathered slowly, sent once. Free, unsubscribe anytime.</p>
+		{
+			!noFooter && (
+				<footer class="footer">
+					<p class="footer__mark">ARAHKAII</p>
+					<hr class="footer__rule" />
+					<div class="footer__cols">
+						<div>
+							<p class="footer__h">Editorial</p>
+							<div class="footer__links">
+								<a href="/latest">Latest</a>
+								{categories.map((c) => (
+									<a href={`/${c.toLowerCase()}`}>{c}</a>
+								))}
+							</div>
+						</div>
+						<div>
+							<p class="footer__h">About</p>
+							<div class="footer__links">
+								<a href="/about">Our story</a>
+								<a href="/contributors">Contributors</a>
+								<a href="/advertise">Advertise</a>
+								<a href="/join-us">Join us</a>
+								<a href="/faqs">FAQs</a>
+								<a href="/contact">Contact</a>
+							</div>
+						</div>
+						<div>
+							<p class="footer__h">Follow</p>
+							<div class="footer__links">
+								<a href="https://www.instagram.com/arahkaii/" rel="me">
+									Instagram
+								</a>
+								<a href="https://www.tiktok.com/@arahkaii" rel="me">
+									TikTok
+								</a>
+								<a href="https://www.x.com/arahkaii" rel="me">
+									X / Twitter
+								</a>
+								<a href="https://www.facebook.com/arahkaii" rel="me">
+									Facebook
+								</a>
+								<a href="/rss.xml">RSS</a>
+								<a href="/reading-list">Reading list</a>
+							</div>
+						</div>
+						<div class="footer__news">
+							<p class="footer__h">Newsletter</p>
+							<NewsletterSignup class="fn-form" source="footer">
+								<p slot="note" class="field-note" style="color:var(--footer-head)">
+									No noise. One edit, on Sundays.
+								</p>
+							</NewsletterSignup>
+						</div>
 					</div>
-					<NewsletterSignup class="fn-form" source="footer">
-						<p slot="note" class="field-note fn-note">No noise. One edit, on Sundays.</p>
-					</NewsletterSignup>
-				</div>
-				<div class="rule footer-news-rule"></div>
-				<div class="footer-grid">
-					<div class="mast">
-						<a class="wordmark" href="/" aria-label="Arahkaii — home">
-							<svg viewBox="0 0 168 18" role="img" aria-label="ARAHKAII">
-								<text
-									x="0"
-									y="14"
-									font-family="'Fraunces Variable', Fraunces, Georgia, serif"
-									font-size="17"
-									font-weight="500"
-									letter-spacing="3.4"
-									fill="#1C1815"
-									style="font-variation-settings:'opsz' 40">ARAHKAII</text
-								>
-							</svg>
-						</a>
-						<p class="epigraph" style="font-size:18px; margin:20px 0 0; max-width:240px">
-							Asia's modern-luxury edit — modestly told.
-						</p>
-					</div>
-					<div>
-						<h4>Editorial</h4>
-						<ul>
-							<li><a href="/latest">Latest</a></li>
-							<li><a href="/style">Style</a></li>
-							<li><a href="/beauty">Beauty</a></li>
-							<li><a href="/travel">Travel</a></li>
-							<li><a href="/culture">Culture</a></li>
-							<li><a href="/guides">Guides</a></li>
-						</ul>
-					</div>
-					<div>
-						<h4>About</h4>
-						<ul>
-							<li><a href="/about">Our story</a></li>
-							<li><a href="/contributors">Contributors</a></li>
-							<li><a href="/advertise">Advertise</a></li>
-							<li><a href="/join-us">Join us</a></li>
-							<li><a href="/faqs">FAQs</a></li>
-							<li><a href="/contact">Contact</a></li>
-							<li><a href="/subscribe">Newsletter</a></li>
-						</ul>
-					</div>
-					<div>
-						<h4>Follow</h4>
-						<ul>
-							<li><a href="https://www.instagram.com/arahkaii/" rel="me">Instagram</a></li>
-							<li><a href="https://www.tiktok.com/@arahkaii" rel="me">TikTok</a></li>
-							<li><a href="https://www.x.com/arahkaii" rel="me">X / Twitter</a></li>
-							<li><a href="https://www.facebook.com/arahkaii" rel="me">Facebook</a></li>
-							<li><a href="/rss.xml">RSS</a></li>
-							<li><a href="/reading-list">Reading list</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="rule" style="margin-top:48px"></div>
-				<div class="footer-base">
-					<span class="meta">© {new Date().getFullYear()} Arahkaii, an ONN GROUP LLP publication. <a href="/privacy-policy">Privacy</a> · <a href="/terms-conditions">Terms</a></span>
-					<span class="meta">60 Paya Lebar Road, #06-28 Paya Lebar Square, Singapore 409051</span>
-				</div>
-			</div>
-		</footer>
-		)}
-
-		<!-- Full-screen search overlay (wired in the script below) -->
-		<div class="search-overlay" role="dialog" aria-modal="true" aria-label="Search the archive">
-			<div class="search-top">
-				<button class="icon-btn js-search-close" aria-label="Close search" type="button">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-						><path d="M6 6l12 12M18 6 6 18"></path></svg
-					>
-				</button>
-			</div>
-			<div class="search-body">
-				<span class="eyebrow">Search the archive</span>
-				<label
-					><input
-						class="search-input"
-						type="text"
-						placeholder="What are you looking for?"
-						autocomplete="off"
-					/></label
-				>
-				<div class="search-sugs">
-					{categories.map((c) => <button class="chip" type="button">{c}</button>)}
-				</div>
-				<div class="search-results" role="region" aria-live="polite" aria-label="Search results" hidden></div>
-			</div>
-		</div>
-
-		<!-- Slim, dismissible newsletter bar — appears after ~50% scroll, remembers
-		     dismissal, and never shows once subscribed. Wired in the script below. -->
-		<aside class="nl-bar" aria-label="Subscribe to Arahkaii Weekly" hidden>
-			<div class="nl-bar-inner">
-				<p class="nl-bar-copy"><strong>Arahkaii Weekly</strong> — the week's edit, every Sunday. Free.</p>
-				<NewsletterSignup class="nl-bar-form" source="sticky-bar" />
-				<button class="nl-bar-close icon-btn" type="button" aria-label="Dismiss">
-					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"></path></svg>
-				</button>
-			</div>
-		</aside>
+					<p class="footer__tag">Asia's modern-luxury edit.</p>
+					<p class="footer__fine">
+						© {new Date().getFullYear()} Arahkaii, an ONN GROUP LLP publication · Singapore ·{' '}
+						<a href="/privacy-policy">Privacy</a> · <a href="/terms-conditions">Terms</a>
+					</p>
+				</footer>
+			)
+		}
 
 		<!-- Build-time article index, read by the client search overlay -->
 		<script
@@ -315,80 +265,12 @@ const searchIndex = await getSearchIndex();
 		/>
 
 		<script>
-			// Chrome + interaction layer ported from design/assets/arahkaii.js.
-			// DOM-creating behaviours run on every astro:page-load; document-level
-			// listeners are bound once (the document persists across View Transitions).
-			type SavedItem = { title: string; href: string; tone: string; byline: string };
-
-			const SKEY = 'arahkaii:saved';
+			// ARAHKAII v2 chrome + interactions. DOM-creating behaviours run on every
+			// astro:page-load; document-level listeners bind once (document persists
+			// across View Transitions).
 			const SUBKEY = 'arahkaii:subscribed';
-			const NLBAR_KEY = 'arahkaii:nlbar-dismissed';
-			const BOOKMARK =
-				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg>';
 			const SUBSCRIBED_HTML =
 				'<span class="news-done"><span class="nd-tick">✓</span> You’re subscribed. See you Sunday.</span>';
-
-			const getSaved = (): SavedItem[] => {
-				try {
-					return JSON.parse(localStorage.getItem(SKEY) || '[]');
-				} catch {
-					return [];
-				}
-			};
-			const setSaved = (a: SavedItem[]) => {
-				try {
-					localStorage.setItem(SKEY, JSON.stringify(a));
-				} catch {}
-				updateSavedBadge();
-			};
-			const isSaved = (title: string) => getSaved().some((x) => x.title === title);
-			const toggleSave = (item: SavedItem) => {
-				const a = getSaved();
-				const i = a.findIndex((x) => x.title === item.title);
-				let on: boolean;
-				if (i >= 0) {
-					a.splice(i, 1);
-					on = false;
-				} else {
-					a.unshift(item);
-					on = true;
-				}
-				setSaved(a);
-				return on;
-			};
-			function updateSavedBadge() {
-				const b = document.querySelector<HTMLElement>('.js-saved-count');
-				if (b) {
-					const n = getSaved().length;
-					b.textContent = String(n);
-					b.style.display = n ? 'flex' : 'none';
-				}
-			}
-
-			let toastEl: HTMLElement | null = null;
-			let toastT: ReturnType<typeof setTimeout>;
-			function toast(msg: string) {
-				if (!toastEl) {
-					toastEl = document.createElement('div');
-					toastEl.className = 'toast';
-					toastEl.setAttribute('role', 'status');
-					toastEl.setAttribute('aria-live', 'polite');
-					toastEl.setAttribute('aria-atomic', 'true');
-					document.body.appendChild(toastEl);
-				}
-				toastEl.textContent = msg;
-				toastEl.classList.add('show');
-				clearTimeout(toastT);
-				toastT = setTimeout(() => toastEl && toastEl.classList.remove('show'), 1800);
-			}
-
-			(window as any).ARAHKAII = Object.assign((window as any).ARAHKAII || {}, {
-				getSaved,
-				setSaved,
-				isSaved,
-				toggleSave,
-				toast,
-			});
 
 			const isSubscribed = () => {
 				try {
@@ -407,37 +289,6 @@ const searchIndex = await getSearchIndex();
 					}
 					const note = form.querySelector<HTMLElement>('.field-note');
 					if (note) note.textContent = 'Manage your preferences anytime.';
-				});
-			}
-
-			function injectSaves() {
-				document.querySelectorAll<HTMLElement>('.story').forEach((card) => {
-					const img = card.querySelector<HTMLElement>('.img');
-					const head = card.querySelector<HTMLElement>('.headline');
-					if (!img || !head || img.querySelector('.save-btn')) return;
-					const title = head.textContent?.trim() || '';
-					const href = card.getAttribute('href') || '#';
-					const tone = (img.className.match(/tone-\w/) || ['tone-b'])[0];
-					const byEl = card.querySelector<HTMLElement>('.byline');
-					const byline = byEl ? byEl.textContent?.trim() || '' : '';
-					const btn = document.createElement('span');
-					btn.className = 'save-btn' + (isSaved(title) ? ' on' : '');
-					btn.setAttribute('role', 'button');
-					btn.setAttribute('tabindex', '0');
-					btn.setAttribute('aria-label', 'Save for later');
-					btn.innerHTML = BOOKMARK;
-					const act = (e: Event) => {
-						e.preventDefault();
-						e.stopPropagation();
-						const on = toggleSave({ title, href, tone, byline });
-						btn.classList.toggle('on', on);
-						toast(on ? 'Saved to your reading list' : 'Removed from your reading list');
-					};
-					btn.addEventListener('click', act);
-					btn.addEventListener('keydown', (e) => {
-						if (e.key === 'Enter' || e.key === ' ') act(e);
-					});
-					img.appendChild(btn);
 				});
 			}
 
@@ -461,28 +312,22 @@ const searchIndex = await getSearchIndex();
 					return iso;
 				}
 			}
+
+			// ---- inline search ----
 			function wireSearch() {
-				const ov = document.querySelector<HTMLElement>('.search-overlay');
-				if (!ov) return;
-				const input = ov.querySelector<HTMLInputElement>('.search-input');
-				const results = ov.querySelector<HTMLElement>('.search-results');
-				const sugs = ov.querySelector<HTMLElement>('.search-sugs');
+				const bar = document.querySelector<HTMLElement>('.searchbar');
+				if (!bar) return;
+				const input = bar.querySelector<HTMLInputElement>('.search-input');
+				const results = bar.querySelector<HTMLElement>('.search-results');
 				const idx = getIndex();
-				const open = () => {
-					ov.classList.add('open');
-					setTimeout(() => input && input.focus(), 120);
-				};
-				const close = () => ov.classList.remove('open');
 				function run(q: string) {
 					if (!results) return;
 					q = (q || '').trim().toLowerCase();
 					if (!q) {
 						results.hidden = true;
-						if (sugs) sugs.hidden = false;
 						results.innerHTML = '';
 						return;
 					}
-					if (sugs) sugs.hidden = true;
 					results.hidden = false;
 					const hits = idx
 						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q))
@@ -491,206 +336,161 @@ const searchIndex = await getSearchIndex();
 						? hits
 								.map(
 									(x) =>
-										`<a class="sr-item" href="${x.h}"><span class="sr-cat">${x.c}</span><span class="sr-title">${x.t}</span><span class="sr-meta">${x.a} · ${fmtShort(x.d)}</span></a>`,
+										`<a href="${x.h}"><span class="sr-cat">${x.c}</span><span class="sr-title">${x.t}</span></a>`,
 								)
 								.join('')
 						: `<p class="sr-empty">No stories yet for “${q}”. Try a category, an author, or a place.</p>`;
 				}
-				document.querySelectorAll('.js-search').forEach((b) => b.addEventListener('click', open));
-				ov.querySelector('.js-search-close')?.addEventListener('click', close);
 				input?.addEventListener('input', () => run(input.value));
-				sugs?.querySelectorAll<HTMLElement>('.chip').forEach((c) =>
-					c.addEventListener('click', () => {
-						if (input) {
-							input.value = c.textContent || '';
-							run(input.value);
-							input.focus();
-						}
-					}),
-				);
-				ov.addEventListener('click', (e) => {
-					if (e.target === ov) close();
-				});
 			}
 
-			function wireFollow() {
-				document.querySelectorAll<HTMLElement>('.follow-btn[data-follow-id]').forEach((btn) => {
-					if (btn.dataset.wired) return;
-					btn.dataset.wired = '1';
-					const id = btn.dataset.followId!;
-					const name = btn.dataset.followName || '';
-					const key = 'arahkaii:follow:' + id;
-					const label = btn.querySelector<HTMLElement>('.fb-label');
-					const on = () => {
-						try {
-							return !!localStorage.getItem(key);
-						} catch {
-							return false;
-						}
-					};
-					const set = (v: boolean) => {
-						try {
-							if (v) localStorage.setItem(key, '1');
-							else localStorage.removeItem(key);
-						} catch {}
-					};
-					const reflect = () => {
-						const f = on();
-						btn.classList.toggle('on', f);
-						if (label) label.textContent = f ? 'Following' : 'Follow' + (name ? ' ' + name : '');
-					};
-					reflect();
-					btn.addEventListener('click', () => {
-						const f = !on();
-						set(f);
-						reflect();
-						toast(f ? 'Following — their stories will lead your Sunday edit' : 'Unfollowed');
-					});
-				});
-			}
-
-			function wireShare() {
-				const rail = document.querySelector<HTMLElement>('.share-rail');
-				const h1 = document.querySelector<HTMLElement>('.art-h1');
-				if (!rail || !h1) return;
-				const item: SavedItem = {
-					title: h1.textContent?.trim() || '',
-					href: location.pathname,
-					tone: 'tone-c',
-					byline: document.querySelector('.art-byline')?.textContent?.trim() || '',
-				};
-				const saveBtn = rail.querySelector<HTMLElement>('.share-item[data-act="save"]');
-				const reflect = () => {
-					if (!saveBtn) return;
-					const on = isSaved(item.title);
-					saveBtn.classList.toggle('saved', on);
-					saveBtn.querySelector('svg')?.setAttribute('fill', on ? 'currentColor' : 'none');
-					const sp = saveBtn.querySelector('span');
-					if (sp) sp.textContent = on ? 'Saved' : 'Save';
-				};
-				reflect();
-				rail.querySelectorAll<HTMLElement>('.share-item').forEach((b) => {
-					if (b.dataset.wired) return;
-					b.dataset.wired = '1';
-					b.addEventListener('click', () => {
-						const act = b.dataset.act;
-						if (act === 'copy') {
-							navigator.clipboard?.writeText(location.href).catch(() => {});
-							toast('Link copied to clipboard');
-						} else if (act === 'save') {
-							const on = toggleSave(item);
-							reflect();
-							toast(on ? 'Saved to your reading list' : 'Removed from your reading list');
-						} else if (act === 'x') {
-							window.open(
-								'https://twitter.com/intent/tweet?text=' +
-									encodeURIComponent(item.title) +
-									'&url=' +
-									encodeURIComponent(location.href),
-								'_blank',
-							);
-						} else if (act === 'fb') {
-							window.open(
-								'https://www.facebook.com/sharer/sharer.php?u=' +
-									encodeURIComponent(location.href),
-								'_blank',
-							);
-						}
-					});
-				});
-			}
-
+			// ---- reveals (once, staggered, reduced-motion aware) ----
 			let io: IntersectionObserver | null = null;
 			function observe() {
+				const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				if (reduce || !('IntersectionObserver' in window)) {
+					document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+					return;
+				}
 				if (!io)
 					io = new IntersectionObserver(
 						(entries) => {
-							entries.forEach((e) => {
-								if (e.isIntersecting) {
-									e.target.classList.add('in');
-									io!.unobserve(e.target);
+							entries.forEach((en) => {
+								if (en.isIntersecting) {
+									const el = en.target as HTMLElement;
+									const delay = parseInt(el.getAttribute('data-stagger') || '0', 10);
+									setTimeout(() => el.classList.add('in'), delay);
+									io!.unobserve(el);
 								}
 							});
 						},
 						{ rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
 					);
-				document
-					.querySelectorAll('.blurup:not(.in), .rise:not(.in)')
-					.forEach((el) => io!.observe(el));
+				document.querySelectorAll('.reveal:not(.in)').forEach((el) => io!.observe(el));
+				// Insurance: reveal anything still hidden after 1.4s (some webviews).
+				setTimeout(() => {
+					document.querySelectorAll('.reveal:not(.in)').forEach((el) => el.classList.add('in'));
+				}, 1400);
 			}
-			(window as any).ARAHKAII.observe = observe;
+
+			// ---- rail carousels ----
+			function wireRails() {
+				document.querySelectorAll<HTMLElement>('[data-rail]').forEach((rail) => {
+					if (rail.dataset.wired) return;
+					rail.dataset.wired = '1';
+					const track = rail.querySelector<HTMLElement>('[data-rail-track]');
+					const prev = rail.querySelector<HTMLElement>('[data-rail-prev]');
+					const next = rail.querySelector<HTMLElement>('[data-rail-next]');
+					const barEl = rail.querySelector<HTMLElement>('[data-rail-bar]');
+					if (!track) return;
+					const step = () => {
+						const card = track.querySelector<HTMLElement>('.snap');
+						return card ? card.getBoundingClientRect().width + 24 : 320;
+					};
+					const update = () => {
+						if (!barEl) return;
+						const max = track.scrollWidth - track.clientWidth;
+						const p = max > 0 ? track.scrollLeft / max : 0;
+						barEl.style.transform = 'scaleX(' + Math.max(0.08, Math.min(1, p)).toFixed(3) + ')';
+					};
+					prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+					next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+					track.addEventListener('scroll', update, { passive: true });
+					track.setAttribute('tabindex', '0');
+					track.addEventListener('keydown', (e) => {
+						if (e.key === 'ArrowRight') {
+							e.preventDefault();
+							track.scrollBy({ left: step(), behavior: 'smooth' });
+						}
+						if (e.key === 'ArrowLeft') {
+							e.preventDefault();
+							track.scrollBy({ left: -step(), behavior: 'smooth' });
+						}
+					});
+					update();
+				});
+			}
+
+			// ---- copy-link share buttons ----
+			function wireShare() {
+				document.querySelectorAll<HTMLElement>('[data-share-copy]').forEach((b) => {
+					if (b.dataset.wired) return;
+					b.dataset.wired = '1';
+					b.addEventListener('click', (e) => {
+						e.preventDefault();
+						navigator.clipboard?.writeText(location.href).catch(() => {});
+					});
+				});
+			}
 
 			function initChrome() {
-				const nav = document.querySelector<HTMLElement>('.nav');
-				const burger = document.querySelector<HTMLElement>('.js-burger');
-				const menu = document.querySelector<HTMLElement>('.mobile-menu');
-				if (burger && menu) {
-					burger.addEventListener('click', () => {
-						const open = menu.classList.toggle('open');
-						nav?.classList.toggle('solid', open || !nav.hasAttribute('data-over-hero'));
-					});
-				}
-				injectSaves();
-				updateSavedBadge();
 				wireSearch();
-				wireFollow();
+				wireRails();
 				wireShare();
 				observe();
 				if (isSubscribed()) renderSubscribedForms();
-				(window as any).__arahkaiiScroll?.();
 			}
 
-			// One-time, document-level bindings (document survives navigations).
 			if (!(window as any).__arahkaiiBound) {
 				(window as any).__arahkaiiBound = true;
 
+				// sticky condensed bar — show after 200px, hide on scroll-down past
+				// 600px, reappear on scroll-up.
+				let lastY = window.scrollY;
 				const onScroll = () => {
-					const nav = document.querySelector<HTMLElement>('.nav');
-					if (nav && nav.hasAttribute('data-over-hero')) {
-						if (window.scrollY > 40) nav.classList.add('solid');
-						else nav.classList.remove('solid');
+					const bar = document.querySelector<HTMLElement>('.stickybar');
+					if (bar) {
+						const y = window.scrollY;
+						if (y < 200) bar.classList.remove('show');
+						else if (y > 600 && y > lastY) bar.classList.remove('show');
+						else bar.classList.add('show');
+						lastY = y;
 					}
-					const prog = document.querySelector<HTMLElement>('.progress');
-					if (prog) {
-						const h = document.documentElement.scrollHeight - window.innerHeight;
-						prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-					}
-					// Reveal the slim newsletter bar past ~50% scroll (once), unless
-					// dismissed or already subscribed.
-					const bar = document.querySelector<HTMLElement>('.nl-bar');
-					if (bar && !bar.classList.contains('show')) {
-						let dismissed = false;
-						try {
-							dismissed = !!localStorage.getItem(NLBAR_KEY) || isSubscribed();
-						} catch {}
-						const h2 = document.documentElement.scrollHeight - window.innerHeight;
-						const pct = h2 > 0 ? window.scrollY / h2 : 0;
-						if (!dismissed && pct > 0.5) {
-							bar.hidden = false;
-							requestAnimationFrame(() => bar.classList.add('show'));
-						}
+					// article scroll progress
+					const prog = document.querySelector<HTMLElement>('[data-progress]');
+					const article = document.querySelector<HTMLElement>('[data-article-body]');
+					if (prog && article) {
+						const rect = article.getBoundingClientRect();
+						const total = rect.height - window.innerHeight;
+						const done = Math.min(1, Math.max(0, -rect.top / (total > 0 ? total : 1)));
+						prog.style.transform = 'scaleX(' + done.toFixed(3) + ')';
 					}
 				};
-				(window as any).__arahkaiiScroll = onScroll;
 				window.addEventListener('scroll', onScroll, { passive: true });
 				window.addEventListener('resize', onScroll);
 
-				document.addEventListener('keydown', (e) => {
-					if (e.key === 'Escape')
-						document.querySelector('.search-overlay.open')?.classList.remove('open');
-				});
-
-				// Newsletter bar: dismiss (remembered) closes it for good.
+				// overlay menu
 				document.addEventListener('click', (e) => {
-					const close = (e.target as HTMLElement).closest('.nl-bar-close');
-					if (!close) return;
-					const bar = document.querySelector<HTMLElement>('.nl-bar');
-					bar?.classList.remove('show');
-					try {
-						localStorage.setItem(NLBAR_KEY, '1');
-					} catch {}
+					const t = e.target as HTMLElement;
+					const overlay = document.querySelector<HTMLElement>('.overlay');
+					if (t.closest('[data-menu-open]')) {
+						overlay?.classList.add('open');
+						document.body.style.overflow = 'hidden';
+					}
+					if (t.closest('[data-menu-close]') || (t.closest('.overlay__list a') && overlay)) {
+						overlay?.classList.remove('open');
+						document.body.style.overflow = '';
+					}
+					if (t.closest('[data-search-toggle]')) {
+						const sb = document.querySelector<HTMLElement>('.searchbar');
+						const open = sb?.classList.toggle('open');
+						if (open) (sb?.querySelector('input') as HTMLInputElement | null)?.focus();
+					}
 				});
 
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape') {
+						const overlay = document.querySelector<HTMLElement>('.overlay');
+						const sb = document.querySelector<HTMLElement>('.searchbar');
+						if (overlay?.classList.contains('open')) {
+							overlay.classList.remove('open');
+							document.body.style.overflow = '';
+						}
+						sb?.classList.remove('open');
+					}
+				});
+
+				// newsletter submit — validate, remember, swap to confirmation
 				document.addEventListener('submit', (e) => {
 					const form = (e.target as HTMLElement).closest<HTMLFormElement>('.js-news');
 					if (!form) return;
@@ -703,7 +503,7 @@ const searchIndex = await getSearchIndex();
 					if (!ok) {
 						if (note) {
 							note.textContent = 'Please enter a valid email address.';
-							note.style.color = 'var(--clay)';
+							note.style.color = 'var(--emerald)';
 						}
 						input?.focus();
 						return;
@@ -711,10 +511,6 @@ const searchIndex = await getSearchIndex();
 					try {
 						localStorage.setItem(SUBKEY, v);
 					} catch {}
-					// MailerLite adapter slots in HERE: await fetch('/api/subscribe',
-					// { method:'POST', body: JSON.stringify({ email:v,
-					// source: form.dataset.source }) }) before the confirmation UI.
-					document.querySelector('.nl-bar')?.classList.remove('show');
 					if (field) {
 						field.classList.add('done');
 						field.dataset.locked = '1';
@@ -722,9 +518,11 @@ const searchIndex = await getSearchIndex();
 					}
 					if (note) {
 						note.textContent = 'A confirmation is on its way to ' + v + '.';
-						note.style.color = 'var(--muted)';
+						note.style.color = 'var(--ink-2)';
 					}
 				});
+
+				onScroll();
 			}
 
 			document.addEventListener('astro:page-load', initChrome);

@@ -1,53 +1,57 @@
 ---
 import { Image } from 'astro:assets';
 
-// The standard story card: photo (real crop or tonal placeholder) + headline
-// + byline. Markup mirrors the prototype's `.story` so the client save-button
-// injection (reads `.img` + `.headline`) works unchanged. Headline sizing is
-// controlled by the parent container (.edit-grid, .lane-card, .cat-grid, …).
+// The standard v2 story card: media (real crop or striped bone placeholder) +
+// optional kicker eyebrow + headline (with the emerald underline-grow) +
+// optional byline. Emits the arahkaii-blog-v2 `.card .hl-link` / `.media`
+// markup. Props are backward-compatible with the v1 call sites (tone is
+// accepted but ignored; ratio accepts both "3x2" and "3-2").
 interface Props {
 	href: string;
 	title: string;
 	byline?: string;
+	eyebrow?: string;
 	image?: ImageMetadata;
 	tone?: string;
-	ratio?: '16x9' | '3x2' | '4x5' | '1x1';
+	ratio?: string;
 	label?: string;
 	class?: string;
+	heading?: string;
 	dataTag?: string;
-	/** Lowercase category enum — scopes the per-pillar accent on this card. */
 	category?: string;
+	widths?: number[];
+	sizes?: string;
 }
 const {
 	href,
 	title,
 	byline,
+	eyebrow,
 	image,
-	tone = 'tone-b',
 	ratio = '3x2',
 	label,
 	class: cls,
+	heading = 'h5',
 	dataTag,
 	category,
+	widths = [400, 800, 1200],
+	sizes = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw',
 } = Astro.props;
-const ratioClass = `r-${ratio}`;
+const ratioClass = `ar-${ratio.replace('x', '-')}`;
+const phLabel = label ?? `${(category ?? '').toUpperCase()}`;
 ---
 
-<a class:list={['story', cls]} href={href} data-tag={dataTag} data-cat={category}>
-	<div class:list={['img', image ? 'real' : `ph ${tone}`, ratioClass, 'blurup']}>
+<a class:list={['card', 'hl-link', cls]} href={href} data-tag={dataTag} data-cat={category}>
+	<div class:list={['media', ratioClass]}>
 		{
 			image ? (
-				<Image
-					src={image}
-					alt={title}
-					widths={[400, 800, 1200]}
-					sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
-				/>
+				<Image src={image} alt={title} widths={widths} sizes={sizes} />
 			) : (
-				label && <span class="lab">{label}</span>
+				<div class="ph" data-label={phLabel} />
 			)
 		}
 	</div>
-	<h3 class="headline">{title}</h3>
-	{byline && <p class="byline">{byline}</p>}
+	{eyebrow && <p class="kicker11" style="margin:14px 0 6px">{eyebrow}</p>}
+	<h3 class:list={[heading]} style="margin-top:14px"><span class="hl">{title}</span></h3>
+	{byline && <p class="meta" style="margin-top:8px">{byline}</p>}
 </a>
