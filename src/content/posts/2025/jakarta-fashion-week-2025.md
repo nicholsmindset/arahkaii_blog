@@ -14,6 +14,8 @@ heroImage: "../../../assets/images/archive/jakarta-fashion-week-2025/Screenshot-
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "jakarta-fashion-week-2025"
+seoTitle: "Jakarta Fashion Week 2025: Indonesia finds its voice"
+metaDescription: "Inside Jakarta Fashion Week 2025 — 100+ designers, the DEWI Fashion Knights finale and Indonesia's quiet rise as Southeast Asia's modest-luxury fashion capital."
 ---
 
 Jakarta Fashion Week 2025 was the event that put Indonesian fashion on the global map. Here is our complete coverage of the week that redefined Southeast Asian style.

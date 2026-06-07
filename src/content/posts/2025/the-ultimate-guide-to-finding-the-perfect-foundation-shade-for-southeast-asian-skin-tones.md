@@ -12,6 +12,17 @@ heroImage: "../../../assets/images/archive/the-ultimate-guide-to-finding-the-per
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones"
+seoTitle: "Best foundation for Asian skin: a shade-matching guide"
+metaDescription: "How to find the right foundation shade for Southeast Asian skin — undertones, the oxidation problem, and brands that suit olive complexions in tropical heat."
+faq:
+  - q: "How do I find the right foundation shade for Southeast Asian skin?"
+    a: "Start by identifying your undertone, then use the jawline test: apply three shades along your jaw, blend, and let them settle for fifteen minutes before checking in natural light, indoor light and your phone camera. The shade that disappears into your skin with no demarcation at your neck is your match."
+  - q: "What foundation suits olive undertones?"
+    a: "Olive undertones have a greenish-yellow or neutral-brown cast, so foundations with pure warm or cool bases tend to pull pink, orange or peachy. Seek neutral-to-warm bases described as 'olive', 'neutral warm' or 'greige' — Fenty Beauty, MAC Face and Body's C-range and The Ordinary Coverage Foundation all offer olive-friendly options."
+  - q: "Why does my foundation oxidise and turn darker or orange?"
+    a: "Oxidation happens when foundation ingredients react with your skin's oils, pH and environmental factors, and humidity speeds it up. Choose water- or silicone-based formulas that oxidise less, use an oil-controlling primer, and test for at least thirty minutes before buying — if it looks perfect immediately it may be too light."
+  - q: "Which foundations last in tropical humidity?"
+    a: "Lightweight, buildable, water-resistant formulas perform best. MAC Face and Body is a humidity hero, NARS Natural Radiant Longwear balances coverage with breathability, and Korean cushion foundations from Laneige, Hera and Sulwhasoo are engineered specifically for humid Asian climates."
 ---
 
 Finding the right foundation shade for Southeast Asian skin tones requires navigating a beauty industry that still hasn’t caught up with the region’s incredible diversity. Finding the perfect foundation shade shouldn’t feel like solving a cryptographic puzzle. Yet for many of us in Southeast Asia, it does. We walk into beauty counters armed with hope and walk out with foundations that oxidise three shades darker, turn grey on our olive undertones, or simply vanish into an ashy oblivion by lunchtime.

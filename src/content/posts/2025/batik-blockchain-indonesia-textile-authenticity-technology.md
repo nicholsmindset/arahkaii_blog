@@ -12,6 +12,15 @@ heroImage: "../../../assets/images/archive/batik-blockchain-indonesia-textile-au
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "batik-blockchain-indonesia-textile-authenticity-technology"
+seoTitle: "Indonesian batik: tradition, counterfeits and blockchain"
+metaDescription: "How Indonesian batik became a battleground for authenticity — and why artisans turn to blockchain, natural-dye databases and a youth revival to protect it."
+faq:
+  - q: "How can you tell if Indonesian batik is authentic?"
+    a: "Authentic hand-drawn batik tulis can take weeks and around forty hours of wax application and dyeing, so it looks and costs far more than machine prints. Look for the Batik Mark Indonesia label, natural plant-based dyes, and — increasingly — blockchain provenance records traced via a QR code."
+  - q: "What is the difference between batik tulis and machine-printed batik?"
+    a: "Batik tulis is drawn entirely by hand, with each cloth requiring weeks of work and roughly forty hours of wax application and dyeing. Machine-printed imitations replicate only the visual pattern in minutes, carrying none of the craft, labour or cultural value of the genuine textile."
+  - q: "How does blockchain help prove batik is genuine?"
+    a: "Blockchain creates an immutable record of provenance from the point of creation — logging the artisan's identity, location, techniques and materials. A consumer can scan a QR code to trace the cloth's journey from workshop to purchase, with each step independently verified in a way certification labels alone cannot match."
 ---
 
 The intersection of batik, blockchain, and Indonesia represents one of the most innovative approaches to preserving cultural heritage through technology. In 2009, UNESCO inscribed Indonesian batik as a Masterpiece of the Oral and Intangible Heritage of Humanity. It was meant to be a triumph—global recognition of a craft refined over centuries, a source of national pride, a protection against cultural erasure.

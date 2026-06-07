@@ -3,9 +3,9 @@ import { Image, getImage } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
 import Headline from '../components/article/Headline.astro';
 import Standfirst from '../components/article/Standfirst.astro';
-import Byline from '../components/article/Byline.astro';
 import StoryCard from '../components/StoryCard.astro';
 import InlineNewsletter from '../components/InlineNewsletter.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 import {
 	SITE,
 	articleSchema,
@@ -97,6 +97,11 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const categoryLabel = cap(category);
 const primaryTag = tags[0];
 const eyebrow = primaryTag ? `${categoryLabel} · ${primaryTag}` : categoryLabel;
+const formattedDate = new Intl.DateTimeFormat('en-GB', {
+	day: 'numeric',
+	month: 'long',
+	year: 'numeric',
+}).format(date);
 
 // — SEO data layer —
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -158,161 +163,186 @@ if (listItems?.length)
 	tags={tags}
 	jsonLd={jsonLd}
 >
-	<article data-cat={category}>
-		<header class="article-head">
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<a href="/">Arahkaii</a><span class="sep">/</span><a href={`/${category}`}
-					>{categoryLabel}</a
-				>{primaryTag && (<><span class="sep">/</span><span>{primaryTag}</span></>)}
-			</nav>
-			<span class="eyebrow accent" style="margin-top:18px">{eyebrow}</span>
+	<article data-cat={category} data-article-body>
+		<!-- HERO: centred, no-image (T Magazine pattern) -->
+		<div class="wrap art-hero">
+			<p class="eyebrow eyebrow--emerald">{eyebrow}</p>
 			<Headline text={title} />
 			<Standfirst text={standfirst} />
-			<Byline author={author.name} date={date} readingMinutes={readingMinutes} />
-		</header>
-
-		<figure class="hero-fig">
-			<div class="img real r-16x9 blurup">
-				<Image src={heroImage} alt={heroCaption} loading="eager" />
-			</div>
-			<figcaption class="fig-cap caption">
-				{heroCaption ? `Above: ${heroCaption} ` : ''}(Photo: {heroCredit})
-			</figcaption>
-		</figure>
-
-		<div class="article-body">
-			<slot />
-		</div>
-
-		{
-			tags.length > 0 && (
-				<div class="article-tags">
-					<span class="at-label">Filed under</span>
-					{tags.map((t) => (
-						<a class="chip" href={`/${category}`}>{t}</a>
-					))}
-				</div>
-			)
-		}
-
-		{/* Mid-article capture — relocated by script to sit after the 2nd H2. */}
-		<InlineNewsletter
-			class="js-mid-news mid-news"
-			source="article-mid"
-			line="Stories like this, gathered once a week — Sundays, in your inbox."
-		/>
-
-		<div class="chapter ornament end-orn"><span>✦</span></div>
-
-		<div class="author-bio">
-			<a href={authorHref} class="ab-avatar-link" aria-label={`More by ${author.name}`}>
+			<div class="art-byrow">
+				<span class="meta"><strong>Words</strong> &nbsp;{author.name}</span>
+				<span class="dot"></span>
+				<span class="meta">{formattedDate}</span>
 				{
-					author.avatar ? (
-						<div class="img real avatar">
-							<Image src={author.avatar} alt={author.name} width={152} height={152} />
-						</div>
-					) : (
-						<div class="img ph tone-b avatar" />
+					readingMinutes && (
+						<>
+							<span class="dot"></span>
+							<span class="meta">Read · {readingMinutes} min</span>
+						</>
 					)
 				}
-			</a>
-			<div>
-				<p class="ab-name"><a href={authorHref}>{author.name}</a></p>
-				<p class="ab-role">{author.role}</p>
-				<p>{author.bio}</p>
-				<a class="link-more" href={authorHref}>Read more by {author.name}</a>
 			</div>
 		</div>
 
-		<InlineNewsletter
-			class="end-news"
-			source="article-end"
-			line="If this was your kind of quiet, join us on Sundays."
-		/>
+		<!-- lead image, full content width 3:2 -->
+		<div class="wrap" style="margin-top:48px">
+			<figure class="hero-fig">
+				<div class="media ar-3-2">
+					<Image src={heroImage} alt={heroCaption || title} loading="eager" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+				</div>
+				<figcaption class="caption fig-cap">
+					{heroCaption ? `${heroCaption} ` : ''}(Photo: {heroCredit})
+				</figcaption>
+			</figure>
+		</div>
 
-		{
-			readNext && (
-				<section class="read-next">
-					<div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px">
-						<span class="eyebrow">Read next</span>
-						<span class="meta">Chosen for you</span>
+		<!-- body + sticky rail -->
+		<div class="wrap" style="margin-top:64px">
+			<div class="grid art-layout">
+				<div class="article-body">
+					<slot />
+
+					{
+						tags.length > 0 && (
+							<div class="article-tags">
+								<span class="at-label">Filed under</span>
+								{tags.map((t) => (
+									<a class="chip" href={`/${category}`}>{t}</a>
+								))}
+							</div>
+						)
+					}
+
+					{/* Mid-article capture — relocated by script to sit after the 2nd H2. */}
+					<InlineNewsletter
+						class="js-mid-news mid-news"
+						source="article-mid"
+						line="Stories like this, gathered once a week — Sundays, in your inbox."
+					/>
+
+					<div class="sectionbreak"><span class="star">✦</span></div>
+
+					<div class="author">
+						<a href={authorHref} class="ab-avatar-link author__portrait" aria-label={`More by ${author.name}`}>
+							{
+								author.avatar ? (
+									<Image src={author.avatar} alt={author.name} width={160} height={160} />
+								) : (
+									<div class="ph" data-label="Author" />
+								)
+							}
+						</a>
+						<div>
+							<p class="ab-name"><a href={authorHref}>{author.name}</a></p>
+							<p class="ab-role">{author.role}</p>
+							<p>{author.bio}</p>
+							<a class="tlink" href={authorHref}>Read more by {author.name} →</a>
+						</div>
 					</div>
-					<a class="story rn-card" href={readNext.href} data-cat={readNext.categoryLabel.toLowerCase()}>
-						{readNext.image ? (
-							<div class="img real rn-img blurup">
-								<Image src={readNext.image} alt={readNext.title} />
-							</div>
-						) : (
-							<div class={`img ph ${readNext.tone ?? 'tone-d'} rn-img blurup`}>
-								<span class="lab">{readNext.categoryLabel} · 16:9</span>
-							</div>
-						)}
-						<div class="rn-body">
-							<span class="eyebrow accent rn-eyebrow">{readNext.categoryLabel}</span>
-							<h2 class="rn-title">{readNext.title}</h2>
-							<p class="byline rn-meta">{readNext.byline}</p>
+				</div>
+
+				<aside class="art-rail">
+					<div class="art-rail__sticky">
+						<div class="media ar-4-5 art-rail__thumb">
+							<Image src={heroImage} alt={title} widths={[300, 500]} sizes="25vw" />
+						</div>
+						<div class="share" aria-label="Share">
+							<button data-share-copy type="button" aria-label="Copy link">LINK</button>
+							<a
+								href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonical.toString())}&text=${encodeURIComponent(title)}`}
+								target="_blank"
+								rel="noopener"
+								aria-label="Share on X">X</a
+							>
+							<a
+								href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonical.toString())}`}
+								target="_blank"
+								rel="noopener"
+								aria-label="Share on Facebook">FB</a
+							>
+						</div>
+						{
+							related.length > 0 && (
+								<>
+									<p class="rail-list__h">Continue reading</p>
+									<nav class="rail-list" aria-label="Related">
+										{related.slice(0, 3).map((r, i) => (
+											<a class="hl-link" href={r.href} style={i === Math.min(related.length, 3) - 1 ? 'border-bottom:0' : undefined}>
+												<span class="h5 hl" style="font-size:17px">{r.title}</span>
+											</a>
+										))}
+									</nav>
+								</>
+							)
+						}
+					</div>
+				</aside>
+			</div>
+		</div>
+	</article>
+
+	<!-- CONTINUE WITH (oversized next-article card) -->
+	{
+		readNext && (
+			<section class="section" style="border-top:1px solid var(--hairline)">
+				<div class="wrap">
+					<p class="eyebrow eyebrow--emerald" style="margin-bottom:32px">Read next →</p>
+					<a class="hl-link readnext" href={readNext.href}>
+						<div class="media ar-5-7" style="max-height:520px">
+							{readNext.image ? (
+								<Image src={readNext.image} alt={readNext.title} widths={[480, 800]} sizes="(max-width:900px) 100vw, 40vw" />
+							) : (
+								<div class="ph" data-label={`${readNext.categoryLabel} · 5:7`} />
+							)}
+						</div>
+						<div>
+							<p class="kicker11" style="margin-bottom:16px">{readNext.categoryLabel}</p>
+							<h2 class="h3"><span class="hl">{readNext.title}</span></h2>
+							<p class="dek" style="font-size:var(--body);font-style:normal;color:var(--ink-2);margin-top:16px;max-width:46ch">{readNext.byline}</p>
 						</div>
 					</a>
-				</section>
-			)
-		}
+				</div>
+			</section>
+		)
+	}
 
-		{
-			related.length > 0 && (
-				<section class="more-from">
-					<div class="rule" />
-					<div
-						style="display:flex; justify-content:space-between; align-items:baseline; margin-top:34px"
-					>
-						<span class="eyebrow">More from {categoryLabel}</span>
-						<a class="link-more" href={`/${category}`}>
-							All {categoryLabel}
-						</a>
-					</div>
+	<!-- ALSO FROM CATEGORY -->
+	{
+		related.length > 0 && (
+			<section class="section--tight">
+				<div class="wrap">
+					<p class="eyebrow" style="margin-bottom:24px">Also from {categoryLabel}</p>
+					<hr class="rule" style="margin-bottom:40px" />
 					<div class="more-grid">
 						{related.slice(0, 3).map((r) => (
 							<StoryCard
 								href={r.href}
 								title={r.title}
-								byline={r.byline}
 								image={r.image}
-								tone={r.tone ?? 'tone-c'}
 								ratio="3x2"
+								heading="h5"
 								category={category}
+								label={`${categoryLabel} · 3:2`}
 							/>
 						))}
 					</div>
-				</section>
-			)
-		}
-	</article>
+				</div>
+			</section>
+		)
+	}
 
-	<aside class="share-rail">
-		<p class="sr-label">Share</p>
-		<button class="share-item" data-act="x" type="button"
-			><svg viewBox="0 0 24 24" fill="currentColor"
-				><path d="M17.5 3h3l-6.5 7.4L21.7 21h-5.9l-4.6-6-5.3 6H3l7-8L2.6 3h6l4.2 5.5L17.5 3Zm-1 16h1.6L8 4.8H6.3L16.5 19Z"
-				></path></svg
-			><span>Share on X</span></button
-		>
-		<button class="share-item" data-act="fb" type="button"
-			><svg viewBox="0 0 24 24" fill="currentColor"
-				><path d="M14 9h2.5l.5-3H14V4.3c0-.9.3-1.5 1.6-1.5H17V.1C16.7.1 15.7 0 14.6 0 12.2 0 10.6 1.4 10.6 4v2H8v3h2.6v9H14V9Z"
-				></path></svg
-			><span>Share on Facebook</span></button
-		>
-		<button class="share-item" data-act="copy" type="button"
-			><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-				><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"></path><path
-					d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"></path></svg
-			><span>Copy link</span></button
-		>
-		<button class="share-item" data-act="save" type="button"
-			><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-				><path d="M6 3h12v18l-6-4-6 4V3Z"></path></svg
-			><span>Save</span></button
-		>
-	</aside>
+	<!-- NEWSLETTER BAND (identical to homepage) -->
+	<section class="tint" style="padding-block:clamp(72px,9vw,128px)">
+		<div class="wrap"><div class="grid">
+			<div style="grid-column:4 / 10; text-align:center">
+				<h2 class="h2" style="margin-bottom:16px">Sundays, considered.</h2>
+				<p class="dek" style="margin-bottom:40px">Our weekly edit — one essay, three things to read, one place to go.</p>
+				<NewsletterSignup source="article-end">
+					<p slot="note" class="field-note" style="text-align:center;margin-top:20px">No noise. Unsubscribe anytime.</p>
+				</NewsletterSignup>
+			</div>
+		</div></div>
+	</section>
 
 	<script>
 		// Relocate the mid-article newsletter to sit after the 2nd H2 in the body

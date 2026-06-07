@@ -12,6 +12,17 @@ heroImage: "../../../assets/images/archive/kendrick-lamar-super-bowl-jeans-2-3-m
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "kendrick-lamar-super-bowl-jeans-2-3-million-media-value"
+seoTitle: "Kendrick Lamar's Super Bowl outfit, piece by piece"
+metaDescription: "Kendrick Lamar's Super Bowl LIX outfit — the $1,200 Celine jeans, $68,000 brooch and pgLang jacket — and how one look generated $2.3m in media value."
+faq:
+  - q: "What did Kendrick Lamar wear at the Super Bowl?"
+    a: "He wore Celine Marco Jeans in Dark Union Wash — a women's style from Hedi Slimane's SS2020 collection — with a custom Martine Rose leather varsity jacket reading \"Gloria\" and \"pgLang,\" a NAHMIAS T-shirt, Nike Air DT Max '96 sneakers honouring Deion Sanders, and a $68,000 Rahaminov Diamonds angel wing brooch."
+  - q: "How much did Kendrick Lamar's Super Bowl outfit cost?"
+    a: "The full look was valued at over $70,000. The most expensive piece was the $68,000 Rahaminov Diamonds brooch, while the much-discussed Celine jeans retailed at just $1,200 and the Nike sneakers at $170."
+  - q: "What jeans did Kendrick Lamar wear at the Super Bowl?"
+    a: "He wore Celine Marco Jeans in Dark Union Wash, a women's Size 29 style retailing at $1,200. Designed by Hedi Slimane for Celine's SS2020 collection, they had sat in relative obscurity for five years before the performance triggered a 5,000% spike in Google searches for \"flared jeans.\""
+  - q: "Who styled Kendrick Lamar's Super Bowl performance?"
+    a: "The look was styled by Taylor McNeill, who also styles Timothée Chalamet — the jeans were reportedly originally pulled for Chalamet. The styling formed part of a multi-year strategic partnership between Kendrick's creative collective pgLang and Celine's parent company."
 ---
 
 Kendrick Lamar's Super Bowl jeans became the single most talked-about fashion moment of 2025, generating $2.3 million in media value from one halftime performance. When the most-watched stage in entertainment met hip-hop's most strategic artist, a pair of women's flared jeans became fashion's biggest conversation—and the luxury industry's most studied case of cultural arbitrage.

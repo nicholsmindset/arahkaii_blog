@@ -1,5 +1,5 @@
 ---
-title: "Why Designer Collaborations Keep Failing—And What H&amp;M Gets Wrong"
+title: "Why Designer Collaborations Keep Failing—And What H&M Gets Wrong"
 standfirst: "Designer collaborations are failing at an alarming rate, yet the fashion industry keeps doubling down on a broken model."
 category: style
 tags:

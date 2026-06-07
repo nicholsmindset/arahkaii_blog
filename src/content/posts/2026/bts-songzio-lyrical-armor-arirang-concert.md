@@ -16,6 +16,17 @@ heroImage: "../../../assets/images/archive/bts-songzio-lyrical-armor-arirang-con
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "bts-songzio-lyrical-armor-arirang-concert"
+seoTitle: "BTS Arirang concert: inside Songzio's Lyrical Armor"
+metaDescription: "For their Arirang comeback at Gwanghwamun, BTS wore seven custom Songzio looks — Korean heritage reimagined as armour, not luxury logos."
+faq:
+  - q: "Who designed BTS's outfits for the Arirang comeback concert?"
+    a: "Korean fashion house Songzio, led by creative director Jay Songzio, designed all seven custom looks for the Gwanghwamun Square concert on 21 March 2026. The collection, titled \"Lyrical Armor,\" reworked Joseon-era garments and traditional armour into sculptural silhouettes in a monochromatic black, white and silver palette."
+  - q: "Why did BTS choose Songzio over their individual luxury partners?"
+    a: "The members individually represent Dior, Celine, Chanel, Louis Vuitton, Gucci, Valentino and Bottega Veneta, but HYBE chose an independent Korean house for the collective comeback. The luxury partnerships reflect individual identity, while the Songzio collaboration represents collective Korean identity on the most symbolically loaded night of their career."
+  - q: "What are the seven BTS member archetypes in Lyrical Armor?"
+    a: "Songzio assigned each member a distinct archetype: RM as the Hero, Jin as the Artist, Suga as the Architect, J-Hope as Sorigun (Sound Man), Jimin as the Poet, V as Seonbi (Nobleman) and Jungkook as the Vanguard. Each was rooted in Korean cultural concepts and matched to the member's personality."
+  - q: "When is BTS's Arirang world tour in 2026?"
+    a: "The Arirang world tour begins in April 2026, spanning 82 shows across 34 cities. Singapore National Stadium dates are confirmed for December 2026."
 ---
 
 **Songzio**, the Seoul-founded Korean fashion house established in 1993, designed seven custom looks for **BTS's Arirang comeback concert** at Gwanghwamun Square on March 21, 2026. The collection, titled "Lyrical Armor," reimagines Joseon-era Korean garments and traditional armor through sculptural contemporary silhouettes — with each BTS member assigned a distinct archetype within a unified visual mythology. The decision to dress the world's biggest group in an independent Korean label rather than the European luxury houses they individually represent is the most significant fashion statement in [K-pop fashion](https://arahkaii.com/category/fashion-trends-designers-spotlights-styling-tips-curation/) history.

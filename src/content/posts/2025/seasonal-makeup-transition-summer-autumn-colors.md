@@ -11,6 +11,17 @@ heroImage: "../../../assets/images/archive/seasonal-makeup-transition-summer-aut
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "seasonal-makeup-transition-summer-autumn-colors"
+seoTitle: "Autumn makeup looks: how to transition from summer"
+metaDescription: "Why your summer makeup suddenly feels wrong — and how to shift to autumn colours by undertone, with the shades, formulas and blush that actually work."
+faq:
+  - q: "How do you transition your makeup from summer to autumn?"
+    a: "Warm up one focal point at a time rather than swapping everything at once. Keep your best neutral browns and taupes as a baseline, then gradually layer autumn tones — for instance, adding a warm brown to a cool summer eyeshadow before flipping the proportions as the season deepens."
+  - q: "What autumn makeup colours suit cool undertones?"
+    a: "Cool undertones suit colours with blue or purple bases that still read as autumnal — plum browns instead of orange browns, berry burgundies instead of pure rust. Look for cooled-down versions of autumn's warmth rather than true terracotta, which can turn muddy on cool skin."
+  - q: "Do you need to buy a whole new makeup collection each season?"
+    a: "No. Strategic editing plus a few key additions works better than wholesale replacement. Keep your universal neutrals and add three to five autumn-specific pieces — a warm eyeshadow or two, a warm lipstick, a warm blush and perhaps a deeper bronzer."
+  - q: "Why does summer makeup look wrong in autumn light?"
+    a: "The light changes first. Summer light is blue-toned, harsh and overhead, while autumn light is golden, diffused and lower-angled, so the same makeup reads completely differently — what looked fresh in summer brightness can appear washed out or jarring in autumn's warm glow."
 ---
 
 Mastering the seasonal makeup transition from summer to autumn is about more than swapping coral for berry—it’s about understanding how light, skin chemistry, and colour theory intersect. There's a particular discomfort that arrives in early November, usually while standing in bathroom light that's turned unforgiving. The lavender eyeshadow that looked ethereal in July now reads vaguely bruised. The coral lipstick that screamed summer vitality has gone strangely flat. The carefully curated face that worked perfectly for three months suddenly doesn't work at all.

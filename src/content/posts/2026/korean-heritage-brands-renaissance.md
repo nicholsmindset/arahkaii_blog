@@ -21,6 +21,15 @@ heroImage: "../../../assets/images/archive/korean-heritage-brands-renaissance/ko
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "korean-heritage-brands-renaissance"
+seoTitle: "Korean luxury fashion brands: a quiet renaissance"
+metaDescription: "How Wooyoungmi, Juun.J and Songzio built a Paris luxury reputation over two decades — the case for Korean heritage fashion as institution, not trend."
+faq:
+  - q: "What is the difference between K-fashion and Korean luxury fashion?"
+    a: "K-fashion describes the streetwear- and idol-adjacent labels such as Gentle Monster and Ader Error, which build credibility through cultural saturation and social media velocity. Korean luxury fashion — houses such as Wooyoungmi, Juun.J and Songzio — builds credibility the way European houses do: through press, wholesale placements, institutional membership and the accumulated weight of seasons. They address different tiers of the fashion system."
+  - q: "Which Korean designers show at Paris Fashion Week?"
+    a: "Wooyoungmi, Juun.J and Songzio are the foundational Korean names on the Paris calendar. Woo Youngmi was the first South Korean designer to show in Paris and joined La Chambre Syndicale de la Mode Masculine by 2011; Songzio has presented there since 2006 and Juun.J marked two decades on the Paris schedule with its FW2026 \"Newstalgia\" collection."
+  - q: "Are Korean designer pieces worth collecting?"
+    a: "The preconditions for serious collectorship are in place: a documented design philosophy, institutional validation and limited early production relative to later commercial expansion. Early Wooyoungmi pieces are not yet on the secondary market at scale, but the structural parallel with early-1980s Comme des Garçons and Yohji Yamamoto archives — which now command premiums — is instructive."
 ---
 
 In March 2026, BTS performed their comeback stage in Songzio. The collection, titled "Lyrical Armor," drew on Korean warrior heritage — hanbok silhouettes reworked into abstracted armor construction, traditional garment vocabulary applied to performance wear built for a stadium. It was not the international fashion press's dominant story that month. European houses with larger communications departments and more aggressive editorial seeding generated more column inches.

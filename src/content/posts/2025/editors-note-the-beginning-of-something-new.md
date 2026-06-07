@@ -10,6 +10,8 @@ heroImage: "../../../assets/images/archive/editors-note-the-beginning-of-somethi
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "editors-note-the-beginning-of-something-new"
+seoTitle: "Editor's note: the beginning of Arahkaii"
+metaDescription: "Our founding editor on launching Arahkaii — Asia's modern-luxury edit — and what conscious consumption and quiet craft mean as we step into 2026."
 ---
 
 ![Arahkaii editorial team introduction](../../../assets/images/archive/editors-note-the-beginning-of-something-new/LinaroseliEditornoteimage.png)

@@ -1,17 +1,17 @@
 ---
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import StoryCard from '../../components/StoryCard.astro';
-import InlineNewsletter from '../../components/InlineNewsletter.astro';
-import { getCards } from '../../lib/articles';
-import { cap, fmtDate } from '../../lib/format';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { getCards, type PostCard } from '../../lib/articles';
+import { cap } from '../../lib/format';
 import { organizationSchema, websiteSchema, collectionPageSchema } from '../../lib/seo';
 
-// Category archive: masthead → editor's pick → tag chips → 2-col grid.
-// One static page per category in the schema enum.
+// Category archive — v2: no-image hero band + filter chips, full-width lead,
+// then an alternating "river" (A 4-4-4 → B 6+stacked-two → C 6-6 portrait →
+// typographic interlude → D 3-3-3-3, repeating) so the page never repeats a
+// rhythm. One static page per category in the schema enum.
 const DEKS: Record<string, string> = {
-	style: 'Modern wardrobes, modestly told.',
+	style: 'Considered fashion, woven across Asia — from Lahore ateliers to Seoul studios.',
 	beauty: 'Skincare science, halal-certified, and the rituals behind a considered face.',
 	dining: 'Halal tables and the kitchens keeping faith with the calendar.',
 	travel: 'Slow journeys, soft light, the unhurried itinerary.',
@@ -22,18 +22,9 @@ const DEKS: Record<string, string> = {
 };
 
 export async function getStaticPaths() {
-	// Self-contained: getStaticPaths is extracted to its own build chunk and
-	// can't see module-scope consts from the frontmatter.
-	return [
-		'style',
-		'beauty',
-		'dining',
-		'travel',
-		'culture',
-		'living',
-		'people',
-		'guides',
-	].map((category) => ({ params: { category } }));
+	return ['style', 'beauty', 'dining', 'travel', 'culture', 'living', 'people', 'guides'].map(
+		(category) => ({ params: { category } }),
+	);
 }
 
 const { category } = Astro.params;
@@ -42,24 +33,36 @@ const dek = DEKS[category!] ?? '';
 
 const all = await getCards();
 const cards = all.filter((c) => c.category === category);
-const pick = cards[0];
-const rest = cards.slice(1);
+const lead = cards[0];
+let pool = cards.slice(1);
+// Thin categories: top up the river with cross-category stories so it reads full.
+if (pool.length < 4) pool = [...pool, ...all.filter((c) => c.category !== category).slice(0, 6)];
 
-// Thin categories (few stories) look half-empty — fill with a cross-category
-// "more to explore" rail so the page always reads complete.
-const fill = rest.length < 4
-	? all.filter((c) => c.category !== category).slice(0, 6)
-	: [];
-
-// Tag chips: most common tags in this category (max 6), prettified for display.
+// filter chips — most common tags (decorative wayfinding, matches the prototype)
 const counts = new Map<string, number>();
 for (const c of cards) for (const t of c.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
-const topTags = [...counts.entries()]
-	.sort((a, b) => b[1] - a[1])
-	.slice(0, 6)
-	.map(([t]) => t);
-const prettify = (t: string) =>
-	t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+const topTags = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t]) => t);
+const prettify = (t: string) => t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+
+// build the alternating river
+type Row =
+	| { type: 'A' | 'C' | 'D'; cards: PostCard[] }
+	| { type: 'B'; cards: PostCard[] }
+	| { type: 'Q'; quote: PostCard };
+const plan: Array<'A' | 'B' | 'C' | 'D'> = ['A', 'B', 'C', 'D'];
+const sizes: Record<string, number> = { A: 3, B: 3, C: 2, D: 4 };
+const rows: Row[] = [];
+let qi = 0;
+let queue = [...pool];
+let quoteIx = 0;
+while (queue.length) {
+	const t = plan[qi % plan.length];
+	if (t === 'D' && rows.length) rows.push({ type: 'Q', quote: cards[quoteIx++ % Math.max(cards.length, 1)] ?? lead });
+	const slice = queue.splice(0, sizes[t]);
+	if (!slice.length) break;
+	rows.push({ type: t, cards: slice });
+	qi++;
+}
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const jsonLd = [
@@ -70,118 +73,159 @@ const jsonLd = [
 ---
 
 <BaseLayout title={`${label} — Arahkaii`} description={dek} activeCategory={label} jsonLd={jsonLd}>
-	<main class="wrap" data-cat={category}>
-		<header class="cat-masthead">
-			<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: label }]} />
-			<h1 class="cat-title">{label}</h1>
-			<p class="cat-dek">{dek}</p>
-		</header>
-
-		{
-			pick && (
-				<a class="story editors-pick rise" href={pick.url}>
-					<div class="ep-tag">
-						<span class="eyebrow accent">Editor's Pick · {pick.categoryLabel}</span>
-						<span class="meta">{fmtDate(pick.date)}</span>
-					</div>
-					<div class="img real r-16x9 blurup">
-						<Image src={pick.image} alt={pick.heroCaption || pick.title} loading="eager" />
-					</div>
-					<div class="ep-body">
-						<h2 class="headline">{pick.title}</h2>
-						<div>
-							<p class="ep-stand">{pick.standfirst}</p>
-							<p class="byline">{pick.byline}</p>
-						</div>
-					</div>
-				</a>
-			)
-		}
-
-		{
-			topTags.length > 0 && (
-				<div class="tag-row">
-					<span class="tr-label">Browse</span>
-					<button class="chip active" data-tag="all" type="button">All</button>
-					{topTags.map((t) => (
-						<button class="chip" data-tag={t} type="button">{prettify(t)}</button>
-					))}
-				</div>
-			)
-		}
-
-		<div class="cat-grid">
+	<!-- HERO BAND (no image) -->
+	<section class="cat-hero">
+		<div class="wrap">
+			<h1 class="h1 reveal">{label}</h1>
+			<p class="dek reveal" data-stagger="60" style="max-width:32ch;margin:20px auto 0">{dek}</p>
 			{
-				rest.map((c) => (
-					<StoryCard
-						class="cat-card"
-						href={c.url}
-						title={c.title}
-						byline={c.byline}
-						image={c.image}
-						tone={c.tone}
-						ratio="3x2"
-						dataTag={c.tags.join(' ')}
-					/>
-				))
-			}
-		</div>
-
-		{rest.length === 0 && !pick && <p class="lede" style="padding:48px 0">No stories here yet — check back soon.</p>}
-
-		{
-			fill.length > 0 && (
-				<section class="cat-fill">
-					<div class="sec-head rise">
-						<span class="eyebrow">More across Arahkaii</span>
-						<a class="link-more" href="/latest">All stories</a>
-					</div>
-					<div class="cat-grid">
-						{fill.map((c) => (
-							<StoryCard
-								class="cat-card"
-								href={c.url}
-								title={c.title}
-								byline={`${c.categoryLabel} · ${c.byline}`}
-								image={c.image}
-								tone={c.tone}
-								ratio="3x2"
-								category={c.category}
-							/>
+				topTags.length > 0 && (
+					<div class="chips reveal" data-stagger="120">
+						<button class="chip" aria-current="true">All</button>
+						{topTags.map((t) => (
+							<button class="chip">{prettify(t)}</button>
 						))}
 					</div>
-				</section>
-			)
+				)
+			}
+		</div>
+	</section>
+
+	<!-- LEAD ROW (full-width 3:2) -->
+	{
+		lead && (
+			<section class="section--tight" style="padding-top:0">
+				<div class="wrap">
+					<a class="hl-link reveal" href={lead.url} style="display:block">
+						<div class="media ar-3-2">
+							<Image src={lead.image} alt={lead.title} loading="eager" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+						</div>
+						<div class="grid" style="margin-top:32px">
+							<div style="grid-column:1 / 9">
+								<p class="kicker11" style="margin-bottom:14px">{lead.tags[0] ? prettify(lead.tags[0]) : lead.categoryLabel}</p>
+								<h2 class="h2"><span class="hl">{lead.title}</span></h2>
+							</div>
+							<p class="dek" style="grid-column:1 / 8;font-size:var(--body);font-style:normal;color:var(--ink-2);margin-top:16px">{lead.standfirst}</p>
+						</div>
+					</a>
+				</div>
+			</section>
+		)
+	}
+
+	<!-- ARTICLE RIVER -->
+	<div class="wrap">
+		{
+			rows.map((row) => {
+				if (row.type === 'Q') {
+					return (
+						<section style="padding-block:clamp(48px,7vw,96px)">
+							<div class="grid">
+								<blockquote class="reveal" style="grid-column:2 / 12;text-align:center;margin:0">
+									<p class="display" style="font-style:italic;font-size:clamp(32px,4.4vw,60px);line-height:1.22">“{row.quote.standfirst}”</p>
+									<p class="kicker11" style="margin-top:32px">— From “{row.quote.title}”</p>
+								</blockquote>
+							</div>
+						</section>
+					);
+				}
+				if (row.type === 'A') {
+					const span = ['1 / 5', '5 / 9', '9 / 13'];
+					return (
+						<section class="section--tight">
+							<hr class="rule reveal" style="margin-bottom:40px" />
+							<div class="grid">
+								{row.cards.map((c, i) => (
+									<a class="card hl-link reveal" href={c.url} data-stagger={i ? String(i * 60) : undefined} style={`grid-column:${span[i]}`}>
+										<div class="media ar-3-2"><Image src={c.image} alt={c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" /></div>
+										<p class="kicker11" style="margin:14px 0 6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
+										<h3 class="h5"><span class="hl">{c.title}</span></h3>
+									</a>
+								))}
+							</div>
+						</section>
+					);
+				}
+				if (row.type === 'B') {
+					const big = row.cards[0];
+					const minis = row.cards.slice(1, 3);
+					return (
+						<section class="section--tight">
+							<div class="grid">
+								<a class="card hl-link reveal" href={big.url} style="grid-column:1 / 7">
+									<div class="media ar-4-5"><Image src={big.image} alt={big.title} widths={[500, 800]} sizes="(max-width:860px) 100vw, 46vw" /></div>
+									<p class="kicker11" style="margin:16px 0 6px">{big.tags[0] ? prettify(big.tags[0]) : big.categoryLabel}</p>
+									<h3 class="h4"><span class="hl">{big.title}</span></h3>
+								</a>
+								<div style="grid-column:7 / 13; display:flex; flex-direction:column; gap:32px; justify-content:center">
+									{minis.map((c, i) => (
+										<>
+											{i > 0 && <hr class="rule" />}
+											<a class="card hl-link reveal" data-stagger={String((i + 1) * 60)} href={c.url} style="display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:center">
+												<div class="media ar-1-1"><Image src={c.image} alt={c.title} widths={[200, 360]} sizes="160px" /></div>
+												<div>
+													<p class="kicker11" style="margin-bottom:6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
+													<h3 class="h5"><span class="hl">{c.title}</span></h3>
+												</div>
+											</a>
+										</>
+									))}
+								</div>
+							</div>
+						</section>
+					);
+				}
+				if (row.type === 'C') {
+					const span = ['1 / 7', '7 / 13'];
+					return (
+						<section class="section--tight">
+							<div class="grid">
+								{row.cards.map((c, i) => (
+									<a class="card hl-link reveal" href={c.url} data-stagger={i ? '60' : undefined} style={`grid-column:${span[i]}`}>
+										<div class="media ar-3-4"><Image src={c.image} alt={c.title} widths={[500, 800]} sizes="(max-width:860px) 100vw, 46vw" /></div>
+										<p class="kicker11" style="margin:16px 0 6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
+										<h3 class="h4"><span class="hl">{c.title}</span></h3>
+									</a>
+								))}
+							</div>
+						</section>
+					);
+				}
+				// D — 3-3-3-3 squares
+				const span = ['1 / 4', '4 / 7', '7 / 10', '10 / 13'];
+				return (
+					<section class="section--tight" style="padding-top:0">
+						<div class="grid">
+							{row.cards.map((c, i) => (
+								<a class="card hl-link reveal" href={c.url} data-stagger={i ? String(i * 60) : undefined} style={`grid-column:${span[i]}`}>
+									<div class="media ar-1-1"><Image src={c.image} alt={c.title} widths={[300, 500]} sizes="(max-width:860px) 50vw, 23vw" /></div>
+									<p class="kicker11" style="margin:12px 0 6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
+									<h3 class="h5"><span class="hl">{c.title}</span></h3>
+								</a>
+							))}
+						</div>
+					</section>
+				);
+			})
 		}
 
-		<InlineNewsletter
-			class="cat-news"
-			source={`category-${category}`}
-			line={`Get the best of ${label} — and the rest of the week's edit — every Sunday.`}
-		/>
-	</main>
+		{!lead && <p class="lede" style="padding:48px 0">No stories here yet — check back soon.</p>}
 
-	<script>
-		// Tag-chip filtering (client). Cards carry a space-separated data-tag list.
-		function initCategoryFilter() {
-			const chips = Array.from(document.querySelectorAll<HTMLElement>('.tag-row .chip'));
-			const cards = Array.from(document.querySelectorAll<HTMLElement>('.cat-card'));
-			if (!chips.length) return;
-			chips.forEach((chip) => {
-				chip.addEventListener('click', () => {
-					chips.forEach((x) => x.classList.remove('active'));
-					chip.classList.add('active');
-					const t = chip.dataset.tag;
-					cards.forEach((card) => {
-						const tags = (card.dataset.tag || '').split(' ');
-						const show = t === 'all' || tags.includes(t!);
-						card.hidden = !show;
-						if (show) card.classList.remove('in');
-					});
-					(window as any).ARAHKAII?.observe?.();
-				});
-			});
-		}
-		document.addEventListener('astro:page-load', initCategoryFilter);
-	</script>
+		<div class="loadmore" style="padding-bottom:96px">
+			<a class="tlink" href="/latest">Load more</a>
+		</div>
+	</div>
+
+	<!-- NEWSLETTER BAND -->
+	<section class="tint" style="padding-block:clamp(72px,9vw,128px)">
+		<div class="wrap"><div class="grid">
+			<div class="reveal" style="grid-column:4 / 10; text-align:center">
+				<h2 class="h2" style="margin-bottom:16px">Sundays, considered.</h2>
+				<p class="dek" style="margin-bottom:40px">Get the best of {label} — and the rest of the week's edit — every Sunday.</p>
+				<NewsletterSignup source={`category-${category}`}>
+					<p slot="note" class="field-note" style="text-align:center;margin-top:20px">No noise. Unsubscribe anytime.</p>
+				</NewsletterSignup>
+			</div>
+		</div></div>
+	</section>
 </BaseLayout>

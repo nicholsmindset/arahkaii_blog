@@ -13,6 +13,17 @@ heroImage: "../../../assets/images/archive/sukkhacitta-regenerative-fashion-indo
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "sukkhacitta-regenerative-fashion-indonesia-artisan-economics"
+seoTitle: "SukkhaCitta: the Indonesian brand rewriting fashion"
+metaDescription: "How SukkhaCitta's regenerative farming, artisan wages and circular repair prove that Indonesian fashion can be both modestly luxurious and quietly radical."
+faq:
+  - q: "What is SukkhaCitta?"
+    a: "SukkhaCitta is an Indonesian fashion brand founded by Denica Riadini-Flesch. It grows its own regenerative cotton, works with rural artisans known as ibus, and restructures the economic relationships that have historically kept skilled textile makers in poverty."
+  - q: "Why is SukkhaCitta considered regenerative rather than just sustainable?"
+    a: "Rather than simply minimising harm, SukkhaCitta restores degraded land using Tumpang Sari, an indigenous intercropping technique that plants cotton alongside crops such as chilli, corn and mung beans. The brand says this sequesters carbon and cuts emissions by 90% compared with conventional cotton."
+  - q: "Who makes SukkhaCitta garments?"
+    a: "Each garment passes through roughly twelve pairs of hands — the women SukkhaCitta calls ibus — who prepare natural dyes, apply wax-resist batik patterns, embroider and stitch. More than 400 artisans work within the network, spanning farmers, dyers and garment makers."
+  - q: "Is SukkhaCitta a certified ethical brand?"
+    a: "Yes. SukkhaCitta holds B-Corp certification — Indonesia's first in the fashion sector — and carries the Nest Seal for ethical production. Its founder has received the Rolex Award for Enterprise and the Cartier Women's Initiative Award."
 ---
 
 # The Twelve Women in Your Wardrobe: Inside SukkhaCitta's Radical Reinvention of Fashion
