@@ -1,5 +1,5 @@
 ---
-title: "Best Chinese Makeup Brands 2026: Judydoll, Florasis &amp; C-Beauty Worth Buying"
+title: "Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying"
 standfirst: "K-beauty had its moment. Now Chinese makeup brands are taking over your FYP—and honestly? We're here for it."
 category: beauty
 tags:
