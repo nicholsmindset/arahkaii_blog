@@ -40,5 +40,8 @@ real-export.xml
 # Source working docs
 *.docx
 
-# loose source images (avatars copied into src/assets/authors/)
-images/
+# loose top-level working images only — editorial images live in src/assets/images/ and ARE tracked
+/images/
+# source dumps (working files, not shipped)
+/docs/images/
+/docs/pending/
