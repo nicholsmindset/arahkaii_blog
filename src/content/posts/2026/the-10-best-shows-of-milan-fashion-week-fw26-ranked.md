@@ -1,0 +1,106 @@
+---
+title: "The 10 Best Shows of Milan Fashion Week FW26, Ranked"
+standfirst: "From Demna's blockbuster Gucci debut to Prada’s undressing as statement, Milan delivered one of its most compelling seasons in years."
+category: style
+tags:
+  - "fashion-week"
+  - "street-style"
+  - "trending"
+author: nadra-nichols
+date: 2026-03-16
+heroImage: "../../../assets/images/archive/the-10-best-shows-of-milan-fashion-week-fw26-ranked/Screenshot-2026-03-16-at-9.08.00-PM-scaled.png"
+heroCaption: ""
+heroCredit: "Arahkaii"
+legacyWpSlug: "the-10-best-shows-of-milan-fashion-week-fw26-ranked"
+---
+
+_From Demna's blockbuster Gucci debut to Prada’s undressing as statement, Milan delivered one of its most compelling seasons in years. We ranked the ten shows that actually moved the needle—based on creative vision, cultural conversation, and whether you'd actually want to wear any of it._
+
+Milan Fashion Week FW26 had a specific energy this season: less chaos, more clarity. After last season's frenzy of debut collections—when seemingly every major house unveiled a new creative director—the Italian fashion capital settled into something more interesting. A handful of blockbuster firsts (Demna at Gucci, Maria Grazia Chiuri at Fendi, Meryll Rogge at Marni), a few critically important sophomore outings, and the consistent powerhouses doing what they do best.
+
+The result was a [fashion week](https://arahkaii.com/category/fashion-trends-designers-spotlights-styling-tips-curation/) that felt like it had something to prove—and largely succeeded. Here are the ten shows that stood out, ranked from great to greatest.
+
+## **10\. Missoni**
+
+**The Vibe:** _Your favourite summer brand just aced winter dressing_
+
+Missoni has a reputation problem, and it's a flattering one: people associate the house so strongly with sun-soaked knitwear that they forget it can do cold weather. The FW26 collection obliterated that assumption. Chunky knits, oversized coats, and heavy layered pieces all executed in the brand's signature pattern language—but with a decidedly moodier, more autumnal palette. The "party pants" (tailored trousers shot through with lurex thread) were the undeniable viral moment. Missoni proved that heritage codes aren't seasonal—they're forever.
+
+## **9\. Max Mara**
+
+**The Vibe:** _A medieval feminist icon walked into a boardroom and absolutely ate_
+
+Ian Griffiths has been at Max Mara since 1987 — nearly four decades — and his FW26 collection proved that knowing your house inside-out is its own kind of superpower. This season's muse was Matilde di Canossa, an 11th-century Tuscan countess who was a diplomat, military commander, and patron of the arts. Griffiths translated that into what he called "neo-medieval" dressing: hooded silhouettes, page-boy tunics, butter-soft suede everything, and floor-length coats in earthy browns, camel, and oxblood. Over-the-knee flat suede boots anchored the whole thing. The genius is that none of it felt like costume — it felt like modern power dressing for women who don't need to explain themselves. Backstage, Griffiths talked about clothes as "life companions" that grow more beautiful with wear. Almost 45 years since Max Mara launched its most famous icon coat, audience members were still wearing theirs in the front row. That's not nostalgia. That's proof of concept.
+
+## **8\. Ferragamo**
+
+**The Vibe:** _The quiet perfectionist having a very good season_
+
+Maximilian Davis is doing something special at Ferragamo, and FW26 confirmed it. The collection was impeccably crafted—refined leathers, sailor-neckline details on '80s-esque red leather power suits, and a colour palette that managed to feel both modern and classically Italian. Davis spoke about turbulence and instability, and somehow channelled those feelings into garments that felt like emotional armour: strong, precise, and surprisingly tender. He's building a Ferragamo that stands for something specific, which is rarer than it sounds in fashion right now.
+
+The personal layer made it resonate even more. The sailor motif honoured those who crossed oceans to start over—both Salvatore Ferragamo, who left Italy for America, and Davis's own family, who moved from Trinidad and Jamaica to Manchester. That autobiography gave the clothes a weight that goes beyond fabric. By the time the gold lamé cocktail dresses and foiled velvet slips arrived in the show's final act—Paloma Elsesser in a scene-stealing gold number was the casting moment of the week—the whole thing felt like it had built toward something genuinely cinematic. Retailers flagged the Cara bag and croc point-toe pumps as immediate must-buys. Three years in, Davis isn't just modernising Ferragamo. He's giving it a soul.
+
+## **7\. Giorgio Armani**
+
+**The Vibe:** _The first season without its founder—and the house held its breath and delivered_
+
+Giorgio Armani's death in September 2025 cast a long shadow over Milan, and the FW26 show—the first womenswear collection steered by longtime collaborators Leo Dell'Orco and Silvana Armani—was the most emotionally charged moment of the week. The answer to "what does Armani look like without Armani?" turned out to be: familiar but not frozen. Embellished velvet co-ords and styling combinations honoured the late designer's signatures, but origami-pleat tailoring in grey and brilliant white injected a modernity the house hasn't always been known for. Evening gowns riffed on black-tie archive silhouettes. A petrol-blue satin bomber jacket and long leather trench felt more trend-aware than anything the house has shown in years. It was evolution rather than reinvention—exactly the right tone for a succession moment this significant. The fashion world was watching to see if the house would stumble. It didn't.
+
+## **6\. Marni (Meryll Rogge Debut)**
+
+**The Vibe:** _The new guard, calibrating the chaos_
+
+Belgian designer Meryll Rogge's debut at Marni was one of Milan's most closely watched moments. Taking over from the beloved Francesco Risso—whose maximalist, art-driven Marni redefined the house—Rogge had to walk a tightrope between honouring the brand's eccentricity and establishing her own voice. She largely nailed it: the collection balanced Marni's signature playfulness with a more refined, pared-back sensibility. It felt like the opening chapter of a longer story, and that's exactly what a debut should feel like.
+
+## **5\. Bottega Veneta**
+
+**The Vibe:** _Texture as a love language_
+
+Louise Trotter's sophomore collection for Bottega cemented what her debut promised: this is going to be a Bottega built on touch. Amplified volumes, experimental textures, and a focus on artisanal craft that felt neither nostalgic nor gimmicky. The leather work was extraordinary. The colour palette was restrained but warm. [The quiet luxury conversation](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/) has sometimes veered into blandness, but Trotter's version is anything but—it's sensual, specific, and deeply material. When Bottega says "when your own initials are enough," Trotter is proving exactly why.
+
+## **4\. Fendi (Maria Grazia Chiuri Debut)**
+
+**The Vibe:** _The prodigal daughter returns, and she brought her whole CV_
+
+Maria Grazia Chiuri's debut at Fendi was the kind of homecoming fashion dreams are made of. She started her career at the house under the legendary five Fendi sisters and Karl Lagerfeld in the '90s; now she's back as creative director—making this the first time since 1925 that no Fendi family member has a hand in the collections. No pressure. The collection was a masterful amalgamation of everything she's learned: easy suiting from her Valentino years, [the A-line heritage of Dior,](https://arahkaii.com/category/fashion-trends-designers-spotlights-styling-tips-curation/) and a new casualness—boilersuits, cropped parkas, cargo shorts—that felt entirely her own. Her motto for the collection was "Less I, More Us." It's the kind of thing that sounds like a platitude until you see the clothes, which genuinely feel collaborative rather than ego-driven.
+
+## **3\. Jil Sander**
+
+**The Vibe:** _Minimalism as a radical act_
+
+Simone Bellotti's sophomore collection for Jil Sander might be the most critically acclaimed show of the entire FW26 season. Working in an almost exclusively black-and-white palette, Bellotti proved that minimalism isn't the absence of creativity—it's creativity with nowhere to hide. Every proportion was considered. Every fabric choice felt intentional. He played with volume and structure in ways that made you reconsider what "simple" actually means. The show opened with the concept of "home"—the venue's floor covered in rust-coloured carpet—and somehow made that intimate idea feel monumental. This is a designer who understands that restriction is liberation.
+
+## **2\. Prada**
+
+**The Vibe:** _The art of subtraction that made you think about your wardrobe differently_
+
+Miuccia Prada and Raf Simons don't make clothes for fashion week. They make arguments. And their FW26 argument was a stunner: fifteen models walked the runway at the Fondazione four times each, shedding layers with every pass. Trench coats gave way to embroidered satin dresses. Chunky knits revealed delicate underlayers. By the final lap, models were stripped to their most essential pieces—and somehow looked more dressed, not less.
+
+"As a woman, your life is layered," said Miuccia backstage. "This collection reflects the complexity of life." It was fashion-as-philosophy done right: intellectually rigorous, emotionally resonant, and full of clothes you'd actually covet. Bella Hadid walking it four times didn't hurt either.
+
+## **1\. Gucci (Demna Debut)**
+
+**The Vibe:** _Fashion's most polarising designer just gave Gucci a pulse_
+
+Look, you can argue about whether Demna's debut runway for Gucci was a masterpiece or a provocation. That's sort of the point—and it's exactly why it's number one. Staged inside the darkened Palazzo delle Scintille among recreations of [Uffizi Museum](https://www.uffizi.it) sculptures, the collection was a full-throttle reimagining of what Gucci means in 2026. Body-hugging silhouettes that recalled Tom Ford's '90s heyday. Kate Moss closed the show in a backless black gown with a 10-carat diamond GG thong. Alessandro Michele—his predecessor's predecessor—and Donatella Versace sitting front row, the latter dressed head-to-toe in Gucci.
+
+Demna called the collection "Primavera," inspired by the Botticelli painting. He said he wanted Gucci to become "a feeling," even "an adjective." The critics were divided—some loved the sexy pragmatism, others bristled at the Tom Ford nostalgia. But nobody was indifferent. And in a season where many shows blurred together, that kind of cultural electricity is worth more than consensus.
+
+Gucci needed a reset. Demna delivered a defibrillator. Whether you love it or not, you can't look away. And in fashion, that's the only metric that truly matters.
+
+## **The Verdict on Milan Fashion Week FW26**
+
+Milan Fashion Week FW26 was the season that answered a question the industry had been nervously asking since last year's [creative director shuffle:](https://arahkaii.com/category/trending/trending-fashion-buzz-beauty-buzz-lifestyle-buzz/) _now what?_ The answer, it turns out, is: some of the most exciting fashion we've seen in years. The debuts delivered. The sophomore shows proved their worth. And the legacy houses reminded us why they've lasted this long.
+
+_Paris is next. And if Milan set this bar, we're in for a fashion month that people will be referencing for seasons to come._
+
+* * *
+
+_Continue Reading: [New York Fashion Week FW26](https://www.arahkaii.com/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/) · [London Fashion Week FW26](https://www.arahkaii.com/the-10-best-shows-of-london-fashion-week-fw26-ranked/) · [Seoul Fashion Week FW26](https://www.arahkaii.com/seoul-fashion-week-fw-2026/)_
+
+### Read next
+
+- [The 10 Best Shows of New York Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
+- [The 10 Best Shows of London Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
+- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
+- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](https://www.arahkaii.com/fashion/seoul-fashion-week-fw-2026/)

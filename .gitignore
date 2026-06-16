@@ -28,3 +28,7 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# WordPress migration sources (kept local; migrated content lives in src/)
+wp-import/
+real-export.xml
