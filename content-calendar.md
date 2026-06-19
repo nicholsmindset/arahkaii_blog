@@ -24,7 +24,7 @@ After drafting, the routine appends `| branch:<name>` and after publishing `| ur
 
 ---
 
-### 2026-06-22 | status:ready | type:evergreen | pillar:style | words:1900 | score:90
+### 2026-06-22 | status:drafted | type:evergreen | pillar:style | words:1900 | score:90 | branch:drafts/2026-06-22-new-bahru
 keyword: new bahru
 angle: Inside New Bahru — the homegrown Singapore labels (Beyond The Vines, GINLEE, rye…) worth the trip; the place as a map of modern-luxury local design. (head term 20k/KD2, build authority)
 links: /style/korean-heritage-brands-renaissance/, /style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/
