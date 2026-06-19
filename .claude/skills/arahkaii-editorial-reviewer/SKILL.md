@@ -13,6 +13,7 @@ Hold every draft to the *Tatler Asia + Vogue Arabia + halal-conscious editorial*
 2. `references/halal-substitutions.md`
 3. `references/editorial-pillars.md`
 4. `references/image-system.md` (for image prompts)
+5. **`references/format-templates.md` — run its reviewer gate (a structure miss is a FAIL): `format:guide` items must be named `###` headings, not bold paragraphs; every F&B guide entry needs a halal-status line in its block; no body H1; no orphan H3; no vague headings; ⊛ topics carry a question-H2 + answer sentence.**
 
 ## The 9-Layer Review
 

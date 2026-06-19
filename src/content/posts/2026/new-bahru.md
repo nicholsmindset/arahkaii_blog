@@ -22,29 +22,53 @@ That restraint is the whole point. When The Lo & Behold Group — the homegrown 
 
 For the woman who already owns enough — who is editing rather than acquiring — New Bahru is less a mall than a directory of the country's own design talent in one walkable building. Here is what is worth the trip, and how to read it.
 
-## What is New Bahru, exactly?
+## What is New Bahru?
 
 New Bahru is a single conserved building split into two halves: the School Block, which holds most of the retail and a clutch of restaurants, and the Factory Block behind it, which leans into food and a handful of newer arrivals. Upstairs, an 83-key serviced apartment called Alma House lets you stay the night. The name is a small Singaporean joke — *bahru* is Malay for new, so the place is, doubly, new-new.
 
 Managing director Wee Teng Wen has been plain about the thesis: give homegrown brands a proper physical home, the kind of address that signals permanence rather than a six-week pop-up. It launched with about forty tenants and has since grown past sixty, spanning fashion, jewellery, homeware, coffee, recovery and a children's store. The roster also moves — pop-ups come and go in the Factory Block — so the building reads as a living directory rather than a fixed line-up.
 
-## The homegrown labels worth the trip
+## The fashion and design labels
 
-Start with the clothes, because this is where New Bahru is strongest.
+Start with the clothes, because this is where New Bahru is strongest. Most of the retail sits in the School Block; the entries below are the ones worth crossing town for.
 
-**Beyond The Vines** anchors the School Block with its largest store in the country. The label built its name on the dumpling bag and on colour-blocked, easy separates; in a space this size it can finally show the full range, from the technical outerwear to the sculptural bags, laid out with room to breathe.
+### Beyond The Vines
 
-**rye** is the one to see if you dress in a quieter register. The womenswear is spare and well-cut — clean shoulders, considered length, fabric that holds its shape — the sort of wardrobe that reads as [quiet luxury](https://www.arahkaii.com/style/quiet-luxury-brands-worn-by-wealthy-insiders/) without the European price tag.
+The label anchors the School Block with its largest store in the country. Beyond The Vines built its name on the dumpling bag and on colour-blocked, easy separates; in a space this size it can finally show the full range, from the technical outerwear to the sculptural bags, laid out with room to breathe. Start here to calibrate your eye, then work outward.
 
-**MAKE by GINLEE** is the design-led pick. GINLEE Studio is known for its hand-pleated, architectural pieces — bags and garments that fold flat and open into structure — and the in-store *MAKE* concept lets you personalise as you buy. It is craft you can watch happen.
+### rye
 
-For adornment, **Curious Creatures** does demi-fine and fine jewellery with a slightly gothic, sculptural hand — pieces meant to be worn daily and layered, the kind of [investment in small objects](https://www.arahkaii.com/guides/the-complete-guide-to-investment-dressing/) that outlasts a season. **Good Addition**, the womenswear label from Andrea Chong and Joan Chang, sits nearby with a softer, more romantic line. And **The Sea Apple** rounds out the family offer with a children's store you can actually linger in.
+The one to see if you dress in a quieter register. The womenswear is spare and well-cut — clean shoulders, considered length, fabric that holds its shape — the sort of wardrobe that reads as [quiet luxury](https://www.arahkaii.com/style/quiet-luxury-brands-worn-by-wealthy-insiders/) without the European price tag. The longer cuts layer cleanly for a covered wardrobe.
 
-The point of difference is range without dilution. **Crafune** works in hand-stitched leather — bags and small goods made on site, the seams visible. **SOJAO** brings the wardrobe logic home with organic-cotton bedding and table linen in undyed, muted tones, for the reader whose minimalism does not stop at the front door. None of it shouts. All of it is made to be kept.
+### MAKE by GINLEE
 
-There is one deliberate outsider. **BEAMS**, the Japanese retailer, chose New Bahru for its first Singapore boutique — a vote of confidence from abroad that reads, in context, as a compliment to the building rather than a dilution of the local brief. Set against the home-grown labels, it is a useful measure: this is the standard Singapore design is now being held to, and mostly meeting.
+The design-led pick. GINLEE Studio is known for its hand-pleated, architectural pieces — bags and garments that fold flat and open into structure — and the in-store *MAKE* concept lets you personalise as you buy, heat-pressing pleats to order. It is craft you can watch happen, which is rarer in retail than it should be.
 
-None of this is modest fashion in the strict sense — there are no abaya rails here. But the register is right: long lines, natural fabrics, a preference for cut over logo. It is the same instinct driving the wider [modest-luxury movement across Southeast Asia](https://www.arahkaii.com/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/), and several of these pieces — rye's longer cuts, GINLEE's pleated layers, SOJAO's loose linen — layer cleanly for a covered wardrobe.
+### Curious Creatures
+
+Demi-fine and fine jewellery with a slightly gothic, sculptural hand. The pieces are meant to be worn daily and layered rather than saved for occasions — the kind of [investment in small objects](https://www.arahkaii.com/guides/the-complete-guide-to-investment-dressing/) that outlasts a season and quietly carries an outfit.
+
+### Good Addition
+
+The womenswear label from Andrea Chong and Joan Chang sits nearby with a softer, more romantic line — fluid shapes, gentler palettes. It is the counterweight to rye's restraint, and the two read well together if you are building rather than buying single pieces.
+
+### The Sea Apple
+
+A children's brand with a create-and-customise store you can actually linger in. It rounds out the family offer and is the reason a New Bahru trip survives being a family one.
+
+### Crafune
+
+Hand-stitched leather — bags and small goods made on site, the seams left visible. Crafune is the entry for anyone who values the made-by-hand over the made-by-machine, and a good place to understand what "homegrown" means here in practice.
+
+### SOJAO
+
+The wardrobe logic, taken home. SOJAO works in organic-cotton bedding and table linen in undyed, muted tones — for the reader whose minimalism does not stop at the front door. None of it shouts; all of it is made to be kept.
+
+### BEAMS
+
+The deliberate outsider. The Japanese retailer chose New Bahru for its first Singapore boutique — a vote of confidence from abroad that reads, in context, as a compliment to the building rather than a dilution of the local brief. Set against the home-grown labels, it is a useful measure: this is the standard Singapore design is now being held to, and mostly meeting.
+
+None of this is modest fashion in the strict sense — there are no abaya rails here. But the register is right: long lines, natural fabrics, a preference for cut over logo. It is the same instinct driving the wider [modest-luxury movement across Southeast Asia](https://www.arahkaii.com/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/), and rye's longer cuts, GINLEE's pleated layers and SOJAO's loose linen all earn a place in a covered wardrobe.
 
 ## Why a former school, and why now?
 
@@ -52,15 +76,43 @@ The choice of building matters. Singapore tends to demolish and rebuild; New Bah
 
 The timing is deliberate, too. Homegrown Southeast Asian design has spent the last few years moving from market stalls and Instagram drops to permanent retail and serious press — a shift visible everywhere from [Jakarta's fashion week](https://www.arahkaii.com/style/jakarta-fashion-week-2025/) to the slow, [artisan-led economics of labels like SukkhaCitta](https://www.arahkaii.com/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/). New Bahru is Singapore's version of that maturity: a developer betting that local design now warrants a destination address, not a temporary one. A serviced apartment on the top floor is the clearest tell — you do not build eighty-three keys above a pop-up.
 
-## How to spend an afternoon there
+## Where to eat and drink
 
-Give it three hours. Walk the School Block first, top to bottom, then cross to the Factory Block.
+A word for the woman who does not drink: New Bahru is not an alcohol-free site — a few of its restaurants run wine and cocktail lists — so it is worth knowing where to point yourself. These four are the easy, sit-down stops; the halal status of each is noted plainly.
 
-For something to drink, **PPP Coffee** pours a serious flat white, and **Parlour Gelato** is the reason to stay past the shops. **Dumpling Darlings** handles a quick, sit-down lunch.
+### PPP Coffee
 
-A word for the woman who does not drink: New Bahru is not an alcohol-free site — a few of its restaurants run wine and cocktail lists — so it is worth knowing where to point yourself. **Kios Minang**, in the Factory Block, is Muslim-owned and serves Minangkabau nasi padang. **The Coconut Club**'s New Bahru outpost is no-pork and no-lard and sources from halal suppliers, though it is not halal-certified; treat it as pork-free rather than certified, and order accordingly. Between the coffee, the gelato and those two kitchens, an afternoon here is easy to spend without a bar in sight.
+A serious flat white and single-origin filters, in the School Block. The right first stop, and a calm place to plan the walk. *Halal status: not halal-certified; coffee and pastries, no alcohol.*
 
-If you want to make a half-day of it, **Hideaway** offers recovery — massage, a cold plunge, an infrared sauna — and **Off Duty Pilates** runs classes upstairs. It is the rare retail address that also lets you sweat and recover under the same roof, which makes the case for treating the trip as a slow Saturday rather than an errand.
+### Parlour Gelato
+
+The reason to stay past the shops — small-batch gelato in rotating flavours, eaten standing up. *Halal status: not halal-certified; a dessert counter, no alcohol.*
+
+### Dumpling Darlings
+
+A quick, sit-down lunch of dumplings and noodles in the Factory Block — fast, unfussy, and easy to fit between shops. *Halal status: not halal-certified; verify ingredients on the day if that matters to you.*
+
+### Kios Minang
+
+Muslim-owned, in the Factory Block, serving Minangkabau nasi padang — the rendang and the sambal-heavy plates done properly. The clearest halal choice on site. *Halal status: Muslim-owned.*
+
+### The Coconut Club
+
+The New Bahru outpost of the nasi lemak institution. It is no-pork and no-lard and sources from halal suppliers, but it is **not** halal-certified — treat it as pork-free rather than certified, and order accordingly. *Halal status: no-pork/no-lard, not halal-certified.*
+
+Between the coffee, the gelato and those two kitchens, an afternoon here is easy to spend without a bar in sight.
+
+## Where to recover
+
+If you want to make a half-day of it, the building lets you sweat and recover under the same roof — rare for a retail address, and the case for treating the trip as a slow Saturday rather than an errand.
+
+### Hideaway
+
+A recovery space with massage, a cold plunge and an infrared sauna — the antidote to a morning on your feet. Book ahead on weekends.
+
+### Off Duty Pilates
+
+Reformer and mat classes upstairs, for those building the visit around a session rather than fitting one in. Worth checking the timetable before you go.
 
 ## What New Bahru signals for Singapore design
 
