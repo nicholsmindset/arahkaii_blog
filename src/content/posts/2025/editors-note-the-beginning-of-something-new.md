@@ -10,7 +10,7 @@ heroImage: "../../../assets/images/archive/editors-note-the-beginning-of-somethi
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "editors-note-the-beginning-of-something-new"
-seoTitle: "Editor's note: the beginning of Arahkaii"
+seoTitle: "Editor's note: launching an Asian fashion editorial"
 metaDescription: "Our founding editor on launching Arahkaii — Asia's modern-luxury edit — and what conscious consumption and quiet craft mean as we step into 2026."
 ---
 
@@ -18,9 +18,9 @@ metaDescription: "Our founding editor on launching Arahkaii — Asia's modern-lu
 
 _November 2025_
 
-Welcome to the Arahkaii editorial—a space where Southeast Asian style, culture, and identity converge with global fashion intelligence. Here we are — the final stretch of 2025, and honestly? What a year to reflect on.
+Welcome to Arahkaii — an Asian fashion editorial where Southeast Asian style, culture, and identity converge with global fashion intelligence. Here we are — the final stretch of 2025, and honestly? What a year to reflect on.
 
-This was the year quiet luxury stopped being a whisper and became a roar. The year butter skin replaced glass skin (because who wants to look like a glazed donut forever?). The year we collectively decided that maybe, just maybe, we don't need seventeen serums when three great ones will do.
+This was the year [quiet luxury](/the-complete-guide-to-quiet-luxury/) stopped being a whisper and became a roar. The year butter skin replaced glass skin (because who wants to look like a glazed donut forever?). The year we collectively decided that maybe, just maybe, we don't need seventeen serums when three great ones will do.
 
 But more than the trends that came and went, 2025 felt like a turning point. A collective exhale. We saw fashion move away from logo-screaming maximalism toward pieces that actually mean something. We watched indie beauty brands from Seoul to Singapore outsell legacy names because they simply understood what we actually wanted: effective formulas, honest marketing, no BS.
 
@@ -64,7 +64,7 @@ Even in these early days of building Arahkaii, the year has already taught us so
 
 We've learned that readers are genuinely craving substance over hype. That "intentional living" isn't just a buzzword — it's how people actually want to shop, dress, and exist. That when you talk about brands with real missions and authentic stories, people lean in. They ask questions. They want to know more.
 
-We've also learned that sustainable fashion isn't about perfection. It's about progress. That clean beauty doesn't mean compromising on performance. That modest fashion and contemporary style aren't mutually exclusive. That heritage brands can innovate just as boldly as startups.
+We've also learned that [sustainable fashion](/living/the-conscious-luxury-manifesto-sustainable-living/) isn't about perfection. It's about progress. That clean beauty doesn't mean compromising on performance. That modest fashion and contemporary style aren't mutually exclusive. That heritage brands can innovate just as boldly as startups.
 
 Most importantly? We've learned that both Asia's creative economy and conscious consumption globally aren't "emerging trends" — they're here. And the appetite for a platform that bridges both is real.
 
@@ -85,7 +85,7 @@ Let's talk about what actually happened this year in the wider world of fashion,
 
 - Butter skin took over from glass skin — because soft, natural radiance beats high-shine perfection
 - Waterless beauty formulations moved from niche to necessary
-- K-beauty's influence continued expanding, but now it's about science-backed ingredients, not just cute packaging
+- [K-beauty's influence](/beauty/k-beauty-broke-the-algorithm/) continued expanding, but now it's about science-backed ingredients, not just cute packaging
 - Sleep optimization became the new wellness flex — forget juice cleanses, we're investing in quality rest
 
 ### In Living:
@@ -193,14 +193,14 @@ _Warmly,_
 
 **P.S.** — Know a brand doing exceptional work? We want to hear about them. Independent designers, innovative beauty founders, established brands reimagining their legacy — if they meet our standards for craft, ethics, and purpose, we want to tell their story. Reach out: [hello@arahkaii.com](mailto:hello@arahkaii.com)
 
-### Continue Reading
+### Continue reading
 
-- [quiet luxury](/the-complete-guide-to-quiet-luxury/)
-- [fashion in Southeast Asia](/jakarta-fashion-week-2025/)
+- [the quiet-luxury playbook](/the-complete-guide-to-quiet-luxury/)
+- [fashion in Southeast Asia](/style/jakarta-fashion-week-2025/)
 
 ### Read next
 
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [The Quiet Titans](https://www.arahkaii.com/culture/asian-billionaire-philanthropy-quiet-revolution/)
-- [The Conscious Luxury Manifesto](https://www.arahkaii.com/living/the-conscious-luxury-manifesto-sustainable-living/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [how K-beauty broke the algorithm](/beauty/k-beauty-broke-the-algorithm/)
+- [Asia's quiet philanthropy revolution](/culture/asian-billionaire-philanthropy-quiet-revolution/)
+- [the conscious-luxury manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)
+- [the modest-streetwear movement](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)

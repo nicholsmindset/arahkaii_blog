@@ -51,7 +51,7 @@ Against this backdrop of authenticity crisis, something unexpected is occurring 
 
 For decades, batik carried associations with formality and obligation—the fabric of government uniforms, wedding ceremonies, and religious occasions. Young Indonesians wore it because they had to, not because they wanted to. That relationship is inverting.
 
-Contemporary designers are deconstructing batik's formal reputation, integrating traditional patterns into streetwear silhouettes. Batik appears on bomber jackets, casual shirts, and accessories—contexts that would have seemed disrespectful a generation ago but now read as pride rather than irreverence. University students wear batik to lectures. Musicians perform in batik-printed merchandise. Social media amplifies these expressions, creating feedback loops where wearing batik becomes a statement of cultural identity rather than conformity.
+Contemporary designers are deconstructing batik's formal reputation, integrating traditional patterns into streetwear silhouettes — part of the wider [modest-streetwear movement](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/) redrawing Southeast Asian style. Batik appears on bomber jackets, casual shirts, and accessories—contexts that would have seemed disrespectful a generation ago but now read as pride rather than irreverence. University students wear batik to lectures. Musicians perform in batik-printed merchandise. Social media amplifies these expressions, creating feedback loops where wearing batik becomes a statement of cultural identity rather than conformity.
 
 This generational shift matters beyond aesthetics. When young Indonesians choose batik voluntarily, they create domestic demand that sustains artisan livelihoods. They become advocates who can distinguish authentic from counterfeit—and who care about the difference. The youth reclamation of batik may prove more effective than legislation in protecting the craft's future.
 
@@ -79,7 +79,7 @@ Traditional batik derives its distinctive colours from plant-based dyes—indigo
 
 NADIN digitally catalogues these recipes, preserving the precise botanical sources, preparation methods, and application techniques that produce specific hues. The database serves multiple functions: it protects endangered knowledge from disappearing; it enables artisans in one region to access techniques developed elsewhere; and it provides a reference point for authenticating genuinely natural-dyed batik against synthetic imitations.
 
-The project represents cultural preservation through documentation rather than restriction—making traditional knowledge more accessible rather than locking it away. For an industry struggling with authenticity verification, this kind of transparent knowledge-sharing may prove as valuable as certification labels.
+The project represents cultural preservation through documentation rather than restriction—making traditional knowledge more accessible rather than locking it away. It is the same artisan-first economics that [SukkhaCitta has built into regenerative fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/). For an industry struggling with authenticity verification, this kind of transparent knowledge-sharing may prove as valuable as certification labels.
 
 * * *
 
@@ -121,7 +121,7 @@ This globalisation creates both opportunity and pressure. International consumer
 
 Digital platforms accelerate this dynamic. Indonesian artisans who once reached only local markets now ship directly to international buyers through e-commerce. Social media showcases their work to audiences who might never visit a Javanese workshop. The intermediaries who traditionally controlled access—wholesalers, exporters, retail buyers—find their gatekeeping power diminished as producers connect directly with consumers.
 
-For young designers blending batik with contemporary fashion, global platforms offer immediate distribution. A batik-streetwear fusion piece can trend on Instagram, sell through a designer's website, and ship worldwide within a single week. This velocity of cultural transmission would have been unimaginable a generation ago.
+For young designers blending batik with contemporary fashion, global platforms offer immediate distribution — the kind of momentum on display at [Jakarta Fashion Week](/style/jakarta-fashion-week-2025/). A batik-streetwear fusion piece can trend on Instagram, sell through a designer's website, and ship worldwide within a single week. This velocity of cultural transmission would have been unimaginable a generation ago.
 
 * * *
 
@@ -137,15 +137,14 @@ The cloth your grandparents wore to ceremonies carries different meaning when yo
 
 Tradition and technology. Heritage and innovation. Batik's paradox is that embracing both may be the only way to preserve either.
 
-### Related Reading
+### Related reading
 
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/jakarta-fashion-week-2025/)
-- [The Rise of Modest Streetwear in Southeast Asia](https://www.arahkaii.com/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Inside SukkhaCitta's Radical Reinvention of Fashion](https://www.arahkaii.com/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [inside Jakarta Fashion Week](/style/jakarta-fashion-week-2025/)
+- [the rise of modest streetwear](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [SukkhaCitta's regenerative reinvention](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [Kering Reports 15% Revenue Decline as Gucci Struggles With Brand Repositioning](https://www.arahkaii.com/fashion/kering-reports-revenue-decline-gucci-struggles/)
+- [the $2.3 million Super Bowl jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [quiet luxury's central contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [Kering's revenue decline as Gucci struggles](/style/kering-reports-revenue-decline-gucci-struggles/)

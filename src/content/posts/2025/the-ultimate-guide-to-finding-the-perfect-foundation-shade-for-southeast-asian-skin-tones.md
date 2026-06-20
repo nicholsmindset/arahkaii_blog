@@ -39,7 +39,7 @@ Southeast Asian skin tones span an extraordinary range—from the fairest porcel
 
 Consider the spectrum: fair tones (Fitzpatrick I-II) often feature pink, neutral, or cool undertones, common among East Asians. These tones struggle with foundations that pull too yellow or peachy. Light-medium tones (Fitzpatrick II-III)—the most common range in Singapore—span yellow, golden, and olive undertones, where subtle differences dramatically affect how foundation appears. Medium tones (Fitzpatrick III-IV), prevalent across Malay and Indian communities, feature golden, olive, and warm undertones that need foundations resistant to greying. And medium-deep to deep tones (Fitzpatrick IV-VI), historically underserved, are finally receiving the attention they deserve from major brands.
 
-What unites us isn’t our shade—it’s our climate. That tropical humidity makes foundation wear uniquely challenging, and understanding this is half the battle.
+What unites us isn’t our shade—it’s our climate. That tropical humidity makes foundation wear uniquely challenging, and understanding this is half the battle — the same battle explored in our guide to [why makeup melts in tropical heat](/beauty/humidity-resistant-makeup-science-tropical-climate/).
 
 * * *
 
@@ -53,7 +53,7 @@ Warm undertones appear golden, peachy, or yellow-based. If gold jewellery flatte
 
 ### Cool Undertones
 
-Cool undertones lean pink, red, or blue-based. Silver jewellery likely suits you better, and your veins appear bluish or purple. This is common among fair-skinned East Asians and some Chinese-Singaporeans. Seek ‘pink,’ ‘rose,’ ‘neutral pink,’ or ‘cool beige’ descriptors. Korean brands like Hera, Sulwhasoo, and Laneige understand cool-toned Asian shades intimately, as does MAC’s NW range.
+Cool undertones lean pink, red, or blue-based. Silver jewellery likely suits you better, and your veins appear bluish or purple. This is common among fair-skinned East Asians and some Chinese-Singaporeans. Seek ‘pink,’ ‘rose,’ ‘neutral pink,’ or ‘cool beige’ descriptors. Korean brands like Hera, Sulwhasoo, and Laneige understand cool-toned Asian shades intimately — part of the wider story of [how K-beauty came to define modern complexion](/beauty/k-beauty-broke-the-algorithm/) — as does MAC’s NW range.
 
 ### Neutral Undertones
 
@@ -103,7 +103,7 @@ Let’s be direct: not all brands understand Asian skin. Some shade ranges stop 
 
 **Fenty Beauty** offers fifty shades spanning every undertone including olive. Shades 130, 145, 180, 235, 300, 350, and 445 are Southeast Asian favourites, with excellent humidity performance. **MAC Cosmetics’** NC and NW systems offer extensive shade variety; their Asian heritage shows in understanding yellow and golden undertones. Face and Body excels in humid weather. **NARS** shades like Gobi, Syracuse, Macao, and Polynesia feel practically designed for Asian skin, with olive undertones well-represented.
 
-**Korean brands** (Laneige, Hera, Sulwhasoo, IOPE) were created specifically for Asian skin with deep understanding of undertones and climate needs—cushion foundations are engineered for humid conditions. **The Ordinary** offers an affordable extensive shade range with surprisingly good olive undertones—ideal for owning two shades to mix. And don’t overlook Japanese drugstore brands at Don Don Donki and Takashimaya; while shade ranges may be limited, undertones are spot-on.
+**Korean brands** (Laneige, Hera, Sulwhasoo, IOPE) were created specifically for Asian skin with deep understanding of undertones and climate needs—cushion foundations are engineered for humid conditions. **The Ordinary** offers an affordable extensive shade range with surprisingly good olive undertones—ideal for owning two shades to mix. And don’t overlook Japanese drugstore brands at Don Don Donki and Takashimaya; while shade ranges may be limited, undertones are spot-on. Korea's hold on the cushion category is now being tested by a new wave of [Chinese makeup houses](/beauty/beauty-best-chinese-makeup-brands/), a rivalry we unpack in [C-beauty versus K-beauty](/beauty/c-beauty-vs-k-beauty-2026/).
 
 * * *
 
@@ -133,15 +133,10 @@ _Your perfect match is waiting. Now you know exactly how to find it._
 
  
 
-### Continue Reading
+### Continue reading
 
-- [Southeast Asian foundation guide](/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [humidity-resistant makeup](/humidity-resistant-makeup-science-tropical-climate/)
-- [Best Chinese Makeup Brands 2026](https://www.arahkaii.com/beauty-best-chinese-makeup-brands/)
-
-### Read next
-
-- [The Warmth Question](https://www.arahkaii.com/beauty/seasonal-makeup-transition-summer-autumn-colors/)
-- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/beauty/humidity-resistant-makeup-science-tropical-climate/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](https://www.arahkaii.com/beauty/c-beauty-vs-k-beauty-2026/)
+- [How humidity-resistant makeup actually works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [Shifting your makeup from summer to autumn](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
+- [The best Chinese makeup brands of 2026](/beauty/beauty-best-chinese-makeup-brands/)
+- [How K-beauty broke the algorithm](/beauty/k-beauty-broke-the-algorithm/)
+- [C-beauty versus K-beauty, compared](/beauty/c-beauty-vs-k-beauty-2026/)
