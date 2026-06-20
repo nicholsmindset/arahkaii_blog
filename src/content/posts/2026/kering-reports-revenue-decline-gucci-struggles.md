@@ -26,7 +26,7 @@ faq:
 
 The Kering revenue decline and Gucci's struggles have become the fashion industry's most-watched corporate story of 2025. Kering's 15% revenue decline has dominated financial headlines, with Gucci absorbing most of the blame. The reality proves more nuanced.
 
-What appears as crisis is actually calculated strategy. The French conglomerate—parent to Gucci, Bottega Veneta, and Saint Laurent—has embarked on deliberate repositioning, the kind of architectural overhaul that requires tearing down walls before rebuilding them. Gucci's comparable drop narrowed from 25% in the first half to 14% in Q3, suggesting creative director Sabato De Sarno's quieter aesthetic may finally be gaining traction with consumers who found the previous maximalist era exhausting.
+What appears as crisis is actually calculated strategy. The French conglomerate—parent to Gucci, Bottega Veneta, and Saint Laurent—has embarked on deliberate repositioning, the kind of architectural overhaul that requires tearing down walls before rebuilding them. Gucci's comparable drop narrowed from 25% in the first half to 14% in Q3, suggesting creative director Sabato De Sarno's quieter aesthetic — a bet on the same [quiet-luxury instincts now reshaping the wider industry](/guides/the-complete-guide-to-quiet-luxury/) — may finally be gaining traction with consumers who found the previous maximalist era exhausting.
 
 The wholesale channel tells the most revealing story. Once a reliable revenue stream, it's being deliberately strangled—down 25% at Gucci alone. This mirrors what Hermès executed two decades ago: trading volume for exclusivity, short-term pain for long-term pricing power.
 
@@ -46,7 +46,7 @@ Bright spots emerged across the portfolio. Bottega Veneta posted 3% comparable g
 
 ## Why This Matters
 
-The divergence within Kering's portfolio exposes vastly different trajectories under a single corporate umbrella. Bottega Veneta's growth under Matthieu Blazy proves that [whisper-quiet luxury](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/) still commands premium prices when execution remains flawless. This offers Kering a crucial counterweight during Gucci's extended rehabilitation.
+The divergence within Kering's portfolio exposes vastly different trajectories under a single corporate umbrella. Bottega Veneta's growth under Matthieu Blazy proves that [whisper-quiet luxury](/style/quiet-luxury-brands-worn-by-wealthy-insiders/) still commands premium prices when execution remains flawless. This offers Kering a crucial counterweight during Gucci's extended rehabilitation.
 
 Financial reserves provide breathing room. According to [Kering's investor relations](https://www.kering.com/en/finance/), first-half free cash flow reached €2.4 billion—bolstered by €1.3 billion in real estate transactions and a €4 billion beauty division sale to L'Oréal. These aren't the vital signs of a company scrambling for survival. They're evidence of deliberate transformation, uncomfortable but calculated.
 
@@ -62,9 +62,9 @@ Kering's Gucci problem has become the luxury industry's mirror. When a flagship 
 
 The wholesale correction gripping Gucci reflects systemic overreach rather than isolated mismanagement. Houses across the luxury spectrum stretched distribution networks thin, chasing quarterly growth while quietly eroding the scarcity that once defined their allure. Kering's aggressive pullback signals recalibration the entire industry will likely mirror within eighteen months.
 
-The emerging playbook demands uncomfortable choices. Tighter retail control means sacrificing revenue streams that once seemed indispensable. Elevated product narratives require investment in craftsmanship over marketing spectacle. Creative risk-taking must replace the safe bestseller mentality that turned too many maisons into luxury fast-fashion operations.
+The emerging playbook demands uncomfortable choices. Tighter retail control means sacrificing revenue streams that once seemed indispensable. Elevated product narratives require investment in craftsmanship over marketing spectacle. Creative risk-taking must replace the safe bestseller mentality that turned too many maisons into luxury fast-fashion operations — the same overexposure logic that explains [why so many designer collaborations keep failing](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/).
 
-Evidence of what works sits within Kering's own portfolio. Bottega Veneta's growth proves that disciplined positioning and genuine creative vision still command consumer loyalty. Scarcity wins. Desirability wins. Authentic creative direction wins. Ubiquity loses—every time.
+Evidence of what works sits within Kering's own portfolio. Bottega Veneta's growth — the house [BTS's RM chose for its logo-free restraint](/style/bts-individual-style-identities-luxury-brand-partnerships/) — proves that disciplined positioning and genuine creative vision still command consumer loyalty. Scarcity wins. Desirability wins. Authentic creative direction wins. Ubiquity loses—every time.
 
 * * *
 
@@ -78,15 +78,14 @@ The next two quarters will function as referendum rather than routine earnings c
 
 The fashion industry has witnessed too many legacy houses mistake caution for strategy, protecting market share while competitors claimed cultural relevance. Gucci cannot afford that particular brand of cowardice. Its position demands either courageous disruption or graceful decline.
 
-### Related Reading
+### Related reading
 
-- [The Complete Guide to Quiet Luxury](https://www.arahkaii.com/the-complete-guide-to-quiet-luxury/)
-- [Why Quiet Luxury Is Fashion's Biggest Contradiction](https://www.arahkaii.com/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/)
+- [The complete guide to quiet luxury](/guides/the-complete-guide-to-quiet-luxury/)
+- [Why quiet luxury is fashion's biggest contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [The quiet-luxury brands wealthy insiders actually wear](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [Why Designer Collaborations Keep Failing—And What H&M Gets Wrong](https://www.arahkaii.com/fashion/why-designer-collaborations-keep-failing-hm-gets-wrong/)
+- [Covered and cool: modest streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The $2.3 million jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [Why designer collaborations keep failing](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/)

@@ -59,7 +59,7 @@ And it's working. Sales jumped from $232 million in 2023 to $345 million in 2024
 
 - **Seven-Colour Eyeshadow Palette** — A whole face of looks in one affordable palette. Perfect if you're still figuring out what colours work for you (no judgment, we've all been there).
 
-**Why We Rate It:** Most Judydoll products cost less than your bubble tea habit. Chinese consumers literally call it a "national makeup brand" because it's that accessible. This is beauty democratization in action.
+**Why We Rate It:** Most Judydoll products cost less than your bubble tea habit. Chinese consumers literally call it a "national makeup brand" because it's that accessible. This is beauty democratisation in action.
 
 * * *
 
@@ -159,25 +159,25 @@ Florasis isn't just making makeup; they're making a cultural statement. The bran
 
 * * *
 
-## The Best Chinese Makeup Brands: Our Verdict
+## The best Chinese makeup brands: our verdict
 
-These four brands show just how diverse C-beauty has become. Want affordable experimentation? Judydoll. Fantasy escapism with collectible packaging? Flower Knows. Design-forward minimalism? Joocyee. Luxury with cultural depth? Florasis.
+These four brands show just how diverse C-beauty has become. Want affordable experimentation? Judydoll. Fantasy escapism with collectible packaging? Flower Knows. Design-forward minimalism? Joocyee. Luxury with cultural depth? Florasis. If you're still weighing the two great Asian beauty schools against each other, our [comparison of C-beauty and K-beauty](/beauty/c-beauty-vs-k-beauty-2026/) maps where each one wins, and the wider [story of how K-beauty rewired the algorithm](/beauty/k-beauty-broke-the-algorithm/) explains the movement these brands are now answering.
 
 The best part? You don't have to choose just one. Mix a Judydoll mascara with a Flower Knows eyeshadow palette, finish with a Joocyee highlighter, and set it all with Florasis powder. That's the beauty of having options—and C-beauty is giving us plenty.
 
 K-beauty had its era. J-beauty had its moment. Now it's C-beauty's turn, and honestly? The bar is being set pretty high.
 
-_Want more beauty intel? Check out our [Makeup & Fragrance section](https://arahkaii.com/category/beauty-accessories-accessories-edit-staple-wardrobe/makeup-fragrance-cosmetics-beauty-tools-beauty-ritual/) for the latest._
+_Want more beauty intel? Browse our [beauty section](/beauty/) for the latest._
 
 ### Related Reading
 
-- [The Southeast Asian Foundation Guide](https://www.arahkaii.com/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/humidity-resistant-makeup-science-tropical-climate/)
-- [Why Your Summer Makeup Suddenly Feels Wrong](https://www.arahkaii.com/seasonal-makeup-transition-summer-autumn-colors/)
+- [The Southeast Asian Foundation Guide](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [Why Your Summer Makeup Suddenly Feels Wrong](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
 
 ### Read next
 
-- [The Warmth Question](https://www.arahkaii.com/beauty/seasonal-makeup-transition-summer-autumn-colors/)
-- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/beauty/humidity-resistant-makeup-science-tropical-climate/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](https://www.arahkaii.com/beauty/c-beauty-vs-k-beauty-2026/)
+- [The Warmth Question](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
+- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
+- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](/beauty/c-beauty-vs-k-beauty-2026/)

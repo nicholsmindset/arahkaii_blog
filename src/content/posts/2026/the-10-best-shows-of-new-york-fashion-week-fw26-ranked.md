@@ -13,11 +13,25 @@ heroImage: "../../../assets/images/archive/the-10-best-shows-of-new-york-fashion
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "the-10-best-shows-of-new-york-fashion-week-fw26-ranked"
+seoTitle: "New York Fashion Week FW26: the 10 best shows ranked"
+metaDescription: "New York Fashion Week FW26 opened fashion month in a blizzard — from Rachel Scott's Proenza debut to Khaite, the ten best shows ranked."
+listName: "The 10 best shows of New York Fashion Week FW26, ranked"
+listItems:
+  - "Proenza Schouler (Rachel Scott)"
+  - "Khaite (Catherine Holstein)"
+  - "Ralph Lauren"
+  - "Calvin Klein (Veronica Leoni)"
+  - "Michael Kors"
+  - "Tory Burch"
+  - "Altuzarra (Joseph Altuzarra)"
+  - "Sandy Liang"
+  - "Carolina Herrera (Wes Gordon)"
+  - "Coach (Stuart Vevers)"
 ---
 
 _From Marc Jacobs going full nostalgia to Rachel Scott's Proenza debut, NYFW delivered polished reinvention and a blizzard's worth of great coats. We ranked the ten shows that earned their spot in the conversation—based on creative ambition, cultural impact, and actual wearability._
 
-New York Fashion Week FW26 opened fashion month in the middle of the city's worst snowstorm in years—which, honestly, felt poetic. Because this was a season about showing up. About proving that American fashion has something to say beyond "quiet luxury meets athleisure." The schedule ran February 11–16, with 52 shows and 46 presentations, and what emerged was a city-wide argument for directional dressing that still respects your actual life.
+New York Fashion Week FW26 opened fashion month in the middle of the city's worst snowstorm in years—which, honestly, felt poetic. Because this was a season about showing up. About proving that American fashion has something to say beyond "quiet luxury meets athleisure." The schedule ran February 11–16, with 52 shows and 46 presentations, and what emerged was a city-wide argument for directional dressing that still respects your actual life. The season would carry through [London's rain-soaked drama](/style/the-10-best-shows-of-london-fashion-week-fw26-ranked/), [Milan's blockbuster debuts](/style/the-10-best-shows-of-milan-fashion-week-fw26-ranked/) and [Paris's sophomore reckoning](/style/paris-fashion-week-fw26-best-shows/) — but New York set the opening terms.
 
 The headlines went to the debuts (Rachel Scott at Proenza Schouler, Veronica Leoni's second season at Calvin Klein) and the legacy statements (Michael Kors' 45th anniversary, Ralph Lauren doing Ralph Lauren things). But the most interesting moments lived in between—designers refining their vision, new voices earning their place, and a few genuine surprises that reminded everyone why New York still matters.
 
@@ -83,7 +97,7 @@ Catherine Holstein's Khaite continues to define what modern American luxury look
 
 Rachel Scott's debut for Proenza Schouler was the most anticipated show of NYFW—and it delivered. Taking over from founders Jack McCollough and Lazaro Hernandez, who departed after 23 years to lead Loewe, Scott brought her Diotima sensibility (she continues to design her own label alongside Proenza) to bear on one of New York's most respected houses. The result oscillated between rigid and fluid tailoring, with deliberately crumpled, draped, and twisted dresses. Nocturnal orchids—printed and hand-painted onto leather—added dark sensuality. The collection was made in collaboration with Refugee Atelier, the NYC-based nonprofit providing fair-wage work for women refugees.
 
-Scott wrote in her show notes that the collection was shaped by "a political and cultural moment marked by exhaustion and division, where resilience, identity and memory become acts of resistance." That could have felt heavy-handed. Instead, it felt like exactly the kind of fashion New York needs right now: beautiful, purposeful, and [conscious of the world it exists in](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/). Not just clothes. A statement.
+Scott wrote in her show notes that the collection was shaped by "a political and cultural moment marked by exhaustion and division, where resilience, identity and memory become acts of resistance." That could have felt heavy-handed. Instead, it felt like exactly the kind of fashion New York needs right now: beautiful, purposeful, and [conscious of the world it exists in](/living/the-conscious-luxury-manifesto-sustainable-living/). Not just clothes. A statement.
 
 ## **The Verdict on New York Fashion Week FW26**
 
@@ -93,13 +107,14 @@ _London is next. But for once, New York didn't feel like it was warming up the c
 
 ### Continue Reading
 
-- [10 Best Shows of London Fashion Week FW26, Ranked](/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
-- [10 Best Shows of Milan Fashion Week FW26, Ranked](/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
-- [Seoul Fashion Week FW 2026: The Future of K-Fashion](/seoul-fashion-week-fw-2026/)
+- [London's most fearless proving ground, ranked](/style/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
+- [Milan's debuts and sophomore tests, ranked](/style/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
+- [Seoul and the future of K-fashion](/style/seoul-fashion-week-fw-2026/)
+- [The Korean labels building global empires](/style/korean-fashion-brands-2026/)
 
 ### Read next
 
-- [The 10 Best Shows of London Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
-- [The 10 Best Shows of Milan Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
-- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](https://www.arahkaii.com/fashion/seoul-fashion-week-fw-2026/)
+- [The 10 Best Shows of London Fashion Week FW26, Ranked](/style/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
+- [The 10 Best Shows of Milan Fashion Week FW26, Ranked](/style/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](/style/seoul-fashion-week-fw-2026/)
