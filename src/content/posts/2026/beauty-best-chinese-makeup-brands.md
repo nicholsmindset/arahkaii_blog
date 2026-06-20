@@ -167,17 +167,17 @@ The best part? You don't have to choose just one. Mix a Judydoll mascara with a 
 
 K-beauty had its era. J-beauty had its moment. Now it's C-beauty's turn, and honestly? The bar is being set pretty high.
 
-_Want more beauty intel? Check out our [Makeup & Fragrance section](https://arahkaii.com/category/beauty-accessories-accessories-edit-staple-wardrobe/makeup-fragrance-cosmetics-beauty-tools-beauty-ritual/) for the latest._
+_Want more beauty intel? Browse our [beauty section](/beauty/) for the latest._
 
 ### Related Reading
 
-- [The Southeast Asian Foundation Guide](https://www.arahkaii.com/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/humidity-resistant-makeup-science-tropical-climate/)
-- [Why Your Summer Makeup Suddenly Feels Wrong](https://www.arahkaii.com/seasonal-makeup-transition-summer-autumn-colors/)
+- [The Southeast Asian Foundation Guide](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [Why Your Summer Makeup Suddenly Feels Wrong](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
 
 ### Read next
 
-- [The Warmth Question](https://www.arahkaii.com/beauty/seasonal-makeup-transition-summer-autumn-colors/)
-- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/beauty/humidity-resistant-makeup-science-tropical-climate/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](https://www.arahkaii.com/beauty/c-beauty-vs-k-beauty-2026/)
+- [The Warmth Question](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
+- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
+- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](/beauty/c-beauty-vs-k-beauty-2026/)

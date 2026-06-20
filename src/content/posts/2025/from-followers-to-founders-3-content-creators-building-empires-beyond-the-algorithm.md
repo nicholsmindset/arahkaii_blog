@@ -127,7 +127,7 @@ She didn't give up. Every Alchemai piece is custom cut-and-sew—designed from s
 
 But the product is only half the story. Pham's drop strategy broke from every established playbook in the creator merchandise space.
 
-Her approach centered on an exclusive "spam" Instagram account—a secondary, behind-the-scenes profile where she shared raw, unpolished updates about the brand. This created a tiered community structure: casual viewers followed her main channel, but true fans joined the inner circle for early access and intimate updates. The strategy built what industry analysts describe as a "cult-like community" around exclusivity and insider status.
+Her approach centred on an exclusive "spam" Instagram account—a secondary, behind-the-scenes profile where she shared raw, unpolished updates about the brand. This created a tiered community structure: casual viewers followed her main channel, but true fans joined the inner circle for early access and intimate updates. The strategy built what industry analysts describe as a "cult-like community" around exclusivity and insider status.
 
 The results speak in speed. In one drop, Pham sold out over 6,000 hoodies in under ten minutes. She announces releases at specific symbolic times—like 11:11 PM EST—adding ritualistic significance to the purchase moment. Each launch feels less like a transaction and more like participation in something.
 

@@ -35,7 +35,7 @@ This geographic redistribution creates both opportunity and paradox. Despite con
 
 The largest philanthropic organisations in Asia operate with budgets that would seem modest by Gates Foundation standards yet achieve remarkable regional impact. Hong Kong's Jockey Club Charities Trust distributes approximately $507 million annually through hyperlocal partnerships that Western foundations, with their layers of due diligence and compliance requirements, could never replicate. Japan's Nippon Foundation, China's Tencent Foundation, and India's Tata Trusts—which predate independence and control assets exceeding many national budgets—drive education, healthcare, and poverty alleviation programmes serving hundreds of millions. It is a restraint that echoes the broader [conscious-luxury ethic](/living/the-conscious-luxury-manifesto-sustainable-living/) reshaping how Asian wealth expresses itself.
 
-These institutions share a common characteristic: they're embedded within the communities they serve rather than standing apart as external benefactors — the same instinct for [quiet luxury](/the-complete-guide-to-quiet-luxury/) that prizes substance over signalling. The Tata Trusts control 66% of Tata Sons, making them simultaneously philanthropic entities and industrial powerhouses. This integration—charity as inseparable from enterprise—would trigger ethics reviews in Western contexts but represents standard practice across much of Asia.
+These institutions share a common characteristic: they're embedded within the communities they serve rather than standing apart as external benefactors — the same instinct for [quiet luxury](/guides/the-complete-guide-to-quiet-luxury/) that prizes substance over signalling. The Tata Trusts control 66% of Tata Sons, making them simultaneously philanthropic entities and industrial powerhouses. This integration—charity as inseparable from enterprise—would trigger ethics reviews in Western contexts but represents standard practice across much of Asia.
 
 Jack Ma, whose fortune exceeds $25 billion, channels his giving through the Jack Ma Foundation with focus areas that mirror Premji's: rural education, teacher training, environmental sustainability. Yet Ma's approach reflects China's tech-driven philanthropy model, leveraging Alibaba's platform infrastructure to distribute resources and measure impact in ways that would be impossible through traditional foundation structures. The foundation identifies rural schools needing resources, connects them directly with donors through mobile apps, and provides transparent reporting on outcomes—all with overhead costs a fraction of Western equivalents.
 
@@ -117,7 +117,7 @@ Whether the rest of the world notices is becoming less relevant. The work contin
 
 ### Continue reading
 
-- [the quiet-luxury playbook](/the-complete-guide-to-quiet-luxury/)
+- [the quiet-luxury playbook](/guides/the-complete-guide-to-quiet-luxury/)
 - [Korean fashion's new guard](/style/korean-fashion-brands-2026/)
 
 ### Read next

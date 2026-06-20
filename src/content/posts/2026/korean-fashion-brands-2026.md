@@ -31,7 +31,7 @@ _K-fashion has moved well past the hype cycle. These are the Korean brands build
 
 Here's the thing about Korean fashion brands in 2026: the conversation has fundamentally changed.
 
-Two years ago, "K-fashion" was still mostly shorthand for [K-pop-adjacent streetwear](https://arahkaii.com/bts-individual-style-identities-luxury-brand-partnerships/) and the occasional Gentle Monster store visit. Now? Google is investing $100 million in a Korean eyewear brand to co-develop smart glasses. Korea's biggest fashion platform is preparing an IPO that could value it at $7.4 billion. Korean designers are showing at Paris, Milan, and New York—and then strategically choosing to come back to Seoul. Global Google searches for Korean fashion terms have grown 200% in three years.
+Two years ago, "K-fashion" was still mostly shorthand for [K-pop-adjacent streetwear](/style/bts-individual-style-identities-luxury-brand-partnerships/) and the occasional Gentle Monster store visit. Now? Google is investing $100 million in a Korean eyewear brand to co-develop smart glasses. Korea's biggest fashion platform is preparing an IPO that could value it at $7.4 billion. Korean designers are showing at Paris, Milan, and New York—and then strategically choosing to come back to Seoul. Global Google searches for Korean fashion terms have grown 200% in three years.
 
 This isn't a trend anymore. It's an emerging industry — and our [Seoul Fashion Week FW 2026 report](/style/seoul-fashion-week-fw-2026/) charts where its designers are taking it next.
 
@@ -81,7 +81,7 @@ Andersson Bell now stocks at major international retailers and operates a flagsh
 
 Ader Error is weird. Intentionally, strategically weird. The brand operates as an anonymous creative collective—no named designer, no celebrity creative director, no founder origin story. Instead, they build immersive retail spaces that feel more like art installations, release clothes that function as conceptual objects, and treat every touchpoint as an opportunity for visual storytelling.
 
-It works. Ader Error has collaborated with Puma, Zara, Maison Kitsuné, and Converse, and built a global following that extends well beyond the typical K-fashion audience. Their appeal lies in a specific aesthetic lane: playful deconstruction. Oversized proportions, unexpected colour blocking, intentional "errors" in construction that become the design feature. It's Comme des Garçons energy filtered through Korean pop culture sensibility. These [designer collaborations](https://arahkaii.com/why-designer-collaborations-keep-failing-hm-gets-wrong/) show how cross-brand partnerships can actually work when both sides bring genuine creative energy.
+It works. Ader Error has collaborated with Puma, Zara, Maison Kitsuné, and Converse, and built a global following that extends well beyond the typical K-fashion audience. Their appeal lies in a specific aesthetic lane: playful deconstruction. Oversized proportions, unexpected colour blocking, intentional "errors" in construction that become the design feature. It's Comme des Garçons energy filtered through Korean pop culture sensibility. These [designer collaborations](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/) show how cross-brand partnerships can actually work when both sides bring genuine creative energy.
 
 **Why you'll care:** Ader Error proves that K-fashion brands can build global recognition without relying on K-pop endorsements or celebrity culture. The brand is the product. That's rare.
 
@@ -123,7 +123,7 @@ The brand's design language is restrained, tailored, and exquisitely considered:
 
 We covered MÜNN's return to Seoul Fashion Week in our F/W 2026 collections roundup, but the brand deserves its own moment here. After six years showing in Milan, designer Han Hyun-min deliberately came back to Seoul to open the F/W 2026 season—and did so with a collection featuring sweaters knit from recycled paper, dresses made from discarded banners, and bustiers handwoven from elastic bands.
 
-MÜNN represents a specific archetype in K-fashion right now: the internationally credentialled designer choosing Seoul as a strategic base, not a stepping stone. The brand's [sustainable fashion](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/) approach is genuinely innovative, using material constraints as creative fuel rather than marketing positioning.
+MÜNN represents a specific archetype in K-fashion right now: the internationally credentialled designer choosing Seoul as a strategic base, not a stepping stone. The brand's [sustainable fashion](/living/the-conscious-luxury-manifesto-sustainable-living/) approach is genuinely innovative, using material constraints as creative fuel rather than marketing positioning.
 
 **Why you'll care:** MÜNN is the clearest example of the "boomerang effect"—Korean designers who leave, build credibility abroad, and return home stronger. The trajectory is becoming a template.
 
@@ -133,7 +133,7 @@ MÜNN represents a specific archetype in K-fashion right now: the internationall
 
 Plot twist: Gentle Monster's parent company IICOMBINED also runs Tamburins, a perfume and personal care brand that's rapidly building its own cult following. The brand applies Gentle Monster's immersive retail philosophy to fragrance—every store is a sensory experience, every product feels like an art object, and the brand identity prioritises atmosphere over traditional beauty marketing.
 
-Tamburins has expanded across Asia with standalone stores that function as destination experiences. The brand sits at the intersection of [K-beauty](https://arahkaii.com/k-beauty-broke-the-algorithm/) and luxury fragrance, occupying a space that global beauty conglomerates have largely ignored: premium, design-led personal care with a distinctly Korean sensibility. It's a space where the [C-beauty vs K-beauty](https://arahkaii.com/c-beauty-vs-k-beauty-2026/) rivalry is playing out in real time.
+Tamburins has expanded across Asia with standalone stores that function as destination experiences. The brand sits at the intersection of [K-beauty](/beauty/k-beauty-broke-the-algorithm/) and luxury fragrance, occupying a space that global beauty conglomerates have largely ignored: premium, design-led personal care with a distinctly Korean sensibility. It's a space where the [C-beauty vs K-beauty](/beauty/c-beauty-vs-k-beauty-2026/) rivalry is playing out in real time.
 
 **Why you'll care:** If Gentle Monster proved Korean brands could dominate eyewear through design and retail innovation, Tamburins is running the same playbook in beauty. Same DNA, different industry, equally compelling.
 
@@ -157,13 +157,13 @@ _Big brands can wait—these 10 Korean labels are defining what's next._
 
 ### Related Reading
 
-- [Seoul Fashion Week F/W 2026](https://www.arahkaii.com/seoul-fashion-week-fw-2026/)
-- [K-Beauty Broke the Algorithm](https://www.arahkaii.com/k-beauty-broke-the-algorithm/)
-- [C-Beauty vs K-Beauty 2026](https://www.arahkaii.com/c-beauty-vs-k-beauty-2026/)
+- [Seoul Fashion Week F/W 2026](/style/seoul-fashion-week-fw-2026/)
+- [K-Beauty Broke the Algorithm](/beauty/k-beauty-broke-the-algorithm/)
+- [C-Beauty vs K-Beauty 2026](/beauty/c-beauty-vs-k-beauty-2026/)
 
 ### Read next
 
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The Quiet Renaissance of Korean Heritage Brands](https://www.arahkaii.com/fashion/korean-heritage-brands-renaissance/)
-- [The Twelve Women in Your Wardrobe](https://www.arahkaii.com/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The Quiet Renaissance of Korean Heritage Brands](/style/korean-heritage-brands-renaissance/)
+- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)

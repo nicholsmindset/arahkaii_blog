@@ -66,7 +66,7 @@ Richard Quinn has never met a dramatic silhouette he didn't love, and FW26 was n
 
 **The Vibe:** _Fifteen years of making women feel like the best version of themselves_
 
-Edeline Lee doesn't generate the same social media hysteria as some of her London peers, and that's precisely the point. Her FW26 collection celebrated fifteen years of her label with the kind of quiet authority that only comes from knowing exactly who your woman is. Soft tailoring, flattering pleats, full skirts, and a considered palette of burnt orange, deep blues, and cream—all her signature calling cards, executed with the refinement of someone who has spent a decade and a half perfecting them. But there were party pieces too: a glittering gold gown destined for awards season red carpets, and a caged skirt that nodded to spring's Circus silhouette trend. No gimmicks, no slogans, no novelty—just beautifully made clothes designed to last a lifetime. In a week dominated by spectacle and high-concept storytelling, Lee's collection was a reminder that [conscious, considered luxury](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/) doesn't need to shout to be heard.
+Edeline Lee doesn't generate the same social media hysteria as some of her London peers, and that's precisely the point. Her FW26 collection celebrated fifteen years of her label with the kind of quiet authority that only comes from knowing exactly who your woman is. Soft tailoring, flattering pleats, full skirts, and a considered palette of burnt orange, deep blues, and cream—all her signature calling cards, executed with the refinement of someone who has spent a decade and a half perfecting them. But there were party pieces too: a glittering gold gown destined for awards season red carpets, and a caged skirt that nodded to spring's Circus silhouette trend. No gimmicks, no slogans, no novelty—just beautifully made clothes designed to last a lifetime. In a week dominated by spectacle and high-concept storytelling, Lee's collection was a reminder that [conscious, considered luxury](/living/the-conscious-luxury-manifesto-sustainable-living/) doesn't need to shout to be heard.
 
 ## **5\. Tolu Coker**
 
@@ -123,7 +123,7 @@ _Milan and Paris might have the budgets. London has the ideas. For more on the s
 
 ### Read next
 
-- [The 10 Best Shows of New York Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
-- [The 10 Best Shows of Milan Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
-- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](https://www.arahkaii.com/fashion/seoul-fashion-week-fw-2026/)
+- [The 10 Best Shows of New York Fashion Week FW26, Ranked](/style/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
+- [The 10 Best Shows of Milan Fashion Week FW26, Ranked](/style/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](/style/seoul-fashion-week-fw-2026/)

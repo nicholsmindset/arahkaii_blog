@@ -50,7 +50,7 @@ Why now: Western beauty editors are starting to notice. Stock up before the wait
 
 ## 2\. Hince — The Minimalist Alternative to Huda Beauty
 
-Hince is quiet luxury for your makeup bag. Founded in 2019 and beloved by Korean makeup artists and fashion insiders, the brand makes the case that sophisticated colour cosmetics don't need to be loud. Their Second Skin Foundation and Truth Lip Colour range have earned obsessive followings for their skin-like finish and wearability in humid climates — which, hello, is extremely relevant information for anyone living in Southeast Asia. (See our guide to [humidity-resistant makeup](https://www.arahkaii.com/humidity-resistant-makeup-science-tropical-climate/) for the full science.)
+Hince is quiet luxury for your makeup bag. Founded in 2019 and beloved by Korean makeup artists and fashion insiders, the brand makes the case that sophisticated colour cosmetics don't need to be loud. Their Second Skin Foundation and Truth Lip Colour range have earned obsessive followings for their skin-like finish and wearability in humid climates — which, hello, is extremely relevant information for anyone living in Southeast Asia. (See our guide to [humidity-resistant makeup](/beauty/humidity-resistant-makeup-science-tropical-climate/) for the full science.)
 
 The brand's visual identity is also exceptional — all matte packaging and tonal neutrals — which has made it a favourite for flat-lay content creators and beauty editors who want their shelfie to look editorial. But beyond aesthetics, Hince's formulas are genuinely impressive: buildable coverage that breathes, lip shades that somehow manage to flatter every undertone.
 

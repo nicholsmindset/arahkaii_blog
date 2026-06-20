@@ -37,11 +37,11 @@ The smoky eye is back — but the version that made it onto the FW26 runways loo
 
 At NYFW, designers across multiple shows leaned into diffused, blended liner applied with fingertips rather than a brush — the key technique being that the edges of the eye are deliberately blurred rather than defined. The result reads as dramatic without looking harsh, which is genuinely the holy grail of eye makeup.
 
-How to wear it in humidity: Switch to a waterproof gel liner and set it with a matching eyeshadow before blending. In Singapore weather, your liner will migrate anyway — lean into it. For a full breakdown of [how humidity affects makeup performance](https://www.arahkaii.com/humidity-resistant-makeup-science-tropical-climate/) and which formulas survive the tropics, we've got you covered.
+How to wear it in humidity: Switch to a waterproof gel liner and set it with a matching eyeshadow before blending. In Singapore weather, your liner will migrate anyway — lean into it. For a full breakdown of [how humidity affects makeup performance](/beauty/humidity-resistant-makeup-science-tropical-climate/) and which formulas survive the tropics, we've got you covered.
 
 ## 2\. Diffused Blush (Below the Eyes, Not on the Apples)
 
-The placement shift is the whole point here. The FW26 blush moment isn't about a pop of colour on the cheekbones — it's about applying blush low on the face, just beneath the eye, in a soft wash that gives the skin a flushed appearance. It's the same technique [K-beauty and C-beauty brands](https://www.arahkaii.com/beauty-best-chinese-makeup-brands/) have been refining for years, now fully validated by Western runways.
+The placement shift is the whole point here. The FW26 blush moment isn't about a pop of colour on the cheekbones — it's about applying blush low on the face, just beneath the eye, in a soft wash that gives the skin a flushed appearance. It's the same technique [K-beauty and C-beauty brands](/beauty/beauty-best-chinese-makeup-brands/) have been refining for years, now fully validated by Western runways.
 
 The blush placements that came through in FW26 were noticeably softer — less pigmented, more diffused, with cream formulas tapped on with fingertips taking clear precedence over powder brush application. For deeper skin tones, the effect is especially beautiful when you choose a brick-red or berry tone rather than a classic rose.
 
@@ -51,7 +51,7 @@ How to wear it in humidity: Cream blush applied before your setting powder or sk
 
 FW26 runway hair was strategically chaotic. Loose, natural textures at [Collina Strada](https://www.collinastrada.com). Cowlicks celebrated rather than smoothed at Carolina Herrera. The overarching message was "effortless" — which, as anyone who has ever tried to achieve the "effortless look" knows, takes considerably more effort than the polished alternative.
 
-Instead of working against hair's natural tendencies — frizz, texture, wave — FW26 hairstylists worked with them. Light hold products. Air drying. Pieces left to fall where they want. For Southeast Asian hair — which tends toward thick, straight-to-wavy, and humidity-prone — this is genuinely excellent news. Pair with a [foundation matched to your undertone](https://www.arahkaii.com/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/) for a fully considered look. Your hair's natural movement is the look.
+Instead of working against hair's natural tendencies — frizz, texture, wave — FW26 hairstylists worked with them. Light hold products. Air drying. Pieces left to fall where they want. For Southeast Asian hair — which tends toward thick, straight-to-wavy, and humidity-prone — this is genuinely excellent news. Pair with a [foundation matched to your undertone](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/) for a fully considered look. Your hair's natural movement is the look.
 
 How to wear it in humidity: A light curl cream or texture spray on towel-dried hair, then leave it alone. Embrace the volume that Singapore air gives you for free.
 

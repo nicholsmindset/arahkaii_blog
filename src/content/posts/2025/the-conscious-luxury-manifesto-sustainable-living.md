@@ -32,7 +32,7 @@ Luxury redefined isn't about showing off anymore—it's about feeling good about
 
 Mindful consumption means asking yourself real questions before you buy. Where'd this come from? Who made it? Will it last? These matter.
 
-You're shifting from quantity to quality — the same instinct that drives [quiet luxury](/the-complete-guide-to-quiet-luxury/). Instead of filling your closet with disposable items, you're investing in fewer pieces that actually mean something.
+You're shifting from quantity to quality — the same instinct that drives [quiet luxury](/guides/the-complete-guide-to-quiet-luxury/). Instead of filling your closet with disposable items, you're investing in fewer pieces that actually mean something.
 
 A beautifully made jacket you'll wear for years beats ten cheap ones you'll toss after a season.
 
@@ -108,7 +108,7 @@ Small tracked wins build momentum, keeping you motivated for the long journey ah
 
 ### Continue reading
 
-- [the quiet-luxury playbook](/the-complete-guide-to-quiet-luxury/)
+- [the quiet-luxury playbook](/guides/the-complete-guide-to-quiet-luxury/)
 - [SukkhaCitta's regenerative fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
 - [future-vintage designer bags](/guides/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/)
 

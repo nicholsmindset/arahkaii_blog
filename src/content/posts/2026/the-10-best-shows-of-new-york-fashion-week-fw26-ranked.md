@@ -97,7 +97,7 @@ Catherine Holstein's Khaite continues to define what modern American luxury look
 
 Rachel Scott's debut for Proenza Schouler was the most anticipated show of NYFW—and it delivered. Taking over from founders Jack McCollough and Lazaro Hernandez, who departed after 23 years to lead Loewe, Scott brought her Diotima sensibility (she continues to design her own label alongside Proenza) to bear on one of New York's most respected houses. The result oscillated between rigid and fluid tailoring, with deliberately crumpled, draped, and twisted dresses. Nocturnal orchids—printed and hand-painted onto leather—added dark sensuality. The collection was made in collaboration with Refugee Atelier, the NYC-based nonprofit providing fair-wage work for women refugees.
 
-Scott wrote in her show notes that the collection was shaped by "a political and cultural moment marked by exhaustion and division, where resilience, identity and memory become acts of resistance." That could have felt heavy-handed. Instead, it felt like exactly the kind of fashion New York needs right now: beautiful, purposeful, and [conscious of the world it exists in](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/). Not just clothes. A statement.
+Scott wrote in her show notes that the collection was shaped by "a political and cultural moment marked by exhaustion and division, where resilience, identity and memory become acts of resistance." That could have felt heavy-handed. Instead, it felt like exactly the kind of fashion New York needs right now: beautiful, purposeful, and [conscious of the world it exists in](/living/the-conscious-luxury-manifesto-sustainable-living/). Not just clothes. A statement.
 
 ## **The Verdict on New York Fashion Week FW26**
 
@@ -114,7 +114,7 @@ _London is next. But for once, New York didn't feel like it was warming up the c
 
 ### Read next
 
-- [The 10 Best Shows of London Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
-- [The 10 Best Shows of Milan Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
-- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](https://www.arahkaii.com/fashion/seoul-fashion-week-fw-2026/)
+- [The 10 Best Shows of London Fashion Week FW26, Ranked](/style/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
+- [The 10 Best Shows of Milan Fashion Week FW26, Ranked](/style/the-10-best-shows-of-milan-fashion-week-fw26-ranked/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](/style/seoul-fashion-week-fw-2026/)

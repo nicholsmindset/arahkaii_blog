@@ -70,7 +70,7 @@ Belgian designer Meryll Rogge's debut at Marni was one of Milan's most closely w
 
 **The Vibe:** _Texture as a love language_
 
-Louise Trotter's sophomore collection for Bottega cemented what her debut promised: this is going to be a Bottega built on touch. Amplified volumes, experimental textures, and a focus on artisanal craft that felt neither nostalgic nor gimmicky. The leather work was extraordinary. The colour palette was restrained but warm. [The quiet luxury conversation](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/) has sometimes veered into blandness, but Trotter's version is anything but—it's sensual, specific, and deeply material. When Bottega says "when your own initials are enough," Trotter is proving exactly why.
+Louise Trotter's sophomore collection for Bottega cemented what her debut promised: this is going to be a Bottega built on touch. Amplified volumes, experimental textures, and a focus on artisanal craft that felt neither nostalgic nor gimmicky. The leather work was extraordinary. The colour palette was restrained but warm. [The quiet luxury conversation](/living/the-conscious-luxury-manifesto-sustainable-living/) has sometimes veered into blandness, but Trotter's version is anything but—it's sensual, specific, and deeply material. When Bottega says "when your own initials are enough," Trotter is proving exactly why.
 
 ## **4\. Fendi (Maria Grazia Chiuri Debut)**
 
@@ -114,7 +114,7 @@ _Continue reading: [New York's snowstorm season](/style/the-10-best-shows-of-new
 
 ### Read next
 
-- [The 10 Best Shows of New York Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
-- [The 10 Best Shows of London Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
-- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](https://www.arahkaii.com/fashion/seoul-fashion-week-fw-2026/)
+- [The 10 Best Shows of New York Fashion Week FW26, Ranked](/style/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
+- [The 10 Best Shows of London Fashion Week FW26, Ranked](/style/the-10-best-shows-of-london-fashion-week-fw26-ranked/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](/style/seoul-fashion-week-fw-2026/)

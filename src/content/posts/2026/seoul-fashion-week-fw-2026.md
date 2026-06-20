@@ -81,13 +81,13 @@ Beyond the headline collections, the overall F/W 2026 season had a distinct mood
 
 Across the 24 participating brands, there was a noticeable shift away from the [streetwear-inflected maximalism](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/) that defined K-fashion's initial global breakthrough. The palette was muted. The proportions were considered. The attitude was less "look at me" and more "I know what I'm doing." It's the visual equivalent of K-fashion growing up—moving from a phase of loud self-introduction to one of [quiet self-assurance](/guides/the-complete-guide-to-quiet-luxury/).
 
-This maturation was reinforced by the Seoul Fashion Forum, co-hosted with [WWD Korea](https://www.wwd.com) and themed "The Next Chapter of K-Fashion: Deep Dive & Inspiring." Jörn Zempel, President of LOEWE Korea, delivered a keynote arguing that K-fashion's competitive edge lies not in aesthetics alone but in "[experiences that connect emotionally](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/) with the world." When a European luxury executive is publicly validating your creative philosophy at your own fashion week, the power dynamic has officially shifted.
+This maturation was reinforced by the Seoul Fashion Forum, co-hosted with [WWD Korea](https://www.wwd.com) and themed "The Next Chapter of K-Fashion: Deep Dive & Inspiring." Jörn Zempel, President of LOEWE Korea, delivered a keynote arguing that K-fashion's competitive edge lies not in aesthetics alone but in "[experiences that connect emotionally](/living/the-conscious-luxury-manifesto-sustainable-living/) with the world." When a European luxury executive is publicly validating your creative philosophy at your own fashion week, the power dynamic has officially shifted.
 
 ## What Seoul Fashion Week F/W 2026 Means for the Future of K-Fashion
 
 Let's zoom out.
 
-Seoul Fashion Week F/W 2026 wasn't perfect. Designers have called for longer preparation timelines and greater diversity in the lineup. Samsung Fashion Research Institute projects only about 2.4% growth for the Korean fashion market in both 2025 and 2026—modest numbers that suggest the gap between [K-fashion's cultural influence](https://arahkaii.com/k-beauty-broke-the-algorithm/) and its commercial conversion is still real. Google searches for Korean fashion terms have grown 200% over three years, but search interest alone doesn't pay pattern-makers.
+Seoul Fashion Week F/W 2026 wasn't perfect. Designers have called for longer preparation timelines and greater diversity in the lineup. Samsung Fashion Research Institute projects only about 2.4% growth for the Korean fashion market in both 2025 and 2026—modest numbers that suggest the gap between [K-fashion's cultural influence](/beauty/k-beauty-broke-the-algorithm/) and its commercial conversion is still real. Google searches for Korean fashion terms have grown 200% over three years, but search interest alone doesn't pay pattern-makers.
 
 But here's what this season got right: it stopped trying to be a smaller version of Paris or Milan and started leaning into what makes it genuinely different. The government-backed infrastructure that treats fashion week as economic development rather than pure spectacle. The designers who are coming home because Seoul's value proposition now makes strategic sense. The heritage-craft-to-material-innovation pipeline that no other country can replicate. The fashion-tech convergence backed by actual industrial capability.
 
@@ -97,13 +97,13 @@ And in a global fashion landscape that's increasingly exhausted by its own conve
 
 ### Related Reading
 
-- [10 Korean Fashion Brands Building Global Empires](https://www.arahkaii.com/korean-fashion-brands-2026/)
-- [K-Beauty Broke the Algorithm](https://www.arahkaii.com/k-beauty-broke-the-algorithm/)
-- [C-Beauty vs K-Beauty 2026](https://www.arahkaii.com/c-beauty-vs-k-beauty-2026/)
+- [10 Korean Fashion Brands Building Global Empires](/style/korean-fashion-brands-2026/)
+- [K-Beauty Broke the Algorithm](/beauty/k-beauty-broke-the-algorithm/)
+- [C-Beauty vs K-Beauty 2026](/beauty/c-beauty-vs-k-beauty-2026/)
 
 ### Read next
 
-- [The Quiet Renaissance of Korean Heritage Brands](https://www.arahkaii.com/fashion/korean-heritage-brands-renaissance/)
-- [10 Korean Fashion Brands Building Global Empires in 2026](https://www.arahkaii.com/fashion/korean-fashion-brands-2026/)
-- [The 10 Best Shows of New York Fashion Week FW26](https://www.arahkaii.com/fashion/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
-- [Jimin's Dior, V's Celine: Decoding BTS's Style Identities](https://www.arahkaii.com/fashion/bts-individual-style-identities-luxury-brand-partnerships/)
+- [The Quiet Renaissance of Korean Heritage Brands](/style/korean-heritage-brands-renaissance/)
+- [10 Korean Fashion Brands Building Global Empires in 2026](/style/korean-fashion-brands-2026/)
+- [The 10 Best Shows of New York Fashion Week FW26](/style/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
+- [Jimin's Dior, V's Celine: Decoding BTS's Style Identities](/style/bts-individual-style-identities-luxury-brand-partnerships/)

@@ -20,7 +20,7 @@ _November 2025_
 
 Welcome to Arahkaii — an Asian fashion editorial where Southeast Asian style, culture, and identity converge with global fashion intelligence. Here we are — the final stretch of 2025, and honestly? What a year to reflect on.
 
-This was the year [quiet luxury](/the-complete-guide-to-quiet-luxury/) stopped being a whisper and became a roar. The year butter skin replaced glass skin (because who wants to look like a glazed donut forever?). The year we collectively decided that maybe, just maybe, we don't need seventeen serums when three great ones will do.
+This was the year [quiet luxury](/guides/the-complete-guide-to-quiet-luxury/) stopped being a whisper and became a roar. The year butter skin replaced glass skin (because who wants to look like a glazed donut forever?). The year we collectively decided that maybe, just maybe, we don't need seventeen serums when three great ones will do.
 
 But more than the trends that came and went, 2025 felt like a turning point. A collective exhale. We saw fashion move away from logo-screaming maximalism toward pieces that actually mean something. We watched indie beauty brands from Seoul to Singapore outsell legacy names because they simply understood what we actually wanted: effective formulas, honest marketing, no BS.
 
@@ -195,7 +195,7 @@ _Warmly,_
 
 ### Continue reading
 
-- [the quiet-luxury playbook](/the-complete-guide-to-quiet-luxury/)
+- [the quiet-luxury playbook](/guides/the-complete-guide-to-quiet-luxury/)
 - [fashion in Southeast Asia](/style/jakarta-fashion-week-2025/)
 
 ### Read next
