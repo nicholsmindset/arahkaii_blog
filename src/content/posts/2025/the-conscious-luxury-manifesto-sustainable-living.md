@@ -22,7 +22,7 @@ faq:
     a: "Yes. You can embrace luxury while living sustainably by choosing quality over quantity and aligning your purchases with your values. Investing in fewer, well-made pieces, travelling slowly and swapping single-use items for reusables creates meaningful impact without sacrificing the lifestyle you want."
 ---
 
-Conscious luxury and sustainable living aren’t contradictions—they’re the future of how we consume, travel, and build wardrobes that reflect our values. You can embrace luxury while living sustainably—it's about choosing quality over quantity and aligning purchases with your values. Invest in fewer, well-made pieces that last longer than cheap alternatives. When traveling, consider carbon offsets and slow travel to reduce your environmental footprint while deepening cultural connections. For your wardrobe, select ethical brands committed to fair labor and natural fabrics. Start small with daily shifts: swap single-use items for reusable ones, track your carbon footprint monthly, and audit your closet. These intentional choices create meaningful impact without sacrificing the lifestyle you deserve—and there's much more to discover about making this shift authentic.
+Conscious luxury and sustainable living aren’t contradictions—they’re the future of how we consume, travel, and build wardrobes that reflect our values. You can embrace luxury while living sustainably—it's about choosing quality over quantity and aligning purchases with your values. Invest in fewer, well-made pieces that last longer than cheap alternatives — the logic behind [investment dressing](/guides/the-complete-guide-to-investment-dressing/). When travelling, consider carbon offsets and slow travel to reduce your environmental footprint while deepening cultural connections. For your wardrobe, select ethical brands committed to fair labour and natural fabrics. Start small with daily shifts: swap single-use items for reusable ones, track your carbon footprint monthly, and audit your closet. These intentional choices create meaningful impact without sacrificing the lifestyle you deserve—and there's much more to discover about making this shift authentic.
 
 ## Conscious Luxury and Sustainable Living: The Principles That Matter
 
@@ -32,7 +32,7 @@ Luxury redefined isn't about showing off anymore—it's about feeling good about
 
 Mindful consumption means asking yourself real questions before you buy. Where'd this come from? Who made it? Will it last? These matter.
 
-You're shifting from quantity to quality. Instead of filling your closet with disposable items, you're investing in fewer pieces that actually mean something.
+You're shifting from quantity to quality — the same instinct that drives [quiet luxury](/the-complete-guide-to-quiet-luxury/). Instead of filling your closet with disposable items, you're investing in fewer pieces that actually mean something.
 
 A beautifully made jacket you'll wear for years beats ten cheap ones you'll toss after a season.
 
@@ -47,10 +47,10 @@ Travel choices you make today shape the kind of world you'll explore tomorrow. W
 You can travel consciously by:
 
 1. Selecting eco-friendly accommodations that use renewable energy and support conservation efforts.
-2. Purchasing carbon offsets for flights to neutralize your environmental footprint.
+2. Purchasing carbon offsets for flights to neutralise your environmental footprint.
 3. Choosing slow travel over frequent short trips, reducing transportation emissions.
 
-Stay longer in fewer destinations. This approach deepens your cultural experience while minimizing your carbon impact.
+Stay longer in fewer destinations. This approach deepens your cultural experience while minimising your carbon impact.
 
 Support local restaurants, artisans, and guides. Your conscious choices create meaningful connections with places you visit.
 
@@ -60,7 +60,7 @@ Sustainable travel isn't about sacrificing adventure—it's about traveling smar
 
 Just as your travel choices shape the world you'll explore, the clothes you buy shape the world you'll wear into.
 
-Building an ethical wardrobe means choosing brands committed to ethical sourcing and fair labor practices. You'll want pieces designed for wardrobe longevity—quality basics that last years, not seasons.
+Building an ethical wardrobe means choosing brands committed to ethical sourcing and fair labour practices — the model [SukkhaCitta has built into regenerative fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/). You'll want pieces designed for wardrobe longevity—quality basics that last years, not seasons.
 
 Start by auditing what you own. Keep versatile staples and invest in timeless items over trendy ones. Choose natural fabrics like organic cotton and linen whenever possible.
 
@@ -80,7 +80,7 @@ Start with these eco-friendly habits:
 
 1. Practice mindful eating by choosing local produce and reducing food waste through better meal planning.
 2. Swap single-use items for reusables—water bottles, shopping bags, containers you actually enjoy using.
-3. Audit your energy use by turning off lights, unplugging devices, and considering renewable options.
+3. Audit your energy use by turning off lights, unplugging devices, and considering renewable options — in tropical homes, [smarter cooling](/living/energy-efficient-home-cooling-tropical-southeast-asia/) is the single biggest lever.
 
 Each choice compounds.
 
@@ -106,15 +106,15 @@ These measurable shifts prove your commitment's working. You're not just feeling
 
 Small tracked wins build momentum, keeping you motivated for the long journey ahead.
 
-### Continue Reading
+### Continue reading
 
-- [quiet luxury](/the-complete-guide-to-quiet-luxury/)
-- [regenerative fashion](/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [future vintage designer bags](/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/)
+- [the quiet-luxury playbook](/the-complete-guide-to-quiet-luxury/)
+- [SukkhaCitta's regenerative fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [future-vintage designer bags](/guides/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/)
 
 ### Read next
 
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](https://www.arahkaii.com/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [Editor’s Note: The Beginning of Something New](https://www.arahkaii.com/culture/editors-note-the-beginning-of-something-new/)
+- [quiet luxury's central contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [the $3 tote that broke the playbook](/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
+- [how K-beauty broke the algorithm](/beauty/k-beauty-broke-the-algorithm/)
+- [our founding editor's note](/culture/editors-note-the-beginning-of-something-new/)
