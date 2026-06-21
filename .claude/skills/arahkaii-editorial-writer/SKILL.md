@@ -9,8 +9,9 @@ Produce magazine-grade editorial for arahkaii.com — every piece passes through
 
 ## Step 0 — Load the foundation (mandatory)
 
-Before writing a single sentence, read these three files (in this order):
+Before writing a single sentence, read these files (in this order):
 
+0. **`references/format-templates.md` — MANDATORY article skeletons (brand protection).** Match the calendar entry's `format:`. A `format:guide` MUST render every item (shop/venue/label) as its own named `###` (H3) under thematic `##` groups, with a halal-status line inside each F&B entry — never bold-lead paragraphs. One H1 only (the title); headings name things, never "The Experience".
 1. `references/brand-voice.md` — master voice + category-specific voice for the target pillar
 2. `references/editorial-pillars.md` — pillar definition, recurring formats, what's out of scope
 3. `references/halal-substitutions.md` — alcohol/nightlife redirect table

@@ -15,8 +15,8 @@ Working tree clean? `npm run build` sane? If not, log to `run-log.md`, notify, e
 
 ## STEP 1 — Load context (in order)
 `references/brand-voice.md` · `editorial-pillars.md` · `halal-substitutions.md` ·
-`content-strategy.md` · `url-database.md` · `seo-fields.md` · `schema-map.md` ·
-`image-system.md`.
+`content-strategy.md` · **`format-templates.md` (MANDATORY skeletons)** ·
+`url-database.md` · `seo-fields.md` · `schema-map.md` · `image-system.md`.
 
 ## STEP 2 — Pick topic
 Read `content-calendar.md`; take the first `status:ready`. If none → notify
@@ -30,10 +30,19 @@ pubs (`sources.md`). Synthesise a 250-word brief: our angle, the gap, 3–5
 anchoring facts, 2–3 cultural references.
 
 ## STEP 4 — Draft MDX  (skills: arahkaii-editorial-writer, arahkaii-internal-linking)
-Pillar voice (`brand-voice.md` §4). Scene-led open; standfirst (italic epigraph,
-25–40w); `<DropCap>` first paragraph; 4–7 H2 (question-format where natural);
-5–10 internal links from `url-database.md`; halal status plain in Dining/Travel/
-Guides; empowering close. Zero Tier-1 banned phrases.
+**Follow the skeleton for the calendar entry's `format:` — `references/format-templates.md`
+is a HARD RULE (brand protection).** In particular: **`format:guide`** ⇒ every item
+(shop / restaurant / hotel / label) is its own named `###` (H3) under thematic `##`
+groups, with a **halal-status line inside each F&B entry** — never bold-lead
+paragraphs. `format:explainer` ⇒ question-led `##` H2s + a `faq:` block.
+pillar/feature/profile/essay ⇒ thematic prose H2s.
+
+Then: pillar voice (`brand-voice.md` §4). Scene-led open (2–3 paras, no heading);
+standfirst (italic epigraph, 25–40w); one H1 only (the title — never an H1 in body);
+headings name things (entity/answer, never "The Experience"); question-format `##`
+for AI-Overview (⊛) topics + a standalone answer sentence; 5–10 internal links from
+`url-database.md` (category-prefixed); halal status plain in Dining/Travel/Guides;
+empowering close. Zero Tier-1 banned phrases.
 
 ## STEP 5 — SEO + schema  (skill: arahkaii-seo-optimizer)
 Frontmatter (`seo-fields.md`): `seoTitle` ≤70, `metaDescription` ≤160, slug,
@@ -42,8 +51,11 @@ tags (`category-tag-map.md`), author = pillar map. Set schema fields by type
 
 ## STEP 6 — Review  (skill: arahkaii-editorial-reviewer)
 Banned-phrase scan, opening pattern, argument-not-summary, word count ±10%,
-fact/name accuracy, links read naturally, AI-slop checklist ≤1. Unfixable issue
-→ log to `run-log.md` but continue (human reviews the PR).
+fact/name accuracy, links read naturally, AI-slop checklist ≤1, **plus the
+`format-templates.md` reviewer gate** — `format:guide` items must be named `###`
+headings (not bold paragraphs), every F&B guide entry must carry a halal-status
+line, no body H1, no orphan H3, no vague headings. Unfixable issue → log to
+`run-log.md` but continue (human reviews the PR).
 
 ## STEP 7 — Images  (skills: arahkaii-featured-image-prompt, arahkaii-image-pipeline)
 Density per `content-strategy.md` (hero always; per-H2 1/H2 or every-other by
