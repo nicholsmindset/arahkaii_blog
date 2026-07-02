@@ -29,6 +29,16 @@ export const SITE = {
 
 type JsonLd = Record<string, unknown>;
 
+/**
+ * Serialise data for inline <script> islands (`set:html`). JSON.stringify does
+ * not escape `<`, so a value containing `</script>` would close the tag early
+ * and inject markup into the page. `<` is a valid JSON escape — parsers
+ * (and Google's JSON-LD reader) see the identical string.
+ */
+export function jsonForScript(value: unknown): string {
+	return JSON.stringify(value).replace(/</g, '\\u003c');
+}
+
 /** Stable @id for the publisher node so other schemas can reference it. */
 const ORG_ID = `${SITE.url}/#organization`;
 const WEBSITE_ID = `${SITE.url}/#website`;

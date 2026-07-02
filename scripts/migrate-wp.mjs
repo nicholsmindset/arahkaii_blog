@@ -227,8 +227,15 @@ for (const file of indexFiles) {
 	fm.push('---');
 
 	const outDir = path.join(OUT, year);
+	const outFile = path.join(outDir, `${slug}.md`);
+	// The migration already ran; live posts have been hand-edited since. Refuse
+	// to clobber them — pass --force only to redo the migration from scratch.
+	if (fs.existsSync(outFile) && !process.argv.includes('--force')) {
+		console.error(`refusing to overwrite existing post: ${path.relative(ROOT, outFile)} (use --force)`);
+		process.exit(1);
+	}
 	fs.mkdirSync(outDir, { recursive: true });
-	fs.writeFileSync(path.join(outDir, `${slug}.md`), `${fm.join('\n')}\n\n${body}\n`);
+	fs.writeFileSync(outFile, `${fm.join('\n')}\n\n${body}\n`);
 
 	rows.push({
 		title: String(data.title ?? slug).slice(0, 52),

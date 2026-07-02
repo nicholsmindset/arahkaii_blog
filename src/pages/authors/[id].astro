@@ -24,7 +24,6 @@ export async function getStaticPaths() {
 
 const { author } = Astro.props;
 const a = author.data;
-const firstName = a.name.split(' ')[0];
 
 const work = (await getCards()).filter((c) => c.author === author.id);
 const count = work.length;
@@ -69,26 +68,15 @@ const jsonLd = [
 					class="page-crumbs"
 					items={[
 						{ name: 'Arahkaii', href: '/' },
-						{ name: 'Contributors', href: '/contributors' },
+						{ name: 'Contributors', href: '/contributors/' },
 						{ name: a.name },
 					]}
 				/>
 				<h1 class="ah-name">{a.name}</h1>
 				<p class="ah-role">{a.role}</p>
 				<p class="ah-bio">{a.bio}</p>
-				<div style="margin-top:30px">
-					<button
-						class="follow-btn js-follow"
-						type="button"
-						data-follow-id={author.id}
-						data-follow-name={firstName}
-					>
-						<span class="fb-plus" aria-hidden="true">+</span>
-						<span class="fb-label">Follow {firstName}</span>
-					</button>
-				</div>
 				<div class="ah-socials">
-					<a href="/subscribe">Newsletter</a>
+					<a href="/subscribe/">Newsletter</a>
 					<a href="https://www.instagram.com/arahkaii/" rel="me">Instagram</a>
 					<a href="https://www.x.com/arahkaii" rel="me">X / Twitter</a>
 				</div>

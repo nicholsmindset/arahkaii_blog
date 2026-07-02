@@ -3,7 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import { getImage } from 'astro:assets';
 import Seo from '../components/Seo.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-import { organizationSchema, websiteSchema } from '../lib/seo';
+import { organizationSchema, websiteSchema, jsonForScript } from '../lib/seo';
 import defaultOgAsset from '../assets/blog-placeholder-1.jpg';
 import { getSearchIndex } from '../lib/articles';
 import '../styles/global.css';
@@ -74,8 +74,8 @@ const categories = [
 	'Guides',
 ];
 const navItems = [
-	...categories.map((c) => ({ label: c, href: `/${c.toLowerCase()}`, active: c === activeCategory })),
-	{ label: 'The Long Read', href: '/latest', active: false },
+	...categories.map((c) => ({ label: c, href: `/${c.toLowerCase()}/`, active: c === activeCategory })),
+	{ label: 'The Long Read', href: '/latest/', active: false },
 ];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -202,21 +202,21 @@ const searchIndex = await getSearchIndex();
 						<div>
 							<p class="footer__h">Editorial</p>
 							<div class="footer__links">
-								<a href="/latest">Latest</a>
+								<a href="/latest/">Latest</a>
 								{categories.map((c) => (
-									<a href={`/${c.toLowerCase()}`}>{c}</a>
+									<a href={`/${c.toLowerCase()}/`}>{c}</a>
 								))}
 							</div>
 						</div>
 						<div>
 							<p class="footer__h">About</p>
 							<div class="footer__links">
-								<a href="/about">Our story</a>
-								<a href="/contributors">Contributors</a>
-								<a href="/advertise">Advertise</a>
-								<a href="/join-us">Join us</a>
-								<a href="/faqs">FAQs</a>
-								<a href="/contact">Contact</a>
+								<a href="/about/">Our story</a>
+								<a href="/contributors/">Contributors</a>
+								<a href="/advertise/">Advertise</a>
+								<a href="/join-us/">Join us</a>
+								<a href="/faqs/">FAQs</a>
+								<a href="/contact/">Contact</a>
 							</div>
 						</div>
 						<div>
@@ -235,7 +235,6 @@ const searchIndex = await getSearchIndex();
 									Facebook
 								</a>
 								<a href="/rss.xml">RSS</a>
-								<a href="/reading-list">Reading list</a>
 							</div>
 						</div>
 						<div class="footer__news">
@@ -250,7 +249,7 @@ const searchIndex = await getSearchIndex();
 					<p class="footer__tag">Asia's modern-luxury edit.</p>
 					<p class="footer__fine">
 						© {new Date().getFullYear()} Arahkaii, an ONN GROUP LLP publication · Singapore ·{' '}
-						<a href="/privacy-policy">Privacy</a> · <a href="/terms-conditions">Terms</a>
+						<a href="/privacy-policy/">Privacy</a> · <a href="/terms-conditions/">Terms</a>
 					</p>
 				</footer>
 			)
@@ -261,7 +260,7 @@ const searchIndex = await getSearchIndex();
 			is:inline
 			type="application/json"
 			id="arahkaii-index"
-			set:html={JSON.stringify(searchIndex)}
+			set:html={jsonForScript(searchIndex)}
 		/>
 
 		<script>
@@ -459,7 +458,8 @@ const searchIndex = await getSearchIndex();
 						overlay?.classList.remove('open');
 						document.body.style.overflow = '';
 					}
-					if (t.closest('[data-search-toggle]')) {
+					// `.js-search` covers standalone triggers (the 404 page's button).
+					if (t.closest('[data-search-toggle]') || t.closest('.js-search')) {
 						const sb = document.querySelector<HTMLElement>('.searchbar');
 						const open = sb?.classList.toggle('open');
 						if (open) (sb?.querySelector('input') as HTMLInputElement | null)?.focus();
@@ -478,36 +478,57 @@ const searchIndex = await getSearchIndex();
 					}
 				});
 
-				// newsletter submit — validate, remember, swap to confirmation
+				// newsletter submit — validate, POST to Netlify Forms, then confirm.
+				// Success is only shown once the submission has actually been accepted.
 				document.addEventListener('submit', (e) => {
 					const form = (e.target as HTMLElement).closest<HTMLFormElement>('.js-news');
 					if (!form) return;
 					e.preventDefault();
 					const field = form.querySelector<HTMLElement>('.field');
-					const input = form.querySelector<HTMLInputElement>('input');
+					const input = form.querySelector<HTMLInputElement>('input[type="email"]');
+					const note = form.querySelector<HTMLElement>('.field-note');
+					const setNote = (msg: string, colour: string) => {
+						if (note) {
+							note.textContent = msg;
+							note.style.color = colour;
+						}
+					};
 					const v = (input?.value || '').trim();
 					const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
-					const note = form.querySelector<HTMLElement>('.field-note');
 					if (!ok) {
-						if (note) {
-							note.textContent = 'Please enter a valid email address.';
-							note.style.color = 'var(--emerald)';
-						}
+						setNote('Please enter a valid email address.', 'var(--emerald)');
 						input?.focus();
 						return;
 					}
-					try {
-						localStorage.setItem(SUBKEY, v);
-					} catch {}
-					if (field) {
-						field.classList.add('done');
-						field.dataset.locked = '1';
-						field.innerHTML = SUBSCRIBED_HTML;
-					}
-					if (note) {
-						note.textContent = 'A confirmation is on its way to ' + v + '.';
-						note.style.color = 'var(--ink-2)';
-					}
+					const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+					if (button) button.disabled = true;
+					const body = new URLSearchParams();
+					body.set('form-name', 'newsletter');
+					body.set('email', v);
+					body.set('source', form.dataset.source || 'inline');
+					const bot = form.querySelector<HTMLInputElement>('input[name="bot-field"]');
+					if (bot?.value) body.set('bot-field', bot.value);
+					fetch('/', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+						body: body.toString(),
+					})
+						.then((res) => {
+							if (!res.ok) throw new Error(`subscribe failed: ${res.status}`);
+							try {
+								localStorage.setItem(SUBKEY, v);
+							} catch {}
+							if (field) {
+								field.classList.add('done');
+								field.dataset.locked = '1';
+								field.innerHTML = SUBSCRIBED_HTML;
+							}
+							setNote('Thank you — you’re on the list.', 'var(--ink-2)');
+						})
+						.catch(() => {
+							setNote('Something went wrong — please try again.', 'var(--emerald)');
+							if (button) button.disabled = false;
+						});
 				});
 
 				onScroll();

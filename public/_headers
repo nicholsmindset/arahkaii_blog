@@ -1,0 +1,9 @@
+# Netlify response headers — https://docs.netlify.com/routing/headers/
+# Baseline hardening for a static editorial site. No CSP yet: article embeds
+# (Instagram/TikTok) would need a maintained allowlist — add one deliberately,
+# not here.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

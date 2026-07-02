@@ -24,8 +24,11 @@ const posts = defineCollection({
 			date: z.coerce.date(),
 			readingMinutes: z.number().optional(),
 			heroImage: image(),
-			heroCaption: z.string(), // required — magazine discipline
-			heroCredit: z.string(), // required
+			// Caption is required but may be empty on migrated archive posts —
+			// backfilling 40+ real captions is pending editorial work.
+			heroCaption: z.string(),
+			// The licence gate: a blank credit must fail the build.
+			heroCredit: z.string().min(1, 'heroCredit must not be empty — every image needs a logged credit'),
 			draft: z.boolean().default(false),
 			legacyWpSlug: z.string().optional(),
 			// SEO overrides — all optional, additive (existing posts still build).

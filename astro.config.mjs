@@ -21,15 +21,21 @@ const CATEGORIES = new Set([
 ]);
 
 /**
- * 301s from the legacy WordPress permalink (root-level `/<legacyWpSlug>`) to the
- * canonical category path `/<category>/<slug>/`. Read straight from post
- * frontmatter at config load so it stays in sync as content changes. The
- * Netlify adapter renders these into `_redirects` as 301 (permanent).
+ * One pass over post frontmatter at config load, feeding two things:
+ * — 301s from the legacy WordPress permalink (root-level `/<legacyWpSlug>`) to
+ *   the canonical category path `/<category>/<slug>/` (the Netlify adapter
+ *   renders these into `_redirects` as 301 permanent);
+ * — a canonical-path → lastmod map for the sitemap, from `updatedDate` falling
+ *   back to `date`, so lastmod reflects real editorial changes rather than the
+ *   build timestamp (a fresh lastmod on every deploy teaches crawlers to
+ *   ignore the field).
  */
-function legacyRedirects() {
+function scanPosts() {
 	const dir = path.resolve('src/content/posts');
 	/** @type {Record<string, string>} */
-	const out = {};
+	const redirects = {};
+	/** @type {Map<string, string>} */
+	const lastmodByPath = new Map();
 	const fmField = (/** @type {string} */ fm, /** @type {string} */ key) =>
 		(fm.match(new RegExp(`^${key}:\\s*(.+)$`, 'm')) || [])[1]
 			?.trim()
@@ -43,23 +49,29 @@ function legacyRedirects() {
 				const src = fs.readFileSync(p, 'utf8');
 				const fm = src.split('---')[1] ?? '';
 				const category = fmField(fm, 'category');
-				const legacy = fmField(fm, 'legacyWpSlug');
-				if (!category || !legacy) continue;
+				if (!category) continue;
 				if (/^draft:\s*true/m.test(fm)) continue;
-				if (CATEGORIES.has(legacy)) continue; // never shadow a category index
 				const slug = entry.name.replace(/\.(md|mdx)$/, '');
 				const dest = `/${category}/${slug}/`;
-				if (`/${legacy}` !== dest) out[`/${legacy}`] = dest;
+				const modified = fmField(fm, 'updatedDate') ?? fmField(fm, 'date');
+				if (modified && !Number.isNaN(Date.parse(modified)))
+					lastmodByPath.set(dest, new Date(modified).toISOString());
+				const legacy = fmField(fm, 'legacyWpSlug');
+				if (!legacy) continue;
+				if (CATEGORIES.has(legacy)) continue; // never shadow a category index
+				if (`/${legacy}` !== dest) redirects[`/${legacy}`] = dest;
 			}
 		}
 	};
 	try {
 		walk(dir);
 	} catch {
-		// no posts yet — nothing to redirect
+		// no posts yet — nothing to redirect or stamp
 	}
-	return out;
+	return { redirects, lastmodByPath };
 }
+
+const { redirects: legacyRedirects, lastmodByPath } = scanPosts();
 
 // https://astro.build/config
 export default defineConfig({
@@ -67,7 +79,7 @@ export default defineConfig({
 	// Directory output → canonical URLs carry a trailing slash; the per-page
 	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
 	redirects: {
-		...legacyRedirects(),
+		...legacyRedirects,
 		// Renamed WordPress pages → our canonical paths.
 		'/about-us': '/about',
 		'/contact-us': '/contact',
@@ -79,13 +91,17 @@ export default defineConfig({
 			// is enforced authoritatively via the <meta name="robots"> tag in Seo.astro
 			// (Google honours the tag over sitemap inclusion).
 			filter: (page) => !page.includes('/404'),
-			// Stamp a fresh lastmod and declare the British-English locale.
-			serialize: (item) => ({
-				...item,
-				lastmod: new Date().toISOString(),
-				changefreq: ChangeFreqEnum.WEEKLY,
-				priority: 0.7,
-			}),
+			// Real lastmod for posts (from frontmatter); none for other pages —
+			// an invented timestamp is worse than no timestamp.
+			serialize: (item) => {
+				const lastmod = lastmodByPath.get(new URL(item.url).pathname);
+				return {
+					...item,
+					...(lastmod ? { lastmod } : {}),
+					changefreq: ChangeFreqEnum.WEEKLY,
+					priority: 0.7,
+				};
+			},
 			i18n: {
 				defaultLocale: 'en-GB',
 				locales: { 'en-GB': 'en-GB' },
