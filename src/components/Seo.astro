@@ -1,6 +1,6 @@
 ---
 // Renders the entire <head> SEO meta block + JSON-LD. Layouts pass data, not markup.
-import { SITE } from '../lib/seo';
+import { SITE, jsonForScript } from '../lib/seo';
 
 interface Props {
 	title: string;
@@ -85,6 +85,6 @@ const twitter = SITE.twitter.trim();
 {/* Structured data */}
 {
 	jsonLd.map((obj) => (
-		<script is:inline type="application/ld+json" set:html={JSON.stringify(obj)} />
+		<script is:inline type="application/ld+json" set:html={jsonForScript(obj)} />
 	))
 }

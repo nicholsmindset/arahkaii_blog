@@ -93,7 +93,7 @@ const dateModified = (updatedDate ?? date).toISOString();
 const authorUrl = new URL(authorHref, SITE.url).toString();
 const crumbs = [
 	{ name: SITE.name, url: SITE.url },
-	{ name: categoryLabel, url: new URL(`/${category}`, SITE.url).toString() },
+	{ name: categoryLabel, url: new URL(`/${category}/`, SITE.url).toString() },
 ];
 const jsonLd = [
 	organizationSchema(),
@@ -173,7 +173,7 @@ const byline = `By ${author.name} · ${fmtDate(date)}${readingMinutes ? ` · ${r
 				<div class="rule" />
 				<div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:34px">
 					<span class="eyebrow">More Guides</span>
-					<a class="link-more" href="/guides">All Guides</a>
+					<a class="link-more" href="/guides/">All Guides</a>
 				</div>
 				<div class="mg-grid">
 					{moreGuides.slice(0, 3).map((g) => (

@@ -1,5 +1,5 @@
 ---
-import { SITE, breadcrumbSchema } from '../lib/seo';
+import { SITE, breadcrumbSchema, jsonForScript } from '../lib/seo';
 
 // Reusable breadcrumb trail + BreadcrumbList JSON-LD. Pass the full trail
 // including the "Arahkaii" root; the last item is the current page (no link).
@@ -43,7 +43,7 @@ const schemaItems = items.map((c) => ({
 		<script
 			is:inline
 			type="application/ld+json"
-			set:html={JSON.stringify(breadcrumbSchema(schemaItems))}
+			set:html={jsonForScript(breadcrumbSchema(schemaItems))}
 		/>
 	)
 }
