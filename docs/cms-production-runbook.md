@@ -14,6 +14,32 @@ The editor manages:
 - Author names, roles, biographies and portraits.
 - Draft and search-index visibility controls.
 
+## Images in the editor
+
+The **Hero image** field accepts JPG, PNG and WebP uploads and commits them to
+`src/assets/images/uploads/` with the article change. Prepare a landscape image
+at roughly 2400px wide, keep faces and the primary subject inside the centre
+60%, and use a descriptive filename such as `seoul-atelier-natural-dye.webp`.
+Always complete both **Hero caption** and **Hero credit / licence**. Article-body
+images use the same upload library. Image changes remain subject to the pull
+request image-rights checklist; GitHub login is not permission to publish an
+unlicensed image.
+
+For original AI-assisted artwork, generate a candidate locally before upload:
+
+```bash
+node scripts/image-gen.mjs \
+  --kind hero \
+  --subject "a Kuala Lumpur textile conservator examining handwoven songket" \
+  --extra "Documentary working environment; no ceremonial staging" \
+  --out /tmp/songket-conservator.png
+```
+
+The script applies Arahkaii art direction and modesty guardrails. Human review
+is mandatory for anatomy, cultural accuracy, misleading documentary cues,
+brand marks and rights. Credit approved generated work as
+`Arahkaii Studio · AI-assisted original` rather than presenting it as reportage.
+
 ## One-time GitHub App setup
 
 1. Set `KEYSTATIC_STORAGE_KIND=github` locally, run the site and open

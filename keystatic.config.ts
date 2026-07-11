@@ -32,9 +32,9 @@ const articleSchema = {
 	readingMinutes: fields.integer({ label: 'Reading time (minutes)', validation: { min: 1 } }),
 	heroImage: fields.image({
 		label: 'Hero image',
-		description: 'Use approved, credited imagery only. Uploads are stored with the article assets.',
-		directory: 'src/assets/images',
-		publicPath: '../../../assets/images/',
+		description: 'Upload JPG, PNG or WebP (ideally 2400px wide, landscape). Keep the subject inside the centre safe area and complete the caption and credit below.',
+		directory: 'src/assets/images/uploads',
+		publicPath: '../../../assets/images/uploads/',
 		validation: { isRequired: true },
 	}),
 	heroCaption: fields.text({
@@ -77,8 +77,8 @@ const articleSchema = {
 			heading: [2, 3, 4],
 			link: true,
 			image: {
-				directory: 'src/assets/images',
-				publicPath: '../../../assets/images/',
+				directory: 'src/assets/images/uploads',
+				publicPath: '../../../assets/images/uploads/',
 			},
 		},
 	}),

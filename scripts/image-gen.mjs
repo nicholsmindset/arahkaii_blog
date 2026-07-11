@@ -85,7 +85,7 @@ async function viaOpenRouter(prompt, kind, model, out) {
 
 /**
  * Generate one image to a local file. Returns the output path.
- * @param {{subject:string, kind?:'hero'|'inline'|'portrait'|'square', model?:string, out:string}} o
+ * @param {{subject:string, kind?:'hero'|'inline'|'portrait'|'square', model?:string, extra?:string, out:string}} o
  */
 export async function generateImage(o) {
 	const provider = chooseProvider();
@@ -96,7 +96,7 @@ export async function generateImage(o) {
 		);
 	}
 	const kind = o.kind ?? 'inline';
-	const prompt = buildPrompt(o.subject, { kind });
+	const prompt = buildPrompt(o.subject, { kind, extra: o.extra });
 	return provider === 'openai'
 		? viaOpenAI(prompt, kind, o.out)
 		: viaOpenRouter(prompt, kind, o.model, o.out);
@@ -113,6 +113,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 		subject: get('subject'),
 		kind: get('kind'),
 		model: get('model'),
+		extra: get('extra'),
 		out: get('out') || '/tmp/arahkaii-gen.png',
 	})
 		.then((p) => console.log(`✓ ${p} (provider: ${chooseProvider()})`))
