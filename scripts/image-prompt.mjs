@@ -21,14 +21,18 @@ export function buildPrompt(subject, opts = {}) {
 			? 'Primary subject centred in frame within the central safe zone (middle ~60%) so it survives a full-bleed 16:9 crop and tighter mobile crops, generous even negative space around it, narrow depth of field.'
 			: 'Rule of thirds, generous negative space, narrow depth of field.';
 	return [
-		'Editorial photograph, luxury Asian publication.',
+		'Arahkaii editorial photograph for a Muslim-owned Asian modern-luxury publication.',
 		`Subject: ${subject}.`,
 		composition,
-		'Soft natural window light from left, warm 4200K.',
-		'Muted, slightly desaturated grade, warm shadows, ivory highlights.',
-		'Modest dress (no exposed shoulders/knees, no alcohol/bar/nightlife).',
+		'Observed, intelligent and culturally specific rather than staged or aspirational stock photography.',
+		'Photorealistic full-frame editorial camera, 50mm lens, natural perspective, fine skin and material texture, restrained depth of field.',
+		'Soft directional daylight, neutral-warm 4200K balance, gentle contrast, ivory highlights, honest shadow detail.',
+		'Muted mineral palette with one controlled accent; no heavy teal-orange grading.',
+		'Wardrobe and body language are modest, contemporary and regionally credible. Avoid tokenistic religious symbols and orientalist styling.',
+		'No alcohol, gambling, nightlife, exposed shoulders or thighs. No unsafe food or false halal-certification cues.',
 		`${ratio}.`,
-		'Photographic not illustrated. No text, logos, or watermarks.',
+		'No text, logos, watermarks, branded products, duplicated people, malformed hands, plastic skin, surreal architecture, fake news photography or celebrity likenesses.',
+		'Leave clean crop-safe negative space for responsive layouts, but never render a headline inside the image.',
 		opts.extra ? opts.extra : '',
 	]
 		.filter(Boolean)

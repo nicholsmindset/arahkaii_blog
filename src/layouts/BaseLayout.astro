@@ -73,9 +73,17 @@ const categories = [
 	'People',
 	'Guides',
 ];
-const navItems = [
-	...categories.map((c) => ({ label: c, href: `/${c.toLowerCase()}`, active: c === activeCategory })),
-	{ label: 'The Long Read', href: '/latest', active: false },
+const navItems = categories.map((c) => ({
+	label: c,
+	href: `/${c.toLowerCase()}`,
+	active: c === activeCategory,
+}));
+// Keep the visible masthead deliberately concise. The full taxonomy remains
+// available in the editorial menu and footer without making every page feel
+// like a directory.
+const primaryNav = [
+	...navItems.filter((n) => ['Style', 'Beauty', 'Dining', 'Travel', 'Culture', 'Living'].includes(n.label)),
+	{ label: 'The Majlis', href: '/latest', active: false },
 ];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -135,7 +143,7 @@ const searchIndex = await getSearchIndex();
 		<div class="stickybar" role="banner">
 			<a class="stickybar__mark" href="/">ARAHKAII</a>
 			<nav class="stickybar__nav" aria-label="Sections">
-				{navItems.map((n) => <a class="navlink" href={n.href}>{n.label.toUpperCase()}</a>)}
+				{primaryNav.map((n) => <a class="navlink" href={n.href}>{n.label.toUpperCase()}</a>)}
 			</nav>
 			<div class="stickybar__right">
 				<button class="masthead__util" data-search-toggle type="button">SEARCH</button>
@@ -162,7 +170,7 @@ const searchIndex = await getSearchIndex();
 				<hr class="rule" />
 				<nav class="masthead__nav" aria-label="Primary">
 					{
-						navItems.map((n) => (
+						primaryNav.map((n) => (
 							<a class="navlink" href={n.href} aria-current={n.active ? 'page' : undefined}>
 								{n.label.toUpperCase()}
 							</a>
@@ -192,10 +200,29 @@ const searchIndex = await getSearchIndex();
 
 		<!-- full-screen overlay menu -->
 		<div class="overlay" role="dialog" aria-modal="true" aria-label="Menu">
-			<button class="overlay__close" data-menu-close type="button">CLOSE ✕</button>
-			<nav class="overlay__list" aria-label="Full menu">
-				{navItems.map((n) => <a href={n.href}>{n.label}</a>)}
-			</nav>
+			<div class="overlay__top">
+				<a class="overlay__mark" href="/">ARAHKAII</a>
+				<button class="overlay__close" data-menu-close type="button">CLOSE ✕</button>
+			</div>
+			<div class="overlay__body">
+				<nav class="overlay__list" aria-label="Editorial sections">
+					<p class="overlay__label">Explore</p>
+					{navItems.map((n) => <a href={n.href}>{n.label}</a>)}
+					<a href="/latest">The Majlis</a>
+				</nav>
+				<div class="overlay__aside">
+					<p class="overlay__label">Arahkaii</p>
+					<a href="/latest">Latest stories</a>
+					<a href="/contributors">Editors &amp; contributors</a>
+					<a href="/about">Our story</a>
+					<a href="/reading-list">Reading list</a>
+					<a href="/contact">Contact</a>
+					<div class="overlay__note">
+						<p>Sundays, considered.</p>
+						<a href="/subscribe">Join the weekly edit →</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<main id="main">
@@ -204,17 +231,29 @@ const searchIndex = await getSearchIndex();
 
 		{
 			!noFooter && (
-				<footer class="footer">
-					<p class="footer__mark">ARAHKAII</p>
-					<hr class="footer__rule" />
+				<footer class="footer" id="site-footer">
 					<div class="footer__cols">
+						<div class="footer__intro">
+							<p class="footer__mark">ARAHKAII</p>
+							<p class="footer__mission">Asia’s modern-luxury edit — modestly told.</p>
+							<div class="footer__news">
+								<p class="footer__h">The Sunday edit</p>
+								<NewsletterSignup class="fn-form" source="footer">
+									<p slot="note" class="field-note" style="color:var(--footer-head)">
+										One considered email. No noise.
+									</p>
+								</NewsletterSignup>
+							</div>
+						</div>
 						<div>
-							<p class="footer__h">Editorial</p>
+							<p class="footer__h">Explore</p>
 							<div class="footer__links">
 								<a href="/latest">Latest</a>
-								{categories.map((c) => (
-									<a href={`/${c.toLowerCase()}`}>{c}</a>
-								))}
+								<a href="/style">Style</a>
+								<a href="/beauty">Beauty</a>
+								<a href="/dining">Dining</a>
+								<a href="/travel">Travel</a>
+								<a href="/guides">Arahkaii Guides</a>
 							</div>
 						</div>
 						<div>
@@ -222,45 +261,21 @@ const searchIndex = await getSearchIndex();
 							<div class="footer__links">
 								<a href="/about">Our story</a>
 								<a href="/contributors">Contributors</a>
-								<a href="/advertise">Advertise</a>
-								<a href="/join-us">Join us</a>
-								<a href="/faqs">FAQs</a>
 								<a href="/contact">Contact</a>
-							</div>
-						</div>
-						<div>
-							<p class="footer__h">Follow</p>
-							<div class="footer__links">
-								<a href="https://www.instagram.com/arahkaii/" rel="me">
-									Instagram
-								</a>
-								<a href="https://www.tiktok.com/@arahkaii" rel="me">
-									TikTok
-								</a>
-								<a href="https://www.x.com/arahkaii" rel="me">
-									X / Twitter
-								</a>
-								<a href="https://www.facebook.com/arahkaii" rel="me">
-									Facebook
-								</a>
+								<a href="/advertise">Work with us</a>
+								<a href="/faqs">FAQs</a>
 								<a href="/rss.xml">RSS</a>
-								<a href="/reading-list">Reading list</a>
 							</div>
-						</div>
-						<div class="footer__news">
-							<p class="footer__h">Newsletter</p>
-							<NewsletterSignup class="fn-form" source="footer">
-								<p slot="note" class="field-note" style="color:var(--footer-head)">
-									No noise. One edit, on Sundays.
-								</p>
-							</NewsletterSignup>
 						</div>
 					</div>
-					<p class="footer__tag">Asia's modern-luxury edit.</p>
-					<p class="footer__fine">
-						© {new Date().getFullYear()} Arahkaii, an ONN GROUP LLP publication · Singapore ·{' '}
-						<a href="/privacy-policy">Privacy</a> · <a href="/terms-conditions">Terms</a>
-					</p>
+					<div class="footer__bottom">
+						<div class="footer__social" aria-label="Follow Arahkaii">
+							<a href="https://www.instagram.com/arahkaii/" rel="me">Instagram</a>
+							<a href="https://www.tiktok.com/@arahkaii" rel="me">TikTok</a>
+							<a href="https://www.facebook.com/arahkaii" rel="me">Facebook</a>
+						</div>
+						<p class="footer__fine">© {new Date().getFullYear()} Arahkaii · ONN GROUP LLP · Singapore · <a href="/privacy-policy">Privacy</a> · <a href="/terms-conditions">Terms</a></p>
+					</div>
 				</footer>
 			)
 		}
@@ -463,8 +478,9 @@ const searchIndex = await getSearchIndex();
 					if (t.closest('[data-menu-open]')) {
 						overlay?.classList.add('open');
 						document.body.style.overflow = 'hidden';
+						overlay?.querySelector<HTMLElement>('[data-menu-close]')?.focus();
 					}
-					if (t.closest('[data-menu-close]') || (t.closest('.overlay__list a') && overlay)) {
+					if (t.closest('[data-menu-close]') || (t.closest('.overlay a') && overlay)) {
 						overlay?.classList.remove('open');
 						document.body.style.overflow = '';
 					}

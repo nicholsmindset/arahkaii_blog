@@ -96,12 +96,14 @@ const {
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const categoryLabel = cap(category);
 const primaryTag = tags[0];
-const eyebrow = primaryTag ? `${categoryLabel} · ${primaryTag}` : categoryLabel;
 const formattedDate = new Intl.DateTimeFormat('en-GB', {
 	day: 'numeric',
 	month: 'long',
 	year: 'numeric',
 }).format(date);
+const formattedUpdatedDate = updatedDate
+	? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(updatedDate)
+	: null;
 
 // — SEO data layer —
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -166,11 +168,14 @@ if (listItems?.length)
 	<article data-cat={category} data-article-body>
 		<!-- HERO: centred, no-image (T Magazine pattern) -->
 		<div class="wrap art-hero">
-			<p class="eyebrow eyebrow--emerald">{eyebrow}</p>
+			<nav class="art-breadcrumb eyebrow eyebrow--emerald" aria-label="Breadcrumb">
+				<a href={`/${category}`}>{categoryLabel}</a>
+				{primaryTag && <><span aria-hidden="true">·</span><span>{primaryTag}</span></>}
+			</nav>
 			<Headline text={title} />
 			<Standfirst text={standfirst} />
 			<div class="art-byrow">
-				<span class="meta"><strong>Words</strong> &nbsp;{author.name}</span>
+				<span class="meta"><strong>Words</strong> &nbsp;<a href={authorHref}>{author.name}</a></span>
 				<span class="dot"></span>
 				<span class="meta">{formattedDate}</span>
 				{
@@ -181,6 +186,7 @@ if (listItems?.length)
 						</>
 					)
 				}
+				{formattedUpdatedDate && <><span class="dot"></span><span class="meta">Updated · {formattedUpdatedDate}</span></>}
 			</div>
 		</div>
 

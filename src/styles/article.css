@@ -39,6 +39,9 @@
 .article-head .eyebrow {
 	margin-bottom: 24px;
 }
+.art-breadcrumb { display:flex; justify-content:center; gap:8px; }
+.art-breadcrumb a { border-bottom:1px solid currentColor; }
+.art-breadcrumb a:hover { color:var(--ink); }
 .art-h1 {
 	font-family: var(--display);
 	font-weight: 400;
@@ -81,6 +84,8 @@
 	font-size: 0;
 	color: transparent;
 }
+.art-byrow a { color:var(--ink); border-bottom:1px solid var(--hairline); }
+.art-byrow a:hover { border-bottom-color:var(--emerald); }
 
 /* lead image */
 .hero-fig {
