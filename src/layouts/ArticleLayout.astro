@@ -290,7 +290,7 @@ if (listItems?.length)
 	<!-- CONTINUE WITH (oversized next-article card) -->
 	{
 		readNext && (
-			<section class="section" style="border-top:1px solid var(--hairline)">
+			<section class="section article-read-next" style="border-top:1px solid var(--hairline)">
 				<div class="wrap">
 					<p class="eyebrow eyebrow--emerald" style="margin-bottom:32px">Read next →</p>
 					<a class="hl-link readnext" href={readNext.href}>
@@ -315,7 +315,7 @@ if (listItems?.length)
 	<!-- ALSO FROM CATEGORY -->
 	{
 		related.length > 0 && (
-			<section class="section--tight">
+			<section class="section--tight article-more">
 				<div class="wrap">
 					<p class="eyebrow" style="margin-bottom:24px">Also from {categoryLabel}</p>
 					<hr class="rule" style="margin-bottom:40px" />
@@ -338,7 +338,7 @@ if (listItems?.length)
 	}
 
 	<!-- NEWSLETTER BAND (identical to homepage) -->
-	<section class="tint" style="padding-block:clamp(72px,9vw,128px)">
+	<section class="tint article-end-newsletter">
 		<div class="wrap"><div class="grid">
 			<div style="grid-column:4 / 10; text-align:center">
 				<h2 class="h2" style="margin-bottom:16px">Sundays, considered.</h2>
