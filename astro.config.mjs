@@ -6,7 +6,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
-import netlify from '@astrojs/netlify';
+import vercel from '@astrojs/vercel';
 
 // Tailwind v4 is wired via PostCSS (postcss.config.mjs), not @tailwindcss/vite,
 // to sidestep the Astro 6 rolldown build bug (withastro/astro#16542).
@@ -26,7 +26,7 @@ const CATEGORIES = new Set([
  * 301s from the legacy WordPress permalink (root-level `/<legacyWpSlug>`) to the
  * canonical category path `/<category>/<slug>/`. Read straight from post
  * frontmatter at config load so it stays in sync as content changes. The
- * Netlify adapter renders these into `_redirects` as 301 (permanent).
+ * Astro renders these as permanent redirects through the active host adapter.
  */
 function legacyRedirects() {
 	const dir = path.resolve('src/content/posts');
@@ -96,9 +96,9 @@ export default defineConfig({
 			},
 		}),
 	],
-	// Static output; the Netlify adapter enables forms, build hooks and
-	// redirect translation when we add server features later.
-	adapter: netlify(),
+	// Vercel serverless output powers the Keystatic API and newsletter endpoint
+	// while editorial pages remain prerendered for speed and resilience.
+	adapter: vercel(),
 	image: {
 		// Future Cloudflare R2 CDN for generated/sourced imagery. Harmless now.
 		domains: ['cdn.arahkaii.com'],

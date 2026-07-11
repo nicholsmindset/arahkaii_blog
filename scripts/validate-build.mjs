@@ -10,6 +10,12 @@ if (!fs.existsSync(DIST)) {
 	process.exit(1);
 }
 
+// Server adapters such as Vercel place public output in dist/client, while
+// fully static builds write it directly to dist.
+const PUBLIC_ROOT = fs.existsSync(path.join(DIST, 'client'))
+	? path.join(DIST, 'client')
+	: DIST;
+
 const htmlFiles = [];
 function walk(dir) {
 	for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -18,7 +24,7 @@ function walk(dir) {
 		else if (entry.name.endsWith('.html')) htmlFiles.push(file);
 	}
 }
-walk(DIST);
+walk(PUBLIC_ROOT);
 
 const semanticFailures = [];
 const missingTargets = new Map();
@@ -26,15 +32,15 @@ const missingTargets = new Map();
 function targetExists(href) {
 	const relative = href.replace(/^\//, '');
 	return [
-		path.join(DIST, relative, 'index.html'),
-		path.join(DIST, relative),
-		path.join(DIST, `${relative}.html`),
+		path.join(PUBLIC_ROOT, relative, 'index.html'),
+		path.join(PUBLIC_ROOT, relative),
+		path.join(PUBLIC_ROOT, `${relative}.html`),
 	].some(fs.existsSync);
 }
 
 for (const file of htmlFiles) {
 	const html = fs.readFileSync(file, 'utf8');
-	const relativeFile = path.relative(DIST, file);
+	const relativeFile = path.relative(PUBLIC_ROOT, file);
 	const h1Count = (html.match(/<h1\b/g) ?? []).length;
 	const mainCount = (html.match(/<main\b/g) ?? []).length;
 
