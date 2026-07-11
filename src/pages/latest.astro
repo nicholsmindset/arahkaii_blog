@@ -6,68 +6,124 @@ import { getCards } from '../lib/articles';
 import { fmtDate } from '../lib/format';
 import { organizationSchema, websiteSchema, collectionPageSchema } from '../lib/seo';
 
-// Reverse-chronological feed: a lead card, then dated rows.
 const cards = await getCards();
-const lead = cards[0];
-const rest = cards.slice(1);
+const featured = cards.slice(0, 3);
+const archive = cards.slice(3);
+const categories = [...new Set(cards.map((card) => card.categoryLabel))].sort();
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
 	collectionPageSchema({
-		name: 'Latest — Arahkaii',
+		name: 'Latest stories — Arahkaii',
 		url: canonical,
-		description: 'The latest from Arahkaii.',
+		description: 'New essays, reporting and considered guides from Arahkaii.',
 	}),
 ];
 ---
 
-<BaseLayout title="Latest — Arahkaii" jsonLd={jsonLd}>
-	<div class="wrap">
-		<header class="lt-head">
-			<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Latest' }]} />
-			<h1 class="lt-title">Latest</h1>
-			<p class="lt-dek">Everything we’ve published, newest first.</p>
+<BaseLayout
+	title="Latest stories — Arahkaii"
+	description="New essays, reporting and considered guides from Arahkaii — Asia’s modern-luxury edit, modestly told."
+	jsonLd={jsonLd}
+>
+	<div class="wrap latest-page">
+		<header class="latest-hero">
+			<div>
+				<Breadcrumbs class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Latest' }]} />
+				<h1>Latest</h1>
+			</div>
+			<div class="latest-hero__intro">
+				<p>New essays, reporting and considered guides from across Asia.</p>
+				<span>{cards.length} published stories · newest first</span>
+			</div>
 		</header>
 
 		{
-			lead && (
-				<a class="story lt-lead" href={lead.url}>
-					<div class="img real r-16x9 blurup in">
-						<Image src={lead.image} alt={lead.heroCaption || lead.title} loading="eager" />
+			featured[0] && (
+				<section class="latest-featured" aria-label="Featured latest stories">
+					<a class="latest-lead" href={featured[0].url}>
+						<div class="media latest-lead__image">
+							<Image src={featured[0].image} alt={featured[0].heroCaption || featured[0].title} loading="eager" widths={[720, 1080, 1440]} sizes="(max-width: 860px) 100vw, 66vw" />
+						</div>
+						<div class="latest-lead__copy">
+							<p class="eyebrow eyebrow--emerald">{featured[0].categoryLabel} · The latest</p>
+							<h2>{featured[0].title}</h2>
+							<p>{featured[0].standfirst}</p>
+							<span class="latest-meta">{featured[0].byline} · {fmtDate(featured[0].date)}{featured[0].readingMinutes ? ` · ${featured[0].readingMinutes} min read` : ''}</span>
+						</div>
+					</a>
+					<div class="latest-featured__side">
+						{featured.slice(1).map((card) => (
+							<a class="latest-side-story" href={card.url}>
+								<div class="media"><Image src={card.image} alt={card.heroCaption || card.title} widths={[420, 720]} sizes="(max-width: 860px) 50vw, 28vw" /></div>
+								<p class="eyebrow eyebrow--emerald">{card.categoryLabel}</p>
+								<h2>{card.title}</h2>
+								<span class="latest-meta">{fmtDate(card.date)}{card.readingMinutes ? ` · ${card.readingMinutes} min` : ''}</span>
+							</a>
+						))}
 					</div>
-					<div>
-						<span class="eyebrow accent" style="display:block; margin-bottom:14px">
-							{lead.categoryLabel} · Newest
-						</span>
-						<h2 class="headline">{lead.title}</h2>
-						<p class="ll-dek">{lead.standfirst}</p>
-						<p class="byline" style="margin-top:18px">
-							{lead.byline} · {fmtDate(lead.date)}
-							{lead.readingMinutes ? ` · ${lead.readingMinutes} min read` : ''}
-						</p>
-					</div>
-				</a>
+				</section>
 			)
 		}
 
-		<div class="lt-feed">
-			{
-				rest.map((x) => (
-					<a class="story lt-row" href={x.url}>
-						<span class="lr-date">{fmtDate(x.date)}</span>
-						<div class="lr-mid">
-							<span class="lr-cat">{x.categoryLabel}</span>
-							<div class="lr-title">{x.title}</div>
+		<section class="latest-archive" aria-labelledby="archive-title">
+			<div class="latest-archive__head">
+				<div>
+					<p class="eyebrow eyebrow--emerald">The archive</p>
+					<h2 id="archive-title">All stories</h2>
+				</div>
+				<div class="latest-filters" role="group" aria-label="Filter stories by category">
+					<button type="button" class="is-active" data-latest-filter="all" aria-pressed="true">All</button>
+					{categories.map((category) => <button type="button" data-latest-filter={category.toLowerCase()} aria-pressed="false">{category}</button>)}
+				</div>
+			</div>
+
+			<div class="latest-grid" data-latest-grid>
+				{archive.map((card) => (
+					<article class="latest-card" data-latest-category={card.categoryLabel.toLowerCase()}>
+						<a href={card.url} class="latest-card__image media">
+							<Image src={card.image} alt={card.heroCaption || card.title} widths={[420, 720]} sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw" loading="lazy" />
+						</a>
+						<div class="latest-card__copy">
+							<div class="latest-card__top"><span>{card.categoryLabel}</span><time datetime={card.date.toISOString()}>{fmtDate(card.date)}</time></div>
+							<h3><a href={card.url}>{card.title}</a></h3>
+							<p>{card.standfirst}</p>
+							<span class="latest-meta">{card.authorName}{card.readingMinutes ? ` · ${card.readingMinutes} min read` : ''}</span>
 						</div>
-						<span class="lr-read">
-							{x.authorName}
-							{x.readingMinutes ? ` · ${x.readingMinutes} min` : ''}
-						</span>
-					</a>
-				))
-			}
-		</div>
+					</article>
+				))}
+			</div>
+			<p class="latest-empty" data-latest-empty hidden>No stories in this section yet.</p>
+		</section>
 	</div>
+
+	<script>
+		function wireLatestFilters() {
+			const grid = document.querySelector<HTMLElement>('[data-latest-grid]');
+			if (!grid || grid.dataset.wired) return;
+			grid.dataset.wired = '1';
+			const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-latest-filter]'));
+			const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-latest-category]'));
+			const empty = document.querySelector<HTMLElement>('[data-latest-empty]');
+			buttons.forEach((button) => button.addEventListener('click', () => {
+				const filter = button.dataset.latestFilter || 'all';
+				let visible = 0;
+				buttons.forEach((item) => {
+					const active = item === button;
+					item.classList.toggle('is-active', active);
+					item.setAttribute('aria-pressed', String(active));
+				});
+				cards.forEach((card) => {
+					const show = filter === 'all' || card.dataset.latestCategory === filter;
+					card.hidden = !show;
+					if (show) visible += 1;
+				});
+				if (empty) empty.hidden = visible > 0;
+			}));
+		}
+		document.addEventListener('astro:page-load', wireLatestFilters);
+		wireLatestFilters();
+	</script>
 </BaseLayout>
