@@ -45,3 +45,5 @@ real-export.xml
 # source dumps (working files, not shipped)
 /docs/images/
 /docs/pending/
+.vercel
+.env*

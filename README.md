@@ -1,6 +1,6 @@
 # Arahkaii
 
-Arahkaii is a Muslim-owned Asian modern-luxury publication: **“Asia’s modern-luxury edit — modestly told.”** The site is built with Astro 6, stores editorial content as Markdown/MDX in Git, and deploys to Netlify.
+Arahkaii is a Muslim-owned Asian modern-luxury publication: **“Asia’s modern-luxury edit — modestly told.”** The site is built with Astro 6, stores editorial content as Markdown/MDX in Git, and deploys to Vercel.
 
 ## Local development
 
@@ -46,17 +46,17 @@ Read [CLAUDE.md](./CLAUDE.md) for the standing design and editorial rules and [A
 
 ## Publishing and deployment
 
-Article frontmatter is validated by `src/content.config.ts`. Published posts require a category, author, credited hero image, caption, and other SEO fields. Legacy WordPress slugs generate permanent Netlify redirects automatically.
+Article frontmatter is validated by `src/content.config.ts`. Published posts require a category, author, credited hero image, caption, and other SEO fields. Legacy WordPress slugs generate permanent redirects automatically.
 
-Netlify must provide `MAILERLITE_API_KEY` for newsletter capture. `MAILERLITE_GROUP_ID` is optional. Copy `.env.example` to `.env` for local secret configuration; never commit `.env`.
+Vercel must provide `MAILERLITE_API_KEY` for newsletter capture. `MAILERLITE_GROUP_ID` is optional. Copy `.env.example` to `.env` for local secret configuration; never commit `.env`.
 
 The production CMS additionally requires `KEYSTATIC_GITHUB_CLIENT_ID`,
 `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`, and
-`PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` in Netlify. Only collaborators with write
+`PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` in Vercel. Only collaborators with write
 access to `nicholsmindset/arahkaii_blog` can sign in. CMS branches still pass
 through pull-request checks and human approval before reaching `main`.
 
-Use Conventional Commits and merge reviewed pull requests into `main`. Netlify builds the production site from the repository.
+Use Conventional Commits and merge reviewed pull requests into `main`. Vercel builds the production site from the repository.
 
 ## GitHub editorial automation
 
@@ -78,4 +78,4 @@ the PR blocked until the final image passes human review.
 
 Require the **Quality gates** check and a code-owner review in branch protection
 for `main`. Keep `MAILERLITE_API_KEY` and the optional `MAILERLITE_GROUP_ID` in
-Netlify rather than GitHub unless a workflow genuinely needs them.
+Vercel rather than GitHub unless a workflow genuinely needs them.

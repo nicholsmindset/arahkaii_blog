@@ -21,11 +21,11 @@ The editor manages:
 2. Complete Keystatic's GitHub App setup for `https://www.arahkaii.com` and
    grant access only to `nicholsmindset/arahkaii_blog`.
 3. Add the generated callback URL for both the production custom domain and the
-   Netlify deploy-preview domain in the GitHub App settings.
-4. Add these values to Netlify, never to Git:
+   Vercel production domain in the GitHub App settings.
+4. Add these values to Vercel Production and Preview, never to Git:
    `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`,
    `KEYSTATIC_SECRET`, and `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`.
-5. Trigger a Netlify deploy, sign into `/keystatic`, and create a test draft on
+5. Trigger a Vercel deploy, sign into `/keystatic`, and create a test draft on
    a `cms/` branch.
 
 ## Publishing boundary
@@ -33,7 +33,7 @@ The editor manages:
 Keystatic can only work with branches beginning `cms/`. Editors do not publish
 directly to `main`. Open a pull request, confirm image rights and credits, run
 the Quality gates check, review the deploy preview, then merge with human
-approval. Netlify publishes the merge.
+approval. Vercel publishes the merge.
 
 ## Release checklist
 
