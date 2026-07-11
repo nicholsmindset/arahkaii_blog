@@ -1,4 +1,4 @@
-import { collection, config, fields } from '@keystatic/core';
+import { collection, config, fields, singleton } from '@keystatic/core';
 
 const categories = [
 	{ label: 'Style', value: 'style' },
@@ -106,7 +106,32 @@ export default config({
 		navigation: {
 			Content: ['posts2026', 'posts2025'],
 			People: ['authors'],
+			Settings: ['newsletter'],
 		},
+	},
+	singletons: {
+		newsletter: singleton({
+			label: 'Newsletter settings',
+			path: 'src/content/settings/newsletter',
+			format: 'json',
+			schema: {
+				provider: fields.select({
+					label: 'Email provider',
+					description: 'Credentials stay in Vercel. Changing provider requires the matching environment variables and a normal production deploy.',
+					options: [
+						{ label: 'MailerLite', value: 'mailerlite' },
+						{ label: 'Beehiiv', value: 'beehiiv' },
+						{ label: 'Pause signups', value: 'disabled' },
+					],
+					defaultValue: 'mailerlite',
+				}),
+				sendWelcomeEmail: fields.checkbox({
+					label: 'Send provider welcome email',
+					description: 'Beehiiv only. Keep off if an automation already sends the welcome message.',
+					defaultValue: false,
+				}),
+			},
+		}),
 	},
 	collections: {
 		posts2026: posts(2026),

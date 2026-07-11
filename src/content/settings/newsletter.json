@@ -1,0 +1,4 @@
+{
+	"provider": "mailerlite",
+	"sendWelcomeEmail": false
+}
