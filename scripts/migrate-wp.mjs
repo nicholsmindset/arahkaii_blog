@@ -169,7 +169,7 @@ for (const file of indexFiles) {
 
 	let body = content;
 	let droppedInline = 0;
-	body = body.replace(/!\[([^\]]*)\]\(images\/([^)]+)\)/g, (m, alt, f) => {
+	body = body.replace(/!\[([^\]]*)\]\(images\/([^)]+)\)/g, (_match, alt, f) => {
 		if (onDisk(f)) return `![${alt}](${archiveRel(f)})`;
 		droppedInline++;
 		return '';

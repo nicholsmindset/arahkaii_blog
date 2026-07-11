@@ -26,8 +26,6 @@ faq:
     a: "Yes. SukkhaCitta holds B-Corp certification — Indonesia's first in the fashion sector — and carries the Nest Seal for ethical production. Its founder has received the Rolex Award for Enterprise and the Cartier Women's Initiative Award."
 ---
 
-# The Twelve Women in Your Wardrobe: Inside SukkhaCitta's Radical Reinvention of Fashion
-
 SukkhaCitta (also styled SukkhaCijtta) and its regenerative fashion model proves that sustainability and luxury can coexist—if you’re willing to rethink the entire supply chain. _An Indonesian brand is proving that regenerative farming, artisan economics, and luxury quality can coexist—one hand-dyed garment at a time._
 
 * * *

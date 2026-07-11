@@ -93,5 +93,5 @@ In 2026, the conversation about Southeast Asian travel has expanded beyond "Bali
 
 - [The best digital-nomad cities in Southeast Asia](/travel/southeast-asian-cities-digital-nomad-luxury-lifestyle-2/)
 - [Singapore's best halal fine-dining rooms](/dining/halal-fine-dining-singapore-2026/)
-- [The halal Sunday brunch edit](/dining/halal-sunday-brunch-singapore/)
+- [The halal fine-dining edit](/dining/halal-fine-dining-singapore-2026/)
 - [The complete guide to quiet luxury](/guides/the-complete-guide-to-quiet-luxury/)

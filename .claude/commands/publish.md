@@ -9,7 +9,7 @@ pointing at a finished draft), execute this flow. **Stop at the human gate.**
 
 ## 0. Gather the post
 From the draft, settle: **title** (≤110), **category** (one of
-style · dining · travel · culture · living · people · guides), **author** (an id
+style · beauty · dining · travel · culture · living · people · guides), **author** (an id
 in `src/content/authors/` — create the profile first if new), **tags**, and the
 **body** in British English, em-dashes, on the "Quiet Authority" voice.
 
@@ -57,7 +57,7 @@ without it, and the build fails on it too.
 
 ## 3. Validate (the gate that matters)
 ```bash
-npx astro check && npm run build
+npm run verify
 ```
 A green build means every required field is present and valid. Fix anything the
 Zod schema rejects, re-run until clean.
@@ -73,5 +73,6 @@ field is for migrated posts only; new posts omit it.
 
 ## Not yet wired
 - **R2 hosting** — local-first for now (images committed to `src/assets`).
-- **MailerLite** RSS digest / capture — `MAILERLITE_API_KEY` reserved in `.env`.
+- **MailerLite RSS digest** — capture is live through `/api/subscribe`; automated
+  digest creation remains deferred.
 - **AI generation** — `scripts/image-gen.mjs` is ready; add `OPENROUTER_API_KEY`.

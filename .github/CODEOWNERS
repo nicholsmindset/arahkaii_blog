@@ -1,0 +1,5 @@
+# Human review remains mandatory for editorial content, imagery and automation.
+/src/content/posts/ @nicholsmindset
+/src/assets/images/ @nicholsmindset
+/.claude/ @nicholsmindset
+/.github/ @nicholsmindset
