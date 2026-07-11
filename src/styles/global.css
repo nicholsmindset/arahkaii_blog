@@ -437,9 +437,11 @@ a.card:hover .media img {
 	gap: 4px 32px;
 }
 .overlay__list a {
-	font-family: var(--display);
-	font-size: clamp(30px, 3.5vw, 54px);
-	line-height: 1.16;
+	font-family: var(--headline);
+	font-size: clamp(26px, 2.25vw, 38px);
+	font-weight: 500;
+	letter-spacing: -0.015em;
+	line-height: 1.24;
 }
 .overlay__list a:hover {
 	color: var(--emerald);
@@ -582,9 +584,9 @@ a.card:hover .media img {
 .footer {
 	background: var(--footer-bg);
 	color: #fff;
-	padding: clamp(56px, 6vw, 80px) var(--gutter) 34px;
+	padding: clamp(44px, 4.5vw, 64px) var(--gutter) 28px;
 	position: relative;
-	margin-top: var(--section);
+	margin-top: 0;
 }
 .footer::before {
 	content: '';
@@ -677,8 +679,8 @@ a.card:hover .media img {
 	justify-content: space-between;
 	gap: 24px;
 	max-width: 1240px;
-	margin: 52px auto 0;
-	padding-top: 24px;
+	margin: 36px auto 0;
+	padding-top: 20px;
 	border-top: 1px solid var(--footer-rule);
 }
 .footer__social { display:flex; gap:22px; font: 500 11px/1 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
@@ -811,7 +813,7 @@ a.card:hover .media img {
 
 @media (max-width: 640px) {
 	.overlay__list { grid-template-columns: 1fr 1fr; gap:8px 18px; }
-	.overlay__list a { font-size: clamp(25px, 8.2vw, 38px); }
+	.overlay__list a { font-size: clamp(23px, 6.8vw, 31px); }
 	.overlay__body { padding:40px 0; }
 	.footer__cols { grid-template-columns: 1fr 1fr; }
 	.footer__intro { grid-column: 1 / -1; }
