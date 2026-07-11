@@ -1,0 +1,73 @@
+name: Editorial automation
+
+on:
+  schedule:
+    # 08:30 Singapore time, Monday–Friday. No ready topic means a clean no-op.
+    - cron: '30 0 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      task:
+        description: Editorial routine to run
+        required: true
+        default: draft-daily
+        type: choice
+        options:
+          - draft-daily
+          - trend-scan
+
+concurrency:
+  group: arahkaii-editorial
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: read
+  id-token: write
+
+jobs:
+  editorial:
+    name: Run guarded editorial routine
+    if: github.repository_owner == 'nicholsmindset'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out the full repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Verify the starting point
+        run: npm run verify
+
+      - name: Run Claude editorial agent
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are running Arahkaii's guarded editorial automation.
+
+            Routine: ${{ github.event_name == 'schedule' && 'draft-daily' || inputs.task }}
+
+            Read CLAUDE.md first, then read and execute the matching file in
+            .claude/commands/. Follow every human-review, licensing, validation,
+            branch and pull-request gate. Never push to main and never merge a PR.
+            The scheduled runner has no image-generation secrets by design; use
+            the documented preview placeholder path and block image approval.
+            If prerequisites or a ready topic are missing, create no content;
+            record the reason in run-log.md only when that file changes as part of
+            a dedicated branch and PR. Use primary sources for factual research.
+          claude_args: >-
+            --max-turns 50
+            --allowedTools "Read,Edit,Write,Glob,Grep,WebSearch,WebFetch,Bash(npm:*),Bash(npx:*),Bash(node:*),Bash(git:*),Bash(gh:*)"

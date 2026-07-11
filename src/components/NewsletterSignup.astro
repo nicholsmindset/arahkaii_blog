@@ -1,13 +1,9 @@
 ---
 // Shared newsletter form. The `.js-news` class + `.field` markup is what the
-// global submit handler (BaseLayout) looks for — it validates the email,
-// remembers the subscription in localStorage, and swaps the field for a
-// confirmation. `data-source` records WHERE a signup happened (footer, article,
-// sticky bar, …) for future analytics.
-//
-// MailerLite adapter (deferred): the BaseLayout submit handler is the single
-// swap point — when a key exists, POST {email, source} to `/api/subscribe`
-// before writing localStorage. No markup change needed here.
+// global submit handler (BaseLayout) looks for — it validates the email, sends
+// it to `/api/subscribe`, remembers a successful subscription in localStorage,
+// and swaps the field for a confirmation. `data-source` records where the form
+// appeared for future analytics.
 interface Props {
 	class?: string;
 	/** Where this form lives — tagged on the form for analytics later. */
@@ -17,8 +13,12 @@ const { class: cls, source = 'inline' } = Astro.props;
 ---
 
 <form class:list={['js-news', cls]} data-source={source} novalidate>
+	<label class="sr-only" aria-hidden="true">
+		Website
+		<input name="website" type="text" tabindex="-1" autocomplete="off" />
+	</label>
 	<div class="field">
-		<input type="email" placeholder="your@email.com" aria-label="Email address" />
+		<input name="email" type="email" placeholder="your@email.com" aria-label="Email address" autocomplete="email" required />
 		<button type="submit">Subscribe <span aria-hidden="true">→</span></button>
 	</div>
 	<slot name="note" />

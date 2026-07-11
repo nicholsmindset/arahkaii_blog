@@ -79,6 +79,7 @@ const navItems = [
 ];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const isHome = Astro.url.pathname === '/';
 
 // Slim JSON index for the client search overlay.
 const searchIndex = await getSearchIndex();
@@ -149,7 +150,15 @@ const searchIndex = await getSearchIndex();
 					<button class="masthead__util" data-menu-open type="button">MENU</button>
 					<button class="masthead__util" data-search-toggle type="button">SEARCH</button>
 				</div>
-				<a href="/" aria-label="Arahkaii — home"><h1 class="wordmark">ARAHKAII</h1></a>
+				<a href="/" aria-label="Arahkaii — home">
+					{
+						isHome ? (
+							<h1 class="wordmark">ARAHKAII</h1>
+						) : (
+							<p class="wordmark">ARAHKAII</p>
+						)
+					}
+				</a>
 				<hr class="rule" />
 				<nav class="masthead__nav" aria-label="Primary">
 					{
@@ -478,13 +487,16 @@ const searchIndex = await getSearchIndex();
 					}
 				});
 
-				// newsletter submit — validate, remember, swap to confirmation
-				document.addEventListener('submit', (e) => {
+				// Newsletter submit — validate, persist through our server endpoint,
+				// then remember the successful subscription on this device.
+				document.addEventListener('submit', async (e) => {
 					const form = (e.target as HTMLElement).closest<HTMLFormElement>('.js-news');
 					if (!form) return;
 					e.preventDefault();
 					const field = form.querySelector<HTMLElement>('.field');
-					const input = form.querySelector<HTMLInputElement>('input');
+					const input = form.querySelector<HTMLInputElement>('input[type="email"]');
+					const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+					const website = form.querySelector<HTMLInputElement>('input[name="website"]');
 					const v = (input?.value || '').trim();
 					const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
 					const note = form.querySelector<HTMLElement>('.field-note');
@@ -494,6 +506,32 @@ const searchIndex = await getSearchIndex();
 							note.style.color = 'var(--emerald)';
 						}
 						input?.focus();
+						return;
+					}
+					button?.setAttribute('disabled', '');
+					form.setAttribute('aria-busy', 'true');
+					if (note) {
+						note.textContent = 'Subscribing…';
+						note.style.color = 'var(--ink-2)';
+					}
+					try {
+						const response = await fetch('/api/subscribe', {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({
+								email: v,
+								source: form.dataset.source || 'inline',
+								website: website?.value || '',
+							}),
+						});
+						if (!response.ok) throw new Error('Subscription request failed');
+					} catch {
+						button?.removeAttribute('disabled');
+						form.removeAttribute('aria-busy');
+						if (note) {
+							note.textContent = 'We could not subscribe you just now. Please try again.';
+							note.style.color = 'var(--emerald)';
+						}
 						return;
 					}
 					try {
@@ -508,6 +546,7 @@ const searchIndex = await getSearchIndex();
 						note.textContent = 'A confirmation is on its way to ' + v + '.';
 						note.style.color = 'var(--ink-2)';
 					}
+					form.removeAttribute('aria-busy');
 				});
 
 				onScroll();

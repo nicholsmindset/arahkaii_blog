@@ -43,7 +43,7 @@ This is what halal fine dining looks like in Singapore in 2026: not apologetic, 
 
 Singapore has always been a place where serious eating and halal observance share a neighbourhood. What changed in the last three years is the register. Tasting menus earning Michelin recognition. Malaysian heritage cuisine placing at 20th on Asia's 50 Best Restaurants. A generation of chefs building craft-led kitchens — the same patient, craft-first ambition that has driven [Korean heritage brands](/style/korean-heritage-brands-renaissance/) to reshape how Seoul exports taste — now visible in Singapore's halal dining rooms. The conversation no longer asks whether halal can sustain fine dining ambition. The answer has already been plated.
 
-This list covers twelve kitchens for dinner; several also anchor [the city's serious halal Sunday brunch](/dining/halal-sunday-brunch-singapore/), and most sit within reach of a well-planned [48-hour Singapore stopover](/travel/singapore-stopover-guide-48-hours/). Each one is led by the room and the chef, not the price. Every entry's halal status is declared plainly — because the distinction between MUIS-certified, Muslim-owned, and pork-free matters, and collapsing them into a single word does no diner a service. Book early.
+This list covers twelve kitchens for dinner; several also anchor the city's serious halal Sunday brunch, and most sit within reach of a well-planned [48-hour Singapore stopover](/travel/singapore-stopover-guide-48-hours/). Each one is led by the room and the chef, not the price. Every entry's halal status is declared plainly — because the distinction between MUIS-certified, Muslim-owned, and pork-free matters, and collapsing them into a single word does no diner a service. Book early.
 
 * * *
 
@@ -219,7 +219,6 @@ Next year, some of them will have company.
 
 ### Read next
 
-- [The halal Sunday brunch edit](/dining/halal-sunday-brunch-singapore/)
 - [Forty-eight hours in Singapore, done properly](/travel/singapore-stopover-guide-48-hours/)
 - [Southeast Asia's quiet modest-streetwear revolution](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
 - [Asian philanthropy's quiet revolution](/culture/asian-billionaire-philanthropy-quiet-revolution/)

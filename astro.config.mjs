@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
 import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
@@ -73,6 +75,8 @@ export default defineConfig({
 		'/contact-us': '/contact',
 	},
 	integrations: [
+		react(),
+		keystatic(),
 		mdx(),
 		sitemap({
 			// Keep non-canonical surfaces out of the index map. Per-post `noindex`

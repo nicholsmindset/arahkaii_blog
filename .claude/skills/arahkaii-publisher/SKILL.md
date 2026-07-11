@@ -33,15 +33,17 @@ Run the deterministic writer (see also the `/publish` and `/draft-daily` command
 ```bash
 node scripts/new-post.mjs --title "…" --category <pillar> --author <id> \
   --standfirst "…" --tags "…" --seo-title "…" --meta-description "…" \
-  --hero <file> --hero-caption "…" --hero-credit "…" --body <file.mdx> --draft
+  --hero <file> --hero-caption "…" --hero-credit "…" --body <file.mdx>
 ```
+Do not pass `--draft` for a PR-bound article. The feature branch is the draft
+boundary; the article must render in the Netlify preview before human approval.
 Inline images: place under `src/assets/images/<slug>/` and reference via
 `<Figure src={…} caption credit ratio>` in the MDX (density per `content-strategy.md`).
 FAQ/HowTo/ItemList → frontmatter fields (`schema-map.md`).
 
 ## Step 3 — Validate (round-trip)
 ```bash
-npx astro check && npm run build && node scripts/validate-schema.mjs
+npm run verify
 ```
 Green build = schema satisfied (category, hero, caption, **credit**, lengths).
 Fix anything rejected; re-run until clean.
@@ -54,8 +56,9 @@ git commit -m "post: <title>"
 git push -u origin HEAD
 gh pr create --title "post: <title>" --body "<angle · SEO · sourced-image candidates · preview note>"
 ```
-Netlify builds a deploy preview on the PR. Notify the human (PushNotification +
-the PR). **Approval = merge** (see `/approve`) → live at `/<category>/<slug>/`.
+Netlify builds a deploy preview on the PR. The PR is the human notification and
+review surface. **Approval = merge** (see `/approve`) → live at
+`/<category>/<slug>/`.
 
 ## NEVER
 Push to `main` without a merged PR · publish alcohol/nightlife · ship an

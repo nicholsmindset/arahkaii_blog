@@ -7,7 +7,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 ---
 
 <BaseLayout title="Your reading list — Arahkaii" noindex={true}>
-	<main class="wrap">
+	<div class="wrap">
 		<header class="rl-head">
 			<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Reading list' }]} />
 			<h1 class="rl-title">Reading list</h1>
@@ -15,7 +15,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			<p class="rl-count" id="rl-count"></p>
 		</header>
 		<div id="rl-container"></div>
-	</main>
+	</div>
 
 	<script>
 		function initReadingList() {

@@ -3,418 +3,58 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { getCards, type PostCard } from '../lib/articles';
+import '../styles/home.css';
 
-// v2 homepage — twelve distinct modules in a deliberate cadence: no two
-// consecutive modules share a grid signature, image ratio or rhythm. Each
-// module is fed from real posts. A `used` set reserves cards as we go so the
-// image-led modules never repeat a story; the Most-Read text list may overlap.
 const cards = await getCards();
-const used = new Set<string>();
-const reserve = (cs: PostCard[]) => {
-	cs.forEach((c) => used.add(c.id));
-	return cs;
+const byCategory = (category: string) => cards.filter((card) => card.category === category);
+const unique = (items: PostCard[]) => [...new Map(items.map((item) => [item.id, item])).values()];
+const fill = (preferred: PostCard[], count: number, exclude: PostCard[] = []) => {
+	const excluded = new Set(exclude.map((item) => item.id));
+	return unique([...preferred, ...cards]).filter((item) => !excluded.has(item.id)).slice(0, count);
 };
-const free = (pred: (c: PostCard) => boolean = () => true, n = Infinity) =>
-	cards.filter((c) => !used.has(c.id) && pred(c)).slice(0, n);
+const date = (card: PostCard) => card.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 
-// Take up to n cards matching pred, topping up with any unused cards.
-const take = (pred: (c: PostCard) => boolean, n: number) => {
-	const picked = free(pred, n);
-	const fillN = n - picked.length;
-	const extra = fillN > 0 ? free((c) => !picked.includes(c), fillN) : [];
-	return reserve([...picked, ...extra]);
-};
-const isCat = (c: string) => (x: PostCard) => x.category === c;
-
-const hero = reserve(free(() => true, 1))[0];
-
-// Reserve the thin signature categories FIRST, from REAL matches only (no
-// fallback), so their modules carry genuine content instead of mislabelled
-// fillers. Modules self-skip below when a category is too thin.
-const people = reserve(free(isCat('people'), 4)); // People cover rail (real only)
-const travel = reserve(free(isCat('travel'), 4)); // Travel two-up (real only)
-const culture = reserve(free(isCat('culture'), 8)); // Culture index (real only)
-
-// Generic text modules from the remainder.
-const brief = reserve(free(() => true, 5));
-const editAll = reserve(free(() => true, 4));
-const editLead = editAll[0];
-const editTeasers = editAll.slice(1, 4);
-
-// Image lanes from the two deep categories (style 20, beauty 10).
-const styleCards = take(isCat('style'), 5); // Style mosaic
-const beautyLane = take(isCat('beauty'), 6); // Beauty rail
-const longRead = take((c) => ['culture', 'guides', 'people', 'living'].includes(c.category), 1)[0];
-const mostRead = cards.slice(0, 6);
-
-const fmtRead = (c?: PostCard) => (c?.readingMinutes ? `Read · ${c.readingMinutes} min` : '');
-// mosaic grid spans (12-col) for the five unequal cards
-const mosaicSpans = ['1 / 8', '8 / 13', '1 / 5', '5 / 9', '9 / 13'];
-const mosaicRatios = ['3-2', '4-5', '1-1', '5-7', '4-5'];
+const hero = fill([...byCategory('style').slice(0, 1), ...byCategory('living').slice(0, 1), ...byCategory('people').slice(0, 1)], 3);
+const heroLead = hero[1] ?? hero[0];
+const friday = fill(cards.filter((card) => !hero.some((item) => item.id === card.id)), 6);
+const fridayLead = friday[0];
+const wardrobe = fill(byCategory('style'), 5, hero);
+const dining = fill(byCategory('dining'), 4, hero);
+const stays = fill(byCategory('travel'), 4, hero);
+const beauty = fill(byCategory('beauty'), 5, hero);
+const people = fill(byCategory('people'), 4, hero);
+const majlis = fill(cards.filter((card) => ['culture', 'living', 'guides', 'people'].includes(card.category)), 3, hero);
 ---
 
 <BaseLayout title="Arahkaii — Asia's modern-luxury edit, modestly told">
-	<!-- M01 — COVER STORY -->
-	{
-		hero && (
-			<section class="section--tight" style="padding-top:48px;padding-bottom:64px">
-				<a class="hl-link" href={hero.url} style="display:block">
-					<div class="media reveal home-cover-media" style="width:100vw;margin-left:calc(50% - 50vw);height:88vh">
-						<Image src={hero.image} alt={hero.title} loading="eager" widths={[768, 1280, 1920, 2560]} sizes="100vw" />
-					</div>
-					<div class="wrap" style="margin-top:64px">
-						<div class="grid">
-							<div style="grid-column:1 / 12">
-								<p class="eyebrow reveal" style="margin-bottom:24px">The Cover Story</p>
-								<h2 class="h1 reveal" data-stagger="60" style="max-width:14ch">
-									<span class="hl">{hero.title}</span>
-								</h2>
-							</div>
-							<p class="dek reveal" data-stagger="120" style="grid-column:1 / 9; margin-top:24px">
-								{hero.standfirst}
-							</p>
-							<div class="reveal" data-stagger="180" style="grid-column:1 / 9; margin-top:24px">
-								<div class="byrow">
-									<span class="meta">
-										<strong>Words</strong> &nbsp;{hero.authorName}
-									</span>
-									<span class="dot" />
-									<span class="meta">{hero.categoryLabel}</span>
-									{hero.readingMinutes && (
-										<>
-											<span class="dot" />
-											<span class="meta">{fmtRead(hero)}</span>
-										</>
-									)}
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</section>
-		)
-	}
+	<div class="home-shell">
+		{heroLead && hero.length >= 3 && <section class="home-hero" aria-labelledby="hero-title">
+			<div class="home-hero__grid">{hero.map((card) => <a class="home-hero__image media" href={card.url} aria-label={card.title}><Image src={card.image} alt={card.heroCaption || card.title} loading="eager" widths={[480,720,960]} sizes="(max-width:700px) 100vw, 33vw" /></a>)}</div>
+			<div class="home-hero__story"><p class="home-kicker">The cover story</p><h2 id="hero-title"><a href={heroLead.url}>{heroLead.title}</a></h2><p>{heroLead.standfirst}</p><a class="home-link" href={heroLead.url}>Read the essay <span aria-hidden="true">→</span></a></div>
+		</section>}
 
-	<!-- M02 — THE BRIEF -->
-	{
-		brief.length >= 3 && (
-			<section class="section">
-				<div class="wrap">
-					<div class="reveal" style="border:1px solid var(--hairline); padding:40px">
-						<div class="grid">
-							<div style="grid-column:1 / 5">
-								<p class="eyebrow" style="margin-bottom:20px">The Brief</p>
-								<h3 class="h3" style="max-width:11ch">Five things to read this week</h3>
-							</div>
-							<ol style="grid-column:6 / 13; list-style:none; margin:0; padding:0">
-								{brief.map((c, i) => (
-									<li class="brief__item" style={i === brief.length - 1 ? 'border-bottom:0;padding-bottom:0' : undefined}>
-										<span class="brief__num">{String(i + 1).padStart(2, '0')}</span>
-										<div>
-											<p class="kicker11" style="color:var(--emerald);margin-bottom:6px">{c.categoryLabel}</p>
-											<a class="hl-link" href={c.url}>
-												<span class="h5 hl">{c.title}</span>
-											</a>
-										</div>
-									</li>
-								))}
-							</ol>
-						</div>
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M03 — THE EDIT (7/5 split) -->
-	{
-		editLead && (
-			<section class="section">
-				<div class="wrap">
-					<div class="grid" style="align-items:center">
-						<a class="hl-link reveal" href={editLead.url} style="grid-column:1 / 8">
-							<div class="media ar-5-7 edit-lead-media" style="height:600px">
-								<Image src={editLead.image} alt={editLead.title} widths={[480, 800]} sizes="(max-width:900px) 100vw, 58vw" />
-							</div>
-						</a>
-						<div class="reveal" data-stagger="120" style="grid-column:9 / 13">
-							<p class="eyebrow" style="margin-bottom:24px">The Edit — Selected this week</p>
-							<a class="hl-link" href={editLead.url}>
-								<h2 class="h2" style="max-width:12ch"><span class="hl">{editLead.title}</span></h2>
-							</a>
-							<p class="dek" style="margin:24px 0 40px; max-width:30ch">{editLead.standfirst}</p>
-							<ul style="list-style:none;margin:0;padding:0">
-								{editTeasers.map((c, i) => (
-									<li class="teaser" style={i === editTeasers.length - 1 ? 'border-bottom:0' : undefined}>
-										<a class="hl-link" href={c.url}>
-											<span class="h5 hl">{c.title}</span>
-										</a>
-									</li>
-								))}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M04 — STYLE MOSAIC (5 unequal cards) -->
-	{
-		styleCards.length >= 3 && (
-			<section class="section">
-				<div class="wrap">
-					<div class="reveal" style="display:flex;align-items:baseline;justify-content:space-between;gap:24px">
-						<h2 class="h2">Style</h2>
-						<a class="tlink d-only" href="/style">All of Style</a>
-					</div>
-					<hr class="rule reveal" style="margin:24px 0 40px" />
-					<div class="grid mosaic">
-						{styleCards.map((c, i) => (
-							<a
-								class="card hl-link reveal"
-								href={c.url}
-								data-stagger={i % 2 ? '60' : undefined}
-								style={`grid-column:${mosaicSpans[i] ?? '1 / 5'}`}
-							>
-								<div class:list={['media', `ar-${mosaicRatios[i] ?? '3-2'}`]}>
-									<Image src={c.image} alt={c.title} widths={[400, 800]} sizes="(max-width:900px) 100vw, 40vw" />
-								</div>
-								<p class="kicker11" style="margin:16px 0 8px">{c.categoryLabel}</p>
-								<h3 class="h4"><span class="hl">{c.title}</span></h3>
-							</a>
-						))}
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M05 — PULL-QUOTE INTERLUDE -->
-	{
-		longRead && (
-			<section style="padding-block:clamp(56px,8vw,104px)">
-				<div class="wrap">
-					<div class="grid">
-						<blockquote class="reveal" style="grid-column:2 / 12; text-align:center; margin:0">
-							<p class="display" style="font-style:italic; font-size:var(--quote); line-height:1.2">
-								“{longRead.standfirst}”
-							</p>
-							<p class="kicker11" style="margin-top:40px">
-								— From The Long Read · {longRead.title}
-							</p>
-						</blockquote>
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M06 — BEAUTY RAIL -->
-	{
-		beautyLane.length >= 3 && (
-			<section class="section" data-rail>
-				<div class="wrap">
-					<div class="reveal" style="display:flex;align-items:baseline;justify-content:space-between;gap:24px">
-						<h2 class="h2">Beauty</h2>
-						<div class="rail__ctrl d-only">
-							<button class="rail__arrow" data-rail-prev aria-label="Previous">←</button>
-							<button class="rail__arrow" data-rail-next aria-label="Next">→</button>
-						</div>
-					</div>
-					<hr class="rule reveal" style="margin:24px 0 40px" />
-				</div>
-				<div class="rail__track" data-rail-track aria-label="Beauty stories, scrollable">
-					<div class="rail__pad" />
-					{beautyLane.map((c, i) => (
-						<a class="snap rail__card hl-link" href={c.url}>
-							<div class="media ar-4-5">
-								<span class="rail__counter">{String(i + 1).padStart(2, '0')} / {String(beautyLane.length).padStart(2, '0')}</span>
-								<Image src={c.image} alt={c.title} widths={[320, 640]} sizes="(max-width:900px) 78vw, 320px" />
-							</div>
-							<p class="kicker11" style="margin:14px 0 6px">{c.categoryLabel}</p>
-							<h3 class="h5"><span class="hl">{c.title}</span></h3>
-						</a>
-					))}
-					<div class="rail__pad" />
-				</div>
-				<div class="wrap"><div class="rail__progress"><span data-rail-bar /></div></div>
-			</section>
-		)
-	}
-
-	<!-- M07 — TRAVEL TWO-UP (mirrored) -->
-	{
-		travel.length >= 2 && (
-			<section class="section">
-				<div class="wrap">
-					<p class="eyebrow reveal" style="margin-bottom:24px">Travel</p>
-					<div class="grid">
-						<a class="card hl-link reveal" href={travel[0].url} style="grid-column:1 / 7">
-							<div class="media ar-16-9">
-								<Image src={travel[0].image} alt={travel[0].title} widths={[600, 900]} sizes="(max-width:900px) 100vw, 46vw" />
-							</div>
-							<h3 class="h3" style="margin:24px 0 12px"><span class="hl">{travel[0].title}</span></h3>
-							<p class="dek" style="font-size:var(--body);font-style:normal;color:var(--ink-2)">{travel[0].standfirst}</p>
-						</a>
-						<a class="card hl-link reveal" data-stagger="120" href={travel[1].url} style="grid-column:7 / 13">
-							<div class="split">
-								<div class="media ar-3-4">
-									<Image src={travel[1].image} alt={travel[1].title} widths={[400, 700]} sizes="(max-width:900px) 50vw, 23vw" />
-								</div>
-								<div class="split__text">
-									<p class="kicker11" style="margin-bottom:10px;color:var(--emerald)">{travel[1].categoryLabel}</p>
-									<h3 class="h3"><span class="hl">{travel[1].title}</span></h3>
-									<p class="dek" style="font-size:var(--body);font-style:normal;color:var(--ink-2);margin-top:12px">{travel[1].standfirst}</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M08 — CULTURE INDEX -->
-	{
-		culture.length >= 2 && (
-			<section class="section">
-				<div class="wrap">
-					<p class="eyebrow reveal" style="margin-bottom:24px">Culture — Index</p>
-					<hr class="rule reveal" style="margin-bottom:8px" />
-					<div class="grid">
-						{[culture.slice(0, Math.ceil(culture.length / 2)), culture.slice(Math.ceil(culture.length / 2))].map((col, ci) => (
-							<ol class="index-col reveal" data-stagger={ci ? '120' : undefined} style={`grid-column:${ci ? '7 / 13' : '1 / 7'}`}>
-								{col.map((c, i) => {
-									const n = ci === 0 ? i + 1 : Math.ceil(culture.length / 2) + i + 1;
-									const last = i === col.length - 1;
-									return (
-										<li class="idx" style={last ? 'border-bottom:0' : undefined}>
-											<span class="idx__n">{String(n).padStart(2, '0')}</span>
-											<div class="idx__body">
-												<a class="hl-link" href={c.url}><span class="h5 hl">{c.title}</span></a>
-												<p class="kicker11" style="margin-top:6px">{(c.tags[0] ?? c.categoryLabel)}</p>
-											</div>
-											<div class="idx__thumb media ar-1-1">
-												<Image src={c.image} alt={c.title} widths={[80, 160]} sizes="80px" />
-											</div>
-										</li>
-									);
-								})}
-							</ol>
-						))}
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M09 — PEOPLE COVERS (tinted; width-filling grid) -->
-	{
-		people.length >= 2 && (
-			<section class="section tint">
-				<div class="wrap">
-					<div class="reveal" style="margin-bottom:40px">
-						<p class="eyebrow" style="margin-bottom:14px">People</p>
-						<h2 class="h2">This week's people</h2>
-					</div>
-					<div class="grid">
-						{people.map((c, i) => (
-							<a
-								class="cover-card cover-card--grid hl-link reveal"
-								data-stagger={i ? String(i * 60) : undefined}
-								href={c.url}
-								style={`grid-column:span ${Math.max(3, Math.floor(12 / people.length))}`}
-							>
-								<div class="media ar-3-4">
-									<Image src={c.image} alt={c.title} widths={[500, 900]} sizes={`(max-width:760px) 100vw, ${Math.round(100 / people.length)}vw`} />
-									<span class="cover-card__mark">ARAHKAII / PEOPLE / NO. {String(people.length - i).padStart(2, '0')}</span>
-									<span class="cover-card__name">{c.title}</span>
-								</div>
-							</a>
-						))}
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M10 — THE LONG READ (emerald-edged) -->
-	{
-		longRead && (
-			<section style="border-top:1px solid var(--emerald);border-bottom:1px solid var(--emerald)">
-				<div class="wrap" style="padding-block:clamp(56px,7vw,84px)">
-					<div class="grid" style="align-items:center">
-						<a class="hl-link reveal" href={longRead.url} style="grid-column:1 / 6">
-							<div class="media ar-5-7">
-								<Image src={longRead.image} alt={longRead.title} widths={[480, 800]} sizes="(max-width:900px) 100vw, 40vw" />
-							</div>
-						</a>
-						<div class="reveal" data-stagger="120" style="grid-column:7 / 13">
-							<p style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
-								<span class="star">✦</span>
-								<span class="eyebrow eyebrow--emerald">The Long Read</span>
-							</p>
-							<a class="hl-link" href={longRead.url}>
-								<h2 class="h2" style="max-width:16ch"><span class="hl">{longRead.title}</span></h2>
-							</a>
-							<p class="dek" style="margin:28px 0;max-width:42ch">{longRead.standfirst}</p>
-							<div class="byrow" style="margin-bottom:28px;max-width:42ch">
-								<span class="meta"><strong>Words</strong> &nbsp;{longRead.authorName}</span>
-								{longRead.readingMinutes && (
-									<>
-										<span class="dot" />
-										<span class="meta">{fmtRead(longRead)}</span>
-									</>
-								)}
-							</div>
-							<a class="tlink tlink--em" href={longRead.url}>Read the essay →</a>
-						</div>
-					</div>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M11 — MOST READ (huge numerals) -->
-	{
-		mostRead.length > 0 && (
-			<section class="section">
-				<div class="wrap">
-					<h2 class="h3 reveal" style="margin-bottom:40px">Most read this week</h2>
-					<ol class="mostread reveal">
-						{mostRead.map((c, i) => (
-							<li class="mr" style={i === mostRead.length - 1 ? 'border-bottom:0' : undefined}>
-								<span class="mr__n">{String(i + 1).padStart(2, '0')}</span>
-								<div class="mr__body">
-									<p class="kicker11" style="margin-bottom:8px">{c.categoryLabel}</p>
-									<a class="hl-link" href={c.url}><span class="h4 hl">{c.title}</span></a>
-									<p class="dek" style="font-size:var(--body);font-style:normal;color:var(--ink-2);margin-top:8px;max-width:52ch">{c.standfirst}</p>
-								</div>
-							</li>
-						))}
-					</ol>
-				</div>
-			</section>
-		)
-	}
-
-	<!-- M12 — NEWSLETTER BAND (tinted) -->
-	<section class="tint" style="padding-block:clamp(72px,9vw,128px)">
-		<div class="wrap">
-			<div class="grid">
-				<div class="reveal" style="grid-column:4 / 10; text-align:center">
-					<h2 class="h2" style="margin-bottom:16px">Sundays, considered.</h2>
-					<p class="dek" style="margin-bottom:40px">
-						Our weekly edit — one essay, three things to read, one place to go.
-					</p>
-					<NewsletterSignup class="home-news" source="home-cta">
-						<p slot="note" class="field-note" style="text-align:center;margin-top:20px">
-							No noise. Unsubscribe anytime.
-						</p>
-					</NewsletterSignup>
-				</div>
+		{fridayLead && <section class="home-panel friday-edit" aria-labelledby="friday-title">
+			<h2 class="home-section-title" id="friday-title">The Friday edit</h2>
+			<div class="friday-edit__grid">
+				<article class="friday-lead"><a class="media friday-lead__image" href={fridayLead.url}><Image src={fridayLead.image} alt={fridayLead.heroCaption || fridayLead.title} widths={[640,960,1280]} sizes="(max-width:800px) 100vw, 48vw" /></a><p class="home-kicker">Lead essay</p><h3><a href={fridayLead.url}>{fridayLead.title}</a></h3><p class="friday-lead__dek">{fridayLead.standfirst}</p><p class="home-meta">By {fridayLead.authorName} <span>{date(fridayLead)}</span></p></article>
+				<div class="friday-briefs" aria-label="More from the Friday edit">{friday.slice(1).map((card) => <article class="mini-story"><a class="media mini-story__image" href={card.url}><Image src={card.image} alt="" widths={[120,240]} sizes="84px" /></a><div><p class="home-kicker">Brief</p><h3><a href={card.url}>{card.title}</a></h3><p class="home-meta">{card.byline} · {date(card)}</p></div></article>)}</div>
+				<aside class="verified-card"><p class="home-kicker">Arahkaii verified <span aria-hidden="true">●</span></p><div><h3>Trusted standards.<br />Conscious choices.</h3><p>Independent guidance for dining, travel and wellness — considered through a Muslim lens.</p></div><a class="home-link" href="/guides">Explore verified <span aria-hidden="true">→</span></a></aside>
 			</div>
-		</div>
-	</section>
+		</section>}
+
+		<section class="home-trio" aria-label="Arahkaii guides">
+			<div class="compact-module"><h2 class="home-section-title">Modest wardrobe</h2>{wardrobe[0] && <a class="media compact-module__lead portrait" href={wardrobe[0].url}><Image src={wardrobe[0].image} alt={wardrobe[0].heroCaption || wardrobe[0].title} widths={[420,720]} sizes="(max-width:800px) 100vw, 30vw" /></a>}<div class="compact-list">{wardrobe.slice(1).map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt="" widths={[160,320]} sizes="112px" /></a><h3><a href={card.url}>{card.title}</a></h3></article>)}</div><a class="home-link" href="/style">Explore style <span aria-hidden="true">→</span></a></div>
+			<div class="compact-module"><h2 class="home-section-title">Halal status checked</h2>{dining[0] && <a class="media compact-module__lead landscape" href={dining[0].url}><Image src={dining[0].image} alt={dining[0].heroCaption || dining[0].title} widths={[480,800]} sizes="(max-width:800px) 100vw, 30vw" /></a>}<div class="place-list">{dining.map((card) => <a href={card.url}><span>{card.title}</span><small>Guide · {date(card)}</small></a>)}</div><a class="home-link" href="/dining">View all dining guides <span aria-hidden="true">→</span></a></div>
+			<div class="compact-module stays-module"><h2 class="home-section-title">Prayer-aware stays</h2>{stays[0] && <a class="media compact-module__lead landscape" href={stays[0].url}><Image src={stays[0].image} alt={stays[0].heroCaption || stays[0].title} widths={[480,800]} sizes="(max-width:800px) 100vw, 30vw" /></a>}<div class="compact-list compact-list--travel">{stays.slice(1).map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt="" widths={[160,320]} sizes="112px" /></a><div><h3><a href={card.url}>{card.title}</a></h3><p>{card.standfirst}</p></div></article>)}</div><a class="home-link" href="/travel">Explore stays <span aria-hidden="true">→</span></a></div>
+		</section>
+
+		<section class="home-duo" aria-label="Beauty and people">
+			<div class="compact-module beauty-module"><h2 class="home-section-title">Beauty for the tropics</h2><div class="beauty-module__grid">{beauty[0] && <a class="media beauty-module__lead" href={beauty[0].url}><Image src={beauty[0].image} alt={beauty[0].heroCaption || beauty[0].title} widths={[420,720]} sizes="(max-width:800px) 100vw, 28vw" /></a>}<div class="compact-list">{beauty.slice(1).map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt="" widths={[160,320]} sizes="112px" /></a><h3><a href={card.url}>{card.title}</a></h3></article>)}</div></div><a class="home-link" href="/beauty">Explore beauty <span aria-hidden="true">→</span></a></div>
+			<div class="compact-module people-module"><h2 class="home-section-title">People shaping Asia</h2><div class="people-grid">{people.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[320,560]} sizes="(max-width:700px) 50vw, 18vw" /></a><h3><a href={card.url}>{card.title}</a></h3><p class="home-meta">{card.byline}</p></article>)}</div><a class="home-link" href="/people">Meet the editors &amp; contributors <span aria-hidden="true">→</span></a></div>
+		</section>
+
+		{majlis.length >= 3 && <section class="majlis" aria-labelledby="majlis-title"><div class="majlis__head"><div><h2 id="majlis-title">The Majlis</h2><p>Long reads for a slower kind of luxury.</p></div><a class="home-link" href="/latest">Visit the Majlis <span aria-hidden="true">→</span></a></div><div class="majlis__grid">{majlis.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[480,800]} sizes="(max-width:700px) 100vw, 31vw" /></a><p class="home-kicker">Essay</p><h3><a href={card.url}>{card.title}</a></h3><p>{card.standfirst}</p><p class="home-meta">By {card.authorName} <span>{card.readingMinutes} min read</span></p></article>)}</div></section>}
+
+		<section class="home-newsletter" aria-labelledby="newsletter-title"><h2 id="newsletter-title">Sundays,<br />considered.</h2><div><p>Essays, edits and invitations for a life well-lived — delivered weekly.</p><NewsletterSignup class="home-newsletter__form" source="homepage"><p slot="note" class="field-note">By subscribing, you agree to receive emails from Arahkaii.</p></NewsletterSignup></div>{beauty[0] && <div class="media home-newsletter__image"><Image src={beauty[0].image} alt="A considered Sunday with Arahkaii" widths={[420,720]} sizes="28vw" /></div>}</section>
+	</div>
 </BaseLayout>
