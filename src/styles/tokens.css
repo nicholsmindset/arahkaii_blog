@@ -34,7 +34,7 @@
 	--h5: clamp(18px, 1.4vw, 20px);
 	--dek: clamp(19px, 1.55vw, 22px);
 	--body: clamp(17px, 1.25vw, 18px);
-	--quote: clamp(40px, 5vw, 72px);
+	--quote: clamp(28px, 3.2vw, 46px);
 
 	/* spacing */
 	--s8: 8px;
