@@ -1,8 +1,11 @@
 import type { APIRoute } from 'astro';
+import newsletterSettings from '../../content/settings/newsletter.json';
 
 export const prerender = false;
 
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+type NewsletterProvider = 'mailerlite' | 'beehiiv' | 'disabled';
+const provider = newsletterSettings.provider as NewsletterProvider;
 
 function reply(status: number, body: Record<string, unknown>) {
 	return new Response(JSON.stringify(body), {
@@ -43,28 +46,50 @@ export const POST: APIRoute = async ({ request }) => {
 		return reply(422, { error: 'Enter a valid email address' });
 	}
 
-	const apiKey = import.meta.env.MAILERLITE_API_KEY;
-	if (!apiKey) {
-		return reply(503, { error: 'Newsletter service is not configured' });
-	}
-
-	const groupId = import.meta.env.MAILERLITE_GROUP_ID?.trim();
-	const subscriber: { email: string; groups?: string[] } = { email };
-	if (groupId) subscriber.groups = [groupId];
+	if (provider === 'disabled') return reply(503, { error: 'Newsletter signups are paused' });
 
 	try {
-		const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				Authorization: `Bearer ${apiKey}`,
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(subscriber),
-		});
+		let response: Response;
+		if (provider === 'beehiiv') {
+			const apiKey = import.meta.env.BEEHIIV_API_KEY;
+			const publicationId = import.meta.env.BEEHIIV_PUBLICATION_ID?.trim();
+			if (!apiKey || !publicationId) return reply(503, { error: 'Beehiiv is not configured' });
+			const source = typeof payload.source === 'string' ? payload.source.slice(0, 80) : 'website';
+			response = await fetch(`https://api.beehiiv.com/v2/publications/${encodeURIComponent(publicationId)}/subscriptions`, {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					Authorization: `Bearer ${apiKey}`,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email,
+					reactivate_existing: false,
+					send_welcome_email: newsletterSettings.sendWelcomeEmail,
+					utm_source: 'arahkaii',
+					utm_medium: source,
+					referring_site: new URL(request.url).origin,
+				}),
+			});
+		} else {
+			const apiKey = import.meta.env.MAILERLITE_API_KEY;
+			if (!apiKey) return reply(503, { error: 'MailerLite is not configured' });
+			const groupId = import.meta.env.MAILERLITE_GROUP_ID?.trim();
+			const subscriber: { email: string; groups?: string[] } = { email };
+			if (groupId) subscriber.groups = [groupId];
+			response = await fetch('https://connect.mailerlite.com/api/subscribers', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					Authorization: `Bearer ${apiKey}`,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(subscriber),
+			});
+		}
 
 		if (!response.ok) {
-			console.error('MailerLite subscription failed', response.status, await response.text());
+			console.error(`${provider} subscription failed`, response.status, await response.text());
 			return reply(502, { error: 'Newsletter service rejected the request' });
 		}
 	} catch (error) {

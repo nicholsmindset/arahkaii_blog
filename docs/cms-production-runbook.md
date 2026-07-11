@@ -13,6 +13,23 @@ The editor manages:
   FAQ, HowTo and list structured data.
 - Author names, roles, biographies and portraits.
 - Draft and search-index visibility controls.
+- Newsletter provider selection (MailerLite, Beehiiv or temporarily paused).
+
+## Newsletter provider
+
+Choose the active service under **Settings → Newsletter settings**. The CMS
+stores only the provider choice; API credentials remain encrypted in Vercel.
+
+- **MailerLite:** set `MAILERLITE_API_KEY`; optionally set
+  `MAILERLITE_GROUP_ID`.
+- **Beehiiv:** set `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID`. Beehiiv
+  publication IDs begin with `pub_`. Enable the welcome-email option only when
+  a Beehiiv automation is not already sending one.
+
+Provider changes follow the same `cms/` branch, review and deployment process
+as editorial changes. Configure the destination credentials before switching,
+then submit one controlled test address after production deploy. The website
+form and `/api/subscribe` endpoint do not change.
 
 ## Images in the editor
 
