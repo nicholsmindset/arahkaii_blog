@@ -1,4 +1,5 @@
 import { collection, config, fields, singleton } from '@keystatic/core';
+import { block } from '@keystatic/core/content-components';
 
 const categories = [
 	{ label: 'Style', value: 'style' },
@@ -124,7 +125,27 @@ const articleSchema = {
 	lastVerified: fields.date({ label: 'Last editorial verification' }),
 	body: fields.mdx({
 		label: 'Article body',
-		extension: 'md',
+		// .mdx so the editorial components below render (Astro only evaluates JSX
+		// components in .mdx). new-post.mjs and the migrated posts all use .mdx too.
+		extension: 'mdx',
+		components: {
+			// Full-column breakout quote (max two per article). DropCap is not
+			// registered — the first paragraph already gets a drop cap via CSS
+			// (article.css ::first-letter). Inline images use the image button
+			// below (Astro optimises those); the credited <Figure> stays an
+			// AI/hand-authoring component.
+			PullQuote: block({
+				label: 'Pull quote',
+				description: 'A full-column italic breakout quote in the wide margin.',
+				schema: {
+					text: fields.text({
+						label: 'Quote',
+						multiline: true,
+						validation: { isRequired: true },
+					}),
+				},
+			}),
+		},
 		options: {
 			bold: true,
 			italic: true,

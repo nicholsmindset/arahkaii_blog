@@ -111,7 +111,9 @@ body = body.trim();
 if (!body) die('a body is required (--body <file> or --body-stdin)');
 
 // collision check
-const ext = body.includes('<') || flags.mdx ? 'mdx' : 'md';
+// Always .mdx: one extension across the AI pipeline, Keystatic and the loader,
+// so every post is editable in the CMS and can carry MDX components.
+const ext = 'mdx';
 const outPath = path.join(POSTS, year, `${slug}.${ext}`);
 const altPath = path.join(POSTS, year, `${slug}.${ext === 'mdx' ? 'md' : 'mdx'}`);
 if (!dryRun && (fs.existsSync(outPath) || fs.existsSync(altPath)))
