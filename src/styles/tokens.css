@@ -9,7 +9,9 @@
 :root {
 	/* color */
 	--bg: #ffffff;
+	--paper: var(--bg);
 	--bone: #f6f1ea; /* warm-bone tint — palette cleanser, max ~twice per page */
+	--paper-alt: var(--bone);
 	--bone-2: #ede6db;
 	--ink: #111111;
 	--ink-2: #5a5a5a;
@@ -36,6 +38,22 @@
 	--body: clamp(17px, 1.25vw, 18px);
 	--quote: clamp(28px, 3.2vw, 46px);
 
+	/* editorial scale — semantic aliases for new publication modules */
+	--step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+	--step-0: clamp(1.06rem, 1rem + 0.3vw, 1.19rem);
+	--step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+	--step-2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+	--step-3: clamp(1.85rem, 1.5rem + 1.75vw, 2.75rem);
+	--step-4: clamp(2.25rem, 1.7rem + 2.75vw, 4rem);
+	--step-5: clamp(2.75rem, 1.9rem + 4.25vw, 5.5rem);
+	--leading-tight: 1.05;
+	--leading-snug: 1.2;
+	--leading-body: 1.55;
+	--leading-meta: 1.35;
+	--measure: 66ch;
+	--measure-narrow: 48ch;
+	--measure-wide: 82ch;
+
 	/* spacing */
 	--s8: 8px;
 	--s16: 16px;
@@ -44,9 +62,22 @@
 	--s64: 64px;
 	--s96: 96px;
 	--s120: 120px;
+	--space-3xs: 4px;
+	--space-2xs: 8px;
+	--space-xs: 12px;
+	--space-s: 16px;
+	--space-m: 24px;
+	--space-l: 32px;
+	--space-xl: 48px;
+	--space-2xl: 64px;
+	--space-3xl: 96px;
 	--section: clamp(52px, 6.5vw, 92px);
 	--gutter: 80px;
 	--maxw: 1440px;
+	--grid-max: var(--maxw);
+	--grid-gutter: var(--space-m);
+	--rule-hair: 1px solid var(--hairline);
+	--rule-heavy: 2px solid var(--ink);
 
 	/* motion */
 	--ease: cubic-bezier(0.22, 1, 0.36, 1);
