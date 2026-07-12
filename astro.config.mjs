@@ -64,7 +64,7 @@ function legacyRedirects() {
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://arahkaii.com',
+	site: 'https://www.arahkaii.com',
 	// Directory output → canonical URLs carry a trailing slash; the per-page
 	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
 	redirects: {

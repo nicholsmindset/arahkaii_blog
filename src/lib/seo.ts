@@ -4,11 +4,11 @@
 export const SITE = {
 	name: 'Arahkaii',
 	tagline: "Asia's modern-luxury edit — modestly told.",
-	url: 'https://arahkaii.com',
+	url: 'https://www.arahkaii.com',
 	locale: 'en_GB',
 	// Raster logo for Organization schema (Google prefers raster over SVG).
 	// Falls back to the favicon if public/logo.png is not yet added.
-	logoUrl: 'https://arahkaii.com/logo.png',
+	logoUrl: 'https://www.arahkaii.com/logo.png',
 	twitter: '@arahkaii',
 	email: 'hello@arahkaii.com',
 	// Legal publisher behind the Arahkaii brand.
