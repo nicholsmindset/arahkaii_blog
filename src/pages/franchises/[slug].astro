@@ -17,7 +17,7 @@ const jsonLd = [organizationSchema(), websiteSchema(), collectionPageSchema({ na
 if (cards.length) jsonLd.push(itemListSchema(entry.data.name, cards.map((c) => ({ name: c.title, description: c.standfirst, url: new URL(c.url, SITE.url).toString() })), canonical));
 ---
 
-<BaseLayout title={`${entry.data.name} — Arahkaii`} description={entry.data.description} jsonLd={jsonLd}>
+<BaseLayout title={`${entry.data.name} — Arahkaii`} description={entry.data.description} noindex={cards.length === 0} jsonLd={jsonLd}>
 	<header class="hub-head wrap">
 		<p class="eyebrow eyebrow--emerald">{entry.data.kicker ?? 'Arahkaii franchise'}</p>
 		<h1>{entry.data.name}</h1>
