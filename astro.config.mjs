@@ -65,8 +65,10 @@ function legacyRedirects() {
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.arahkaii.com',
-	// Directory output → canonical URLs carry a trailing slash; the per-page
-	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
+	// Directory output → canonical URLs carry a trailing slash; enforce it so the
+	// slashless variant 301s instead of serving a duplicate (paired with
+	// vercel.json "trailingSlash": true). Seo.astro canonical stays authoritative.
+	trailingSlash: 'always',
 	redirects: {
 		...legacyRedirects(),
 		// 1-for-1 map of every published WordPress URL whose path changed —
