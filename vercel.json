@@ -1,5 +1,13 @@
 {
 	"framework": "astro",
+	"redirects": [
+		{
+			"source": "/:path*",
+			"has": [{ "type": "host", "value": "www.arahkaii.com" }],
+			"destination": "https://arahkaii.com/:path*",
+			"permanent": true
+		}
+	],
 	"headers": [
 		{
 			"source": "/keystatic/:path*",
