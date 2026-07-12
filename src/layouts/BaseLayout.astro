@@ -95,6 +95,15 @@ const isHome = Astro.url.pathname === '/';
 
 // Slim JSON index for the client search overlay.
 const searchIndex = await getSearchIndex();
+
+// Google Tag Manager — renders nothing until PUBLIC_GTM_ID is set in the
+// environment (Vercel → Settings → Environment Variables). Never loads on
+// the Keystatic admin. See docs/domain-analytics-setup.md.
+const gtmId = import.meta.env.PUBLIC_GTM_ID as string | undefined;
+const gtmEnabled = /^GTM-[A-Z0-9]+$/.test(gtmId ?? '') && !Astro.url.pathname.startsWith('/keystatic');
+const gtmSnippet = gtmEnabled
+	? `window.dataLayer=window.dataLayer||[];(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`
+	: '';
 ---
 
 <!doctype html>
@@ -105,6 +114,7 @@ const searchIndex = await getSearchIndex();
 		<script is:inline>
 			document.documentElement.classList.add('js');
 		</script>
+		{gtmEnabled && <script is:inline set:html={gtmSnippet} />}
 		<link rel="preload" as="font" type="font/woff2" href={serifWoff2} crossorigin />
 		<link rel="preload" as="font" type="font/woff2" href={displayWoff2} crossorigin />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -141,6 +151,19 @@ const searchIndex = await getSearchIndex();
 	</head>
 
 	<body>
+		{
+			gtmEnabled && (
+				<noscript>
+					<iframe
+						src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+						height="0"
+						width="0"
+						style="display:none;visibility:hidden"
+						title="Google Tag Manager"
+					/>
+				</noscript>
+			)
+		}
 		<a class="skip-link" href="#main">Skip to content</a>
 
 		<!-- article scroll-progress (set by the script; invisible elsewhere) -->
@@ -562,6 +585,9 @@ const searchIndex = await getSearchIndex();
 					try {
 						localStorage.setItem(SUBKEY, v);
 					} catch {}
+					// Analytics: GTM listens for this custom event (see
+					// docs/gtm-arahkaii-ga4.json). No-op when GTM is absent.
+					(window as any).dataLayer?.push({ event: 'newsletter_signup', source: form.dataset.source || 'inline' });
 					if (field) {
 						field.classList.add('done');
 						field.dataset.locked = '1';
@@ -578,6 +604,18 @@ const searchIndex = await getSearchIndex();
 			}
 
 			document.addEventListener('astro:page-load', initChrome);
+
+			// Virtual page views for GA4: the ClientRouter swaps pages without a
+			// full load, so surface each navigation to GTM. Fires on the initial
+			// load too — the GA4 config tag in the container listens for this
+			// event instead of All Pages to avoid double-counting.
+			document.addEventListener('astro:page-load', () => {
+				(window as any).dataLayer?.push({
+					event: 'virtual_page_view',
+					page_path: location.pathname + location.search,
+					page_title: document.title,
+				});
+			});
 		</script>
 	</body>
 </html>
