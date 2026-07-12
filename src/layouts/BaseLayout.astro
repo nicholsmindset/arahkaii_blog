@@ -30,6 +30,8 @@ interface Props {
 	noFooter?: boolean;
 	/** Absolute URL to an OG/Twitter image. Falls back to a branded default. */
 	image?: string;
+	imageWidth?: number;
+	imageHeight?: number;
 	ogType?: 'website' | 'article';
 	noindex?: boolean;
 	publishedTime?: string;
@@ -53,6 +55,8 @@ const {
 	authorName,
 	section,
 	tags,
+	imageWidth = 1200,
+	imageHeight = 630,
 	jsonLd = [organizationSchema(), websiteSchema()],
 } = Astro.props;
 
@@ -135,8 +139,8 @@ const gtmSnippet = gtmEnabled
 			description={description}
 			canonical={canonical}
 			image={ogImage}
-			imageWidth={1200}
-			imageHeight={630}
+			imageWidth={imageWidth}
+			imageHeight={imageHeight}
 			ogType={ogType}
 			noindex={noindex}
 			publishedTime={publishedTime}
