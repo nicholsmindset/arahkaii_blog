@@ -1,6 +1,6 @@
 ---
 title: "The 6 Beauty Trends From FW26 Runways That Actually Matter"
-standfirst: "Fashion month beauty is a mixed bag."
+standfirst: "Six FW26 runway beauty trends earn a place in real life — blurred smoky eyes, diffused blush, blurred lips, short bold nails and French hair accessories — each tested against a humid Southeast Asian climate."
 category: beauty
 tags:
   - "beauty-science"
