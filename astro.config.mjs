@@ -69,6 +69,11 @@ export default defineConfig({
 	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
 	redirects: {
 		...legacyRedirects(),
+		// 1-for-1 map of every published WordPress URL whose path changed —
+		// the old permalinks were category-prefixed (/fashion/<slug>/) and many
+		// posts were recategorised. Generated from real-export.xml; see
+		// src/data/legacy-redirects.json (includes the old WP sitemap names).
+		...JSON.parse(fs.readFileSync('./src/data/legacy-redirects.json', 'utf8')),
 		// Renamed WordPress pages → our canonical paths.
 		'/about-us': '/about',
 		'/contact-us': '/contact',

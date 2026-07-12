@@ -3,8 +3,373 @@
 	"redirects": [
 		{
 			"source": "/:path*",
-			"has": [{ "type": "host", "value": "www.arahkaii.com" }],
+			"has": [
+				{
+					"type": "host",
+					"value": "www.arahkaii.com"
+				}
+			],
 			"destination": "https://arahkaii.com/:path*",
+			"permanent": true
+		},
+		{
+			"source": "/category-sitemap.xml",
+			"destination": "/sitemap-categories.xml",
+			"permanent": true
+		},
+		{
+			"source": "/culture/k-beauty-broke-the-algorithm",
+			"destination": "/beauty/k-beauty-broke-the-algorithm/",
+			"permanent": true
+		},
+		{
+			"source": "/culture/k-beauty-broke-the-algorithm/",
+			"destination": "/beauty/k-beauty-broke-the-algorithm/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/batik-blockchain-indonesia-textile-authenticity-technology",
+			"destination": "/culture/batik-blockchain-indonesia-textile-authenticity-technology/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/batik-blockchain-indonesia-textile-authenticity-technology/",
+			"destination": "/culture/batik-blockchain-indonesia-textile-authenticity-technology/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/beauty-best-chinese-makeup-brands",
+			"destination": "/beauty/beauty-best-chinese-makeup-brands/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/beauty-best-chinese-makeup-brands/",
+			"destination": "/beauty/beauty-best-chinese-makeup-brands/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/brightspot-supermrkt-2025-where-jakartas-creative-economy-comes-to-shop",
+			"destination": "/style/brightspot-supermrkt-2025-where-jakartas-creative-economy-comes-to-shop/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/brightspot-supermrkt-2025-where-jakartas-creative-economy-comes-to-shop/",
+			"destination": "/style/brightspot-supermrkt-2025-where-jakartas-creative-economy-comes-to-shop/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/bts-individual-style-identities-luxury-brand-partnerships",
+			"destination": "/style/bts-individual-style-identities-luxury-brand-partnerships/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/bts-individual-style-identities-luxury-brand-partnerships/",
+			"destination": "/style/bts-individual-style-identities-luxury-brand-partnerships/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/bts-songzio-lyrical-armor-arirang-concert",
+			"destination": "/style/bts-songzio-lyrical-armor-arirang-concert/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/bts-songzio-lyrical-armor-arirang-concert/",
+			"destination": "/style/bts-songzio-lyrical-armor-arirang-concert/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/c-beauty-vs-k-beauty-2026",
+			"destination": "/beauty/c-beauty-vs-k-beauty-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/c-beauty-vs-k-beauty-2026/",
+			"destination": "/beauty/c-beauty-vs-k-beauty-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/dopamine-dressing-science-mood-fashion",
+			"destination": "/style/dopamine-dressing-science-mood-fashion/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/dopamine-dressing-science-mood-fashion/",
+			"destination": "/style/dopamine-dressing-science-mood-fashion/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/halal-fine-dining-singapore-2026",
+			"destination": "/dining/halal-fine-dining-singapore-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/halal-fine-dining-singapore-2026/",
+			"destination": "/dining/halal-fine-dining-singapore-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/humidity-resistant-makeup-science-tropical-climate",
+			"destination": "/beauty/humidity-resistant-makeup-science-tropical-climate/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/humidity-resistant-makeup-science-tropical-climate/",
+			"destination": "/beauty/humidity-resistant-makeup-science-tropical-climate/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/jakarta-fashion-week-2025",
+			"destination": "/style/jakarta-fashion-week-2025/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/jakarta-fashion-week-2025/",
+			"destination": "/style/jakarta-fashion-week-2025/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value",
+			"destination": "/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/",
+			"destination": "/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/kering-reports-revenue-decline-gucci-struggles",
+			"destination": "/style/kering-reports-revenue-decline-gucci-struggles/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/kering-reports-revenue-decline-gucci-struggles/",
+			"destination": "/style/kering-reports-revenue-decline-gucci-struggles/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/korean-fashion-brands-2026",
+			"destination": "/style/korean-fashion-brands-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/korean-fashion-brands-2026/",
+			"destination": "/style/korean-fashion-brands-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/korean-heritage-brands-renaissance",
+			"destination": "/style/korean-heritage-brands-renaissance/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/korean-heritage-brands-renaissance/",
+			"destination": "/style/korean-heritage-brands-renaissance/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025",
+			"destination": "/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/",
+			"destination": "/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/quiet-luxury-brands-worn-by-wealthy-insiders",
+			"destination": "/style/quiet-luxury-brands-worn-by-wealthy-insiders/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/quiet-luxury-brands-worn-by-wealthy-insiders/",
+			"destination": "/style/quiet-luxury-brands-worn-by-wealthy-insiders/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/seasonal-makeup-transition-summer-autumn-colors",
+			"destination": "/beauty/seasonal-makeup-transition-summer-autumn-colors/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/seasonal-makeup-transition-summer-autumn-colors/",
+			"destination": "/beauty/seasonal-makeup-transition-summer-autumn-colors/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/seoul-fashion-week-fw-2026",
+			"destination": "/style/seoul-fashion-week-fw-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/seoul-fashion-week-fw-2026/",
+			"destination": "/style/seoul-fashion-week-fw-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-10-best-shows-of-london-fashion-week-fw26-ranked",
+			"destination": "/style/the-10-best-shows-of-london-fashion-week-fw26-ranked/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-10-best-shows-of-london-fashion-week-fw26-ranked/",
+			"destination": "/style/the-10-best-shows-of-london-fashion-week-fw26-ranked/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-10-best-shows-of-milan-fashion-week-fw26-ranked",
+			"destination": "/style/the-10-best-shows-of-milan-fashion-week-fw26-ranked/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-10-best-shows-of-milan-fashion-week-fw26-ranked/",
+			"destination": "/style/the-10-best-shows-of-milan-fashion-week-fw26-ranked/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-10-best-shows-of-new-york-fashion-week-fw26-ranked",
+			"destination": "/style/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/",
+			"destination": "/style/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook",
+			"destination": "/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/",
+			"destination": "/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-complete-guide-to-investment-dressing",
+			"destination": "/guides/the-complete-guide-to-investment-dressing/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-complete-guide-to-investment-dressing/",
+			"destination": "/guides/the-complete-guide-to-investment-dressing/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-complete-guide-to-quiet-luxury",
+			"destination": "/guides/the-complete-guide-to-quiet-luxury/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-complete-guide-to-quiet-luxury/",
+			"destination": "/guides/the-complete-guide-to-quiet-luxury/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics",
+			"destination": "/guides/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/",
+			"destination": "/guides/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/why-designer-collaborations-keep-failing-hm-gets-wrong",
+			"destination": "/style/why-designer-collaborations-keep-failing-hm-gets-wrong/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/why-designer-collaborations-keep-failing-hm-gets-wrong/",
+			"destination": "/style/why-designer-collaborations-keep-failing-hm-gets-wrong/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/why-quiet-luxury-is-fashion-biggest-contradiction",
+			"destination": "/style/why-quiet-luxury-is-fashion-biggest-contradiction/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/",
+			"destination": "/style/why-quiet-luxury-is-fashion-biggest-contradiction/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/wired-earphones-fashion-trend-comeback-2026",
+			"destination": "/style/wired-earphones-fashion-trend-comeback-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/wired-earphones-fashion-trend-comeback-2026/",
+			"destination": "/style/wired-earphones-fashion-trend-comeback-2026/",
+			"permanent": true
+		},
+		{
+			"source": "/guides/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones",
+			"destination": "/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/",
+			"permanent": true
+		},
+		{
+			"source": "/guides/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/",
+			"destination": "/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/",
+			"permanent": true
+		},
+		{
+			"source": "/home",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/home/",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/page-sitemap.xml",
+			"destination": "/sitemap-pages.xml",
+			"permanent": true
+		},
+		{
+			"source": "/post-sitemap.xml",
+			"destination": "/sitemap-posts.xml",
+			"permanent": true
+		},
+		{
+			"source": "/sitemap_index.xml",
+			"destination": "/sitemap-index.xml",
+			"permanent": true
+		},
+		{
+			"source": "/about-us",
+			"destination": "/about",
+			"permanent": true
+		},
+		{
+			"source": "/about-us/",
+			"destination": "/about",
+			"permanent": true
+		},
+		{
+			"source": "/contact-us",
+			"destination": "/contact",
+			"permanent": true
+		},
+		{
+			"source": "/contact-us/",
+			"destination": "/contact",
 			"permanent": true
 		}
 	],
@@ -12,15 +377,27 @@
 		{
 			"source": "/keystatic/:path*",
 			"headers": [
-				{ "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-				{ "key": "Cache-Control", "value": "no-store" }
+				{
+					"key": "X-Robots-Tag",
+					"value": "noindex, nofollow"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "no-store"
+				}
 			]
 		},
 		{
 			"source": "/api/keystatic/:path*",
 			"headers": [
-				{ "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-				{ "key": "Cache-Control", "value": "no-store" }
+				{
+					"key": "X-Robots-Tag",
+					"value": "noindex, nofollow"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "no-store"
+				}
 			]
 		}
 	]
