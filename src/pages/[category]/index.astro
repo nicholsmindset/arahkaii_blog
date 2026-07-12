@@ -21,6 +21,19 @@ const DEKS: Record<string, string> = {
 	guides: 'Considered lists, sourced and credited with care.',
 };
 
+// Search-facing descriptions (140–160 chars); the DEKS above stay as the
+// on-page poetry.
+const META: Record<string, string> = {
+	style: 'Modest fashion and Asian style, considered — designer profiles, fashion-week reporting, quiet luxury and wardrobe guides from Seoul to Jakarta to Lahore.',
+	beauty: 'Asian beauty, edited with care — K-beauty and C-beauty brand guides, halal-conscious skincare science and makeup that survives tropical humidity.',
+	dining: 'Halal dining across Asia, verified — fine-dining guides, restaurant reporting and kitchens worth travelling for, with certification checked per venue.',
+	travel: 'Muslim-friendly luxury travel across Asia — prayer-aware city guides, considered hotels and unhurried itineraries from Singapore to the region beyond.',
+	culture: 'Asian culture through a considered lens — architecture, craft, art, literature and the long view on the ideas shaping modern Asian luxury.',
+	living: 'Modern Asian living, modestly told — homes built around light and family, conscious consumption and the quiet rituals of a considered life.',
+	people: 'The people shaping modern Asian luxury — founders, designers, chefs and makers, and the long apprenticeships behind beautiful things.',
+	guides: 'Arahkaii guides — considered, sourced and credited lists across style, beauty, dining and travel, checked and refreshed by our editors.',
+};
+
 export async function getStaticPaths() {
 	return ['style', 'beauty', 'dining', 'travel', 'culture', 'living', 'people', 'guides'].map(
 		(category) => ({ params: { category } }),
@@ -30,6 +43,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 const label = cap(category!);
 const dek = DEKS[category!] ?? '';
+const meta = META[category!] ?? dek;
 
 const all = await getCards();
 const cards = all.filter((c) => c.category === category);
@@ -38,11 +52,14 @@ let pool = cards.slice(1);
 // Thin categories: top up the river with cross-category stories so it reads full.
 if (pool.length < 4) pool = [...pool, ...all.filter((c) => c.category !== category).slice(0, 6)];
 
-// filter chips — most common tags (decorative wayfinding, matches the prototype)
+// filter chips — most common tags. "All" shows the editorial river; a tag chip
+// swaps in a simple filtered grid of matching stories (same interaction
+// grammar as /latest).
 const counts = new Map<string, number>();
 for (const c of cards) for (const t of c.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
 const topTags = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t]) => t);
 const prettify = (t: string) => t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+const dateFormat = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 // build the alternating river
 type Row =
@@ -68,11 +85,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
-	collectionPageSchema({ name: `${label} — Arahkaii`, url: canonical, description: dek }),
+	collectionPageSchema({ name: `${label} — Arahkaii`, url: canonical, description: meta }),
 ];
 ---
 
-<BaseLayout title={`${label} — Arahkaii`} description={dek} activeCategory={label} jsonLd={jsonLd}>
+<BaseLayout title={`${label} — Arahkaii`} description={meta} activeCategory={label} jsonLd={jsonLd}>
 	<!-- HERO BAND (no image) -->
 	<section class="cat-hero">
 		<div class="wrap">
@@ -80,10 +97,10 @@ const jsonLd = [
 			<p class="dek reveal" data-stagger="60" style="max-width:32ch;margin:20px auto 0">{dek}</p>
 			{
 				topTags.length > 0 && (
-					<div class="chips reveal" data-stagger="120">
-						<button class="chip" aria-current="true">All</button>
+					<div class="chips reveal" data-stagger="120" role="group" aria-label={`Filter ${label} stories by theme`}>
+						<button type="button" class="chip" data-cat-chip="all" aria-pressed="true">All</button>
 						{topTags.map((t) => (
-							<button class="chip">{prettify(t)}</button>
+							<button type="button" class="chip" data-cat-chip={t} aria-pressed="false">{prettify(t)}</button>
 						))}
 					</div>
 				)
@@ -91,6 +108,8 @@ const jsonLd = [
 		</div>
 	</section>
 
+	<!-- EDITORIAL VIEW (lead + river) — hidden while a tag chip is active -->
+	<div data-cat-river>
 	<!-- LEAD ROW (full-width 3:2) -->
 	{
 		lead && (
@@ -215,6 +234,64 @@ const jsonLd = [
 			<a class="tlink" href="/latest">Load more</a>
 		</div>
 	</div>
+	</div>
+
+	<!-- FILTERED VIEW — simple grid shown when a tag chip is active -->
+	{
+		topTags.length > 0 && (
+			<section class="wrap" data-cat-filtered hidden style="padding-bottom:96px">
+				<div class="latest-grid">
+					{cards.map((c) => (
+						<article class="latest-card" data-cat-tags={c.tags.join('|')}>
+							<a class="media latest-card__image" href={c.url}>
+								<Image src={c.image} alt={c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" />
+							</a>
+							<div class="latest-card__copy">
+								<p class="latest-card__top">
+									<span>{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</span>
+									{c.date && <time datetime={c.date.toISOString()}>{dateFormat.format(c.date)}</time>}
+								</p>
+								<h3><a href={c.url}>{c.title}</a></h3>
+								<p>{c.standfirst}</p>
+							</div>
+						</article>
+					))}
+				</div>
+				<p class="latest-empty" data-cat-empty hidden>
+					No stories carry this theme yet.
+				</p>
+			</section>
+		)
+	}
+
+	<script>
+		function wireCategoryChips() {
+			const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-cat-chip]'));
+			const river = document.querySelector<HTMLElement>('[data-cat-river]');
+			const filtered = document.querySelector<HTMLElement>('[data-cat-filtered]');
+			if (!chips.length || !river || !filtered || filtered.dataset.wired) return;
+			filtered.dataset.wired = '1';
+			const cards = Array.from(filtered.querySelectorAll<HTMLElement>('[data-cat-tags]'));
+			const empty = filtered.querySelector<HTMLElement>('[data-cat-empty]');
+			chips.forEach((chip) => chip.addEventListener('click', () => {
+				const tag = chip.dataset.catChip || 'all';
+				chips.forEach((item) => item.setAttribute('aria-pressed', String(item === chip)));
+				const showRiver = tag === 'all';
+				river.hidden = !showRiver;
+				filtered.hidden = showRiver;
+				if (showRiver) return;
+				let visible = 0;
+				cards.forEach((card) => {
+					const show = (card.dataset.catTags || '').split('|').includes(tag);
+					card.hidden = !show;
+					if (show) visible += 1;
+				});
+				if (empty) empty.hidden = visible > 0;
+			}));
+		}
+		document.addEventListener('astro:page-load', wireCategoryChips);
+		wireCategoryChips();
+	</script>
 
 	<!-- NEWSLETTER BAND -->
 	<section class="tint" style="padding-block:clamp(72px,9vw,128px)">
