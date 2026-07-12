@@ -14,6 +14,8 @@ date: 2025-11-16
 heroImage: "../../../assets/images/archive/southeast-asian-cities-digital-nomad-luxury-lifestyle-2/tropical_work_life_balance_paradise_aaz2g.jpg"
 heroCaption: ""
 heroCredit: "Arahkaii"
+halalStatus:
+  status: not-applicable
 legacyWpSlug: "southeast-asian-cities-digital-nomad-luxury-lifestyle-2"
 seoTitle: "The best digital nomad cities in Southeast Asia"
 metaDescription: "Five Southeast Asian cities for remote workers, weighed on cost, community, connectivity and lifestyle — from Chiang Mai's ease to Singapore's polish."

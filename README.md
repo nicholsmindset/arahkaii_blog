@@ -39,7 +39,6 @@ src/assets/images/         Local-first editorial imagery
 src/styles/                Design tokens and page/article styles
 references/                Brand, editorial, SEO, and image rules
 scripts/                   Publishing, migration, and validation tools
-netlify/edge-functions/    Netlify-domain indexing safeguards
 ```
 
 Read [CLAUDE.md](./CLAUDE.md) for the standing design and editorial rules and [AGENTS.md](./AGENTS.md) for contributor workflow.

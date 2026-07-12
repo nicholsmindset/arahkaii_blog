@@ -41,9 +41,11 @@ layer. Both routes preserve Git review and human approval.
 `style` · `beauty` · `dining` · `travel` · `culture` · `living` · `people` ·
 `guides`
 
-All eight stay in the nav (v2-styled), plus a curated **"The Long Read"** link
-(→ `/latest`). URLs are `/<category>/<slug>/`. Preserve legacy WordPress slugs
-via `legacyWpSlug` for 301s.
+The masthead stays deliberately concise (six categories plus **"The Majlis"**
+→ `/franchises/the-majlis/`); the full eight-category taxonomy lives in the
+overlay menu and footer, alongside **"Latest stories"** (→ `/latest`). URLs are
+`/<category>/<slug>/`. Preserve legacy WordPress slugs via `legacyWpSlug` for
+301s.
 
 ## Typography — "Didone speaks, sans signposts" (one display + one serif + one sans)
 
@@ -161,7 +163,7 @@ without approval + a logged licence**; generate when rights are unclear.
 ```
 src/
   content.config.ts          # Zod schema (posts + authors)
-  content/posts/2026/*.mdx    # articles
+  content/posts/2026/*.md     # articles (.mdx also supported when a body needs components)
   content/authors/*.md        # author profiles
   components/article/         # Headline · Standfirst · Byline · DropCap · PullQuote · Figure
   layouts/                    # BaseLayout (nav/footer/progress) · ArticleLayout
@@ -177,7 +179,8 @@ scripts/                      # new-post.mjs · image-prompt.mjs · image-gen.mj
   `OPENROUTER_API_KEY` in `.env` (sourcing via Firecrawl works now).
 - **Cloudflare R2** — local-first today; migrate when volume justifies it.
 - **MailerLite digest automation** — capture is wired through `/api/subscribe`
-  and requires `MAILERLITE_API_KEY` in Netlify; the RSS digest remains deferred.
+  and requires `MAILERLITE_API_KEY` in Vercel; the RSS digest remains deferred.
 - **Content** — replacement images for the two placeholder drafts and completion
   of the remaining hidden drafts.
-- **`netlify.toml` 301s** are generated from `legacyWpSlug` via `astro.config.mjs`.
+- **301 redirects** are generated from `legacyWpSlug` via `astro.config.mjs`
+  (`legacyRedirects()`) and served by the Vercel adapter — there is no `netlify.toml`.

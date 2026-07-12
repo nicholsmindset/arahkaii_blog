@@ -102,8 +102,49 @@ if (imageFailures.length) {
 	for (const item of imageFailures) console.error(`- ${item}`);
 }
 
-if (semanticFailures.length || missingTargets.size || hierarchyFailures.length || imageFailures.length) process.exit(1);
+// ── Sitemap ↔ build parity ────────────────────────────────────────────────
+// The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
+// with the emitted pages: every sitemap URL resolves to a real page, and
+// every indexable page appears in exactly one segment.
+const sitemapFailures = [];
+const indexFile = path.join(PUBLIC_ROOT, 'sitemap-index.xml');
+if (!fs.existsSync(indexFile)) {
+	sitemapFailures.push('sitemap-index.xml missing from build output');
+} else {
+	const segments = [...fs.readFileSync(indexFile, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)]
+		.map((m) => new URL(m[1]).pathname);
+	const seen = new Map(); // path → segment that listed it
+	for (const segment of segments) {
+		const segmentFile = path.join(PUBLIC_ROOT, segment.replace(/^\//, ''));
+		if (!fs.existsSync(segmentFile)) {
+			sitemapFailures.push(`${segment}: listed in the index but not emitted`);
+			continue;
+		}
+		for (const m of fs.readFileSync(segmentFile, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)) {
+			const urlPath = new URL(m[1]).pathname;
+			if (!targetExists(urlPath)) sitemapFailures.push(`${segment}: ${urlPath} does not resolve to a built page`);
+			if (seen.has(urlPath)) sitemapFailures.push(`${urlPath} listed in both ${seen.get(urlPath)} and ${segment}`);
+			seen.set(urlPath, segment);
+		}
+	}
+	// Completeness: every indexable emitted page must be in a segment.
+	for (const file of htmlFiles) {
+		const relative = path.relative(PUBLIC_ROOT, file);
+		if (relative === '404.html') continue;
+		const html = fs.readFileSync(file, 'utf8');
+		if (/name="robots" content="noindex/.test(html)) continue;
+		const urlPath = '/' + relative.replace(/index\.html$/, '').replace(/\.html$/, '/');
+		if (!seen.has(urlPath)) sitemapFailures.push(`${urlPath} is indexable but missing from every sitemap segment`);
+	}
+}
+
+if (sitemapFailures.length) {
+	console.error('\nSitemap failures:');
+	for (const item of sitemapFailures) console.error(`- ${item}`);
+}
+
+if (semanticFailures.length || missingTargets.size || hierarchyFailures.length || imageFailures.length || sitemapFailures.length) process.exit(1);
 
 console.log(
-	`✓ ${htmlFiles.length} HTML pages checked · headings, landmarks, article images and internal links validated.`,
+	`✓ ${htmlFiles.length} HTML pages checked · headings, landmarks, article images, internal links and segmented sitemaps validated.`,
 );

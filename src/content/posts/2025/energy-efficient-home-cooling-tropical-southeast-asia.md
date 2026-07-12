@@ -10,8 +10,8 @@ heroImage: "../../../assets/images/archive/energy-efficient-home-cooling-tropica
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "energy-efficient-home-cooling-tropical-southeast-asia"
-seoTitle: "How to keep a house cool without AC in the tropics"
-metaDescription: "The science of staying cool for less — how air movement, passive design and a wiser thermostat cut tropical cooling bills by a third, without losing comfort."
+seoTitle: "How to cool a room without AC — tropical home science"
+metaDescription: "How to cool a room — and a whole home — without leaning on AC: air movement, passive design and a wiser thermostat cut tropical cooling bills by a third."
 faq:
   - q: "How can I keep a house cool without AC in the tropics?"
     a: "Lean on passive design and air movement. Shade east and west facades with overhangs and trees to block heat before it enters, use thermal mass and cross-ventilation, and run ceiling fans — moving air accelerates heat loss from the skin, so a room feels cooler at a higher temperature."

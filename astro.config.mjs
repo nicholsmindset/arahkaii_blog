@@ -5,7 +5,6 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
-import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 
 // Tailwind v4 is wired via PostCSS (postcss.config.mjs), not @tailwindcss/vite,
@@ -70,32 +69,19 @@ export default defineConfig({
 	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
 	redirects: {
 		...legacyRedirects(),
+		// 1-for-1 map of every published WordPress URL whose path changed —
+		// the old permalinks were category-prefixed (/fashion/<slug>/) and many
+		// posts were recategorised. Generated from real-export.xml; see
+		// src/data/legacy-redirects.json (includes the old WP sitemap names).
+		...JSON.parse(fs.readFileSync('./src/data/legacy-redirects.json', 'utf8')),
 		// Renamed WordPress pages → our canonical paths.
 		'/about-us': '/about',
 		'/contact-us': '/contact',
 	},
-	integrations: [
-		react(),
-		keystatic(),
-		mdx(),
-		sitemap({
-			// Keep non-canonical surfaces out of the index map. Per-post `noindex`
-			// is enforced authoritatively via the <meta name="robots"> tag in Seo.astro
-			// (Google honours the tag over sitemap inclusion).
-			filter: (page) => !page.includes('/404'),
-			// Stamp a fresh lastmod and declare the British-English locale.
-			serialize: (item) => ({
-				...item,
-				lastmod: new Date().toISOString(),
-				changefreq: ChangeFreqEnum.WEEKLY,
-				priority: 0.7,
-			}),
-			i18n: {
-				defaultLocale: 'en-GB',
-				locales: { 'en-GB': 'en-GB' },
-			},
-		}),
-	],
+	// Sitemaps are hand-rolled, segmented static endpoints (src/pages/
+	// sitemap-*.xml.ts) so Search Console reports indexing per content type;
+	// scripts/validate-build.mjs enforces sitemap ↔ build parity.
+	integrations: [react(), keystatic(), mdx()],
 	// Vercel serverless output powers the Keystatic API and newsletter endpoint
 	// while editorial pages remain prerendered for speed and resilience.
 	adapter: vercel(),

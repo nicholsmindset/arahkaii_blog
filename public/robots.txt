@@ -38,3 +38,8 @@ User-agent: Meta-ExternalAgent
 Disallow: /
 
 Sitemap: https://arahkaii.com/sitemap-index.xml
+Sitemap: https://arahkaii.com/sitemap-pages.xml
+Sitemap: https://arahkaii.com/sitemap-posts.xml
+Sitemap: https://arahkaii.com/sitemap-categories.xml
+Sitemap: https://arahkaii.com/sitemap-hubs.xml
+Sitemap: https://arahkaii.com/sitemap-authors.xml

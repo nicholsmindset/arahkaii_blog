@@ -2,6 +2,7 @@
 title: "Jakarta Fashion Week 2025: Indonesia Declares Fashion Independence as Southeast Asia Finds Its Voice"
 standfirst: "Jakarta Fashion Week 2025 was the event that put Indonesian fashion on the global map."
 category: style
+cluster: modest-fashion-asia
 tags:
   - "fashion-week"
   - "indonesian-fashion"

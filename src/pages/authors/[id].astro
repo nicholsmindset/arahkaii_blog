@@ -36,6 +36,9 @@ if (a.avatar) {
 	const img = await getImage({ src: a.avatar, width: 600, height: 600, format: 'jpg' });
 	avatarUrl = new URL(img.src, Astro.site).toString();
 }
+// Meta descriptions truncate around 160 chars in search results; the full bio
+// stays on-page and in Person schema context via the page itself.
+const metaDescription = a.bio.length > 158 ? `${a.bio.slice(0, a.bio.lastIndexOf(' ', 155))}…` : a.bio;
 const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
@@ -57,7 +60,7 @@ const jsonLd = [
 
 <BaseLayout
 	title={`${a.name} — Arahkaii`}
-	description={a.bio}
+	description={metaDescription}
 	activeCategory="People"
 	image={avatarUrl}
 	jsonLd={jsonLd}

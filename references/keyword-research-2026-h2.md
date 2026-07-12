@@ -154,3 +154,38 @@ The `hijab` / `kebaya` / `muslim friendly` seeds surface explicit Indonesian adu
 
 ## Dated hooks (verify against MOM gazette near the time — NO Deepavali)
 Eid al-Adha ~19 Jun · ILTM Asia Pacific late Jun · National Day 9 Aug · Mid-Autumn ~25 Sep · F1 Singapore 9–11 Oct · KL fashion week ~Aug · Jakarta fashion week ~Oct–Nov · Christmas/year-end Nov–Dec · CNY ~Jan 2027 · Ramadan ~17 Feb–19 Mar 2027 · Hari Raya/Eid ~20 Mar 2027.
+
+## Appendix — July 2026 title/meta optimisation pass (live Ahrefs API, 12 Jul 2026)
+
+Per-article primary keywords validated for the published corpus (country = US
+unless marked SG; `g` = global volume). Articles not listed were checked and
+already carried their best realistic keyword.
+
+| Article | Primary keyword | Vol | g | KD | Action taken |
+|---|---|--:|--:|--:|---|
+| humidity-resistant-makeup | sweat proof makeup | 1,745 | 1,800 | 0 | H1 + title + meta rewritten (old target ~0 vol) |
+| accidental-it-bag ($3 tote) | trader joes tote bag | 20,273 | 22,000 | 2 | H1 + title + meta now name the bag (was unnamed) |
+| k-beauty-brands-2026 | korean beauty brands | 476 | 1,800 | 15 | H1 + title + meta (was "k-beauty brands", 43 vol) |
+| investment-dressing guide | investment pieces | 59 | 200 | 0 | H1 + title + meta ("investment dressing" ≈ 0 vol; cost per wear 150/KD3 secondary) |
+| foundation-shade guide | how to find your foundation shade | 1,046 | 2,000 | 14 | seoTitle + meta (was "foundation for asian skin", ~0) |
+| energy-efficient-cooling | how to cool a room without ac | 10 SG | 2,500 | — | seoTitle + meta phrase-matched |
+| quiet-luxury-insiders | quiet luxury brands | 4,718 | 9,700 | 5 | already led; meta adds "old money brands" (1,156/5,700/KD0) |
+| korean-fashion-brands-2026 | korean clothing brands | 1,912 | 5,100 | 34 | meta adds the higher-volume variant |
+| from-followers-to-founders | creator economy | 3,190 | 7,700 | 39 | meta adds the head term (aspirational) |
+| quiet-luxury guide | quiet luxury | 9,211 | 36,000 | 22 | seoTitle trimmed ≤60 |
+| self-gift bags | investment bags | 262 | 450 | 4 | seoTitle trimmed ≤60 |
+| dopamine-dressing | dopamine dressing | 13,508 | 22,000 | 5 | validated — no change needed |
+| k-beauty-broke-the-algorithm | why is korean skincare so good | 837 | 1,100 | 6 | validated — no change needed |
+| halal-fine-dining (pillar) | halal fine dining singapore | 981 SG | 1,200 | 6 | validated — no change needed |
+| modest-fashion pillar | modest fashion | 2,547 | 8,900 | 15 | validated — no change needed |
+| chinese-makeup-brands | chinese makeup brands | 570 | 1,700 | 30 | validated — no change needed |
+| bts-individual-style | bts outfits / bts fashion | 273 | 1,000 | 0 | validated — no change needed |
+| songzio-bts | songzio | 223 | 1,700 | 0 | validated — no change needed |
+| sustainable-living manifesto | sustainable luxury | 209 | 800 | 8 | validated — no change needed |
+| seoul-fashion-week | seoul fashion week | 79 | 700 | 1 | validated — no change needed |
+
+Notes: hanbok (38,726/124k/KD45), korean skincare (48k/262k/KD47), capsule
+wardrobe (27k/75k/KD35), things to do in singapore (12.4k SG/KD4) noted as
+cluster/head opportunities for future pieces, not retrofits. Fashion-week
+city terms are high-KD branded news; the "{City} Fashion Week FW26 … ranked"
+long-tail titles stay as-is. ~3.5k API units spent.

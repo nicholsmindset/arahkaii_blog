@@ -19,13 +19,26 @@ const articleSchema = {
 	standfirst: fields.text({
 		label: 'Standfirst',
 		multiline: true,
-		validation: { isRequired: true, length: { max: 220 } },
+		description:
+			'A complete, self-contained ANSWER to the article’s implied question — not a teaser. If an AI quoted only this paragraph, the reader should have the full answer. 40–60 words.',
+		validation: { isRequired: true, length: { min: 80, max: 220 } },
 	}),
 	category: fields.select({ label: 'Category', options: categories, defaultValue: 'style' }),
-	tags: fields.array(fields.text({ label: 'Tag' }), {
-		label: 'Tags',
-		itemLabel: (props) => props.value || 'New tag',
-	}),
+	tags: fields.array(
+		fields.text({
+			label: 'Tag',
+			validation: {
+				pattern: {
+					regex: /^[a-z0-9]+(-[a-z0-9]+)*$/,
+					message: 'Lowercase, hyphenated (e.g. fashion-week) — keeps tag archives from splitting.',
+				},
+			},
+		}),
+		{
+			label: 'Tags',
+			itemLabel: (props) => props.value || 'New tag',
+		},
+	),
 	author: fields.relationship({ label: 'Author', collection: 'authors', validation: { isRequired: true } }),
 	date: fields.date({ label: 'Publication date', validation: { isRequired: true } }),
 	updatedDate: fields.date({ label: 'Last updated' }),
@@ -49,8 +62,17 @@ const articleSchema = {
 		defaultValue: false,
 	}),
 	legacyWpSlug: fields.text({ label: 'Legacy WordPress slug', description: 'Preserves the old URL as a permanent redirect.' }),
-	seoTitle: fields.text({ label: 'SEO title', validation: { length: { max: 70 } } }),
-	metaDescription: fields.text({ label: 'Meta description', multiline: true, validation: { length: { max: 160 } } }),
+	seoTitle: fields.text({
+		label: 'SEO title',
+		description: 'Search-result headline. Aim for ≤60 characters, keyword first; falls back to the headline when empty.',
+		validation: { length: { max: 70 } },
+	}),
+	metaDescription: fields.text({
+		label: 'Meta description',
+		multiline: true,
+		description: '140–160 characters. A complete answer in the pillar voice — Google truncates beyond ~160.',
+		validation: { length: { max: 160 } },
+	}),
 	noindex: fields.checkbox({ label: 'Hide from search engines', defaultValue: false }),
 	faq: fields.array(fields.object({
 		q: fields.text({ label: 'Question', validation: { isRequired: true } }),
@@ -125,7 +147,7 @@ const posts = (year: number) => collection({
 	label: `Articles — ${year}`,
 	path: `src/content/posts/${year}/*`,
 	slugField: 'title',
-	columns: ['title', 'category', 'date', 'draft'],
+	columns: ['title', 'category', 'articleType', 'date', 'draft'],
 	entryLayout: 'content',
 	format: { contentField: 'body' },
 	schema: articleSchema,
@@ -211,7 +233,11 @@ export default config({
 			schema: {
 				name: fields.slug({ name: { label: 'Name', validation: { isRequired: true } } }),
 				description: fields.text({ label: 'Description', multiline: true, validation: { isRequired: true } }),
-				pillarPost: fields.text({ label: 'Pillar article ID' }), targetKeyword: fields.text({ label: 'Target topic' }),
+				pillarPost: fields.text({
+					label: 'Pillar article ID',
+					description: 'Year-prefixed post ID, e.g. 2026/halal-fine-dining-singapore-2026 — the definitive ranked guide this cluster links up to. Must also carry “Pillar article” in its own entry.',
+				}),
+				targetKeyword: fields.text({ label: 'Target topic' }),
 				content: fields.emptyContent({ extension: 'md' }),
 			},
 		}),

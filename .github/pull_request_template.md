@@ -5,7 +5,7 @@
 ## Verification
 
 - [ ] `npm run verify` passes
-- [ ] Netlify preview reviewed at desktop and mobile widths
+- [ ] Vercel preview reviewed at desktop and mobile widths
 - [ ] No secrets, temporary research files, or unlicensed assets are included
 
 ## Editorial review
@@ -23,4 +23,4 @@
 ## Publication gate
 
 Merging this PR may publish its article to `arahkaii.com`. Do not merge until
-the Netlify preview and all checks are green.
+the Vercel preview and all checks are green.

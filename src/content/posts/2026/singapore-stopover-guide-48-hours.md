@@ -19,6 +19,9 @@ draft: false
 legacyWpSlug: "singapore-stopover-guide-48-hours"
 seoTitle: "Singapore stopover: 48 hours done properly"
 metaDescription: "A 48 hours in Singapore stopover itinerary — where to stay, the hawker and neighbourhood circuit, the evening edit and the unhurried departure."
+halalStatus:
+  status: mixed-status-guide
+  note: "This itinerary spans certified and uncertified venues. For per-restaurant halal verification, follow our dedicated Singapore halal fine-dining guide."
 howToName: "How to spend a 48-hour stopover in Singapore"
 howTo:
   - name: "Arrive, check in, reset"

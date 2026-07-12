@@ -12,7 +12,7 @@ heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "from-followers-to-founders-3-content-creators-building-empires-beyond-the-algorithm"
 seoTitle: "From followers to founders: 3 creator-led brands"
-metaDescription: "How three content creators turned audiences into companies — Nami Matcha, Little Puffy and Alchemai — and the quiet playbook behind creator-led brands."
+metaDescription: "Inside the creator economy's quiet playbook — how three content creators turned audiences into real companies: Nami Matcha, Little Puffy and Alchemai."
 listName: "Three creator-led brands built beyond the algorithm"
 listItems:
   - "Nami Matcha"

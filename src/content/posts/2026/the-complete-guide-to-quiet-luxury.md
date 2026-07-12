@@ -11,7 +11,7 @@ heroImage: "../../../assets/images/archive/the-complete-guide-to-quiet-luxury/st
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "the-complete-guide-to-quiet-luxury"
-seoTitle: "Quiet luxury: why stealth wealth is reshaping fashion in 2026"
+seoTitle: "Quiet luxury: why stealth wealth is reshaping fashion"
 metaDescription: "Quiet luxury, examined honestly — the data, the contradictions and the old-money style codes behind fashion's most debated movement in 2026."
 faq:
   - q: "Which affordable brands offer authentic quiet luxury under $500?"

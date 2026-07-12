@@ -2,6 +2,7 @@
 title: "Brightspot SuperMRKT 2025: Where Jakarta's Creative Economy Comes to Shop"
 standfirst: "Brightspot SuperMRKT Jakarta returns as Indonesia's most influential creative market, and the 2025 edition is its most ambitious yet."
 category: style
+cluster: modest-fashion-asia
 tags:
   - "indonesian-fashion"
   - "industry-news"

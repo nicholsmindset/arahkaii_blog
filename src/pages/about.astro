@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { Image } from 'astro:assets';
-import aboutImage from '../assets/blog-placeholder-about.jpg';
+import aboutImage from '../assets/brand-about.png';
 import {
 	SITE,
 	organizationSchema,
@@ -93,7 +93,7 @@ const pillars: [string, string][] = [
 
 	<figure class="mf-image">
 		<div class="img real r-16x9 blurup">
-			<Image src={aboutImage} alt="A quiet Arahkaii editorial interior in soft natural light" widths={[800, 1280, 1920]} sizes="100vw" />
+			<Image src={aboutImage} alt="The Arahkaii wordmark on a warm-bone field with generous negative space" widths={[800, 1280, 1920]} sizes="100vw" />
 		</div>
 		<figcaption class="caption">
 			Soft, even light. Generous negative space. The grammar of the brand.

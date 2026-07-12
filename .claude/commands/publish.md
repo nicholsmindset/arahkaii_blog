@@ -68,7 +68,7 @@ commit and push:
 ```bash
 git add src/content/posts src/assets/images && git commit -m "post: <title>" && git push
 ```
-Netlify rebuilds (~60–90s) → live at `/<category>/<slug>/`. The `legacyWpSlug`
+Vercel rebuilds (~60–90s) → live at `/<category>/<slug>/`. The `legacyWpSlug`
 field is for migrated posts only; new posts omit it.
 
 ## Not yet wired

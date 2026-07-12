@@ -17,6 +17,9 @@
 	--ink-2: #5a5a5a;
 	--hairline: #e6e2dc;
 	--emerald: #0f3d33; /* cool UI-signpost accent — eyebrows, hairlines, focus */
+	--emerald-soft: #5d8e84; /* desaturated emerald — verified-mark dot only */
+	--hairline-2: #d5cec4; /* slightly heavier warm hairline — verified-card border */
+	--bone-3: #cdbfa6; /* deep-bone numeral tint — ranked-list numbers */
 	--accent2: #4a2d3a; /* warm editorial accent (aubergine) — footer, drop cap, rules, hovers */
 	--footer-bg: #4a2d3a;
 	--footer-rule: rgba(255, 255, 255, 0.16);

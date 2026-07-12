@@ -26,7 +26,10 @@ const people = fill(byCategory('people'), 4, hero);
 const majlis = fill(cards.filter((card) => ['culture', 'living', 'guides', 'people'].includes(card.category)), 3, hero);
 ---
 
-<BaseLayout title="Arahkaii — Asia's modern-luxury edit, modestly told">
+<BaseLayout
+	title="Arahkaii — Asia's modern-luxury edit, modestly told"
+	description="Asia's modern-luxury edit, modestly told — considered reporting on style, beauty, halal dining, travel and the people shaping modern Asian luxury."
+>
 	<div class="home-shell">
 		{heroLead && hero.length >= 3 && <section class="home-hero" aria-labelledby="hero-title">
 			<div class="home-hero__grid">{hero.map((card) => <a class="home-hero__image media" href={card.url} aria-label={card.title}><Image src={card.image} alt={card.heroCaption || card.title} loading="eager" widths={[480,720,960]} sizes="(max-width:700px) 100vw, 33vw" /></a>)}</div>
@@ -60,7 +63,7 @@ const majlis = fill(cards.filter((card) => ['culture', 'living', 'guides', 'peop
 			<div class="compact-module people-module"><h2 class="home-section-title">People shaping Asia</h2><div class="people-grid">{people.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[320,560]} sizes="(max-width:700px) 50vw, 18vw" /></a><h3><a href={card.url}>{card.title}</a></h3><p class="home-meta">{card.byline}</p></article>)}</div><a class="home-link" href="/people">Meet the editors &amp; contributors <span aria-hidden="true">→</span></a></div>
 		</section>
 
-		{majlis.length >= 3 && <section class="majlis" aria-labelledby="majlis-title"><div class="majlis__head"><div><h2 id="majlis-title">The Majlis</h2><p>Long reads for a slower kind of luxury.</p></div><a class="home-link" href="/latest">Visit the Majlis <span aria-hidden="true">→</span></a></div><div class="majlis__grid">{majlis.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[480,800]} sizes="(max-width:700px) 100vw, 31vw" /></a><p class="home-kicker">Essay</p><h3><a href={card.url}>{card.title}</a></h3><p>{card.standfirst}</p><p class="home-meta">By {card.authorName} <span>{card.readingMinutes} min read</span></p></article>)}</div></section>}
+		{majlis.length >= 3 && <section class="majlis" aria-labelledby="majlis-title"><div class="majlis__head"><div><h2 id="majlis-title">The Majlis</h2><p>Long reads for a slower kind of luxury.</p></div><a class="home-link" href="/franchises/the-majlis/">Visit the Majlis <span aria-hidden="true">→</span></a></div><div class="majlis__grid">{majlis.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[480,800]} sizes="(max-width:700px) 100vw, 31vw" /></a><p class="home-kicker">Essay</p><h3><a href={card.url}>{card.title}</a></h3><p>{card.standfirst}</p><p class="home-meta">By {card.authorName} <span>{card.readingMinutes} min read</span></p></article>)}</div></section>}
 
 		<section class="home-newsletter" aria-labelledby="newsletter-title"><h2 id="newsletter-title">Sundays,<br />considered.</h2><div><p>Essays, edits and invitations for a life well-lived — delivered weekly.</p><NewsletterSignup class="home-newsletter__form" source="homepage"><p slot="note" class="field-note">By subscribing, you agree to receive emails from Arahkaii.</p></NewsletterSignup></div>{beauty[0] && <div class="media home-newsletter__image"><Image src={beauty[0].image} alt="A considered Sunday with Arahkaii" widths={[420,720]} sizes="28vw" /></div>}</section>
 	</div>

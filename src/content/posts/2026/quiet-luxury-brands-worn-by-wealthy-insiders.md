@@ -11,7 +11,7 @@ heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "quiet-luxury-brands-worn-by-wealthy-insiders"
 seoTitle: "Quiet luxury brands the wealthy actually wear"
-metaDescription: "Quiet luxury brands the genuinely wealthy wear — 12 houses, from Loro Piana to The Row, that define stealth wealth and old-money restraint."
+metaDescription: "Quiet luxury brands the genuinely wealthy wear — 12 houses from Loro Piana to The Row: the stealth wealth and old money brands insiders actually buy."
 listName: "12 quiet luxury brands wealthy insiders actually wear"
 listItems:
   - "Loro Piana"
