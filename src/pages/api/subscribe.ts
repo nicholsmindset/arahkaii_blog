@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import newsletterSettings from '../../content/settings/newsletter.json';
+import { isSameSite, withinRateLimit, clientIp } from '../../lib/api-guard';
 
 export const prerender = false;
 
@@ -17,16 +18,10 @@ function reply(status: number, body: Record<string, unknown>) {
 	});
 }
 
-export const POST: APIRoute = async ({ request }) => {
-	const origin = request.headers.get('origin');
-	if (origin) {
-		const originUrl = new URL(origin);
-		const requestUrl = new URL(request.url);
-		const loopback = new Set(['localhost', '127.0.0.1', '[::1]']);
-		const sameSite =
-			originUrl.host === requestUrl.host ||
-			(loopback.has(originUrl.hostname) && loopback.has(requestUrl.hostname));
-		if (!sameSite) return reply(403, { error: 'Forbidden' });
+export const POST: APIRoute = async ({ request, clientAddress }) => {
+	if (!isSameSite(request)) return reply(403, { error: 'Forbidden' });
+	if (!withinRateLimit(`subscribe:${clientIp(request, clientAddress)}`, 5, 60_000)) {
+		return reply(429, { error: 'Too many requests — please try again shortly' });
 	}
 
 	let payload: { email?: unknown; source?: unknown; website?: unknown };
@@ -93,7 +88,7 @@ export const POST: APIRoute = async ({ request }) => {
 			return reply(502, { error: 'Newsletter service rejected the request' });
 		}
 	} catch (error) {
-		console.error('MailerLite subscription unavailable', error);
+		console.error(`${provider} subscription unavailable`, error);
 		return reply(502, { error: 'Newsletter service is unavailable' });
 	}
 

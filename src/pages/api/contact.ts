@@ -1,12 +1,15 @@
 import type { APIRoute } from 'astro';
+import { isSameSite, withinRateLimit, clientIp } from '../../lib/api-guard';
 
 export const prerender = false;
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const clean = (value: FormDataEntryValue | null, max: number) => typeof value === 'string' ? value.trim().slice(0, max) : '';
 
-export const POST: APIRoute = async ({ request, redirect }) => {
-	const origin = request.headers.get('origin');
-	if (origin && new URL(origin).host !== new URL(request.url).host) return new Response('Forbidden', { status: 403 });
+export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
+	if (!isSameSite(request)) return new Response('Forbidden', { status: 403 });
+	if (!withinRateLimit(`contact:${clientIp(request, clientAddress)}`, 3, 60_000)) {
+		return new Response('Too many requests — please try again shortly.', { status: 429 });
+	}
 	const form = await request.formData();
 	if (clean(form.get('bot-field'), 200)) return redirect('/contact?sent=1', 303);
 	const name = clean(form.get('name'), 120);
