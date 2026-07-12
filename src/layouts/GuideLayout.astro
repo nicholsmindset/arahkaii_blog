@@ -42,6 +42,7 @@ interface Props {
 	tags?: string[];
 	date: Date;
 	readingMinutes?: number;
+	wordCount?: number;
 	heroImage: ImageMetadata;
 	heroCaption: string;
 	heroCredit: string;
@@ -75,6 +76,7 @@ const {
 	tags = [],
 	date,
 	readingMinutes,
+	wordCount,
 	heroImage,
 	heroCaption,
 	heroCredit,
@@ -123,6 +125,7 @@ const jsonLd = [
 		headline: title,
 		description: seoDescription,
 		image: ogImage,
+		wordCount,
 		datePublished,
 		dateModified,
 		authorName: author.name,

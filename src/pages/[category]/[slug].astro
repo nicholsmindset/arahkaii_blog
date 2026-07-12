@@ -23,6 +23,7 @@ const d = post.data;
 
 // Reading time: honour an explicit frontmatter value, else estimate from the body.
 const readingMinutes = d.readingMinutes ?? estimateReadingMinutes(post.body);
+const wordCount = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length || undefined;
 
 // Recirculation, drawn from the shared card index.
 const cards = await getCards();
@@ -70,6 +71,7 @@ const clusterItems = d.cluster ? others.filter((card) => card.cluster === d.clus
 	tags={d.tags}
 	date={d.date}
 	readingMinutes={readingMinutes}
+	wordCount={wordCount}
 	heroImage={d.heroImage}
 	heroCaption={d.heroCaption}
 	heroCredit={d.heroCredit}
