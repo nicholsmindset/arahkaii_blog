@@ -10,7 +10,7 @@ heroImage: "../../../assets/images/archive/the-self-gift-guide-7-future-vintage-
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics"
-seoTitle: "Investment bags: 7 designer bags that hold value and turn vintage"
+seoTitle: "Investment bags: 7 designer bags that hold value"
 metaDescription: "Seven investment bags — the designer bags that hold value and read as future vintage, from the Bottega Andiamo to The Row Margaux, backed by 2026 resale data."
 listName: "7 future-vintage investment bags poised to become classics"
 listItems:

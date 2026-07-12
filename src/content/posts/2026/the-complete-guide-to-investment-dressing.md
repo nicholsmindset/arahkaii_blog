@@ -1,5 +1,5 @@
 ---
-title: "The Complete Guide to Investment Dressing"
+title: "Investment dressing: the complete guide to investment pieces"
 standfirst: "The term “investment dressing” has been so thoroughly colonised by marketing that it now functions as justification for almost any purchase above SGD 200."
 kicker: "The Modest List"
 articleType: guide
@@ -13,8 +13,8 @@ heroImage: "../../../assets/images/archive/the-complete-guide-to-investment-dres
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "the-complete-guide-to-investment-dressing"
-seoTitle: "Investment dressing: the maths behind a wardrobe that holds value"
-metaDescription: "Investment dressing, honestly accounted: what cost per wear, resale data and the Asian secondary market reveal about wardrobe investment that actually pays."
+seoTitle: "Investment pieces: a wardrobe that holds its value"
+metaDescription: "Investment pieces, honestly accounted — what cost per wear, resale data and the Asian secondary market reveal about investment dressing that pays."
 howToName: "How to practise investment dressing"
 howTo:
   - name: "Audit your last 90 days of wear"

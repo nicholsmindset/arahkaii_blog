@@ -12,7 +12,7 @@ heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "korean-fashion-brands-2026"
 seoTitle: "Korean fashion brands building global empires in 2026"
-metaDescription: "These are the Korean fashion brands building real global empires in 2026 — from Gentle Monster's Google deal to Musinsa's $7.4bn IPO."
+metaDescription: "The Korean fashion and clothing brands building real global empires in 2026 — from Gentle Monster's Google tie-up to Musinsa's $7.4bn IPO."
 listName: "10 Korean fashion brands building global empires in 2026"
 listItems:
   - "Gentle Monster"

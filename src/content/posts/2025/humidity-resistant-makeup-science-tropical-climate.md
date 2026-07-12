@@ -1,5 +1,5 @@
 ---
-title: "The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works"
+title: "Sweat-proof makeup, explained: the chemistry of a face that lasts in humidity"
 standfirst: "Finding humidity resistant makeup that survives tropical heat requires understanding the science behind why conventional formulas fail in Southeast Asian climates."
 category: beauty
 tags:
@@ -11,8 +11,8 @@ heroImage: "../../../assets/images/archive/humidity-resistant-makeup-science-tro
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "humidity-resistant-makeup-science-tropical-climate"
-seoTitle: "The best makeup for humid weather, explained by science"
-metaDescription: "Why makeup melts in tropical heat — and the formulation science behind the best makeup for humid weather, from film-forming polymers to undertones."
+seoTitle: "Sweat-proof makeup: the science of lasting in humidity"
+metaDescription: "Why makeup melts in tropical heat — and the formulation science behind genuinely sweat-proof, long-lasting makeup, from film-forming polymers to undertones."
 faq:
   - q: "Which makeup is best for humid weather?"
     a: "Look for lightweight, buildable formulas with film-forming polymers such as VP/VA copolymer or acrylates copolymer, which create a breathable barrier that lets moisture escape while blocking external humidity. Skin tints, cushion compacts and serum foundations developed in humid Korean and Japanese climates tend to outperform heavy Western foundations."

@@ -12,8 +12,8 @@ heroImage: "../../../assets/images/archive/the-ultimate-guide-to-finding-the-per
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones"
-seoTitle: "Best foundation for Asian skin: a shade-matching guide"
-metaDescription: "How to find the right foundation shade for Southeast Asian skin — undertones, the oxidation problem, and brands that suit olive complexions in tropical heat."
+seoTitle: "How to find your foundation shade: Southeast Asian guide"
+metaDescription: "How to find your foundation shade for Southeast Asian skin — undertones, the oxidation problem, and the brands that suit olive complexions in tropical heat."
 faq:
   - q: "How do I find the right foundation shade for Southeast Asian skin?"
     a: "Start by identifying your undertone, then use the jawline test: apply three shades along your jaw, blend, and let them settle for fifteen minutes before checking in natural light, indoor light and your phone camera. The shade that disappears into your skin with no demarcation at your neck is your match."

@@ -1,5 +1,5 @@
 ---
-title: "8 K-Beauty Brands You Should Know Before Everyone Else Does"
+title: "8 Korean beauty brands to know before everyone else does"
 standfirst: "Okay, real talk: the Western beauty industry is just now catching up to what Asian beauty lovers have known for years."
 category: beauty
 tags:
@@ -14,8 +14,8 @@ heroCaption: "The next wave of Korean beauty — skin-first formulas and collect
 heroCredit: "Arahkaii"
 draft: false
 legacyWpSlug: "k-beauty-brands-2026"
-seoTitle: "K-beauty brands to know before everyone else does"
-metaDescription: "Eight K-beauty brands building their global moment — the Korean skincare and makeup labels with cult followings in Seoul, Bangkok and Singapore."
+seoTitle: "Korean beauty brands 2026: 8 K-beauty names to know"
+metaDescription: "The Korean beauty brands building a global moment in 2026 — eight K-beauty skincare and makeup labels with cult followings from Seoul to Singapore."
 listName: "8 K-beauty brands to know before everyone else does"
 listItems:
   - "Fwee — skincare-makeup hybrids with high-fashion packaging and ceramide-led care"
