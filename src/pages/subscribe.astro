@@ -2,12 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { Image } from 'astro:assets';
+import subscribeImage from '../assets/brand-subscribe.png';
 
 // Focused signup hero — footer suppressed for a single-minded page.
 ---
 
-<BaseLayout title="Arahkaii Weekly — Subscribe" noFooter={true}>
-	<main class="sub-wrap">
+<BaseLayout
+	title="Arahkaii Weekly — Subscribe"
+	description="Subscribe to Arahkaii Weekly — one considered email every Sunday with the week's best story and a short edit across style, beauty, dining and travel. No noise."
+	noFooter={true}
+>
+	<div class="sub-wrap">
 		<Breadcrumbs center class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Subscribe' }]} />
 		<span class="eyebrow sub-eyebrow">The Newsletter</span>
 		<h1 class="sub-h1">Arahkaii Weekly</h1>
@@ -31,9 +37,9 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 		<a class="link-more" href="/latest" style="margin-top:30px">See the latest</a>
 
 		<figure class="sub-image">
-			<div class="img ph tone-b r-16x9 blurup in">
-				<span class="lab">Quiet supporting image — still life, soft 4200K light · 16:9</span>
+			<div class="img real r-16x9 blurup in">
+				<Image src={subscribeImage} alt="The Sunday Edit — one considered email, no noise — on an aubergine field" widths={[640, 960, 1280]} sizes="(max-width:760px) 100vw, 720px" />
 			</div>
 		</figure>
-	</main>
+	</div>
 </BaseLayout>

@@ -11,7 +11,7 @@ canonical. **If you cannot meet the bar, abort and notify — better to skip a d
 than ship below it.** Never push to `main`.
 
 ## STEP 0 — Connectivity
-Working tree clean? `npm run build` sane? If not, log to `run-log.md`, notify, exit.
+Working tree clean? `npm run verify` sane? If not, log to `run-log.md`, notify, exit.
 
 ## STEP 1 — Load context (in order)
 `references/brand-voice.md` · `editorial-pillars.md` · `halal-substitutions.md` ·
@@ -24,10 +24,13 @@ Read `content-calendar.md`; take the first `status:ready`. If none → notify
 type (trending|evergreen), target words, internal-link guidance.
 
 ## STEP 3 — Research  (skill: arahkaii-editorial-research)
-ahrefs `keywords-explorer-overview` (volume/difficulty/related) + `serp-overview`
-(top-5 angles + gaps); Firecrawl `scrape` 3–5 top pages + `search` 2–3 reference
-pubs (`sources.md`). Synthesise a 250-word brief: our angle, the gap, 3–5
-anchoring facts, 2–3 cultural references.
+Prefer ahrefs `keywords-explorer-overview` (volume/difficulty/related) +
+`serp-overview` (top-5 angles + gaps), and Firecrawl `scrape` for 3–5 primary or
+reference sources. In GitHub Actions those MCPs may be unavailable: fall back to
+WebSearch/WebFetch, prioritise official sources and primary reporting, and mark
+unavailable keyword metrics as `not verified` in the PR. Never invent volume,
+difficulty, rankings, quotations or access dates. Synthesise a 250-word brief:
+our angle, the gap, 3–5 anchoring facts, 2–3 cultural references.
 
 ## STEP 4 — Draft MDX  (skills: arahkaii-editorial-writer, arahkaii-internal-linking)
 **Follow the skeleton for the calendar entry's `format:` — `references/format-templates.md`
@@ -55,27 +58,28 @@ fact/name accuracy, links read naturally, AI-slop checklist ≤1, **plus the
 `format-templates.md` reviewer gate** — `format:guide` items must be named `###`
 headings (not bold paragraphs), every F&B guide entry must carry a halal-status
 line, no body H1, no orphan H3, no vague headings. Unfixable issue → log to
-`run-log.md` but continue (human reviews the PR).
+`run-log.md` and abort the article; do not ask the human to rescue a substandard draft.
 
-## STEP 7 — Write  (skill: arahkaii-publisher)
-`node scripts/new-post.mjs … --draft` → MDX in `src/content/posts/<year>/`,
-hero into `src/assets/images/<slug>/`. (For the first pass use a placeholder hero;
-STEP 8 regenerates it.)
+## STEP 7 — Images  (skill: arahkaii-featured-image-prompt)
+Density per `content-strategy.md` (hero always; per-H2 1/H2 or every-other by
+type; listicle = per entry). **Editorial** images → generate
+(`node scripts/image-gen.mjs`, OpenRouter/OpenAI). If no image key is available,
+use a repository-owned placeholder for the PR preview and label the PR
+`image-review-needed` when that label exists; otherwise mark the blocker at the
+top of the PR body. It must not be merged until a final approved image exists.
+**Listicle/real-entity** → Firecrawl-source 2–3 candidates with source URLs +
+licence notes → list them in the PR for the human pick, but do not download or
+commit a sourced image before human approval. Modest-luxury + licence gate on
+every image; every committed image carries a credit.
 
-## STEP 8 — Images  (command: /illustrate · skill: arahkaii-featured-image-prompt)
-**Editorial / conceptual** pieces → one pass auto-illustrates hero + per-H2:
-```bash
-node scripts/illustrate-post.mjs --post <slug> --hero --sections <list> \
-  --subjects "0=<hero>;2=<sec>;…"     # concrete subjects in template voice
-```
-Density per `content-strategy.md` (`--density per-h2|every-other`); skip non-visual
-H2s via `--sections`. Generates → injects `<Figure>`s → flips `.md→.mdx`. If no key,
-it flags and leaves placeholders. **Listicle / real-entity** (named products/places)
-→ Firecrawl-source 2–3 candidates with source URLs + licence notes → list in the PR
-for the human pick instead. Modest-luxury + credit on every image (generated = "Arahkaii").
+## STEP 8 — Write  (skill: arahkaii-publisher)
+`node scripts/new-post.mjs …` → MDX in `src/content/posts/<year>/`, hero into
+`src/assets/images/<slug>/`. Do **not** pass `--draft`: the feature branch and
+human merge are the publishing gate, and the Vercel PR preview must render the
+article. Place approved inline images + `<Figure>`s.
 
 ## STEP 9 — Validate
-`npx astro check && npm run build && node scripts/validate-schema.mjs`. Fix until clean.
+`npm run verify`. Fix until clean.
 
 ## STEP 10–12 — Calendar · log · PR
 Update `content-calendar.md` (`ready → drafted | branch:<name>`). Append
@@ -83,7 +87,8 @@ Update `content-calendar.md` (`ready → drafted | branch:<name>`). Append
 (title · 200-word angle · SEO fields · sourced-image candidates · preview note).
 
 ## STEP 13 — Notify
-`PushNotification` + the PR (the human gets the GitHub notice + Netlify preview).
+The GitHub PR is the notification and review surface. Include the Vercel
+preview, research limitations, image/licence status and any blocking labels.
 
 ## NEVER
 Push to `main` · publish alcohol/nightlife · ship an uncredited image · skip

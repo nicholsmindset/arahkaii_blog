@@ -1,63 +1,80 @@
-# Astro Starter Kit: Blog
+# Arahkaii
+
+Arahkaii is a Muslim-owned Asian modern-luxury publication: **“Asia’s modern-luxury edit — modestly told.”** The site is built with Astro 6, stores editorial content as Markdown/MDX in Git, and deploys to Vercel.
+
+## Local development
+
+Requirements: Node.js 22.12 or newer.
 
 ```sh
-npm create astro@latest -- --template blog
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The local site opens at `http://localhost:4321`.
 
-Features:
+The editorial CMS opens at `http://localhost:4321/keystatic`. Development mode
+writes directly to the working tree; the deployed CMS authenticates through
+GitHub and limits editorial work to `cms/` branches.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## Verification
 
-## 🚀 Project Structure
+Run the complete release gate before opening a pull request:
 
-Inside of your Astro project, you'll see the following folders and files:
+```sh
+npm run verify
+```
+
+`npm run preview` serves the production build locally.
+
+## Project map
 
 ```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+src/pages/                 Routes and API endpoints
+src/layouts/               Shared page and article layouts
+src/components/            Reusable editorial components
+src/content/posts/         Published and draft articles by year
+src/content/authors/       Author profiles
+src/assets/images/         Local-first editorial imagery
+src/styles/                Design tokens and page/article styles
+references/                Brand, editorial, SEO, and image rules
+scripts/                   Publishing, migration, and validation tools
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Read [CLAUDE.md](./CLAUDE.md) for the standing design and editorial rules and [AGENTS.md](./AGENTS.md) for contributor workflow.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Publishing and deployment
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Article frontmatter is validated by `src/content.config.ts`. Published posts require a category, author, credited hero image, caption, and other SEO fields. Legacy WordPress slugs generate permanent redirects automatically.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Vercel must provide credentials for the newsletter provider selected in Keystatic: `MAILERLITE_API_KEY` (and optional `MAILERLITE_GROUP_ID`) or `BEEHIIV_API_KEY` plus `BEEHIIV_PUBLICATION_ID`. Contact delivery requires `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and a verified `CONTACT_FROM_EMAIL`. Copy `.env.example` to `.env` for local secret configuration; never commit `.env`.
 
-## 🧞 Commands
+The production CMS additionally requires `KEYSTATIC_GITHUB_CLIENT_ID`,
+`KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`, and
+`PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` in Vercel. Only collaborators with write
+access to `nicholsmindset/arahkaii_blog` can sign in. CMS branches still pass
+through pull-request checks and human approval before reaching `main`.
 
-All commands are run from the root of the project, from a terminal:
+Use Conventional Commits and merge reviewed pull requests into `main`. Vercel builds the production site from the repository.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## GitHub editorial automation
 
-## 👀 Want to learn more?
+`.github/workflows/quality.yml` runs the release gate on every pull request and
+push to `main`. `.github/workflows/editorial.yml` runs `/draft-daily` at 08:30
+Singapore time on weekdays and can run `/draft-daily` or `/trend-scan` manually.
+The agent may create a branch and PR, but it is explicitly prohibited from
+pushing to `main` or merging.
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Configure these GitHub Actions repository secrets before enabling editorial
+runs:
 
-## Credit
+- `ANTHROPIC_API_KEY` — required by Claude Code Action.
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Install the official Claude GitHub App on the repository so branches and PRs
+use an App token and can trigger the separate quality workflow. Scheduled runs
+do not receive image-generation secrets: they use an owned placeholder and keep
+the PR blocked until the final image passes human review.
+
+Require the **Quality gates** check and a code-owner review in branch protection
+for `main`. Keep `MAILERLITE_API_KEY` and the optional `MAILERLITE_GROUP_ID` in
+Vercel rather than GitHub unless a workflow genuinely needs them.

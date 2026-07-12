@@ -16,7 +16,7 @@ const categories = [
 ---
 
 <BaseLayout title="Page not found — Arahkaii" description="The page you were looking for has wandered off the path." noindex={true}>
-	<main class="wrap nf">
+	<div class="wrap nf">
 		<span class="eyebrow nf-eyebrow">Error 404</span>
 		<h1 class="nf-title">This page has wandered off the path.</h1>
 		<p class="nf-dek">
@@ -32,7 +32,7 @@ const categories = [
 		<nav class="nf-cats" aria-label="Browse categories">
 			{categories.map((c) => <a href={`/${c.toLowerCase()}`}>{c}</a>)}
 		</nav>
-	</main>
+	</div>
 </BaseLayout>
 
 <style>
@@ -50,7 +50,7 @@ const categories = [
 	}
 	.nf-title {
 		font-family: var(--serif);
-		font-variation-settings: 'opsz' 144;
+		font-variation-settings: 'opsz' 60;
 		font-weight: 380;
 		font-size: clamp(30px, 5vw, 56px);
 		line-height: 1.1;

@@ -16,7 +16,7 @@ heroImage: "../../../assets/images/archive/bts-songzio-lyrical-armor-arirang-con
 heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "bts-songzio-lyrical-armor-arirang-concert"
-seoTitle: "BTS Arirang concert: inside Songzio's Lyrical Armor"
+seoTitle: "Songzio dressed BTS for the Arirang comeback"
 metaDescription: "For their Arirang comeback at Gwanghwamun, BTS wore seven custom Songzio looks — Korean heritage reimagined as armour, not luxury logos."
 faq:
   - q: "Who designed BTS's outfits for the Arirang comeback concert?"
@@ -29,7 +29,7 @@ faq:
     a: "The Arirang world tour begins in April 2026, spanning 82 shows across 34 cities. Singapore National Stadium dates are confirmed for December 2026."
 ---
 
-**Songzio**, the Seoul-founded Korean fashion house established in 1993, designed seven custom looks for **BTS's Arirang comeback concert** at Gwanghwamun Square on March 21, 2026. The collection, titled "Lyrical Armor," reimagines Joseon-era Korean garments and traditional armor through sculptural contemporary silhouettes — with each BTS member assigned a distinct archetype within a unified visual mythology. The decision to dress the world's biggest group in an independent Korean label rather than the European luxury houses they individually represent is the most significant fashion statement in [K-pop fashion](/style) history.
+**Songzio**, the Seoul-founded Korean fashion house established in 1993, designed seven custom looks for **BTS's Arirang comeback concert** at Gwanghwamun Square on March 21, 2026. The collection, titled "Lyrical Armor," reimagines Joseon-era Korean garments and traditional armor through sculptural contemporary silhouettes — with each BTS member assigned a distinct archetype within a unified visual mythology. The decision to dress the world's biggest group in an independent Korean label rather than the European luxury houses they individually represent is the most significant fashion statement in [K-pop fashion](/style/bts-individual-style-identities-luxury-brand-partnerships/) history.
 
 Let's be clear — there are stage outfits, and then there are statements. What BTS wore at Gwanghwamun was the latter. Every single piece was custom-designed by Songzio, built specifically for the night, and rooted in traditional Korean dress reimagined through a monochromatic palette of black, white, and silver hardware. Not pulled from a stylist's rail. Not borrowed from the luxury houses each member individually represents. Custom. Korean. Intentional.
 
@@ -37,7 +37,7 @@ Let's be clear — there are stage outfits, and then there are statements. What 
 
 Lyrical Armor is a seven-piece custom collection designed by Korean fashion house Songzio for BTS's Arirang comeback concert. Creative director Jay Songzio drew from traditional Joseon-era garments and early Korean armor, then rebuilt those references into sharp, sculptural silhouettes that feel both ancient and futuristic. The collection's name reflects its central concept: protection built not from metal but from meaning, poetry, and culture.
 
-The brief from HYBE was deceptively simple: design something deeply, unmistakably Korean — not just Korean by nationality, but Korean in its bones. The [album Arirang](/latest) is named after one of Korea's oldest folk songs. The concert was staged at Gwanghwamun Square, the symbolic heart of Seoul, against the backdrop of Gyeongbokgung Palace. Everything about the night was a statement about cultural identity, and the clothes needed to match.
+The brief from HYBE was deceptively simple: design something deeply, unmistakably Korean — not just Korean by nationality, but Korean in its bones. The album Arirang is named after one of Korea's oldest folk songs. The concert was staged at Gwanghwamun Square, the symbolic heart of Seoul, against the backdrop of Gyeongbokgung Palace. Everything about the night was a statement about cultural identity, and the clothes needed to match.
 
 Songzio's answer was to look backward in order to look forward. Think dark, luminous fabrics that caught stage lighting like armor plating. Think structured shoulders that reference warriors without costuming. Think fluid layers that moved differently on each member, because each member was playing a different character in the story.
 
@@ -67,7 +67,7 @@ Songzio described Jimin as "soft, with a lot of performance" — meaning he move
 
 ### V — Seonbi (Nobleman)
 
-_Seonbi_ is a Joseon-era concept — a scholar-gentleman defined by learning, elegance, and moral integrity. [V's fashion identity](/style) has always gravitated toward clean, refined forms over maximalism, making this the most naturally aligned archetype in the collection.
+_Seonbi_ is a Joseon-era concept — a scholar-gentleman defined by learning, elegance, and moral integrity. [V's fashion identity](/style/bts-individual-style-identities-luxury-brand-partnerships/) has always gravitated toward clean, refined forms over maximalism, making this the most naturally aligned archetype in the collection.
 
 ### Jungkook — The Vanguard
 
@@ -79,7 +79,7 @@ Because the Arirang concert was held outdoors at Gwanghwamun Square, BTS could n
 
 The solution was to build transformation into the garments themselves. Removable layers, shifting elements, and fabrics engineered to read differently under changing light conditions — the kind of design thinking that goes beyond aesthetics into something closer to architecture. As Songzio framed it, the question from the very beginning was: how do you make garments that can transform without the performer leaving the stage?
 
-The answer is visible in the performance footage. The luminous material catches the blue wash during "SWIM." The structured shoulders anchor the group formations. The whole visual world of the night was constructed so that the clothes were part of the choreography — not separate from it. This approach reflects a broader shift in how [forward-thinking fashion houses](/style/jakarta-fashion-week-2025/) are rethinking the relationship between garments and live performance.
+The answer is visible in the performance footage. The luminous material catches the blue wash during "SWIM." The structured shoulders anchor the group formations. The whole visual world of the night was constructed so that the clothes were part of the choreography — not separate from it. This approach reflects a broader shift in how [forward-thinking fashion houses](/style/korean-heritage-brands-renaissance/) are rethinking the relationship between garments and live performance.
 
 ## Why Did BTS Choose a Korean Fashion House Over Their Luxury Brand Partners?
 
@@ -145,23 +145,16 @@ _Han_ is a Korean philosophical concept describing collective sorrow, longing, a
 
 * * *
 
-## Related Reading on arahkaii
+## Related reading on Arahkaii
 
-- [Jakarta Fashion Week 2025: The Designers Redefining Southeast Asian Fashion](/style/jakarta-fashion-week-2025/)
+- [Jakarta Fashion Week 2025 and the designers redefining Southeast Asian fashion](/style/jakarta-fashion-week-2025/)
 
-- [Sukkhacita: How Regenerative Fashion Is Reshaping Indonesian Artisan Economics](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [How regenerative fashion is reshaping Indonesian artisan economics](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
 
-- [The Rise of Modest Streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The rise of modest streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
 
-- [Batik Meets Blockchain: Indonesian Textile Authenticity in the Digital Age](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The quiet renaissance of Korean heritage brands](/style/korean-heritage-brands-renaissance/)
 
-- [The Conscious Luxury Manifesto: Redefining Sustainable Living](/living/the-conscious-luxury-manifesto-sustainable-living/)
+- [Decoding each BTS member's luxury house](/style/bts-individual-style-identities-luxury-brand-partnerships/)
 
-- [From Followers to Founders: Creators Building Empires Beyond the Algorith](/people/from-followers-to-founders-3-content-creators-building-empires-beyond-the-algorithm/)
-
-### Read next
-
-- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
-- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The conscious luxury manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)

@@ -1,6 +1,54 @@
 ---
 title: "Best Halal Fine Dining Restaurants in Singapore (2026)"
 standfirst: "The kitchen at Restaurant Fiz is ten steps from your table. You can hear the ladle touch the bottom of the copper pot. The room is narrow."
+kicker: "Arahkaii Verified"
+articleType: listicle
+franchise: arahkaii-verified
+cluster: halal-dining-singapore
+isPillar: true
+timeliness: evergreen
+lastVerified: 2026-05-25
+halalStatus:
+  status: mixed-status-guide
+  verifiedDate: 2026-05-25
+  note: "Certification and alcohol policies vary by venue. Read the status beneath each entry and confirm directly before booking."
+atAGlance:
+  - name: "Restaurant Fiz"
+    verdict: "The most ambitious Malaysian tasting menu in the group."
+    halalStatus: "Muslim-owned; not MUIS-certified; alcohol served"
+  - name: "Seroja"
+    verdict: "A Michelin-recognised study of the Malay archipelago."
+    halalStatus: "Not MUIS-certified; pork-free; alcohol served"
+  - name: "The White Label Restaurant"
+    verdict: "French form with a clear Malayan flavour memory."
+    halalStatus: "MUIS-certified"
+  - name: "Restaurant Espoir"
+    verdict: "Strong-value European-Malayan cooking on Duxton Hill."
+    halalStatus: "MUIS-certified"
+  - name: "Oud Restaurant"
+    verdict: "Woodfire cooking with Middle Eastern and European technique."
+    halalStatus: "MUIS-certified"
+  - name: "Permata at Gedung Kuning"
+    verdict: "Nusantara cooking in a significant Kampong Glam address."
+    halalStatus: "MUIS-certified"
+  - name: "The Malayan Council at Fullerton"
+    verdict: "The celebration table with the strongest river view."
+    halalStatus: "MUIS-certified"
+  - name: "Malayan Settlement"
+    verdict: "Traditional Malay flavours in a contemporary format."
+    halalStatus: "MUIS-certified"
+  - name: "Charr'd"
+    verdict: "A5 wagyu with whole-animal traceability."
+    halalStatus: "MUIS-certified"
+  - name: "Gyusei Gyukatsu Wagyu Steakhouse"
+    verdict: "A focused Japanese wagyu-katsu counter."
+    halalStatus: "MUIS-certified"
+  - name: "Ammakase"
+    verdict: "Indian omakase built around coastal cooking."
+    halalStatus: "Confirm current certification and policy directly"
+  - name: "Rempapa by Chef Damian D'Silva"
+    verdict: "Included for heritage significance, not as a halal recommendation."
+    halalStatus: "Not halal-certified; pork cooked on premises"
 category: dining
 tags:
   - "asia-50-best"
@@ -43,7 +91,7 @@ This is what halal fine dining looks like in Singapore in 2026: not apologetic, 
 
 Singapore has always been a place where serious eating and halal observance share a neighbourhood. What changed in the last three years is the register. Tasting menus earning Michelin recognition. Malaysian heritage cuisine placing at 20th on Asia's 50 Best Restaurants. A generation of chefs building craft-led kitchens — the same patient, craft-first ambition that has driven [Korean heritage brands](/style/korean-heritage-brands-renaissance/) to reshape how Seoul exports taste — now visible in Singapore's halal dining rooms. The conversation no longer asks whether halal can sustain fine dining ambition. The answer has already been plated.
 
-This list covers twelve kitchens. Each one is led by the room and the chef, not the price. Every entry's halal status is declared plainly — because the distinction between MUIS-certified, Muslim-owned, and pork-free matters, and collapsing them into a single word does no diner a service. Book early.
+This list covers twelve kitchens for dinner; several also anchor the city's serious halal Sunday brunch, and most sit within reach of a well-planned [48-hour Singapore stopover](/travel/singapore-stopover-guide-48-hours/). Each one is led by the room and the chef, not the price. Every entry's halal status is declared plainly — because the distinction between MUIS-certified, Muslim-owned, and pork-free matters, and collapsing them into a single word does no diner a service. Book early.
 
 * * *
 
@@ -219,7 +267,7 @@ Next year, some of them will have company.
 
 ### Read next
 
-- [Modest Fashion Meets Streetwear: Southeast Asia's Quiet Revolution](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Inside SukkhaCitta: Indonesia's Regenerative Fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [The Quiet Titans: Asian Philanthropy's $3.7T Revolution](/culture/asian-billionaire-philanthropy-quiet-revolution/)
-- [The Conscious Luxury Manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)
+- [Forty-eight hours in Singapore, done properly](/travel/singapore-stopover-guide-48-hours/)
+- [Southeast Asia's quiet modest-streetwear revolution](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Asian philanthropy's quiet revolution](/culture/asian-billionaire-philanthropy-quiet-revolution/)
+- [The conscious-luxury manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)

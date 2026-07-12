@@ -26,7 +26,7 @@ faq:
 
 The Kering revenue decline and Gucci's struggles have become the fashion industry's most-watched corporate story of 2025. Kering's 15% revenue decline has dominated financial headlines, with Gucci absorbing most of the blame. The reality proves more nuanced.
 
-What appears as crisis is actually calculated strategy. The French conglomerate—parent to Gucci, Bottega Veneta, and Saint Laurent—has embarked on deliberate repositioning, the kind of architectural overhaul that requires tearing down walls before rebuilding them. Gucci's comparable drop narrowed from 25% in the first half to 14% in Q3, suggesting creative director Sabato De Sarno's quieter aesthetic may finally be gaining traction with consumers who found the previous maximalist era exhausting.
+What appears as crisis is actually calculated strategy. The French conglomerate—parent to Gucci, Bottega Veneta, and Saint Laurent—has embarked on deliberate repositioning, the kind of architectural overhaul that requires tearing down walls before rebuilding them. Gucci's comparable drop narrowed from 25% in the first half to 14% in Q3, suggesting creative director Sabato De Sarno's quieter aesthetic — a bet on the same [quiet-luxury instincts now reshaping the wider industry](/guides/the-complete-guide-to-quiet-luxury/) — may finally be gaining traction with consumers who found the previous maximalist era exhausting.
 
 The wholesale channel tells the most revealing story. Once a reliable revenue stream, it's being deliberately strangled—down 25% at Gucci alone. This mirrors what Hermès executed two decades ago: trading volume for exclusivity, short-term pain for long-term pricing power.
 
@@ -62,9 +62,9 @@ Kering's Gucci problem has become the luxury industry's mirror. When a flagship 
 
 The wholesale correction gripping Gucci reflects systemic overreach rather than isolated mismanagement. Houses across the luxury spectrum stretched distribution networks thin, chasing quarterly growth while quietly eroding the scarcity that once defined their allure. Kering's aggressive pullback signals recalibration the entire industry will likely mirror within eighteen months.
 
-The emerging playbook demands uncomfortable choices. Tighter retail control means sacrificing revenue streams that once seemed indispensable. Elevated product narratives require investment in craftsmanship over marketing spectacle. Creative risk-taking must replace the safe bestseller mentality that turned too many maisons into luxury fast-fashion operations.
+The emerging playbook demands uncomfortable choices. Tighter retail control means sacrificing revenue streams that once seemed indispensable. Elevated product narratives require investment in craftsmanship over marketing spectacle. Creative risk-taking must replace the safe bestseller mentality that turned too many maisons into luxury fast-fashion operations — the same overexposure logic that explains [why so many designer collaborations keep failing](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/).
 
-Evidence of what works sits within Kering's own portfolio. Bottega Veneta's growth proves that disciplined positioning and genuine creative vision still command consumer loyalty. Scarcity wins. Desirability wins. Authentic creative direction wins. Ubiquity loses—every time.
+Evidence of what works sits within Kering's own portfolio. Bottega Veneta's growth — the house [BTS's RM chose for its logo-free restraint](/style/bts-individual-style-identities-luxury-brand-partnerships/) — proves that disciplined positioning and genuine creative vision still command consumer loyalty. Scarcity wins. Desirability wins. Authentic creative direction wins. Ubiquity loses—every time.
 
 * * *
 
@@ -78,15 +78,14 @@ The next two quarters will function as referendum rather than routine earnings c
 
 The fashion industry has witnessed too many legacy houses mistake caution for strategy, protecting market share while competitors claimed cultural relevance. Gucci cannot afford that particular brand of cowardice. Its position demands either courageous disruption or graceful decline.
 
-### Related Reading
+### Related reading
 
-- [The Complete Guide to Quiet Luxury](/guides/the-complete-guide-to-quiet-luxury/)
-- [Why Quiet Luxury Is Fashion's Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
+- [The complete guide to quiet luxury](/guides/the-complete-guide-to-quiet-luxury/)
+- [Why quiet luxury is fashion's biggest contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [The quiet-luxury brands wealthy insiders actually wear](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
 
 ### Read next
 
-- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [Why Designer Collaborations Keep Failing—And What H&M Gets Wrong](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/)
+- [Covered and cool: modest streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The $2.3 million jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [Why designer collaborations keep failing](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/)

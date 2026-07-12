@@ -30,7 +30,7 @@ This isn't imagined. It's physiology meeting environment, and it happens to near
 
 "The light changes first," explains celebrity makeup artist Daniel Martin, whose client roster includes Meghan Markle and Jessica Alba. "Summer light is blue-toned, harsh, coming from directly overhead. Autumn light is golden, diffused, coming from lower angles. The exact same makeup reads completely differently in these two lighting conditions—what looked fresh in summer brightness can look washed out or jarring in autumn's warm glow."
 
-The solution isn't buying an entirely new makeup collection every season. It's understanding why certain colors stop working and learning to transition strategically between palettes that honor both your skin's undertones and the environmental shifts happening around you. The goal isn't following rigid seasonal rules—it's maintaining the coherence between your face, your wardrobe, and the natural world that keeps you from feeling like you're fighting against yourself.
+The solution isn't buying an entirely new makeup collection every season. It's understanding why certain colours stop working and learning to transition strategically between palettes that honour both your skin's undertones and the environmental shifts happening around you. (If your makeup is melting before the seasons even turn, the answer lies less in colour than in [the chemistry of humidity-resistant formulas](/beauty/humidity-resistant-makeup-science-tropical-climate/).) The goal isn't following rigid seasonal rules—it's maintaining the coherence between your face, your wardrobe, and the natural world that keeps you from feeling like you're fighting against yourself.
 
 ## Seasonal Makeup Transition Starts Here: The Undertone Question Nobody Actually Answers
 
@@ -40,7 +40,7 @@ These tests work, technically. They identify undertone. What they don't explain 
 
 "Undertone determines which specific shades within a color family will harmonize with your skin," says makeup artist Katie Jane Hughes, known for her radiant, glowy aesthetic and 1.2 million Instagram followers. "But seasonal transitions aren't really about undertone—they're about temperature. Cool-toned people don't suddenly become warm-toned in autumn. They just shift from cooler versions of colors to slightly warmer versions within their undertone family."
 
-The distinction matters because it prevents the common mistake of abandoning your entire makeup collection when seasons change. A cool-toned person doesn't need to force warm terracotta eyeshadow if it makes them look jaundiced. They need cooler-toned burnt sienna—still autumnal, still warm compared to summer pastels, but calibrated to their specific skin chemistry.
+The distinction matters because it prevents the common mistake of abandoning your entire makeup collection when seasons change. The same undertone literacy underpins [finding the right foundation shade for Southeast Asian skin](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/). A cool-toned person doesn't need to force warm terracotta eyeshadow if it makes them look jaundiced. They need cooler-toned burnt sienna—still autumnal, still warm compared to summer pastels, but calibrated to their specific skin chemistry.
 
 True warm undertones—the green-veined, gold-jewelry-loving, never-looks-sallow-in-yellow category—have the easiest autumn transition. The season's signature colors (rust, mustard, deep olive, brick red, burnt orange) are designed for warm skin. These shades contain yellow or golden bases that mirror the warmth already present in the skin, creating seamless coherence.
 
@@ -64,7 +64,7 @@ This gradual layering prevents the jarring "I look like a completely different p
 
 For lips, the shift is more dramatic but also more satisfying. Summer's bright pinks and corals (think MAC Vegas Volt or Fenty Beauty's Flamingo Acid) have no autumn equivalent that maintains the same energy level. Autumn lips are deeper, richer, more saturated. The exact shade depends on your skin tone, but the formula matters as much as the color.
 
-Deep skin tones carry the richest autumn shades beautifully: Pat McGrath's MatteTrance Lipstick in "Omi" (deep burgundy) or Fenty Beauty's "Clapback" (rich chocolate brown). These shades look muddy on pale skin but stunning on deeper tones because they have enough contrast to register as intentional color rather than accidental darkness.
+Some of the most assured work with these richer, warmer shades is coming out of Asia's own labs, from the [Chinese makeup houses redrawing the colour map](/beauty/beauty-best-chinese-makeup-brands/) to the [C-beauty and K-beauty rivalry](/beauty/c-beauty-vs-k-beauty-2026/) now setting the pace. Deep skin tones carry the richest autumn shades beautifully: Pat McGrath's MatteTrance Lipstick in "Omi" (deep burgundy) or Fenty Beauty's "Clapback" (rich chocolate brown). These shades look muddy on pale skin but stunning on deeper tones because they have enough contrast to register as intentional color rather than accidental darkness.
 
 Medium skin tones—the largest and most diverse category—have the widest range. Charlotte Tilbury's "Pillow Talk Intense," MAC's "Taupe," Lisa Eldridge's "Velvet Ribbon" (a true brick red), or Bobbi Brown's "Burnt Red" all work depending on whether you skew cool or warm. The key is avoiding shades so light they disappear or so dark they overwhelm.
 
@@ -161,15 +161,10 @@ But for those who do feel that November dissonance—the sense that your summer 
 - Chanel Les Beiges Healthy Glow Foundation
 - Westman Atelier Vital Skin Foundation
 
-### Related Reading
+### Related reading
 
-- [The Southeast Asian Foundation Guide](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
-- [Best Chinese Makeup Brands 2026](/beauty/beauty-best-chinese-makeup-brands/)
-
-### Read next
-
-- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
-- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](/beauty/beauty-best-chinese-makeup-brands/)
-- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
+- [The Southeast Asian foundation guide](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [How humidity-resistant makeup actually works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [The best Chinese makeup brands of 2026](/beauty/beauty-best-chinese-makeup-brands/)
+- [How K-beauty broke the algorithm](/beauty/k-beauty-broke-the-algorithm/)
+- [C-beauty versus K-beauty, compared](/beauty/c-beauty-vs-k-beauty-2026/)

@@ -12,6 +12,8 @@ heroCaption: ""
 heroCredit: "Arahkaii"
 draft: true
 legacyWpSlug: "from-foundation-to-house"
+seoTitle: "From foundation to house: an Asian fashion editorial finds its footing"
+metaDescription: "An editor's note on building an Asian fashion editorial with intention — deeper storytelling, fresh voices and conscious consumerism, as Arahkaii enters 2026."
 ---
 
 Editor's Note: From Foundation to House — On Fashion Brand Evolution
@@ -19,7 +21,7 @@ Editor's Note: From Foundation to House — On Fashion Brand Evolution
 **February 2026**  
 A brief note on timing: This was meant to land in your inbox in January. Life, recalibration, and the relentless pursuit of getting it right delayed us. But here we are—just in time to wish you and yours a year of abundance, courage, and untamed prosperity as we approach the Year of the Fire Horse. May your ambitions burn bright and your momentum carry you far.
 
-If 2025 was about laying the foundation, 2026 is about building the house—room by room, story by story, with intention.  
+If 2025 was about laying the foundation, 2026 is about building the house—room by room, story by story, with intention. An Asian fashion editorial, we've come to believe, earns its readers slowly, by what it chooses to leave out as much as what it runs.  
 We said we'd champion quality over quantity. We said we'd be Asia-rooted and globally minded. We said we'd feature brands doing exceptional work, regardless of size or Instagram following. And we meant it.  
 Now, we're proving it.  
 
@@ -27,7 +29,7 @@ Now, we're proving it.
 
 This year, Arahkaii evolves. You'll notice:
 
-**Deeper storytelling** — We're not just covering what's new; we're exploring why it matters. Expect founder profiles that go beyond the origin story, trend analyses that question the noise, and features that connect craft to culture.  
+**Deeper storytelling** — We're not just covering what's new; we're exploring why it matters. Expect [founder profiles](/people/from-followers-to-founders-3-content-creators-building-empires-beyond-the-algorithm/) that go beyond the origin story, [trend analyses that question the noise](/style/why-quiet-luxury-is-fashion-biggest-contradiction/), and features that connect craft to culture.  
 **Fresh voices** — We've brought on Natalia Amir and Zara Chen-Okafor to expand our editorial lens. Their combined experience across continents and markets means richer perspectives and stories that resonate on multiple levels.  
 **Expanded coverage** — Fashion and lifestyle, yes—but also the innovators, the artisans, the quiet disruptors reshaping how we live, dress, and consume. From independent ateliers to legacy brands doing the work, we're here for all of it.  
 **More partnerships** — We're actively collaborating with brands that align with our values. Not everyone. Not everything. Just the ones worth your attention.
@@ -60,5 +62,6 @@ P.S. — Have a brand, designer, or maker we should know about? We're actively b
 
 ### Continue Reading
 
-- [Korean fashion brands](/korean-fashion-brands-2026/)
-- [sustainable fashion pioneers](/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [Korean fashion brands to watch](/style/korean-fashion-brands-2026/)
+- [The artisans reinventing regenerative fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [The quiet revolution in Asian philanthropy](/culture/asian-billionaire-philanthropy-quiet-revolution/)

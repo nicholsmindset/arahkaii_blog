@@ -2,6 +2,7 @@
 title: "Brightspot SuperMRKT 2025: Where Jakarta's Creative Economy Comes to Shop"
 standfirst: "Brightspot SuperMRKT Jakarta returns as Indonesia's most influential creative market, and the 2025 edition is its most ambitious yet."
 category: style
+cluster: modest-fashion-asia
 tags:
   - "indonesian-fashion"
   - "industry-news"
@@ -14,6 +15,11 @@ heroCredit: "Arahkaii"
 legacyWpSlug: "brightspot-supermrkt-2025-where-jakartas-creative-economy-comes-to-shop"
 seoTitle: "Brightspot SuperMRKT 2025: Jakarta's creative market"
 metaDescription: "Inside Brightspot SuperMRKT 2025 at Agora Lifestyle Mall — 220+ Indonesian local brands, emerging designers and the labels worth seeking out in Jakarta."
+listName: "Editor's picks: unexpected finds at Brightspot SuperMRKT 2025"
+listItems:
+  - "Oaken Lab — grooming products whose design sensibility rivals international competitors, from packaging to formulation."
+  - "Gelap Ruang Jiwa — goth, grunge and punk jewellery, a subcultural niche that rarely surfaces at a mainstream market."
+  - "From Tiny Islands — Indonesian coastal heritage interpreted with restraint, sidestepping the tourist-kitsch trap."
 ---
 
 Brightspot SuperMRKT Jakarta returns as Indonesia's most influential creative market, and the 2025 edition is its most ambitious yet. _Indonesia's most influential creative market returns with a bold new concept, transforming Agora Lifestyle Mall into a retro-futuristic playground for 220+ of the nation's most exciting local brands._
@@ -58,7 +64,7 @@ Operating hours accommodate Jakarta's rhythms: 10 AM to 10 PM Thursday through F
 
 ## **The Fashion Floor: Local Brands Worth Your Attention**
 
-The retail offering spans the full spectrum of Indonesian fashion ambition—but the real story lies in the labels that have earned their place through years of quiet excellence.
+The retail offering spans the full spectrum of [Indonesian fashion ambition](/style/jakarta-fashion-week-2025/)—but the real story lies in the labels that have earned their place through years of quiet excellence.
 
 ## **Shop at Velvet**
 
@@ -76,7 +82,7 @@ Shop at Velvetrepresents the backbone of Indonesian contemporary fashion. Founde
 
 ## **Tokodidiyo**
 
-**Tokodidiyo** occupies singular territory in Indonesian fashion. Since 2016, the brand has championed traditional textiles—batik, tenun, songket—rendered in silhouettes that wouldn't look out of place in Copenhagen or Tokyo. It's East-meets-East design vocabulary, the kind of cultural synthesis that Indonesian fashion does better than anyone. At Brightspot, they represent the bridge between heritage preservation and commercial viability—proving that honoring tradition doesn't mean sacrificing modernity.
+**Tokodidiyo** occupies singular territory in Indonesian fashion. Since 2016, the brand has championed [traditional textiles—batik, tenun, songket](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)—rendered in silhouettes that wouldn't look out of place in Copenhagen or Tokyo. It's East-meets-East design vocabulary, the kind of cultural synthesis that Indonesian fashion does better than anyone. At Brightspot, they represent the bridge between heritage preservation and commercial viability—proving that honoring tradition doesn't mean sacrificing modernity.
 
 > [
 > 
@@ -134,7 +140,7 @@ The emerging tier merits genuine attention—these are the labels that could def
 
 **Aesthetic Pleasure** pushes conceptual boundaries with an almost avant-garde approach to ready-to-wear. This is the kind of label fashion editors track before mainstream discovery, where each collection feels like a thesis statement rather than a commercial offering. Their Brightspot booth rewards those willing to engage with fashion as idea rather than just product.
 
-**From Tiny Islands** channels archipelago heritage into wearable pieces that resist the tropical-kitsch trap. Rather than treating Indonesian island identity as tourism marketing, they approach it as sophisticated design source—coastal aesthetics refined through contemporary sensibility. The result feels distinctly Indonesian without resorting to cliché.
+**From Tiny Islands** channels archipelago heritage into wearable pieces that resist the tropical-kitsch trap. Rather than treating Indonesian island identity as tourism marketing, they approach it as sophisticated design source—the same [artisan-rooted ethos driving Indonesia's regenerative fashion houses](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)—coastal aesthetics refined through contemporary sensibility. The result feels distinctly Indonesian without resorting to cliché.
 
 **Hoya Fields** has been generating quiet buzz in Jakarta fashion circles. A Brightspot presence could signal breakout potential—the kind of under-the-radar label that this market exists to surface.
 
@@ -228,15 +234,13 @@ Whether you're hunting the next cult label, scouting emerging talent, supporting
 
 _Brightspot SuperMRKT 2025 ran December 4–7 at Agora Lifestyle Mall, Jakarta. Entry is free._
 
-### Continue Reading
+### Continue reading
 
-- [Jakarta Fashion Week 2025](/jakarta-fashion-week-2025/)
-- [Indonesian textile heritage](/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [Southeast Asian fashion movements](/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [Indonesian textile heritage and the batik paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The rise of modest streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
 
 ### Read next
 
-- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
-- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [How regenerative fashion is reshaping Indonesian artisan economics](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [The complete guide to investment dressing](/guides/the-complete-guide-to-investment-dressing/)

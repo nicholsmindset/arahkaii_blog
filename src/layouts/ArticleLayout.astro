@@ -6,6 +6,10 @@ import Standfirst from '../components/article/Standfirst.astro';
 import StoryCard from '../components/StoryCard.astro';
 import InlineNewsletter from '../components/InlineNewsletter.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import AtAGlance, { type AtAGlanceItem } from '../components/article/AtAGlance.astro';
+import HalalStatus, { type HalalStatusData } from '../components/article/HalalStatus.astro';
+import ClusterNav from '../components/article/ClusterNav.astro';
+import ArticleFaq from '../components/article/ArticleFaq.astro';
 import {
 	SITE,
 	articleSchema,
@@ -66,6 +70,15 @@ interface Props {
 	howTo?: HowToStep[];
 	listName?: string;
 	listItems?: string[];
+	kicker?: string;
+	articleType?: string;
+	timeliness?: 'evergreen' | 'timely';
+	franchise?: string;
+	cluster?: string;
+	clusterItems?: Array<{ title: string; href: string }>;
+	atAGlance?: AtAGlanceItem[];
+	halalStatus?: HalalStatusData;
+	lastVerified?: Date;
 }
 
 const {
@@ -91,17 +104,27 @@ const {
 	howTo,
 	listName,
 	listItems,
+	kicker,
+	timeliness = 'evergreen',
+	franchise,
+	cluster,
+	clusterItems = [],
+	atAGlance = [],
+	halalStatus,
+	lastVerified,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const categoryLabel = cap(category);
 const primaryTag = tags[0];
-const eyebrow = primaryTag ? `${categoryLabel} · ${primaryTag}` : categoryLabel;
 const formattedDate = new Intl.DateTimeFormat('en-GB', {
 	day: 'numeric',
 	month: 'long',
 	year: 'numeric',
 }).format(date);
+const formattedUpdatedDate = updatedDate
+	? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(updatedDate)
+	: null;
 
 // — SEO data layer —
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -139,14 +162,17 @@ const jsonLd = [
 		authorUrl,
 		section: categoryLabel,
 		url: canonical.toString(),
+		keywords: tags,
+		type: timeliness === 'timely' ? 'NewsArticle' : 'Article',
 	}),
 	breadcrumbSchema(crumbs),
 ];
 // GEO / AIO schema — appended only when the frontmatter supplies the data.
 if (faq?.length) jsonLd.push(faqSchema(faq));
 if (howTo?.length) jsonLd.push(howToSchema(howToName ?? title, howTo));
-if (listItems?.length)
-	jsonLd.push(itemListSchema(listName ?? title, listItems, canonical.toString()));
+if (atAGlance.length)
+	jsonLd.push(itemListSchema(listName ?? title, atAGlance.map((item) => ({ name: item.name, description: item.verdict, url: item.url })), canonical.toString()));
+else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listItems, canonical.toString()));
 ---
 
 <BaseLayout
@@ -166,11 +192,14 @@ if (listItems?.length)
 	<article data-cat={category} data-article-body>
 		<!-- HERO: centred, no-image (T Magazine pattern) -->
 		<div class="wrap art-hero">
-			<p class="eyebrow eyebrow--emerald">{eyebrow}</p>
+			<nav class="art-breadcrumb eyebrow eyebrow--emerald" aria-label="Breadcrumb">
+				<a href={`/${category}`}>{categoryLabel}</a>
+				{(kicker ?? primaryTag) && <><span aria-hidden="true">·</span><span>{kicker ?? primaryTag}</span></>}
+			</nav>
 			<Headline text={title} />
 			<Standfirst text={standfirst} />
 			<div class="art-byrow">
-				<span class="meta"><strong>Words</strong> &nbsp;{author.name}</span>
+				<span class="meta"><strong>Words</strong> &nbsp;<a href={authorHref}>{author.name}</a></span>
 				<span class="dot"></span>
 				<span class="meta">{formattedDate}</span>
 				{
@@ -181,6 +210,7 @@ if (listItems?.length)
 						</>
 					)
 				}
+				{formattedUpdatedDate && <><span class="dot"></span><span class="meta">Updated · {formattedUpdatedDate}</span></>}
 			</div>
 		</div>
 
@@ -200,7 +230,13 @@ if (listItems?.length)
 		<div class="wrap" style="margin-top:64px">
 			<div class="grid art-layout">
 				<div class="article-body">
+					{atAGlance.length > 0 && <AtAGlance items={atAGlance} title={listName ?? 'At a glance'} />}
+					{atAGlance.length === 0 && listItems?.length && <AtAGlance items={listItems.map((name) => ({ name, verdict: '' }))} title={listName ?? 'At a glance'} />}
+					{halalStatus && <HalalStatus data={halalStatus} />}
+					{(franchise || cluster || lastVerified) && <p class="article-proof meta">{franchise && `Series · ${franchise}`}{franchise && cluster && ' · '}{cluster && `Topic · ${cluster.replaceAll('-', ' ')}`}{(franchise || cluster) && lastVerified && ' · '}{lastVerified && `Editorially checked ${new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(lastVerified)}`}</p>}
 					<slot />
+					{faq?.length && <ArticleFaq items={faq} />}
+					{cluster && <ClusterNav cluster={cluster} items={clusterItems} />}
 
 					{
 						tags.length > 0 && (
@@ -284,7 +320,7 @@ if (listItems?.length)
 	<!-- CONTINUE WITH (oversized next-article card) -->
 	{
 		readNext && (
-			<section class="section" style="border-top:1px solid var(--hairline)">
+			<section class="section article-read-next" style="border-top:1px solid var(--hairline)">
 				<div class="wrap">
 					<p class="eyebrow eyebrow--emerald" style="margin-bottom:32px">Read next →</p>
 					<a class="hl-link readnext" href={readNext.href}>
@@ -309,7 +345,7 @@ if (listItems?.length)
 	<!-- ALSO FROM CATEGORY -->
 	{
 		related.length > 0 && (
-			<section class="section--tight">
+			<section class="section--tight article-more">
 				<div class="wrap">
 					<p class="eyebrow" style="margin-bottom:24px">Also from {categoryLabel}</p>
 					<hr class="rule" style="margin-bottom:40px" />
@@ -332,7 +368,7 @@ if (listItems?.length)
 	}
 
 	<!-- NEWSLETTER BAND (identical to homepage) -->
-	<section class="tint" style="padding-block:clamp(72px,9vw,128px)">
+	<section class="tint article-end-newsletter">
 		<div class="wrap"><div class="grid">
 			<div style="grid-column:4 / 10; text-align:center">
 				<h2 class="h2" style="margin-bottom:16px">Sundays, considered.</h2>

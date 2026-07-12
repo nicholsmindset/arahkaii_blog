@@ -44,6 +44,27 @@ const posts = defineCollection({
 				.optional(),
 			listName: z.string().optional(),
 			listItems: z.array(z.string()).optional(),
+			kicker: z.string().optional(),
+			articleType: z.enum(['feature', 'listicle', 'guide', 'profile', 'longread', 'brief']).optional(),
+			franchise: z.string().optional(),
+			cluster: z.string().optional(),
+			isPillar: z.boolean().default(false),
+			timeliness: z.enum(['evergreen', 'timely']).default('evergreen'),
+			atAGlance: z.array(z.object({
+				name: z.string(),
+				verdict: z.string(),
+				halalStatus: z.string().optional(),
+				url: z.string().optional(),
+			})).optional(),
+			halalStatus: z.object({
+				status: z.enum(['muis-certified', 'muslim-owned', 'pork-free-no-alcohol', 'mixed-status-guide', 'not-applicable']),
+				verifiedDate: z.coerce.date().optional(),
+				certificateRef: z.string().optional(),
+				sourceUrl: z.url().optional(),
+				note: z.string().optional(),
+			}).optional(),
+			reviewedBy: z.string().optional(),
+			lastVerified: z.coerce.date().optional(),
 		}),
 });
 
@@ -55,7 +76,30 @@ const authors = defineCollection({
 			role: z.string(),
 			bio: z.string(),
 			avatar: image().optional(),
+			sameAs: z.array(z.url()).optional(),
+			expertise: z.array(z.string()).optional(),
 		}),
 });
 
-export const collections = { posts, authors };
+const franchises = defineCollection({
+	loader: glob({ pattern: '**/*.md', base: './src/content/franchises' }),
+	schema: ({ image }) => z.object({
+		name: z.string(),
+		description: z.string(),
+		kicker: z.string().optional(),
+		cadence: z.string().optional(),
+		heroImage: image().optional(),
+	}),
+});
+
+const clusters = defineCollection({
+	loader: glob({ pattern: '**/*.md', base: './src/content/clusters' }),
+	schema: z.object({
+		name: z.string(),
+		description: z.string(),
+		pillarPost: z.string().optional(),
+		targetKeyword: z.string().optional(),
+	}),
+});
+
+export const collections = { posts, authors, franchises, clusters };

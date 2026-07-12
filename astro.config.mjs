@@ -3,8 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
-import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
-import netlify from '@astrojs/netlify';
+import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
+import vercel from '@astrojs/vercel';
 
 // Tailwind v4 is wired via PostCSS (postcss.config.mjs), not @tailwindcss/vite,
 // to sidestep the Astro 6 rolldown build bug (withastro/astro#16542).
@@ -24,7 +25,7 @@ const CATEGORIES = new Set([
  * 301s from the legacy WordPress permalink (root-level `/<legacyWpSlug>`) to the
  * canonical category path `/<category>/<slug>/`. Read straight from post
  * frontmatter at config load so it stays in sync as content changes. The
- * Netlify adapter renders these into `_redirects` as 301 (permanent).
+ * Astro renders these as permanent redirects through the active host adapter.
  */
 function legacyRedirects() {
 	const dir = path.resolve('src/content/posts');
@@ -63,38 +64,27 @@ function legacyRedirects() {
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://arahkaii.com',
+	site: 'https://www.arahkaii.com',
 	// Directory output → canonical URLs carry a trailing slash; the per-page
 	// <link rel="canonical"> in Seo.astro disambiguates the slashless variant.
 	redirects: {
 		...legacyRedirects(),
+		// 1-for-1 map of every published WordPress URL whose path changed —
+		// the old permalinks were category-prefixed (/fashion/<slug>/) and many
+		// posts were recategorised. Generated from real-export.xml; see
+		// src/data/legacy-redirects.json (includes the old WP sitemap names).
+		...JSON.parse(fs.readFileSync('./src/data/legacy-redirects.json', 'utf8')),
 		// Renamed WordPress pages → our canonical paths.
 		'/about-us': '/about',
 		'/contact-us': '/contact',
 	},
-	integrations: [
-		mdx(),
-		sitemap({
-			// Keep non-canonical surfaces out of the index map. Per-post `noindex`
-			// is enforced authoritatively via the <meta name="robots"> tag in Seo.astro
-			// (Google honours the tag over sitemap inclusion).
-			filter: (page) => !page.includes('/404'),
-			// Stamp a fresh lastmod and declare the British-English locale.
-			serialize: (item) => ({
-				...item,
-				lastmod: new Date().toISOString(),
-				changefreq: ChangeFreqEnum.WEEKLY,
-				priority: 0.7,
-			}),
-			i18n: {
-				defaultLocale: 'en-GB',
-				locales: { 'en-GB': 'en-GB' },
-			},
-		}),
-	],
-	// Static output; the Netlify adapter enables forms, build hooks and
-	// redirect translation when we add server features later.
-	adapter: netlify(),
+	// Sitemaps are hand-rolled, segmented static endpoints (src/pages/
+	// sitemap-*.xml.ts) so Search Console reports indexing per content type;
+	// scripts/validate-build.mjs enforces sitemap ↔ build parity.
+	integrations: [react(), keystatic(), mdx()],
+	// Vercel serverless output powers the Keystatic API and newsletter endpoint
+	// while editorial pages remain prerendered for speed and resilience.
+	adapter: vercel(),
 	image: {
 		// Future Cloudflare R2 CDN for generated/sourced imagery. Harmless now.
 		domains: ['cdn.arahkaii.com'],

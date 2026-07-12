@@ -38,8 +38,8 @@ For each: pillar · author (pillar map) · target words · primary keyword · an
 
 ## STEP 7 — Propose
 Append entries to `content-calendar.md` as **`status:proposed`** (never `ready`).
-Append `run-log.md`. Open a `trends/<date>` branch + `gh pr create` digest (or
-`PushNotification`) summarising the batch for thumbs-up. The human flips chosen
+Append `run-log.md`. Open a `trends/<date>` branch + `gh pr create` digest
+summarising the batch for thumbs-up. The PR is the notification. The human flips chosen
 items to `status:ready` (edit the calendar or say so) → they become eligible for
 `/draft-daily`.
 

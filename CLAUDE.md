@@ -14,8 +14,9 @@ warm-paper / aubergine / Fraunces look ("The Quiet Authority") has been retired.
 
 Arahkaii is a Muslim-owned Asian modern-luxury / modest-luxury publication —
 **"Asia's modern-luxury edit — modestly told."** It is an Astro 6 site; posts
-are **MDX files in Git, edited through Claude Code — there is no CMS.** Claude
-Code _is_ the CMS.
+are Markdown/MDX files in Git. Keystatic provides the non-technical editor at
+`/keystatic`; Claude Code and the publishing commands remain the automation
+layer. Both routes preserve Git review and human approval.
 
 ## Brand voice
 
@@ -40,9 +41,11 @@ Code _is_ the CMS.
 `style` · `beauty` · `dining` · `travel` · `culture` · `living` · `people` ·
 `guides`
 
-All eight stay in the nav (v2-styled), plus a curated **"The Long Read"** link
-(→ `/latest`). URLs are `/<category>/<slug>/`. Preserve legacy WordPress slugs
-via `legacyWpSlug` for 301s.
+The masthead stays deliberately concise (six categories plus **"The Majlis"**
+→ `/franchises/the-majlis/`); the full eight-category taxonomy lives in the
+overlay menu and footer, alongside **"Latest stories"** (→ `/latest`). URLs are
+`/<category>/<slug>/`. Preserve legacy WordPress slugs via `legacyWpSlug` for
+301s.
 
 ## Typography — "Didone speaks, sans signposts" (one display + one serif + one sans)
 
@@ -108,8 +111,8 @@ Two sources, **one human gate**:
 ## Conventions
 
 - **Conventional commits** (`feat:`, `fix:`, `chore:`, `docs:`…).
-- **Run `npm run build` before pushing** — the Zod schema fails the build on
-  missing captions/credits or a bad category, so a green build is the gate.
+- **Run `npm run verify` before opening or merging a PR** — it covers Astro
+  diagnostics, the production build, JSON-LD, internal links, and page semantics.
 - Don't auto-commit; commit when asked.
 - Reuse the ported design system (`global.css` / `tokens.css` / `article.css`)
   and the article components in `src/components/article/` — match the prototype,
@@ -134,6 +137,12 @@ quarterly reviews, thin-content-rescue, social-distribution. Queue lives in
 `content-calendar.md`; runs logged to `run-log.md`. **Approval = PR merge** —
 the routine never pushes `main`.
 
+GitHub Actions enforce the same boundary: `.github/workflows/quality.yml` runs
+the release gate on PRs, while `.github/workflows/editorial.yml` schedules
+guarded weekday drafts and exposes manual `draft-daily` / `trend-scan` runs.
+Automation may create a branch and PR only; a human code-owner merge is the sole
+publishing action.
+
 ## Publishing — `/publish`
 
 Claude Code is the CMS. Run **`/publish`** (`.claude/commands/publish.md`) to
@@ -154,7 +163,7 @@ without approval + a logged licence**; generate when rights are unclear.
 ```
 src/
   content.config.ts          # Zod schema (posts + authors)
-  content/posts/2026/*.mdx    # articles
+  content/posts/2026/*.md     # articles (.mdx also supported when a body needs components)
   content/authors/*.md        # author profiles
   components/article/         # Headline · Standfirst · Byline · DropCap · PullQuote · Figure
   layouts/                    # BaseLayout (nav/footer/progress) · ArticleLayout
@@ -169,8 +178,9 @@ scripts/                      # new-post.mjs · image-prompt.mjs · image-gen.mj
 - **AI image generation** — `scripts/image-gen.mjs` ready; needs
   `OPENROUTER_API_KEY` in `.env` (sourcing via Firecrawl works now).
 - **Cloudflare R2** — local-first today; migrate when volume justifies it.
-- **MailerLite** — the signup form is presentational; RSS digest + capture API
-  reserved (`MAILERLITE_API_KEY`).
-- **Content** — real per-author bylines (all migrated posts are `nadra-nichols`),
-  replacement images for the 4 placeholder posts, finishing the hidden drafts.
-- **`netlify.toml` 301s** are generated from `legacyWpSlug` via `astro.config.mjs`.
+- **MailerLite digest automation** — capture is wired through `/api/subscribe`
+  and requires `MAILERLITE_API_KEY` in Vercel; the RSS digest remains deferred.
+- **Content** — replacement images for the two placeholder drafts and completion
+  of the remaining hidden drafts.
+- **301 redirects** are generated from `legacyWpSlug` via `astro.config.mjs`
+  (`legacyRedirects()`) and served by the Vercel adapter — there is no `netlify.toml`.

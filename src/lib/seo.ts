@@ -4,11 +4,11 @@
 export const SITE = {
 	name: 'Arahkaii',
 	tagline: "Asia's modern-luxury edit — modestly told.",
-	url: 'https://arahkaii.com',
+	url: 'https://www.arahkaii.com',
 	locale: 'en_GB',
 	// Raster logo for Organization schema (Google prefers raster over SVG).
 	// Falls back to the favicon if public/logo.png is not yet added.
-	logoUrl: 'https://arahkaii.com/logo.png',
+	logoUrl: 'https://www.arahkaii.com/logo.png',
 	twitter: '@arahkaii',
 	email: 'hello@arahkaii.com',
 	// Legal publisher behind the Arahkaii brand.
@@ -45,6 +45,7 @@ export function organizationSchema(): JsonLd {
 			url: SITE.logoUrl,
 		},
 		legalName: SITE.legalName,
+		publishingPrinciples: `${SITE.url}/editorial-standards/`,
 		contactPoint: {
 			'@type': 'ContactPoint',
 			email: SITE.email,
@@ -86,6 +87,9 @@ export interface ArticleSchemaInput {
 	authorUrl?: string;
 	section: string;
 	url: string; // canonical article URL
+	keywords?: string[];
+	wordCount?: number;
+	type?: 'Article' | 'NewsArticle';
 }
 
 export function articleSchema(input: ArticleSchemaInput): JsonLd {
@@ -99,7 +103,7 @@ export function articleSchema(input: ArticleSchemaInput): JsonLd {
 
 	return {
 		'@context': 'https://schema.org',
-		'@type': 'Article',
+		'@type': input.type ?? 'Article',
 		headline: input.headline,
 		description: input.description,
 		image: Array.isArray(input.image) ? input.image : [input.image],
@@ -110,6 +114,8 @@ export function articleSchema(input: ArticleSchemaInput): JsonLd {
 		articleSection: input.section,
 		inLanguage: 'en-GB',
 		mainEntityOfPage: { '@type': 'WebPage', '@id': input.url },
+		...(input.keywords?.length ? { keywords: input.keywords } : {}),
+		...(input.wordCount ? { wordCount: input.wordCount } : {}),
 	};
 }
 
@@ -237,7 +243,7 @@ export function howToSchema(name: string, steps: HowToStep[]): JsonLd {
 }
 
 /** ItemList — for "ranked"/numbered listicles. Items are ordered names. */
-export function itemListSchema(name: string, items: string[], url: string): JsonLd {
+export function itemListSchema(name: string, items: Array<string | { name: string; description?: string; url?: string }>, url: string): JsonLd {
 	return {
 		'@context': 'https://schema.org',
 		'@type': 'ItemList',
@@ -248,7 +254,9 @@ export function itemListSchema(name: string, items: string[], url: string): Json
 		itemListElement: items.map((item, i) => ({
 			'@type': 'ListItem',
 			position: i + 1,
-			name: item,
+			name: typeof item === 'string' ? item : item.name,
+			...(typeof item === 'string' || !item.description ? {} : { description: item.description }),
+			...(typeof item === 'string' || !item.url ? {} : { url: item.url }),
 		})),
 	};
 }

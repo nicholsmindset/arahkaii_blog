@@ -9,9 +9,8 @@ import {
 	breadcrumbSchema,
 } from '../lib/seo';
 
-// Contact — quiet editorial page with a Netlify-powered form (captured in the
-// Netlify dashboard once deployed; no backend needed) plus a direct address.
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const sent = Astro.url.searchParams.get('sent') === '1';
 const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
@@ -33,7 +32,7 @@ const jsonLd = [
 	description="Pitches, partnerships, or a quiet word — how to reach the Arahkaii desk."
 	jsonLd={jsonLd}
 >
-	<main class="wrap">
+	<div class="wrap">
 		<div class="mw-640">
 			<header class="cb-head">
 				<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Contact' }]} />
@@ -49,11 +48,9 @@ const jsonLd = [
 				class="contact-form"
 				name="contact"
 				method="POST"
-				data-netlify="true"
-				netlify-honeypot="bot-field"
-				action="/contact?sent=1"
+				action="/api/contact"
 			>
-				<input type="hidden" name="form-name" value="contact" />
+				{sent && <p class="form-success" role="status">Thank you. Your note has reached the Arahkaii desk.</p>}
 				<p hidden>
 					<label>Leave this empty: <input name="bot-field" /></label>
 				</p>
@@ -82,5 +79,5 @@ const jsonLd = [
 				press and partnerships all reach the desk there.
 			</p>
 		</div>
-	</main>
+	</div>
 </BaseLayout>

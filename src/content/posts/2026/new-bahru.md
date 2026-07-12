@@ -38,7 +38,7 @@ The label anchors the School Block with its largest store in the country. Beyond
 
 ### rye
 
-The one to see if you dress in a quieter register. The womenswear is spare and well-cut — clean shoulders, considered length, fabric that holds its shape — the sort of wardrobe that reads as [quiet luxury](/style/quiet-luxury-brands-worn-by-wealthy-insiders/) without the European price tag. The longer cuts layer cleanly for a covered wardrobe.
+The one to see if you dress in a quieter register. The womenswear is spare and well-cut — clean shoulders, considered length, fabric that holds its shape — the sort of wardrobe that reads as [quiet luxury](https://www.arahkaii.com/style/quiet-luxury-brands-worn-by-wealthy-insiders/) without the European price tag. The longer cuts layer cleanly for a covered wardrobe.
 
 ### MAKE by GINLEE
 
@@ -46,7 +46,7 @@ The design-led pick. GINLEE Studio is known for its hand-pleated, architectural 
 
 ### Curious Creatures
 
-Demi-fine and fine jewellery with a slightly gothic, sculptural hand. The pieces are meant to be worn daily and layered rather than saved for occasions — the kind of [investment in small objects](/guides/the-complete-guide-to-investment-dressing/) that outlasts a season and quietly carries an outfit.
+Demi-fine and fine jewellery with a slightly gothic, sculptural hand. The pieces are meant to be worn daily and layered rather than saved for occasions — the kind of [investment in small objects](https://www.arahkaii.com/guides/the-complete-guide-to-investment-dressing/) that outlasts a season and quietly carries an outfit.
 
 ### Good Addition
 
@@ -68,13 +68,13 @@ The wardrobe logic, taken home. SOJAO works in organic-cotton bedding and table 
 
 The deliberate outsider. The Japanese retailer chose New Bahru for its first Singapore boutique — a vote of confidence from abroad that reads, in context, as a compliment to the building rather than a dilution of the local brief. Set against the home-grown labels, it is a useful measure: this is the standard Singapore design is now being held to, and mostly meeting.
 
-None of this is modest fashion in the strict sense — there are no abaya rails here. But the register is right: long lines, natural fabrics, a preference for cut over logo. It is the same instinct driving the wider [modest-luxury movement across Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/), and rye's longer cuts, GINLEE's pleated layers and SOJAO's loose linen all earn a place in a covered wardrobe.
+None of this is modest fashion in the strict sense — there are no abaya rails here. But the register is right: long lines, natural fabrics, a preference for cut over logo. It is the same instinct driving the wider [modest-luxury movement across Southeast Asia](https://www.arahkaii.com/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/), and rye's longer cuts, GINLEE's pleated layers and SOJAO's loose linen all earn a place in a covered wardrobe.
 
 ## Why a former school, and why now?
 
-The choice of building matters. Singapore tends to demolish and rebuild; New Bahru does the opposite, treating a 1980s school as something worth keeping. FARM's restoration left the original architecture largely intact — the lift core, photographed by Finbarr Fallon, has become a quiet talking point among the design crowd — and *Monocle* called the result exactly what the city had been missing: a pocket of well-planned urbanism amid a forest of high-rises. That conservation instinct — materials and memory retained, not erased — is the same one that has made the case for [Korean heritage brands](/style/korean-heritage-brands-renaissance/) and for design that carries its history rather than hiding it.
+The choice of building matters. Singapore tends to demolish and rebuild; New Bahru does the opposite, treating a 1980s school as something worth keeping. FARM's restoration left the original architecture largely intact — the lift core, photographed by Finbarr Fallon, has become a quiet talking point among the design crowd — and *Monocle* called the result exactly what the city had been missing: a pocket of well-planned urbanism amid a forest of high-rises. That conservation instinct — materials and memory retained, not erased — is the same one that has made the case for [Korean heritage brands](https://www.arahkaii.com/style/korean-heritage-brands-renaissance/) and for design that carries its history rather than hiding it.
 
-The timing is deliberate, too. Homegrown Southeast Asian design has spent the last few years moving from market stalls and Instagram drops to permanent retail and serious press — a shift visible everywhere from [Jakarta's fashion week](/style/jakarta-fashion-week-2025/) to the slow, [artisan-led economics of labels like SukkhaCitta](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/). New Bahru is Singapore's version of that maturity: a developer betting that local design now warrants a destination address, not a temporary one. A serviced apartment on the top floor is the clearest tell — you do not build eighty-three keys above a pop-up.
+The timing is deliberate, too. Homegrown Southeast Asian design has spent the last few years moving from market stalls and Instagram drops to permanent retail and serious press — a shift visible everywhere from [Jakarta's fashion week](https://www.arahkaii.com/style/jakarta-fashion-week-2025/) to the slow, [artisan-led economics of labels like SukkhaCitta](https://www.arahkaii.com/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/). New Bahru is Singapore's version of that maturity: a developer betting that local design now warrants a destination address, not a temporary one. A serviced apartment on the top floor is the clearest tell — you do not build eighty-three keys above a pop-up.
 
 ## Where to eat and drink
 
@@ -118,4 +118,4 @@ Reformer and mat classes upstairs, for those building the visit around a session
 
 The quiet achievement here is not any single store. It is the proof of concept: that more than sixty Singapore-made brands can share one address and pull a crowd that came specifically for them, not for a department-store anchor or a luxury flagship. For a city that has long imported its design confidence, that is new — and the foreign tenant choosing to open here, rather than on Orchard Road, only underlines it.
 
-Go for the building, which earns a slow walk on its own. Stay for the labels, which are better seen in person than scrolled. And if you are dressing for the long term rather than the season, treat New Bahru as a shortlist of the homegrown names worth knowing — the ones, like the best [quiet wardrobes](/guides/the-complete-guide-to-quiet-luxury/), that you will still be wearing when the trip is a memory.
+Go for the building, which earns a slow walk on its own. Stay for the labels, which are better seen in person than scrolled. And if you are dressing for the long term rather than the season, treat New Bahru as a shortlist of the homegrown names worth knowing — the ones, like the best [quiet wardrobes](https://www.arahkaii.com/guides/the-complete-guide-to-quiet-luxury/), that you will still be wearing when the trip is a memory.

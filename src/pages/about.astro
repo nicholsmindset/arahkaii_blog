@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/brand-about.png';
 import {
 	SITE,
 	organizationSchema,
@@ -46,7 +48,7 @@ const pillars: [string, string][] = [
 >
 	<article class="manifesto">
 		<Breadcrumbs schema={false} center class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'About' }]} />
-		<span class="eyebrow mf-eyebrow">About Arahkaii</span>
+		<h1 class="eyebrow mf-eyebrow">About Arahkaii</h1>
 		<p class="mf-open">
 			We started Arahkaii on a simple conviction: that the most luxurious thing a
 			publication can offer its reader is attention — unhurried, undivided, and
@@ -90,8 +92,8 @@ const pillars: [string, string][] = [
 	</article>
 
 	<figure class="mf-image">
-		<div class="img ph tone-c r-16x9 blurup">
-			<span class="lab">Brand image — atelier light, modest dress, negative space · 16:9</span>
+		<div class="img real r-16x9 blurup">
+			<Image src={aboutImage} alt="The Arahkaii wordmark on a warm-bone field with generous negative space" widths={[800, 1280, 1920]} sizes="100vw" />
 		</div>
 		<figcaption class="caption">
 			Soft, even light. Generous negative space. The grammar of the brand.

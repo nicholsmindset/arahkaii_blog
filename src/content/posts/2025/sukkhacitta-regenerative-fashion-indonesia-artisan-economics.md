@@ -26,8 +26,6 @@ faq:
     a: "Yes. SukkhaCitta holds B-Corp certification — Indonesia's first in the fashion sector — and carries the Nest Seal for ethical production. Its founder has received the Rolex Award for Enterprise and the Cartier Women's Initiative Award."
 ---
 
-# The Twelve Women in Your Wardrobe: Inside SukkhaCitta's Radical Reinvention of Fashion
-
 SukkhaCitta (also styled SukkhaCijtta) and its regenerative fashion model proves that sustainability and luxury can coexist—if you’re willing to rethink the entire supply chain. _An Indonesian brand is proving that regenerative farming, artisan economics, and luxury quality can coexist—one hand-dyed garment at a time._
 
 * * *
@@ -88,7 +86,7 @@ These offerings aren't marginal add-ons. They represent a fundamental business m
 
 ## Heritage Without Costume
 
-Indonesian textile traditions carry deep cultural significance. The kebaya, the kain, the intricate batik patterns of specific regions—these aren't merely aesthetic choices but connections to ancestry and identity. Yet traditional garments often feel disconnected from contemporary life, relegated to ceremonies and special occasions rather than everyday wardrobes.
+Indonesian textile traditions carry deep cultural significance. The kebaya, the kain, the intricate [batik patterns of specific regions](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)—these aren't merely aesthetic choices but connections to ancestry and identity. Yet traditional garments often feel disconnected from contemporary life, relegated to ceremonies and special occasions rather than everyday wardrobes.
 
 SukkhaCitta navigates this tension through translation rather than replication. Traditional techniques—hand-dyeing, wax-resist patterning, embroidery inspired by local flora—apply to silhouettes designed for modern contexts. The garments honour craft heritage without demanding that wearers adopt ceremonial dress for daily life.
 
@@ -118,19 +116,17 @@ Patience because garments take time when twelve artisans contribute their expert
 
 This proposition excludes much of the market. Not everyone wants to pay premium prices. Not everyone cares about the hands that made their clothes. Not everyone thinks of garments as companions meant to last decades. For further reading, see [SukkhaCitta Official](https://www.sukkhacitta.com).
 
-But for those who do—and their numbers are growing—SukkhaCitta offers something increasingly rare: fashion that creates more value than it extracts. Soil regenerated rather than depleted. Artisans enriched rather than exploited. Garments designed for repair rather than replacement.
+But for those who do—and their numbers are growing—SukkhaCitta offers something increasingly rare: fashion that creates more value than it extracts. It is the working proof behind [the conscious-luxury argument](/living/the-conscious-luxury-manifesto-sustainable-living/) — that restraint and provenance can be the premium, not the compromise. Soil regenerated rather than depleted. Artisans enriched rather than exploited. Garments designed for repair rather than replacement.
 
 The twelve women whose hands shaped your shirt remain invisible in conventional fashion. SukkhaCitta makes them visible—and in doing so, reveals what the industry could become if it chose different priorities.
 
-### Related Reading
+### Related reading
 
-- [The Batik Paradox: Authenticity and Technology](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
-- [The Rise of Modest Streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The batik authenticity paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [On the Jakarta Fashion Week 2025 runways](/style/jakarta-fashion-week-2025/)
+- [The rise of modest streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
 
 ### Read next
 
-- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
-- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [The conscious-luxury manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)
+- [Why Kendrick Lamar's jeans were worth millions](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)

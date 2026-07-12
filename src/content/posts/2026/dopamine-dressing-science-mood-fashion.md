@@ -12,7 +12,7 @@ heroCaption: ""
 heroCredit: "Arahkaii"
 legacyWpSlug: "dopamine-dressing-science-mood-fashion"
 seoTitle: "Dopamine dressing: the science of dressing for joy"
-metaDescription: "Dopamine dressing is more than a trend. The neuroscience of colour, mood and enclothed cognition — and how to build a personal palette that genuinely lifts you."
+metaDescription: "Dopamine dressing is more than a trend — the neuroscience of colour, mood and enclothed cognition, and how to build a personal palette that lifts you."
 faq:
   - q: "What is dopamine dressing?"
     a: "Dopamine dressing is the intentional selection of clothing based on the emotional response it triggers. Coined by fashion psychologist Dr. Dawnn Karen in 2020, it involves wearing colours and styles that spark joy or confidence. While named after the neurotransmitter dopamine, the practice works through psychological association rather than direct neurochemical effects."
@@ -127,7 +127,7 @@ _What colours make you feel most yourself? The answer is more personal—and mor
 
 ### Read next
 
-- [The Complete Guide to Investment Dressing](/guides/the-complete-guide-to-investment-dressing/)
-- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [The complete guide to investment dressing](/guides/the-complete-guide-to-investment-dressing/)
+- [Why quiet luxury is fashion's biggest contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [Covered and cool: modest streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Gen Z's most unexpected trend: wired headphones](/style/wired-earphones-fashion-trend-comeback-2026/)

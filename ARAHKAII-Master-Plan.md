@@ -3,6 +3,22 @@
 
 ---
 
+> **⚠️ Historical vision document — not current state.** This is the original
+> blueprint and records direction, not the live build. Where it diverges from
+> reality, **[CLAUDE.md](./CLAUDE.md) and [README.md](./README.md) are the source
+> of truth.** Key divergences since:
+> - **Hosting is Vercel**, not Netlify (`@astrojs/vercel` adapter + `vercel.json`;
+>   301s via `astro.config.mjs`, no `netlify.toml`).
+> - **Design is the bright-white "arahkaii-blog-v2" system** (Bodoni Moda +
+>   Source Serif 4 + Inter), not the warm-paper "Quiet Authority" look.
+> - **Keystatic** provides a Git-based CMS at `/keystatic` (the "no CMS" line is
+>   superseded).
+> - Posts are **`.md`** (`.mdx` supported); **Cloudflare R2** and **MailerLite
+>   digest automation** remain deferred (local-first images; capture via
+>   `/api/subscribe`).
+
+---
+
 ## 0. The One-Paragraph Summary
 
 Rebuild arahkaii.com in **Astro 6** (MDX content collections, Tailwind, View Transitions), deploy on **Netlify**, store posts as **MDX files in Git edited entirely through Claude Code** (no CMS). Images come from two sources behind one human-approval gate: **generated** via **OpenRouter** (flip between GPT Image, Flux, Gemini per-image to balance cost/quality) and **sourced** via **Firecrawl** (real photos for listicles, with a mandatory licence-review step). Generated assets land on **Cloudflare R2**. Email capture and list-building automation run on **MailerLite**. The creative direction is **"The Quiet Authority"** — warm, literary, serif-led, almost bookish, with subtle motion — using Tatler Asia only as a *tier reference*, never a template. The goal: a small site that reads as more considered and better-crafted than titles with far more authority.
