@@ -37,7 +37,7 @@ angle: Inside New Bahru — the homegrown Singapore labels (Beyond The Vines, GI
 links: /style/korean-heritage-brands-renaissance/, /style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/
 source: keyword-research-2026-h2
 
-### 2026-06-23 | status:ready | type:evergreen | pillar:dining | format:guide | words:1800 | score:86
+### 2026-06-23 | status:drafted | type:evergreen | pillar:dining | format:guide | words:1800 | score:86 | branch:drafts/2026-07-12-best-brunch-singapore
 keyword: best brunch singapore
 angle: The alcohol-free brunch edit — where to linger over coffee, no mimosas; halal status per venue. Distinct from (and links to) the existing halal-sunday-brunch piece by going broad/weekday. ⊛
 links: /dining/halal-fine-dining-singapore-2026/, cluster: halal-sunday-brunch-singapore

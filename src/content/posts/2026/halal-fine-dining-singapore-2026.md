@@ -267,6 +267,7 @@ Next year, some of them will have company.
 
 ### Read next
 
+- [The alcohol-free café brunch edit](/dining/best-brunch-singapore/)
 - [Forty-eight hours in Singapore, done properly](/travel/singapore-stopover-guide-48-hours/)
 - [Southeast Asia's quiet modest-streetwear revolution](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
 - [Asian philanthropy's quiet revolution](/culture/asian-billionaire-philanthropy-quiet-revolution/)
