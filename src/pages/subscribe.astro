@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { Image } from 'astro:assets';
+import subscribeImage from '../assets/blog-placeholder-5.jpg';
 
 // Focused signup hero — footer suppressed for a single-minded page.
 ---
@@ -31,8 +33,8 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 		<a class="link-more" href="/latest" style="margin-top:30px">See the latest</a>
 
 		<figure class="sub-image">
-			<div class="img ph tone-b r-16x9 blurup in">
-				<span class="lab">Quiet supporting image — still life, soft 4200K light · 16:9</span>
+			<div class="img real r-16x9 blurup in">
+				<Image src={subscribeImage} alt="A quiet Sunday reading table in soft natural light" widths={[640, 960, 1280]} sizes="(max-width:760px) 100vw, 720px" />
 			</div>
 		</figure>
 	</div>

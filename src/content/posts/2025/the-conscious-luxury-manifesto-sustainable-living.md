@@ -1,6 +1,10 @@
 ---
 title: "The Conscious Luxury Manifesto: How to Travel, Dress and Live Sustainably Without Compromise"
 standfirst: "Conscious luxury and sustainable living aren’t contradictions—they’re the future of how we consume, travel, and build wardrobes that reflect our values."
+kicker: "The Majlis"
+articleType: longread
+franchise: the-majlis
+timeliness: evergreen
 category: living
 tags:
   - "quiet-luxury"

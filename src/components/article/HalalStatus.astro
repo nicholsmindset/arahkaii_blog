@@ -1,0 +1,33 @@
+---
+export interface HalalStatusData {
+	status: 'muis-certified' | 'muslim-owned' | 'pork-free-no-alcohol' | 'mixed-status-guide' | 'not-applicable';
+	verifiedDate?: Date;
+	certificateRef?: string;
+	sourceUrl?: string;
+	note?: string;
+}
+interface Props { data: HalalStatusData; }
+const { data } = Astro.props;
+const labels = {
+	'muis-certified': 'MUIS-certified',
+	'muslim-owned': 'Muslim-owned',
+	'pork-free-no-alcohol': 'Pork-free; no alcohol served',
+	'mixed-status-guide': 'Mixed-status guide — check each entry',
+	'not-applicable': 'Not applicable',
+};
+const verified = data.verifiedDate ? new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(data.verifiedDate) : null;
+---
+
+{data.status !== 'not-applicable' && (
+	<aside class="halal-status" aria-labelledby="halal-status-title">
+		<p class="eyebrow eyebrow--emerald">Arahkaii verification</p>
+		<h2 id="halal-status-title">Halal status</h2>
+		<dl>
+			<div><dt>Status</dt><dd>{labels[data.status]}</dd></div>
+			{verified && <div><dt>Checked</dt><dd>{verified}</dd></div>}
+			{data.certificateRef && <div><dt>Reference</dt><dd>{data.certificateRef}</dd></div>}
+		</dl>
+		{data.note && <p class="halal-status__note">{data.note}</p>}
+		{data.sourceUrl && <a class="tlink" href={data.sourceUrl} target="_blank" rel="noopener noreferrer">View verification source →</a>}
+	</aside>
+)}

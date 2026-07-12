@@ -1,0 +1,13 @@
+---
+interface Item { title: string; href: string; }
+interface Props { cluster: string; items?: Item[]; }
+const { cluster, items = [] } = Astro.props;
+const title = cluster.replaceAll('-', ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+---
+
+<nav class="cluster-nav" aria-label={`More in ${title}`}>
+	<p class="eyebrow eyebrow--emerald">Part of the guide</p>
+	<h2><a href={`/topics/${cluster}/`}>{title}</a></h2>
+	{items.length > 0 && <ul>{items.slice(0, 4).map((item) => <li><a href={item.href}>{item.title}<span aria-hidden="true">→</span></a></li>)}</ul>}
+	<a class="tlink" href={`/topics/${cluster}/`}>Explore the complete topic →</a>
+</nav>

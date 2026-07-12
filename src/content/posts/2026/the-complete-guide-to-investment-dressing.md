@@ -1,6 +1,11 @@
 ---
 title: "The Complete Guide to Investment Dressing"
 standfirst: "The term “investment dressing” has been so thoroughly colonised by marketing that it now functions as justification for almost any purchase above SGD 200."
+kicker: "The Modest List"
+articleType: guide
+franchise: the-modest-list
+cluster: modest-fashion-asia
+timeliness: evergreen
 category: guides
 author: nadra-nichols
 date: 2026-05-16

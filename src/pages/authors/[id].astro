@@ -45,6 +45,7 @@ const jsonLd = [
 		description: a.bio,
 		url: canonical,
 		image: avatarUrl,
+		sameAs: a.sameAs,
 	}),
 	breadcrumbSchema([
 		{ name: SITE.name, url: SITE.url },
@@ -76,6 +77,7 @@ const jsonLd = [
 				<h1 class="ah-name">{a.name}</h1>
 				<p class="ah-role">{a.role}</p>
 				<p class="ah-bio">{a.bio}</p>
+				{a.expertise?.length && <ul class="author-expertise" aria-label="Areas of expertise">{a.expertise.map((item) => <li>{item}</li>)}</ul>}
 				<div style="margin-top:30px">
 					<button
 						class="follow-btn js-follow"
@@ -89,6 +91,7 @@ const jsonLd = [
 				</div>
 				<div class="ah-socials">
 					<a href="/subscribe">Newsletter</a>
+					{a.sameAs?.map((url) => <a href={url} rel="me noopener" target="_blank">Profile</a>)}
 					<a href="https://www.instagram.com/arahkaii/" rel="me">Instagram</a>
 					<a href="https://www.x.com/arahkaii" rel="me">X / Twitter</a>
 				</div>
@@ -108,7 +111,7 @@ const jsonLd = [
 
 		<section class="author-work">
 			<div class="aw-head">
-				<span class="eyebrow">Selected writing</span>
+				<h2 class="eyebrow">Selected writing</h2>
 				<span class="meta">{count} {count === 1 ? 'story' : 'stories'}</span>
 			</div>
 			<div class="aw-grid">

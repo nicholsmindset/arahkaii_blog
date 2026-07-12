@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/blog-placeholder-about.jpg';
 import {
 	SITE,
 	organizationSchema,
@@ -90,8 +92,8 @@ const pillars: [string, string][] = [
 	</article>
 
 	<figure class="mf-image">
-		<div class="img ph tone-c r-16x9 blurup">
-			<span class="lab">Brand image — atelier light, modest dress, negative space · 16:9</span>
+		<div class="img real r-16x9 blurup">
+			<Image src={aboutImage} alt="A quiet Arahkaii editorial interior in soft natural light" widths={[800, 1280, 1920]} sizes="100vw" />
 		</div>
 		<figcaption class="caption">
 			Soft, even light. Generous negative space. The grammar of the brand.

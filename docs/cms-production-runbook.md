@@ -14,6 +14,7 @@ The editor manages:
 - Author names, roles, biographies and portraits.
 - Draft and search-index visibility controls.
 - Newsletter provider selection (MailerLite, Beehiiv or temporarily paused).
+- Editorial franchises, topic clusters, at-a-glance summaries and verification records.
 
 ## Newsletter provider
 
@@ -30,6 +31,15 @@ Provider changes follow the same `cms/` branch, review and deployment process
 as editorial changes. Configure the destination credentials before switching,
 then submit one controlled test address after production deploy. The website
 form and `/api/subscribe` endpoint do not change.
+
+## Contact delivery
+
+The contact form posts to `/api/contact` and sends through Resend. Configure
+`RESEND_API_KEY`, `CONTACT_TO_EMAIL` and a verified `CONTACT_FROM_EMAIL` in
+Vercel Production and Preview. Without those values the page still displays the
+direct editorial email address, while the endpoint returns a configuration
+message instead of losing a submission silently. Submit one controlled message
+after deployment and confirm reply-to uses the reader's address.
 
 ## Images in the editor
 

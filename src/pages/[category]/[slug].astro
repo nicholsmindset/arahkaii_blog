@@ -60,6 +60,7 @@ const authorHref = `/authors/${post.data.author}/`;
 const Layout = d.category === 'guides' ? GuideLayout : ArticleLayout;
 const layoutExtra =
 	d.category === 'guides' ? { moreGuides } : { related, readNext };
+const clusterItems = d.cluster ? others.filter((card) => card.cluster === d.cluster).map((card) => ({ title: card.title, href: card.url })) : [];
 ---
 
 <Layout
@@ -83,6 +84,15 @@ const layoutExtra =
 	howTo={d.howTo}
 	listName={d.listName}
 	listItems={d.listItems}
+	kicker={d.kicker}
+	articleType={d.articleType}
+	timeliness={d.timeliness}
+	franchise={d.franchise}
+	cluster={d.cluster}
+	clusterItems={clusterItems}
+	atAGlance={d.atAGlance}
+	halalStatus={d.halalStatus}
+	lastVerified={d.lastVerified}
 	{...layoutExtra}
 >
 	<Content />

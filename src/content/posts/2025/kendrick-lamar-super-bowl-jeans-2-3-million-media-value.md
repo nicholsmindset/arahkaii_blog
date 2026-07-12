@@ -134,23 +134,23 @@ The Super Bowl audience skews more traditionally masculine than Fashion Week cro
 
 Kendrick Lamar's Super Bowl moment offers several strategic lessons for brands seeking similar cultural impact.
 
-#### Authenticity generates outsized returns.
+### Authenticity generates outsized returns.
 
 The pgLang-Celine partnership appears to reflect genuine aesthetic alignment rather than purely transactional endorsement. Kendrick's fashion choices feel coherent with his broader artistic identity, lending credibility that purely paid placements struggle to achieve.
 
-#### Cultural timing multiplies value.
+### Cultural timing multiplies value.
 
 Kendrick performed one week after his Grammy triumph, with "Not Like Us" still dominating cultural conversation. Fashion choices made in that window received additional scrutiny and coverage they wouldn't have received in isolation.
 
-#### Archive investment pays dividends.
+### Archive investment pays dividends.
 
 Five-year-old Celine jeans became the most-discussed fashion item of 2025. Brands with deep archives and patient strategies can see unexpected returns when the right cultural moment arrives.
 
-#### Platform matters more than placement.
+### Platform matters more than placement.
 
 The Super Bowl halftime show is, objectively, fashion's most valuable stage. Brands seeking similar impact should evaluate cultural touchpoints not by traditional fashion metrics but by raw audience reach and engagement intensity.
 
-#### Cross-cultural bridging creates compound value.
+### Cross-cultural bridging creates compound value.
 
 The Deion Sanders sneakers connected fashion to sports; the pgLang jacket connected fashion to music; the overall presentation connected luxury to hip-hop. Each bridge created additional audience segments and coverage opportunities.
 

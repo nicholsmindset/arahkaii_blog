@@ -1,6 +1,10 @@
 ---
 title: "The Quiet Titans: Inside the $3.7 Trillion Revolution Reshaping Asian Philanthropy"
 standfirst: "Asian billionaire philanthropy is reshaping global giving at an unprecedented scale, driven by a new generation that views wealth as responsibility rather than achievement."
+kicker: "The Majlis"
+articleType: longread
+franchise: the-majlis
+timeliness: evergreen
 category: culture
 tags:
   - "philanthropy"

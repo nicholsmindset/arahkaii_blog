@@ -39,6 +39,9 @@ export interface PostCard {
 	tone: Tone;
 	image: ImageMetadata;
 	heroCaption: string;
+	franchise?: string;
+	cluster?: string;
+	isPillar: boolean;
 }
 
 /** All published posts, newest first. */
@@ -78,6 +81,9 @@ export async function getCards(): Promise<PostCard[]> {
 			tone: toneFor(i),
 			image: p.data.heroImage,
 			heroCaption: p.data.heroCaption,
+			franchise: p.data.franchise,
+			cluster: p.data.cluster,
+			isPillar: p.data.isPillar,
 		};
 	});
 	return cardsCache;
