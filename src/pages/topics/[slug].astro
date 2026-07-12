@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCards } from '../../lib/articles';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, itemListSchema, breadcrumbSchema } from '../../lib/seo';
+
+export async function getStaticPaths() {
+	return (await getCollection('clusters')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const cards = (await getCards()).filter((card) => card.cluster === entry.id).sort((a, b) => Number(b.isPillar) - Number(a.isPillar));
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [organizationSchema(), websiteSchema(), collectionPageSchema({ name: entry.data.name, url: canonical, description: entry.data.description }), breadcrumbSchema([
+	{ name: SITE.name, url: SITE.url }, { name: entry.data.name, url: canonical },
+])];
+if (cards.length) jsonLd.push(itemListSchema(entry.data.name, cards.map((c) => ({ name: c.title, description: c.standfirst, url: new URL(c.url, SITE.url).toString() })), canonical));
+---
+
+<BaseLayout title={`${entry.data.name} — Arahkaii`} description={entry.data.description} jsonLd={jsonLd}>
+	<header class="hub-head wrap">
+		<p class="eyebrow eyebrow--emerald">Topic guide</p><h1>{entry.data.name}</h1><p>{entry.data.description}</p>
+		{entry.data.targetKeyword && <span>Editorial focus · {entry.data.targetKeyword}</span>}
+	</header>
+	<section class="hub-list wrap" aria-label={`${entry.data.name} stories`}>
+		{cards.length ? cards.map((card, index) => (
+			<article class="hub-story">
+				<a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[480, 840]} sizes="(max-width:760px) 100vw, 42vw" /></a>
+				<div><p class="eyebrow eyebrow--emerald">{card.isPillar ? 'Start here' : String(index + 1).padStart(2, '0')} · {card.categoryLabel}</p><h2><a href={card.url}>{card.title}</a></h2><p>{card.standfirst}</p><span>{card.byline} · {card.readingMinutes} min read</span></div>
+			</article>
+		)) : <div class="hub-empty"><h2>Reporting in progress.</h2><p>This topic will open when its first reviewed article is ready.</p></div>}
+	</section>
+</BaseLayout>

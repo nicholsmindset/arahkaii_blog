@@ -1,6 +1,12 @@
 ---
 title: "The Singapore Stopover Glow-Up: Your Insider Guide to 48 Hours Done Right"
 standfirst: "Hear me out. You've been landing in Singapore for years — possibly spending those hours in the transit lounge eating overpriced char kway teow and watching the same three CNN segments on loop."
+kicker: "Prayer-aware city guide"
+articleType: guide
+franchise: city-guides
+cluster: prayer-aware-travel
+isPillar: true
+timeliness: evergreen
 category: travel
 tags:
   - "digital-nomad"

@@ -12,6 +12,18 @@
    No two consecutive modules share grid signature, ratio or rhythm.
    ============================================================ */
 
+/* FRANCHISE + TOPIC HUBS */
+.hub-head{padding-block:clamp(64px,9vw,112px);border-bottom:var(--rule-heavy)}
+.hub-head h1{font-family:var(--headline);font-size:var(--step-5);font-weight:450;line-height:var(--leading-tight);letter-spacing:-.035em;max-width:18ch;margin:var(--space-s) 0}
+.hub-head>p:not(.eyebrow){font-size:var(--step-1);line-height:var(--leading-body);max-width:var(--measure-narrow);color:var(--ink-2)}
+.hub-head>span,.hub-story span{display:block;margin-top:var(--space-s);font:500 var(--step--1)/var(--leading-meta) var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.hub-list{padding-block:var(--space-xl) var(--space-3xl)}
+.hub-story{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center;padding:var(--space-xl) 0;border-bottom:var(--rule-hair)}
+.hub-story:first-child{padding-top:0}.hub-story .media{aspect-ratio:3/2}.hub-story h2{font-family:var(--headline);font-size:var(--step-3);font-weight:480;line-height:var(--leading-snug);letter-spacing:-.02em;margin:var(--space-s) 0}.hub-story h2 a:hover{color:var(--accent2)}.hub-story div>p:not(.eyebrow){font-size:var(--step-0);line-height:var(--leading-body);color:var(--ink-2);max-width:var(--measure-narrow)}
+.hub-empty{max-width:var(--measure);padding:var(--space-2xl) 0}.hub-empty h2{font:480 var(--step-3)/var(--leading-snug) var(--headline)}.hub-empty p{margin-top:var(--space-s);color:var(--ink-2)}
+@media(max-width:760px){.hub-head{padding-block:var(--space-2xl)}.hub-story{grid-template-columns:1fr;gap:var(--space-m);padding:var(--space-l) 0}}
+.author-expertise{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:24px 0 0;padding:0}.author-expertise li{padding:7px 11px;border:1px solid var(--hairline);font:500 10px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+
 /* M02 — The Brief (bordered typographic digest) */
 .brief__item{ display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:start; padding:20px 0; border-bottom:1px solid var(--hairline); }
 .brief__num{ font-family:var(--display); font-size:28px; line-height:1; color:var(--ink); }

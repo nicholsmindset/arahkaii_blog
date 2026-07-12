@@ -1,6 +1,54 @@
 ---
 title: "Best Halal Fine Dining Restaurants in Singapore (2026)"
 standfirst: "The kitchen at Restaurant Fiz is ten steps from your table. You can hear the ladle touch the bottom of the copper pot. The room is narrow."
+kicker: "Arahkaii Verified"
+articleType: listicle
+franchise: arahkaii-verified
+cluster: halal-dining-singapore
+isPillar: true
+timeliness: evergreen
+lastVerified: 2026-05-25
+halalStatus:
+  status: mixed-status-guide
+  verifiedDate: 2026-05-25
+  note: "Certification and alcohol policies vary by venue. Read the status beneath each entry and confirm directly before booking."
+atAGlance:
+  - name: "Restaurant Fiz"
+    verdict: "The most ambitious Malaysian tasting menu in the group."
+    halalStatus: "Muslim-owned; not MUIS-certified; alcohol served"
+  - name: "Seroja"
+    verdict: "A Michelin-recognised study of the Malay archipelago."
+    halalStatus: "Not MUIS-certified; pork-free; alcohol served"
+  - name: "The White Label Restaurant"
+    verdict: "French form with a clear Malayan flavour memory."
+    halalStatus: "MUIS-certified"
+  - name: "Restaurant Espoir"
+    verdict: "Strong-value European-Malayan cooking on Duxton Hill."
+    halalStatus: "MUIS-certified"
+  - name: "Oud Restaurant"
+    verdict: "Woodfire cooking with Middle Eastern and European technique."
+    halalStatus: "MUIS-certified"
+  - name: "Permata at Gedung Kuning"
+    verdict: "Nusantara cooking in a significant Kampong Glam address."
+    halalStatus: "MUIS-certified"
+  - name: "The Malayan Council at Fullerton"
+    verdict: "The celebration table with the strongest river view."
+    halalStatus: "MUIS-certified"
+  - name: "Malayan Settlement"
+    verdict: "Traditional Malay flavours in a contemporary format."
+    halalStatus: "MUIS-certified"
+  - name: "Charr'd"
+    verdict: "A5 wagyu with whole-animal traceability."
+    halalStatus: "MUIS-certified"
+  - name: "Gyusei Gyukatsu Wagyu Steakhouse"
+    verdict: "A focused Japanese wagyu-katsu counter."
+    halalStatus: "MUIS-certified"
+  - name: "Ammakase"
+    verdict: "Indian omakase built around coastal cooking."
+    halalStatus: "Confirm current certification and policy directly"
+  - name: "Rempapa by Chef Damian D'Silva"
+    verdict: "Included for heritage significance, not as a halal recommendation."
+    halalStatus: "Not halal-certified; pork cooked on premises"
 category: dining
 tags:
   - "asia-50-best"

@@ -1,0 +1,29 @@
+---
+export interface AtAGlanceItem {
+	name: string;
+	verdict: string;
+	halalStatus?: string;
+	url?: string;
+}
+interface Props { items: AtAGlanceItem[]; title?: string; }
+const { items, title = 'At a glance' } = Astro.props;
+---
+
+{items.length > 0 && (
+	<aside class="at-a-glance" aria-labelledby="at-a-glance-title">
+		<p class="eyebrow eyebrow--emerald">The short list</p>
+		<h2 id="at-a-glance-title">{title}</h2>
+		<ol>
+			{items.map((item) => (
+				<li>
+					<span class="at-a-glance__number" aria-hidden="true"></span>
+					<div>
+						<h3>{item.url ? <a href={item.url}>{item.name}</a> : item.name}</h3>
+						{item.verdict && <p>{item.verdict}</p>}
+						{item.halalStatus && <p class="at-a-glance__status">{item.halalStatus}</p>}
+					</div>
+				</li>
+			))}
+		</ol>
+	</aside>
+)}

@@ -1,6 +1,12 @@
 ---
 title: "Covered and Cool: The Quiet Revolution Reshaping Muslim Modest Fashion in Southeast Asia"
 standfirst: "Modest fashion in Southeast Asia is undergoing a creative revolution, driven by designers who refuse to choose between faith and style."
+kicker: "The Modest List"
+articleType: feature
+franchise: the-modest-list
+cluster: modest-fashion-asia
+isPillar: true
+timeliness: evergreen
 category: style
 tags:
   - "modest-fashion"

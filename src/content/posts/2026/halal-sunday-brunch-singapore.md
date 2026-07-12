@@ -1,6 +1,11 @@
 ---
 title: "Halal Sunday Brunch in Singapore: The Tatler-Bar Edit"
 standfirst: "The room at Permata at Gedung Kuning is too beautiful to rush."
+kicker: "Arahkaii Verified"
+articleType: guide
+franchise: arahkaii-verified
+cluster: halal-dining-singapore
+timeliness: evergreen
 category: dining
 tags:
   - "fine-dining"

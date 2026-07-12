@@ -48,7 +48,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 					card.className = 'rl-card';
 					card.innerHTML = `<a class="story" href="${it.href}">
 							<div class="img ph ${it.tone || 'tone-b'} r-3x2"></div>
-							<h3 class="headline">${it.title}</h3>
+							<h2 class="headline">${it.title}</h2>
 							<p class="byline">${it.byline || ''}</p>
 						</a>
 						<button class="rl-remove" aria-label="Remove from reading list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`;

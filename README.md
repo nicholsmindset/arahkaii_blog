@@ -48,7 +48,7 @@ Read [CLAUDE.md](./CLAUDE.md) for the standing design and editorial rules and [A
 
 Article frontmatter is validated by `src/content.config.ts`. Published posts require a category, author, credited hero image, caption, and other SEO fields. Legacy WordPress slugs generate permanent redirects automatically.
 
-Vercel must provide `MAILERLITE_API_KEY` for newsletter capture. `MAILERLITE_GROUP_ID` is optional. Copy `.env.example` to `.env` for local secret configuration; never commit `.env`.
+Vercel must provide credentials for the newsletter provider selected in Keystatic: `MAILERLITE_API_KEY` (and optional `MAILERLITE_GROUP_ID`) or `BEEHIIV_API_KEY` plus `BEEHIIV_PUBLICATION_ID`. Contact delivery requires `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and a verified `CONTACT_FROM_EMAIL`. Copy `.env.example` to `.env` for local secret configuration; never commit `.env`.
 
 The production CMS additionally requires `KEYSTATIC_GITHUB_CLIENT_ID`,
 `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`, and

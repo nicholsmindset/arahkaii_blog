@@ -24,6 +24,7 @@ const REQUIRED = {
 	Organization: ['name', 'url'],
 	WebSite: ['name', 'url'],
 	Article: ['headline', 'image', 'datePublished', 'author', 'publisher'],
+	NewsArticle: ['headline', 'image', 'datePublished', 'author', 'publisher'],
 	BlogPosting: ['headline', 'image', 'datePublished', 'author', 'publisher'],
 	Person: ['name'],
 	BreadcrumbList: ['itemListElement'],
@@ -43,10 +44,12 @@ let blocks = 0;
 let withSchema = 0;
 const errors = [];
 const typeCounts = {};
+const normalise = (value) => String(value ?? '').replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
 
 for (const file of htmlFiles) {
 	const html = fs.readFileSync(file, 'utf8');
 	const rel = path.relative(DIST, file);
+	const visible = normalise(html.replace(RE, ''));
 	let m;
 	let fileHadSchema = false;
 	while ((m = RE.exec(html))) {
@@ -70,6 +73,17 @@ for (const file of htmlFiles) {
 			for (const key of REQUIRED[type] ?? []) {
 				if (node[key] == null || (Array.isArray(node[key]) && !node[key].length))
 					errors.push(`${rel}: ${type} missing "${key}"`);
+			}
+			if (type === 'FAQPage') {
+				for (const item of node.mainEntity ?? []) {
+					if (!visible.includes(normalise(item.name))) errors.push(`${rel}: FAQ question is not visible: "${item.name}"`);
+					if (!visible.includes(normalise(item.acceptedAnswer?.text))) errors.push(`${rel}: FAQ answer is not visible for "${item.name}"`);
+				}
+			}
+			if (type === 'ItemList') {
+				for (const item of node.itemListElement ?? []) {
+					if (!visible.includes(normalise(item.name))) errors.push(`${rel}: ItemList entry is not visible: "${item.name}"`);
+				}
 			}
 		}
 	}

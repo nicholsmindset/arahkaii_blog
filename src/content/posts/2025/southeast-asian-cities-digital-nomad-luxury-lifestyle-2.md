@@ -1,6 +1,10 @@
 ---
 title: "The 5 Southeast Asian Cities Redefining the Digital Nomad Luxury Lifestyle"
 standfirst: "Choosing between the best digital nomad cities in Southeast Asia comes down to cost, community, connectivity, and lifestyle."
+articleType: guide
+franchise: city-guides
+cluster: prayer-aware-travel
+timeliness: evergreen
 category: travel
 tags:
   - "digital-nomad"

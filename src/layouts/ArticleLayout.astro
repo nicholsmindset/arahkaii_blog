@@ -6,6 +6,10 @@ import Standfirst from '../components/article/Standfirst.astro';
 import StoryCard from '../components/StoryCard.astro';
 import InlineNewsletter from '../components/InlineNewsletter.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import AtAGlance, { type AtAGlanceItem } from '../components/article/AtAGlance.astro';
+import HalalStatus, { type HalalStatusData } from '../components/article/HalalStatus.astro';
+import ClusterNav from '../components/article/ClusterNav.astro';
+import ArticleFaq from '../components/article/ArticleFaq.astro';
 import {
 	SITE,
 	articleSchema,
@@ -66,6 +70,15 @@ interface Props {
 	howTo?: HowToStep[];
 	listName?: string;
 	listItems?: string[];
+	kicker?: string;
+	articleType?: string;
+	timeliness?: 'evergreen' | 'timely';
+	franchise?: string;
+	cluster?: string;
+	clusterItems?: Array<{ title: string; href: string }>;
+	atAGlance?: AtAGlanceItem[];
+	halalStatus?: HalalStatusData;
+	lastVerified?: Date;
 }
 
 const {
@@ -91,6 +104,14 @@ const {
 	howTo,
 	listName,
 	listItems,
+	kicker,
+	timeliness = 'evergreen',
+	franchise,
+	cluster,
+	clusterItems = [],
+	atAGlance = [],
+	halalStatus,
+	lastVerified,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -141,14 +162,17 @@ const jsonLd = [
 		authorUrl,
 		section: categoryLabel,
 		url: canonical.toString(),
+		keywords: tags,
+		type: timeliness === 'timely' ? 'NewsArticle' : 'Article',
 	}),
 	breadcrumbSchema(crumbs),
 ];
 // GEO / AIO schema — appended only when the frontmatter supplies the data.
 if (faq?.length) jsonLd.push(faqSchema(faq));
 if (howTo?.length) jsonLd.push(howToSchema(howToName ?? title, howTo));
-if (listItems?.length)
-	jsonLd.push(itemListSchema(listName ?? title, listItems, canonical.toString()));
+if (atAGlance.length)
+	jsonLd.push(itemListSchema(listName ?? title, atAGlance.map((item) => ({ name: item.name, description: item.verdict, url: item.url })), canonical.toString()));
+else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listItems, canonical.toString()));
 ---
 
 <BaseLayout
@@ -170,7 +194,7 @@ if (listItems?.length)
 		<div class="wrap art-hero">
 			<nav class="art-breadcrumb eyebrow eyebrow--emerald" aria-label="Breadcrumb">
 				<a href={`/${category}`}>{categoryLabel}</a>
-				{primaryTag && <><span aria-hidden="true">·</span><span>{primaryTag}</span></>}
+				{(kicker ?? primaryTag) && <><span aria-hidden="true">·</span><span>{kicker ?? primaryTag}</span></>}
 			</nav>
 			<Headline text={title} />
 			<Standfirst text={standfirst} />
@@ -206,7 +230,13 @@ if (listItems?.length)
 		<div class="wrap" style="margin-top:64px">
 			<div class="grid art-layout">
 				<div class="article-body">
+					{atAGlance.length > 0 && <AtAGlance items={atAGlance} title={listName ?? 'At a glance'} />}
+					{atAGlance.length === 0 && listItems?.length && <AtAGlance items={listItems.map((name) => ({ name, verdict: '' }))} title={listName ?? 'At a glance'} />}
+					{halalStatus && <HalalStatus data={halalStatus} />}
+					{(franchise || cluster || lastVerified) && <p class="article-proof meta">{franchise && `Series · ${franchise}`}{franchise && cluster && ' · '}{cluster && `Topic · ${cluster.replaceAll('-', ' ')}`}{(franchise || cluster) && lastVerified && ' · '}{lastVerified && `Editorially checked ${new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(lastVerified)}`}</p>}
 					<slot />
+					{faq?.length && <ArticleFaq items={faq} />}
+					{cluster && <ClusterNav cluster={cluster} items={clusterItems} />}
 
 					{
 						tags.length > 0 && (

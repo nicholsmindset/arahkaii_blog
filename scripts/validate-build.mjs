@@ -27,6 +27,8 @@ function walk(dir) {
 walk(PUBLIC_ROOT);
 
 const semanticFailures = [];
+const hierarchyFailures = [];
+const imageFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -46,6 +48,23 @@ for (const file of htmlFiles) {
 
 	if (h1Count !== 1 || mainCount !== 1) {
 		semanticFailures.push({ file: relativeFile, h1Count, mainCount });
+	}
+
+	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
+	const levels = [...mainHtml.matchAll(/<h([1-6])\b/g)].map((match) => Number(match[1]));
+	for (let i = 1; i < levels.length; i++) {
+		if (levels[i] > levels[i - 1] + 1) {
+			hierarchyFailures.push(`${relativeFile}: heading jumps h${levels[i - 1]} → h${levels[i]}`);
+			break;
+		}
+	}
+
+	const articleHtml = mainHtml.match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1] ?? '';
+	for (const image of articleHtml.matchAll(/<img\b([^>]*)>/g)) {
+		if (!/\bwidth="\d+"/.test(image[1]) || !/\bheight="\d+"/.test(image[1])) {
+			imageFailures.push(`${relativeFile}: article image missing explicit width/height`);
+			break;
+		}
 	}
 
 	for (const match of html.matchAll(/href="([^"]+)"/g)) {
@@ -73,8 +92,18 @@ if (missingTargets.size) {
 	}
 }
 
-if (semanticFailures.length || missingTargets.size) process.exit(1);
+if (hierarchyFailures.length) {
+	console.error('\nHeading hierarchy failures:');
+	for (const item of hierarchyFailures) console.error(`- ${item}`);
+}
+
+if (imageFailures.length) {
+	console.error('\nArticle image dimension failures:');
+	for (const item of imageFailures) console.error(`- ${item}`);
+}
+
+if (semanticFailures.length || missingTargets.size || hierarchyFailures.length || imageFailures.length) process.exit(1);
 
 console.log(
-	`✓ ${htmlFiles.length} HTML pages checked · one h1/main each · all internal links resolve.`,
+	`✓ ${htmlFiles.length} HTML pages checked · headings, landmarks, article images and internal links validated.`,
 );
