@@ -29,7 +29,7 @@ const ROOT = process.cwd();
 const POSTS = path.join(ROOT, 'src/content/posts');
 const AUTHORS = path.join(ROOT, 'src/content/authors');
 const IMAGES = path.join(ROOT, 'src/assets/images');
-const CATEGORIES = ['style', 'dining', 'travel', 'culture', 'living', 'people', 'guides'];
+const CATEGORIES = ['style', 'beauty', 'dining', 'travel', 'culture', 'living', 'people', 'guides'];
 
 // ---- arg parsing -----------------------------------------------------------
 const args = process.argv.slice(2);

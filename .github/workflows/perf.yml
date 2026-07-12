@@ -1,0 +1,28 @@
+# Performance budget — repeatable Lighthouse measurement (median of N runs),
+# per the blueprint review: budgets use repeatable measurements, never a single
+# unstable Lighthouse result. Scheduled + manual so PR CI stays fast and
+# deterministic; a regression here is a signal to investigate, not a PR blocker.
+name: perf
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 1' # Mondays 02:00 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse-budget:
+    if: github.repository_owner == 'nicholsmindset'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run perf
