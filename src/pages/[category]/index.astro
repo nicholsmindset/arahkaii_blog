@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getCards, type PostCard } from '../../lib/articles';
 import { cap } from '../../lib/format';
-import { organizationSchema, websiteSchema, collectionPageSchema } from '../../lib/seo';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema } from '../../lib/seo';
 
 // Category archive — v2: no-image hero band + filter chips, full-width lead,
 // then an alternating "river" (A 4-4-4 → B 6+stacked-two → C 6-6 portrait →
@@ -86,6 +86,10 @@ const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
 	collectionPageSchema({ name: `${label} — Arahkaii`, url: canonical, description: meta }),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: label, url: canonical },
+	]),
 ];
 ---
 
