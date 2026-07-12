@@ -45,10 +45,15 @@
 .art-h1 {
 	font-family: var(--display);
 	font-weight: 400;
-	font-size: clamp(40px, 5.2vw, 72px);
-	line-height: 1.1;
-	letter-spacing: -0.01em;
-	max-width: 18ch;
+	/* Long editorial titles are the norm here (42/43 posts run >46 chars), so the
+	   hero is tuned for legibility over maximum drama: a lower cap + a wider
+	   measure + balanced wrapping keep long Didone headlines readable instead of
+	   stacking into a cramped 6-line tower with colliding descenders. */
+	font-size: clamp(34px, 4.4vw, 58px);
+	line-height: 1.14;
+	letter-spacing: -0.015em;
+	max-width: 24ch;
+	text-wrap: balance;
 	margin: 0 auto;
 }
 .art-standfirst {
