@@ -236,7 +236,7 @@ _Brightspot SuperMRKT 2025 ran December 4–7 at Agora Lifestyle Mall, Jakarta. 
 
 ### Read next
 
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
-- [The Twelve Women in Your Wardrobe](https://www.arahkaii.com/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)

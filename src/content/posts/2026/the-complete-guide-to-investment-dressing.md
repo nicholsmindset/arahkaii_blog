@@ -76,7 +76,7 @@ The arithmetic is simple. The discipline to run it honestly — on every signifi
 
 ### Read next
 
-- [Quiet Luxury Brands 2026: The Asian Insider Edit](https://www.arahkaii.com/fashion/quiet-luxury-brands-worn-by-wealthy-insiders/)
-- [The Complete Guide to Quiet Luxury](https://www.arahkaii.com/fashion/the-complete-guide-to-quiet-luxury/)
-- [The Accidental It Bag](https://www.arahkaii.com/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
-- [The Self-Gift Guide: 7 Future Vintage Designer Bags](https://www.arahkaii.com/fashion/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/)
+- [Quiet Luxury Brands 2026: The Asian Insider Edit](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
+- [The Complete Guide to Quiet Luxury](/guides/the-complete-guide-to-quiet-luxury/)
+- [The Accidental It Bag](/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
+- [The Self-Gift Guide: 7 Future Vintage Designer Bags](/guides/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/)

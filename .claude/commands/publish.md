@@ -24,8 +24,10 @@ Per image (hero + inline), choose a source:
 - **SOURCE (real entities / listicles)** — use the **Firecrawl MCP**: scrape the
   entity's **official site first** (never GMB — those are visitor uploads, only
   leads). Collect candidate image URLs **with their source URL**.
-- **GENERATE (conceptual/mood)** — `node scripts/image-gen.mjs` (needs
-  `OPENROUTER_API_KEY`; if absent, source instead or ask the user).
+- **GENERATE (conceptual/mood)** — run **`/illustrate <slug>`** after the post is
+  written (STEP 2) to auto-generate the hero + one image per H2 via OpenRouter and
+  inject the `<Figure>` blocks. (Single images: `node scripts/image-gen.mjs`.)
+  Needs `OPENROUTER_API_KEY`; if absent, source instead or ask the user.
 
 **HUMAN REVIEW GATE — do not skip.** Present each candidate to the user:
 thumbnail/URL · detected source/credit · proposed licence decision. Wait for:
@@ -36,8 +38,10 @@ _credited editorial use_ · _needs permission — hold_ · _reject → generate_
 guardrail to sourced photos too (a restaurant shot may contain a bar).
 
 Download approved images locally; pass the hero file path to `new-post.mjs`.
-(Inline images: place under `src/assets/images/<slug>/` and reference relatively
-in the MDX via `<Figure src={…} credit="…" />`.)
+(Inline images: either let **`/illustrate`** generate + inject them per-H2, or for
+sourced photos place under `src/assets/images/<slug>/` and reference relatively in
+the MDX via `<Figure src={…} credit="…" />` — `<Figure src>` needs a static
+top-of-file `import`, not a string path.)
 
 ## 2. Write the post (deterministic)
 ```bash
@@ -74,4 +78,5 @@ field is for migrated posts only; new posts omit it.
 ## Not yet wired
 - **R2 hosting** — local-first for now (images committed to `src/assets`).
 - **MailerLite** RSS digest / capture — `MAILERLITE_API_KEY` reserved in `.env`.
-- **AI generation** — `scripts/image-gen.mjs` is ready; add `OPENROUTER_API_KEY`.
+- **AI generation** — wired: `/illustrate` (hero + per-H2) and `scripts/image-gen.mjs`
+  (single image) via OpenRouter; add `OPENROUTER_API_KEY` to enable.

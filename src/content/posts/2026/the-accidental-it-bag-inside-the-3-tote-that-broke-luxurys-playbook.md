@@ -82,13 +82,13 @@ For anyone navigating the space between conscious luxury and cultural intelligen
 
 ### Continue Reading
 
-- [quiet luxury](https://www.arahkaii.com/the-complete-guide-to-quiet-luxury/)
+- [quiet luxury](/guides/the-complete-guide-to-quiet-luxury/)
 - [designer collaborations](/why-designer-collaborations-keep-failing-hm-gets-wrong/)
 - [unexpected fashion trends](/wired-earphones-fashion-trend-comeback-2026/)
 
 ### Read next
 
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)

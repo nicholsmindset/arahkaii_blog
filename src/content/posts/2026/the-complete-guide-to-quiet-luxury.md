@@ -86,7 +86,7 @@ The fractures produce measurable damage across wardrobes, bank accounts, and exp
 
 The result leaves buyers trapped in an uncomfortable middle ground. Heritage brands extract ever-higher premiums while fast-fashion operators flood social media with $40 polyester blazers marketed as understated elegance. Neither option delivers genuine value. Customers overpay for trend-cycle casualties dressed up as investment pieces, their wardrobes filling with garments that promise permanence but deliver planned obsolescence wrapped in cashmere.
 
-The ethical dimension proves equally troubled. Those consumers prioritizing [sustainable practices](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/) discover that many ateliers can't substantiate their responsibility claims at scale, while brand repairability programs often function as marketing theater rather than meaningful service.
+The ethical dimension proves equally troubled. Those consumers prioritizing [sustainable practices](/living/the-conscious-luxury-manifesto-sustainable-living/) discover that many ateliers can't substantiate their responsibility claims at scale, while brand repairability programs often function as marketing theater rather than meaningful service.
 
 * * *
 
@@ -132,7 +132,7 @@ The quiet luxury movement promised discernment. Too many shoppers mistook the ae
 
 Shift from accumulation to intention, asking not "Is this quiet luxury?" but "Will I reach for this in 2030?" That temporal test cuts through marketing noise with surgical precision. Prioritize repairability over replaceability, choosing brands that publish atelier content and offer lifetime services—when a house invests in maintaining your garment for decades, they're signaling confidence in their own craftsmanship.
 
-Demand price transparency. Treat fashion decisions with the same rigor applied to [art acquisition](https://arahkaii.com/asian-billionaire-philanthropy-quiet-revolution/). The information exists; the question is whether you'll seek it.
+Demand price transparency. Treat fashion decisions with the same rigor applied to [art acquisition](/culture/asian-billionaire-philanthropy-quiet-revolution/). The information exists; the question is whether you'll seek it.
 
 Embrace sustainability beyond marketing copy. The contradiction remains stark: most consumers claim environmental values matter, yet fast-fashion minimalism—those €30 "quiet luxury dupes"—continues thriving. Buy half as much. Spend twice as thoughtfully. Recognize that genuine stealth wealth, the kind requiring no Instagram validation, isn't about appearing wealthy—it's about possessing objects worthy of the life you're building around them.
 
@@ -188,13 +188,13 @@ Those who adopt it aren't following fashion. They're opting out of its endless c
 
 ### Related Reading
 
-- [Why Quiet Luxury Is Fashion's Biggest Contradiction](https://www.arahkaii.com/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/)
-- [Why Designer Collaborations Keep Failing](https://www.arahkaii.com/why-designer-collaborations-keep-failing-hm-gets-wrong/)
+- [Why Quiet Luxury Is Fashion's Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
+- [Why Designer Collaborations Keep Failing](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [The Self-Gift Guide: 7 ‘Future Vintage’ Designer Bags Poised to Become Classics](https://www.arahkaii.com/fashion/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/)
-- [The Complete Guide to Investment Dressing](https://www.arahkaii.com/fashion/the-complete-guide-to-investment-dressing/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [The Self-Gift Guide: 7 ‘Future Vintage’ Designer Bags Poised to Become Classics](/guides/the-self-gift-guide-7-future-vintage-designer-bags-poised-to-become-classics/)
+- [The Complete Guide to Investment Dressing](/guides/the-complete-guide-to-investment-dressing/)

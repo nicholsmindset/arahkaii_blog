@@ -163,13 +163,13 @@ But for those who do feel that November dissonance—the sense that your summer 
 
 ### Related Reading
 
-- [The Southeast Asian Foundation Guide](https://www.arahkaii.com/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/humidity-resistant-makeup-science-tropical-climate/)
-- [Best Chinese Makeup Brands 2026](https://www.arahkaii.com/beauty-best-chinese-makeup-brands/)
+- [The Southeast Asian Foundation Guide](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [Best Chinese Makeup Brands 2026](/beauty/beauty-best-chinese-makeup-brands/)
 
 ### Read next
 
-- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/beauty/humidity-resistant-makeup-science-tropical-climate/)
-- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](https://www.arahkaii.com/beauty/beauty-best-chinese-makeup-brands/)
-- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](https://www.arahkaii.com/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
+- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](/beauty/beauty-best-chinese-makeup-brands/)
+- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)

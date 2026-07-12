@@ -144,13 +144,13 @@ _Story researched and reported by Arahkaii Editorial Team_ _All designer Instagr
 
 ### Related Reading
 
-- [The Batik Paradox: Authenticity and Technology](https://www.arahkaii.com/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The Rise of Modest Streetwear in Southeast Asia](https://www.arahkaii.com/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Inside SukkhaCitta's Radical Reinvention of Fashion](https://www.arahkaii.com/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [The Batik Paradox: Authenticity and Technology](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The Rise of Modest Streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Inside SukkhaCitta's Radical Reinvention of Fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](https://www.arahkaii.com/fashion/seoul-fashion-week-fw-2026/)
-- [The 10 Best Shows of New York Fashion Week FW26, Ranked](https://www.arahkaii.com/fashion/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](/style/seoul-fashion-week-fw-2026/)
+- [The 10 Best Shows of New York Fashion Week FW26, Ranked](/style/the-10-best-shows-of-new-york-fashion-week-fw26-ranked/)

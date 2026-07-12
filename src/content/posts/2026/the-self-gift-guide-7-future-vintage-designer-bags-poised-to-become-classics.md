@@ -60,7 +60,7 @@ The Re-Edition series acknowledges this heritage while creating new collectibles
 
 In an era of aggressive logomania, Goyard offers something increasingly rare: recognition among fashion cognoscenti without broadcasting wealth to the uninitiated. This 1930s silhouette has experienced what can only be described as a quiet explosion of interest, becoming 2025's most-searched designer on major resale platforms.
 
-The Saint Louis tote succeeds because it answers a contemporary question elegantly: how does one signal taste without screaming? Its hand-painted chevron pattern, lightweight canvas construction, and practical proportions align perfectly with [conscious luxury principles](https://www.arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/) that increasingly define how thoughtful consumers approach acquisition.
+The Saint Louis tote succeeds because it answers a contemporary question elegantly: how does one signal taste without screaming? Its hand-painted chevron pattern, lightweight canvas construction, and practical proportions align perfectly with [conscious luxury principles](/living/the-conscious-luxury-manifesto-sustainable-living/) that increasingly define how thoughtful consumers approach acquisition.
 
 **Investment consideration:** Goyard made history in Rebag's 2024 Clair Report by surpassing Hermès in value retention for the first time, posting a stellar 104 percent retention rate. Fashionphile reports searches for the brand spiked 400 percent year-over-year.
 
@@ -112,7 +112,7 @@ Regardless of which silhouette captures your imagination, certain principles opt
 
 **Favour classic colourways.** Neutral and heritage colours offer maximum liquidity when you eventually choose to sell.
 
-**Purchase pieces you genuinely love.** The best investment is one you enjoy while it appreciates—a bag that accompanies you to [seasonal events](https://www.arahkaii.com/jakarta-fashion-week-2025/) and daily rituals alike.
+**Purchase pieces you genuinely love.** The best investment is one you enjoy while it appreciates—a bag that accompanies you to [seasonal events](/style/jakarta-fashion-week-2025/) and daily rituals alike.
 
 **Store properly.** Keep bags stuffed to maintain shape, away from direct sunlight, in breathable dust bags rather than plastic.
 
@@ -128,7 +128,7 @@ As you contemplate your next significant accessory acquisition, consider which p
 
 Choose wisely, invest thoughtfully, and gift yourself something that grows more valuable with every year of companionship.
 
-_Ready to explore more investment-worthy pieces? Browse our curated selections at [Shop the Edit](https://www.arahkaii.com/category/shop/)._
+_Ready to explore more investment-worthy pieces? Browse our curated selections at [Shop the Edit](/)._
 
 * * *
 
@@ -156,7 +156,7 @@ The Prada Re-Edition series and Louis Vuitton Pochette Métis offer accessible e
 
 ### Read next
 
-- [The Complete Guide to Quiet Luxury](https://www.arahkaii.com/fashion/the-complete-guide-to-quiet-luxury/)
-- [The Complete Guide to Investment Dressing](https://www.arahkaii.com/fashion/the-complete-guide-to-investment-dressing/)
-- [Why Designer Collaborations Keep Failing—And What H&M Gets Wrong](https://www.arahkaii.com/fashion/why-designer-collaborations-keep-failing-hm-gets-wrong/)
-- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](https://www.arahkaii.com/fashion/seoul-fashion-week-fw-2026/)
+- [The Complete Guide to Quiet Luxury](/guides/the-complete-guide-to-quiet-luxury/)
+- [The Complete Guide to Investment Dressing](/guides/the-complete-guide-to-investment-dressing/)
+- [Why Designer Collaborations Keep Failing—And What H&M Gets Wrong](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/)
+- [Seoul Fashion Week F/W 2026: 5 Collections Defining the Future of K-Fashion](/style/seoul-fashion-week-fw-2026/)

@@ -52,7 +52,7 @@ The pattern emerges quickly. Successful partnerships share common architecture: 
 
 The failures tell an equally instructive story. Gap x Yeezy, Bershka x League of Legends, Skims x Swarovski—each prioritized surface alignment over structural compatibility, assuming logo proximity could substitute for genuine creative conversation. These partnerships confused adjacency for affinity.
 
-According to industry sources cited by [Reuters](https://www.reuters.com/), most collaborations collapse for predictable reasons: brands chase reflected prestige over genuine values alignment, treating [partnerships as marketing exercises](https://www.arahkaii.com/kering-reports-revenue-decline-gucci-struggles/) rather than creative ventures.
+According to industry sources cited by [Reuters](https://www.reuters.com/), most collaborations collapse for predictable reasons: brands chase reflected prestige over genuine values alignment, treating [partnerships as marketing exercises](/style/kering-reports-revenue-decline-gucci-struggles/) rather than creative ventures.
 
 * * *
 
@@ -140,13 +140,13 @@ Fewer partnerships with deeper creative relationships. Tighter production runs (
 
 ### Related Reading
 
-- [The Complete Guide to Quiet Luxury](https://www.arahkaii.com/the-complete-guide-to-quiet-luxury/)
-- [Why Quiet Luxury Is Fashion's Biggest Contradiction](https://www.arahkaii.com/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/)
+- [The Complete Guide to Quiet Luxury](/guides/the-complete-guide-to-quiet-luxury/)
+- [Why Quiet Luxury Is Fashion's Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [Kering Reports 15% Revenue Decline as Gucci Struggles With Brand Repositioning](https://www.arahkaii.com/fashion/kering-reports-revenue-decline-gucci-struggles/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [Kering Reports 15% Revenue Decline as Gucci Struggles With Brand Repositioning](/style/kering-reports-revenue-decline-gucci-struggles/)

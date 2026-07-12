@@ -133,13 +133,13 @@ _The COSRX Snail Mucin Essence you bought because TikTok told you to? Korea's be
 
 ### Related Reading
 
-- [10 Korean Fashion Brands Building Global Empires](https://www.arahkaii.com/korean-fashion-brands-2026/)
-- [Seoul Fashion Week F/W 2026](https://www.arahkaii.com/seoul-fashion-week-fw-2026/)
-- [C-Beauty vs K-Beauty 2026](https://www.arahkaii.com/c-beauty-vs-k-beauty-2026/)
+- [10 Korean Fashion Brands Building Global Empires](/style/korean-fashion-brands-2026/)
+- [Seoul Fashion Week F/W 2026](/style/seoul-fashion-week-fw-2026/)
+- [C-Beauty vs K-Beauty 2026](/beauty/c-beauty-vs-k-beauty-2026/)
 
 ### Read next
 
-- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](https://www.arahkaii.com/beauty/c-beauty-vs-k-beauty-2026/)
-- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](https://www.arahkaii.com/beauty/beauty-best-chinese-makeup-brands/)
-- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](https://www.arahkaii.com/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
-- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](https://www.arahkaii.com/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](/beauty/c-beauty-vs-k-beauty-2026/)
+- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](/beauty/beauty-best-chinese-makeup-brands/)
+- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
+- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)

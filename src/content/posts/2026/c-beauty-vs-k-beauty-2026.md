@@ -168,13 +168,13 @@ Some mornings call for a streamlined K-Beauty routine with lightweight essences 
 
 ### Related Reading
 
-- [10 Korean Fashion Brands Building Global Empires](https://www.arahkaii.com/korean-fashion-brands-2026/)
-- [Seoul Fashion Week F/W 2026](https://www.arahkaii.com/seoul-fashion-week-fw-2026/)
-- [K-Beauty Broke the Algorithm](https://www.arahkaii.com/k-beauty-broke-the-algorithm/)
+- [10 Korean Fashion Brands Building Global Empires](/style/korean-fashion-brands-2026/)
+- [Seoul Fashion Week F/W 2026](/style/seoul-fashion-week-fw-2026/)
+- [K-Beauty Broke the Algorithm](/beauty/k-beauty-broke-the-algorithm/)
 
 ### Read next
 
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](https://www.arahkaii.com/beauty/beauty-best-chinese-makeup-brands/)
-- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](https://www.arahkaii.com/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [The Warmth Question](https://www.arahkaii.com/beauty/seasonal-makeup-transition-summer-autumn-colors/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
+- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](/beauty/beauty-best-chinese-makeup-brands/)
+- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [The Warmth Question](/beauty/seasonal-makeup-transition-summer-autumn-colors/)

@@ -59,7 +59,7 @@ Where the Bolero is the showier debut bag, the Le 7 is the one with everyday sta
 
 ## 7\. Gucci Giglio — The Anti-Quiet Luxury Hobo
 
-Alessandro Michele may have departed Gucci, but the Giglio lives on. Roomy, sculptural and designed to be noticed, it's been spotted on Sienna Miller, Dakota Johnson, Emily Ratajkowski, and Kate Moss. There are 12 colourways available. In a season where the industry has finally given itself permission to be visible again — a direct counterpoint to the [quiet luxury](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/) years — the Giglio is perfectly positioned as the bag that was always right.
+Alessandro Michele may have departed Gucci, but the Giglio lives on. Roomy, sculptural and designed to be noticed, it's been spotted on Sienna Miller, Dakota Johnson, Emily Ratajkowski, and Kate Moss. There are 12 colourways available. In a season where the industry has finally given itself permission to be visible again — a direct counterpoint to the [quiet luxury](/style/quiet-luxury-brands-worn-by-wealthy-insiders/) years — the Giglio is perfectly positioned as the bag that was always right.
 
 **Investment logic:** Already proven it can outlast creative director changes. That's rare and valuable.
 
@@ -85,6 +85,6 @@ Not a single bag, but a category — worn-in, visibly aged bags from the early 2
 
 What 2026's bag landscape tells you — if you step back and look at the whole thing — is that the market is running on two simultaneous tracks: new creative director debuts producing genuinely collectible first pieces, and deep archive nostalgia producing powerful reissues and vintage revivals. Both are worth investing in, but they require different approaches.
 
-The debut pieces — Blazy's Chanel, Rider's Celine, Piccioli's Balenciaga — reward early movers. (For the broader context on why [creative director transitions fail or succeed](https://www.arahkaii.com/why-designer-collaborations-keep-failing-hm-gets-wrong/), that analysis goes deep.) The archive pieces — the Mombasa, the Amazona, the pre-loved Paddington — reward people who understand that fashion history is cyclical and that the bag that mattered 20 years ago will matter again.
+The debut pieces — Blazy's Chanel, Rider's Celine, Piccioli's Balenciaga — reward early movers. (For the broader context on why [creative director transitions fail or succeed](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/), that analysis goes deep.) The archive pieces — the Mombasa, the Amazona, the pre-loved Paddington — reward people who understand that fashion history is cyclical and that the bag that mattered 20 years ago will matter again.
 
-Pick your lane. Or, if you can, pick both. For the philosophy behind buying luxury goods that last — our [complete guide to quiet luxury](https://www.arahkaii.com/the-complete-guide-to-quiet-luxury/) is the relevant framework.
+Pick your lane. Or, if you can, pick both. For the philosophy behind buying luxury goods that last — our [complete guide to quiet luxury](/guides/the-complete-guide-to-quiet-luxury/) is the relevant framework.

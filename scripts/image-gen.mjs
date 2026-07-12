@@ -10,6 +10,7 @@
 //   node scripts/image-gen.mjs --subject "a Seoul atelier seam" --kind inline --out /tmp/x.png
 // kind: hero | inline | portrait | square  (drives aspect ratio)
 
+import './load-env.mjs'; // load .env into process.env (key + AR_MODEL_* overrides)
 import fs from 'node:fs';
 import { buildPrompt } from './image-prompt.mjs';
 
@@ -21,10 +22,19 @@ const OPENAI_SIZE = {
 	square: '1024x1024', // 1:1
 };
 
+// OpenRouter model IDs (current June 2026). All env-overridable.
+//   hero/inline/bulk → defaults used by the single-image CLI + viaOpenRouter.
 const OPENROUTER_MODELS = {
-	hero: process.env.AR_MODEL_HERO || 'openai/gpt-image-1',
-	inline: process.env.AR_MODEL_INLINE || 'google/gemini-2.5-flash-image',
-	bulk: process.env.AR_MODEL_BULK || 'black-forest-labs/flux-2-klein',
+	hero: process.env.AR_MODEL_HERO || 'google/gemini-3-pro-image-preview',
+	inline: process.env.AR_MODEL_INLINE || 'google/gemini-3.1-flash-image',
+	bulk: process.env.AR_MODEL_BULK || 'black-forest-labs/flux.2-pro',
+};
+
+// Routing tiers consumed by illustrate-plan.routeModel():
+//   text → high-fidelity (heroes, faces/hands); mood → Flux (still-life/scene).
+export const ROUTE_MODELS = {
+	text: process.env.AR_MODEL_TEXT || 'google/gemini-3-pro-image-preview',
+	mood: process.env.AR_MODEL_MOOD || 'black-forest-labs/flux.2-pro',
 };
 
 function chooseProvider() {
@@ -59,9 +69,9 @@ async function viaOpenAI(prompt, kind, out) {
 	return out;
 }
 
-/** OpenRouter chat/completions with image modality → data-URL image. */
-async function viaOpenRouter(prompt, kind, model, out) {
-	const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+/** One OpenRouter chat/completions call with a given modalities array. */
+async function openRouterCall(model, prompt, modalities) {
+	return fetch('https://openrouter.ai/api/v1/chat/completions', {
 		method: 'POST',
 		headers: {
 			Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
@@ -69,12 +79,23 @@ async function viaOpenRouter(prompt, kind, model, out) {
 			'HTTP-Referer': 'https://arahkaii.com',
 			'X-Title': 'Arahkaii',
 		},
-		body: JSON.stringify({
-			model: model || OPENROUTER_MODELS[kind === 'hero' ? 'hero' : 'inline'],
-			modalities: ['image', 'text'],
-			messages: [{ role: 'user', content: prompt }],
-		}),
+		body: JSON.stringify({ model, modalities, messages: [{ role: 'user', content: prompt }] }),
 	});
+}
+
+/**
+ * OpenRouter chat/completions with image modality → data-URL image.
+ * Gemini/GPT-Image accept ['image','text']; Flux & other image-only models need
+ * ['image']. We try image+text, then fall back to image-only on the modality 404.
+ */
+async function viaOpenRouter(prompt, kind, model, out) {
+	const id = model || OPENROUTER_MODELS[kind === 'hero' ? 'hero' : 'inline'];
+	let res = await openRouterCall(id, prompt, ['image', 'text']);
+	if (res.status === 404) {
+		const body = await res.text();
+		if (/output modalities/i.test(body)) res = await openRouterCall(id, prompt, ['image']);
+		else throw new Error(`OpenRouter 404: ${body}`);
+	}
 	if (!res.ok) throw new Error(`OpenRouter ${res.status}: ${await res.text()}`);
 	const data = await res.json();
 	const url = data?.choices?.[0]?.message?.images?.[0]?.image_url?.url;
@@ -83,9 +104,16 @@ async function viaOpenRouter(prompt, kind, model, out) {
 	return out;
 }
 
+/** True when an image key is configured (cheap pre-flight for orchestrators). */
+export function hasImageKey() {
+	return chooseProvider() !== null;
+}
+
 /**
  * Generate one image to a local file. Returns the output path.
- * @param {{subject:string, kind?:'hero'|'inline'|'portrait'|'square', model?:string, out:string}} o
+ * Pass a pre-built `prompt` (the orchestrator does this with the locked
+ * templates) or a `subject` (+ optional `extra`) to have buildPrompt assemble it.
+ * @param {{subject?:string, prompt?:string, extra?:string, kind?:'hero'|'inline'|'portrait'|'square', model?:string, out:string}} o
  */
 export async function generateImage(o) {
 	const provider = chooseProvider();
@@ -96,7 +124,7 @@ export async function generateImage(o) {
 		);
 	}
 	const kind = o.kind ?? 'inline';
-	const prompt = buildPrompt(o.subject, { kind });
+	const prompt = o.prompt ?? buildPrompt(o.subject, { kind, extra: o.extra });
 	return provider === 'openai'
 		? viaOpenAI(prompt, kind, o.out)
 		: viaOpenRouter(prompt, kind, o.model, o.out);

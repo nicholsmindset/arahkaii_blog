@@ -122,7 +122,7 @@ Whether the rest of the world notices is becoming less relevant. The work contin
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](https://www.arahkaii.com/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
-- [The Quiet Renaissance of Korean Heritage Brands](https://www.arahkaii.com/fashion/korean-heritage-brands-renaissance/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
+- [The Quiet Renaissance of Korean Heritage Brands](/style/korean-heritage-brands-renaissance/)

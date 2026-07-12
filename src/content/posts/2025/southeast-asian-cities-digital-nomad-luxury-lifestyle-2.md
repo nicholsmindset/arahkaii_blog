@@ -109,7 +109,7 @@ The multicultural environment welcomes you warmly, offering diverse dining, shop
 
 ### Read next
 
-- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](https://www.arahkaii.com/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [The Conscious Luxury Manifesto](https://www.arahkaii.com/living/the-conscious-luxury-manifesto-sustainable-living/)
-- [The 26-Degree Question: Rethinking Home Cooling in Tropical Southeast Asia](https://www.arahkaii.com/living/energy-efficient-home-cooling-tropical-southeast-asia/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [The Conscious Luxury Manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)
+- [The 26-Degree Question: Rethinking Home Cooling in Tropical Southeast Asia](/living/energy-efficient-home-cooling-tropical-southeast-asia/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)

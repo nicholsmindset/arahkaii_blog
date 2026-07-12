@@ -38,7 +38,7 @@ Why now: Western beauty editors are starting to notice. Stock up before the wait
 
 ## 2\. Hince — The Minimalist Alternative to Huda Beauty
 
-Hince is quiet luxury for your makeup bag. Founded in 2019 and beloved by Korean makeup artists and fashion insiders, the brand makes the case that sophisticated colour cosmetics don't need to be loud. Their Second Skin Foundation and Truth Lip Color range have earned obsessive followings for their skin-like finish and wearability in humid climates — which, hello, is extremely relevant information for anyone living in Southeast Asia. (See our guide to [humidity-resistant makeup](https://www.arahkaii.com/humidity-resistant-makeup-science-tropical-climate/) for the full science.)
+Hince is quiet luxury for your makeup bag. Founded in 2019 and beloved by Korean makeup artists and fashion insiders, the brand makes the case that sophisticated colour cosmetics don't need to be loud. Their Second Skin Foundation and Truth Lip Color range have earned obsessive followings for their skin-like finish and wearability in humid climates — which, hello, is extremely relevant information for anyone living in Southeast Asia. (See our guide to [humidity-resistant makeup](/beauty/humidity-resistant-makeup-science-tropical-climate/) for the full science.)
 
 The brand's visual identity is also exceptional — all matte packaging and tonal neutrals — which has made it a favourite for flat-lay content creators and beauty editors who want their shelfie to look editorial. But beyond aesthetics, Hince's formulas are genuinely impressive: buildable coverage that breathes, lip shades that somehow manage to flatter every undertone.
 
@@ -96,4 +96,4 @@ Why now: Arencia is already on [Sephora](https://www.sephora.com) (USA) and [OLI
 
 What all eight of these brands share — beyond excellent formulas and strong aesthetics — is a philosophy. K-beauty in 2026 isn't about a 10-step routine or a specific product category. It's about an approach: skin-first, ingredient-honest, designed for real-life wear, and rooted in the idea that your natural features are worth enhancing rather than covering.
 
-The Asian beauty landscape has always understood this intuitively — the same way [C-beauty brands](https://www.arahkaii.com/beauty-best-chinese-makeup-brands/) have built entire empires on the same skin-first logic. Now the rest of the world is catching up. The question is whether you're still waiting for a Sephora endcap to tell you what to try — or whether you've already added three of these to your cart.
+The Asian beauty landscape has always understood this intuitively — the same way [C-beauty brands](/beauty/beauty-best-chinese-makeup-brands/) have built entire empires on the same skin-first logic. Now the rest of the world is catching up. The question is whether you're still waiting for a Sephora endcap to tell you what to try — or whether you've already added three of these to your cart.

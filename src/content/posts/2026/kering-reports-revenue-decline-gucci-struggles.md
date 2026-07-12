@@ -46,7 +46,7 @@ Bright spots emerged across the portfolio. Bottega Veneta posted 3% comparable g
 
 ## Why This Matters
 
-The divergence within Kering's portfolio exposes vastly different trajectories under a single corporate umbrella. Bottega Veneta's growth under Matthieu Blazy proves that [whisper-quiet luxury](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/) still commands premium prices when execution remains flawless. This offers Kering a crucial counterweight during Gucci's extended rehabilitation.
+The divergence within Kering's portfolio exposes vastly different trajectories under a single corporate umbrella. Bottega Veneta's growth under Matthieu Blazy proves that [whisper-quiet luxury](/style/quiet-luxury-brands-worn-by-wealthy-insiders/) still commands premium prices when execution remains flawless. This offers Kering a crucial counterweight during Gucci's extended rehabilitation.
 
 Financial reserves provide breathing room. According to [Kering's investor relations](https://www.kering.com/en/finance/), first-half free cash flow reached €2.4 billion—bolstered by €1.3 billion in real estate transactions and a €4 billion beauty division sale to L'Oréal. These aren't the vital signs of a company scrambling for survival. They're evidence of deliberate transformation, uncomfortable but calculated.
 
@@ -80,13 +80,13 @@ The fashion industry has witnessed too many legacy houses mistake caution for st
 
 ### Related Reading
 
-- [The Complete Guide to Quiet Luxury](https://www.arahkaii.com/the-complete-guide-to-quiet-luxury/)
-- [Why Quiet Luxury Is Fashion's Biggest Contradiction](https://www.arahkaii.com/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/)
+- [The Complete Guide to Quiet Luxury](/guides/the-complete-guide-to-quiet-luxury/)
+- [Why Quiet Luxury Is Fashion's Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [Why Designer Collaborations Keep Failing—And What H&M Gets Wrong](https://www.arahkaii.com/fashion/why-designer-collaborations-keep-failing-hm-gets-wrong/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [Why Designer Collaborations Keep Failing—And What H&M Gets Wrong](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/)

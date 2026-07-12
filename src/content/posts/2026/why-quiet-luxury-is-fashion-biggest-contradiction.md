@@ -118,13 +118,13 @@ Heritage house leather goods demonstrate strongest retention—Hermès bags appr
 
 ### Related Reading
 
-- [The Complete Guide to Quiet Luxury](https://www.arahkaii.com/the-complete-guide-to-quiet-luxury/)
-- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](https://www.arahkaii.com/quiet-luxury-brands-worn-by-wealthy-insiders/)
-- [Why Designer Collaborations Keep Failing](https://www.arahkaii.com/why-designer-collaborations-keep-failing-hm-gets-wrong/)
+- [The Complete Guide to Quiet Luxury](/guides/the-complete-guide-to-quiet-luxury/)
+- [12 Quiet Luxury Brands Wealthy Insiders Actually Wear](/style/quiet-luxury-brands-worn-by-wealthy-insiders/)
+- [Why Designer Collaborations Keep Failing](/style/why-designer-collaborations-keep-failing-hm-gets-wrong/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](https://www.arahkaii.com/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)

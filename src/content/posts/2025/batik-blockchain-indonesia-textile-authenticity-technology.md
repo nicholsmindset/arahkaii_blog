@@ -139,13 +139,13 @@ Tradition and technology. Heritage and innovation. Batik's paradox is that embra
 
 ### Related Reading
 
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/jakarta-fashion-week-2025/)
-- [The Rise of Modest Streetwear in Southeast Asia](https://www.arahkaii.com/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Inside SukkhaCitta's Radical Reinvention of Fashion](https://www.arahkaii.com/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)
+- [The Rise of Modest Streetwear in Southeast Asia](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Inside SukkhaCitta's Radical Reinvention of Fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [Kering Reports 15% Revenue Decline as Gucci Struggles With Brand Repositioning](https://www.arahkaii.com/fashion/kering-reports-revenue-decline-gucci-struggles/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [Kering Reports 15% Revenue Decline as Gucci Struggles With Brand Repositioning](/style/kering-reports-revenue-decline-gucci-struggles/)

@@ -41,7 +41,7 @@ The kitchen at Restaurant Fiz is ten steps from your table. You can hear the lad
 
 This is what halal fine dining looks like in Singapore in 2026: not apologetic, not abbreviated, not a concession to anything. It is the table.
 
-Singapore has always been a place where serious eating and halal observance share a neighbourhood. What changed in the last three years is the register. Tasting menus earning Michelin recognition. Malaysian heritage cuisine placing at 20th on Asia's 50 Best Restaurants. A generation of chefs building craft-led kitchens — the same patient, craft-first ambition that has driven [Korean heritage brands](https://www.arahkaii.com/fashion/korean-heritage-brands-renaissance/) to reshape how Seoul exports taste — now visible in Singapore's halal dining rooms. The conversation no longer asks whether halal can sustain fine dining ambition. The answer has already been plated.
+Singapore has always been a place where serious eating and halal observance share a neighbourhood. What changed in the last three years is the register. Tasting menus earning Michelin recognition. Malaysian heritage cuisine placing at 20th on Asia's 50 Best Restaurants. A generation of chefs building craft-led kitchens — the same patient, craft-first ambition that has driven [Korean heritage brands](/style/korean-heritage-brands-renaissance/) to reshape how Seoul exports taste — now visible in Singapore's halal dining rooms. The conversation no longer asks whether halal can sustain fine dining ambition. The answer has already been plated.
 
 This list covers twelve kitchens. Each one is led by the room and the chef, not the price. Every entry's halal status is declared plainly — because the distinction between MUIS-certified, Muslim-owned, and pork-free matters, and collapsing them into a single word does no diner a service. Book early.
 
@@ -213,13 +213,13 @@ _Explicit status: Rempapa is not MUIS halal-certified. Pork is cooked in the kit
 
 Restaurant Fiz earns the top position — not because it is the most accessible (it is not), or the most formally halal-certified (it is Muslim-owned, not MUIS-audited). It earns it because Chef Hafizzul Hashim's eleven courses carry an argument from the first amuse-bouche to the final sweet: that Malaysian produce, handled with rigour and precision, requires no apology and no explanation.
 
-The [quiet confidence that defines the best of restrained Asian luxury](https://www.arahkaii.com/fashion/the-complete-guide-to-quiet-luxury/) — craft over announcement, depth over surface — runs through the finest rooms on this list. The kitchens are the current answer to how high Singapore's halal fine dining scene intends to reach.
+The [quiet confidence that defines the best of restrained Asian luxury](/guides/the-complete-guide-to-quiet-luxury/) — craft over announcement, depth over surface — runs through the finest rooms on this list. The kitchens are the current answer to how high Singapore's halal fine dining scene intends to reach.
 
 Next year, some of them will have company.
 
 ### Read next
 
-- [Modest Fashion Meets Streetwear: Southeast Asia's Quiet Revolution](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Inside SukkhaCitta: Indonesia's Regenerative Fashion](https://www.arahkaii.com/fashion/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [The Quiet Titans: Asian Philanthropy's $3.7T Revolution](https://www.arahkaii.com/culture/asian-billionaire-philanthropy-quiet-revolution/)
-- [The Conscious Luxury Manifesto](https://www.arahkaii.com/living/the-conscious-luxury-manifesto-sustainable-living/)
+- [Modest Fashion Meets Streetwear: Southeast Asia's Quiet Revolution](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Inside SukkhaCitta: Indonesia's Regenerative Fashion](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [The Quiet Titans: Asian Philanthropy's $3.7T Revolution](/culture/asian-billionaire-philanthropy-quiet-revolution/)
+- [The Conscious Luxury Manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)

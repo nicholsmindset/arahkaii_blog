@@ -114,7 +114,7 @@ Small tracked wins build momentum, keeping you motivated for the long journey ah
 
 ### Read next
 
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](https://www.arahkaii.com/fashion/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [Editor’s Note: The Beginning of Something New](https://www.arahkaii.com/culture/editors-note-the-beginning-of-something-new/)
+- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [The Accidental It Bag: Inside the $3 Tote That Broke Luxury’s Playbook](/style/the-accidental-it-bag-inside-the-3-tote-that-broke-luxurys-playbook/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
+- [Editor’s Note: The Beginning of Something New](/culture/editors-note-the-beginning-of-something-new/)

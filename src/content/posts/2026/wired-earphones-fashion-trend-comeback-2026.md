@@ -114,7 +114,7 @@ The tangle isn't just back. It might be the look that defines a generation learn
 
 * * *
 
-_This article is part of arahkaii's ongoing exploration of fashion's intersection with technology, culture, and_ [_conscious living_](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/)_._
+_This article is part of arahkaii's ongoing exploration of fashion's intersection with technology, culture, and_ [_conscious living_](/living/the-conscious-luxury-manifesto-sustainable-living/)_._
 
 ### Continue Reading
 
@@ -123,7 +123,7 @@ _This article is part of arahkaii's ongoing exploration of fashion's intersectio
 
 ### Read next
 
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
-- [The Twelve Women in Your Wardrobe](https://www.arahkaii.com/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
+- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)

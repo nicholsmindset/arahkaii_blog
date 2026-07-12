@@ -137,11 +137,11 @@ _Your perfect match is waiting. Now you know exactly how to find it._
 
 - [Southeast Asian foundation guide](/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
 - [humidity-resistant makeup](/humidity-resistant-makeup-science-tropical-climate/)
-- [Best Chinese Makeup Brands 2026](https://www.arahkaii.com/beauty-best-chinese-makeup-brands/)
+- [Best Chinese Makeup Brands 2026](/beauty/beauty-best-chinese-makeup-brands/)
 
 ### Read next
 
-- [The Warmth Question](https://www.arahkaii.com/beauty/seasonal-makeup-transition-summer-autumn-colors/)
-- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](https://www.arahkaii.com/beauty/humidity-resistant-makeup-science-tropical-climate/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](https://www.arahkaii.com/beauty/c-beauty-vs-k-beauty-2026/)
+- [The Warmth Question](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
+- [The Chemistry of Lasting: How Humidity-Resistant Makeup Actually Works](/beauty/humidity-resistant-makeup-science-tropical-climate/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
+- [C-Beauty vs K-Beauty 2026: The New Asian Beauty Showdown](/beauty/c-beauty-vs-k-beauty-2026/)

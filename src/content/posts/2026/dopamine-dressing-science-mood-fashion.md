@@ -32,7 +32,7 @@ Dopamine dressing is more than a TikTok trend—it’s a neuroscience-backed app
 
 Four thousand years ago, ancient Egyptians built temples bathed in coloured light. Sunlight filtered through gemstones—ruby, sapphire, emerald—casting healing hues across patients seeking restoration. They believed colour possessed the power to cure. Pythagoras, five centuries before Christ, prescribed specific shades to treat ailments of body and spirit.
 
-Fast forward to Milan Fashion Week, September 2025. At Prada, the runway floor gleamed a traffic-cone tangerine, reflecting off garments in searing yellows, mint greens, and unexpected pinks. At Loewe, models layered colour-blocked windbreakers in clashing tones, polo shirts stacked beneath contrasting V-necks. The message was unmistakable: after seasons of whispered neutrals and stealth wealth, fashion had rediscovered volume—a shift that echoes the bold aesthetic choices we've seen emerging at [Jakarta Fashion Week 2025](https://arahkaii.com/jakarta-fashion-week-2025/) and beyond.
+Fast forward to Milan Fashion Week, September 2025. At Prada, the runway floor gleamed a traffic-cone tangerine, reflecting off garments in searing yellows, mint greens, and unexpected pinks. At Loewe, models layered colour-blocked windbreakers in clashing tones, polo shirts stacked beneath contrasting V-necks. The message was unmistakable: after seasons of whispered neutrals and stealth wealth, fashion had rediscovered volume—a shift that echoes the bold aesthetic choices we've seen emerging at [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/) and beyond.
 
 Between those ancient temples and these modern runways lies a concept that has captured the contemporary imagination: dopamine dressing. The practice of intentionally wearing colours and styles that spark joy has evolved from pandemic-era coping mechanism to legitimate wellness philosophy—one backed by genuine research, even as its limitations deserve honest examination.
 
@@ -84,9 +84,9 @@ The runway shift reflects broader cultural exhaustion with minimalist restraint.
 
 Intellectual honesty requires acknowledging what dopamine dressing cannot do. It is not a treatment for clinical depression, anxiety, or other mental health conditions. No amount of yellow can substitute for therapy, medication, or professional care when such interventions are needed.
 
-"Dopamine dressing can be a great way to boost your mental health and mood," notes one clinical perspective, "but it is not the answer to severe mental disorders." The practice belongs in the category of wellness tools alongside exercise, journaling, and adequate sleep—supportive rather than curative, helpful rather than sufficient. This aligns with what we might call [the conscious luxury manifesto](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/): the understanding that truly elevated living involves intentionality across all domains, not quick fixes.
+"Dopamine dressing can be a great way to boost your mental health and mood," notes one clinical perspective, "but it is not the answer to severe mental disorders." The practice belongs in the category of wellness tools alongside exercise, journaling, and adequate sleep—supportive rather than curative, helpful rather than sufficient. This aligns with what we might call [the conscious luxury manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/): the understanding that truly elevated living involves intentionality across all domains, not quick fixes.
 
-Other limitations merit consideration. Body image pressures may make fashion experiments stressful rather than liberating for some individuals. Workplace cultures vary in their tolerance for bold expression; a neon suit that sparks your joy might create professional complications. And the sustainability critique deserves acknowledgment: dopamine dressing need not mean constant consumption. Shopping your existing closet for overlooked sources of joy respects both wallet and planet—an ethos that resonates with the [regenerative fashion movement](https://arahkaii.com/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/) emerging across Southeast Asia.
+Other limitations merit consideration. Body image pressures may make fashion experiments stressful rather than liberating for some individuals. Workplace cultures vary in their tolerance for bold expression; a neon suit that sparks your joy might create professional complications. And the sustainability critique deserves acknowledgment: dopamine dressing need not mean constant consumption. Shopping your existing closet for overlooked sources of joy respects both wallet and planet—an ethos that resonates with the [regenerative fashion movement](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/) emerging across Southeast Asia.
 
 The science, too, warrants modesty. No formal clinical studies have specifically examined dopamine dressing as a defined practice. The supporting research on enclothed cognition and colour psychology provides a plausible mechanism but stops short of definitive proof. We are working with strong suggestions rather than settled science.
 
@@ -98,7 +98,7 @@ Consider keeping a brief colour journal. Note what you wore and how you felt—n
 
 Build a personal palette based on your discoveries rather than external prescriptions. Your dopamine colours are the ones that resonate with your history, your associations, your aesthetic sensibility. If black genuinely makes you feel powerful and present, it qualifies as dopamine dressing regardless of its darkness. The practice concerns intention, not hue.
 
-Start modest if bold colour feels foreign. A single bright accessory—scarf, bag, earrings—can introduce colour without overwhelming your comfort zone. Many practitioners describe a gradual expansion of colour confidence, each successful experiment enabling the next. For those navigating tropical climates, consider how your colour choices interact with [humidity-resistant makeup strategies](https://arahkaii.com/humidity-resistant-makeup-science-tropical-climate/) to create a cohesive mood-boosting routine.
+Start modest if bold colour feels foreign. A single bright accessory—scarf, bag, earrings—can introduce colour without overwhelming your comfort zone. Many practitioners describe a gradual expansion of colour confidence, each successful experiment enabling the next. For those navigating tropical climates, consider how your colour choices interact with [humidity-resistant makeup strategies](/beauty/humidity-resistant-makeup-science-tropical-climate/) to create a cohesive mood-boosting routine.
 
 Finally, resist pressure to perform happiness through clothing. The goal is authentic self-expression, not costumery. Dopamine dressing means dressing in ways that genuinely serve your wellbeing, which on some days might mean soft neutrals and comfort textures. Authenticity trumps trend compliance.
 
@@ -106,7 +106,7 @@ Finally, resist pressure to perform happiness through clothing. The goal is auth
 
 The dopamine philosophy has expanded beyond fashion. Interior design now speaks of "dopamine decor"—the intentional use of bold colour, layered pattern, and maximalist styling to create mood-enhancing spaces. After years of neutral interiors that "whispered rather than shouted," designers report growing client demand for joy-forward environments.
 
-"More people now have the language to talk about design in relation to their feelings," observes one interior designer. "Clients come to me and say they want their homes to feel happy, or calm, or joyful." The 2026 colour palette for homes emphasises "joy injection"—saffron yellows, terracotta warmth, emerald richness. This shift particularly resonates with [Southeast Asian digital nomads](https://arahkaii.com/southeast-asian-cities-digital-nomad-luxury-lifestyle-2/) crafting intentional living spaces in their adopted cities.
+"More people now have the language to talk about design in relation to their feelings," observes one interior designer. "Clients come to me and say they want their homes to feel happy, or calm, or joyful." The 2026 colour palette for homes emphasises "joy injection"—saffron yellows, terracotta warmth, emerald richness. This shift particularly resonates with [Southeast Asian digital nomads](/travel/southeast-asian-cities-digital-nomad-luxury-lifestyle-2/) crafting intentional living spaces in their adopted cities.
 
 Beauty has followed suit, with "dopamine makeup" encouraging bold lip colours and unexpected eyeshadow choices. The underlying premise remains consistent: intentional aesthetic choices can influence emotional states. Whether that influence operates through neuroscience or simple pleasure—or some combination—matters less than the lived experience of feeling better.
 
@@ -127,7 +127,7 @@ _What colours make you feel most yourself? The answer is more personal—and mor
 
 ### Read next
 
-- [The Complete Guide to Investment Dressing](https://www.arahkaii.com/fashion/the-complete-guide-to-investment-dressing/)
-- [The Twelve Women in Your Wardrobe](https://www.arahkaii.com/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Jakarta Fashion Week 2025](https://www.arahkaii.com/fashion/jakarta-fashion-week-2025/)
+- [The Complete Guide to Investment Dressing](/guides/the-complete-guide-to-investment-dressing/)
+- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Jakarta Fashion Week 2025](/style/jakarta-fashion-week-2025/)

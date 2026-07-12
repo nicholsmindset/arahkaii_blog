@@ -158,6 +158,6 @@ The creator economy has entered its next phase. Followers remain important, but 
 
 ### Read next
 
-- [The Twelve Women in Your Wardrobe](https://www.arahkaii.com/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
-- [10 Korean Fashion Brands Building Global Empires in 2026](https://www.arahkaii.com/fashion/korean-fashion-brands-2026/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
+- [The Twelve Women in Your Wardrobe](/people/sukkhacitta-regenerative-fashion-indonesia-artisan-economics/)
+- [10 Korean Fashion Brands Building Global Empires in 2026](/style/korean-fashion-brands-2026/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)

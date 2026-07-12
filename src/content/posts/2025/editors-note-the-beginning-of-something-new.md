@@ -200,7 +200,7 @@ _Warmly,_
 
 ### Read next
 
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
-- [The Quiet Titans](https://www.arahkaii.com/culture/asian-billionaire-philanthropy-quiet-revolution/)
-- [The Conscious Luxury Manifesto](https://www.arahkaii.com/living/the-conscious-luxury-manifesto-sustainable-living/)
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
+- [The Quiet Titans](/culture/asian-billionaire-philanthropy-quiet-revolution/)
+- [The Conscious Luxury Manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)

@@ -35,7 +35,7 @@ On February 9, 2025, seven days after winning a record-breaking five Grammy Awar
 
 According to [Launchmetrics](https://www.launchmetrics.com), the industry's leading media impact measurement platform, those jeans alone generated $2.3 million in Media Impact Value (MIV). Google searches for "flared jeans" spiked 5,000% within 48 hours. Celine mentions on X (formerly Twitter) surged over 4,000%. The Nike Air DT Max '96 sneakers he paired with the look—a tribute to football legend Deion Sanders—saw overnight sales jump 413% on StockX.
 
-But here's what most coverage missed: this wasn't an accident. It wasn't a stylist's whim. It was the culmination of a three-year strategic partnership between pgLang, the creative collective Kendrick co-founded with Dave Free, and Celine's parent company—a relationship that transformed hip-hop's most secretive artist into fashion's most valuable Super Bowl placement. The trajectory mirrors what we've seen with [content creators becoming founders](https://arahkaii.com/from-followers-to-founders-3-content-creators-building-empires-beyond-the-algorithm/)—strategic vision trumping viral happenstance.
+But here's what most coverage missed: this wasn't an accident. It wasn't a stylist's whim. It was the culmination of a three-year strategic partnership between pgLang, the creative collective Kendrick co-founded with Dave Free, and Celine's parent company—a relationship that transformed hip-hop's most secretive artist into fashion's most valuable Super Bowl placement. The trajectory mirrors what we've seen with [content creators becoming founders](/people/from-followers-to-founders-3-content-creators-building-empires-beyond-the-algorithm/)—strategic vision trumping viral happenstance.
 
 ## Kendrick Lamar's Super Bowl Jeans: The Anatomy of a $70,000 Outfit
 
@@ -53,7 +53,7 @@ To understand how Kendrick's Super Bowl look generated such extraordinary value,
 
 **Stylist:** Taylor McNeill (also styles Timothée Chalamet; jeans reportedly originally pulled for Chalamet)
 
-The foundation was those Celine Marco Jeans—$1,200 retail, Size 29, women's cut. The choice was deliberate: a slim, high-waisted silhouette that challenged traditional masculine presentation while channeling the bootcut revival that had been building momentum in high fashion circles since 2023. This kind of gender-fluid styling represents an [emerging trend](https://arahkaii.com/category/trending/emerging-trends-emerging-brands-lookout-reactions-movements/) reshaping how luxury brands approach their customer base.
+The foundation was those Celine Marco Jeans—$1,200 retail, Size 29, women's cut. The choice was deliberate: a slim, high-waisted silhouette that challenged traditional masculine presentation while channeling the bootcut revival that had been building momentum in high fashion circles since 2023. This kind of gender-fluid styling represents an [emerging trend](/latest) reshaping how luxury brands approach their customer base.
 
 Layered atop was a custom Martine Rose leather varsity jacket, featuring "Gloria" embroidered on the front—a reference to Kendrick's late grandmother—and "pgLang" on the back. The jacket alone signals the merger of personal narrative with brand identity that defines Kendrick's approach to public presentation.
 
@@ -92,7 +92,7 @@ When Kendrick Lamar walked onto the Super Bowl stage wearing Celine, fashion ins
 
 pgLang, the creative collective Kendrick founded with longtime collaborator Dave Free in 2020, has positioned itself at the intersection of music, fashion, and visual culture. The company has maintained partnerships with Celine dating back to at least 2022, though the terms and scope of those relationships remain characteristically opaque—consistent with Kendrick's broader approach to public communication.
 
-This represents a fundamental shift in how artists approach fashion relationships. The traditional model—one-off styling pulls, red carpet loans, occasional paid endorsements—has given way to something resembling equity partnerships, where artists become strategic brand ambassadors with input into how their fashion choices are deployed. It's a philosophy that aligns with our [conscious luxury manifesto](https://arahkaii.com/the-conscious-luxury-manifesto-sustainable-living/)—authentic alignment over transactional endorsement.
+This represents a fundamental shift in how artists approach fashion relationships. The traditional model—one-off styling pulls, red carpet loans, occasional paid endorsements—has given way to something resembling equity partnerships, where artists become strategic brand ambassadors with input into how their fashion choices are deployed. It's a philosophy that aligns with our [conscious luxury manifesto](/living/the-conscious-luxury-manifesto-sustainable-living/)—authentic alignment over transactional endorsement.
 
 The Super Bowl halftime show is, by this logic, fashion's most valuable runway. No Fashion Week presentation, regardless of front-row star power, commands 130 million simultaneous viewers. No Met Gala red carpet generates 48 hours of continuous global news coverage. No magazine cover shoot gets replayed, analyzed, and memed across every major social platform within minutes.
 
@@ -108,7 +108,7 @@ When Slimane designed those jeans in 2019, TikTok had barely launched. COVID had
 
 Yet fashion operates on strange timelines. The bootcut revival that Slimane anticipated in 2020 has fully materialized by 2025. What seemed out of step five years ago now reads as prescient. Kendrick's choice to wear those specific jeans, from that specific collection, suggests a styling team with deep fashion literacy and a deliberate intention to make a statement about cyclical trends and archive appreciation.
 
-The 5,000% spike in Google searches for "flared jeans" post-performance indicates that statement landed. This kind of [viral fashion moment](https://arahkaii.com/category/trending/whats-viral-talk-of-town-pin-points-perspectives/) demonstrates how a single cultural event can reshape consumer behavior overnight.
+The 5,000% spike in Google searches for "flared jeans" post-performance indicates that statement landed. This kind of [viral fashion moment](/latest) demonstrates how a single cultural event can reshape consumer behavior overnight.
 
 ## The Drake-Kendrick Fashion Wars: Sartorial Subliminal Messaging
 
@@ -122,7 +122,7 @@ The diamond brooch—$68,000 of angel wing imagery—carried its own messaging. 
 
 ## Gender-Fluid Luxury: The Business of Men in Women's Wear
 
-Kendrick wearing women's jeans to the Super Bowl represents more than a styling choice—it reflects a broader shift in how [luxury fashion](https://arahkaii.com/category/fashion-trends-designers-spotlights-styling-tips-curation/) approaches gender categorization and the commercial implications of that evolution.
+Kendrick wearing women's jeans to the Super Bowl represents more than a styling choice—it reflects a broader shift in how [luxury fashion](/style) approaches gender categorization and the commercial implications of that evolution.
 
 The global luxury denim market reached $16.2 billion in 2023, with gender-neutral and cross-gender styling emerging as significant growth categories. Brands including Gucci, Bottega Veneta, and Saint Laurent have increasingly presented gender-fluid collections, blurring traditional lines between men's and women's departments.
 
@@ -182,11 +182,11 @@ The Super Bowl halftime show has become fashion's most valuable runway. In 13 mi
 
 * * *
 
-_For more analysis on the intersection of culture, commerce, and style, explore [The Journal](https://arahkaii.com/category/the-journal/) or discover what's shaping [fashion's trending conversations](https://arahkaii.com/category/trending/)._
+_For more analysis on the intersection of culture, commerce, and style, explore [The Journal](/latest) or discover what's shaping [fashion's trending conversations](/latest)._
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [Kering Reports 15% Revenue Decline as Gucci Struggles With Brand Repositioning](https://www.arahkaii.com/fashion/kering-reports-revenue-decline-gucci-struggles/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [Kering Reports 15% Revenue Decline as Gucci Struggles With Brand Repositioning](/style/kering-reports-revenue-decline-gucci-struggles/)

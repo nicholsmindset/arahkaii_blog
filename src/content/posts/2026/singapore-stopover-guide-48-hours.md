@@ -23,7 +23,7 @@ Whether you're transiting through or you're a local showing a visitor what this 
 
 Changi Airport has a hotel, a rooftop infinity pool, a butterfly garden, and a waterfall in a glass dome. You literally never have to leave the airport and you'd still have a better experience than most cities. But those who do venture into the city proper are discovering what Southeast Asian residents have always known: Singapore is extraordinarily good at being a city.
 
-The food alone is worth the stopover. The design and architecture scene is genuinely world-class. The shopping — for independent [Southeast Asian fashion](https://www.arahkaii.com/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/) and luxury labels alike — is substantive. The cocktail bars operate at a level that surprises people who assume Singapore is too regulated to be fun. And the shopping — particularly for luxury goods, vintage finds, and independent Southeast Asian designers — is a genuinely underrated reason to spend time here.
+The food alone is worth the stopover. The design and architecture scene is genuinely world-class. The shopping — for independent [Southeast Asian fashion](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/) and luxury labels alike — is substantive. The cocktail bars operate at a level that surprises people who assume Singapore is too regulated to be fun. And the shopping — particularly for luxury goods, vintage finds, and independent Southeast Asian designers — is a genuinely underrated reason to spend time here.
 
 ## Hour 1–6: Arrive, Check In, Reset
 
@@ -33,7 +33,7 @@ Your first priority is a hotel that earns its keep. For 48 hours, location is ev
 
 **For the maximalist:** Marina Bay Sands. The pool is worth the price of the room on its own, and the access to Shoppes at Marina Bay — home to almost every relevant luxury house — is deeply convenient when you're here for less than 48 hours.
 
-**For the [quietly luxurious](https://www.arahkaii.com/the-complete-guide-to-quiet-luxury/):** Six Senses Duxton in Chinatown. Heritage shophouse exterior, serious wellness programming, and a location that puts you within walking distance of the best coffee, cocktails, and char siu in the city.
+**For the [quietly luxurious](/guides/the-complete-guide-to-quiet-luxury/):** Six Senses Duxton in Chinatown. Heritage shophouse exterior, serious wellness programming, and a location that puts you within walking distance of the best coffee, cocktails, and char siu in the city.
 
 ## Hour 6–14: The Food and Neighbourhood Circuit
 
@@ -59,7 +59,7 @@ Singapore's cocktail and dining scene operates at an international level and it'
 
 ## Hour 24–36: Shopping and Culture
 
-ION Orchard and Paragon for your luxury brand hits. But the more interesting shopping is happening in the secondary streets: Haji Lane for independent Southeast Asian labels, Keong Saik Road for concept stores and local design, and the standalone [K-beauty and C-beauty retailers](https://www.arahkaii.com/beauty-best-chinese-makeup-brands/) that have opened across Orchard and in Bugis — the curation is exceptional.
+ION Orchard and Paragon for your luxury brand hits. But the more interesting shopping is happening in the secondary streets: Haji Lane for independent Southeast Asian labels, Keong Saik Road for concept stores and local design, and the standalone [K-beauty and C-beauty retailers](/beauty/beauty-best-chinese-makeup-brands/) that have opened across Orchard and in Bugis — the curation is exceptional.
 
 The National Gallery Singapore houses the world's largest collection of Southeast Asian modern art and the permanent collection alone is worth two hours of your time. The Botanic Gardens for a morning walk if you have energy. Or Gardens by the Bay in the late afternoon when the light through the Supertrees turns everything golden.
 

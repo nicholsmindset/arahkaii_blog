@@ -46,7 +46,7 @@ Juun.J's fall-winter 2026 collection at Paris Men's Fashion Week marked two deca
 
 The collection opened in tuxedo lines and closed with biker silhouettes developed in collaboration with Italian motorsports specialist Alpinestars, bringing motocore into the luxury menswear conversation. Two decades of consistent, critically received work earns that kind of formal range.
 
-The credibility being discussed is therefore not a recent development. What is new is the Western fashion press noticing. This distinction matters because it changes the analytical frame entirely: Korean fashion is not having a moment. It is the completion of a multi-decade institutional project that began when Lee Sang-bong was running the Seoul avant-garde underground in the 1990s, and the international fashion system was entirely uninterested in what was happening east of Milan. The [Korean fashion houses now established in Paris](https://www.arahkaii.com/category/fashion/) did not arrive on the Hallyu wave. They built the road before the wave existed.
+The credibility being discussed is therefore not a recent development. What is new is the Western fashion press noticing. This distinction matters because it changes the analytical frame entirely: Korean fashion is not having a moment. It is the completion of a multi-decade institutional project that began when Lee Sang-bong was running the Seoul avant-garde underground in the 1990s, and the international fashion system was entirely uninterested in what was happening east of Milan. The [Korean fashion houses now established in Paris](/style) did not arrive on the Hallyu wave. They built the road before the wave existed.
 
 ## The Hanbok Vocabulary: Craft as Structural Argument
 
@@ -64,7 +64,7 @@ The K-fashion category, as Western media has deployed it, describes something sp
 
 The conflation does genuine damage to how Korean luxury fashion is received. When a Western fashion editor groups Songzio with Gentle Monster because both carry Seoul addresses, they are making the same category error as grouping Maison Margiela with ZARA because both operate in European retail environments. The distinguishing variable is not nationality — it is the tier of the fashion system being addressed and the mechanism by which credibility accumulates.
 
-K-fashion builds credibility through cultural saturation: idol visibility, social media velocity, repetition across platforms until the brand becomes ambient. The Korean designers who have built Paris reputations over two decades build credibility the way European houses do: through press, through wholesale placements at the right stockists, through institutional membership, and through the accumulated weight of seasons. Dover Street Market and Mr. Porter stocking Wooyoungmi is not the same category of event as a K-pop act wearing Gentle Monster at a press appearance. Both matter commercially. But they operate through different mechanisms, with different shelf lives and different ceiling points. Treating them as interchangeable misreads where the real structural shift is happening — which is precisely why most coverage of [Korean designers in the luxury tier](https://www.arahkaii.com/category/fashion/) reaches the wrong conclusions.
+K-fashion builds credibility through cultural saturation: idol visibility, social media velocity, repetition across platforms until the brand becomes ambient. The Korean designers who have built Paris reputations over two decades build credibility the way European houses do: through press, through wholesale placements at the right stockists, through institutional membership, and through the accumulated weight of seasons. Dover Street Market and Mr. Porter stocking Wooyoungmi is not the same category of event as a K-pop act wearing Gentle Monster at a press appearance. Both matter commercially. But they operate through different mechanisms, with different shelf lives and different ceiling points. Treating them as interchangeable misreads where the real structural shift is happening — which is precisely why most coverage of [Korean designers in the luxury tier](/style) reaches the wrong conclusions.
 
 ## What the Japanese Parallel Actually Teaches
 
@@ -92,7 +92,7 @@ The story of Korean fashion in Paris is, accurately told, a story about patience
 
 ### Read next
 
-- [Covered and Cool](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
-- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/)
-- [The Batik Paradox](https://www.arahkaii.com/fashion/batik-blockchain-indonesia-textile-authenticity-technology/)
-- [The $2.3 Million Jeans](https://www.arahkaii.com/fashion/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)
+- [Covered and Cool](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/)
+- [Why Quiet Luxury Is Fashion’s Biggest Contradiction](/style/why-quiet-luxury-is-fashion-biggest-contradiction/)
+- [The Batik Paradox](/culture/batik-blockchain-indonesia-textile-authenticity-technology/)
+- [The $2.3 Million Jeans](/culture/kendrick-lamar-super-bowl-jeans-2-3-million-media-value/)

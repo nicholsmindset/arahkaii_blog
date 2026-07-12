@@ -29,7 +29,7 @@ The room at Permata at Gedung Kuning is too beautiful to rush. The ceiling climb
 
 This is what a serious halal Sunday brunch looks like in Singapore in 2026. Not a café with avocado toast and a MUIS stamp. Not a hotel buffet running the same satay section since 2014. A kitchen with something specific to say — about Nusantara cuisine, about wagyu provenance, about the logic of a French-Malayan tasting sequence — that has chosen Sunday to make its argument.
 
-The shift happened gradually, then all at once. Over the past three years, the fine dining halal scene — documented fully in the [Best Halal Fine Dining Restaurants in Singapore (2026)](https://www.arahkaii.com/fashion/halal-fine-dining-singapore-2026/) — extended its reach into the weekend lunch hour. Tasting menus that ran only at dinner now take reservations from midday. Wagyu specialists open at eleven. Omakase counters that run twelve-course sequences on Saturday evenings offer abbreviated, no-less-serious versions for Sunday lunch. The brunch hour, for halal diners in Singapore, is no longer a concession. It is a kitchen's second chance to make its case.
+The shift happened gradually, then all at once. Over the past three years, the fine dining halal scene — documented fully in the [Best Halal Fine Dining Restaurants in Singapore (2026)](/dining/halal-fine-dining-singapore-2026/) — extended its reach into the weekend lunch hour. Tasting menus that ran only at dinner now take reservations from midday. Wagyu specialists open at eleven. Omakase counters that run twelve-course sequences on Saturday evenings offer abbreviated, no-less-serious versions for Sunday lunch. The brunch hour, for halal diners in Singapore, is no longer a concession. It is a kitchen's second chance to make its case.
 
 What follows is the Tatler-bar edit: ten rooms worth the Sunday reservation, organised by format. Every halal status declared plainly.
 
@@ -157,7 +157,7 @@ _Pork-free; beef-free — verify MUIS certification directly before booking_
 
 The name combines _amma_ — mother in Tamil — with _omakase_: leave it to the chef. Chef Robin leads the world's first Indian omakase, Michelin-selected, drawing across the coastal cuisines of West Bengal, Gujarat, and the southern coast, plated through French technique. Six to ten courses. Nothing announced in advance. Saturday lunch is the access point.
 
-The [direction of Singapore's halal fine dining](https://www.arahkaii.com/fashion/halal-fine-dining-singapore-2026/) — from Restaurant Fiz's Malay tasting sequence to Ammakase's coastal Indian counter — is not a trend. It is a kitchen culture that stopped building concession menus for Muslim diners and started building for ambition first, then declaring its halal status plainly.
+The [direction of Singapore's halal fine dining](/dining/halal-fine-dining-singapore-2026/) — from Restaurant Fiz's Malay tasting sequence to Ammakase's coastal Indian counter — is not a trend. It is a kitchen culture that stopped building concession menus for Muslim diners and started building for ambition first, then declaring its halal status plainly.
 
 _Halal note: Pork-free and beef-free throughout. Muslim diners must verify current MUIS certification and alcohol policy directly with the restaurant before booking._
 
@@ -167,11 +167,11 @@ _Halal note: Pork-free and beef-free throughout. Muslim diners must verify curre
 
 Reservations at every kitchen on this list are the rule, not the option. Restaurant Fiz and The White Label fill by Thursday for weekend tables. Permata at Gedung Kuning handles large groups well but requires advance notice for parties above eight. Charr'd opens at 11am without a fixed brunch format — early walk-in is possible, but a reservation by noon is recommended. The Social Outcast and Ammakase both require direct booking; Ammakase's halal status should be confirmed at the time of reservation.
 
-For [modest travellers in Singapore](https://www.arahkaii.com/fashion/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/) navigating a Sunday, the Kampong Glam corridor offers the most efficient MUIS-certified fine dining geography on the island: Permata at Gedung Kuning and Oud Restaurant on Kandahar Street sit within a ten-minute walk of each other, and Friday prayers at Sultan Mosque are three minutes from both tables.
+For [modest travellers in Singapore](/style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/) navigating a Sunday, the Kampong Glam corridor offers the most efficient MUIS-certified fine dining geography on the island: Permata at Gedung Kuning and Oud Restaurant on Kandahar Street sit within a ten-minute walk of each other, and Friday prayers at Sultan Mosque are three minutes from both tables.
 
-The [quiet confidence that defines the best of restrained Asian luxury](https://www.arahkaii.com/fashion/the-complete-guide-to-quiet-luxury/) — craft over announcement, depth over texture — runs through the brunch service now the same way it runs through the Saturday evening. The format has changed. The ambition has not.
+The [quiet confidence that defines the best of restrained Asian luxury](/guides/the-complete-guide-to-quiet-luxury/) — craft over announcement, depth over texture — runs through the brunch service now the same way it runs through the Saturday evening. The format has changed. The ambition has not.
 
-The [question of what this restraint actually signals](https://www.arahkaii.com/fashion/why-quiet-luxury-is-fashion-biggest-contradiction/) in a market where louder is often easier applies to dining too: the most rigorous rooms are rarely the ones that announce themselves.
+The [question of what this restraint actually signals](/style/why-quiet-luxury-is-fashion-biggest-contradiction/) in a market where louder is often easier applies to dining too: the most rigorous rooms are rarely the ones that announce themselves.
 
 * * *
 

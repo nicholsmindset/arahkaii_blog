@@ -57,17 +57,22 @@ headings (not bold paragraphs), every F&B guide entry must carry a halal-status
 line, no body H1, no orphan H3, no vague headings. Unfixable issue → log to
 `run-log.md` but continue (human reviews the PR).
 
-## STEP 7 — Images  (skills: arahkaii-featured-image-prompt, arahkaii-image-pipeline)
-Density per `content-strategy.md` (hero always; per-H2 1/H2 or every-other by
-type; listicle = per entry). **Editorial** images → generate
-(`node scripts/image-gen.mjs`, OpenRouter; placeholder + flag if no key).
-**Listicle/real-entity** → Firecrawl-source 2–3 candidates with source URLs +
-licence notes → list them in the PR for the human pick. Modest-luxury + licence
-gate on every image; every image carries a credit.
-
-## STEP 8 — Write  (skill: arahkaii-publisher)
+## STEP 7 — Write  (skill: arahkaii-publisher)
 `node scripts/new-post.mjs … --draft` → MDX in `src/content/posts/<year>/`,
-hero into `src/assets/images/<slug>/`. Place inline images + `<Figure>`s.
+hero into `src/assets/images/<slug>/`. (For the first pass use a placeholder hero;
+STEP 8 regenerates it.)
+
+## STEP 8 — Images  (command: /illustrate · skill: arahkaii-featured-image-prompt)
+**Editorial / conceptual** pieces → one pass auto-illustrates hero + per-H2:
+```bash
+node scripts/illustrate-post.mjs --post <slug> --hero --sections <list> \
+  --subjects "0=<hero>;2=<sec>;…"     # concrete subjects in template voice
+```
+Density per `content-strategy.md` (`--density per-h2|every-other`); skip non-visual
+H2s via `--sections`. Generates → injects `<Figure>`s → flips `.md→.mdx`. If no key,
+it flags and leaves placeholders. **Listicle / real-entity** (named products/places)
+→ Firecrawl-source 2–3 candidates with source URLs + licence notes → list in the PR
+for the human pick instead. Modest-luxury + credit on every image (generated = "Arahkaii").
 
 ## STEP 9 — Validate
 `npx astro check && npm run build && node scripts/validate-schema.mjs`. Fix until clean.

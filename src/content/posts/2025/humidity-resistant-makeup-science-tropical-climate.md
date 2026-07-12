@@ -143,13 +143,13 @@ Your makeup can last. The science is there. The products exist. It's simply a ma
 
 ### Related Reading
 
-- [The Southeast Asian Foundation Guide](https://www.arahkaii.com/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [Why Your Summer Makeup Suddenly Feels Wrong](https://www.arahkaii.com/seasonal-makeup-transition-summer-autumn-colors/)
-- [Best Chinese Makeup Brands 2026](https://www.arahkaii.com/beauty-best-chinese-makeup-brands/)
+- [The Southeast Asian Foundation Guide](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [Why Your Summer Makeup Suddenly Feels Wrong](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
+- [Best Chinese Makeup Brands 2026](/beauty/beauty-best-chinese-makeup-brands/)
 
 ### Read next
 
-- [The Warmth Question](https://www.arahkaii.com/beauty/seasonal-makeup-transition-summer-autumn-colors/)
-- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](https://www.arahkaii.com/beauty/beauty-best-chinese-makeup-brands/)
-- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](https://www.arahkaii.com/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
-- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](https://www.arahkaii.com/beauty/k-beauty-broke-the-algorithm/)
+- [The Warmth Question](/beauty/seasonal-makeup-transition-summer-autumn-colors/)
+- [Best Chinese Makeup Brands 2026: Judydoll, Florasis & C-Beauty Worth Buying](/beauty/beauty-best-chinese-makeup-brands/)
+- [The Ultimate Guide to Finding the Perfect Foundation Shade for Southeast Asian](/beauty/the-ultimate-guide-to-finding-the-perfect-foundation-shade-for-southeast-asian-skin-tones/)
+- [K-Beauty Broke the Algorithm: How Korea Took Over Your Skincare Routine](/beauty/k-beauty-broke-the-algorithm/)
