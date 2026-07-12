@@ -1,13 +1,13 @@
 ---
 name: arahkaii-publisher
-description: Publish a drafted Arahkaii article to the Astro/Git site (replaces the old WordPress publisher). Use whenever a finished, reviewed draft needs to become a post — writes the MDX + frontmatter, places images locally, validates against the Zod schema + JSON-LD, and opens a PR (merge = live via Netlify). Loads references/brand-voice.md, editorial-pillars.md, halal-substitutions.md, image-system.md, seo-fields.md, schema-map.md, url-database.md before any write. Refuses to publish alcohol/nightlife content, anything missing halal status in Dining/Travel/Guides, an uncredited image, or a draft that fails the AI-slop checklist. Never pushes to main directly — humans merge the PR.
+description: Publish a drafted Arahkaii article to the Astro/Git site (replaces the old WordPress publisher). Use whenever a finished, reviewed draft needs to become a post — writes the MDX + frontmatter, places images locally, validates against the Zod schema + JSON-LD, and opens a PR (merge = live via Vercel). Loads references/brand-voice.md, editorial-pillars.md, halal-substitutions.md, image-system.md, seo-fields.md, schema-map.md, url-database.md before any write. Refuses to publish alcohol/nightlife content, anything missing halal status in Dining/Travel/Guides, an uncredited image, or a draft that fails the AI-slop checklist. Never pushes to main directly — humans merge the PR.
 ---
 
 # Arahkaii Publisher (Astro/Git)
 
 The final gate between a draft and the live site. Astro is the destination — no
 WordPress, no RankMath, no `wp_*` MCP. Content is MDX in Git; merging a PR to
-`main` triggers the Netlify build.
+`main` triggers the Vercel build.
 
 ## Step 0 — Load the foundation
 `references/brand-voice.md` · `editorial-pillars.md` · `halal-substitutions.md` ·
@@ -36,7 +36,7 @@ node scripts/new-post.mjs --title "…" --category <pillar> --author <id> \
   --hero <file> --hero-caption "…" --hero-credit "…" --body <file.mdx>
 ```
 Do not pass `--draft` for a PR-bound article. The feature branch is the draft
-boundary; the article must render in the Netlify preview before human approval.
+boundary; the article must render in the Vercel preview before human approval.
 Inline images: place under `src/assets/images/<slug>/` and reference via
 `<Figure src={…} caption credit ratio>` in the MDX (density per `content-strategy.md`).
 FAQ/HowTo/ItemList → frontmatter fields (`schema-map.md`).
@@ -56,7 +56,7 @@ git commit -m "post: <title>"
 git push -u origin HEAD
 gh pr create --title "post: <title>" --body "<angle · SEO · sourced-image candidates · preview note>"
 ```
-Netlify builds a deploy preview on the PR. The PR is the human notification and
+Vercel builds a deploy preview on the PR. The PR is the human notification and
 review surface. **Approval = merge** (see `/approve`) → live at
 `/<category>/<slug>/`.
 

@@ -75,7 +75,7 @@ every image; every committed image carries a credit.
 ## STEP 8 — Write  (skill: arahkaii-publisher)
 `node scripts/new-post.mjs …` → MDX in `src/content/posts/<year>/`, hero into
 `src/assets/images/<slug>/`. Do **not** pass `--draft`: the feature branch and
-human merge are the publishing gate, and the Netlify PR preview must render the
+human merge are the publishing gate, and the Vercel PR preview must render the
 article. Place approved inline images + `<Figure>`s.
 
 ## STEP 9 — Validate
@@ -87,7 +87,7 @@ Update `content-calendar.md` (`ready → drafted | branch:<name>`). Append
 (title · 200-word angle · SEO fields · sourced-image candidates · preview note).
 
 ## STEP 13 — Notify
-The GitHub PR is the notification and review surface. Include the Netlify
+The GitHub PR is the notification and review surface. Include the Vercel
 preview, research limitations, image/licence status and any blocking labels.
 
 ## NEVER

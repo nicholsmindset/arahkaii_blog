@@ -9,7 +9,7 @@ This is an Astro 6 editorial publication. Routes live in `src/pages/`; shared ch
 - `npm ci` — install the locked dependency set.
 - `npm run dev` — start Astro locally at `http://localhost:4321`.
 - `npm run check` — run Astro and TypeScript diagnostics.
-- `npm run build` — create the Netlify production bundle in `dist/`.
+- `npm run build` — create the production bundle in `dist/` (Vercel adapter).
 - `npm run verify` — run the complete release gate: diagnostics, build, JSON-LD, links, and page semantics.
 - `npm run preview` — inspect the production build locally.
 
