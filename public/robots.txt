@@ -37,9 +37,9 @@ Disallow: /
 User-agent: Meta-ExternalAgent
 Disallow: /
 
-Sitemap: https://arahkaii.com/sitemap-index.xml
-Sitemap: https://arahkaii.com/sitemap-pages.xml
-Sitemap: https://arahkaii.com/sitemap-posts.xml
-Sitemap: https://arahkaii.com/sitemap-categories.xml
-Sitemap: https://arahkaii.com/sitemap-hubs.xml
-Sitemap: https://arahkaii.com/sitemap-authors.xml
+Sitemap: https://www.arahkaii.com/sitemap-index.xml
+Sitemap: https://www.arahkaii.com/sitemap-pages.xml
+Sitemap: https://www.arahkaii.com/sitemap-posts.xml
+Sitemap: https://www.arahkaii.com/sitemap-categories.xml
+Sitemap: https://www.arahkaii.com/sitemap-hubs.xml
+Sitemap: https://www.arahkaii.com/sitemap-authors.xml

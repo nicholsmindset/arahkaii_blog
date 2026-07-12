@@ -6,10 +6,10 @@
 			"has": [
 				{
 					"type": "host",
-					"value": "www.arahkaii.com"
+					"value": "arahkaii.com"
 				}
 			],
-			"destination": "https://arahkaii.com/:path*",
+			"destination": "https://www.arahkaii.com/:path*",
 			"permanent": true
 		},
 		{
