@@ -1,0 +1,85 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StoryCard from '../components/StoryCard.astro';
+import specimenImage from '../assets/blog-placeholder-1.jpg';
+---
+
+<BaseLayout
+	title="Editorial Style Guide — Arahkaii"
+	description="The private visual contract for Arahkaii's editorial system."
+	noindex={true}
+>
+	<div class="wrap sg">
+		<header class="sg-intro">
+			<p class="eyebrow eyebrow--emerald">Internal visual contract</p>
+			<h1>Arahkaii editorial system</h1>
+			<p>Approved type, spacing, colour, rules, story units and article measure. This page is excluded from search engines.</p>
+		</header>
+
+		<section class="sg-section" aria-labelledby="sg-colour">
+			<div class="sg-heading"><p class="eyebrow">01</p><h2 id="sg-colour">Colour and rules</h2></div>
+			<div class="sg-swatches">
+				<div><span style="background:var(--ink)"></span><p>Ink</p></div>
+				<div><span style="background:var(--paper)"></span><p>Paper</p></div>
+				<div><span style="background:var(--bone)"></span><p>Bone</p></div>
+				<div><span style="background:var(--emerald)"></span><p>Emerald</p></div>
+				<div><span style="background:var(--accent2)"></span><p>Aubergine</p></div>
+			</div>
+			<hr class="sg-hair" /><hr class="sg-heavy" />
+		</section>
+
+		<section class="sg-section" aria-labelledby="sg-type">
+			<div class="sg-heading"><p class="eyebrow">02</p><h2 id="sg-type">Type scale</h2></div>
+			<div class="sg-type">
+				<p class="eyebrow eyebrow--emerald">Kicker · Style / Southeast Asia</p>
+				<p class="sg-cover">A quieter definition of modern luxury</p>
+				<h2>Editorial authority without unnecessary noise</h2>
+				<h3>Useful, culturally specific and carefully verified</h3>
+				<p class="sg-stand">Arahkaii covers modern Asian Muslim life with an emphasis on considered style, trustworthy recommendations and stories worth returning to.</p>
+				<p class="meta">By Arahkaii Editors · Updated 12 July 2026 · 8 min read</p>
+			</div>
+		</section>
+
+		<section class="sg-section" aria-labelledby="sg-article">
+			<div class="sg-heading"><p class="eyebrow">03</p><h2 id="sg-article">Article specimen</h2></div>
+			<article class="sg-article">
+				<Image src={specimenImage} alt="Warm editorial interior used as a layout specimen" widths={[720, 1200]} sizes="(max-width: 800px) 100vw, 66ch" />
+				<p class="caption">Editorial photography sits flush to the reading measure. (Photo: Arahkaii archive)</p>
+				<h2>What makes a recommendation trustworthy?</h2>
+				<p>A premium publication earns attention through clarity and evidence. Recommendations explain who tested or reviewed an experience, when the information was checked, and what standards were applied. The design supports that work; it never substitutes for it.</p>
+				<p>Body copy is capped at sixty-six characters per line with a 1.55 leading ratio. Paragraphs use a compact sixteen-pixel rhythm so longer articles feel considered rather than sparse.</p>
+				<blockquote>“The strongest luxury signal is confidence: fewer flourishes, better information and a recognizable editorial point of view.”</blockquote>
+				<h3>A consistent publishing rhythm</h3>
+				<p>Hairlines separate ideas and modules while section spacing remains deliberate. Larger areas of visual calm are reserved for flagship essays and photography.</p>
+			</article>
+		</section>
+
+		<section class="sg-section" aria-labelledby="sg-cards">
+			<div class="sg-heading"><p class="eyebrow">04</p><h2 id="sg-cards">Story units</h2></div>
+			<div class="sg-cards">
+				<StoryCard href="#" title="The city guide designed around prayer, place and detail" eyebrow="Travel" byline="By Arahkaii Editors · 8 min read" image={specimenImage} />
+				<StoryCard href="#" title="A modern wardrobe shaped by intention" eyebrow="Style" byline="By Natalia Amir · 6 min read" image={specimenImage} ratio="4x5" />
+				<div class="sg-index"><p class="eyebrow eyebrow--emerald">The Brief</p><ol><li><span>01</span><a href="#">The week in considered Asian living</a></li><li><span>02</span><a href="#">Five places checked by our editors</a></li><li><span>03</span><a href="#">The people shaping a quieter luxury</a></li></ol></div>
+			</div>
+		</section>
+	</div>
+</BaseLayout>
+
+<style>
+	.sg{padding-block:var(--space-2xl) var(--space-3xl)}
+	.sg-intro{max-width:var(--measure-wide);padding-bottom:var(--space-xl);border-bottom:var(--rule-heavy)}
+	.sg-intro h1{font:470 var(--step-5)/var(--leading-tight) var(--headline);letter-spacing:-.035em;margin:var(--space-s) 0}
+	.sg-intro>p:last-child{max-width:var(--measure);font-size:var(--step-1);line-height:var(--leading-body);color:var(--ink-2)}
+	.sg-section{padding-block:var(--space-xl);border-bottom:var(--rule-hair)}
+	.sg-heading{display:grid;grid-template-columns:48px 1fr;gap:var(--space-s);align-items:baseline;margin-bottom:var(--space-l)}
+	.sg-heading h2{font:480 var(--step-3)/var(--leading-snug) var(--headline)}
+	.sg-swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-m)}
+	.sg-swatches span{display:block;aspect-ratio:3/2;border:var(--rule-hair)}
+	.sg-swatches p{font:500 var(--step--1)/var(--leading-meta) var(--sans);margin-top:var(--space-2xs);text-transform:uppercase;letter-spacing:.08em}
+	.sg-hair,.sg-heavy{border:0;margin:var(--space-l) 0 0}.sg-hair{border-top:var(--rule-hair)}.sg-heavy{border-top:var(--rule-heavy)}
+	.sg-type{display:grid;gap:var(--space-s);max-width:1100px}.sg-cover{font:450 var(--step-5)/var(--leading-tight) var(--headline);letter-spacing:-.035em}.sg-type h2{font:470 var(--step-4)/var(--leading-tight) var(--headline)}.sg-type h3{font:480 var(--step-2)/var(--leading-snug) var(--headline)}.sg-stand{max-width:var(--measure-narrow);font:440 var(--step-1)/var(--leading-body) var(--headline);color:var(--ink-2)}
+	.sg-article{max-width:var(--measure);margin-inline:auto}.sg-article img{margin-bottom:var(--space-2xs)}.sg-article h2{font:480 var(--step-3)/var(--leading-snug) var(--headline);margin:var(--space-xl) 0 var(--space-s)}.sg-article h3{font:500 var(--step-2)/var(--leading-snug) var(--headline);margin:var(--space-l) 0 var(--space-s)}.sg-article>p:not(.caption){font-size:var(--step-0);line-height:var(--leading-body);margin-top:var(--space-s)}.sg-article blockquote{margin:var(--space-l) 0;padding:var(--space-m) 0;border-block:var(--rule-hair);font:480 var(--step-1)/var(--leading-snug) var(--headline)}
+	.sg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-m)}.sg-index{border-top:var(--rule-heavy);padding-top:var(--space-s)}.sg-index ol{list-style:none;margin:var(--space-s) 0 0;padding:0}.sg-index li{display:grid;grid-template-columns:32px 1fr;gap:var(--space-s);padding:var(--space-s) 0;border-bottom:var(--rule-hair)}.sg-index span{font:500 var(--step--1)/1 var(--sans);color:var(--emerald)}.sg-index a{font:480 var(--step-1)/var(--leading-snug) var(--headline)}
+	@media(max-width:768px){.sg{padding-block:var(--space-l) var(--space-2xl)}.sg-swatches{grid-template-columns:repeat(2,1fr)}.sg-cards{grid-template-columns:1fr}.sg-heading{grid-template-columns:32px 1fr}}
+</style>
