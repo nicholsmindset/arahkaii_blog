@@ -72,7 +72,14 @@ export function websiteSchema(): JsonLd {
 		url: SITE.url,
 		publisher: { '@id': ORG_ID },
 		inLanguage: 'en-GB',
-		// No SearchAction yet — on-site search is deferred. Add when /search exists.
+		potentialAction: {
+			'@type': 'SearchAction',
+			target: {
+				'@type': 'EntryPoint',
+				urlTemplate: `${SITE.url}/search/?q={search_term_string}`,
+			},
+			'query-input': 'required name=search_term_string',
+		},
 	};
 }
 
@@ -90,6 +97,8 @@ export interface ArticleSchemaInput {
 	keywords?: string[];
 	wordCount?: number;
 	type?: 'Article' | 'NewsArticle';
+	/** Editorial reviewer — an E-E-A-T signal for verified/serviceable content. */
+	reviewedBy?: { name: string; url: string };
 }
 
 export function articleSchema(input: ArticleSchemaInput): JsonLd {
@@ -116,6 +125,16 @@ export function articleSchema(input: ArticleSchemaInput): JsonLd {
 		mainEntityOfPage: { '@type': 'WebPage', '@id': input.url },
 		...(input.keywords?.length ? { keywords: input.keywords } : {}),
 		...(input.wordCount ? { wordCount: input.wordCount } : {}),
+		...(input.reviewedBy
+			? {
+					reviewedBy: {
+						'@type': 'Person',
+						name: input.reviewedBy.name,
+						url: input.reviewedBy.url,
+						'@id': `${input.reviewedBy.url}#person`,
+					},
+				}
+			: {}),
 	};
 }
 

@@ -8,22 +8,29 @@ import '../styles/home.css';
 const cards = await getCards();
 const byCategory = (category: string) => cards.filter((card) => card.category === category);
 const unique = (items: PostCard[]) => [...new Map(items.map((item) => [item.id, item])).values()];
-const fill = (preferred: PostCard[], count: number, exclude: PostCard[] = []) => {
-	const excluded = new Set(exclude.map((item) => item.id));
-	return unique([...preferred, ...cards]).filter((item) => !excluded.has(item.id)).slice(0, count);
+// Each module takes its preferred stories first, tops up from the rest of the
+// pool, and marks everything it picked as used — so no story appears in two
+// modules. Earlier modules get first pick.
+const used = new Set<string>();
+const take = (preferred: PostCard[], count: number) => {
+	const picked = unique([...preferred, ...cards])
+		.filter((item) => !used.has(item.id))
+		.slice(0, count);
+	for (const item of picked) used.add(item.id);
+	return picked;
 };
 const date = (card: PostCard) => card.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 
-const hero = fill([...byCategory('style').slice(0, 1), ...byCategory('living').slice(0, 1), ...byCategory('people').slice(0, 1)], 3);
+const hero = take([...byCategory('style').slice(0, 1), ...byCategory('living').slice(0, 1), ...byCategory('people').slice(0, 1)], 3);
 const heroLead = hero[1] ?? hero[0];
-const friday = fill(cards.filter((card) => !hero.some((item) => item.id === card.id)), 6);
+const friday = take(cards, 6);
 const fridayLead = friday[0];
-const wardrobe = fill(byCategory('style'), 5, hero);
-const dining = fill(byCategory('dining'), 4, hero);
-const stays = fill(byCategory('travel'), 4, hero);
-const beauty = fill(byCategory('beauty'), 5, hero);
-const people = fill(byCategory('people'), 4, hero);
-const majlis = fill(cards.filter((card) => ['culture', 'living', 'guides', 'people'].includes(card.category)), 3, hero);
+const wardrobe = take(byCategory('style'), 5);
+const dining = take(byCategory('dining'), 4);
+const stays = take(byCategory('travel'), 4);
+const beauty = take(byCategory('beauty'), 5);
+const people = take(byCategory('people'), 4);
+const majlis = take(cards.filter((card) => ['culture', 'living', 'guides', 'people'].includes(card.category)), 3);
 ---
 
 <BaseLayout

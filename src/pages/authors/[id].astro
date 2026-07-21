@@ -119,21 +119,27 @@ const jsonLd = [
 				<h2 class="eyebrow">Selected writing</h2>
 				<span class="meta">{count} {count === 1 ? 'story' : 'stories'}</span>
 			</div>
-			<div class="aw-grid">
-				{
-					work.map((c) => (
-						<StoryCard
-							href={c.url}
-							title={c.title}
-							byline={`${c.categoryLabel} · ${fmtDate(c.date)}`}
-							image={c.image}
-							tone={c.tone}
-							ratio="3x2"
-							category={c.category}
-						/>
-					))
-				}
-			</div>
+			{
+				count > 0 ? (
+					<div class="aw-grid">
+						{work.map((c) => (
+							<StoryCard
+								href={c.url}
+								title={c.title}
+								byline={`${c.categoryLabel} · ${fmtDate(c.date)}`}
+								image={c.image}
+								tone={c.tone}
+								ratio="3x2"
+								category={c.category}
+							/>
+						))}
+					</div>
+				) : (
+					<p class="lede" style="padding:24px 0 48px">
+						{firstName}'s first pieces are in the works — commissioned, reported and on their way through review.
+					</p>
+				)
+			}
 		</section>
 	</div>
 </BaseLayout>

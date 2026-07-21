@@ -5,7 +5,10 @@ import GuideLayout from '../../layouts/GuideLayout.astro';
 import { getCards, estimateReadingMinutes } from '../../lib/articles';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts', ({ data }) => !data.draft);
+	// noindex posts still get a page (their own meta handles robots); future-dated
+	// posts don't exist until the first build on/after their date.
+	const now = new Date();
+	const posts = await getCollection('posts', ({ data }) => !data.draft && data.date <= now);
 	return posts.map((post) => ({
 		// id is e.g. "2026/quiet-renaissance-…"; slug is the final segment.
 		params: { category: post.data.category, slug: post.id.split('/').pop() },
@@ -58,6 +61,10 @@ const moreGuides = others
 	.map((c) => ({ title: c.title, href: c.url, byline: c.byline, image: c.image, tone: c.tone }));
 
 const authorHref = `/authors/${post.data.author}/`;
+
+// Editorial reviewer (E-E-A-T) — resolved to the author entity when set.
+const reviewer = d.reviewedBy ? await getEntry('authors', d.reviewedBy) : undefined;
+const reviewedBy = reviewer ? { name: reviewer.data.name, href: `/authors/${reviewer.id}/` } : undefined;
 const Layout = d.category === 'guides' ? GuideLayout : ArticleLayout;
 const layoutExtra =
 	d.category === 'guides' ? { moreGuides } : { related, readNext };
@@ -95,6 +102,7 @@ const clusterItems = d.cluster ? others.filter((card) => card.cluster === d.clus
 	atAGlance={d.atAGlance}
 	halalStatus={d.halalStatus}
 	lastVerified={d.lastVerified}
+	reviewedBy={reviewedBy}
 	{...layoutExtra}
 >
 	<Content />

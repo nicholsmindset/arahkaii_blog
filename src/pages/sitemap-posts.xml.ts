@@ -6,7 +6,11 @@ import { urlset } from '../lib/sitemap';
 export const prerender = true;
 
 export const GET: APIRoute = async () => {
-	const posts = await getCollection('posts', ({ data }) => !data.draft && !data.noindex);
+	const now = new Date();
+	const posts = await getCollection(
+		'posts',
+		({ data }) => !data.draft && !data.noindex && data.date <= now,
+	);
 	return urlset(
 		posts
 			.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())

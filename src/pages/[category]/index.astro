@@ -4,7 +4,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getCards, type PostCard } from '../../lib/articles';
 import { cap } from '../../lib/format';
-import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema } from '../../lib/seo';
+import { CATEGORIES } from '../../lib/taxonomy';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema, itemListSchema } from '../../lib/seo';
 
 // Category archive — v2: no-image hero band + filter chips, full-width lead,
 // then an alternating "river" (A 4-4-4 → B 6+stacked-two → C 6-6 portrait →
@@ -35,9 +36,7 @@ const META: Record<string, string> = {
 };
 
 export async function getStaticPaths() {
-	return ['style', 'beauty', 'dining', 'travel', 'culture', 'living', 'people', 'guides'].map(
-		(category) => ({ params: { category } }),
-	);
+	return CATEGORIES.map((category) => ({ params: { category } }));
 }
 
 const { category } = Astro.params;
@@ -48,9 +47,11 @@ const meta = META[category!] ?? dek;
 const all = await getCards();
 const cards = all.filter((c) => c.category === category);
 const lead = cards[0];
-let pool = cards.slice(1);
-// Thin categories: top up the river with cross-category stories so it reads full.
-if (pool.length < 4) pool = [...pool, ...all.filter((c) => c.category !== category).slice(0, 6)];
+const pool = cards.slice(1);
+// Thin categories: cross-category stories render in their own labelled
+// "Elsewhere in Arahkaii" section below the river — never mixed into it
+// unlabelled.
+const elsewhere = pool.length < 4 ? all.filter((c) => c.category !== category).slice(0, 6) : [];
 
 // filter chips — most common tags. "All" shows the editorial river; a tag chip
 // swaps in a simple filtered grid of matching stories (same interaction
@@ -91,9 +92,17 @@ const jsonLd = [
 		{ name: label, url: canonical },
 	]),
 ];
+if (cards.length)
+	jsonLd.push(
+		itemListSchema(
+			`${label} — Arahkaii`,
+			cards.map((c) => ({ name: c.title, description: c.standfirst, url: new URL(c.url, SITE.url).toString() })),
+			canonical,
+		),
+	);
 ---
 
-<BaseLayout title={`${label} — Arahkaii`} description={meta} activeCategory={label} jsonLd={jsonLd}>
+<BaseLayout title={`${label} — Arahkaii`} description={meta} activeCategory={label} noindex={cards.length === 0} jsonLd={jsonLd}>
 	<!-- HERO BAND (no image) -->
 	<section class="cat-hero">
 		<div class="wrap">
@@ -234,6 +243,32 @@ const jsonLd = [
 
 		{!lead && <p class="lede" style="padding:48px 0">No stories here yet — check back soon.</p>}
 
+		{
+			elsewhere.length > 0 && (
+				<section class="section--tight" aria-labelledby="elsewhere-title">
+					<hr class="rule" style="margin-bottom:32px" />
+					<h2 class="eyebrow eyebrow--emerald" id="elsewhere-title" style="margin-bottom:36px">Elsewhere in Arahkaii</h2>
+					<div class="latest-grid">
+						{elsewhere.map((c) => (
+							<article class="latest-card">
+								<a class="media latest-card__image" href={c.url}>
+									<Image src={c.image} alt={c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" loading="lazy" />
+								</a>
+								<div class="latest-card__copy">
+									<p class="latest-card__top">
+										<span>{c.categoryLabel}</span>
+										<time datetime={c.date.toISOString()}>{dateFormat.format(c.date)}</time>
+									</p>
+									<h3><a href={c.url}>{c.title}</a></h3>
+									<p>{c.standfirst}</p>
+								</div>
+							</article>
+						))}
+					</div>
+				</section>
+			)
+		}
+
 		<div class="loadmore" style="padding-bottom:96px">
 			<a class="tlink" href="/latest">Load more</a>
 		</div>
@@ -264,6 +299,7 @@ const jsonLd = [
 				<p class="latest-empty" data-cat-empty hidden>
 					No stories carry this theme yet.
 				</p>
+				<p class="sr-only" role="status" data-cat-status></p>
 			</section>
 		)
 	}
@@ -277,13 +313,17 @@ const jsonLd = [
 			filtered.dataset.wired = '1';
 			const cards = Array.from(filtered.querySelectorAll<HTMLElement>('[data-cat-tags]'));
 			const empty = filtered.querySelector<HTMLElement>('[data-cat-empty]');
+			const status = filtered.querySelector<HTMLElement>('[data-cat-status]');
 			chips.forEach((chip) => chip.addEventListener('click', () => {
 				const tag = chip.dataset.catChip || 'all';
 				chips.forEach((item) => item.setAttribute('aria-pressed', String(item === chip)));
 				const showRiver = tag === 'all';
 				river.hidden = !showRiver;
 				filtered.hidden = showRiver;
-				if (showRiver) return;
+				if (showRiver) {
+					if (status) status.textContent = 'Showing all stories.';
+					return;
+				}
 				let visible = 0;
 				cards.forEach((card) => {
 					const show = (card.dataset.catTags || '').split('|').includes(tag);
@@ -291,6 +331,7 @@ const jsonLd = [
 					if (show) visible += 1;
 				});
 				if (empty) empty.hidden = visible > 0;
+				if (status) status.textContent = `${visible} ${visible === 1 ? 'story' : 'stories'} shown.`;
 			}));
 		}
 		document.addEventListener('astro:page-load', wireCategoryChips);

@@ -67,6 +67,8 @@ interface Props {
 	atAGlance?: AtAGlanceItem[];
 	halalStatus?: HalalStatusData;
 	lastVerified?: Date;
+	/** Editorial reviewer — rendered in the byline and Article schema. */
+	reviewedBy?: { name: string; href: string };
 }
 
 const {
@@ -100,6 +102,7 @@ const {
 	atAGlance = [],
 	halalStatus,
 	lastVerified,
+	reviewedBy,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -134,6 +137,7 @@ const jsonLd = [
 		url: canonical.toString(),
 		keywords: tags,
 		type: timeliness === 'timely' ? 'NewsArticle' : 'Article',
+		reviewedBy: reviewedBy ? { name: reviewedBy.name, url: new URL(reviewedBy.href, SITE.url).toString() } : undefined,
 	}),
 	breadcrumbSchema(crumbs),
 ];
@@ -143,7 +147,7 @@ if (howTo?.length) jsonLd.push(howToSchema(howToName ?? title, howTo));
 if (atAGlance.length)
 	jsonLd.push(itemListSchema(listName ?? title, atAGlance.map((item) => ({ name: item.name, description: item.verdict, url: item.url })), canonical.toString()));
 else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listItems, canonical.toString()));
-const byline = `By ${author.name} · ${fmtDate(date)}${readingMinutes ? ` · ${readingMinutes} min read` : ''}`;
+const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.name}` : ''} · ${fmtDate(date)}${readingMinutes ? ` · ${readingMinutes} min read` : ''}`;
 ---
 
 <BaseLayout

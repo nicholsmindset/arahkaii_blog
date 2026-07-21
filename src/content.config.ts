@@ -2,6 +2,7 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 // Astro 6 ships Zod 4 — `z` is imported from 'astro/zod', not 'astro:content'.
 import { z } from 'astro/zod';
+import { CATEGORIES } from './lib/taxonomy';
 
 const posts = defineCollection({
 	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
@@ -9,16 +10,7 @@ const posts = defineCollection({
 		z.object({
 			title: z.string().max(110),
 			standfirst: z.string().max(220),
-			category: z.enum([
-				'style',
-				'beauty',
-				'dining',
-				'travel',
-				'culture',
-				'living',
-				'people',
-				'guides',
-			]),
+			category: z.enum(CATEGORIES),
 			tags: z.array(z.string()).optional(),
 			author: z.string(),
 			date: z.coerce.date(),
