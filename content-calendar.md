@@ -466,3 +466,132 @@ keyword: hari raya outfit 2027
 angle: The Eid modest capsule — what to wear for Hari Raya; the festive modest wardrobe. (Eid ~20 Mar)
 links: cluster: modest-swimwear, cluster: kebaya
 source: keyword-research-2026-h2
+
+---
+
+<!-- ================================================================= -->
+<!-- EVERYDAY WAVE — backed by references/keyword-research-everyday-2026-h2.md -->
+<!-- Additive to the H2 calendar above; targets high-frequency, local, everyday -->
+<!-- SG intent the backend under-serves (dining/travel/living/modest-style/beauty). -->
+<!-- Non-duplicative of existing entries. Flip status:proposed -> ready to queue. -->
+<!-- ================================================================= -->
+
+### 2026-09-23 | status:proposed | type:evergreen | pillar:dining | format:guide | words:2000 | score:88
+keyword: best halal restaurants singapore
+angle: The master halal restaurant edit — neighbourhood-organised, Tatler-grade write-ups, halal-status line per venue (MUIS-certified / Muslim-owned / pork-free-no-cert). The hub every other dining piece links up to. ⊛ (KD10, top-10 has DR9/0 blogs + Reddit)
+links: /dining/halal-fine-dining-singapore-2026/, cluster: halal-dining-singapore, cluster: best-restaurants-singapore
+source: keyword-research-everyday-2026-h2
+
+### 2026-09-24 | status:proposed | type:evergreen | pillar:dining | format:guide | words:1700 | score:84
+keyword: vivocity halal food
+angle: Flagship of the mall halal-food guide series (JEM, VivoCity, Suntec, Jurong Point, Bugis, NEX… all KD0, ~11k combined). "Where to eat halal at ___" template — H3 per venue, halal-status line. A topical-authority engine + internal-link net.
+links: cluster: halal-dining-singapore, /dining/halal-fine-dining-singapore-2026/
+source: keyword-research-everyday-2026-h2
+
+### 2026-09-25 | status:proposed | type:evergreen | pillar:dining | format:guide | words:1600 | score:82
+keyword: halal cakes singapore
+angle: Celebration & hantaran cakes that are certified halal — birthday/aqiqah/Raya gifting intent (KD7, CPC 50). Bridges dining and gifting.
+links: cluster: halal-dining-singapore, cluster: hari-raya-hampers
+source: keyword-research-everyday-2026-h2
+
+### 2026-09-28 | status:proposed | type:evergreen | pillar:dining | format:explainer | words:1200 | score:80
+keyword: is chagee halal
+angle: Flagship of the "is ___ halal?" explainer hub (Chagee, Paris Baguette, Genki, MOS, Sukiya, Yoshinoya — all KD0, all AI-Overview). Short sourced evergreen answers + last-verified date; a standalone answer sentence for AI-Overview capture. Pure GEO play, feeds every dining hub.
+links: cluster: halal-dining-singapore, /dining/halal-fine-dining-singapore-2026/
+source: keyword-research-everyday-2026-h2
+
+### 2026-09-29 | status:proposed | type:evergreen | pillar:dining | format:guide | words:1600 | score:80
+keyword: halal hotpot singapore
+angle: The communal, alcohol-free table — broths, halal wagyu, family-sized steamboat; halal status per venue. Seasonal pull at year-end and Raya gatherings. (halal hotpot 1k/KD5 + halal steamboat 600/KD14)
+links: cluster: halal-dining-singapore
+source: keyword-research-everyday-2026-h2
+
+### 2026-09-30 | status:proposed | type:evergreen | pillar:dining | format:guide | words:1600 | score:80
+keyword: halal sushi singapore
+angle: Where Japanese dining is genuinely halal — certified omakase-style rooms to casual chains; the category Vogue/Tatler list but never halal-filter. (KD4; pairs with the is-X-halal hub)
+links: cluster: halal-dining-singapore, cluster: halal-omakase-singapore
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-01 | status:proposed | type:evergreen | pillar:dining | format:guide | words:1500 | score:76
+keyword: halal catering singapore
+angle: Catering an alcohol-free celebration well — the modest-luxury event table (aqiqah, kenduri, corporate); mini-buffet options. High commercial intent (CPC 70).
+links: cluster: halal-dining-singapore, cluster: malay-wedding
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-02 | status:proposed | type:evergreen | pillar:dining | format:guide | words:1700 | score:78
+keyword: halal buffet singapore
+angle: The reframe of a big head term — SG "buffet" content assumes free-flow alcohol; ours is the alcohol-free, family, halal-certified buffet edit (seafood/international/hi-tea). Real differentiation. ⊛
+links: cluster: halal-dining-singapore, cluster: afternoon-tea-singapore
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-06 | status:proposed | type:evergreen | pillar:travel | format:guide | words:1800 | score:82
+keyword: umrah package
+angle: The one pillar no luxury title touches — how to do umrah beautifully (5-star proximity hotels, quiet logistics, what to pack). Deeply on-brand, near-zero competition, compounding authority. (umrah 1.5k/KD6, umrah package 450/KD0)
+links: /travel/singapore-stopover-guide-48-hours/, cluster: prayer-aware-travel
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-08 | status:proposed | type:evergreen | pillar:living | format:guide | words:1700 | score:82
+keyword: confinement food singapore
+angle: No modest-luxury incumbent owns this — the halal confinement-food + postnatal-care guide. Deeply useful to the exact audience, KD1, strong commercial intent. Reads as care, not clickbait.
+links: cluster: halal-dining-singapore, /living/the-conscious-luxury-manifesto-sustainable-living/
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-09 | status:proposed | type:evergreen | pillar:living | format:guide | words:1700 | score:76
+keyword: japandi interior design
+angle: The bridge from our Asian-minimalism / quiet-luxury essays into service interiors demand (japandi + wabi-sabi + modern-luxury, KD0-2). SERP crackable (a DR-0 site already ranks #3). A content-to-commerce Living cluster.
+links: /style/the-art-of-asian-minimalism-2/, /guides/the-complete-guide-to-quiet-luxury/, cluster: modern-luxury-interior-design-singapore
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-12 | status:proposed | type:evergreen | pillar:living | format:guide | words:1500 | score:78
+keyword: housewarming gift singapore
+angle: The tasteful, non-tacky gift edit (incl. halal-friendly hampers) — evergreen, commercial. ★ moderately beatable (top-10 DR1/14/25 + Reddit/Lemon8). Links to cakes + Raya hampers.
+links: cluster: hari-raya-hampers, /guides/the-complete-guide-to-quiet-luxury/
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-13 | status:proposed | type:evergreen | pillar:style | format:guide | words:1800 | score:84
+keyword: baju kurung
+angle: The modern modest edit — how to wear + where to buy modern baju kurung; spikes hard at Raya (baju kurung 3.5k/KD1, + moden/plus-size/sage-green colour trend). Reclaims the style pillar for local modest demand.
+links: /style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/, cluster: modest-fashion-asia
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-14 | status:proposed | type:evergreen | pillar:style | format:feature | words:1600 | score:72
+keyword: baju nikah
+angle: The modest-luxury bridal edit — nikah/solemnisation dressing, hantaran, restraint over spectacle. Ties to halal catering. (KD1)
+links: cluster: malay-wedding, cluster: modest-fashion-asia
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-15 | status:proposed | type:evergreen | pillar:beauty | format:guide | words:1600 | score:80
+keyword: best sunscreen singapore
+angle: The tropical-climate SPF verdict — sweat/humidity performance, tudung-friendly no-white-cast picks (sunscreen for oily skin, korean/tinted; anessa/biore/beauty-of-joseon support, KD0-3). Pivots beauty from global product reviews to humid-SG need.
+links: /beauty/humidity-resistant-makeup-science-tropical-climate/, cluster: korean-skincare-singapore
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-16 | status:proposed | type:evergreen | pillar:travel | format:guide | words:1700 | score:76
+keyword: things to do in desaru
+angle: The calm, family, alcohol-free coast weekend from Singapore — resorts, waterpark, prayer facilities (KD0, blog-friendly SERP). Pairs with jb staycation.
+links: /travel/singapore-stopover-guide-48-hours/, cluster: prayer-aware-travel
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-19 | status:proposed | type:evergreen | pillar:travel | format:guide | words:1600 | score:70
+keyword: batam halal food
+angle: The halal reframe — NOT the head term "things to do in batam" (aggregator-locked, Klook/TripAdvisor DR76-89). Win batam/bintan halal food + modest-family resort guides; havehalalwilltravel proves the lane ranks.
+links: cluster: prayer-aware-travel, /travel/singapore-stopover-guide-48-hours/
+source: keyword-research-everyday-2026-h2
+
+### 2026-10-20 | status:proposed | type:evergreen | pillar:travel | format:guide | words:1500 | score:72
+keyword: weekend getaway from singapore
+angle: The hub — an index of 2-3-day prayer-aware, alcohol-free escapes (JB, Desaru, Bintan, Batam, Malacca); links down to each. Low volume, high internal-link value. ⊛
+links: cluster: prayer-aware-travel, cluster: things-to-do-singapore-this-weekend
+source: keyword-research-everyday-2026-h2
+
+### 2027-01-26 | status:proposed | type:trending | pillar:culture | format:guide | words:1600 | score:80
+keyword: ramadan bazaar singapore
+angle: The definitive SG Ramadan-bazaar guide (Geylang Serai et al) — the modern modest-market edit; crossover to buka-puasa buffets. (ramadan 2026 singapore 5.2k/KD0) Publish ~6-8 wks ahead of Ramadan (~17 Feb).
+links: cluster: halal-dining-singapore, cluster: afternoon-tea-singapore
+source: keyword-research-everyday-2026-h2
+
+### 2027-03-08 | status:proposed | type:trending | pillar:culture | format:guide | words:1600 | score:78
+keyword: hari raya open house food
+angle: The open-house table — what to serve/where to order for Raya; hampers crossover. Part of the annual Hari Raya hub (36k/KD8 head). ⊛ Publish before Eid (~20 Mar).
+links: cluster: hari-raya-hampers, cluster: halal-dining-singapore
+source: keyword-research-everyday-2026-h2
