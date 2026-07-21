@@ -6,6 +6,8 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { organizationSchema, websiteSchema } from '../lib/seo';
 import defaultOgAsset from '../assets/og-default.png';
 import { getSearchIndex } from '../lib/articles';
+import { CATEGORIES } from '../lib/taxonomy';
+import { cap } from '../lib/format';
 import '../styles/global.css';
 import '../styles/pages.css';
 
@@ -69,22 +71,12 @@ const defaultOg = await getImage({
 });
 const ogImage = image ?? new URL(defaultOg.src, Astro.site).toString();
 
-// All eight categories stay reachable (v2-styled nav), plus a curated
-// "The Long Read" entry pointing at the latest features feed.
-const categories = [
-	'Style',
-	'Beauty',
-	'Dining',
-	'Travel',
-	'Culture',
-	'Living',
-	'People',
-	'Guides',
-];
-const navItems = categories.map((c) => ({
-	label: c,
-	href: `/${c.toLowerCase()}`,
-	active: c === activeCategory,
+// All eight categories stay reachable (v2-styled nav) — the list itself lives
+// in src/lib/taxonomy.ts alongside the schema enum.
+const navItems = CATEGORIES.map((c) => ({
+	label: cap(c),
+	href: `/${c}`,
+	active: cap(c) === activeCategory,
 }));
 // Keep the visible masthead deliberately concise. The full taxonomy remains
 // available in the editorial menu and footer without making every page feel
@@ -254,6 +246,7 @@ const gtmSnippet = gtmEnabled
 				<div class="overlay__aside">
 					<p class="overlay__label">Arahkaii</p>
 					<a href="/latest">Latest stories</a>
+					<a href="/search">Search the archive</a>
 					<a href="/contributors">Editors &amp; contributors</a>
 					<a href="/about">Our story</a>
 					<a href="/reading-list">Reading list</a>

@@ -1,14 +1,13 @@
 // Category archives segment — lastmod tracks each section's newest story.
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
 import { urlset } from '../lib/sitemap';
+import { getPosts } from '../lib/articles';
+import { CATEGORIES } from '../lib/taxonomy';
 
 export const prerender = true;
 
-const CATEGORIES = ['style', 'beauty', 'dining', 'travel', 'culture', 'living', 'people', 'guides'];
-
 export const GET: APIRoute = async () => {
-	const posts = await getCollection('posts', ({ data }) => !data.draft);
+	const posts = await getPosts();
 	return urlset(
 		CATEGORIES.map((category) => {
 			const newest = posts

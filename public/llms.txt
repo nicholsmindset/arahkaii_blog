@@ -2,33 +2,33 @@
 
 > A Muslim-owned editorial publication covering modern Asian luxury through style, beauty, halal dining, travel, culture, living, people and practical guides.
 
-Canonical site: https://arahkaii.com/
-Editorial standards: https://arahkaii.com/editorial-standards/
-Contributors: https://arahkaii.com/contributors/
-Latest stories: https://arahkaii.com/latest/
-RSS: https://arahkaii.com/rss.xml
-Sitemap: https://arahkaii.com/sitemap-index.xml
+Canonical site: https://www.arahkaii.com/
+Editorial standards: https://www.arahkaii.com/editorial-standards/
+Contributors: https://www.arahkaii.com/contributors/
+Latest stories: https://www.arahkaii.com/latest/
+RSS: https://www.arahkaii.com/rss.xml
+Sitemap: https://www.arahkaii.com/sitemap-index.xml
 
 ## Editorial sections
 
-- https://arahkaii.com/style/
-- https://arahkaii.com/beauty/
-- https://arahkaii.com/dining/
-- https://arahkaii.com/travel/
-- https://arahkaii.com/culture/
-- https://arahkaii.com/living/
-- https://arahkaii.com/people/
-- https://arahkaii.com/guides/
+- https://www.arahkaii.com/style/
+- https://www.arahkaii.com/beauty/
+- https://www.arahkaii.com/dining/
+- https://www.arahkaii.com/travel/
+- https://www.arahkaii.com/culture/
+- https://www.arahkaii.com/living/
+- https://www.arahkaii.com/people/
+- https://www.arahkaii.com/guides/
 
 ## Signature resources
 
-- https://arahkaii.com/franchises/arahkaii-verified/
-- https://arahkaii.com/franchises/the-majlis/
-- https://arahkaii.com/franchises/city-guides/
-- https://arahkaii.com/topics/halal-dining-singapore/
-- https://arahkaii.com/topics/prayer-aware-travel/
-- https://arahkaii.com/topics/modest-fashion-asia/
+- https://www.arahkaii.com/franchises/arahkaii-verified/
+- https://www.arahkaii.com/franchises/the-majlis/
+- https://www.arahkaii.com/franchises/city-guides/
+- https://www.arahkaii.com/topics/halal-dining-singapore/
+- https://www.arahkaii.com/topics/prayer-aware-travel/
+- https://www.arahkaii.com/topics/modest-fashion-asia/
 
 ## Use and attribution
 
-Link to the canonical article when quoting or summarising Arahkaii. Verification details are time-sensitive; preserve the stated status and checked date. Corrections can be sent through https://arahkaii.com/contact/.
+Link to the canonical article when quoting or summarising Arahkaii. Verification details are time-sensitive; preserve the stated status and checked date. Corrections can be sent through https://www.arahkaii.com/contact/.

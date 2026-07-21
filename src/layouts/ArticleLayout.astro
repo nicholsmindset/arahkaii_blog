@@ -80,6 +80,8 @@ interface Props {
 	atAGlance?: AtAGlanceItem[];
 	halalStatus?: HalalStatusData;
 	lastVerified?: Date;
+	/** Editorial reviewer — rendered in the byline row and Article schema. */
+	reviewedBy?: { name: string; href: string };
 }
 
 const {
@@ -114,6 +116,7 @@ const {
 	atAGlance = [],
 	halalStatus,
 	lastVerified,
+	reviewedBy,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -167,6 +170,7 @@ const jsonLd = [
 		url: canonical.toString(),
 		keywords: tags,
 		type: timeliness === 'timely' ? 'NewsArticle' : 'Article',
+		reviewedBy: reviewedBy ? { name: reviewedBy.name, url: new URL(reviewedBy.href, SITE.url).toString() } : undefined,
 	}),
 	breadcrumbSchema(crumbs),
 ];
@@ -203,6 +207,14 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 			<Standfirst text={standfirst} />
 			<div class="art-byrow">
 				<span class="meta"><strong>Words</strong> &nbsp;<a href={authorHref}>{author.name}</a></span>
+				{
+					reviewedBy && (
+						<>
+							<span class="dot" />
+							<span class="meta"><strong>Reviewed</strong> &nbsp;<a href={reviewedBy.href}>{reviewedBy.name}</a></span>
+						</>
+					)
+				}
 				<span class="dot"></span>
 				<span class="meta">{formattedDate}</span>
 				{

@@ -1,0 +1,131 @@
+---
+import type { Page } from 'astro';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getCards, LATEST_PAGE_SIZE, type PostCard } from '../../lib/articles';
+import { fmtDate, cap } from '../../lib/format';
+import { CATEGORIES } from '../../lib/taxonomy';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema, itemListSchema } from '../../lib/seo';
+
+// The full archive, paginated — /latest/ is page 1, /latest/2/ onwards the
+// older pages. Featured treatment only on page 1.
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+	const cards = await getCards();
+	return paginate(cards, { pageSize: LATEST_PAGE_SIZE });
+}
+
+const { page } = Astro.props as { page: Page<PostCard> };
+const isFirst = page.currentPage === 1;
+const featured = isFirst ? page.data.slice(0, 3) : [];
+const archive = isFirst ? page.data.slice(3) : page.data;
+const pageHref = (n: number) => (n <= 1 ? '/latest/' : `/latest/${n}/`);
+
+const title = isFirst ? 'Latest stories — Arahkaii' : `Latest stories · Page ${page.currentPage} — Arahkaii`;
+const description = 'New essays, reporting and considered guides from Arahkaii — Asia’s modern-luxury edit, modestly told.';
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({
+		name: isFirst ? 'Latest stories — Arahkaii' : `Latest stories, page ${page.currentPage} — Arahkaii`,
+		url: canonical,
+		description: 'New essays, reporting and considered guides from Arahkaii.',
+	}),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'Latest', url: new URL('/latest/', SITE.url).toString() },
+		...(isFirst ? [] : [{ name: `Page ${page.currentPage}`, url: canonical }]),
+	]),
+	itemListSchema(
+		'Latest stories — Arahkaii',
+		page.data.map((c) => ({ name: c.title, description: c.standfirst, url: new URL(c.url, SITE.url).toString() })),
+		canonical,
+	),
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+	<div class="wrap latest-page">
+		<header class="latest-hero">
+			<div>
+				<Breadcrumbs
+					schema={false}
+					class="page-crumbs"
+					items={isFirst ? [{ name: 'Arahkaii', href: '/' }, { name: 'Latest' }] : [{ name: 'Arahkaii', href: '/' }, { name: 'Latest', href: '/latest/' }, { name: `Page ${page.currentPage}` }]}
+				/>
+				<h1>Latest</h1>
+			</div>
+			<div class="latest-hero__intro">
+				<p>New essays, reporting and considered guides from across Asia.</p>
+				<span>{page.total} published stories · newest first{isFirst ? '' : ` · page ${page.currentPage} of ${page.lastPage}`}</span>
+			</div>
+		</header>
+
+		{
+			featured[0] && (
+				<section class="latest-featured" aria-label="Featured latest stories">
+					<a class="latest-lead" href={featured[0].url}>
+						<div class="media latest-lead__image">
+							<Image src={featured[0].image} alt={featured[0].heroCaption || featured[0].title} loading="eager" widths={[720, 1080, 1440]} sizes="(max-width: 860px) 100vw, 66vw" />
+						</div>
+						<div class="latest-lead__copy">
+							<p class="eyebrow eyebrow--emerald">{featured[0].categoryLabel} · The latest</p>
+							<h2>{featured[0].title}</h2>
+							<p>{featured[0].standfirst}</p>
+							<span class="latest-meta">{featured[0].byline} · {fmtDate(featured[0].date)}{featured[0].readingMinutes ? ` · ${featured[0].readingMinutes} min read` : ''}</span>
+						</div>
+					</a>
+					<div class="latest-featured__side">
+						{featured.slice(1).map((card) => (
+							<a class="latest-side-story" href={card.url}>
+								<div class="media"><Image src={card.image} alt={card.heroCaption || card.title} widths={[420, 720]} sizes="(max-width: 860px) 50vw, 28vw" /></div>
+								<p class="eyebrow eyebrow--emerald">{card.categoryLabel}</p>
+								<h2>{card.title}</h2>
+								<span class="latest-meta">{fmtDate(card.date)}{card.readingMinutes ? ` · ${card.readingMinutes} min` : ''}</span>
+							</a>
+						))}
+					</div>
+				</section>
+			)
+		}
+
+		<section class="latest-archive" aria-labelledby="archive-title">
+			<div class="latest-archive__head">
+				<div>
+					<p class="eyebrow eyebrow--emerald">The archive</p>
+					<h2 id="archive-title">All stories</h2>
+				</div>
+				<nav class="latest-filters" aria-label="Browse by section">
+					{CATEGORIES.map((c) => <a href={`/${c}/`}>{cap(c)}</a>)}
+				</nav>
+			</div>
+
+			<div class="latest-grid">
+				{archive.map((card) => (
+					<article class="latest-card">
+						<a href={card.url} class="latest-card__image media">
+							<Image src={card.image} alt={card.heroCaption || card.title} widths={[420, 720]} sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw" loading="lazy" />
+						</a>
+						<div class="latest-card__copy">
+							<div class="latest-card__top"><span>{card.categoryLabel}</span><time datetime={card.date.toISOString()}>{fmtDate(card.date)}</time></div>
+							<h3><a href={card.url}>{card.title}</a></h3>
+							<p>{card.standfirst}</p>
+							<span class="latest-meta">{card.authorName}{card.readingMinutes ? ` · ${card.readingMinutes} min read` : ''}</span>
+						</div>
+					</article>
+				))}
+			</div>
+
+			{
+				page.lastPage > 1 && (
+					<nav class="latest-pagination" aria-label="Archive pages">
+						{page.currentPage > 1 ? <a class="tlink" href={pageHref(page.currentPage - 1)}>← Newer stories</a> : <span aria-hidden="true" />}
+						<span class="latest-meta">Page {page.currentPage} of {page.lastPage}</span>
+						{page.currentPage < page.lastPage ? <a class="tlink" href={pageHref(page.currentPage + 1)}>Older stories →</a> : <span aria-hidden="true" />}
+					</nav>
+				)
+			}
+		</section>
+	</div>
+</BaseLayout>

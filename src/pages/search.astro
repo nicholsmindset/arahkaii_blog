@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+// On-site search results page — the crawlable target for the WebSite
+// SearchAction. Filters the same build-time index the header overlay uses.
+// noindex by convention: internal search results shouldn't compete with the
+// editorial pages they point at.
+---
+
+<BaseLayout title="Search — Arahkaii" description="Search essays, places and people across the Arahkaii archive." noindex={true}>
+	<div class="wrap latest-page">
+		<header class="latest-hero">
+			<div>
+				<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Search' }]} />
+				<h1>Search</h1>
+			</div>
+			<div class="latest-hero__intro">
+				<p>Search essays, places and people across the Arahkaii archive.</p>
+			</div>
+		</header>
+
+		<form class="search-page__form" role="search" action="/search/" method="get">
+			<input
+				class="search-input"
+				type="search"
+				name="q"
+				placeholder="Search essays, places, people…"
+				aria-label="Search query"
+				autocomplete="off"
+				data-search-page-input
+			/>
+		</form>
+		<p class="latest-meta" role="status" data-search-page-status></p>
+		<div class="search-results search-results--page" data-search-page-results hidden></div>
+	</div>
+
+	<script>
+		function getIndex(): any[] {
+			const el = document.getElementById('arahkaii-index');
+			if (!el) return [];
+			try {
+				return JSON.parse(el.textContent || '[]');
+			} catch {
+				return [];
+			}
+		}
+		function escapeHtml(value: string): string {
+			return value.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+		}
+		function wireSearchPage() {
+			const input = document.querySelector<HTMLInputElement>('[data-search-page-input]');
+			const results = document.querySelector<HTMLElement>('[data-search-page-results]');
+			const status = document.querySelector<HTMLElement>('[data-search-page-status]');
+			if (!input || !results || results.dataset.wired) return;
+			results.dataset.wired = '1';
+			const idx = getIndex();
+			function run(q: string) {
+				q = (q || '').trim().toLowerCase();
+				if (!q) {
+					results!.hidden = true;
+					results!.innerHTML = '';
+					if (status) status.textContent = '';
+					return;
+				}
+				const hits = idx.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q));
+				results!.hidden = false;
+				results!.innerHTML = hits.length
+					? hits
+							.map(
+								(x) =>
+									`<a href="${escapeHtml(x.h)}"><span class="sr-cat">${escapeHtml(x.c)}</span><span class="sr-title">${escapeHtml(x.t)}</span></a>`,
+							)
+							.join('')
+					: `<p class="sr-empty">No stories yet for “${escapeHtml(q)}”. Try a category, an author, or a place.</p>`;
+				if (status) status.textContent = `${hits.length} ${hits.length === 1 ? 'story' : 'stories'} found.`;
+			}
+			const initial = new URLSearchParams(location.search).get('q') || '';
+			if (initial) input.value = initial;
+			run(initial);
+			input.addEventListener('input', () => run(input.value));
+		}
+		document.addEventListener('astro:page-load', wireSearchPage);
+		wireSearchPage();
+	</script>
+</BaseLayout>

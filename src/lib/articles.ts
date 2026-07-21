@@ -44,9 +44,21 @@ export interface PostCard {
 	isPillar: boolean;
 }
 
-/** All published posts, newest first. */
+/** Page size for the paginated /latest archive (and its sitemap segment). */
+export const LATEST_PAGE_SIZE = 24;
+
+/**
+ * All listed posts, newest first. "Listed" excludes drafts, `noindex` posts
+ * (they keep their own page but stay out of listings, search and RSS) and
+ * future-dated posts (scheduled — they appear on the first build after their
+ * date).
+ */
 export async function getPosts(): Promise<CollectionEntry<'posts'>[]> {
-	const posts = await getCollection('posts', ({ data }) => !data.draft);
+	const now = new Date();
+	const posts = await getCollection(
+		'posts',
+		({ data }) => !data.draft && !data.noindex && data.date <= now,
+	);
 	return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
