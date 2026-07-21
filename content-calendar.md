@@ -548,7 +548,7 @@ angle: The tasteful, non-tacky gift edit (incl. halal-friendly hampers) — ever
 links: cluster: hari-raya-hampers, /guides/the-complete-guide-to-quiet-luxury/
 source: keyword-research-everyday-2026-h2
 
-### 2026-10-13 | status:proposed | type:evergreen | pillar:style | format:guide | words:1800 | score:84
+### 2026-10-13 | status:drafted | type:evergreen | pillar:style | format:pillar | words:1800 | score:84 | branch:claude/blog-keyword-research-mffch8
 keyword: baju kurung
 angle: The modern modest edit — how to wear + where to buy modern baju kurung; spikes hard at Raya (baju kurung 3.5k/KD1, + moden/plus-size/sage-green colour trend). Reclaims the style pillar for local modest demand.
 links: /style/modest-fashion-streetwear-southeast-asia-muslim-fashion-2025/, cluster: modest-fashion-asia
