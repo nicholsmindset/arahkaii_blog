@@ -174,6 +174,19 @@ const posts = (year: number) => collection({
 	schema: articleSchema,
 });
 
+// One post collection per year, from the first content year through next year
+// (so a January post in the new year has a home without a code change).
+// Newest first for the nav; `postsCollections` spreads into `collections`.
+const FIRST_CONTENT_YEAR = 2025;
+const postYears = Array.from(
+	{ length: new Date().getFullYear() + 1 - FIRST_CONTENT_YEAR + 1 },
+	(_, i) => new Date().getFullYear() + 1 - i,
+);
+const postsCollections = Object.fromEntries(
+	postYears.map((year) => [`posts${year}`, posts(year)]),
+);
+const postNavKeys = postYears.map((year) => `posts${year}`);
+
 const githubStorage =
 	process.env.NODE_ENV === 'production' || process.env.KEYSTATIC_STORAGE_KIND === 'github';
 
@@ -184,7 +197,11 @@ export default config({
 	ui: {
 		brand: { name: 'Arahkaii Editorial' },
 		navigation: {
-			Content: ['posts2026', 'posts2025'],
+			// postNavKeys is generated per year and matches the spread
+			// `postsCollections` keys exactly; Object.fromEntries widens the key
+			// literals to string, so the nav union can't see them. The runtime
+			// keys are valid — cast past the lost inference.
+			Content: postNavKeys as unknown as never[],
 			Publication: ['franchises', 'clusters'],
 			People: ['authors'],
 			Settings: ['newsletter'],
@@ -215,8 +232,7 @@ export default config({
 		}),
 	},
 	collections: {
-		posts2026: posts(2026),
-		posts2025: posts(2025),
+		...postsCollections,
 		authors: collection({
 			label: 'Authors',
 			path: 'src/content/authors/*',

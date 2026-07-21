@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getCards } from '../../lib/articles';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema } from '../../lib/seo';
+
+const [clusters, cards] = await Promise.all([getCollection('clusters'), getCards()]);
+const countFor = (id: string) => cards.filter((c) => c.cluster === id).length;
+const items = clusters
+	.map((c) => ({ id: c.id, ...c.data, count: countFor(c.id) }))
+	.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+const description = 'Arahkaii topics — the reported clusters that gather our deepest coverage, each led by a pillar guide.';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({ name: 'Topics — Arahkaii', url: canonical, description }),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'Topics', url: canonical },
+	]),
+];
+---
+
+<BaseLayout title="Topics — Arahkaii" description={description} jsonLd={jsonLd}>
+	<header class="hub-head wrap">
+		<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Topics' }]} />
+		<p class="eyebrow eyebrow--emerald">Reported clusters</p>
+		<h1>Topics</h1>
+		<p>Where our coverage gathers depth — each topic led by a pillar guide and built out over time.</p>
+	</header>
+	<section class="hub-list wrap" aria-label="Arahkaii topics">
+		{items.map((c) => (
+			<article class="hub-story hub-story--index">
+				<div>
+					<p class="eyebrow eyebrow--emerald">{c.count} {c.count === 1 ? 'story' : 'stories'}{c.targetKeyword ? ` · ${c.targetKeyword}` : ''}</p>
+					<h2><a href={`/topics/${c.id}/`}>{c.name}</a></h2>
+					<p>{c.description}</p>
+				</div>
+			</article>
+		))}
+	</section>
+</BaseLayout>

@@ -530,3 +530,18 @@
 		widows: 3;
 	}
 }
+
+/* draft-preview banner — shown only on Vercel preview deploys (never in
+   production; the page is also noindex). Warm aubergine to read as a system
+   notice, not editorial content. */
+.draft-banner {
+	max-width: var(--measure, 68ch);
+	margin: 24px auto 0;
+	padding: 12px 18px;
+	background: var(--accent2);
+	color: #fff;
+	font: 500 13px/1.5 var(--sans);
+	letter-spacing: 0.01em;
+	text-align: center;
+	border-radius: 2px;
+}

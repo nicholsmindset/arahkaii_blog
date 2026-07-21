@@ -2,13 +2,18 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import GuideLayout from '../../layouts/GuideLayout.astro';
-import { getCards, estimateReadingMinutes } from '../../lib/articles';
+import { getCards, estimateReadingMinutes, isPreviewBuild } from '../../lib/articles';
 
 export async function getStaticPaths() {
 	// noindex posts still get a page (their own meta handles robots); future-dated
-	// posts don't exist until the first build on/after their date.
+	// posts don't exist until the first build on/after their date. Drafts get a
+	// page only on Vercel preview deploys (isPreviewBuild) so editors can share
+	// a link — they stay out of production, listings, sitemaps and RSS.
 	const now = new Date();
-	const posts = await getCollection('posts', ({ data }) => !data.draft && data.date <= now);
+	const posts = await getCollection(
+		'posts',
+		({ data }) => (isPreviewBuild || !data.draft) && data.date <= now,
+	);
 	return posts.map((post) => ({
 		// id is e.g. "2026/quiet-renaissance-…"; slug is the final segment.
 		params: { category: post.data.category, slug: post.id.split('/').pop() },
@@ -103,6 +108,7 @@ const clusterItems = d.cluster ? others.filter((card) => card.cluster === d.clus
 	halalStatus={d.halalStatus}
 	lastVerified={d.lastVerified}
 	reviewedBy={reviewedBy}
+	isDraftPreview={d.draft === true}
 	{...layoutExtra}
 >
 	<Content />

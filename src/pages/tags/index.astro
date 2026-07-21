@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getTagIndex } from '../../lib/articles';
+import { prettifyTag } from '../../lib/format';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema } from '../../lib/seo';
+
+const tagIndex = await getTagIndex();
+const tags = [...tagIndex.entries()].map(([tag, cards]) => ({ tag, label: prettifyTag(tag), count: cards.length }));
+const description = 'Browse Arahkaii by theme — the recurring subjects that run across style, beauty, dining, travel and culture.';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({ name: 'Themes — Arahkaii', url: canonical, description }),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'Themes', url: canonical },
+	]),
+];
+---
+
+<BaseLayout title="Browse by theme — Arahkaii" description={description} jsonLd={jsonLd}>
+	<div class="wrap latest-page">
+		<header class="latest-hero">
+			<div>
+				<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Themes' }]} />
+				<h1>Themes</h1>
+			</div>
+			<div class="latest-hero__intro">
+				<p>The recurring subjects that run across the edit.</p>
+				<span>{tags.length} themes</span>
+			</div>
+		</header>
+
+		<section class="tag-cloud" aria-label="All themes">
+			{tags.map(({ tag, label, count }) => (
+				<a class="tag-cloud__item" href={`/tags/${tag}/`}>
+					<span class="tag-cloud__label">{label}</span>
+					<span class="tag-cloud__count">{count}</span>
+				</a>
+			))}
+		</section>
+	</div>
+</BaseLayout>

@@ -11,3 +11,7 @@ export function fmtDate(date: Date): string {
 
 /** Capitalise the first letter (used to turn the category enum into a label). */
 export const cap = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+
+/** "quiet-luxury" → "Quiet Luxury" — human-readable tag label. */
+export const prettifyTag = (t: string): string =>
+	t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());

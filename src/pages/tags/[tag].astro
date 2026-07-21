@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getTagIndex } from '../../lib/articles';
+import { fmtDate, prettifyTag } from '../../lib/format';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema, itemListSchema } from '../../lib/seo';
+
+export async function getStaticPaths() {
+	const tagIndex = await getTagIndex();
+	return [...tagIndex.entries()].map(([tag, cards]) => ({ params: { tag }, props: { cards } }));
+}
+
+const { tag } = Astro.params;
+const { cards } = Astro.props;
+const label = prettifyTag(tag!);
+const description = `Every Arahkaii story tagged ${label} — ${cards.length} ${cards.length === 1 ? 'piece' : 'pieces'} across style, beauty, dining, travel and culture.`;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({ name: `${label} — Arahkaii`, url: canonical, description }),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'Themes', url: new URL('/tags/', SITE.url).toString() },
+		{ name: label, url: canonical },
+	]),
+	itemListSchema(
+		`${label} — Arahkaii`,
+		cards.map((c) => ({ name: c.title, description: c.standfirst, url: new URL(c.url, SITE.url).toString() })),
+		canonical,
+	),
+];
+---
+
+<BaseLayout title={`${label} — Arahkaii`} description={description} jsonLd={jsonLd}>
+	<div class="wrap latest-page">
+		<header class="latest-hero">
+			<div>
+				<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Themes', href: '/tags/' }, { name: label }]} />
+				<h1>{label}</h1>
+			</div>
+			<div class="latest-hero__intro">
+				<p>Every Arahkaii story on {label.toLowerCase()}.</p>
+				<span>{cards.length} {cards.length === 1 ? 'story' : 'stories'} · newest first</span>
+			</div>
+		</header>
+
+		<section class="latest-archive" aria-labelledby="tag-archive-title">
+			<h2 id="tag-archive-title" class="sr-only">Stories tagged {label}</h2>
+			<div class="latest-grid">
+				{cards.map((card) => (
+					<article class="latest-card">
+						<a href={card.url} class="latest-card__image media">
+							<Image src={card.image} alt={card.heroCaption || card.title} widths={[420, 720]} sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw" loading="lazy" />
+						</a>
+						<div class="latest-card__copy">
+							<div class="latest-card__top"><span>{card.categoryLabel}</span><time datetime={card.date.toISOString()}>{fmtDate(card.date)}</time></div>
+							<h3><a href={card.url}>{card.title}</a></h3>
+							<p>{card.standfirst}</p>
+							<span class="latest-meta">{card.authorName}{card.readingMinutes ? ` · ${card.readingMinutes} min read` : ''}</span>
+						</div>
+					</article>
+				))}
+			</div>
+			<p class="loadmore" style="padding:48px 0 8px"><a class="tlink" href="/tags/">← All themes</a></p>
+		</section>
+	</div>
+</BaseLayout>

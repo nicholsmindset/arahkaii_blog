@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getCards, type PostCard } from '../../lib/articles';
-import { cap } from '../../lib/format';
+import { cap, prettifyTag } from '../../lib/format';
 import { CATEGORIES } from '../../lib/taxonomy';
 import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema, itemListSchema } from '../../lib/seo';
 
@@ -59,7 +59,7 @@ const elsewhere = pool.length < 4 ? all.filter((c) => c.category !== category).s
 const counts = new Map<string, number>();
 for (const c of cards) for (const t of c.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
 const topTags = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t]) => t);
-const prettify = (t: string) => t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+const prettify = prettifyTag;
 const dateFormat = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 // build the alternating river
