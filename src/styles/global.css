@@ -71,9 +71,13 @@
 }
 .h1 {
 	font-family: var(--display);
-	font-weight: 400;
+	/* Weight 500 + optical-sizing:none keep Bodoni's hairlines legible at the
+	   large page-H1 size (auto optical sizing thins a high-contrast Didone as it
+	   grows). Smaller headings (.h2 and below) stay at 400. */
+	font-weight: 500;
+	font-optical-sizing: none;
 	font-size: var(--h1);
-	line-height: 1.02;
+	line-height: 1.04;
 	letter-spacing: -0.01em;
 }
 .h2 {
