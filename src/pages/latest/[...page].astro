@@ -67,7 +67,7 @@ const jsonLd = [
 				<section class="latest-featured" aria-label="Featured latest stories">
 					<a class="latest-lead" href={featured[0].url}>
 						<div class="media latest-lead__image">
-							<Image src={featured[0].image} alt={featured[0].heroCaption || featured[0].title} loading="eager" widths={[720, 1080, 1440]} sizes="(max-width: 860px) 100vw, 66vw" />
+							<Image src={featured[0].image} alt={featured[0].heroCaption || featured[0].title} loading="eager" fetchpriority="high" widths={[720, 1080, 1440]} sizes="(max-width: 860px) 100vw, 66vw" />
 						</div>
 						<div class="latest-lead__copy">
 							<p class="eyebrow eyebrow--emerald">{featured[0].categoryLabel} · The latest</p>

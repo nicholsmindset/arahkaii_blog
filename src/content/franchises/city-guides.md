@@ -1,6 +1,6 @@
 ---
-name: Prayer-aware city guides
-description: Neighbourhood-led travel reporting with halal dining, prayer spaces, modest-dress notes and useful itineraries.
+name: City guides
+description: Neighbourhood-led travel reporting — where to eat, stay and wander, and the detail that makes a trip easy.
 kicker: Travel with intention
 cadence: Seasonal
 ---

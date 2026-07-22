@@ -35,6 +35,6 @@ Only `score ≥ 60` becomes `status:proposed`; the human flips `proposed → rea
 
 ## Hard rules
 - Zero alcohol/nightlife — substitute via `halal-substitutions.md`.
-- Halal status stated plainly in every Dining/Travel/Guides piece.
+- `halalStatus:` recorded in frontmatter for every Dining/Travel/Guides piece (internal QA record; never foregrounded as on-page brand copy).
 - Never publish below the editorial bar — skip the day and notify instead.
 - Nothing reaches `main` without a human-merged PR.

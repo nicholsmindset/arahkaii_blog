@@ -51,8 +51,26 @@ jobs:
       - name: Verify the starting point
         run: npm run verify
 
+      # Fail loudly when the key is absent — six silent scheduled failures in
+      # July 2026 went unnoticed because the action's own error is buried in
+      # the step log.
+      - name: Require ANTHROPIC_API_KEY
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error title=Missing repository secret::ANTHROPIC_API_KEY is not set. Add it under Settings → Secrets and variables → Actions — the editorial agent cannot run without it."
+            exit 1
+          fi
+
       - name: Run Claude editorial agent
         uses: anthropics/claude-code-action@v1
+        env:
+          # Optional image-generation keys. Absent secrets resolve to empty
+          # strings, which scripts/image-gen.mjs treats as unset — the routine
+          # then falls back to the placeholder path.
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
@@ -63,8 +81,11 @@ jobs:
             Read CLAUDE.md first, then read and execute the matching file in
             .claude/commands/. Follow every human-review, licensing, validation,
             branch and pull-request gate. Never push to main and never merge a PR.
-            The scheduled runner has no image-generation secrets by design; use
-            the documented preview placeholder path and block image approval.
+            If an image key (OPENAI_API_KEY or OPENROUTER_API_KEY) is present in
+            the environment, generate the hero via scripts/image-gen.mjs per the
+            routine's image step; otherwise use the documented repository
+            placeholder for the PR preview and label the PR image-review-needed.
+            Sourced-image licensing gates are unchanged either way.
             If prerequisites or a ready topic are missing, create no content;
             record the reason in run-log.md only when that file changes as part of
             a dedicated branch and PR. Use primary sources for factual research.

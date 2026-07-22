@@ -11,6 +11,24 @@ strategy and competitor benchmarks. Every finding below carries the exact file
 Audited: 2026-07-21 · branch `main` @ head · 49 post files (42 published,
 7 drafts) · 5 authors · 4 franchises · 3 clusters.
 
+> **Update — 2026-07-22 · security & infra follow-up audit.** A second pass
+> (performance, accessibility, security) found no P0s. Shipped: XSS hardening
+> (`src/lib/safe.ts` — `safeJsonLd`/`escapeHtml` applied to all inlined JSON
+> blocks + the header search overlay), global security headers in `vercel.json`
+> (X-Frame-Options, nosniff, Referrer-Policy, HSTS, Permissions-Policy,
+> report-only CSP), removal of the dead AdSense loader, and an overlay-dialog
+> focus trap. **Astro 7 upgrade attempted and reverted:** `astro@7.1.3` +
+> `@astrojs/vercel@11` build cleanly through `astro check` but fail the SSR
+> pass with a Vite 7 regression — *"rollupOptions.input should not be an html
+> file when building for SSR"* — in the hybrid (static + 2 `prerender=false`
+> API routes) setup; reproduced with a clean install and with Keystatic
+> disabled, so it is upstream, not our config. Site remains on Astro 6.4.8
+> (green). The remaining `npm audit` highs are not production-reachable
+> (esbuild = dev-server/Windows only; sharp/libvips = build-time image
+> processing; the Astro transition-XSS advisory needs content-derived
+> transition names, which we don't use). Re-attempt the Astro 7 upgrade once
+> the upstream SSR-input regression is fixed in a later 7.x patch.
+
 ---
 
 ## 1. Executive summary

@@ -69,6 +69,8 @@ interface Props {
 	lastVerified?: Date;
 	/** Editorial reviewer — rendered in the byline and Article schema. */
 	reviewedBy?: { name: string; href: string };
+	/** True when this is an unpublished draft rendered on a preview deploy. */
+	isDraftPreview?: boolean;
 }
 
 const {
@@ -103,6 +105,7 @@ const {
 	halalStatus,
 	lastVerified,
 	reviewedBy,
+	isDraftPreview = false,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -156,7 +159,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 	activeCategory={categoryLabel}
 	image={ogImage}
 	ogType="article"
-	noindex={noindex}
+	noindex={noindex || isDraftPreview}
 	publishedTime={datePublished}
 	modifiedTime={dateModified}
 	authorName={author.name}
@@ -165,6 +168,9 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 	jsonLd={jsonLd}
 >
 	<article data-cat="guides">
+		{isDraftPreview && (
+			<p class="draft-banner" role="status">Draft preview — not yet published. This page is hidden from search and the rest of the site.</p>
+		)}
 		<header class="guide-head">
 			<nav class="art-breadcrumb eyebrow eyebrow--emerald" aria-label="Breadcrumb">
 				<a href={`/${category}`}>{categoryLabel}</a>
@@ -177,7 +183,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 
 		<figure class="guide-hero">
 			<div class="img real r-16x9 blurup">
-				<Image src={heroImage} alt={heroCaption || title} loading="eager" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+				<Image src={heroImage} alt={heroCaption || title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 			</div>
 			<figcaption class="caption">
 				{heroCaption ? `Above: ${heroCaption} ` : ''}(Photo: {heroCredit})

@@ -8,6 +8,7 @@ import defaultOgAsset from '../assets/og-default.png';
 import { getSearchIndex } from '../lib/articles';
 import { CATEGORIES } from '../lib/taxonomy';
 import { cap } from '../lib/format';
+import { safeJsonLd } from '../lib/safe';
 import '../styles/global.css';
 import '../styles/pages.css';
 
@@ -119,13 +120,9 @@ const gtmSnippet = gtmEnabled
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="theme-color" content="#FFFFFF" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="google-adsense-account" content="ca-pub-7886081043408699" />
-		<script
-			is:inline
-			async
-			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7886081043408699"
-			crossorigin="anonymous"
-		></script>
+		<!-- AdSense loader removed: no ad units exist on the site, so the third-party
+		     script was pure render/main-thread cost. Re-add it lazily + behind a
+		     consent gate (mirror the gtmEnabled env-gate) when real ad units ship. -->
 		<link
 			rel="alternate"
 			type="application/rss+xml"
@@ -173,14 +170,14 @@ const gtmSnippet = gtmEnabled
 		<div class="progress"><span data-progress></span></div>
 
 		<!-- sticky condensed bar (Vogue hide-on-down / show-on-up) -->
-		<div class="stickybar" role="banner">
+		<div class="stickybar">
 			<a class="stickybar__mark" href="/">ARAHKAII</a>
 			<nav class="stickybar__nav" aria-label="Sections">
 				{primaryNav.map((n) => <a class="navlink" href={n.href}>{n.label.toUpperCase()}</a>)}
 			</nav>
 			<div class="stickybar__right">
-				<button class="masthead__util" data-search-toggle type="button">SEARCH</button>
-				<button class="masthead__util" data-menu-open type="button">MENU</button>
+				<button class="masthead__util" data-search-toggle type="button" aria-expanded="false" aria-controls="site-search">SEARCH</button>
+				<button class="masthead__util" data-menu-open type="button" aria-expanded="false" aria-controls="overlay-menu" aria-haspopup="dialog">MENU</button>
 			</div>
 		</div>
 
@@ -188,8 +185,8 @@ const gtmSnippet = gtmEnabled
 		<header class="masthead">
 			<div class="wrap">
 				<div class="masthead__top">
-					<button class="masthead__util" data-menu-open type="button">MENU</button>
-					<button class="masthead__util" data-search-toggle type="button">SEARCH</button>
+					<button class="masthead__util" data-menu-open type="button" aria-expanded="false" aria-controls="overlay-menu" aria-haspopup="dialog">MENU</button>
+					<button class="masthead__util" data-search-toggle type="button" aria-expanded="false" aria-controls="site-search">SEARCH</button>
 				</div>
 				<a href="/" aria-label="Arahkaii — home">
 					{
@@ -213,7 +210,7 @@ const gtmSnippet = gtmEnabled
 				<hr class="rule d-only" />
 			</div>
 			<!-- inline search -->
-			<div class="searchbar">
+			<div class="searchbar" id="site-search">
 				<div class="wrap">
 					<div class="searchbar__inner">
 						<span class="eyebrow">Search</span>
@@ -232,7 +229,7 @@ const gtmSnippet = gtmEnabled
 		</header>
 
 		<!-- full-screen overlay menu -->
-		<div class="overlay" role="dialog" aria-modal="true" aria-label="Menu">
+		<div class="overlay" id="overlay-menu" role="dialog" aria-modal="true" aria-label="Menu">
 			<div class="overlay__top">
 				<a class="overlay__mark" href="/">ARAHKAII</a>
 				<button class="overlay__close" data-menu-close type="button">CLOSE ✕</button>
@@ -247,6 +244,9 @@ const gtmSnippet = gtmEnabled
 					<p class="overlay__label">Arahkaii</p>
 					<a href="/latest">Latest stories</a>
 					<a href="/search">Search the archive</a>
+					<a href="/tags/">Browse by theme</a>
+					<a href="/topics/">Topics</a>
+					<a href="/franchises/">Franchises</a>
 					<a href="/contributors">Editors &amp; contributors</a>
 					<a href="/about">Our story</a>
 					<a href="/reading-list">Reading list</a>
@@ -288,6 +288,8 @@ const gtmSnippet = gtmEnabled
 								<a href="/dining">Dining</a>
 								<a href="/travel">Travel</a>
 								<a href="/guides">Arahkaii Guides</a>
+								<a href="/topics/">Topics</a>
+								<a href="/franchises/">Franchises</a>
 							</div>
 						</div>
 						<div>
@@ -321,7 +323,7 @@ const gtmSnippet = gtmEnabled
 			is:inline
 			type="application/json"
 			id="arahkaii-index"
-			set:html={JSON.stringify(searchIndex)}
+			set:html={safeJsonLd(searchIndex)}
 		/>
 
 		<script>
@@ -361,6 +363,11 @@ const gtmSnippet = gtmEnabled
 					return [];
 				}
 			}
+			// Content-derived strings (titles/authors) are rendered into innerHTML
+			// below — escape them so a headline can never inject markup.
+			function esc(value: string): string {
+				return String(value).replace(/[&<>"']/g, (c) => '&#' + c.charCodeAt(0) + ';');
+			}
 			// ---- inline search ----
 			function wireSearch() {
 				const bar = document.querySelector<HTMLElement>('.searchbar');
@@ -384,10 +391,10 @@ const gtmSnippet = gtmEnabled
 						? hits
 								.map(
 									(x) =>
-										`<a href="${x.h}"><span class="sr-cat">${x.c}</span><span class="sr-title">${x.t}</span></a>`,
+										`<a href="${esc(x.h)}"><span class="sr-cat">${esc(x.c)}</span><span class="sr-title">${esc(x.t)}</span></a>`,
 								)
 								.join('')
-						: `<p class="sr-empty">No stories yet for “${q}”. Try a category, an author, or a place.</p>`;
+						: `<p class="sr-empty">No stories yet for “${esc(q)}”. Try a category, an author, or a place.</p>`;
 				}
 				input?.addEventListener('input', () => run(input.value));
 			}
@@ -507,35 +514,75 @@ const gtmSnippet = gtmEnabled
 				window.addEventListener('scroll', onScroll, { passive: true });
 				window.addEventListener('resize', onScroll);
 
-				// overlay menu
+				// overlay menu — modal dialog semantics: trap Tab while open and
+				// restore focus to the trigger on close (a11y).
+				let lastTrigger: HTMLElement | null = null;
+				const FOCUSABLE =
+					'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+				const setExpanded = (sel: string, state: boolean) =>
+					document.querySelectorAll<HTMLElement>(sel).forEach((b) => b.setAttribute('aria-expanded', String(state)));
+
+				function openOverlay(trigger: HTMLElement | null) {
+					const overlay = document.querySelector<HTMLElement>('.overlay');
+					if (!overlay) return;
+					lastTrigger = trigger;
+					overlay.classList.add('open');
+					document.body.style.overflow = 'hidden';
+					setExpanded('[data-menu-open]', true);
+					overlay.querySelector<HTMLElement>('[data-menu-close]')?.focus();
+				}
+				function closeOverlay() {
+					const overlay = document.querySelector<HTMLElement>('.overlay');
+					if (!overlay?.classList.contains('open')) return;
+					overlay.classList.remove('open');
+					document.body.style.overflow = '';
+					setExpanded('[data-menu-open]', false);
+					lastTrigger?.focus();
+					lastTrigger = null;
+				}
+				function closeSearch() {
+					const sb = document.querySelector<HTMLElement>('.searchbar');
+					if (!sb?.classList.contains('open')) return;
+					sb.classList.remove('open');
+					setExpanded('[data-search-toggle]', false);
+				}
+
 				document.addEventListener('click', (e) => {
 					const t = e.target as HTMLElement;
-					const overlay = document.querySelector<HTMLElement>('.overlay');
-					if (t.closest('[data-menu-open]')) {
-						overlay?.classList.add('open');
-						document.body.style.overflow = 'hidden';
-						overlay?.querySelector<HTMLElement>('[data-menu-close]')?.focus();
-					}
-					if (t.closest('[data-menu-close]') || (t.closest('.overlay a') && overlay)) {
-						overlay?.classList.remove('open');
-						document.body.style.overflow = '';
-					}
+					if (t.closest('[data-menu-open]')) openOverlay(t.closest('[data-menu-open]'));
+					if (t.closest('[data-menu-close]') || t.closest('.overlay a')) closeOverlay();
 					if (t.closest('[data-search-toggle]')) {
 						const sb = document.querySelector<HTMLElement>('.searchbar');
 						const open = sb?.classList.toggle('open');
+						setExpanded('[data-search-toggle]', !!open);
 						if (open) (sb?.querySelector('input') as HTMLInputElement | null)?.focus();
+						else closeSearch();
 					}
 				});
 
 				document.addEventListener('keydown', (e) => {
+					const overlay = document.querySelector<HTMLElement>('.overlay');
 					if (e.key === 'Escape') {
-						const overlay = document.querySelector<HTMLElement>('.overlay');
-						const sb = document.querySelector<HTMLElement>('.searchbar');
-						if (overlay?.classList.contains('open')) {
-							overlay.classList.remove('open');
-							document.body.style.overflow = '';
+						closeOverlay();
+						closeSearch();
+						return;
+					}
+					// Focus trap while the overlay dialog is open.
+					if (e.key === 'Tab' && overlay?.classList.contains('open')) {
+						const nodes = Array.from(overlay.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
+							(n) => n.offsetParent !== null,
+						);
+						if (!nodes.length) return;
+						const first = nodes[0];
+						const last = nodes[nodes.length - 1];
+						const active = document.activeElement as HTMLElement;
+						if (e.shiftKey && active === first) {
+							e.preventDefault();
+							last.focus();
+						} else if (!e.shiftKey && active === last) {
+							e.preventDefault();
+							first.focus();
 						}
-						sb?.classList.remove('open');
 					}
 				});
 
@@ -552,6 +599,8 @@ const gtmSnippet = gtmEnabled
 					const v = (input?.value || '').trim();
 					const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
 					const note = form.querySelector<HTMLElement>('.field-note');
+					// Announce validation/status/success changes to screen readers.
+					if (note) note.setAttribute('aria-live', 'polite');
 					if (!ok) {
 						if (note) {
 							note.textContent = 'Please enter a valid email address.';
@@ -596,6 +645,11 @@ const gtmSnippet = gtmEnabled
 						field.classList.add('done');
 						field.dataset.locked = '1';
 						field.innerHTML = SUBSCRIBED_HTML;
+						// The input/button are gone — move focus to the confirmation
+						// (as a live status) so keyboard focus isn't dropped to <body>.
+						field.setAttribute('role', 'status');
+						field.setAttribute('tabindex', '-1');
+						(field as HTMLElement).focus();
 					}
 					if (note) {
 						note.textContent = 'A confirmation is on its way to ' + v + '.';

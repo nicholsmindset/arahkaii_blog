@@ -26,7 +26,7 @@
 4. **Scene-led opening** (2–3 paragraphs, no heading) before the first `##`. Empowering close (a final `##`).
 5. **Internal links:** 5–10, from `url-database.md`, category-prefixed (`/style/<slug>/`).
 6. **AI-Overview (⊛) topics:** at least one `##` is a **question** with a standalone, quotable answer sentence directly beneath it.
-7. Halal status stated plainly in every Dining / Travel / Guides piece (see per-format rules).
+7. `halalStatus:` recorded in frontmatter for every Dining / Travel / Guides piece (internal QA record — not rendered on the page).
 
 ## GUIDE — the entry block (MANDATORY)
 
@@ -36,10 +36,12 @@ A guide/listicle is a directory. **Each item gets its own `###` heading (the ite
 - **Why it's here** — the one reason it earns the slot.
 - **Location** — neighbourhood / block / address where known (do not invent unit numbers).
 - **Price tier or reservation note** — where relevant.
-- **Halal status** — for any F&B entry, a plain status line **inside the entry**, one of:
-  `Muslim-owned` · `halal-certified` · `no-pork/no-lard, not halal-certified` ·
-  `not halal-certified` · `serves alcohol — included for [reason], skip the bar`.
-  Never bury halal status in a lumped paragraph; it belongs in the entry block.
+- **Dietary detail (optional, neutral)** — where it genuinely helps the reader,
+  a plain, inclusive note inside the entry — `No alcohol served` · `Pork-free
+  kitchen` · `Verify ingredients on the day`. Do **not** write a religious
+  "Halal status" line or use "Muslim-owned"/"halal-certified" as on-page copy —
+  the venue's status is recorded in the post's internal `halalStatus:`
+  frontmatter (QA record), not broadcast in the body.
 
 **Guide skeleton:**
 ```
@@ -60,14 +62,14 @@ Worked reference: `src/content/posts/2026/new-bahru.md`.
 
 Thematic `##` H2s, narrative prose. Named entities live in the sentences, not as
 per-item H3 directories. Still obey the universal rules (one H1, scene open,
-question-H2 for ⊛, halal status plain where Dining/Travel/Guides). Use `###`
+question-H2 for ⊛; `halalStatus:` in frontmatter where Dining/Travel/Guides). Use `###`
 only for genuine sub-sections, never to fake a directory.
 
 ## Reviewer gate (add to `arahkaii-editorial-reviewer`)
 
 Reject the draft if:
 - [ ] `format:guide` but items are bold-lead paragraphs instead of `###` headings.
-- [ ] Any F&B entry in a guide lacks a halal-status line in its block.
+- [ ] A Dining/Travel/Guides post lacks the internal `halalStatus:` frontmatter record, OR foregrounds religious labelling as on-page brand copy.
 - [ ] A body H1 exists, or an H3 has no parent H2, or a heading is vague ("The Experience").
 - [ ] A ⊛ topic has no question-H2 + answer sentence.
 - [ ] Fewer than 5 internal links, or links are not category-prefixed.

@@ -1,6 +1,7 @@
 ---
 // Renders the entire <head> SEO meta block + JSON-LD. Layouts pass data, not markup.
 import { SITE } from '../lib/seo';
+import { safeJsonLd } from '../lib/safe';
 
 interface Props {
 	title: string;
@@ -91,6 +92,6 @@ const twitter = SITE.twitter.trim();
 {/* Structured data */}
 {
 	jsonLd.map((obj) => (
-		<script is:inline type="application/ld+json" set:html={JSON.stringify(obj)} />
+		<script is:inline type="application/ld+json" set:html={safeJsonLd(obj)} />
 	))
 }

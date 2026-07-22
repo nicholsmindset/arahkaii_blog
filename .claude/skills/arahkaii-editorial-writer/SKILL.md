@@ -1,17 +1,17 @@
 ---
 name: arahkaii-editorial-writer
-description: Premium editorial writing for arahkaii.com — a Muslim-owned, Asian modern-luxury publication. Use whenever Robert asks to draft, write, expand, or rewrite an article for arahkaii.com — feature pieces, founder profiles, listicles, city guides, dining round-ups, beauty explainers, modest fashion editorials, culture commentary, the Arahkaii Evening Edit. Loads VOICE.md (master tone + 8 category voices), HALAL_SUBSTITUTIONS.md (zero alcohol/nightlife rule), and EDITORIAL_PILLARS.md (8-pillar architecture) before drafting. Never produces alcohol, bar, club, or wine content. Always names a specific pillar voice. Always passes the AI-slop checklist before output.
+description: Premium editorial writing for arahkaii.com — an Asian modern-luxury publication for everyone. Use whenever Robert asks to draft, write, expand, or rewrite an article for arahkaii.com — feature pieces, founder profiles, listicles, city guides, dining round-ups, beauty explainers, modest fashion editorials, culture commentary, the Arahkaii Evening Edit. Loads VOICE.md (master tone + 8 category voices), HALAL_SUBSTITUTIONS.md (zero alcohol/nightlife rule), and EDITORIAL_PILLARS.md (8-pillar architecture) before drafting. Never produces alcohol, bar, club, or wine content, and never foregrounds religious labelling as brand copy. Always names a specific pillar voice. Always passes the AI-slop checklist before output.
 ---
 
 # Arahkaii Editorial Writer
 
-Produce magazine-grade editorial for arahkaii.com — every piece passes through a halal-aligned, modest-luxury, anti-AI-slop filter before it leaves the keyboard.
+Produce magazine-grade editorial for arahkaii.com — every piece passes through a modest-luxury, anti-AI-slop filter before it leaves the keyboard. The pork-free/alcohol-free discipline is applied quietly (curate, don't foreground); religious labelling is never brand chrome.
 
 ## Step 0 — Load the foundation (mandatory)
 
 Before writing a single sentence, read these files (in this order):
 
-0. **`references/format-templates.md` — MANDATORY article skeletons (brand protection).** Match the calendar entry's `format:`. A `format:guide` MUST render every item (shop/venue/label) as its own named `###` (H3) under thematic `##` groups, with a halal-status line inside each F&B entry — never bold-lead paragraphs. One H1 only (the title); headings name things, never "The Experience".
+0. **`references/format-templates.md` — MANDATORY article skeletons (brand protection).** Match the calendar entry's `format:`. A `format:guide` MUST render every item (shop/venue/label) as its own named `###` (H3) under thematic `##` groups — never bold-lead paragraphs. One H1 only (the title); headings name things, never "The Experience". (No on-page halal-status line — status is recorded in frontmatter only.)
 1. `references/brand-voice.md` — master voice + category-specific voice for the target pillar
 2. `references/editorial-pillars.md` — pillar definition, recurring formats, what's out of scope
 3. `references/halal-substitutions.md` — alcohol/nightlife redirect table
@@ -55,17 +55,23 @@ Every named person, brand or place earns its place. Use specific:
 - Prices in SGD (or local + SGD) with verification date
 - Neighbourhoods at locals' granularity
 
-### Halal status — mandatory in Dining, Travel, Guides
+### Dining discipline — curate, don't foreground
 
-Every dining entry, every travel piece, every guide states halal status plainly. Never buried. Never apologised for. Never moralised.
+Arahkaii is a modern-luxury edit **for everyone**. The editorial discipline is
+that we only recommend pork-free, alcohol-free venues (or clearly flag a
+non-conforming one) — but we do **not** foreground religious labelling in public
+copy. Do not open Dining/Travel/Guides pieces with "halal status", and do not
+render a "Halal status" panel (it is retired).
 
-| Status | Example phrasing |
-|---|---|
-| Halal-certified | "Halal-certified by MUIS." |
-| Muslim-owned | "Muslim-owned." |
-| Alcohol-free menu | "No alcohol on the menu." |
-| Pork-free, alcohol in cooking | "Pork-free; alcohol used in some sauces — confirm with the kitchen." |
-| Non-halal (included for design / chef / founder reason) | "Not halal-certified and serves alcohol — skip the bar, ask for the kitchen counter." |
+- **Record, don't broadcast.** Capture the venue's status in the internal
+  `halalStatus:` frontmatter (the build gate checks it) — this is a QA record,
+  not on-page copy.
+- **Where a practical dietary note genuinely helps the reader**, write it as
+  neutral, inclusive detail — "No alcohol served", "Pork-free kitchen", "Verify
+  ingredients on the day" — not as a religious declaration.
+- **"halal" stays only in search-facing fields** (title/seoTitle/meta/slug) when
+  the piece targets a "halal X" query readers actually search — never as brand
+  chrome or a mandatory in-body declaration.
 
 ## Step 4 — Length floor
 
@@ -106,7 +112,7 @@ Return:
 
 **Pillar:** [Style / Beauty / Dining / Travel / Living / People / Culture / Guides]
 **Word count:** [N]
-**Halal status declared:** [Yes / N/A]
+**halalStatus recorded in frontmatter (internal QA):** [Yes / N/A]
 **Internal links suggested:** [N from url-database.md]
 **Template used:** [Local Listicle / Destination Guide / Profile / Explainer / Evening Edit]
 **Anti-slop checklist:** [Passed / [list of failures]]
@@ -121,7 +127,7 @@ Return:
 3. Never open with "In today's…", "Are you looking for…", "What if…", or a headline restatement.
 4. Never publish under 800 words.
 5. Never invent direct quotes from real people. Paraphrase + attribute is fine.
-6. Never use "halal" or "modest" as a marketing afterthought — they are baked into the voice from sentence one.
+6. Never foreground "halal", "Muslim-owned" or religious framing as brand copy — the pork-free/alcohol-free discipline is a quiet fact of how we curate, recorded in frontmatter, kept out of headlines and brand chrome. "halal" belongs only in a search-facing title/meta/slug when readers search that exact term. "modest" may be used as an aesthetic register.
 7. Never describe a culture you do not understand — verify Asian, Middle Eastern, and modest-fashion terminology before publishing.
 
 ## When asked to write something out of scope

@@ -17,6 +17,8 @@ export const GET: APIRoute = async () => {
 	const latestPages = Math.max(1, Math.ceil(posts.length / LATEST_PAGE_SIZE));
 	const entries: SitemapEntry[] = [
 		{ path: '/latest/', changefreq: 'daily', priority: 0.7 },
+		{ path: '/franchises/', changefreq: 'weekly', priority: 0.5 },
+		{ path: '/topics/', changefreq: 'weekly', priority: 0.5 },
 		...Array.from({ length: latestPages - 1 }, (_, i) => ({
 			path: `/latest/${i + 2}/`,
 			changefreq: 'weekly' as const,

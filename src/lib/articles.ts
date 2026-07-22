@@ -7,6 +7,15 @@ import { cap } from './format';
 export type Tone = 'tone-b' | 'tone-c' | 'tone-d';
 const TONES: Tone[] = ['tone-b', 'tone-c', 'tone-d'];
 
+/**
+ * True on Vercel preview/development deploys (never production, never local
+ * `npm run verify` where VERCEL_ENV is unset). Gates draft article routes so
+ * editors get a shareable preview URL without the draft entering any listing,
+ * sitemap or the production build.
+ */
+export const isPreviewBuild =
+	!!process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production';
+
 /** Deterministic tonal crop for placeholder/cards, varied by position. */
 export function toneFor(i: number): Tone {
 	return TONES[i % TONES.length];
@@ -99,6 +108,35 @@ export async function getCards(): Promise<PostCard[]> {
 		};
 	});
 	return cardsCache;
+}
+
+/**
+ * A tag needs at least this many published stories to earn its own archive
+ * page — below it, the tag stays a filter chip only (no thin, near-empty URL).
+ */
+export const MIN_TAG_POSTS = 2;
+
+let tagIndexCache: Map<string, PostCard[]> | null = null;
+
+/**
+ * Tag → cards (newest first), only tags meeting MIN_TAG_POSTS, keys sorted
+ * alphabetically. Memoised per build.
+ */
+export async function getTagIndex(): Promise<Map<string, PostCard[]>> {
+	if (tagIndexCache) return tagIndexCache;
+	const cards = await getCards();
+	const byTag = new Map<string, PostCard[]>();
+	for (const card of cards) {
+		for (const tag of card.tags) {
+			(byTag.get(tag) ?? byTag.set(tag, []).get(tag)!).push(card);
+		}
+	}
+	tagIndexCache = new Map(
+		[...byTag.entries()]
+			.filter(([, list]) => list.length >= MIN_TAG_POSTS)
+			.sort(([a], [b]) => a.localeCompare(b)),
+	);
+	return tagIndexCache;
 }
 
 /** Slim, JSON-serialisable index for the client search overlay. */

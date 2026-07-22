@@ -7,8 +7,12 @@
 //   1. AUTHOR   — every post's `author` resolves to src/content/authors/<id>.md
 //                 (the Zod schema keeps this a free string, so a typo would
 //                 otherwise build green and 500 at render).
-//   2. HALAL    — every published dining/travel post carries `halalStatus`;
-//                 verification-bearing statuses (muis-certified, muslim-owned,
+//   2. HALAL    — every published dining/travel post carries `halalStatus`.
+//                 This is now an INTERNAL editorial QA record only — it is no
+//                 longer rendered on the page (religious labelling is not
+//                 foregrounded publicly). The gate still enforces that the
+//                 pork-free/alcohol-free curation was checked: verification-
+//                 bearing statuses (muis-certified, muslim-owned,
 //                 pork-free-no-alcohol) must include a `verifiedDate` less than
 //                 six months old. Mixed-status guides and not-applicable need
 //                 no date. "Never fudge" — a stale verification fails the gate.
@@ -96,9 +100,14 @@ for (const file of posts) {
 		}
 	}
 
-	// 4. CREDIT
+	// 4. CREDIT — reject placeholder credits AND placeholder hero files: a
+	// stock blog-placeholder-*.jpg credited "Arahkaii" must not publish either.
 	if (/placeholder/i.test(heroCredit)) {
 		errors.push(`${rel}: published post carries a placeholder hero credit`);
+	}
+	const heroImage = fmValue(fm, 'heroImage') ?? '';
+	if (/blog-placeholder-/i.test(heroImage)) {
+		errors.push(`${rel}: published post uses a placeholder hero image (${heroImage.split('/').pop()})`);
 	}
 }
 

@@ -7,27 +7,13 @@ export interface HalalStatusData {
 	note?: string;
 }
 interface Props { data: HalalStatusData; }
-const { data } = Astro.props;
-const labels = {
-	'muis-certified': 'MUIS-certified',
-	'muslim-owned': 'Muslim-owned',
-	'pork-free-no-alcohol': 'Pork-free; no alcohol served',
-	'mixed-status-guide': 'Mixed-status guide — check each entry',
-	'not-applicable': 'Not applicable',
-};
-const verified = data.verifiedDate ? new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(data.verifiedDate) : null;
+// The `halalStatus` frontmatter is retained as an internal editorial QA record
+// (verified per venue, kept in lockstep by scripts/validate-content.mjs) but is
+// no longer rendered publicly — Arahkaii is a modern-luxury edit for everyone,
+// so religious labelling is not foregrounded on the page. Curation (pork-free,
+// no alcohol) is invisible by design. This component intentionally renders
+// nothing; the type export is kept so callers/props stay valid.
+const _props = Astro.props as Props;
+void _props;
 ---
 
-{data.status !== 'not-applicable' && (
-	<aside class="halal-status" aria-labelledby="halal-status-title">
-		<p class="eyebrow eyebrow--emerald">Arahkaii verification</p>
-		<h2 id="halal-status-title">Halal status</h2>
-		<dl>
-			<div><dt>Status</dt><dd>{labels[data.status]}</dd></div>
-			{verified && <div><dt>Checked</dt><dd>{verified}</dd></div>}
-			{data.certificateRef && <div><dt>Reference</dt><dd>{data.certificateRef}</dd></div>}
-		</dl>
-		{data.note && <p class="halal-status__note">{data.note}</p>}
-		{data.sourceUrl && <a class="tlink" href={data.sourceUrl} target="_blank" rel="noopener noreferrer">View verification source →</a>}
-	</aside>
-)}

@@ -1,6 +1,6 @@
 ---
 name: arahkaii-publisher
-description: Publish a drafted Arahkaii article to the Astro/Git site (replaces the old WordPress publisher). Use whenever a finished, reviewed draft needs to become a post — writes the MDX + frontmatter, places images locally, validates against the Zod schema + JSON-LD, and opens a PR (merge = live via Vercel). Loads references/brand-voice.md, editorial-pillars.md, halal-substitutions.md, image-system.md, seo-fields.md, schema-map.md, url-database.md before any write. Refuses to publish alcohol/nightlife content, anything missing halal status in Dining/Travel/Guides, an uncredited image, or a draft that fails the AI-slop checklist. Never pushes to main directly — humans merge the PR.
+description: Publish a drafted Arahkaii article to the Astro/Git site (replaces the old WordPress publisher). Use whenever a finished, reviewed draft needs to become a post — writes the MDX + frontmatter, places images locally, validates against the Zod schema + JSON-LD, and opens a PR (merge = live via Vercel). Loads references/brand-voice.md, editorial-pillars.md, halal-substitutions.md, image-system.md, seo-fields.md, schema-map.md, url-database.md before any write. Refuses to publish alcohol/nightlife content, anything missing the internal halalStatus record in Dining/Travel/Guides or foregrounding religious labelling as brand copy, an uncredited image, or a draft that fails the AI-slop checklist. Never pushes to main directly — humans merge the PR.
 ---
 
 # Arahkaii Publisher (Astro/Git)
@@ -18,7 +18,8 @@ WordPress, no RankMath, no `wp_*` MCP. Content is MDX in Git; merging a PR to
 |---|---|
 | Reviewed by `arahkaii-editorial-reviewer` | ✅ verdict attached |
 | Pillar = one of the 8 (`category` enum) | yes |
-| Halal status stated (Dining/Travel/Guides) | plainly, per entry |
+| `halalStatus:` recorded in frontmatter (Dining/Travel/Guides) | yes — internal QA record, not on-page |
+| No religious labelling foregrounded as brand copy | no halal panel/heading; "halal" only in search-facing title/meta/slug |
 | Alcohol/nightlife scan | zero hits |
 | AI-slop checklist (`brand-voice.md` §6) | ≤1 box |
 | Banned-phrase scan (§2 Tier-1) | zero |

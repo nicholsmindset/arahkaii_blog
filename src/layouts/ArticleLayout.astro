@@ -22,6 +22,7 @@ import {
 	type FaqItem,
 	type HowToStep,
 } from '../lib/seo';
+import { getTagIndex } from '../lib/articles';
 import '../styles/article.css';
 
 interface AuthorData {
@@ -82,6 +83,8 @@ interface Props {
 	lastVerified?: Date;
 	/** Editorial reviewer — rendered in the byline row and Article schema. */
 	reviewedBy?: { name: string; href: string };
+	/** True when this is an unpublished draft rendered on a preview deploy. */
+	isDraftPreview?: boolean;
 }
 
 const {
@@ -117,11 +120,16 @@ const {
 	halalStatus,
 	lastVerified,
 	reviewedBy,
+	isDraftPreview = false,
 } = Astro.props;
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const categoryLabel = cap(category);
 const primaryTag = tags[0];
+// A tag links to its archive only when that archive exists (meets MIN_TAG_POSTS);
+// otherwise the chip falls back to the category page.
+const tagIndex = await getTagIndex();
+const tagHref = (t: string) => (tagIndex.has(t) ? `/tags/${t}/` : `/${category}`);
 const formattedDate = new Intl.DateTimeFormat('en-GB', {
 	day: 'numeric',
 	month: 'long',
@@ -188,7 +196,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 	activeCategory={categoryLabel}
 	image={ogImage}
 	ogType="article"
-	noindex={noindex}
+	noindex={noindex || isDraftPreview}
 	publishedTime={datePublished}
 	modifiedTime={dateModified}
 	authorName={author.name}
@@ -197,6 +205,9 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 	jsonLd={jsonLd}
 >
 	<article data-cat={category} data-article-body>
+		{isDraftPreview && (
+			<p class="draft-banner" role="status">Draft preview — not yet published. This page is hidden from search and the rest of the site.</p>
+		)}
 		<!-- HERO: centred, no-image (T Magazine pattern) -->
 		<div class="wrap art-hero">
 			<nav class="art-breadcrumb eyebrow eyebrow--emerald" aria-label="Breadcrumb">
@@ -233,7 +244,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 		<div class="wrap" style="margin-top:48px">
 			<figure class="hero-fig">
 				<div class="media ar-3-2">
-					<Image src={heroImage} alt={heroCaption || title} loading="eager" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+					<Image src={heroImage} alt={heroCaption || title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 				</div>
 				<figcaption class="caption fig-cap">
 					{heroCaption ? `${heroCaption} ` : ''}(Photo: {heroCredit})
@@ -258,7 +269,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 							<div class="article-tags">
 								<span class="at-label">Filed under</span>
 								{tags.map((t) => (
-									<a class="chip" href={`/${category}`}>{t}</a>
+									<a class="chip" href={tagHref(t)}>{t}</a>
 								))}
 							</div>
 						)

@@ -1,11 +1,11 @@
 ---
 name: arahkaii-editorial-reviewer
-description: Quality-control review for arahkaii.com drafts — Muslim-owned, modest-luxury, anti-AI-slop standards. Use whenever Robert asks to review, QA, edit, polish, score, or sanity-check an Arahkaii draft before it goes to WordPress. Loads VOICE.md, HALAL_SUBSTITUTIONS.md, EDITORIAL_PILLARS.md, IMAGE_SYSTEM.md. Runs the 9-layer review: pillar voice fidelity, banned-phrase scan, halal compliance, AI-slop checklist, image-prompt validation, internal-link density, SEO meta, length floor, factual / cultural accuracy. Returns a pass/fail verdict plus specific rewrites.
+description: Quality-control review for arahkaii.com drafts — modest-luxury, anti-AI-slop standards for a modern-luxury edit for everyone. Use whenever Robert asks to review, QA, edit, polish, score, or sanity-check an Arahkaii draft before it goes live. Loads VOICE.md, HALAL_SUBSTITUTIONS.md, EDITORIAL_PILLARS.md, IMAGE_SYSTEM.md. Runs the 9-layer review: pillar voice fidelity, banned-phrase scan, curation & no-foregrounding compliance, AI-slop checklist, image-prompt validation, internal-link density, SEO meta, length floor, factual / cultural accuracy. Returns a pass/fail verdict plus specific rewrites.
 ---
 
 # Arahkaii Editorial Reviewer
 
-Hold every draft to the *Tatler Asia + Vogue Arabia + halal-conscious editorial* bar before it touches WordPress.
+Hold every draft to the *Tatler Asia + Vogue Arabia* bar before it publishes. The pork-free/alcohol-free discipline is applied quietly (curate, don't foreground).
 
 ## Step 0 — Load the foundation
 
@@ -13,7 +13,7 @@ Hold every draft to the *Tatler Asia + Vogue Arabia + halal-conscious editorial*
 2. `references/halal-substitutions.md`
 3. `references/editorial-pillars.md`
 4. `references/image-system.md` (for image prompts)
-5. **`references/format-templates.md` — run its reviewer gate (a structure miss is a FAIL): `format:guide` items must be named `###` headings, not bold paragraphs; every F&B guide entry needs a halal-status line in its block; no body H1; no orphan H3; no vague headings; ⊛ topics carry a question-H2 + answer sentence.**
+5. **`references/format-templates.md` — run its reviewer gate (a structure miss is a FAIL): `format:guide` items must be named `###` headings, not bold paragraphs; Dining/Travel/Guides posts record `halalStatus:` in frontmatter (no on-page halal line); no body H1; no orphan H3; no vague headings; ⊛ topics carry a question-H2 + answer sentence.**
 
 ## The 9-Layer Review
 
@@ -37,14 +37,14 @@ Search for:
 
 **Fail trigger:** Any Tier-1 phrase appears. Reject the draft. Return the list of hits with rewrite suggestions.
 
-### Layer 3 — Halal & substitution compliance
+### Layer 3 — Curation & substitution compliance
 
-- Does the draft contain ANY mention of alcohol, bar, nightclub, wine, beer, cocktail, champagne, whisky, gin, rum, cognac?
-- If the draft is in Dining / Travel / Guides — is halal status declared for every restaurant / hotel / venue?
-- Is the halal lens matter-of-fact (not apologetic, not preachy)?
+- Does the draft contain ANY mention of alcohol, bar, nightclub, wine, beer, cocktail, champagne, whisky, gin, rum, cognac? (Substance rule — still a hard fail.)
+- If the draft is in Dining / Travel / Guides — is the venue's status recorded in the internal `halalStatus:` frontmatter (the QA record)?
+- Does the draft avoid foregrounding religious labelling as brand copy? (No on-page "Halal status" panel/heading; no "Muslim-owned"/"halal" as a brand flourish. The word "halal" is acceptable only in a search-facing title/meta/slug that targets a "halal X" query.)
 - For After-Dark / Evening / Nightlife angles — has the draft applied the Evening Edit substitution?
 
-**Fail trigger:** Any alcohol reference, any missing halal declaration in Dining/Travel/Guides, any moralising tone.
+**Fail trigger:** Any alcohol/nightlife reference; a missing internal `halalStatus:` record in Dining/Travel/Guides; OR religious labelling foregrounded as brand copy (a rendered halal panel/heading, or "halal"/"Muslim-owned" used as identity chrome rather than a search-facing field).
 
 ### Layer 4 — The Anti-AI-Slop Checklist (VOICE.md §6)
 
@@ -107,7 +107,7 @@ If the draft includes featured / inline image prompts:
 |---|---|---|
 | 1 · Pillar voice | ✅/⚠️/❌ | ... |
 | 2 · Banned phrases | ✅/⚠️/❌ | [list any hits + rewrites] |
-| 3 · Halal compliance | ✅/⚠️/❌ | ... |
+| 3 · Curation & no-foregrounding | ✅/⚠️/❌ | ... |
 | 4 · AI-slop | ✅/⚠️/❌ | [list any boxes ticked] |
 | 5 · Opening | ✅/⚠️/❌ | ... |
 | 6 · Specificity | ✅/⚠️/❌ | [paragraphs flagged] |
@@ -131,7 +131,7 @@ If the draft includes featured / inline image prompts:
 
 Email Robert if:
 - The draft requires alcohol coverage that cannot be substituted
-- The brief contradicts the halal position
+- The brief contradicts the pork-free/alcohol-free curation, or asks to foreground religious labelling as brand copy
 - The cultural accuracy concern is beyond your verification
 - The brand wants to publish something that would damage long-term positioning
 

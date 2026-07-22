@@ -1,6 +1,6 @@
 ---
-name: Halal dining Singapore
-description: Halal dining in Singapore, verified — restaurants and dining formats checked for certification status, kitchen ambition and practical booking detail.
+name: Singapore dining
+description: Singapore's dining rooms and formats, considered — kitchen ambition, verification, and the practical booking detail.
 pillarPost: 2026/halal-fine-dining-singapore-2026
 targetKeyword: halal dining Singapore
 ---

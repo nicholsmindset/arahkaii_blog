@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getCards } from '../../lib/articles';
+import { SITE, organizationSchema, websiteSchema, collectionPageSchema, breadcrumbSchema } from '../../lib/seo';
+
+const [franchises, cards] = await Promise.all([getCollection('franchises'), getCards()]);
+const countFor = (id: string) => cards.filter((c) => c.franchise === id).length;
+const items = franchises
+	.map((f) => ({ id: f.id, ...f.data, count: countFor(f.id) }))
+	.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+const description = 'The Arahkaii franchises — our recurring editorial editions, from Arahkaii Verified to The Majlis.';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = [
+	organizationSchema(),
+	websiteSchema(),
+	collectionPageSchema({ name: 'Franchises — Arahkaii', url: canonical, description }),
+	breadcrumbSchema([
+		{ name: SITE.name, url: SITE.url },
+		{ name: 'Franchises', url: canonical },
+	]),
+];
+---
+
+<BaseLayout title="Franchises — Arahkaii" description={description} jsonLd={jsonLd}>
+	<header class="hub-head wrap">
+		<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Franchises' }]} />
+		<p class="eyebrow eyebrow--emerald">Signature editions</p>
+		<h1>Franchises</h1>
+		<p>Our recurring editions — each with its own remit, cadence and standard of proof.</p>
+	</header>
+	<section class="hub-list wrap" aria-label="Arahkaii franchises">
+		{items.map((f, index) => (
+			<article class="hub-story hub-story--index">
+				<div>
+					<p class="eyebrow eyebrow--emerald">{String(index + 1).padStart(2, '0')}{f.cadence ? ` · ${f.cadence}` : ''}</p>
+					<h2><a href={`/franchises/${f.id}/`}>{f.name}</a></h2>
+					<p>{f.description}</p>
+					<span>{f.count} {f.count === 1 ? 'story' : 'stories'}</span>
+				</div>
+			</article>
+		))}
+	</section>
+</BaseLayout>
