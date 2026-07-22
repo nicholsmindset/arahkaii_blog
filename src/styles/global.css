@@ -580,6 +580,12 @@ a.card:hover .media img {
 	.media img {
 		transition: none;
 	}
+	/* Honour "no motion" fully — suppress the 1.02× hover zoom, not just its
+	   transition (otherwise it jumps instantly). */
+	.hl-link:hover .media img,
+	a.card:hover .media img {
+		transform: none !important;
+	}
 }
 
 /* ---------- FOOTER ---------- */

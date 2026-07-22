@@ -91,4 +91,10 @@ export default defineConfig({
 		// Future Cloudflare R2 CDN for generated/sourced imagery. Harmless now.
 		domains: ['cdn.arahkaii.com'],
 	},
+	// Prefetch in-viewport links (the site is prerendered, so a hover/viewport
+	// prefetch makes View-Transition navigation feel instant).
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: 'viewport',
+	},
 });

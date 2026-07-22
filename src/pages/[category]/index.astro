@@ -130,7 +130,7 @@ if (cards.length)
 				<div class="wrap">
 					<a class="hl-link reveal" href={lead.url} style="display:block">
 						<div class="media ar-3-2">
-							<Image src={lead.image} alt={lead.title} loading="eager" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+							<Image src={lead.image} alt={lead.title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 						</div>
 						<div class="grid" style="margin-top:32px">
 							<div style="grid-column:1 / 9">

@@ -244,7 +244,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 		<div class="wrap" style="margin-top:48px">
 			<figure class="hero-fig">
 				<div class="media ar-3-2">
-					<Image src={heroImage} alt={heroCaption || title} loading="eager" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+					<Image src={heroImage} alt={heroCaption || title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 				</div>
 				<figcaption class="caption fig-cap">
 					{heroCaption ? `${heroCaption} ` : ''}(Photo: {heroCredit})

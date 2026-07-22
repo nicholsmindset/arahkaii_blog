@@ -599,6 +599,8 @@ const gtmSnippet = gtmEnabled
 					const v = (input?.value || '').trim();
 					const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
 					const note = form.querySelector<HTMLElement>('.field-note');
+					// Announce validation/status/success changes to screen readers.
+					if (note) note.setAttribute('aria-live', 'polite');
 					if (!ok) {
 						if (note) {
 							note.textContent = 'Please enter a valid email address.';
@@ -643,6 +645,11 @@ const gtmSnippet = gtmEnabled
 						field.classList.add('done');
 						field.dataset.locked = '1';
 						field.innerHTML = SUBSCRIBED_HTML;
+						// The input/button are gone — move focus to the confirmation
+						// (as a live status) so keyboard focus isn't dropped to <body>.
+						field.setAttribute('role', 'status');
+						field.setAttribute('tabindex', '-1');
+						(field as HTMLElement).focus();
 					}
 					if (note) {
 						note.textContent = 'A confirmation is on its way to ' + v + '.';

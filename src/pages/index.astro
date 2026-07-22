@@ -39,7 +39,7 @@ const majlis = take(cards.filter((card) => ['culture', 'living', 'guides', 'peop
 >
 	<div class="home-shell">
 		{heroLead && hero.length >= 3 && <section class="home-hero" aria-labelledby="hero-title">
-			<div class="home-hero__grid">{hero.map((card) => <a class="home-hero__image media" href={card.url} aria-label={card.title}><Image src={card.image} alt={card.heroCaption || card.title} loading="eager" widths={[480,720,960]} sizes="(max-width:700px) 100vw, 33vw" /></a>)}</div>
+			<div class="home-hero__grid">{hero.map((card, i) => <a class="home-hero__image media" href={card.url} aria-label={card.title}><Image src={card.image} alt={card.heroCaption || card.title} loading="eager" fetchpriority={i === 0 ? 'high' : 'low'} widths={[480,720,960]} sizes="(max-width:700px) 100vw, 33vw" /></a>)}</div>
 			<div class="home-hero__story"><p class="home-kicker">The cover story</p><h2 id="hero-title"><a href={heroLead.url}>{heroLead.title}</a></h2><p>{heroLead.standfirst}</p><a class="home-link" href={heroLead.url}>Read the essay <span aria-hidden="true">→</span></a></div>
 		</section>}
 
