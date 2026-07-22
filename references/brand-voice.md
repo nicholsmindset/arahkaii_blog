@@ -23,7 +23,7 @@ We sound like *a well-read editor who knows where to go, who to know and what is
 | Refined, never stiff | Stiff, royal, ornamental |
 | Useful, with strong recommendations | Vague trend-spotting |
 | Quietly confident | Loud, exclamatory |
-| Culturally specific (Asian, modest, halal-aware) | Performatively religious or political |
+| Culturally specific (Asian, modest, considered) | Performatively religious or political; foregrounding halal/Muslim identity as brand chrome |
 | Sensory and concrete | Abstract, jargon-heavy |
 | Slightly dry, occasionally warm | Cheerful, "girlboss", influencer-cute |
 | Pro-luxury when it's tasteful | Status-obsessed or anti-luxury |
@@ -163,7 +163,7 @@ Each of the 8 pillars has its own micro-voice. Same master DNA, different emphas
 | Diction | Name the dish in the kitchen's language first, then translate. Identify the chef. Identify the room. |
 | Sentence | One observation. One context. One verdict per dish. |
 | What we describe | The room (light, sound, seating density), the kitchen (who is cooking, technique), the plate (specific dishes by name, what they actually taste like), the close (whether you should book). |
-| Halal status | **Always state plainly:** "halal-certified", "Muslim-owned", "alcohol-free menu", "pork-free, alcohol used in cooking", or "non-halal — included for [specific design / cultural / founder reason] but skip the bar". If a restaurant serves alcohol but we're still covering it (e.g. legendary chef, halal-friendly menu), say so up front in one line. We do not hide it. We also do not glamorise it. |
+| Venue status | **Record, don't broadcast.** Capture the venue's status in the post's internal `halalStatus:` frontmatter (the QA record that verifies our pork-free/alcohol-free curation) — not as an on-page "halal status" line. Where a dietary fact genuinely helps the reader, write it as neutral, inclusive service copy ("No alcohol served", "Pork-free kitchen", "Verify ingredients on the day"). If a venue serves alcohol but we still cover it (e.g. legendary chef), note that plainly in one line without glamorising it. The word "halal" belongs only in a search-facing title/meta/slug, never as brand chrome. |
 | Imagery cues | Single plate, dim ambient light, white or earthenware ceramics, hand pouring tea or water (never wine), candlelight, blurred background of dining room, *never the bar* |
 | Banned | "Foodie heaven", "must-try", "to die for", "the bar program is excellent", "perfect for date night with cocktails", "extensive wine list" |
 | Sample opening | "Terra is on the second floor of a shophouse you will walk past three times before finding. The kitchen has six seats. The kitchen also has two stars." |
@@ -179,7 +179,7 @@ Each of the 8 pillars has its own micro-voice. Same master DNA, different emphas
 | Diction | Place-names spelled the local way (Yogyakarta, not Jogja in headlines; Kuala Lumpur, not "KL" on first reference). Distances in walking minutes. Currency in local + SGD. |
 | Sentence | More room to breathe than other categories. Allow one long, scene-building sentence per section. |
 | What we describe | Light at different hours, neighbourhood feel, who lives there, where to walk, the room (specific hotel, specific floor, specific view), what to wear, where to pray, where to eat halal (always), what *not* to expect. |
-| Halal note | Every city guide must answer: *Where to eat halal, where to pray, what modest dress works in the local climate, and what to avoid if you don't drink.* This goes in a clearly-marked "**For the modest traveller**" sidebar, not buried. |
+| Service detail | Every city guide answers the practical questions — *where to eat well, where to stay, what to know* — as neutral, inclusive service copy in the body. Record the relevant `halalStatus:` in frontmatter (internal QA). No religious "For the modest traveller" sidebar or prayer/modest-dress framing as brand copy. |
 | Imagery cues | Empty mornings, narrow streets, single hotel-room corner, woman from behind walking, market produce in baskets, balcony with a view, prayer rug folded on a chair · never beach-bar shots, infinity-pool-with-cocktail shots, "raised glass" shots |
 | Banned | "Off the beaten path", "the road less travelled", "world-class beaches", "tropical paradise", "vibrant nightlife", "buzzing bar scene", "Instagrammable" |
 | Sample opening | "Canggu is louder than it was. Park your scooter on the lane behind Pererenan and walk five minutes — past the second warung, past the surf rental, to the alleyway with the bougainvillea. The room you are looking for is at the end." |
@@ -210,7 +210,7 @@ Each of the 8 pillars has its own micro-voice. Same master DNA, different emphas
 | Diction | Subject's full name, then surname-only after first mention. Their words in direct quotes wherever possible — long quotes are fine. Don't paraphrase good lines. |
 | Sentence | Mix of declarative reportage and long, observational sentences about the room they're sitting in or the hands they're using to gesture. |
 | What we describe | The scene (where the interview happened), the backstory (compressed), the brand or work today, the cultural angle (Muslim-owned, modest-luxury, Asian craft, etc.) without preaching, what's next. |
-| Halal / modest note | We celebrate Muslim-owned and modest-led businesses. We say so plainly when relevant. We do not over-explain it. |
+| Founder framing | We profile founders and makers on craft, ambition and story. A founder's background is context, not a headline — never foreground "Muslim-owned" as the framing of a profile. |
 | Imagery cues | Single subject portrait · soft window light from camera-left · plain wall behind · subject in their own studio, kitchen or showroom · hands at work · *never a stiff posed photo against a logo wall* |
 | Banned | "Visionary", "trailblazer", "powerhouse", "boss babe", "girlboss", "force of nature", "rising star" (use specific facts about their work instead) |
 | Sample opening | "Lyn Lee made the chocolate herself for the first eleven years. She is in the kitchen now, in a navy apron, asking the new sous-chef to redo the tempering. Twenty-six years in, she is still tasting every batch." |
@@ -242,7 +242,7 @@ Each of the 8 pillars has its own micro-voice. Same master DNA, different emphas
 | Diction | Plain, direct, specific. Numbers in numerals, not words. Prices in SGD (or local + SGD) with the date verified. |
 | Sentence | Short. Useful. One claim per sentence. No flourishes. |
 | Structure | Always: H1 → 2-paragraph scene-set → why-this-list-now → entries (name · neighbourhood · signature thing · why it's here · price tier · reservation note) → editor's pick → internal links → save / share CTA. |
-| Halal status | Every entry in a guide must list its halal status in the entry block, not buried in prose. |
+| Venue status | The post records `halalStatus:` in frontmatter (internal QA). Entries carry no on-page halal/religious status line — only neutral dietary service notes where they help the reader. |
 | Imagery cues | Each entry gets one clean image · same composition standard across the list · *no Photoshop collages of multiple subjects* |
 | Banned | "You won't believe", "ranked", "definitive", "ultimate" *(unless we genuinely are the only ones who have ranked it)*, "the best of the best" |
 | Sample opening | "Here is the short list. Every restaurant on it is halal-certified, takes reservations, and is open this month. The neighbourhoods range from Tanjong Pagar to Joo Chiat. The prices range from SGD 45 to SGD 320 per head." |
@@ -255,7 +255,7 @@ Each of the 8 pillars has its own micro-voice. Same master DNA, different emphas
 2. **One sense per sentence.** Don't pile sight, sound, smell, taste and touch into one line. Pick one. Trust the reader.
 3. **Numbers are concrete.** "Three" not "a handful". "9pm" not "later in the evening". "SGD 320" not "splurge-worthy".
 4. **Names earn their place.** Every named person, brand or restaurant gets one specific reason for being in the article.
-5. **The halal lens is matter-of-fact.** Never apologise for it. Never preach about it. State it as a fact of the writer's life and move on.
+5. **The curation is invisible.** Arahkaii is a modern-luxury edit for everyone: our pork-free/alcohol-free discipline is a quiet fact of how we choose what to cover, recorded in frontmatter — never foregrounded, apologised for, or preached about, and never used as brand identity in public copy.
 6. **No emojis in long-form. No exclamation marks in body copy.** Social captions can use both, sparingly.
 7. **First-person plural ("we") is reserved for editor's notes and Arahkaii editorial positions, not voice of god.** Use third person for most reporting.
 8. **No "we tried so you don't have to" energy.** Be the editor who knows, not the influencer who tested.

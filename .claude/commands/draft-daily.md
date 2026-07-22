@@ -36,16 +36,17 @@ our angle, the gap, 3–5 anchoring facts, 2–3 cultural references.
 **Follow the skeleton for the calendar entry's `format:` — `references/format-templates.md`
 is a HARD RULE (brand protection).** In particular: **`format:guide`** ⇒ every item
 (shop / restaurant / hotel / label) is its own named `###` (H3) under thematic `##`
-groups, with a **halal-status line inside each F&B entry** — never bold-lead
-paragraphs. `format:explainer` ⇒ question-led `##` H2s + a `faq:` block.
+groups — never bold-lead paragraphs (the venue's status goes in the internal
+`halalStatus:` frontmatter, not an on-page line). `format:explainer` ⇒ question-led `##` H2s + a `faq:` block.
 pillar/feature/profile/essay ⇒ thematic prose H2s.
 
 Then: pillar voice (`brand-voice.md` §4). Scene-led open (2–3 paras, no heading);
 standfirst (italic epigraph, 25–40w); one H1 only (the title — never an H1 in body);
 headings name things (entity/answer, never "The Experience"); question-format `##`
 for AI-Overview (⊛) topics + a standalone answer sentence; 5–10 internal links from
-`url-database.md` (category-prefixed); halal status plain in Dining/Travel/Guides;
-empowering close. Zero Tier-1 banned phrases.
+`url-database.md` (category-prefixed); `halalStatus:` recorded in frontmatter for
+Dining/Travel/Guides (internal QA, not on-page); no religious labelling as brand
+copy; empowering close. Zero Tier-1 banned phrases.
 
 ## STEP 5 — SEO + schema  (skill: arahkaii-seo-optimizer)
 Frontmatter (`seo-fields.md`): `seoTitle` ≤70, `metaDescription` ≤160, slug,
@@ -56,8 +57,8 @@ tags (`category-tag-map.md`), author = pillar map. Set schema fields by type
 Banned-phrase scan, opening pattern, argument-not-summary, word count ±10%,
 fact/name accuracy, links read naturally, AI-slop checklist ≤1, **plus the
 `format-templates.md` reviewer gate** — `format:guide` items must be named `###`
-headings (not bold paragraphs), every F&B guide entry must carry a halal-status
-line, no body H1, no orphan H3, no vague headings. Unfixable issue → log to
+headings (not bold paragraphs), Dining/Travel/Guides posts record `halalStatus:`
+in frontmatter (no on-page halal line), no body H1, no orphan H3, no vague headings. Unfixable issue → log to
 `run-log.md` and abort the article; do not ask the human to rescue a substandard draft.
 
 ## STEP 7 — Images  (skill: arahkaii-featured-image-prompt)

@@ -35,7 +35,7 @@ const jsonLd = [
 		{items.map((c) => (
 			<article class="hub-story hub-story--index">
 				<div>
-					<p class="eyebrow eyebrow--emerald">{c.count} {c.count === 1 ? 'story' : 'stories'}{c.targetKeyword ? ` · ${c.targetKeyword}` : ''}</p>
+					<p class="eyebrow eyebrow--emerald">{c.count} {c.count === 1 ? 'story' : 'stories'}</p>
 					<h2><a href={`/topics/${c.id}/`}>{c.name}</a></h2>
 					<p>{c.description}</p>
 				</div>

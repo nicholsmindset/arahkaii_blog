@@ -20,5 +20,5 @@ Usage: `/approve <slug or PR number>`.
 
 **Reject instead:** comment the fixes on the PR (I revise on the branch, the
 preview updates) or `gh pr close <n>` to drop it. Never merge a draft that fails
-the editorial bar, lacks halal status (Dining/Travel/Guides), or has an
-uncredited image.
+the editorial bar, lacks the internal `halalStatus:` record (Dining/Travel/Guides)
+or foregrounds religious labelling as brand copy, or has an uncredited image.

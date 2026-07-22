@@ -12,8 +12,13 @@ warm-paper / aubergine / Fraunces look ("The Quiet Authority") has been retired.
 
 ## What this is
 
-Arahkaii is a Muslim-owned Asian modern-luxury / modest-luxury publication —
-**"Asia's modern-luxury edit — modestly told."** It is an Astro 6 site; posts
+Arahkaii is an Asian modern-luxury / modest-luxury publication —
+**"Asia's modern-luxury edit — modestly told."** A modern-luxury edit **for
+everyone**: the editorial discipline (pork-free, alcohol-free curation) is a
+quiet fact of how we work, never a foregrounded brand label. Do not lead public
+copy with "halal", "Muslim-owned" or religious framing — keep those to
+search-facing article fields (title/seoTitle/meta/slug) where readers actually
+search them. It is an Astro 6 site; posts
 are Markdown/MDX files in Git. Keystatic provides the non-technical editor at
 `/keystatic`; Claude Code and the publishing commands remain the automation
 layer. Both routes preserve Git review and human approval.

@@ -1,6 +1,6 @@
 # Editorial Pillars — Arahkaii (8-pillar architecture)
 
-Replaces the previous 6-pillar structure (Fashion / Beauty / Culture / Travel / Wellness / Sustainability). The 8-pillar version aligns to the validated Ahrefs clusters and the Muslim-owned brand positioning.
+Replaces the previous 6-pillar structure (Fashion / Beauty / Culture / Travel / Wellness / Sustainability). The 8-pillar version aligns to the validated Ahrefs clusters and Arahkaii's positioning as a modern-luxury edit for everyone (pork-free/alcohol-free curation applied quietly, not foregrounded as brand identity).
 
 **Wellness** folds into Beauty as a sub-cluster.
 **Sustainability** becomes a cross-cutting theme (not a standalone pillar).
@@ -23,7 +23,7 @@ Replaces the previous 6-pillar structure (Fashion / Beauty / Culture / Travel / 
 | 8 | Guides | `/guides/` | 3% | Service journalism, evergreen — includes the Arahkaii Evening Edit |
 
 **Cross-cutting tags** (apply across all pillars):
-`#halal` · `#muslim-owned` · `#alcohol-free` · `#modest-fashion` · `#asian-craft` · `#sustainable` · `#singapore` · `#kl` · `#jakarta` · `#dubai`
+`#modest-fashion` · `#asian-craft` · `#fine-dining` · `#sustainable` · `#singapore` · `#kl` · `#jakarta` · `#dubai` — (avoid `#halal` / `#muslim-owned` as public tag chips; "halal" belongs only in a search-facing title/meta/slug)
 
 ---
 
@@ -88,7 +88,7 @@ Replaces the previous 6-pillar structure (Fashion / Beauty / Culture / Travel / 
 - Hidden dessert bar lists
 - Food guides for specific neighbourhoods
 
-**Mandatory in every Dining article:** explicit halal status of each restaurant — halal-certified · Muslim-owned · alcohol-free · pork-free with alcohol in cooking · non-halal (with reason for inclusion).
+**Mandatory in every Dining article:** record each venue's status in the internal `halalStatus:` frontmatter (QA record) so the pork-free/alcohol-free curation is verified. Do **not** render an on-page "halal status" line or use "halal-certified"/"Muslim-owned" as body copy — where a dietary note helps the reader, write it neutrally ("No alcohol served", "Pork-free kitchen").
 
 **Out of scope:** Wine pairing · cocktail bars · beer guides · whisky tastings · brewery tours · "best bars" lists in any form.
 
@@ -110,7 +110,7 @@ Replaces the previous 6-pillar structure (Fashion / Beauty / Culture / Travel / 
 - The Modest Traveller series — explicitly Muslim-friendly Bali, Bangkok, Tokyo, Istanbul
 - Cross-border travel (SG → JB, KL → Penang)
 
-**Mandatory in every Travel piece:** a "For the Modest Traveller" sidebar covering halal food, prayer facilities, modest-dress climate notes, alcohol-free venue alternatives.
+**Mandatory in every Travel piece:** record the relevant `halalStatus:` in frontmatter (internal QA). Practical, inclusive detail (good food, where to stay, what to know) belongs in the body as neutral service copy — no religious "For the Modest Traveller" sidebar or prayer/modest-dress framing as brand copy.
 
 **Out of scope:** "Hidden gem" listicles · bucket-list filler · influencer itineraries · nightlife/bar guides in any form.
 
@@ -187,7 +187,7 @@ Replaces the previous 6-pillar structure (Fashion / Beauty / Culture / Travel / 
 - Shopping geography
 - Buyer's guides (modest swimwear, hijab fabrics, halal skincare)
 
-**Mandatory in every Guide:** every entry lists halal / modest status. See VOICE.md §4.8.
+**Mandatory in every Guide:** the post records `halalStatus:` in frontmatter (internal QA) — entries do not carry an on-page halal/religious status line. See VOICE.md §4.8.
 
 **Out of scope:** Generic "ultimate guide" listicles · clickbait-ranked content · listicles where the writer hasn't actually verified the entries.
 
