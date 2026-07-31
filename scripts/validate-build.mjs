@@ -29,6 +29,7 @@ walk(PUBLIC_ROOT);
 const semanticFailures = [];
 const hierarchyFailures = [];
 const imageFailures = [];
+const socialImageFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -45,9 +46,16 @@ for (const file of htmlFiles) {
 	const relativeFile = path.relative(PUBLIC_ROOT, file);
 	const h1Count = (html.match(/<h1\b/g) ?? []).length;
 	const mainCount = (html.match(/<main\b/g) ?? []).length;
+	const hasSocialImage = /<meta property="og:image" content="[^"]+"/.test(html);
 
 	if (h1Count !== 1 || mainCount !== 1) {
 		semanticFailures.push({ file: relativeFile, h1Count, mainCount });
+	}
+	if (hasSocialImage && !/<meta property="og:image:alt" content="[^"]+"/.test(html)) {
+		socialImageFailures.push(`${relativeFile}: Open Graph image missing alt text`);
+	}
+	if (hasSocialImage && !/<meta name="twitter:image:alt" content="[^"]+"/.test(html)) {
+		socialImageFailures.push(`${relativeFile}: Twitter image missing alt text`);
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -102,6 +110,11 @@ if (imageFailures.length) {
 	for (const item of imageFailures) console.error(`- ${item}`);
 }
 
+if (socialImageFailures.length) {
+	console.error('\nSocial image metadata failures:');
+	for (const item of socialImageFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -143,8 +156,15 @@ if (sitemapFailures.length) {
 	for (const item of sitemapFailures) console.error(`- ${item}`);
 }
 
-if (semanticFailures.length || missingTargets.size || hierarchyFailures.length || imageFailures.length || sitemapFailures.length) process.exit(1);
+if (
+	semanticFailures.length ||
+	missingTargets.size ||
+	hierarchyFailures.length ||
+	imageFailures.length ||
+	socialImageFailures.length ||
+	sitemapFailures.length
+) process.exit(1);
 
 console.log(
-	`✓ ${htmlFiles.length} HTML pages checked · headings, landmarks, article images, internal links and segmented sitemaps validated.`,
+	`✓ ${htmlFiles.length} HTML pages checked · headings, landmarks, article and social images, internal links and segmented sitemaps validated.`,
 );
