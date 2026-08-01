@@ -36,14 +36,18 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 	</div>
 
 	<script>
-		function getIndex(): any[] {
-			const el = document.getElementById('arahkaii-index');
-			if (!el) return [];
-			try {
-				return JSON.parse(el.textContent || '[]');
-			} catch {
-				return [];
+		let indexRequest: Promise<any[]> | null = null;
+		function getIndex(): Promise<any[]> {
+			if (!indexRequest) {
+				indexRequest = fetch('/search-index.json')
+					.then((response) => {
+						if (!response.ok) throw new Error('Search index unavailable');
+						return response.json();
+					})
+					.then((index) => (Array.isArray(index) ? index : []))
+					.catch(() => []);
 			}
+			return indexRequest;
 		}
 		function escapeHtml(value: string): string {
 			return value.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -54,8 +58,9 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			const status = document.querySelector<HTMLElement>('[data-search-page-status]');
 			if (!input || !results || results.dataset.wired) return;
 			results.dataset.wired = '1';
-			const idx = getIndex();
-			function run(q: string) {
+			let queryVersion = 0;
+			async function run(q: string) {
+				const version = ++queryVersion;
 				q = (q || '').trim().toLowerCase();
 				if (!q) {
 					results!.hidden = true;
@@ -63,6 +68,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 					if (status) status.textContent = '';
 					return;
 				}
+				const idx = await getIndex();
+				if (version !== queryVersion) return;
 				const hits = idx.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q));
 				results!.hidden = false;
 				results!.innerHTML = hits.length
