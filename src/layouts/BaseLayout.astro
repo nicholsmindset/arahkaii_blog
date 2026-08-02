@@ -5,10 +5,8 @@ import Seo from '../components/Seo.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { organizationSchema, websiteSchema } from '../lib/seo';
 import defaultOgAsset from '../assets/og-default.png';
-import { getSearchIndex } from '../lib/articles';
 import { CATEGORIES } from '../lib/taxonomy';
 import { cap } from '../lib/format';
-import { safeJsonLd } from '../lib/safe';
 import '../styles/global.css';
 import '../styles/pages.css';
 
@@ -89,9 +87,6 @@ const primaryNav = [
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const isHome = Astro.url.pathname === '/';
-
-// Slim JSON index for the client search overlay.
-const searchIndex = await getSearchIndex();
 
 // Google Tag Manager — renders nothing until PUBLIC_GTM_ID is set in the
 // environment (Vercel → Settings → Environment Variables). Never loads on
@@ -318,14 +313,6 @@ const gtmSnippet = gtmEnabled
 			)
 		}
 
-		<!-- Build-time article index, read by the client search overlay -->
-		<script
-			is:inline
-			type="application/json"
-			id="arahkaii-index"
-			set:html={safeJsonLd(searchIndex)}
-		/>
-
 		<script>
 			// ARAHKAII v2 chrome + interactions. DOM-creating behaviours run on every
 			// astro:page-load; document-level listeners bind once (document persists
@@ -354,14 +341,20 @@ const gtmSnippet = gtmEnabled
 				});
 			}
 
-			function getIndex(): any[] {
-				const el = document.getElementById('arahkaii-index');
-				if (!el) return [];
-				try {
-					return JSON.parse(el.textContent || '[]');
-				} catch {
-					return [];
+			let searchIndex: any[] | null = null;
+			let searchIndexRequest: Promise<any[]> | null = null;
+			function getIndex(): Promise<any[]> {
+				if (searchIndex) return Promise.resolve(searchIndex);
+				if (!searchIndexRequest) {
+					searchIndexRequest = fetch('/search-index.json')
+						.then((response) => {
+							if (!response.ok) throw new Error('Search index unavailable');
+							return response.json();
+						})
+						.then((index) => (searchIndex = Array.isArray(index) ? index : []))
+						.catch(() => []);
 				}
+				return searchIndexRequest;
 			}
 			// Content-derived strings (titles/authors) are rendered into innerHTML
 			// below — escape them so a headline can never inject markup.
@@ -374,15 +367,18 @@ const gtmSnippet = gtmEnabled
 				if (!bar) return;
 				const input = bar.querySelector<HTMLInputElement>('.search-input');
 				const results = bar.querySelector<HTMLElement>('.search-results');
-				const idx = getIndex();
-				function run(q: string) {
+				let queryVersion = 0;
+				async function run(q: string) {
 					if (!results) return;
+					const version = ++queryVersion;
 					q = (q || '').trim().toLowerCase();
 					if (!q) {
 						results.hidden = true;
 						results.innerHTML = '';
 						return;
 					}
+					const idx = await getIndex();
+					if (version !== queryVersion) return;
 					results.hidden = false;
 					const hits = idx
 						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q))
