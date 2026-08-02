@@ -28,7 +28,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			const countEl = count;
 
 			function render() {
-				const items = A.getSaved();
+				const items = A.getSaved() as Array<{ title: string; href: string; byline?: string }>;
 				countEl.textContent = items.length
 					? items.length + (items.length === 1 ? ' story' : ' stories') + ' saved'
 					: '';
@@ -43,22 +43,34 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 				}
 				const grid = document.createElement('div');
 				grid.className = 'rl-grid';
-				items.forEach((it: any) => {
+				items.forEach((it) => {
 					const card = document.createElement('div');
 					card.className = 'rl-card';
-					card.innerHTML = `<a class="story" href="${it.href}">
-							<div class="img ph ${it.tone || 'tone-b'} r-3x2"></div>
-							<h2 class="headline">${it.title}</h2>
-							<p class="byline">${it.byline || ''}</p>
-						</a>
-						<button class="rl-remove" aria-label="Remove from reading list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`;
-					card.querySelector('.rl-remove')!.addEventListener('click', (e) => {
+					const story = document.createElement('a');
+					story.className = 'story';
+					story.href = it.href;
+					const image = document.createElement('div');
+					image.className = 'img ph tone-b r-3x2';
+					const heading = document.createElement('h2');
+					heading.className = 'headline';
+					heading.textContent = it.title;
+					const byline = document.createElement('p');
+					byline.className = 'byline';
+					byline.textContent = it.byline || '';
+					story.append(image, heading, byline);
+
+					const remove = document.createElement('button');
+					remove.className = 'rl-remove';
+					remove.type = 'button';
+					remove.setAttribute('aria-label', `Remove ${it.title} from reading list`);
+					remove.textContent = '×';
+					remove.addEventListener('click', (e) => {
 						e.preventDefault();
 						e.stopPropagation();
-						A.toggleSave({ title: it.title });
-						A.toast('Removed from your reading list');
+						A.toggleSave(it);
 						render();
 					});
+					card.append(story, remove);
 					grid.appendChild(card);
 				});
 				container.innerHTML = '';
@@ -67,5 +79,6 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			render();
 		}
 		document.addEventListener('astro:page-load', initReadingList);
+		initReadingList();
 	</script>
 </BaseLayout>

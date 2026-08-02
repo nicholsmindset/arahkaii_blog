@@ -318,8 +318,49 @@ const gtmSnippet = gtmEnabled
 			// astro:page-load; document-level listeners bind once (document persists
 			// across View Transitions).
 			const SUBKEY = 'arahkaii:subscribed';
+			const SAVED_KEY = 'arahkaii:saved';
 			const SUBSCRIBED_HTML =
 				'<span class="news-done"><span class="nd-tick">✓</span> You’re subscribed. See you Sunday.</span>';
+
+			type SavedStory = {
+				title: string;
+				href: string;
+				byline?: string;
+			};
+			function getSaved(): SavedStory[] {
+				try {
+					const value = JSON.parse(localStorage.getItem(SAVED_KEY) || '[]');
+					if (!Array.isArray(value)) return [];
+					return value.filter(
+						(item): item is SavedStory =>
+							typeof item?.title === 'string' &&
+							typeof item?.href === 'string' &&
+							item.href.startsWith('/'),
+					);
+				} catch {
+					return [];
+				}
+			}
+			function toggleSave(item: SavedStory): boolean {
+				const saved = getSaved();
+				const index = saved.findIndex((story) => story.href === item.href);
+				const isSaved = index < 0;
+				if (isSaved) saved.unshift(item);
+				else saved.splice(index, 1);
+				try {
+					localStorage.setItem(SAVED_KEY, JSON.stringify(saved));
+				} catch {
+					return false;
+				}
+				return isSaved;
+			}
+			Object.assign(window, {
+				ARAHKAII: {
+					...(window as Window & { ARAHKAII?: object }).ARAHKAII,
+					getSaved,
+					toggleSave,
+				},
+			});
 
 			const isSubscribed = () => {
 				try {

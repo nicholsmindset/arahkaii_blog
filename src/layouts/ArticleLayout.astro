@@ -309,6 +309,14 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 							<Image src={heroImage} alt={title} widths={[300, 500]} sizes="25vw" />
 						</div>
 						<div class="share" aria-label="Share">
+							<button
+								data-save-story
+								data-title={title}
+								data-href={Astro.url.pathname}
+								data-byline={`By ${author.name}`}
+								type="button"
+								aria-label="Save to reading list">SAVE</button
+							>
 							<button data-share-copy type="button" aria-label="Copy link">LINK</button>
 							<a
 								href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonical.toString())}&text=${encodeURIComponent(title)}`}
@@ -422,6 +430,30 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 				mid.remove();
 			}
 		}
+		function wireSaveStory() {
+			const button = document.querySelector<HTMLButtonElement>('[data-save-story]');
+			const api = (window as Window & {
+				ARAHKAII?: {
+					getSaved: () => Array<{ href: string }>;
+					toggleSave: (item: { title: string; href: string; byline?: string }) => boolean;
+				};
+			}).ARAHKAII;
+			if (!button || !api || button.dataset.wired) return;
+			button.dataset.wired = '1';
+			const story = {
+				title: button.dataset.title || '',
+				href: button.dataset.href || '',
+				byline: button.dataset.byline,
+			};
+			const reflect = (saved: boolean) => {
+				button.textContent = saved ? 'SAVED' : 'SAVE';
+				button.setAttribute('aria-pressed', String(saved));
+			};
+			reflect(api.getSaved().some((item) => item.href === story.href));
+			button.addEventListener('click', () => reflect(api.toggleSave(story)));
+		}
 		document.addEventListener('astro:page-load', placeMidNews);
+		document.addEventListener('astro:page-load', wireSaveStory);
+		wireSaveStory();
 	</script>
 </BaseLayout>
