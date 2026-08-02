@@ -11,7 +11,13 @@ const posts = defineCollection({
 			title: z.string().max(110),
 			standfirst: z.string().max(220),
 			category: z.enum(CATEGORIES),
-			tags: z.array(z.string()).optional(),
+			tags: z
+				.array(
+					z
+						.string()
+						.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Tags must use lowercase kebab-case'),
+				)
+				.optional(),
 			author: z.string(),
 			date: z.coerce.date(),
 			readingMinutes: z.number().optional(),
