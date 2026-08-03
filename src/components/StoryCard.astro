@@ -45,7 +45,10 @@ const phLabel = label ?? `${(category ?? '').toUpperCase()}`;
 	<div class:list={['media', ratioClass]}>
 		{
 			image ? (
-				<Image src={image} alt={title} widths={widths} sizes={sizes} />
+				// The headline in this same link already names its destination. Treat
+				// the thumbnail as decorative so assistive technology does not announce
+				// every story title twice.
+				<Image src={image} alt="" widths={widths} sizes={sizes} />
 			) : (
 				<div class="ph" data-label={phLabel} />
 			)
