@@ -37,9 +37,10 @@
     "@tailwindcss/postcss": "^4.3.2",
     "@types/node": "^22.20.1",
     "gray-matter": "^4.0.3",
+    "tailwindcss": "4.3.2",
     "typescript": "^6.0.3"
   },
   "overrides": {
-    "vite": "^7"
+    "vite": "^8"
   }
 }
