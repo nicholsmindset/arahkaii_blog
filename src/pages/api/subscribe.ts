@@ -1,6 +1,11 @@
 import type { APIRoute } from 'astro';
 import newsletterSettings from '../../content/settings/newsletter.json';
-import { isSameSite, withinRateLimit, clientIp } from '../../lib/api-guard';
+import {
+	isSameSite,
+	withinRateLimit,
+	clientIp,
+	providerRequestSignal,
+} from '../../lib/api-guard';
 
 export const prerender = false;
 
@@ -52,6 +57,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 			const source = typeof payload.source === 'string' ? payload.source.slice(0, 80) : 'website';
 			response = await fetch(`https://api.beehiiv.com/v2/publications/${encodeURIComponent(publicationId)}/subscriptions`, {
 				method: 'POST',
+				signal: providerRequestSignal(),
 				headers: {
 					Accept: 'application/json',
 					Authorization: `Bearer ${apiKey}`,
@@ -74,6 +80,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 			if (groupId) subscriber.groups = [groupId];
 			response = await fetch('https://connect.mailerlite.com/api/subscribers', {
 				method: 'POST',
+				signal: providerRequestSignal(),
 				headers: {
 					Accept: 'application/json',
 					Authorization: `Bearer ${apiKey}`,

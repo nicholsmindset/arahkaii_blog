@@ -13,6 +13,13 @@
 
 const loopback = new Set(['localhost', '127.0.0.1', '[::1]']);
 
+const PROVIDER_TIMEOUT_MS = 10_000;
+
+/** Abort a paid provider request before it exhausts the serverless invocation. */
+export function providerRequestSignal(): AbortSignal {
+	return AbortSignal.timeout(PROVIDER_TIMEOUT_MS);
+}
+
 /** True when the request carries a same-site Origin (or, failing that, Referer). */
 export function isSameSite(request: Request): boolean {
 	const requestUrl = new URL(request.url);
