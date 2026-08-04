@@ -1,5 +1,10 @@
 import type { APIRoute } from 'astro';
-import { isSameSite, withinRateLimit, clientIp } from '../../lib/api-guard';
+import {
+	isSameSite,
+	withinRateLimit,
+	clientIp,
+	providerRequestSignal,
+} from '../../lib/api-guard';
 
 export const prerender = false;
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -31,6 +36,7 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	try {
 		response = await fetch('https://api.resend.com/emails', {
 			method: 'POST',
+			signal: providerRequestSignal(),
 			headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
 			body: JSON.stringify({ from, to: [to], reply_to: email, subject: `[Arahkaii] ${subject}`, text: `From: ${name} <${email}>\n\n${message}` }),
 		});
