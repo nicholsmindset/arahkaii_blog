@@ -252,15 +252,25 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 				return;
 			}
 			nav.style.removeProperty('display');
-			nav.innerHTML =
-				'<p class="gi-label">The list</p>' +
-				entries
-					.map((s) => {
-						const n = s.querySelector('.num')?.textContent?.trim() || '';
-						const name = s.querySelector('.entry-name')?.textContent?.trim() || '';
-						return `<a href="#${s.id}" data-i="${s.id}"><span class="gi-n">${n}</span><span class="gi-t">${name}</span></a>`;
-					})
-					.join('');
+			const label = document.createElement('p');
+			label.className = 'gi-label';
+			label.textContent = 'The list';
+			const entryLinks = entries.map((entry) => {
+				const link = document.createElement('a');
+				link.href = `#${encodeURIComponent(entry.id)}`;
+				link.dataset.i = entry.id;
+
+				const number = document.createElement('span');
+				number.className = 'gi-n';
+				number.textContent = entry.querySelector('.num')?.textContent?.trim() || '';
+
+				const title = document.createElement('span');
+				title.className = 'gi-t';
+				title.textContent = entry.querySelector('.entry-name')?.textContent?.trim() || '';
+				link.append(number, title);
+				return link;
+			});
+			nav.replaceChildren(label, ...entryLinks);
 			const links = new Map(
 				Array.from(nav.querySelectorAll<HTMLElement>('a')).map((a) => [a.dataset.i, a]),
 			);
