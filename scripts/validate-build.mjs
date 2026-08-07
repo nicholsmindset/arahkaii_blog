@@ -30,6 +30,7 @@ const semanticFailures = [];
 const hierarchyFailures = [];
 const imageFailures = [];
 const socialImageFailures = [];
+const newsletterFeedbackFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -56,6 +57,11 @@ for (const file of htmlFiles) {
 	}
 	if (hasSocialImage && !/<meta name="twitter:image:alt" content="[^"]+"/.test(html)) {
 		socialImageFailures.push(`${relativeFile}: Twitter image missing alt text`);
+	}
+	for (const form of html.matchAll(/<form\b[^>]*class="[^"]*\bjs-news\b[^"]*"[^>]*>([\s\S]*?)<\/form>/g)) {
+		if (!/class="[^"]*\bfield-note\b/.test(form[1])) {
+			newsletterFeedbackFailures.push(`${relativeFile}: newsletter form has no feedback region`);
+		}
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -115,6 +121,11 @@ if (socialImageFailures.length) {
 	for (const item of socialImageFailures) console.error(`- ${item}`);
 }
 
+if (newsletterFeedbackFailures.length) {
+	console.error('\nNewsletter feedback failures:');
+	for (const item of newsletterFeedbackFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -162,6 +173,7 @@ if (
 	hierarchyFailures.length ||
 	imageFailures.length ||
 	socialImageFailures.length ||
+	newsletterFeedbackFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
