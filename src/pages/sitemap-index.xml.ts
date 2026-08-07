@@ -14,4 +14,4 @@ const SEGMENTS = [
 	'/sitemap-tags.xml',
 ];
 
-export const GET: APIRoute = () => sitemapIndex(SEGMENTS, new Date());
+export const GET: APIRoute = () => sitemapIndex(SEGMENTS);

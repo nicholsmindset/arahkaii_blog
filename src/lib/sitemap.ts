@@ -40,9 +40,9 @@ export function urlset(entries: SitemapEntry[]): Response {
 	);
 }
 
-export function sitemapIndex(paths: string[], lastmod: Date): Response {
+export function sitemapIndex(paths: string[]): Response {
 	const body = paths
-		.map((path) => `<sitemap><loc>${absolute(path)}</loc><lastmod>${lastmod.toISOString()}</lastmod></sitemap>`)
+		.map((path) => `<sitemap><loc>${absolute(path)}</loc></sitemap>`)
 		.join('');
 	return xmlResponse(
 		`<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</sitemapindex>`,
