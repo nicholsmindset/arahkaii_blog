@@ -6,7 +6,7 @@
    emerald accent, dark footer.
    ============================================================ */
 
-@import 'tailwindcss';
+@import '../../node_modules/tailwindcss/index.css';
 @import './tokens.css';
 
 /* Expose v2 tokens to Tailwind utilities (text-ink, font-display, …) */
