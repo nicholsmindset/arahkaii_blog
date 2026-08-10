@@ -2,7 +2,7 @@
 // Two cheap defences in front of paid third-party services (MailerLite/Beehiiv,
 // Resend):
 //
-// 1. Same-site check that REQUIRES a browser-supplied Origin (or Referer)
+// 1. Same-origin check that REQUIRES a browser-supplied Origin (or Referer)
 //    header. Browsers always attach Origin to POST requests, so requiring it
 //    only turns away header-less scripts — the exact traffic the old
 //    "check-only-if-present" version let through.
@@ -20,8 +20,8 @@ export function providerRequestSignal(): AbortSignal {
 	return AbortSignal.timeout(PROVIDER_TIMEOUT_MS);
 }
 
-/** True when the request carries a same-site Origin (or, failing that, Referer). */
-export function isSameSite(request: Request): boolean {
+/** True when the request carries a same-origin Origin (or, failing that, Referer). */
+export function isSameOrigin(request: Request): boolean {
 	const requestUrl = new URL(request.url);
 	const source = request.headers.get('origin') ?? request.headers.get('referer');
 	if (!source) return false;
@@ -32,8 +32,11 @@ export function isSameSite(request: Request): boolean {
 		return false;
 	}
 	return (
-		sourceUrl.host === requestUrl.host ||
-		(loopback.has(sourceUrl.hostname) && loopback.has(requestUrl.hostname))
+		sourceUrl.origin === requestUrl.origin ||
+		(loopback.has(sourceUrl.hostname) &&
+			loopback.has(requestUrl.hostname) &&
+			sourceUrl.protocol === requestUrl.protocol &&
+			sourceUrl.port === requestUrl.port)
 	);
 }
 

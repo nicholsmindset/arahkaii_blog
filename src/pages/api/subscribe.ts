@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import newsletterSettings from '../../content/settings/newsletter.json';
 import {
-	isSameSite,
+	isSameOrigin,
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
@@ -24,7 +24,7 @@ function reply(status: number, body: Record<string, unknown>) {
 }
 
 export const POST: APIRoute = async ({ request, clientAddress }) => {
-	if (!isSameSite(request)) return reply(403, { error: 'Forbidden' });
+	if (!isSameOrigin(request)) return reply(403, { error: 'Forbidden' });
 	if (!withinRateLimit(`subscribe:${clientIp(request, clientAddress)}`, 5, 60_000)) {
 		return reply(429, { error: 'Too many requests — please try again shortly' });
 	}
