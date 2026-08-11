@@ -31,6 +31,7 @@ const hierarchyFailures = [];
 const imageFailures = [];
 const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
+const readingListFeedbackFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -57,6 +58,20 @@ for (const file of htmlFiles) {
 	}
 	if (hasSocialImage && !/<meta name="twitter:image:alt" content="[^"]+"/.test(html)) {
 		socialImageFailures.push(`${relativeFile}: Twitter image missing alt text`);
+	}
+	if (relativeFile === path.join('reading-list', 'index.html')) {
+		const countTag = [...html.matchAll(/<p\b[^>]*>/g)]
+			.map((match) => match[0])
+			.find((tag) => /\bid="rl-count"/.test(tag));
+		if (!countTag || !/\brole="status"/.test(countTag)) {
+			readingListFeedbackFailures.push(`${relativeFile}: saved-story count is not a live status`);
+		}
+		if (!/\.textContent\s*=[\s\S]*?["'`] saved["'`]\s*:\s*["'`]No stories saved\.["'`]/.test(html)) {
+			readingListFeedbackFailures.push(`${relativeFile}: saved-story count has no announceable zero state`);
+		}
+		if (!/className\s*=\s*["'`]rl-remove["'`][\s\S]{0,1000}?\.addEventListener\(["'`]click["'`][\s\S]{0,500}?\.toggleSave\([^)]*\)\s*[,;]\s*[$\w]+\(\)/.test(html)) {
+			readingListFeedbackFailures.push(`${relativeFile}: removing a saved story does not re-render the count`);
+		}
 	}
 	for (const form of html.matchAll(/<form\b[^>]*class="[^"]*\bjs-news\b[^"]*"[^>]*>([\s\S]*?)<\/form>/g)) {
 		if (!/class="[^"]*\bfield-note\b/.test(form[1])) {
@@ -126,6 +141,11 @@ if (newsletterFeedbackFailures.length) {
 	for (const item of newsletterFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (readingListFeedbackFailures.length) {
+	console.error('\nReading-list feedback failures:');
+	for (const item of readingListFeedbackFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -174,6 +194,7 @@ if (
 	imageFailures.length ||
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
+	readingListFeedbackFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 

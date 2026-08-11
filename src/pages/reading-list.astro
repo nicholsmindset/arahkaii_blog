@@ -12,7 +12,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			<Breadcrumbs schema={false} class="page-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Reading list' }]} />
 			<h1 class="rl-title">Reading list</h1>
 			<p class="rl-dek">Saved for a slower moment.</p>
-			<p class="rl-count" id="rl-count"></p>
+			<p class="rl-count" id="rl-count" role="status"></p>
 		</header>
 		<div id="rl-container"></div>
 	</div>
@@ -31,7 +31,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 				const items = A.getSaved() as Array<{ title: string; href: string; byline?: string }>;
 				countEl.textContent = items.length
 					? items.length + (items.length === 1 ? ' story' : ' stories') + ' saved'
-					: '';
+					: 'No stories saved.';
 				if (!items.length) {
 					container.innerHTML = `<div class="rl-empty">
 						<svg class="e-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg>
