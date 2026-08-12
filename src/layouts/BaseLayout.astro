@@ -505,12 +505,24 @@ const gtmSnippet = gtmEnabled
 
 			// ---- copy-link share buttons ----
 			function wireShare() {
-				document.querySelectorAll<HTMLElement>('[data-share-copy]').forEach((b) => {
+				document.querySelectorAll<HTMLButtonElement>('[data-share-copy]').forEach((b) => {
 					if (b.dataset.wired) return;
 					b.dataset.wired = '1';
-					b.addEventListener('click', (e) => {
+					b.addEventListener('click', async (e) => {
 						e.preventDefault();
-						navigator.clipboard?.writeText(location.href).catch(() => {});
+						const status = b.parentElement?.querySelector<HTMLElement>('[data-share-status]');
+						try {
+							if (!navigator.clipboard) throw new Error('Clipboard API unavailable');
+							await navigator.clipboard.writeText(location.href);
+							b.textContent = 'COPIED';
+							if (status) status.textContent = 'Link copied to clipboard.';
+						} catch {
+							b.textContent = 'FAILED';
+							if (status) status.textContent = 'The link could not be copied.';
+						}
+						window.setTimeout(() => {
+							b.textContent = 'LINK';
+						}, 2000);
 					});
 				});
 			}
