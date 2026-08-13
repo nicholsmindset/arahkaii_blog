@@ -318,6 +318,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 								aria-label="Save to reading list">SAVE</button
 							>
 							<button data-share-copy type="button" aria-label="Copy link">LINK</button>
+							<span class="sr-only" role="status" aria-live="polite" data-share-status></span>
 							<a
 								href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonical.toString())}&text=${encodeURIComponent(title)}`}
 								target="_blank"

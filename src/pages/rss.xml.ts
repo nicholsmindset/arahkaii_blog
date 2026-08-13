@@ -3,6 +3,10 @@ import type { APIContext } from 'astro';
 import { SITE } from '../lib/seo';
 import { getPosts } from '../lib/articles';
 
+// The feed is derived entirely from build-time content, so emit it as a static
+// asset instead of invoking a serverless function for every feed reader poll.
+export const prerender = true;
+
 export async function GET(context: APIContext) {
 	// getPosts already excludes drafts, noindex and future-dated posts.
 	const posts = await getPosts();
