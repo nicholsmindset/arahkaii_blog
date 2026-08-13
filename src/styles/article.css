@@ -43,15 +43,14 @@
 .art-breadcrumb a { border-bottom:1px solid currentColor; }
 .art-breadcrumb a:hover { color:var(--ink); }
 .art-h1 {
-	font-family: var(--display);
-	font-weight: 500;
+	font-family: var(--headline);
+	font-weight: 600;
 	/* Long editorial titles are the norm here (42/43 posts run >46 chars), so the
 	   hero is tuned for legibility over maximum drama: a lower cap + a wider
 	   measure + balanced wrapping keep long Didone headlines readable instead of
 	   stacking into a cramped 6-line tower with colliding descenders. Weight 500
 	   + optical-sizing:none keep Bodoni's hairlines legible at display size
 	   (optical-sizing:auto thins high-contrast Didones as they grow). */
-	font-optical-sizing: none;
 	font-size: clamp(34px, 4.4vw, 58px);
 	line-height: 1.16;
 	letter-spacing: -0.015em;

@@ -14,7 +14,7 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
 }).format(date);
 ---
 <p class="art-byline meta">
-	By {author}<span class="dot">·</span>{formattedDate}{
+	By {author}<span class="dot">·</span><time datetime={date.toISOString()}>{formattedDate}</time>{
 		readingMinutes ? (
 			<>
 				<span class="dot">·</span>

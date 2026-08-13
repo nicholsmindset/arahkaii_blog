@@ -31,6 +31,7 @@ const hierarchyFailures = [];
 const imageFailures = [];
 const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
+const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
 const missingTargets = new Map();
 
@@ -46,6 +47,9 @@ function targetExists(href) {
 for (const file of htmlFiles) {
 	const html = fs.readFileSync(file, 'utf8');
 	const relativeFile = path.relative(PUBLIC_ROOT, file);
+	// Search Console ownership files are protocol tokens, not rendered pages.
+	// They intentionally have no landmarks and do not belong in a sitemap.
+	if (/^google[a-z0-9]+\.html$/i.test(relativeFile)) continue;
 	const h1Count = (html.match(/<h1\b/g) ?? []).length;
 	const mainCount = (html.match(/<main\b/g) ?? []).length;
 	const hasSocialImage = /<meta property="og:image" content="[^"]+"/.test(html);
@@ -89,6 +93,9 @@ for (const file of htmlFiles) {
 		const rawHref = match[1];
 		if (!rawHref.startsWith('/') || rawHref.startsWith('//')) continue;
 		const href = rawHref.split(/[?#]/)[0];
+		if (href !== '/' && !href.endsWith('/') && !/\.[a-z0-9]+$/i.test(href)) {
+			redirectingInternalLinks.push(`${relativeFile}: ${href}`);
+		}
 		if (!href || targetExists(href)) continue;
 		const sources = missingTargets.get(href) ?? [];
 		if (sources.length < 3) sources.push(relativeFile);
@@ -108,6 +115,11 @@ if (missingTargets.size) {
 	for (const [href, sources] of [...missingTargets].sort()) {
 		console.error(`- ${href} <- ${sources.join(', ')}`);
 	}
+}
+
+if (redirectingInternalLinks.length) {
+	console.error('\nInternal page links must point directly to canonical trailing-slash URLs:');
+	for (const item of redirectingInternalLinks.slice(0, 50)) console.error(`- ${item}`);
 }
 
 if (hierarchyFailures.length) {
@@ -163,7 +175,7 @@ if (!fs.existsSync(indexFile)) {
 	// Completeness: every indexable emitted page must be in a segment.
 	for (const file of htmlFiles) {
 		const relative = path.relative(PUBLIC_ROOT, file);
-		if (relative === '404.html') continue;
+		if (relative === '404.html' || /^google[a-z0-9]+\.html$/i.test(relative)) continue;
 		const html = fs.readFileSync(file, 'utf8');
 		if (/name="robots" content="noindex/.test(html)) continue;
 		const urlPath = '/' + relative.replace(/index\.html$/, '').replace(/\.html$/, '/');
@@ -179,6 +191,7 @@ if (sitemapFailures.length) {
 if (
 	semanticFailures.length ||
 	missingTargets.size ||
+	redirectingInternalLinks.length ||
 	hierarchyFailures.length ||
 	imageFailures.length ||
 	socialImageFailures.length ||

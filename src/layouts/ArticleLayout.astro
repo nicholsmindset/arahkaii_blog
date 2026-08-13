@@ -99,7 +99,7 @@ const {
 	heroCaption,
 	heroCredit,
 	author,
-	authorHref = '/people',
+	authorHref = '/people/',
 	related = [],
 	readNext,
 	seoTitle,
@@ -129,7 +129,7 @@ const primaryTag = tags[0];
 // A tag links to its archive only when that archive exists (meets MIN_TAG_POSTS);
 // otherwise the chip falls back to the category page.
 const tagIndex = await getTagIndex();
-const tagHref = (t: string) => (tagIndex.has(t) ? `/tags/${t}/` : `/${category}`);
+const tagHref = (t: string) => (tagIndex.has(t) ? `/tags/${t}/` : `/${category}/`);
 const formattedDate = new Intl.DateTimeFormat('en-GB', {
 	day: 'numeric',
 	month: 'long',
@@ -158,7 +158,7 @@ const authorUrl = new URL(authorHref, SITE.url).toString();
 
 const crumbs = [
 	{ name: SITE.name, url: SITE.url },
-	{ name: categoryLabel, url: new URL(`/${category}`, SITE.url).toString() },
+	{ name: categoryLabel, url: new URL(`/${category}/`, SITE.url).toString() },
 ];
 if (primaryTag) crumbs.push({ name: primaryTag, url: canonical.toString() });
 
@@ -211,7 +211,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 		<!-- HERO: centred, no-image (T Magazine pattern) -->
 		<div class="wrap art-hero">
 			<nav class="art-breadcrumb eyebrow eyebrow--emerald" aria-label="Breadcrumb">
-				<a href={`/${category}`}>{categoryLabel}</a>
+				<a href={`/${category}/`}>{categoryLabel}</a>
 				{(kicker ?? primaryTag) && <><span aria-hidden="true">·</span><span>{kicker ?? primaryTag}</span></>}
 			</nav>
 			<Headline text={title} />
@@ -227,7 +227,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 					)
 				}
 				<span class="dot"></span>
-				<span class="meta">{formattedDate}</span>
+				<time class="meta" datetime={datePublished}>{formattedDate}</time>
 				{
 					readingMinutes && (
 						<>
@@ -236,7 +236,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 						</>
 					)
 				}
-				{formattedUpdatedDate && <><span class="dot"></span><span class="meta">Updated · {formattedUpdatedDate}</span></>}
+				{formattedUpdatedDate && <><span class="dot"></span><time class="meta" datetime={dateModified}>Updated · {formattedUpdatedDate}</time></>}
 			</div>
 		</div>
 

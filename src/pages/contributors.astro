@@ -49,7 +49,7 @@ const jsonLd = [
 		<div class="cb-list">
 			{
 				contributors.map((a) => (
-					<a class="contributor" href={`/authors/${a.id}`}>
+					<a class="contributor" href={`/authors/${a.id}/`}>
 						{a.data.avatar ? (
 							<div class="img real r-1x1 cb-portrait blurup">
 								<Image src={a.data.avatar} alt={a.data.name} width={240} height={240} />
