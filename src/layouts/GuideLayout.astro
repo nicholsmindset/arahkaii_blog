@@ -173,7 +173,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 		)}
 		<header class="guide-head">
 			<nav class="art-breadcrumb eyebrow eyebrow--emerald" aria-label="Breadcrumb">
-				<a href={`/${category}`}>{categoryLabel}</a>
+				<a href={`/${category}/`}>{categoryLabel}</a>
 				{(kicker ?? primaryTag) && <><span aria-hidden="true">·</span><span>{kicker ?? cap(primaryTag!)}</span></>}
 			</nav>
 			<h1 class="guide-h1 art-h1">{title}</h1>
@@ -219,7 +219,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 				<div class="rule" />
 				<div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:34px">
 					<span class="eyebrow">More Guides</span>
-					<a class="link-more" href="/guides">All Guides</a>
+					<a class="link-more" href="/guides/">All Guides</a>
 				</div>
 				<div class="mg-grid">
 					{moreGuides.slice(0, 3).map((g) => (

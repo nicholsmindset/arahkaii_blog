@@ -74,7 +74,7 @@ const ogImage = image ?? new URL(defaultOg.src, Astro.site).toString();
 // in src/lib/taxonomy.ts alongside the schema enum.
 const navItems = CATEGORIES.map((c) => ({
 	label: cap(c),
-	href: `/${c}`,
+	href: `/${c}/`,
 	active: cap(c) === activeCategory,
 }));
 // Keep the visible masthead deliberately concise. The full taxonomy remains
@@ -86,8 +86,6 @@ const primaryNav = [
 ];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const isHome = Astro.url.pathname === '/';
-
 // Google Tag Manager — renders nothing until PUBLIC_GTM_ID is set in the
 // environment (Vercel → Settings → Environment Variables). Never loads on
 // the Keystatic admin. See docs/domain-analytics-setup.md.
@@ -187,14 +185,8 @@ const gtmSnippet = gtmEnabled
 					<button class="masthead__util" data-menu-open type="button" aria-expanded="false" aria-controls="overlay-menu" aria-haspopup="dialog">MENU</button>
 					<button class="masthead__util" data-search-toggle type="button" aria-expanded="false" aria-controls="site-search">SEARCH</button>
 				</div>
-				<a href="/" aria-label="Arahkaii — home">
-					{
-						isHome ? (
-							<h1 class="wordmark">ARAHKAII</h1>
-						) : (
-							<p class="wordmark">ARAHKAII</p>
-						)
-					}
+				<a class="wordmark-link" href="/" aria-label="Arahkaii — home">
+					<p class="wordmark" aria-hidden="true">ARAHKAII</p>
 				</a>
 				<hr class="rule" />
 				<nav class="masthead__nav" aria-label="Primary">
@@ -241,18 +233,18 @@ const gtmSnippet = gtmEnabled
 				</nav>
 				<div class="overlay__aside">
 					<p class="overlay__label">Arahkaii</p>
-					<a href="/latest">Latest stories</a>
-					<a href="/search">Search the archive</a>
+					<a href="/latest/">Latest stories</a>
+					<a href="/search/">Search the archive</a>
 					<a href="/tags/">Browse by theme</a>
 					<a href="/topics/">Topics</a>
 					<a href="/franchises/">Franchises</a>
-					<a href="/contributors">Editors &amp; contributors</a>
-					<a href="/about">Our story</a>
-					<a href="/reading-list">Reading list</a>
-					<a href="/contact">Contact</a>
+					<a href="/contributors/">Editors &amp; contributors</a>
+					<a href="/about/">Our story</a>
+					<a href="/reading-list/">Reading list</a>
+					<a href="/contact/">Contact</a>
 					<div class="overlay__note">
 						<p>Sundays, considered.</p>
-						<a href="/subscribe">Join the weekly edit →</a>
+						<a href="/subscribe/">Join the weekly edit →</a>
 					</div>
 				</div>
 			</div>
@@ -281,12 +273,12 @@ const gtmSnippet = gtmEnabled
 						<div>
 							<p class="footer__h">Explore</p>
 							<div class="footer__links">
-								<a href="/latest">Latest</a>
-								<a href="/style">Style</a>
-								<a href="/beauty">Beauty</a>
-								<a href="/dining">Dining</a>
-								<a href="/travel">Travel</a>
-								<a href="/guides">Arahkaii Guides</a>
+								<a href="/latest/">Latest</a>
+								<a href="/style/">Style</a>
+								<a href="/beauty/">Beauty</a>
+								<a href="/dining/">Dining</a>
+								<a href="/travel/">Travel</a>
+								<a href="/guides/">Arahkaii Guides</a>
 								<a href="/topics/">Topics</a>
 								<a href="/franchises/">Franchises</a>
 							</div>
@@ -294,12 +286,12 @@ const gtmSnippet = gtmEnabled
 						<div>
 							<p class="footer__h">About</p>
 							<div class="footer__links">
-								<a href="/about">Our story</a>
-								<a href="/contributors">Contributors</a>
-								<a href="/contact">Contact</a>
-								<a href="/advertise">Work with us</a>
-								<a href="/faqs">FAQs</a>
-								<a href="/editorial-standards">Editorial standards</a>
+								<a href="/about/">Our story</a>
+								<a href="/contributors/">Contributors</a>
+								<a href="/contact/">Contact</a>
+								<a href="/advertise/">Work with us</a>
+								<a href="/faqs/">FAQs</a>
+								<a href="/editorial-standards/">Editorial standards</a>
 								<a href="/rss.xml">RSS</a>
 							</div>
 						</div>
@@ -311,7 +303,7 @@ const gtmSnippet = gtmEnabled
 							<a href="https://www.facebook.com/arahkaii" rel="me">Facebook</a>
 							<a href="https://www.x.com/arahkaii" rel="me">X</a>
 						</div>
-						<p class="footer__fine">© {new Date().getFullYear()} Arahkaii · ONN GROUP LLP · Singapore · <a href="/privacy-policy">Privacy</a> · <a href="/terms-conditions">Terms</a></p>
+						<p class="footer__fine">© {new Date().getFullYear()} Arahkaii · ONN GROUP LLP · Singapore · <a href="/privacy-policy/">Privacy</a> · <a href="/terms-conditions/">Terms</a></p>
 					</div>
 				</footer>
 			)

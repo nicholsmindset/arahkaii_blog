@@ -52,7 +52,7 @@ const jsonLd = [
 	}),
 	breadcrumbSchema([
 		{ name: SITE.name, url: SITE.url },
-		{ name: 'Contributors', url: new URL('/contributors', SITE.url).toString() },
+		{ name: 'Contributors', url: new URL('/contributors/', SITE.url).toString() },
 		{ name: a.name, url: canonical },
 	]),
 ];
@@ -75,7 +75,7 @@ const jsonLd = [
 					class="page-crumbs"
 					items={[
 						{ name: 'Arahkaii', href: '/' },
-						{ name: 'Contributors', href: '/contributors' },
+						{ name: 'Contributors', href: '/contributors/' },
 						{ name: a.name },
 					]}
 				/>
@@ -95,7 +95,7 @@ const jsonLd = [
 					</button>
 				</div>
 				<div class="ah-socials">
-					<a href="/subscribe">Newsletter</a>
+					<a href="/subscribe/">Newsletter</a>
 					{a.sameAs?.map((url) => <a href={url} rel="me noopener" target="_blank">Profile</a>)}
 					<a href="https://www.instagram.com/arahkaii/" rel="me">Instagram</a>
 					<a href="https://www.x.com/arahkaii" rel="me">X / Twitter</a>

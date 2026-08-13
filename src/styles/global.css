@@ -298,6 +298,11 @@ a.card:hover .media img {
 	justify-content: space-between;
 }
 .masthead__util {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
 	font-family: var(--sans);
 	font-size: 12px;
 	font-weight: 500;
@@ -307,20 +312,24 @@ a.card:hover .media img {
 	background: none;
 	border: 0;
 	cursor: pointer;
-	padding: 0;
+	padding: 0 8px;
 }
 .masthead__util:hover {
 	color: var(--emerald);
 }
 .wordmark {
 	font-family: var(--display);
-	font-weight: 400;
+	font-weight: 500;
+	font-optical-sizing: none;
 	letter-spacing: 0.04em;
 	color: var(--ink);
 	text-align: center;
 	line-height: 1;
 	font-size: clamp(44px, 5.6vw, 72px);
 	margin: 8px 0 28px;
+}
+.wordmark-link {
+	display: block;
 }
 .masthead__nav {
 	display: flex;
@@ -330,6 +339,9 @@ a.card:hover .media img {
 	padding: 18px 0;
 }
 .navlink {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
 	font-family: var(--sans);
 	font-size: 12px;
 	font-weight: 500;
@@ -429,6 +441,8 @@ a.card:hover .media img {
 	letter-spacing: .04em;
 }
 .overlay__close {
+	min-width: 44px;
+	min-height: 44px;
 	font-family: var(--sans);
 	font-size: 12px;
 	letter-spacing: 0.18em;
@@ -476,6 +490,12 @@ a.card:hover .media img {
 	font-family: var(--sans);
 	font-size: 14px;
 }
+.overlay__aside > a,
+.overlay__note a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+}
 .overlay__aside > a:hover { color: var(--emerald); }
 .overlay__note {
 	margin-top: 32px;
@@ -511,6 +531,7 @@ a.card:hover .media img {
 	padding: 24px 0;
 }
 .searchbar input {
+	min-height: 44px;
 	flex: 1;
 	border: 0;
 	border-bottom: 1px solid var(--hairline);
@@ -646,9 +667,12 @@ a.card:hover .media img {
 .footer__links {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 0;
 }
 .footer__links a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
 	font-family: var(--sans);
 	font-size: 14px;
 	color: #fff;
@@ -681,7 +705,7 @@ a.card:hover .media img {
 }
 .footer__fine {
 	font-family: var(--sans);
-	font-size: 11px;
+	font-size: 12px;
 	letter-spacing: 0.04em;
 	color: var(--footer-head);
 }
@@ -695,7 +719,10 @@ a.card:hover .media img {
 	padding-top: 20px;
 	border-top: 1px solid var(--footer-rule);
 }
-.footer__social { display:flex; gap:22px; font: 500 11px/1 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
+.footer__social { display:flex; gap:22px; font: 500 12px/1 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
+.footer__social a,
+.footer__fine a { display:inline-flex; align-items:center; min-height:44px; }
+.footer__social a { min-width:24px; justify-content:center; }
 .footer__social a:hover, .footer__fine a:hover { color:#fff; }
 .footer__news a.tlink {
 	color: #fff;
@@ -973,6 +1000,7 @@ a.card:hover .media img {
 	max-width: 420px;
 }
 .field input {
+	min-height: 44px;
 	flex: 1;
 	background: none;
 	border: 0;
@@ -987,6 +1015,8 @@ a.card:hover .media img {
 	font-style: italic;
 }
 .field button {
+	min-width: 44px;
+	min-height: 44px;
 	background: none;
 	border: 0;
 	cursor: pointer;
