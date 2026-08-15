@@ -389,7 +389,10 @@ const gtmSnippet = gtmEnabled
 							return response.json();
 						})
 						.then((index) => (searchIndex = Array.isArray(index) ? index : []))
-						.catch(() => []);
+						.catch(() => {
+							searchIndexRequest = null;
+							return [];
+						});
 				}
 				return searchIndexRequest;
 			}
