@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const robotsFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -62,6 +63,9 @@ for (const file of htmlFiles) {
 	}
 	if (hasSocialImage && !/<meta name="twitter:image:alt" content="[^"]+"/.test(html)) {
 		socialImageFailures.push(`${relativeFile}: Twitter image missing alt text`);
+	}
+	if (/name="robots" content="noindex,nofollow"/.test(html)) {
+		robotsFailures.push(`${relativeFile}: noindex page prevents crawlers from following editorial links`);
 	}
 	for (const form of html.matchAll(/<form\b[^>]*class="[^"]*\bjs-news\b[^"]*"[^>]*>([\s\S]*?)<\/form>/g)) {
 		if (!/class="[^"]*\bfield-note\b/.test(form[1])) {
@@ -147,6 +151,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (robotsFailures.length) {
+	console.error('\nRobots metadata failures:');
+	for (const item of robotsFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +206,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	robotsFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
