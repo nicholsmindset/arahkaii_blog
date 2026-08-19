@@ -220,7 +220,7 @@ const gtmSnippet = gtmEnabled
 		</header>
 
 		<!-- full-screen overlay menu -->
-		<div class="overlay" id="overlay-menu" role="dialog" aria-modal="true" aria-label="Menu">
+		<div class="overlay" id="overlay-menu" role="dialog" aria-modal="true" aria-label="Menu" inert aria-hidden="true">
 			<div class="overlay__top">
 				<a class="overlay__mark" href="/">ARAHKAII</a>
 				<button class="overlay__close" data-menu-close type="button">CLOSE ✕</button>
@@ -571,6 +571,8 @@ const gtmSnippet = gtmEnabled
 					const overlay = document.querySelector<HTMLElement>('.overlay');
 					if (!overlay) return;
 					lastTrigger = trigger;
+					overlay.removeAttribute('inert');
+					overlay.removeAttribute('aria-hidden');
 					overlay.classList.add('open');
 					document.body.style.overflow = 'hidden';
 					setExpanded('[data-menu-open]', true);
@@ -580,6 +582,8 @@ const gtmSnippet = gtmEnabled
 					const overlay = document.querySelector<HTMLElement>('.overlay');
 					if (!overlay?.classList.contains('open')) return;
 					overlay.classList.remove('open');
+					overlay.setAttribute('inert', '');
+					overlay.setAttribute('aria-hidden', 'true');
 					document.body.style.overflow = '';
 					setExpanded('[data-menu-open]', false);
 					lastTrigger?.focus();
