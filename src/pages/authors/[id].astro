@@ -83,17 +83,6 @@ const jsonLd = [
 				<p class="ah-role">{a.role}</p>
 				<p class="ah-bio">{a.bio}</p>
 				{a.expertise?.length && <ul class="author-expertise" aria-label="Areas of expertise">{a.expertise.map((item) => <li>{item}</li>)}</ul>}
-				<div style="margin-top:30px">
-					<button
-						class="follow-btn js-follow"
-						type="button"
-						data-follow-id={author.id}
-						data-follow-name={firstName}
-					>
-						<span class="fb-plus" aria-hidden="true">+</span>
-						<span class="fb-label">Follow {firstName}</span>
-					</button>
-				</div>
 				<div class="ah-socials">
 					<a href="/subscribe/">Newsletter</a>
 					{a.sameAs?.map((url) => <a href={url} rel="me noopener" target="_blank">Profile</a>)}
