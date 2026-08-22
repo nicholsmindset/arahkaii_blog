@@ -306,7 +306,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 				<aside class="art-rail">
 					<div class="art-rail__sticky">
 						<div class="media ar-4-5 art-rail__thumb">
-							<Image src={heroImage} alt={title} widths={[300, 500]} sizes="25vw" />
+							<Image src={heroImage} alt={title} loading="lazy" widths={[300, 500]} sizes="25vw" />
 						</div>
 						<div class="share" aria-label="Share">
 							<button
