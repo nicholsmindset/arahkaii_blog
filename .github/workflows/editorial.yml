@@ -1,9 +1,9 @@
 name: Editorial automation
 
 on:
-  schedule:
-    # 08:30 Singapore time, Monday–Friday. No ready topic means a clean no-op.
-    - cron: '30 0 * * 1-5'
+  # Scheduling belongs to the guarded n8n/OpenRouter editorial workflow. Keep
+  # this GitHub action as an explicit manual fallback only; the repository did
+  # not have ANTHROPIC_API_KEY and repeated scheduled failures obscured health.
   workflow_dispatch:
     inputs:
       task:
@@ -42,7 +42,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22.12.0
+          node-version: 24
           cache: npm
 
       - name: Install locked dependencies
@@ -76,7 +76,7 @@ jobs:
           prompt: |
             You are running Arahkaii's guarded editorial automation.
 
-            Routine: ${{ github.event_name == 'schedule' && 'draft-daily' || inputs.task }}
+            Routine: ${{ inputs.task }}
 
             Read CLAUDE.md first, then read and execute the matching file in
             .claude/commands/. Follow every human-review, licensing, validation,
