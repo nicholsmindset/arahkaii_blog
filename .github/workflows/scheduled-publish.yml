@@ -1,0 +1,33 @@
+name: Scheduled article release
+
+on:
+  schedule:
+    # 08:05 Asia/Singapore. A daily rebuild releases approved future-dated
+    # articles on the first build after their publication date.
+    - cron: '5 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: arahkaii-scheduled-production-release
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    name: Request production rebuild
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the guarded Vercel deployment hook
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK_URL" ]; then
+            echo "Scheduled release is paused: VERCEL_DEPLOY_HOOK_URL is not configured."
+            exit 0
+          fi
+
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            "$VERCEL_DEPLOY_HOOK_URL"

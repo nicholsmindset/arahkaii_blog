@@ -1,10 +1,10 @@
 # Arahkaii
 
-Arahkaii is a Muslim-owned Asian modern-luxury publication: **“Asia’s modern-luxury edit — modestly told.”** The site is built with Astro 6, stores editorial content as Markdown/MDX in Git, and deploys to Vercel.
+Arahkaii is a Muslim-owned Asian modern-luxury publication: **“Asia’s modern-luxury edit — modestly told.”** The site is built with Astro 7, stores editorial content as Markdown/MDX in Git, and deploys to Vercel.
 
 ## Local development
 
-Requirements: Node.js 22.12 or newer.
+Requirements: Node.js 24.
 
 ```sh
 npm ci
