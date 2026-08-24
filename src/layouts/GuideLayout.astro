@@ -243,7 +243,12 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 	<nav class="guide-index" aria-label="Jump to entry"></nav>
 
 	<script>
+		let guideIndexObserver: IntersectionObserver | null = null;
+
 		function initGuideIndex() {
+			guideIndexObserver?.disconnect();
+			guideIndexObserver = null;
+
 			const nav = document.querySelector<HTMLElement>('.guide-index');
 			if (!nav) return;
 			const entries = Array.from(document.querySelectorAll<HTMLElement>('.entry[id]'));
@@ -274,7 +279,9 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 			const links = new Map(
 				Array.from(nav.querySelectorAll<HTMLElement>('a')).map((a) => [a.dataset.i, a]),
 			);
-			const io = new IntersectionObserver(
+			if (!('IntersectionObserver' in window)) return;
+
+			guideIndexObserver = new IntersectionObserver(
 				(es) => {
 					es.forEach((e) => {
 						if (e.isIntersecting) {
@@ -285,7 +292,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 				},
 				{ rootMargin: '-45% 0px -45% 0px' },
 			);
-			entries.forEach((s) => io.observe(s));
+			entries.forEach((s) => guideIndexObserver?.observe(s));
 		}
 		document.addEventListener('astro:page-load', initGuideIndex);
 	</script>
