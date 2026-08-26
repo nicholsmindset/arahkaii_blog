@@ -130,7 +130,7 @@ if (cards.length)
 				<div class="wrap">
 					<a class="hl-link reveal" href={lead.url} style="display:block">
 						<div class="media ar-3-2">
-							<Image src={lead.image} alt={lead.title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+							<Image src={lead.image} alt={lead.heroCaption || lead.title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 						</div>
 						<div class="grid" style="margin-top:32px">
 							<div style="grid-column:1 / 9">
@@ -169,7 +169,7 @@ if (cards.length)
 							<div class="grid">
 								{row.cards.map((c, i) => (
 									<a class="card hl-link reveal" href={c.url} data-stagger={i ? String(i * 60) : undefined} style={`grid-column:${span[i]}`}>
-										<div class="media ar-3-2"><Image src={c.image} alt={c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" /></div>
+										<div class="media ar-3-2"><Image src={c.image} alt={c.heroCaption || c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" /></div>
 										<p class="kicker11" style="margin:14px 0 6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
 										<h3 class="h5"><span class="hl">{c.title}</span></h3>
 									</a>
@@ -185,7 +185,7 @@ if (cards.length)
 						<section class="section--tight">
 							<div class="grid">
 								<a class="card hl-link reveal" href={big.url} style="grid-column:1 / 7">
-									<div class="media ar-4-5"><Image src={big.image} alt={big.title} widths={[500, 800]} sizes="(max-width:860px) 100vw, 46vw" /></div>
+									<div class="media ar-4-5"><Image src={big.image} alt={big.heroCaption || big.title} widths={[500, 800]} sizes="(max-width:860px) 100vw, 46vw" /></div>
 									<p class="kicker11" style="margin:16px 0 6px">{big.tags[0] ? prettify(big.tags[0]) : big.categoryLabel}</p>
 									<h3 class="h4"><span class="hl">{big.title}</span></h3>
 								</a>
@@ -194,7 +194,7 @@ if (cards.length)
 										<>
 											{i > 0 && <hr class="rule" />}
 											<a class="card hl-link reveal" data-stagger={String((i + 1) * 60)} href={c.url} style="display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:center">
-												<div class="media ar-1-1"><Image src={c.image} alt={c.title} widths={[200, 360]} sizes="160px" /></div>
+												<div class="media ar-1-1"><Image src={c.image} alt={c.heroCaption || c.title} widths={[200, 360]} sizes="160px" /></div>
 												<div>
 													<p class="kicker11" style="margin-bottom:6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
 													<h3 class="h5"><span class="hl">{c.title}</span></h3>
@@ -214,7 +214,7 @@ if (cards.length)
 							<div class="grid">
 								{row.cards.map((c, i) => (
 									<a class="card hl-link reveal" href={c.url} data-stagger={i ? '60' : undefined} style={`grid-column:${span[i]}`}>
-										<div class="media ar-3-4"><Image src={c.image} alt={c.title} widths={[500, 800]} sizes="(max-width:860px) 100vw, 46vw" /></div>
+										<div class="media ar-3-4"><Image src={c.image} alt={c.heroCaption || c.title} widths={[500, 800]} sizes="(max-width:860px) 100vw, 46vw" /></div>
 										<p class="kicker11" style="margin:16px 0 6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
 										<h3 class="h4"><span class="hl">{c.title}</span></h3>
 									</a>
@@ -230,7 +230,7 @@ if (cards.length)
 						<div class="grid">
 							{row.cards.map((c, i) => (
 								<a class="card hl-link reveal" href={c.url} data-stagger={i ? String(i * 60) : undefined} style={`grid-column:${span[i]}`}>
-									<div class="media ar-1-1"><Image src={c.image} alt={c.title} widths={[300, 500]} sizes="(max-width:860px) 50vw, 23vw" /></div>
+									<div class="media ar-1-1"><Image src={c.image} alt={c.heroCaption || c.title} widths={[300, 500]} sizes="(max-width:860px) 50vw, 23vw" /></div>
 									<p class="kicker11" style="margin:12px 0 6px">{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</p>
 									<h3 class="h5"><span class="hl">{c.title}</span></h3>
 								</a>
@@ -252,7 +252,7 @@ if (cards.length)
 						{elsewhere.map((c) => (
 							<article class="latest-card">
 								<a class="media latest-card__image" href={c.url}>
-									<Image src={c.image} alt={c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" loading="lazy" />
+									<Image src={c.image} alt={c.heroCaption || c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" loading="lazy" />
 								</a>
 								<div class="latest-card__copy">
 									<p class="latest-card__top">
@@ -283,7 +283,7 @@ if (cards.length)
 					{cards.map((c) => (
 						<article class="latest-card" data-cat-tags={c.tags.join('|')}>
 							<a class="media latest-card__image" href={c.url}>
-								<Image src={c.image} alt={c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" />
+								<Image src={c.image} alt={c.heroCaption || c.title} widths={[400, 700]} sizes="(max-width:860px) 100vw, 31vw" />
 							</a>
 							<div class="latest-card__copy">
 								<p class="latest-card__top">
