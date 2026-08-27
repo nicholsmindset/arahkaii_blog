@@ -401,7 +401,8 @@ const gtmSnippet = gtmEnabled
 			// ---- inline search ----
 			function wireSearch() {
 				const bar = document.querySelector<HTMLElement>('.searchbar');
-				if (!bar) return;
+				if (!bar || bar.dataset.wired) return;
+				bar.dataset.wired = '1';
 				const input = bar.querySelector<HTMLInputElement>('.search-input');
 				const results = bar.querySelector<HTMLElement>('.search-results');
 				let queryVersion = 0;
