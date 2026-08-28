@@ -418,7 +418,7 @@ const gtmSnippet = gtmEnabled
 					if (version !== queryVersion) return;
 					results.hidden = false;
 					const hits = idx
-						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q))
+						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a + ' ' + (x.k || '')).toLowerCase().includes(q))
 						.slice(0, 7);
 					results.innerHTML = hits.length
 						? hits

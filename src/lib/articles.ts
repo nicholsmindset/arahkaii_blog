@@ -146,6 +146,9 @@ export async function getSearchIndex() {
 		t: c.title,
 		c: c.categoryLabel,
 		a: c.authorName,
+		// Search-only copy: keep taxonomy and dek discoverable without exposing
+		// extra fields in the rendered result card.
+		k: [...c.tags, c.standfirst].join(' '),
 		h: c.url,
 		d: c.date.toISOString(),
 		r: c.readingMinutes ?? null,
