@@ -86,7 +86,9 @@ export default defineConfig({
 	integrations: [react(), keystatic(), mdx()],
 	// Vercel serverless output powers the Keystatic API and newsletter endpoint
 	// while editorial pages remain prerendered for speed and resilience.
-	adapter: vercel(),
+	adapter: vercel({
+		webAnalytics: { enabled: true },
+	}),
 	image: {
 		// Future Cloudflare R2 CDN for generated/sourced imagery. Harmless now.
 		domains: ['cdn.arahkaii.com'],
