@@ -40,6 +40,9 @@ interface Props {
 	authorName?: string;
 	section?: string;
 	tags?: string[];
+	/** Adjacent paginated documents, exposed as head-level navigation hints. */
+	prevPage?: string;
+	nextPage?: string;
 	jsonLd?: Record<string, unknown>[];
 }
 
@@ -56,6 +59,8 @@ const {
 	authorName,
 	section,
 	tags,
+	prevPage,
+	nextPage,
 	imageWidth = 1200,
 	imageHeight = 630,
 	jsonLd = [organizationSchema(), websiteSchema()],
@@ -115,6 +120,8 @@ const gtmSnippet = gtmEnabled
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
+		{prevPage && <link rel="prev" href={new URL(prevPage, Astro.site)} />}
+		{nextPage && <link rel="next" href={new URL(nextPage, Astro.site)} />}
 		<meta name="theme-color" content="#FFFFFF" />
 		<meta name="generator" content={Astro.generator} />
 		<!-- AdSense loader removed: no ad units exist on the site, so the third-party
