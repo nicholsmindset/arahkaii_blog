@@ -310,6 +310,8 @@ const gtmSnippet = gtmEnabled
 		}
 
 		<script>
+			import { track } from '@vercel/analytics';
+
 			// ARAHKAII v2 chrome + interactions. DOM-creating behaviours run on every
 			// astro:page-load; document-level listeners bind once (document persists
 			// across View Transitions).
@@ -686,6 +688,7 @@ const gtmSnippet = gtmEnabled
 					// Analytics: GTM listens for this custom event (see
 					// docs/gtm-arahkaii-ga4.json). No-op when GTM is absent.
 					(window as any).dataLayer?.push({ event: 'newsletter_signup', source: form.dataset.source || 'inline' });
+					track('newsletter_signup', { source: form.dataset.source || 'inline' });
 					if (field) {
 						field.classList.add('done');
 						field.dataset.locked = '1';
