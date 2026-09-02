@@ -84,9 +84,12 @@ Code side (already in this repo): the site loads GTM **only when
    property** → name "Arahkaii", timezone Singapore, currency SGD.
 2. The **Arahkaii web** stream for `https://www.arahkaii.com` uses Measurement
    ID `G-R0L8CF0K5N` (created 3 September 2026).
-3. Leave "Enhanced measurement" ON but disable its **Page views** *scroll*
-   and *outbound clicks* toggles (the GTM container tracks those with better
-   parameters — leaving both on double-counts).
+3. Leave "Enhanced measurement" ON but disable its **Scrolls** and **Outbound
+   clicks** toggles (the GTM container tracks those with better parameters, so
+   leaving both on double-counts). The GTM configuration sets
+   `sendPageView=false` and sends an explicit view-transition-aware `page_view`.
+   These settings were applied on 3 September 2026; site search, form
+   interactions, video engagement and downloads remain enabled.
 
 ### 3.2 Create + import the GTM container
 1. The dedicated Arahkaii web container is `GTM-KPXTJKGD` (created 3 September
@@ -99,7 +102,9 @@ Code side (already in this repo): the site loads GTM **only when
    Configuration + page_view tags fire on load and again when you click into
    an article (view transition), and that `newsletter_signup` fires when you
    subscribe with a test address.
-5. **Submit → Publish** the container version.
+5. **Submit → Publish** the container version. Version 2, `Arahkaii GA4
+   baseline — 2026-09-03`, is live. Tag Assistant confirmed both the Google tag
+   and the explicit `page_view` tag fired once on the homepage.
 
 ### 3.3 Point the site at the container
 1. Vercel production has `PUBLIC_GTM_ID = GTM-KPXTJKGD`; Preview remains unset
