@@ -99,6 +99,7 @@ export interface ArticleSchemaInput {
 	type?: 'Article' | 'NewsArticle';
 	/** Editorial reviewer — an E-E-A-T signal for verified/serviceable content. */
 	reviewedBy?: { name: string; url: string };
+	sponsorName?: string;
 }
 
 export function articleSchema(input: ArticleSchemaInput): JsonLd {
@@ -135,6 +136,9 @@ export function articleSchema(input: ArticleSchemaInput): JsonLd {
 					},
 				}
 			: {}),
+		...(input.sponsorName
+			? { sponsor: { '@type': 'Organization', name: input.sponsorName } }
+			: {}),
 	};
 }
 
@@ -145,6 +149,8 @@ export interface PersonSchemaInput {
 	url: string; // author page URL
 	image?: string; // absolute avatar URL
 	sameAs?: string[];
+	expertise?: string[];
+	credentials?: string[];
 }
 
 /** Person — author pages + citable byline identity. worksFor → publisher. */
@@ -161,6 +167,13 @@ export function personSchema(input: PersonSchemaInput): JsonLd {
 	if (input.description) person.description = input.description;
 	if (input.image) person.image = { '@type': 'ImageObject', url: input.image };
 	if (input.sameAs?.length) person.sameAs = input.sameAs;
+	if (input.expertise?.length) person.knowsAbout = input.expertise;
+	if (input.credentials?.length) {
+		person.hasCredential = input.credentials.map((name) => ({
+			'@type': 'EducationalOccupationalCredential',
+			name,
+		}));
+	}
 	return person;
 }
 

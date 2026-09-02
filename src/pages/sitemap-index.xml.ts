@@ -11,7 +11,6 @@ const SEGMENTS = [
 	'/sitemap-categories.xml',
 	'/sitemap-hubs.xml',
 	'/sitemap-authors.xml',
-	'/sitemap-tags.xml',
 ];
 
 export const GET: APIRoute = () => sitemapIndex(SEGMENTS);

@@ -6,6 +6,8 @@ import AtAGlance, { type AtAGlanceItem } from '../components/article/AtAGlance.a
 import HalalStatus, { type HalalStatusData } from '../components/article/HalalStatus.astro';
 import ClusterNav from '../components/article/ClusterNav.astro';
 import ArticleFaq from '../components/article/ArticleFaq.astro';
+import SourcesAndMethod, { type EditorialSource } from '../components/article/SourcesAndMethod.astro';
+import CommercialDisclosure, { type CommercialDisclosureData } from '../components/article/CommercialDisclosure.astro';
 import {
 	SITE,
 	articleSchema,
@@ -69,6 +71,10 @@ interface Props {
 	lastVerified?: Date;
 	/** Editorial reviewer — rendered in the byline and Article schema. */
 	reviewedBy?: { name: string; href: string };
+	method?: string;
+	sources?: EditorialSource[];
+	correctionNote?: string;
+	commercial?: CommercialDisclosureData;
 	/** True when this is an unpublished draft rendered on a preview deploy. */
 	isDraftPreview?: boolean;
 }
@@ -105,6 +111,10 @@ const {
 	halalStatus,
 	lastVerified,
 	reviewedBy,
+	method,
+	sources = [],
+	correctionNote,
+	commercial,
 	isDraftPreview = false,
 } = Astro.props;
 
@@ -141,6 +151,7 @@ const jsonLd = [
 		keywords: tags,
 		type: timeliness === 'timely' ? 'NewsArticle' : 'Article',
 		reviewedBy: reviewedBy ? { name: reviewedBy.name, url: new URL(reviewedBy.href, SITE.url).toString() } : undefined,
+		sponsorName: commercial?.type === 'sponsored' ? commercial.partner : undefined,
 	}),
 	breadcrumbSchema(crumbs),
 ];
@@ -167,7 +178,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 	tags={tags}
 	jsonLd={jsonLd}
 >
-	<article data-cat="guides">
+	<article data-cat="guides" data-article-body>
 		{isDraftPreview && (
 			<p class="draft-banner" role="status">Draft preview — not yet published. This page is hidden from search and the rest of the site.</p>
 		)}
@@ -179,6 +190,8 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 			<h1 class="guide-h1 art-h1">{title}</h1>
 			<p class="guide-stand epigraph">{standfirst}</p>
 			<p class="guide-byline meta">{byline}</p>
+			{correctionNote && <p class="correction-note"><strong>Correction:</strong> {correctionNote}</p>}
+			<CommercialDisclosure data={commercial} />
 		</header>
 
 		<figure class="guide-hero">
@@ -197,6 +210,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 				{halalStatus && <HalalStatus data={halalStatus} />}
 				{(franchise || cluster || lastVerified) && <p class="article-proof meta">{franchise && `Series · ${franchise}`}{franchise && cluster && ' · '}{cluster && `Topic · ${cluster.replaceAll('-', ' ')}`}{(franchise || cluster) && lastVerified && ' · '}{lastVerified && `Editorially checked ${new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(lastVerified)}`}</p>}
 				<slot />
+				<SourcesAndMethod sources={sources} method={method} />
 				{faq?.length && <ArticleFaq items={faq} />}
 				{cluster && <ClusterNav cluster={cluster} items={clusterItems} />}
 			</div>

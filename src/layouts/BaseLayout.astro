@@ -91,6 +91,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 // the Keystatic admin. See docs/domain-analytics-setup.md.
 const gtmId = import.meta.env.PUBLIC_GTM_ID as string | undefined;
 const gtmEnabled = /^GTM-[A-Z0-9]+$/.test(gtmId ?? '') && !Astro.url.pathname.startsWith('/keystatic');
+const adsenseClient = import.meta.env.PUBLIC_ADSENSE_CLIENT as string | undefined;
+const googleCmpEnabled = import.meta.env.PUBLIC_GOOGLE_CMP_ENABLED === 'true';
+const adsenseEnabled =
+	/^ca-pub-\d+$/.test(adsenseClient ?? '') &&
+	googleCmpEnabled &&
+	!Astro.url.pathname.startsWith('/keystatic');
+const googleConsentDefaults =
+	gtmEnabled || adsenseEnabled
+		? `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});gtag('set','ads_data_redaction',true);`
+		: '';
 const gtmSnippet = gtmEnabled
 	? `window.dataLayer=window.dataLayer||[];(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`
 	: '';
@@ -108,7 +118,16 @@ const gtmSnippet = gtmEnabled
 		<script is:inline>
 			document.documentElement.classList.add('js');
 		</script>
+		{googleConsentDefaults && <script is:inline set:html={googleConsentDefaults} />}
 		{gtmEnabled && <script is:inline set:html={gtmSnippet} />}
+		{adsenseEnabled && (
+			<script
+				is:inline
+				async
+				crossorigin="anonymous"
+				src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+			></script>
+		)}
 		<link rel="preload" as="font" type="font/woff2" href={serifWoff2} crossorigin />
 		<link rel="preload" as="font" type="font/woff2" href={displayWoff2} crossorigin />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -117,9 +136,9 @@ const gtmSnippet = gtmEnabled
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="theme-color" content="#FFFFFF" />
 		<meta name="generator" content={Astro.generator} />
-		<!-- AdSense loader removed: no ad units exist on the site, so the third-party
-		     script was pure render/main-thread cost. Re-add it lazily + behind a
-		     consent gate (mirror the gtmEnabled env-gate) when real ad units ship. -->
+		<!-- AdSense remains absent unless both the publisher ID and certified Google
+		     CMP readiness flag are set. Reserved slots are added separately so ads
+		     never create layout shift. See docs/adsense-launch-checklist.md. -->
 		<link
 			rel="alternate"
 			type="application/rss+xml"
@@ -148,19 +167,6 @@ const gtmSnippet = gtmEnabled
 	</head>
 
 	<body>
-		{
-			gtmEnabled && (
-				<noscript>
-					<iframe
-						src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-						height="0"
-						width="0"
-						style="display:none;visibility:hidden"
-						title="Google Tag Manager"
-					/>
-				</noscript>
-			)
-		}
 		<a class="skip-link" href="#main">Skip to content</a>
 
 		<!-- article scroll-progress (set by the script; invisible elsewhere) -->
@@ -262,7 +268,7 @@ const gtmSnippet = gtmEnabled
 							<p class="footer__mark">ARAHKAII</p>
 							<p class="footer__mission">Asia’s modern-luxury edit — modestly told.</p>
 							<div class="footer__news">
-								<p class="footer__h">The Sunday edit</p>
+								<p class="footer__h">Arahkaii Weekly</p>
 								<NewsletterSignup class="fn-form" source="footer">
 									<p slot="note" class="field-note" style="color:var(--footer-head)">
 										One considered email. No noise.
@@ -319,6 +325,11 @@ const gtmSnippet = gtmEnabled
 			const SAVED_KEY = 'arahkaii:saved';
 			const SUBSCRIBED_HTML =
 				'<span class="news-done"><span class="nd-tick">✓</span> You’re subscribed. See you Sunday.</span>';
+			const reportEvent = (event: string, properties: Record<string, string | number> = {}) => {
+				(window as any).dataLayer?.push({ event, ...properties });
+				track(event, properties);
+			};
+			let scrollMilestones = new Set<number>();
 
 			type SavedStory = {
 				title: string;
@@ -526,6 +537,7 @@ const gtmSnippet = gtmEnabled
 			}
 
 			function initChrome() {
+				scrollMilestones = new Set<number>();
 				wireSearch();
 				wireRails();
 				wireShare();
@@ -556,6 +568,12 @@ const gtmSnippet = gtmEnabled
 						const total = rect.height - window.innerHeight;
 						const done = Math.min(1, Math.max(0, -rect.top / (total > 0 ? total : 1)));
 						prog.style.transform = 'scaleX(' + done.toFixed(3) + ')';
+						for (const milestone of [50, 90]) {
+							if (done * 100 >= milestone && !scrollMilestones.has(milestone)) {
+								scrollMilestones.add(milestone);
+								reportEvent('scroll_depth', { percent_scrolled: milestone });
+							}
+						}
 					}
 				};
 				window.addEventListener('scroll', onScroll, { passive: true });
@@ -596,6 +614,21 @@ const gtmSnippet = gtmEnabled
 
 				document.addEventListener('click', (e) => {
 					const t = e.target as HTMLElement;
+					const link = t.closest<HTMLAnchorElement>('a[href]');
+					if (link) {
+						const target = new URL(link.href, location.href);
+						if (target.protocol === 'http:' || target.protocol === 'https:') {
+							const linkText = (link.textContent || '').trim().slice(0, 120);
+							if (target.hostname !== location.hostname) {
+								reportEvent('outbound_click', { link_url: target.href, link_text: linkText });
+							} else if (document.querySelector('[data-article-body]') && target.pathname !== location.pathname) {
+								reportEvent('recirculation_click', { link_path: target.pathname, link_text: linkText });
+							}
+							if (target.hostname === location.hostname && target.pathname === '/subscribe/') {
+								reportEvent('subscribe_cta_click', { link_text: linkText });
+							}
+						}
+					}
 					if (t.closest('[data-menu-open]')) openOverlay(t.closest('[data-menu-open]'));
 					if (t.closest('[data-menu-close]') || t.closest('.overlay a')) closeOverlay();
 					if (t.closest('[data-search-toggle]')) {
@@ -687,8 +720,7 @@ const gtmSnippet = gtmEnabled
 					} catch {}
 					// Analytics: GTM listens for this custom event (see
 					// docs/gtm-arahkaii-ga4.json). No-op when GTM is absent.
-					(window as any).dataLayer?.push({ event: 'newsletter_signup', source: form.dataset.source || 'inline' });
-					track('newsletter_signup', { source: form.dataset.source || 'inline' });
+					reportEvent('newsletter_signup', { source: form.dataset.source || 'inline' });
 					if (field) {
 						field.classList.add('done');
 						field.dataset.locked = '1';

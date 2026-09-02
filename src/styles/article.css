@@ -547,3 +547,65 @@
 	text-align: center;
 	border-radius: 2px;
 }
+/* Visible editorial evidence and commercial labelling. These use the existing
+   publication tokens so they remain clear without looking like ad creative. */
+.article-sources,
+.commercial-disclosure,
+.correction-note {
+	margin: 40px 0;
+	padding: 22px 24px;
+	border: 1px solid var(--hairline);
+	background: var(--bone);
+}
+.article-sources__eyebrow {
+	margin: 0 0 8px;
+	color: var(--emerald);
+	font-family: var(--sans);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+.article-sources h2 {
+	margin: 0 0 12px;
+	font-family: var(--display);
+	font-size: clamp(26px, 3vw, 34px);
+	font-weight: 400;
+}
+.article-sources p,
+.article-sources li,
+.commercial-disclosure p,
+.correction-note {
+	font-size: 15px;
+	line-height: 1.6;
+}
+.article-sources ul {
+	margin: 14px 0 0;
+	padding-left: 20px;
+}
+.article-sources a {
+	text-decoration-color: var(--emerald);
+	text-underline-offset: 3px;
+}
+.commercial-disclosure {
+	margin: 24px auto 0;
+	max-width: 680px;
+	border-left: 3px solid var(--emerald);
+	text-align: left;
+}
+.commercial-disclosure strong {
+	font-family: var(--sans);
+	font-size: 12px;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+.commercial-disclosure p,
+.correction-note {
+	margin: 8px 0 0;
+}
+.correction-note {
+	margin: 24px auto 0;
+	max-width: 680px;
+	border-left: 3px solid var(--accent2);
+	text-align: left;
+}

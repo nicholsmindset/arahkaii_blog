@@ -1,0 +1,52 @@
+---
+interface Props {
+	slot: string;
+	format?: 'auto' | 'fluid' | 'rectangle';
+	minHeight?: number;
+	placement: string;
+}
+
+const { slot, format = 'auto', minHeight = 280, placement } = Astro.props;
+const client = import.meta.env.PUBLIC_ADSENSE_CLIENT as string | undefined;
+const enabled =
+	/^ca-pub-\d+$/.test(client ?? '') &&
+	/^\d+$/.test(slot) &&
+	import.meta.env.PUBLIC_GOOGLE_CMP_ENABLED === 'true';
+---
+
+{enabled && (
+	<aside class="ad-slot" aria-label="Advertisement" data-ad-placement={placement} style={`--ad-min-height:${minHeight}px`}>
+		<span class="ad-slot__label">Advertisement</span>
+		<ins
+			class="adsbygoogle"
+			style="display:block"
+			data-ad-client={client}
+			data-ad-slot={slot}
+			data-ad-format={format}
+			data-full-width-responsive="true"
+		></ins>
+		<script is:inline>
+			(window.adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</aside>
+)}
+
+<style>
+	.ad-slot {
+		display: grid;
+		min-height: var(--ad-min-height);
+		place-items: center;
+		margin: 48px auto;
+		border-block: 1px solid var(--hairline);
+	}
+	.ad-slot__label {
+		align-self: start;
+		padding-top: 8px;
+		color: var(--ink-2);
+		font-family: var(--sans);
+		font-size: 10px;
+		letter-spacing: .1em;
+		text-transform: uppercase;
+	}
+	.adsbygoogle { width: 100%; }
+</style>
