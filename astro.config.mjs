@@ -29,6 +29,7 @@ const CATEGORIES = new Set([
  */
 function legacyRedirects() {
 	const dir = path.resolve('src/content/posts');
+	const now = new Date();
 	/** @type {Record<string, string>} */
 	const out = {};
 	const fmField = (/** @type {string} */ fm, /** @type {string} */ key) =>
@@ -45,8 +46,12 @@ function legacyRedirects() {
 				const fm = src.split('---')[1] ?? '';
 				const category = fmField(fm, 'category');
 				const legacy = fmField(fm, 'legacyWpSlug');
+				const date = fmField(fm, 'date');
 				if (!category || !legacy) continue;
 				if (/^draft:\s*true/m.test(fm)) continue;
+				// Scheduled posts do not get a production route until their publication
+				// date, so their legacy URL must not redirect to a missing destination.
+				if (date && new Date(date) > now) continue;
 				if (CATEGORIES.has(legacy)) continue; // never shadow a category index
 				const slug = entry.name.replace(/\.(md|mdx)$/, '');
 				const dest = `/${category}/${slug}/`;
