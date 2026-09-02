@@ -90,6 +90,56 @@ business tension, or cultural practice rather than a promotional biography.
 - End of week: record indexation, engagement, saves, recirculation, newsletter
   conversion, corrections, and reporting lessons.
 
+## Inoreader research desk
+
+Inoreader is the monitored-source intake layer. It finds changes and leads;
+it does not write, verify, or approve stories.
+
+Reuse the newsroom structure already present in the account:
+
+- `Arahkaii Topic Intelligence` for broad discovery and commissioning leads;
+- `AK 01 Editorial & Culture` for reported culture, people and place leads;
+- `AK 02 Visual Trends` for image, design and format signals;
+- `HH 01 Official & Certification` as a shared primary-source watchlist when a
+  halal claim is relevant to Arahkaii;
+- `HH 04 Travel & Prayer-Friendly` as a shared source pool for prayer-aware
+  travel reporting.
+
+Do not copy every Humble Halal item into Arahkaii. A shared item enters an
+Arahkaii commission only when it fits the publication's Asia-first lifestyle
+brief and can support distinct reporting. Keep the existing narrow monitoring
+feeds, including the Singapore design-trends feed, but audit their queries and
+unread volume monthly for noise.
+
+Use these tags consistently:
+
+- `source-primary`
+- `source-expert`
+- `lead-not-evidence`
+- `needs-original-source`
+- `needs-local-reporting`
+- `commission-candidate`
+- `fact-change`
+- `rights-lead`
+- `hold`
+
+The account currently uses 26 of its 30 rule slots. Preserve the four remaining
+slots rather than creating broad new rules. Reuse and tighten the active
+`Arahkaii — Editorial & Culture` and `Arahkaii — Visual Trends` rules; apply the
+source-class and commissioning tags manually until a repeated, high-volume
+pattern earns automation. Suppress deal, coupon, affiliate and
+duplicate-release noise at the feed or bundle level where possible. Monitoring
+feeds should remain narrow and regional. Track changes on certification, menu,
+price, opening-hour and hotel-amenity pages, but verify the original page before
+Arahkaii changes a claim.
+
+The editorial handoff is:
+
+`Inoreader lead → original source → claim ledger → reporting brief → human
+reporting → article PR → social package → Blotato approval and schedule`
+
+Never cite an Inoreader summary, AI summary or proxy URL as evidence.
+
 ## Blotato distribution plan
 
 Blotato should schedule native versions from an approved source package; it
@@ -149,6 +199,28 @@ brand references, not reader-facing story art.
    loading and reducing third-party main-thread work without compromising
    consent.
 
+## Eve decision
+
+Do not install Eve inside the public Astro site during this phase. Ranking,
+AdSense review, article rendering and the Inoreader-to-Blotato workflow do not
+require an agent runtime. Eve is also currently beta, so combining it with the
+production publication would add dependencies and operational risk without an
+immediate reader benefit.
+
+Reconsider a separate `arahkaii-newsroom-agent` project after four to six weeks
+of manual use, when the real repetitive steps are measurable. A useful first
+version would be read-only by default and would:
+
+- turn approved Inoreader items into evidence-gap briefs;
+- audit verification age, missing credits and internal-link opportunities;
+- draft GitHub pull requests without merging them;
+- prepare Blotato packages with publishing approval required;
+- run evals against the anti-slop and claim-ledger gates.
+
+Keep the agent in its own repository and Vercel project. It should never write
+directly to production, treat summaries as sources, invent reporting, or post
+to Blotato without a durable human approval.
+
 ## Success gates after 90 days
 
 - At least three proprietary assets with published methods.
@@ -177,3 +249,9 @@ brand references, not reader-facing story art.
 - Blotato API quickstart and tools:
   https://help.blotato.com/api/start and
   https://help.blotato.com/api/mcp/tools
+- Inoreader source monitoring and change tracking:
+  https://www.inoreader.com/blog/2026/01/follow-different-sources.html and
+  https://www.inoreader.com/blog/2025/02/improved-web-feeds-track-changes.html
+- Eve framework overview and repository:
+  https://vercel.com/blog/introducing-eve and
+  https://github.com/vercel/eve
