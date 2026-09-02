@@ -6,23 +6,31 @@ reporting, rights, or expert review promised by the commission.
 
 ## The publication Arahkaii can own
 
-Arahkaii should become the Asia-first, Muslim-conscious modern-luxury
-publication that makes beautiful coverage genuinely useful. Its moat is not a
-generic luxury tone. It is the combination of:
+Arahkaii should become an Asia-first modern-luxury and culture publication for
+readers who are already well versed—or want to become so—in the people, ideas,
+places and objects shaping contemporary Asia. It should have Tatler-like
+editorial breadth without copying Tatler's society model or its subject mix.
 
-- tropical and regional reality;
-- modest style without treating Muslim women as a trend category;
-- dated halal and hospitality verification;
-- prayer-aware routes and city intelligence;
-- first-hand tests, visits, interviews, original photography, and small data
-  products;
-- culturally fluent judgment about Southeast Asian makers and places.
+Its moat is a recognisable point of view across:
 
-The first three authority lanes are:
+- style, watches, jewellery, beauty and regional craft;
+- homes, architecture, interiors and considered living;
+- travel, hotels, cities, restaurants and design-led hospitality;
+- arts, film, music, books and cultural movements;
+- founders, creative leaders, family enterprises, philanthropy and purpose;
+- first-hand tests, visits, interviews, original photography and useful data.
 
-1. Considered style in tropical Asia.
-2. Arahkaii Verified dining and hospitality.
-3. Prayer-aware city life and travel.
+“Modestly told” means restrained, thoughtful and values-led. It does not mean
+that Arahkaii is a halal-only, Muslim-only or modest-fashion-only publication.
+The house does not promote alcohol, pork, gambling or nightlife excess, but
+that boundary should never be used to narrow the assumed audience.
+
+To build search and editorial authority without fragmenting a young site, the
+broad universe operates through three launch desks:
+
+1. Style, beauty and design.
+2. People, culture and purpose.
+3. Places, tables and travel.
 
 C-beauty remains a test-led supporting lane. It expands only when products,
 experts, retail availability, or original data can be documented.
@@ -31,16 +39,19 @@ experts, retail availability, or original data can be documented.
 
 ### The Arahkaii Index
 
-A recurring, downloadable dataset: regional designers, modest workwear,
-restaurant status and prices, hotel prayer amenities, or beauty availability.
+A recurring, downloadable dataset: regional designers and makers, watch or
+jewellery craft, tropical beauty availability, design hotels, restaurant
+prices, creative founders, or contemporary Asian cultural institutions.
 Publish the fields, method, verification date, corrections path, and CSV where
 appropriate. This is the strongest citation and digital-PR opportunity.
 
 ### Arahkaii Verified
 
-Every venue entry shows what was checked, by whom, when, using which official
-source, and what the status does and does not mean. Add price band, occasion,
-booking friction, accessibility, and a concise editorial verdict.
+Evidence-backed recommendations and reviews across products, places and
+services. Show what was checked, by whom, when, under what conditions and using
+which sources. For hospitality add price band, occasion, booking friction,
+accessibility and a concise editorial verdict. For specialist halal coverage,
+state the exact status and what it does and does not mean.
 
 ### The Tropical Test
 
@@ -63,18 +74,18 @@ business tension, or cultural practice rather than a promotional biography.
 
 | Week | Tuesday flagship | Friday dispatch | Required originality before publication |
 |---|---|---|---|
-| 1 · 8–11 Sep | Re-report and refresh the existing halal fine-dining Singapore guide | Publish the Arahkaii verification method and corrections path | Current MUIS/venue checks, dated price/booking calls, at least two visit notes, rights-cleared images |
-| 2 · 15–18 Sep | Singapore Halal Fine-Dining Price Index: what dinner actually costs | Field note from one independently visited restaurant | Reproducible price fields, menu capture date, certification distinction, receipt/visit notes |
-| 3 · 22–25 Sep | The Singapore Modest Workwear Index: labels, sizes, fabrics and prices | Tropical tailoring wear test: linen blends, wool and lining | Brand primary data plus outreach; garments actually worn under recorded conditions |
-| 4 · 29 Sep–2 Oct | Re-test the 48-hour prayer-aware Singapore stopover route | One hotel prayer-amenities audit | Entire route timed in person; hotel confirms amenities; prayer spaces and transport documented |
-| 5 · 6–9 Oct | A considered weekend in Johor Bahru: design, dining and realistic travel time | Studio or maker visit in Johor | Route tested; border assumptions dated; interview/visit notes and original photography |
-| 6 · 13–16 Oct | The Tropical Test: C-beauty cushion foundations in heat and humidity | Retail availability check across Singapore channels | Products acquired lawfully; fixed wear protocol; shade/formulation claims checked; no medical claims |
-| 7 · 20–23 Oct | Quiet luxury at 30°C: a capsule wardrobe tested for tropical life | Profile of one Southeast Asian designer solving for climate and modesty | Garments worn and measured; designer interview or primary technical notes |
-| 8 · 27–30 Oct | Singapore halal afternoon tea, verified for occasion and value | Photo-led dispatch from one visited service | Current status and menus; booking checks; original/supplied image rights; no generic stock food |
-| 9 · 3–6 Nov | Launch the Southeast Asian Designer Index, version 1 | One founder profile drawn from the index | Published inclusion method and dataset; direct outreach; profile interview or studio access |
-| 10 · 10–13 Nov | A prayer-aware design weekend in Kuala Lumpur | Hotel or restaurant verification dispatch | Route tested locally or commissioned to a named local contributor; current logistics and status |
-| 11 · 17–20 Nov | What considered luxury means now: Arahkaii reader survey | The first findings, with limitations and reader voices | Consent-aware survey, sample description, question set, raw counts, no overstated representativeness |
-| 12 · 24–27 Nov | Arahkaii 2027 Outlook: five shifts supported by the quarter's reporting | What we learned, corrected and will test next | Synthesis of Arahkaii's own interviews, tests, index changes and audience data—not trend prediction filler |
+| 1 · 8–11 Sep | Five Southeast Asian designers shaping what comes next | Material note from one collection or studio | Direct designer outreach, primary collection material and an interview, studio visit or original comparison |
+| 2 · 15–18 Sep | Quiet luxury at 30°C: a capsule wardrobe tested for tropical life | Tropical tailoring field note | Garments worn under recorded conditions; fabric, lining, construction and price documented |
+| 3 · 22–25 Sep | The Tropical Test: Asian cushion foundations in heat and humidity | Singapore retail availability check | Products acquired lawfully; fixed wear protocol; shade and formulation claims checked; no medical claims |
+| 4 · 29 Sep–2 Oct | Re-report the Singapore halal fine-dining guide as one specialist service story | A chef, pastry or tea-service field note | Current venue checks, dated prices, at least two visit notes and rights-cleared imagery |
+| 5 · 6–9 Oct | A considered weekend in Johor Bahru: design, food and realistic travel time | Studio or maker visit in Johor | Route tested; border assumptions dated; interview notes and original photography |
+| 6 · 13–16 Oct | Inside one Southeast Asian home or hospitality interior that changes how the region is seen | Design-detail explainer | Designer or architect interview, approved plans or material notes, and image rights |
+| 7 · 20–23 Oct | The founder building a modern Asian brand without flattening its culture | Primary-document business brief | Recorded interview, verifiable operating context and evidence beyond a founder biography |
+| 8 · 27–30 Oct | The new Asian jewellery or watchmakers worth understanding | One object, examined closely | Maker outreach, provenance, construction and pricing sources; original or supplied-image rights |
+| 9 · 3–6 Nov | Launch the Southeast Asian Designer and Maker Index, version 1 | One profile drawn from the index | Published inclusion method and dataset; direct outreach; interview or studio access |
+| 10 · 10–13 Nov | A design-led weekend in Kuala Lumpur | Hotel, gallery or restaurant verification dispatch | Route tested locally or commissioned to a named contributor; current logistics and first-hand notes |
+| 11 · 17–20 Nov | What considered luxury means now: the Arahkaii reader study | First findings and reader voices | Consent-aware survey, sample description, question set, raw counts and explicit limitations |
+| 12 · 24–27 Nov | Arahkaii 2027 Outlook: five shifts supported by the quarter's reporting | What we learned, corrected and will test next | Synthesis of Arahkaii's own interviews, tests, index changes and audience data—not generic trend prediction |
 
 ## Weekly operating rhythm
 
@@ -100,16 +111,20 @@ Reuse the newsroom structure already present in the account:
 - `Arahkaii Topic Intelligence` for broad discovery and commissioning leads;
 - `AK 01 Editorial & Culture` for reported culture, people and place leads;
 - `AK 02 Visual Trends` for image, design and format signals;
-- `HH 01 Official & Certification` as a shared primary-source watchlist when a
-  halal claim is relevant to Arahkaii;
-- `HH 04 Travel & Prayer-Friendly` as a shared source pool for prayer-aware
-  travel reporting.
+- Tatler Asia, Vogue Singapore, CNA Luxury, Robb Report Singapore, SCMP Style,
+  Design Anthology and comparable regional titles as competitive signals—not
+  sources to imitate;
+- official brand, designer, museum, gallery, hotel, restaurant, architecture,
+  business and cultural-institution sources for primary verification;
+- the Humble Halal certification and prayer-friendly folders only as optional
+  specialist source pools when a commissioned Arahkaii story needs those facts.
 
-Do not copy every Humble Halal item into Arahkaii. A shared item enters an
-Arahkaii commission only when it fits the publication's Asia-first lifestyle
-brief and can support distinct reporting. Keep the existing narrow monitoring
-feeds, including the Singapore design-trends feed, but audit their queries and
-unread volume monthly for noise.
+Do not copy competitor framing or turn every Humble Halal item into an Arahkaii
+lead. A signal enters an Arahkaii commission only when it fits the broad
+modern-Asian luxury and culture brief and can support distinct reporting. Keep
+the existing narrow monitoring feeds, including the Singapore design-trends
+feed, but audit their queries and unread volume monthly for noise and subject
+balance.
 
 Use these tags consistently:
 

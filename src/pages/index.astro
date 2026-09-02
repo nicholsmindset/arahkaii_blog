@@ -35,14 +35,14 @@ const majlis = take(cards.filter((card) => ['culture', 'living', 'guides', 'peop
 ---
 
 <BaseLayout
-	title="Arahkaii — Asia's modern-luxury edit, modestly told"
-	description="Asia's modern-luxury edit, modestly told — considered reporting on style, beauty, dining, travel and the people shaping modern Asian luxury."
+	title="Arahkaii — Modern Asian luxury, culture and influential lives"
+	description="Arahkaii is Asia's considered edit of style, beauty, design, travel, dining, culture and the people shaping modern luxury."
 >
 	<div class="home-shell">
 		<header class="home-intro">
-			<p class="home-kicker">Independent Asian style, beauty, dining, travel and culture</p>
+			<p class="home-kicker">Independent Asian style, beauty, design, travel, dining and culture</p>
 			<h1>Asia’s modern-luxury edit, modestly told</h1>
-			<p>Considered reporting for a more intentional way to dress, travel and live.</p>
+			<p>Considered reporting on the people, places and ideas shaping how Asia dresses, creates, travels and lives.</p>
 		</header>
 
 		{heroLead && hero.length >= 3 && <section class="home-hero" aria-labelledby="hero-title">
@@ -67,14 +67,14 @@ const majlis = take(cards.filter((card) => ['culture', 'living', 'guides', 'peop
 		</nav>
 
 		<section class="home-trio" aria-label="Arahkaii guides">
-			<div class="compact-module"><h2 class="home-section-title">Modest wardrobe</h2>{wardrobe[0] && <a class="media compact-module__lead portrait" href={wardrobe[0].url}><Image src={wardrobe[0].image} alt={wardrobe[0].heroCaption || wardrobe[0].title} widths={[420,720]} sizes="(max-width:800px) 100vw, 30vw" /></a>}<div class="compact-list">{wardrobe.slice(1).map((card) => <article><a class="media" href={card.url} tabindex="-1" aria-hidden="true"><Image src={card.image} alt="" widths={[160,320]} sizes="112px" /></a><h3><a href={card.url}>{card.title}</a></h3></article>)}</div><a class="home-link" href="/style/">Explore style <span aria-hidden="true">→</span></a></div>
+			<div class="compact-module"><h2 class="home-section-title">The wardrobe edit</h2>{wardrobe[0] && <a class="media compact-module__lead portrait" href={wardrobe[0].url}><Image src={wardrobe[0].image} alt={wardrobe[0].heroCaption || wardrobe[0].title} widths={[420,720]} sizes="(max-width:800px) 100vw, 30vw" /></a>}<div class="compact-list">{wardrobe.slice(1).map((card) => <article><a class="media" href={card.url} tabindex="-1" aria-hidden="true"><Image src={card.image} alt="" widths={[160,320]} sizes="112px" /></a><h3><a href={card.url}>{card.title}</a></h3></article>)}</div><a class="home-link" href="/style/">Explore style <span aria-hidden="true">→</span></a></div>
 			<div class="compact-module"><h2 class="home-section-title">Tables worth booking</h2>{dining[0] && <a class="media compact-module__lead landscape" href={dining[0].url}><Image src={dining[0].image} alt={dining[0].heroCaption || dining[0].title} widths={[480,800]} sizes="(max-width:800px) 100vw, 30vw" /></a>}<div class="place-list">{dining.map((card) => <a href={card.url}><span>{card.title}</span><small>Guide · <time datetime={dateTime(card)}>{date(card)}</time></small></a>)}</div><a class="home-link" href="/dining/">View all dining guides <span aria-hidden="true">→</span></a></div>
 			<div class="compact-module stays-module"><h2 class="home-section-title">Considered stays</h2>{stays[0] && <a class="media compact-module__lead landscape" href={stays[0].url}><Image src={stays[0].image} alt={stays[0].heroCaption || stays[0].title} widths={[480,800]} sizes="(max-width:800px) 100vw, 30vw" /></a>}<div class="compact-list compact-list--travel">{stays.slice(1).map((card) => <article><a class="media" href={card.url} tabindex="-1" aria-hidden="true"><Image src={card.image} alt="" widths={[160,320]} sizes="112px" /></a><div><h3><a href={card.url}>{card.title}</a></h3><p>{card.standfirst}</p></div></article>)}</div><a class="home-link" href="/travel/">Explore stays <span aria-hidden="true">→</span></a></div>
 		</section>
 
 		<section class="home-duo" aria-label="Beauty and people">
 			<div class="compact-module beauty-module"><h2 class="home-section-title">Beauty for the tropics</h2><div class="beauty-module__grid">{beauty[0] && <a class="media beauty-module__lead" href={beauty[0].url}><Image src={beauty[0].image} alt={beauty[0].heroCaption || beauty[0].title} widths={[420,720]} sizes="(max-width:800px) 100vw, 28vw" /></a>}<div class="compact-list">{beauty.slice(1).map((card) => <article><a class="media" href={card.url} tabindex="-1" aria-hidden="true"><Image src={card.image} alt="" widths={[160,320]} sizes="112px" /></a><h3><a href={card.url}>{card.title}</a></h3></article>)}</div></div><a class="home-link" href="/beauty/">Explore beauty <span aria-hidden="true">→</span></a></div>
-			<div class="compact-module people-module"><h2 class="home-section-title">People shaping Asia</h2><div class="people-grid">{people.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[320,560]} sizes="(max-width:700px) 50vw, 18vw" /></a><h3><a href={card.url}>{card.title}</a></h3><p class="home-meta">{card.byline}</p></article>)}</div><a class="home-link" href="/people/">Meet the editors &amp; contributors <span aria-hidden="true">→</span></a></div>
+			<div class="compact-module people-module"><h2 class="home-section-title">People shaping Asia</h2><div class="people-grid">{people.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[320,560]} sizes="(max-width:700px) 50vw, 18vw" /></a><h3><a href={card.url}>{card.title}</a></h3><p class="home-meta">{card.byline}</p></article>)}</div><a class="home-link" href="/people/">Explore people <span aria-hidden="true">→</span></a></div>
 		</section>
 
 		{majlis.length >= 3 && <section class="majlis" aria-labelledby="majlis-title"><div class="majlis__head"><div><h2 id="majlis-title">The Majlis</h2><p>Long reads for a slower kind of luxury.</p></div><a class="home-link" href="/franchises/the-majlis/">Visit the Majlis <span aria-hidden="true">→</span></a></div><div class="majlis__grid">{majlis.map((card) => <article><a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[480,800]} sizes="(max-width:700px) 100vw, 31vw" /></a><p class="home-kicker">Essay</p><h3><a href={card.url}>{card.title}</a></h3><p>{card.standfirst}</p><p class="home-meta">By {card.authorName} <span>{card.readingMinutes} min read</span></p></article>)}</div></section>}
