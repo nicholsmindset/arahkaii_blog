@@ -14,6 +14,276 @@
 			"permanent": true
 		},
 		{
+			"source": "/author/linaroseli",
+			"destination": "/authors/lina/",
+			"permanent": true
+		},
+		{
+			"source": "/author/linaroseli/",
+			"destination": "/authors/lina/",
+			"permanent": true
+		},
+		{
+			"source": "/author/linaroseli/page/2",
+			"destination": "/authors/lina/",
+			"permanent": true
+		},
+		{
+			"source": "/author/linaroseli/page/2/",
+			"destination": "/authors/lina/",
+			"permanent": true
+		},
+		{
+			"source": "/author/nataliaa",
+			"destination": "/authors/natalia-amir/",
+			"permanent": true
+		},
+		{
+			"source": "/author/nataliaa/",
+			"destination": "/authors/natalia-amir/",
+			"permanent": true
+		},
+		{
+			"source": "/author/nataliaa/feed",
+			"destination": "/authors/natalia-amir/",
+			"permanent": true
+		},
+		{
+			"source": "/author/nataliaa/feed/",
+			"destination": "/authors/natalia-amir/",
+			"permanent": true
+		},
+		{
+			"source": "/bookmark-subscription-management",
+			"destination": "/reading-list/",
+			"permanent": true
+		},
+		{
+			"source": "/bookmark-subscription-management/",
+			"destination": "/reading-list/",
+			"permanent": true
+		},
+		{
+			"source": "/bookmark-subscription-management/unsubscribe-email-bookmark-notifications",
+			"destination": "/reading-list/",
+			"permanent": true
+		},
+		{
+			"source": "/bookmark-subscription-management/unsubscribe-email-bookmark-notifications/",
+			"destination": "/reading-list/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe/feed",
+			"destination": "/rss.xml",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe/feed/",
+			"destination": "/rss.xml",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe/in-conversation-beauty-accessories-brands",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe/in-conversation-beauty-accessories-brands/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe/skincare",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories-accessories-edit-staple-wardrobe/skincare/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories/makeup-fragrance-cosmetics-beauty-tools-beauty-ritual",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty-accessories/makeup-fragrance-cosmetics-beauty-tools-beauty-ritual/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/bags",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/bags/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/jewellery-statement-jewellery",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/jewellery-statement-jewellery/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/makeup",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/makeup/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/makeup-fragrance-cosmetics-beauty-tools-beauty-ritual",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/makeup-fragrance-cosmetics-beauty-tools-beauty-ritual/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/skincare",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/beauty/skincare/",
+			"destination": "/beauty/",
+			"permanent": true
+		},
+		{
+			"source": "/category/fashion-trends-designers-spotlights-styling-tips-curation",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/category/fashion-trends-designers-spotlights-styling-tips-curation/",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/category/guides/feed",
+			"destination": "/rss.xml",
+			"permanent": true
+		},
+		{
+			"source": "/category/guides/feed/",
+			"destination": "/rss.xml",
+			"permanent": true
+		},
+		{
+			"source": "/category/news",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/news/",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/shopping-the-edit-curated-handpicked-items",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/category/shopping-the-edit-curated-handpicked-items/",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/category/shopping-the-edit-curated-handpicked-items/shopping-new-arrivals",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/category/shopping-the-edit-curated-handpicked-items/shopping-new-arrivals/",
+			"destination": "/style/",
+			"permanent": true
+		},
+		{
+			"source": "/category/the-journal",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/the-journal/",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/the-journal/news",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/the-journal/news/",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending/",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending/on-radar",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending/on-radar/",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending/right-now",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending/right-now/",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending/viral",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
+			"source": "/category/trending/viral/",
+			"destination": "/latest/",
+			"permanent": true
+		},
+		{
 			"source": "/category-sitemap.xml",
 			"destination": "/sitemap-categories.xml",
 			"permanent": true
@@ -274,6 +544,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/fashion/the-complete-guide-to-investment-dressing/feed",
+			"destination": "/guides/the-complete-guide-to-investment-dressing/",
+			"permanent": true
+		},
+		{
+			"source": "/fashion/the-complete-guide-to-investment-dressing/feed/",
+			"destination": "/guides/the-complete-guide-to-investment-dressing/",
+			"permanent": true
+		},
+		{
 			"source": "/fashion/the-complete-guide-to-quiet-luxury",
 			"destination": "/guides/the-complete-guide-to-quiet-luxury/",
 			"permanent": true
@@ -371,6 +651,36 @@
 		{
 			"source": "/sitemap_index.xml/",
 			"destination": "/sitemap-index.xml",
+			"permanent": true
+		},
+		{
+			"source": "/tag/beauty-science/feed",
+			"destination": "/rss.xml",
+			"permanent": true
+		},
+		{
+			"source": "/tag/beauty-science/feed/",
+			"destination": "/rss.xml",
+			"permanent": true
+		},
+		{
+			"source": "/tag/gen-z-fashion",
+			"destination": "/tags/gen-z-fashion/",
+			"permanent": true
+		},
+		{
+			"source": "/tag/gen-z-fashion/",
+			"destination": "/tags/gen-z-fashion/",
+			"permanent": true
+		},
+		{
+			"source": "/tag/makeup/feed",
+			"destination": "/rss.xml",
+			"permanent": true
+		},
+		{
+			"source": "/tag/makeup/feed/",
+			"destination": "/rss.xml",
 			"permanent": true
 		},
 		{
