@@ -52,7 +52,7 @@ export async function GET(context: APIContext) {
 
 	return rss({
 		title: 'Arahkaii Weekly',
-		description: 'The Sunday edit — considered stories from Arahkaii, once a week.',
+		description: 'Arahkaii Weekly — considered stories, once a week.',
 		site,
 		items,
 		customData: `<language>en-GB</language>`,

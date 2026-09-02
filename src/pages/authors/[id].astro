@@ -49,6 +49,8 @@ const jsonLd = [
 		url: canonical,
 		image: avatarUrl,
 		sameAs: a.sameAs,
+		expertise: a.expertise,
+		credentials: a.credentials,
 	}),
 	breadcrumbSchema([
 		{ name: SITE.name, url: SITE.url },
@@ -83,6 +85,7 @@ const jsonLd = [
 				<p class="ah-role">{a.role}</p>
 				<p class="ah-bio">{a.bio}</p>
 				{a.expertise?.length && <ul class="author-expertise" aria-label="Areas of expertise">{a.expertise.map((item) => <li>{item}</li>)}</ul>}
+				{a.credentials?.length && <p class="ah-credentials"><strong>Credentials:</strong> {a.credentials.join(' · ')}</p>}
 				<div style="margin-top:30px">
 					<button
 						class="follow-btn js-follow"

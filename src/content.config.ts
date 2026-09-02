@@ -63,6 +63,18 @@ const posts = defineCollection({
 			}).optional(),
 			reviewedBy: z.string().optional(),
 			lastVerified: z.coerce.date().optional(),
+			method: z.string().max(500).optional(),
+			sources: z.array(z.object({
+				name: z.string().min(2).max(160),
+				url: z.url(),
+				accessed: z.coerce.date().optional(),
+			})).optional(),
+			correctionNote: z.string().max(500).optional(),
+			commercial: z.object({
+				type: z.enum(['sponsored', 'affiliate', 'gifted']),
+				partner: z.string().max(120).optional(),
+				statement: z.string().min(20).max(500),
+			}).optional(),
 		}),
 });
 
@@ -76,6 +88,7 @@ const authors = defineCollection({
 			avatar: image().optional(),
 			sameAs: z.array(z.url()).optional(),
 			expertise: z.array(z.string()).optional(),
+			credentials: z.array(z.string()).optional(),
 		}),
 });
 

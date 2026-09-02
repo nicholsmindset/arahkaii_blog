@@ -10,9 +10,9 @@ Console, then analytics. Everything code-side is already in the repo.
 
 **In Vercel** (dashboard → the arahkaii project → **Settings → Domains**):
 
-1. Add `arahkaii.com`. Choose **redirect www → apex** when prompted (the
-   site's canonicals are apex).
-2. Add `www.arahkaii.com` (it will show as a redirect to the apex).
+1. Add `www.arahkaii.com` and make it the production domain (the site's
+	canonicals use `www`).
+2. Add `arahkaii.com` and redirect it permanently to `www.arahkaii.com`.
 
 **At your DNS registrar** (wherever arahkaii.com is registered):
 
@@ -28,8 +28,8 @@ either. Delete any old A/CNAME records pointing at the previous host first.
 3. Back in Vercel, wait for the domain rows to show **Valid Configuration**.
    TLS certificates are issued automatically (usually < 5 minutes after DNS
    propagates; check with `dig arahkaii.com +short`).
-4. Confirm `https://arahkaii.com` loads and `https://www.arahkaii.com`
-   301-redirects to it.
+4. Confirm `https://arahkaii.com` redirects once to
+	`https://www.arahkaii.com/`.
 
 **After cutover — three checks:**
 
@@ -47,10 +47,10 @@ either. Delete any old A/CNAME records pointing at the previous host first.
 
 The sitemap is already built and served on every deploy — nothing to code:
 
-- `https://arahkaii.com/sitemap-index.xml` (index) →
-  `https://arahkaii.com/sitemap-0.xml` (all 77 pages, `en-GB`, weekly
-  changefreq, fresh `lastmod` per build)
-- `robots.txt` already declares it: `Sitemap: https://arahkaii.com/sitemap-index.xml`
+- `https://www.arahkaii.com/sitemap-index.xml` links the separate pages,
+  posts, categories, hubs and authors segments.
+- Tag archives and remediation-queue articles are excluded by design.
+- `robots.txt` declares the canonical `www` sitemap URLs.
 
 **Steps** (do after the domain is live):
 
@@ -62,12 +62,11 @@ The sitemap is already built and served on every deploy — nothing to code:
    take a few minutes after the TXT propagates.
 3. **Sitemaps** (left nav) → enter `sitemap-index.xml` → Submit. Status should
    read *Success* with ~77 discovered URLs within a day or two.
-4. **URL Inspection** → paste the homepage and the halal-dining pillar
+4. **URL Inspection** → paste the homepage, one repaired legacy URL and the halal-dining pillar
    (`/dining/halal-fine-dining-singapore-2026/`) → **Request indexing** for
    each. This jump-starts the crawl on a DR-0 domain.
-5. The legacy WordPress 301s are generated from `legacyWpSlug` frontmatter and
-   served by Vercel — old URLs will consolidate into the new ones on their
-   own; watch **Pages → Not indexed → Page with redirect** to confirm.
+5. The legacy WordPress 301s are generated into `vercel.json`; watch
+	**Pages → Not indexed → Page with redirect** to confirm consolidation.
 
 ---
 
@@ -82,7 +81,7 @@ Code side (already in this repo): the site loads GTM **only when
 ### 3.1 Create the GA4 property
 1. [analytics.google.com](https://analytics.google.com) → Admin → **Create
    property** → name "Arahkaii", timezone Singapore, currency SGD.
-2. Add a **Web** data stream for `https://arahkaii.com`. Note the
+2. Add a **Web** data stream for `https://www.arahkaii.com`. Note the
    **Measurement ID** (`G-XXXXXXXXXX`).
 3. Leave "Enhanced measurement" ON but disable its **Page views** *scroll*
    and *outbound clicks* toggles (the GTM container tracks those with better
@@ -95,7 +94,7 @@ Code side (already in this repo): the site loads GTM **only when
    this repo → choose the **Default Workspace** → **Overwrite** → Confirm.
 3. In the workspace, open **Variables → GA4 Measurement ID** and replace
    `G-XXXXXXXXXX` with your real Measurement ID. That's the only edit.
-4. **Preview** (Tag Assistant) against `https://arahkaii.com` — check the GA4
+4. **Preview** (Tag Assistant) against `https://www.arahkaii.com` — check the GA4
    Configuration + page_view tags fire on load and again when you click into
    an article (view transition), and that `newsletter_signup` fires when you
    subscribe with a test address.
@@ -117,7 +116,8 @@ Code side (already in this repo): the site loads GTM **only when
 | `newsletter_signup` | successful subscribe (any form) | `source` — homepage / category-style / subscribe-page / … |
 | `contact_submit` | contact form success (`/contact?sent=1`) | — |
 | `outbound_click` | click on any non-arahkaii.com link | link_url, link_text |
-| `scroll_depth` | 25 / 50 / 75 / 90 % | percent_scrolled |
+| `scroll_depth` | 50 / 90 % of an article | percent_scrolled |
+| `recirculation_click` | an internal article click from an article | link_path, link_text |
 | `subscribe_cta_click` | any click on a `/subscribe` link | link_text |
 
 Nothing fires on `/keystatic*` (blocking exception in the container **and**

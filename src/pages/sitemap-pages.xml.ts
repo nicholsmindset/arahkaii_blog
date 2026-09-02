@@ -11,6 +11,7 @@ const PAGES: SitemapEntry[] = [
 	{ path: '/editorial-standards/', changefreq: 'monthly', priority: 0.5 },
 	{ path: '/contributors/', changefreq: 'monthly', priority: 0.4 },
 	{ path: '/subscribe/', changefreq: 'monthly', priority: 0.5 },
+	{ path: '/newsletter/sample/', changefreq: 'monthly', priority: 0.4 },
 	{ path: '/contact/', changefreq: 'monthly', priority: 0.4 },
 	{ path: '/advertise/', changefreq: 'monthly', priority: 0.3 },
 	{ path: '/join-us/', changefreq: 'monthly', priority: 0.3 },

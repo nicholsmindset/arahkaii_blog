@@ -1,0 +1,25 @@
+---
+export interface CommercialDisclosureData {
+	type: 'sponsored' | 'affiliate' | 'gifted';
+	partner?: string;
+	statement: string;
+}
+
+interface Props {
+	data?: CommercialDisclosureData;
+}
+
+const { data } = Astro.props;
+const labels = {
+	sponsored: 'Paid partnership',
+	affiliate: 'Affiliate disclosure',
+	gifted: 'Supplied access',
+};
+---
+
+{data && (
+	<aside class="commercial-disclosure" aria-label={labels[data.type]}>
+		<strong>{labels[data.type]}{data.partner ? ` · ${data.partner}` : ''}</strong>
+		<p>{data.statement}</p>
+	</aside>
+)}

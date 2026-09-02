@@ -11,11 +11,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "perf": "node scripts/perf-budget.mjs",
+		"perf": "node scripts/perf-budget.mjs",
+		"sync:redirects": "node scripts/sync-vercel-redirects.mjs",
+		"validate:redirects": "node scripts/sync-vercel-redirects.mjs --check",
     "validate:content": "node scripts/validate-content.mjs",
     "validate:schema": "node scripts/validate-schema.mjs",
     "validate:build": "node scripts/validate-build.mjs",
-    "verify": "npm run check && npm run validate:content && npm run build && npm run validate:schema && npm run validate:build"
+		"verify": "npm run check && npm run validate:redirects && npm run validate:content && npm run build && npm run validate:schema && npm run validate:build"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.5",

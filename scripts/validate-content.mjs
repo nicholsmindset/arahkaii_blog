@@ -21,6 +21,8 @@
 //                 clustered article is an orphan (fewer than MIN_INBOUND
 //                 inbound links from other published posts).
 //   4. CREDIT   — no published post ships a placeholder hero credit.
+//   5. EVIDENCE — every indexable post has a non-social external source or a
+//                 visible method note explaining the first-person basis.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -69,11 +71,17 @@ for (const file of posts) {
 	const author = fmValue(fm, 'author');
 	const cluster = fmValue(fm, 'cluster');
 	const isPillar = fmValue(fm, 'isPillar') === 'true';
+	const noindex = fmValue(fm, 'noindex') === 'true';
+	const reviewedBy = fmValue(fm, 'reviewedBy');
+	const hasMethod = /^method:\s*\S.+$/m.test(fm);
 	const heroCredit = fmValue(fm, 'heroCredit') ?? '';
 
 	// 1. AUTHOR — applies to drafts too: a bad id breaks the editorial pipeline.
 	if (author && !authorIds.has(author)) {
 		errors.push(`${rel}: author "${author}" has no profile in src/content/authors/`);
+	}
+	if (reviewedBy && !authorIds.has(reviewedBy)) {
+		errors.push(`${rel}: reviewedBy "${reviewedBy}" has no profile in src/content/authors/`);
 	}
 
 	// 3a. CLUSTER reference — drafts included, same reasoning.
@@ -81,8 +89,19 @@ for (const file of posts) {
 		errors.push(`${rel}: cluster "${cluster}" is not defined in src/content/clusters/`);
 	}
 
-	if (draft) continue;
+	if (draft || noindex) continue;
 	published.push({ rel, fm, body, slug, category, cluster, isPillar });
+
+	// 5. EVIDENCE — social posts can be useful artefacts, but are not enough on
+	// their own to support an indexable reported article. A method note is the
+	// honest alternative for a first-person essay or original observation.
+	const externalUrls = [...`${fm}\n${body}`.matchAll(/https?:\/\/[^\s)"']+/g)].map((match) => match[0]);
+	const substantiveUrls = externalUrls.filter(
+		(url) => !/(?:instagram|tiktok|facebook|x|twitter)\.com/i.test(url),
+	);
+	if (!substantiveUrls.length && !hasMethod) {
+		errors.push(`${rel}: indexable post needs a substantive external source or an honest method note`);
+	}
 
 	// 2. HALAL
 	if (category === 'dining' || category === 'travel') {
@@ -141,7 +160,7 @@ for (const p of published) {
 	}
 }
 
-console.log(`Checked ${posts.length} posts (${published.length} published) · ${byCluster.size} clusters in use`);
+console.log(`Checked ${posts.length} posts (${published.length} indexable) · ${byCluster.size} clusters in use`);
 if (errors.length) {
 	console.error(`\n✗ ${errors.length} content problem(s):`);
 	for (const e of errors) console.error('  - ' + e);

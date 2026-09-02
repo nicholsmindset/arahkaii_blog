@@ -7,7 +7,7 @@
     "containerId": "0",
     "containerVersionId": "0",
     "name": "Arahkaii GA4 baseline",
-    "description": "GA4 tracking for arahkaii.com — page views (view-transition aware), newsletter signups, contact submissions, outbound clicks, scroll depth and subscribe CTA clicks. Replace the 'GA4 Measurement ID' constant with your G-XXXXXXXXXX before publishing.",
+    "description": "GA4 tracking for www.arahkaii.com — page views (view-transition aware), newsletter signups, contact submissions, outbound clicks, article recirculation, scroll depth and subscribe CTA clicks. Replace the 'GA4 Measurement ID' constant with your G-XXXXXXXXXX before publishing.",
     "container": {
       "path": "accounts/0/containers/0",
       "accountId": "0",
@@ -65,6 +65,28 @@
         "parameter": [
           { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
           { "type": "TEMPLATE", "key": "name", "value": "page_title" }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "5",
+        "name": "DL - link_path",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "TEMPLATE", "key": "name", "value": "link_path" }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "6",
+        "name": "DL - link_text",
+        "type": "v",
+        "parameter": [
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "TEMPLATE", "key": "name", "value": "link_text" }
         ]
       }
     ],
@@ -156,11 +178,11 @@
         "accountId": "0",
         "containerId": "0",
         "triggerId": "14",
-        "name": "SD - 25/50/75/90",
+        "name": "SD - 50/90",
         "type": "SCROLL_DEPTH",
         "parameter": [
           { "type": "TEMPLATE", "key": "verticalThresholdUnits", "value": "PERCENT" },
-          { "type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "25,50,75,90" },
+          { "type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "50,90" },
           { "type": "BOOLEAN", "key": "verticalThresholdOn", "value": "true" },
           { "type": "BOOLEAN", "key": "horizontalThresholdOn", "value": "false" },
           { "type": "TEMPLATE", "key": "triggerStartOption", "value": "WINDOW_LOAD" }
@@ -205,6 +227,22 @@
             "parameter": [
               { "type": "TEMPLATE", "key": "arg0", "value": "{{Page Path}}" },
               { "type": "TEMPLATE", "key": "arg1", "value": "/keystatic" }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "17",
+        "name": "CE - recirculation_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "recirculation_click" }
             ]
           }
         ]
@@ -390,6 +428,40 @@
           }
         ],
         "firingTriggerId": ["15"],
+        "tagFiringOption": "UNLIMITED"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "27",
+        "name": "GA4 - recirculation_click",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{GA4 Measurement ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "recirculation_click" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "link_path" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DL - link_path}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "link_text" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DL - link_text}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["17"],
+        "blockingTriggerId": ["16"],
         "tagFiringOption": "UNLIMITED"
       }
     ],
