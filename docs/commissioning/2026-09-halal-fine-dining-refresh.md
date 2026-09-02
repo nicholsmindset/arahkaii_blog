@@ -3,7 +3,7 @@
 Status: reporting required before material article changes  
 Owner: Arahkaii editorial  
 Canonical page: `/dining/halal-fine-dining-singapore-2026/`  
-Target window: 8–11 September 2026
+Target window: 29 September–2 October 2026
 
 ## Reader job
 
@@ -12,12 +12,16 @@ Singapore while understanding the exact certification or operating status,
 current price, booking conditions, alcohol policy, location and editorial
 trade-offs.
 
-## Why this refresh comes first
+## Why this specialist refresh matters
 
 The page is Arahkaii's pillar for the Singapore dining cluster and already
 appears in Google. It has a useful status distinction and a declared desk-
 research method, but the current prose and evidence record do not yet meet the
 new Arahkaii publishing standard.
+
+This is one specialist service assignment within a broad modern-Asian luxury
+and culture publication. It must not determine the balance or identity of the
+overall commissioning calendar.
 
 ## Issues to resolve
 
