@@ -60,8 +60,9 @@ The sitemap is already built and served on every deploy — nothing to code:
 2. Verify via the **DNS TXT record** it gives you (`google-site-verification=…`)
    — add at the registrar, same place as step 1's records. Verification can
    take a few minutes after the TXT propagates.
-3. **Sitemaps** (left nav) → enter `sitemap-index.xml` → Submit. Status should
-   read *Success* with ~77 discovered URLs within a day or two.
+3. **Sitemaps** (left nav) → enter `sitemap-index.xml` → Submit. The domain
+   property was verified and the sitemap resubmitted on 3 September 2026; its
+   existing report showed *Success* with 103 discovered URLs.
 4. **URL Inspection** → paste the homepage, one repaired legacy URL and the halal-dining pillar
    (`/dining/halal-fine-dining-singapore-2026/`) → **Request indexing** for
    each. This jump-starts the crawl on a DR-0 domain.
@@ -81,30 +82,33 @@ Code side (already in this repo): the site loads GTM **only when
 ### 3.1 Create the GA4 property
 1. [analytics.google.com](https://analytics.google.com) → Admin → **Create
    property** → name "Arahkaii", timezone Singapore, currency SGD.
-2. Add a **Web** data stream for `https://www.arahkaii.com`. Note the
-   **Measurement ID** (`G-XXXXXXXXXX`).
-3. Leave "Enhanced measurement" ON but disable its **Page views** *scroll*
-   and *outbound clicks* toggles (the GTM container tracks those with better
-   parameters — leaving both on double-counts).
+2. The **Arahkaii web** stream for `https://www.arahkaii.com` uses Measurement
+   ID `G-R0L8CF0K5N` (created 3 September 2026).
+3. Leave "Enhanced measurement" ON but disable its **Scrolls** and **Outbound
+   clicks** toggles (the GTM container tracks those with better parameters, so
+   leaving both on double-counts). The GTM configuration sets
+   `sendPageView=false` and sends an explicit view-transition-aware `page_view`.
+   These settings were applied on 3 September 2026; site search, form
+   interactions, video engagement and downloads remain enabled.
 
 ### 3.2 Create + import the GTM container
-1. [tagmanager.google.com](https://tagmanager.google.com) → create a
-   container: name `arahkaii.com`, target **Web**. Note the `GTM-XXXXXXX` ID.
+1. The dedicated Arahkaii web container is `GTM-KPXTJKGD` (created 3 September
+   2026).
 2. **Admin → Import Container** → upload `docs/gtm-arahkaii-ga4.json` from
    this repo → choose the **Default Workspace** → **Overwrite** → Confirm.
-3. In the workspace, open **Variables → GA4 Measurement ID** and replace
-   `G-XXXXXXXXXX` with your real Measurement ID. That's the only edit.
+3. The imported `GA4 Measurement ID` constant is already set to
+   `G-R0L8CF0K5N`.
 4. **Preview** (Tag Assistant) against `https://www.arahkaii.com` — check the GA4
    Configuration + page_view tags fire on load and again when you click into
    an article (view transition), and that `newsletter_signup` fires when you
    subscribe with a test address.
-5. **Submit → Publish** the container version.
+5. **Submit → Publish** the container version. Version 2, `Arahkaii GA4
+   baseline — 2026-09-03`, is live. Tag Assistant confirmed both the Google tag
+   and the explicit `page_view` tag fired once on the homepage.
 
 ### 3.3 Point the site at the container
-1. Vercel → project → **Settings → Environment Variables** → add
-   `PUBLIC_GTM_ID = GTM-XXXXXXX` (Production; add Preview too if you want
-   preview-deploy tracking — better to leave Preview unset to keep test
-   traffic out).
+1. Vercel production has `PUBLIC_GTM_ID = GTM-KPXTJKGD`; Preview remains unset
+   so test traffic does not pollute production reporting.
 2. **Redeploy** (env vars are baked in at build time).
 3. Verify in **GA4 → Reports → Realtime** while browsing the live site.
 

@@ -7,13 +7,13 @@
     "containerId": "0",
     "containerVersionId": "0",
     "name": "Arahkaii GA4 baseline",
-    "description": "GA4 tracking for www.arahkaii.com — page views (view-transition aware), newsletter signups, contact submissions, outbound clicks, article recirculation, scroll depth and subscribe CTA clicks. Replace the 'GA4 Measurement ID' constant with your G-XXXXXXXXXX before publishing.",
+    "description": "GA4 tracking for www.arahkaii.com — page views (view-transition aware), newsletter signups, contact submissions, outbound clicks, article recirculation, scroll depth and subscribe CTA clicks.",
     "container": {
       "path": "accounts/0/containers/0",
       "accountId": "0",
       "containerId": "0",
       "name": "arahkaii.com",
-      "publicId": "GTM-REPLACE",
+      "publicId": "GTM-KPXTJKGD",
       "usageContext": ["WEB"]
     },
     "builtInVariable": [
@@ -31,7 +31,7 @@
         "name": "GA4 Measurement ID",
         "type": "c",
         "parameter": [
-          { "type": "TEMPLATE", "key": "value", "value": "G-XXXXXXXXXX" }
+          { "type": "TEMPLATE", "key": "value", "value": "G-R0L8CF0K5N" }
         ]
       },
       {
