@@ -677,7 +677,7 @@ const gtmSnippet = gtmEnabled
 					const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
 					const website = form.querySelector<HTMLInputElement>('input[name="website"]');
 					const v = (input?.value || '').trim();
-					const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+					const ok = v.length <= 254 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
 					const note = form.querySelector<HTMLElement>('.field-note');
 					// Announce validation/status/success changes to screen readers.
 					if (note) note.setAttribute('aria-live', 'polite');

@@ -67,6 +67,9 @@ for (const file of htmlFiles) {
 		if (!/class="[^"]*\bfield-note\b/.test(form[1])) {
 			newsletterFeedbackFailures.push(`${relativeFile}: newsletter form has no feedback region`);
 		}
+		if (!/<input\b[^>]*\btype="email"[^>]*\bmaxlength="254"/.test(form[1])) {
+			newsletterFeedbackFailures.push(`${relativeFile}: newsletter email field does not expose the API length limit`);
+		}
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
