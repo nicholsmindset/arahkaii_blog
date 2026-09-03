@@ -18,7 +18,7 @@ const { class: cls, source = 'inline' } = Astro.props;
 		<input name="website" type="text" tabindex="-1" autocomplete="off" />
 	</label>
 	<div class="field">
-		<input name="email" type="email" placeholder="your@email.com" aria-label="Email address" autocomplete="email" required />
+		<input name="email" type="email" placeholder="your@email.com" aria-label="Email address" autocomplete="email" maxlength="254" required />
 		<button type="submit">Subscribe <span aria-hidden="true">→</span></button>
 	</div>
 	{Astro.slots.has('note') ? <slot name="note" /> : <p class="field-note" aria-live="polite"></p>}
