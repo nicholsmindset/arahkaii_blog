@@ -206,6 +206,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 	description={seoDescription}
 	activeCategory={categoryLabel}
 	image={ogImage}
+	imageAlt={heroCaption || title}
 	ogType="article"
 	noindex={noindex || isDraftPreview}
 	publishedTime={datePublished}
