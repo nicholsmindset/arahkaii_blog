@@ -1,4 +1,5 @@
 ---
+import { fmtDate } from '../../lib/format';
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
@@ -60,7 +61,6 @@ const counts = new Map<string, number>();
 for (const c of cards) for (const t of c.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
 const topTags = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t]) => t);
 const prettify = prettifyTag;
-const dateFormat = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 // build the alternating river
 type Row =
@@ -257,7 +257,7 @@ if (cards.length)
 								<div class="latest-card__copy">
 									<p class="latest-card__top">
 										<span>{c.categoryLabel}</span>
-										<time datetime={c.date.toISOString()}>{dateFormat.format(c.date)}</time>
+										<time datetime={c.date.toISOString()}>{fmtDate(c.date)}</time>
 									</p>
 									<h3><a href={c.url}>{c.title}</a></h3>
 									<p>{c.standfirst}</p>
@@ -288,7 +288,7 @@ if (cards.length)
 							<div class="latest-card__copy">
 								<p class="latest-card__top">
 									<span>{c.tags[0] ? prettify(c.tags[0]) : c.categoryLabel}</span>
-									{c.date && <time datetime={c.date.toISOString()}>{dateFormat.format(c.date)}</time>}
+									{c.date && <time datetime={c.date.toISOString()}>{fmtDate(c.date)}</time>}
 								</p>
 								<h3><a href={c.url}>{c.title}</a></h3>
 								<p>{c.standfirst}</p>

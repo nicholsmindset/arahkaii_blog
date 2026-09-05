@@ -1,4 +1,5 @@
 ---
+import { fmtDate } from '../../lib/format';
 export interface EditorialSource {
 	name: string;
 	url: string;
@@ -12,7 +13,7 @@ interface Props {
 
 const { sources = [], method } = Astro.props;
 const date = (value: Date) =>
-	new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(value);
+	fmtDate(value, { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 
 {(method || sources.length > 0) && (

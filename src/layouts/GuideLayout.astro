@@ -215,7 +215,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 				{atAGlance.length > 0 && <AtAGlance items={atAGlance} title={listName ?? 'At a glance'} />}
 				{atAGlance.length === 0 && listItems?.length && <AtAGlance items={listItems.map((name) => ({ name, verdict: '' }))} title={listName ?? 'At a glance'} />}
 				{halalStatus && <HalalStatus data={halalStatus} />}
-				{(franchise || cluster || lastVerified) && <p class="article-proof meta">{franchise && `Series · ${franchise}`}{franchise && cluster && ' · '}{cluster && `Topic · ${cluster.replaceAll('-', ' ')}`}{(franchise || cluster) && lastVerified && ' · '}{lastVerified && `Editorially checked ${new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(lastVerified)}`}</p>}
+				{(franchise || cluster || lastVerified) && <p class="article-proof meta">{franchise && `Series · ${franchise}`}{franchise && cluster && ' · '}{cluster && `Topic · ${cluster.replaceAll('-', ' ')}`}{(franchise || cluster) && lastVerified && ' · '}{lastVerified && `Editorially checked ${fmtDate(lastVerified, { month: 'long', year: 'numeric' })}`}</p>}
 				<slot />
 				<SourcesAndMethod sources={sources} method={method} />
 				{faq?.length && <ArticleFaq items={faq} />}

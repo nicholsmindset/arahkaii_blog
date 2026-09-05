@@ -4,10 +4,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { getCards, type PostCard } from '../lib/articles';
 import { selectHomepage } from '../lib/homepage';
+import { fmtDate } from '../lib/format';
 import '../styles/home.css';
 
 const home = selectHomepage(await getCards());
-const date = (card: PostCard) => card.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+const date = (card: PostCard) => fmtDate(card.date, { day: 'numeric', month: 'short', year: 'numeric' });
 const desks = [
  { name: 'The style edit', category: 'style', intro: 'The clothes, craft and ideas behind what we wear.', stories: home.style },
  { name: 'Beauty, considered', category: 'beauty', intro: 'Asian beauty, from formulation to the culture around it.', stories: home.beauty },
