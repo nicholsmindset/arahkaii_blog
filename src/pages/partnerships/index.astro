@@ -86,8 +86,9 @@ const jsonLd = [organizationSchema(), websiteSchema(), webPageSchema({ name: 'Wo
 						<fieldset class="partner-route-picker"><legend>What do you have in mind?</legend>{Object.entries(ROUTES).map(([id, route]) => <label><input type="radio" name="route" value={id} checked={id === 'pitch'} /><span>{route.name}</span></label>)}</fieldset>
 						<p class="partner-field-error" data-error-for="route" id="error-route" hidden></p>
 						<p class="partner-route-note" data-route-note>{ROUTES.pitch.note}</p>
-						<input type="hidden" name="call" /><input type="hidden" name="referral" />
+						<input type="hidden" name="call" /><input type="hidden" name="referral" /><input type="hidden" name="format" />
 						<p class="partner-selected-call" data-selected-call hidden></p>
+						<p class="partner-selected-call" data-selected-format hidden></p>
 						<div class="partner-field"><label for="brief-brand">Brand or organisation <span>Required</span></label><input id="brief-brand" name="brand" autocomplete="organization" required maxlength="120" aria-describedby="error-brand" /><p class="partner-field-error" data-error-for="brand" id="error-brand" hidden></p></div>
 						<div class="partner-field"><label for="brief-story" data-story-label>The story in a few sentences <span>Required</span></label><p class="partner-hint" id="story-hint" data-story-hint>What do you do, what makes it specific, and what could a reader learn?</p><textarea id="brief-story" name="story" required minlength="40" maxlength="1600" rows="5" aria-describedby="story-hint error-story"></textarea><p class="partner-field-error" data-error-for="story" id="error-story" hidden></p></div>
 						<div class="partner-field"><label for="brief-website">Website or Instagram handle <span>Required</span></label><input id="brief-website" name="website" required maxlength="300" autocapitalize="off" spellcheck="false" placeholder="yourbrand.com or @yourbrand" aria-describedby="error-website" /><p class="partner-field-error" data-error-for="website" id="error-website" hidden></p></div>

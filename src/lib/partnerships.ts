@@ -5,6 +5,15 @@ export const ROUTES = {
 	paid: { name: 'A paid partnership', label: 'Build a considered campaign', note: 'Discuss a clearly labelled feature or series, with scope, fees, rights and distribution agreed before work begins.' },
 } as const;
 export type PartnershipRoute = keyof typeof ROUTES;
+export const COMMERCIAL_FORMATS = {
+	feature: 'A reported feature',
+	conversation: 'A founder conversation',
+	series: 'A considered series',
+} as const;
+export type CommercialFormat = keyof typeof COMMERCIAL_FORMATS;
+export function commercialFormat(value: unknown): CommercialFormat | '' {
+	return typeof value === 'string' && Object.hasOwn(COMMERCIAL_FORMATS, value) ? value as CommercialFormat : '';
+}
 export const STORY_CALLS = [
 	{ id: 'behind-the-work', title: 'Behind the work', category: 'Style · Beauty · Living', question: 'What would we understand differently if we saw how it was made?', access: 'A maker, a material or a process we can examine.', route: 'interview' },
 	{ id: 'founder-decisions', title: 'A decision that mattered', category: 'People · Culture', question: 'Which difficult choice changed the direction of your work?', access: 'A founder or creative with a specific story to tell.', route: 'interview' },
@@ -15,6 +24,7 @@ export const LIMITS = { brand: 120, name: 120, email: 254, location: 120, websit
 export interface PartnershipBrief {
 	route: PartnershipRoute;
 	call: string;
+	format: CommercialFormat | '';
 	brand: string;
 	name: string;
 	email: string;
@@ -67,6 +77,7 @@ export function validateBrief(input: Record<string, unknown>): BriefResult {
 	return { ok: true, brief: {
 		...values, email: values.email.toLowerCase(), route: input.route as PartnershipRoute,
 		call: STORY_CALLS.some((call) => call.id === input.call) ? String(input.call) : '',
+		format: input.route === 'paid' ? commercialFormat(input.format) : '',
 		budget: input.route === 'paid' ? values.budget : '', consent, rights,
 	} };
 }
@@ -77,6 +88,7 @@ export function formatBrief(brief: PartnershipBrief): string {
 		`ARAHKAII — ${ROUTES[brief.route].name}`, '',
 		`Brand / organisation: ${brief.brand}`, `Contact: ${brief.name}`, `Email: ${brief.email}`,
 		`Location: ${brief.location}`, `Website / handle: ${brief.website}`,
+		...(brief.route === 'paid' && brief.format ? [`Proposed format: ${COMMERCIAL_FORMATS[brief.format]}`] : []),
 		...(call ? [`Story prompt: ${call.title}`] : []), '', 'THE STORY / BRIEF', brief.story, '',
 		'ACCESS / PEOPLE / EVIDENCE', brief.access || 'To discuss', '',
 		`Timing / embargo: ${brief.timing || 'Flexible / not specified'}`,

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateBrief, formatBrief } from '../../src/lib/partnerships.ts';
+import { validateBrief, formatBrief, COMMERCIAL_FORMATS } from '../../src/lib/partnerships.ts';
 import { deliverPartnership } from '../../src/lib/partnership-delivery.ts';
 
 const sample = {
@@ -25,6 +25,28 @@ test('material links require specific review permission; unsafe links and oversi
 	assert.equal(validateBrief({ ...sample, assets: 'https://user:pass@example.com/press', rights: true }).ok, false);
 	assert.equal(validateBrief({ ...sample, story: 'x'.repeat(1601) }).ok, false);
 	assert.equal(validateBrief({ ...sample, assets: 'https://example.com/press', rights: true }).ok, true);
+});
+test('advertising format reaches the stored brief for every paid option', async () => {
+	for (const [format, label] of Object.entries(COMMERCIAL_FORMATS)) {
+		const response = await deliverPartnership(request({ ...sample, route: 'paid', format }), {
+			endpoint: 'https://example.com/intake', fetcher: async (_url, options) => {
+				const sent = JSON.parse(options.body);
+				assert.equal(sent.format, format);
+				assert.ok(sent.brief_text.includes(`Proposed format: ${label}`));
+				return Response.json({ ok: true, application_id: sent.submission_id });
+			},
+		});
+		assert.equal(response.status, 200);
+	}
+});
+test('unknown formats are ignored and commercial context never leaks into an editorial pitch', () => {
+	for (const format of ['__proto__', 'unknown', 'x'.repeat(5000)]) {
+		const result = validateBrief({ ...sample, route: 'paid', format });
+		assert.equal(result.ok, true); assert.equal(result.brief.format, '');
+		assert.ok(!formatBrief(result.brief).includes('Proposed format:'));
+	}
+	const editorial = validateBrief({ ...sample, format: 'series' });
+	assert.equal(editorial.ok, true); assert.equal(editorial.brief.format, '');
 });
 test('invalid routes, missing consent and malformed emails never reach delivery', async () => {
 	for (const patch of [{ route: '__proto__' }, { consent: false }, { email: 'bad' }]) {

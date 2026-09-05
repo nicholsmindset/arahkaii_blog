@@ -4,6 +4,8 @@
 
 The three routes are editorial pitch, interview/visit and paid proposal. `route`, allowlisted `call`, and a sanitised `ref`/`utm_campaign` can preselect the route and preserve outreach context. Personal details are not sent to analytics. Briefs remain in the form during navigation between steps; there is no automatic local-storage draft.
 
+The advertising page compares three proposal formats: `feature`, `conversation` and `series`. Its links use `route=paid&format=<format>&ref=advertise`. The allowlisted format appears in the form introduction, review, email/download and full stored brief. Switching to an editorial route clears it. Unknown formats are ignored. The format finder uses native radios; without JavaScript all three offers and their brief links remain visible.
+
 ## Delivery
 
 Set **PARTNERSHIP_INTAKE_URL** as a sensitive Vercel variable in Preview and Production, then rebuild. It is server-only. Without the variable, the form prepares a complete email draft and truthfully says the user must send it in their mail client. A runtime 503 changes the primary action to that fallback.
