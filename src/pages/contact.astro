@@ -10,7 +10,6 @@ import {
 } from '../lib/seo';
 
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
-const sent = Astro.url.searchParams.get('sent') === '1';
 const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
@@ -50,26 +49,26 @@ const jsonLd = [
 				method="POST"
 				action="/api/contact"
 			>
-				{sent && <p class="form-success" role="status">Thank you. Your note has reached the Arahkaii desk.</p>}
+				<p class="form-success" role="status" data-contact-success hidden>Thank you. Your note has reached the Arahkaii desk.</p>
 				<p hidden>
 					<label>Leave this empty: <input name="bot-field" /></label>
 				</p>
 
 				<div class="cf-row">
 					<label for="cf-name">Your name</label>
-					<input id="cf-name" name="name" type="text" required placeholder="First and last" />
+					<input id="cf-name" name="name" type="text" required maxlength="120" autocomplete="name" placeholder="First and last" />
 				</div>
 				<div class="cf-row">
 					<label for="cf-email">Email</label>
-					<input id="cf-email" name="email" type="email" required placeholder="your@email.com" />
+					<input id="cf-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="your@email.com" />
 				</div>
 				<div class="cf-row">
 					<label for="cf-subject">Subject</label>
-					<input id="cf-subject" name="subject" type="text" placeholder="Pitch · partnership · note" />
+					<input id="cf-subject" name="subject" type="text" maxlength="160" placeholder="Pitch · partnership · note" />
 				</div>
 				<div class="cf-row">
 					<label for="cf-message">Message</label>
-					<textarea id="cf-message" name="message" required placeholder="Tell us, unhurried."></textarea>
+					<textarea id="cf-message" name="message" required minlength="10" maxlength="8000" placeholder="Tell us, unhurried."></textarea>
 				</div>
 				<button class="cf-submit" type="submit">Send <span aria-hidden="true">→</span></button>
 			</form>
@@ -80,4 +79,18 @@ const jsonLd = [
 			</p>
 		</div>
 	</div>
+	<script>
+		function preparePartnershipEnquiry() {
+			const params = new URLSearchParams(location.search);
+			const success = document.querySelector<HTMLElement>('[data-contact-success]');
+			if (success) success.hidden = params.get('sent') !== '1';
+			if (params.get('enquiry') !== 'partnership') return;
+			const subject = document.querySelector<HTMLInputElement>('#cf-subject');
+			const message = document.querySelector<HTMLTextAreaElement>('#cf-message');
+			if (subject && !subject.value) subject.value = 'Partnership enquiry';
+			if (message) message.placeholder = 'Your brand and website, intended reader, preferred format, timing and indicative budget.';
+		}
+		document.addEventListener('astro:page-load', preparePartnershipEnquiry);
+		preparePartnershipEnquiry();
+	</script>
 </BaseLayout>

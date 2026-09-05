@@ -11,17 +11,13 @@ import '../styles/global.css';
 import '../styles/pages.css';
 
 // Self-hosted variable fonts (Fontsource) for the v2 system:
-// Bodoni Moda (Didone display + italics), Source Serif 4 (editorial body +
-// italics), Inter (UI/meta). opsz axes power optical sizing.
-import '@fontsource-variable/bodoni-moda/opsz.css';
-import '@fontsource-variable/bodoni-moda/opsz-italic.css';
+// Source Serif 4 (readable editorial headings/body + italics) and Inter (UI/meta).
 import '@fontsource-variable/source-serif-4/opsz.css';
 import '@fontsource-variable/source-serif-4/opsz-italic.css';
 import '@fontsource-variable/inter/wght.css';
-// Preload the two critical latin faces (body serif + Didone display) so the
-// first paint doesn't wait on stylesheet discovery — an LCP win on 4G.
+// Preload the critical latin editorial face so the first paint doesn't wait on
+// stylesheet discovery — an LCP win on 4G.
 import serifWoff2 from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-normal.woff2?url';
-import displayWoff2 from '@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-opsz-normal.woff2?url';
 
 interface Props {
 	title: string;
@@ -29,6 +25,7 @@ interface Props {
 	activeCategory?: string;
 	overHero?: boolean;
 	noFooter?: boolean;
+	hideFooterNewsletter?: boolean;
 	/** Absolute URL to an OG/Twitter image. Falls back to a branded default. */
 	image?: string;
 	imageWidth?: number;
@@ -48,6 +45,7 @@ const {
 	description = "Asia's modern-luxury edit — modestly told.",
 	activeCategory,
 	noFooter = false,
+	hideFooterNewsletter = false,
 	image,
 	ogType = 'website',
 	noindex = false,
@@ -129,7 +127,6 @@ const gtmSnippet = gtmEnabled
 			></script>
 		)}
 		<link rel="preload" as="font" type="font/woff2" href={serifWoff2} crossorigin />
-		<link rel="preload" as="font" type="font/woff2" href={displayWoff2} crossorigin />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -173,7 +170,7 @@ const gtmSnippet = gtmEnabled
 		<div class="progress"><span data-progress></span></div>
 
 		<!-- sticky condensed bar (Vogue hide-on-down / show-on-up) -->
-		<div class="stickybar">
+		<div class="stickybar" inert>
 			<a class="stickybar__mark" href="/">ARAHKAII</a>
 			<nav class="stickybar__nav" aria-label="Sections">
 				{primaryNav.map((n) => <a class="navlink" href={n.href}>{n.label.toUpperCase()}</a>)}
@@ -185,7 +182,7 @@ const gtmSnippet = gtmEnabled
 		</div>
 
 		<!-- masthead -->
-		<header class="masthead">
+		<header class:list={['masthead', { 'masthead--article': ogType === 'article' }]}>
 			<div class="wrap">
 				<div class="masthead__top">
 					<button class="masthead__util" data-menu-open type="button" aria-expanded="false" aria-controls="overlay-menu" aria-haspopup="dialog">MENU</button>
@@ -207,7 +204,7 @@ const gtmSnippet = gtmEnabled
 				<hr class="rule d-only" />
 			</div>
 			<!-- inline search -->
-			<div class="searchbar" id="site-search">
+			<div class="searchbar" id="site-search" inert>
 				<div class="wrap">
 					<div class="searchbar__inner">
 						<span class="eyebrow">Search</span>
@@ -226,7 +223,7 @@ const gtmSnippet = gtmEnabled
 		</header>
 
 		<!-- full-screen overlay menu -->
-		<div class="overlay" id="overlay-menu" role="dialog" aria-modal="true" aria-label="Menu">
+		<div class="overlay" id="overlay-menu" inert role="dialog" aria-modal="true" aria-label="Menu">
 			<div class="overlay__top">
 				<a class="overlay__mark" href="/">ARAHKAII</a>
 				<button class="overlay__close" data-menu-close type="button">CLOSE ✕</button>
@@ -267,14 +264,14 @@ const gtmSnippet = gtmEnabled
 						<div class="footer__intro">
 							<p class="footer__mark">ARAHKAII</p>
 							<p class="footer__mission">Asia’s modern-luxury edit — modestly told.</p>
-							<div class="footer__news">
+							{!hideFooterNewsletter && <div class="footer__news">
 								<p class="footer__h">Arahkaii Weekly</p>
 								<NewsletterSignup class="fn-form" source="footer">
 									<p slot="note" class="field-note" style="color:var(--footer-head)">
 										One considered email. No noise.
 									</p>
 								</NewsletterSignup>
-							</div>
+							</div>}
 						</div>
 						<div>
 							<p class="footer__h">Explore</p>
@@ -402,7 +399,7 @@ const gtmSnippet = gtmEnabled
 							return response.json();
 						})
 						.then((index) => (searchIndex = Array.isArray(index) ? index : []))
-						.catch(() => []);
+						.catch(() => { searchIndexRequest = null; return []; });
 				}
 				return searchIndexRequest;
 			}
@@ -414,7 +411,8 @@ const gtmSnippet = gtmEnabled
 			// ---- inline search ----
 			function wireSearch() {
 				const bar = document.querySelector<HTMLElement>('.searchbar');
-				if (!bar) return;
+				if (!bar || bar.dataset.wired) return;
+				bar.dataset.wired = '1';
 				const input = bar.querySelector<HTMLInputElement>('.search-input');
 				const results = bar.querySelector<HTMLElement>('.search-results');
 				let queryVersion = 0;
@@ -431,7 +429,7 @@ const gtmSnippet = gtmEnabled
 					if (version !== queryVersion) return;
 					results.hidden = false;
 					const hits = idx
-						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q))
+						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a + ' ' + (x.k || '')).toLowerCase().includes(q))
 						.slice(0, 7);
 					results.innerHTML = hits.length
 						? hits
@@ -517,6 +515,7 @@ const gtmSnippet = gtmEnabled
 				document.querySelectorAll<HTMLButtonElement>('[data-share-copy]').forEach((b) => {
 					if (b.dataset.wired) return;
 					b.dataset.wired = '1';
+					const originalLabel = b.textContent;
 					b.addEventListener('click', async (e) => {
 						e.preventDefault();
 						const status = b.parentElement?.querySelector<HTMLElement>('[data-share-status]');
@@ -530,7 +529,7 @@ const gtmSnippet = gtmEnabled
 							if (status) status.textContent = 'The link could not be copied.';
 						}
 						window.setTimeout(() => {
-							b.textContent = 'LINK';
+							b.textContent = originalLabel;
 						}, 2000);
 					});
 				});
@@ -558,6 +557,7 @@ const gtmSnippet = gtmEnabled
 						if (y < 200) bar.classList.remove('show');
 						else if (y > 600 && y > lastY) bar.classList.remove('show');
 						else bar.classList.add('show');
+						bar.inert = !bar.classList.contains('show');
 						lastY = y;
 					}
 					// article scroll progress
@@ -582,6 +582,7 @@ const gtmSnippet = gtmEnabled
 				// overlay menu — modal dialog semantics: trap Tab while open and
 				// restore focus to the trigger on close (a11y).
 				let lastTrigger: HTMLElement | null = null;
+				let searchTrigger: HTMLElement | null = null;
 				const FOCUSABLE =
 					'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
 				const setExpanded = (sel: string, state: boolean) =>
@@ -591,6 +592,7 @@ const gtmSnippet = gtmEnabled
 					const overlay = document.querySelector<HTMLElement>('.overlay');
 					if (!overlay) return;
 					lastTrigger = trigger;
+					overlay.inert = false;
 					overlay.classList.add('open');
 					document.body.style.overflow = 'hidden';
 					setExpanded('[data-menu-open]', true);
@@ -600,6 +602,7 @@ const gtmSnippet = gtmEnabled
 					const overlay = document.querySelector<HTMLElement>('.overlay');
 					if (!overlay?.classList.contains('open')) return;
 					overlay.classList.remove('open');
+					overlay.inert = true;
 					document.body.style.overflow = '';
 					setExpanded('[data-menu-open]', false);
 					lastTrigger?.focus();
@@ -609,6 +612,8 @@ const gtmSnippet = gtmEnabled
 					const sb = document.querySelector<HTMLElement>('.searchbar');
 					if (!sb?.classList.contains('open')) return;
 					sb.classList.remove('open');
+					sb.inert = true;
+					searchTrigger?.focus();
 					setExpanded('[data-search-toggle]', false);
 				}
 
@@ -616,6 +621,7 @@ const gtmSnippet = gtmEnabled
 					const t = e.target as HTMLElement;
 					const link = t.closest<HTMLAnchorElement>('a[href]');
 					if (link) {
+						if (link.hasAttribute('data-partnership-cta')) reportEvent('partnership_enquiry_click', { source: location.pathname });
 						const target = new URL(link.href, location.href);
 						if (target.protocol === 'http:' || target.protocol === 'https:') {
 							const linkText = (link.textContent || '').trim().slice(0, 120);
@@ -633,10 +639,14 @@ const gtmSnippet = gtmEnabled
 					if (t.closest('[data-menu-close]') || t.closest('.overlay a')) closeOverlay();
 					if (t.closest('[data-search-toggle]')) {
 						const sb = document.querySelector<HTMLElement>('.searchbar');
-						const open = sb?.classList.toggle('open');
-						setExpanded('[data-search-toggle]', !!open);
-						if (open) (sb?.querySelector('input') as HTMLInputElement | null)?.focus();
-						else closeSearch();
+						if (sb?.classList.contains('open')) closeSearch();
+						else if (sb) {
+							searchTrigger = t.closest<HTMLElement>('[data-search-toggle]');
+							sb.inert = false;
+							sb.classList.add('open');
+							setExpanded('[data-search-toggle]', true);
+							sb.querySelector<HTMLInputElement>('input')?.focus();
+						}
 					}
 				});
 

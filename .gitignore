@@ -47,3 +47,6 @@ real-export.xml
 /docs/pending/
 .vercel
 .env*
+
+# Local audit working files include private account analytics exports.
+/docs/audits/2026-09-05/

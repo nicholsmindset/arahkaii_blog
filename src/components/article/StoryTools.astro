@@ -1,0 +1,57 @@
+---
+import type { MarkdownHeading } from 'astro';
+interface Props {
+	title: string;
+	byline: string;
+	headings?: MarkdownHeading[];
+}
+const { title, byline, headings = [] } = Astro.props;
+const sections = headings.filter((heading) => heading.depth === 2);
+---
+
+<div class="story-tools">
+	<div class="story-tools__actions">
+		<a href="#story" class="story-tools__start">Read the story ↓</a>
+		<button type="button" data-save-story data-title={title} data-href={Astro.url.pathname} data-byline={byline} aria-pressed="false">Save story</button>
+		<button type="button" data-share-copy>Copy link</button>
+		<a href="/reading-list/">Reading list</a>
+		<span class="sr-only" role="status" aria-live="polite" data-share-status></span>
+		<span class="sr-only" role="status" aria-live="polite" data-save-status></span>
+	</div>
+	{sections.length >= 3 && (
+		<details class="story-contents">
+			<summary>In this story</summary>
+			<nav aria-label="In this story">
+				<ol>{sections.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol>
+			</nav>
+		</details>
+	)}
+</div>
+
+<script>
+	function wireStoryTools() {
+		const button = document.querySelector<HTMLButtonElement>('[data-save-story]');
+		const api = (window as Window & {
+			ARAHKAII?: {
+				getSaved: () => Array<{ href: string }>;
+				toggleSave: (item: { title: string; href: string; byline?: string }) => boolean;
+			};
+		}).ARAHKAII;
+		if (!button || !api || button.dataset.wired) return;
+		button.dataset.wired = '1';
+		const story = { title: button.dataset.title || '', href: button.dataset.href || '', byline: button.dataset.byline };
+		const reflect = (saved: boolean) => {
+			button.textContent = saved ? 'Story saved' : 'Save story';
+			button.setAttribute('aria-pressed', String(saved));
+		};
+		reflect(api.getSaved().some((item) => item.href === story.href));
+		button.addEventListener('click', () => {
+			const saved = api.toggleSave(story);
+			reflect(saved);
+			const status = button.parentElement?.querySelector<HTMLElement>('[data-save-status]');
+			if (status) status.textContent = saved ? 'Story saved to your reading list on this device.' : 'Story removed from your reading list.';
+		});
+	}
+	document.addEventListener('astro:page-load', wireStoryTools);
+	wireStoryTools();
+</script>

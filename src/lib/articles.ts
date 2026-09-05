@@ -144,6 +144,7 @@ export async function getSearchIndex() {
 	const cards = await getCards();
 	return cards.map((c) => ({
 		t: c.title,
+		k: [...c.tags, c.standfirst].join(' '),
 		c: c.categoryLabel,
 		a: c.authorName,
 		h: c.url,

@@ -1,5 +1,7 @@
 ---
 import { Image, getImage } from 'astro:assets';
+import type { MarkdownHeading } from 'astro';
+import StoryTools from '../components/article/StoryTools.astro';
 import StoryCard from '../components/StoryCard.astro';
 import InlineNewsletter from '../components/InlineNewsletter.astro';
 import AtAGlance, { type AtAGlanceItem } from '../components/article/AtAGlance.astro';
@@ -38,6 +40,7 @@ interface GuideItem {
 	image?: ImageMetadata;
 }
 interface Props {
+	headings?: MarkdownHeading[];
 	title: string;
 	standfirst: string;
 	category: string;
@@ -80,6 +83,7 @@ interface Props {
 }
 
 const {
+	headings = [],
 	title,
 	standfirst,
 	category,
@@ -170,6 +174,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 	activeCategory={categoryLabel}
 	image={ogImage}
 	ogType="article"
+	hideFooterNewsletter
 	noindex={noindex || isDraftPreview}
 	publishedTime={datePublished}
 	modifiedTime={dateModified}
@@ -194,17 +199,19 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 			<CommercialDisclosure data={commercial} />
 		</header>
 
+		<div class="wrap"><StoryTools title={title} byline={`By ${author.name}`} headings={headings} /></div>
+
 		<figure class="guide-hero">
 			<div class="img real r-16x9 blurup">
 				<Image src={heroImage} alt={heroCaption || title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 			</div>
 			<figcaption class="caption">
-				{heroCaption ? `Above: ${heroCaption} ` : ''}(Photo: {heroCredit})
+				{heroCaption ? `Above: ${heroCaption} ` : ''}(Credit: {heroCredit})
 			</figcaption>
 		</figure>
 
 		<div class="entries">
-			<div class="article-body">
+			<div class="article-body" id="story" tabindex="-1">
 				{atAGlance.length > 0 && <AtAGlance items={atAGlance} title={listName ?? 'At a glance'} />}
 				{atAGlance.length === 0 && listItems?.length && <AtAGlance items={listItems.map((name) => ({ name, verdict: '' }))} title={listName ?? 'At a glance'} />}
 				{halalStatus && <HalalStatus data={halalStatus} />}
@@ -257,7 +264,9 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 	<nav class="guide-index" aria-label="Jump to entry"></nav>
 
 	<script>
+		let guideObserver: IntersectionObserver | undefined;
 		function initGuideIndex() {
+			guideObserver?.disconnect();
 			const nav = document.querySelector<HTMLElement>('.guide-index');
 			if (!nav) return;
 			const entries = Array.from(document.querySelectorAll<HTMLElement>('.entry[id]'));
@@ -288,7 +297,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 			const links = new Map(
 				Array.from(nav.querySelectorAll<HTMLElement>('a')).map((a) => [a.dataset.i, a]),
 			);
-			const io = new IntersectionObserver(
+			guideObserver = new IntersectionObserver(
 				(es) => {
 					es.forEach((e) => {
 						if (e.isIntersecting) {
@@ -299,8 +308,9 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 				},
 				{ rootMargin: '-45% 0px -45% 0px' },
 			);
-			entries.forEach((s) => io.observe(s));
+			entries.forEach((s) => guideObserver?.observe(s));
 		}
 		document.addEventListener('astro:page-load', initGuideIndex);
+		document.addEventListener('astro:before-swap', () => guideObserver?.disconnect());
 	</script>
 </BaseLayout>

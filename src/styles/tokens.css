@@ -1,7 +1,7 @@
 /* ============================================================
    ARAHKAII v2 — Asia's modern-luxury edit, modestly told.
    Design tokens + base reset.
-   One Didone display + one editorial serif + one sans.
+   One readable editorial serif + one sans.
    Bright-white canvas, single emerald accent.
    Fonts self-hosted via @fontsource-variable (imported in BaseLayout).
    ============================================================ */
@@ -26,7 +26,8 @@
 	--footer-head: rgba(246, 241, 233, 0.62);
 
 	/* type families (self-hosted variable faces) */
-	--display: 'Bodoni Moda Variable', 'Bodoni Moda', 'Bodoni 72', Georgia, serif;
+	/* Source Serif 4 replaces the high-contrast Bodoni display face site-wide. */
+	--display: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
 	--headline: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
 	--serif: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
 	--sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
@@ -142,7 +143,7 @@ input:focus-visible {
 /* ---------- LEGACY ALIASES ----------------------------------------------
    The v1 "warm paper" system used different token names. The utility/marketing
    pages and a few components still reference them. Map every legacy token onto
-   its v2 equivalent so the whole site adopts the bright-white / emerald / Bodoni
+   its v2 equivalent so the whole site adopts the bright-white / emerald / Source Serif
    system automatically, with no broken colours or fonts. New code should use the
    v2 tokens above; these aliases exist only for backward compatibility. */
 :root {
