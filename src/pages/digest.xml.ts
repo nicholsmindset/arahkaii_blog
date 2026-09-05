@@ -27,6 +27,7 @@ export async function GET(context: APIContext) {
 			const link = `/${d.category}/${post.id.split('/').pop()}/`;
 			const absLink = new URL(link, site).toString();
 			const dek = d.metaDescription ?? d.standfirst;
+			const heroAlt = d.heroCaption.trim() || d.title;
 
 			// Resolve the optimised hero to an absolute URL for the email thumbnail.
 			const heroCrop = await getImage({ src: d.heroImage, width: 1200, height: 800, format: 'jpg' });
@@ -35,7 +36,7 @@ export async function GET(context: APIContext) {
 			// Rich body → <content:encoded>. All interpolated strings are escaped
 			// (safe.ts) — the same discipline used across the site.
 			const content =
-				`<img src="${escapeHtml(heroUrl)}" alt="${escapeHtml(d.title)}" width="1200" height="800" />` +
+				`<img src="${escapeHtml(heroUrl)}" alt="${escapeHtml(heroAlt)}" width="1200" height="800" />` +
 				`<p>${escapeHtml(dek)}</p>` +
 				`<p><a href="${escapeHtml(absLink)}">Read the full story &#8594;</a></p>`;
 
