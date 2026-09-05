@@ -14,6 +14,8 @@ const PAGES: SitemapEntry[] = [
 	{ path: '/newsletter/sample/', changefreq: 'monthly', priority: 0.4 },
 	{ path: '/contact/', changefreq: 'monthly', priority: 0.4 },
 	{ path: '/advertise/', changefreq: 'monthly', priority: 0.3 },
+	{ path: '/partnerships/', changefreq: 'monthly', priority: 0.5 },
+	{ path: '/partnerships/prepare/', changefreq: 'monthly', priority: 0.3 },
 	{ path: '/join-us/', changefreq: 'monthly', priority: 0.3 },
 	{ path: '/faqs/', changefreq: 'monthly', priority: 0.4 },
 	{ path: '/privacy-policy/', changefreq: 'yearly', priority: 0.2 },
