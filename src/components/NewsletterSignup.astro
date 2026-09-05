@@ -1,4 +1,5 @@
 ---
+import settings from '../content/settings/newsletter.json';
 // Shared newsletter form. The `.js-news` class + `.field` markup is what the
 // global submit handler (BaseLayout) looks for — it validates the email, sends
 // it to `/api/subscribe`, remembers a successful subscription in localStorage,
@@ -8,10 +9,18 @@ interface Props {
 	class?: string;
 	/** Where this form lives — tagged on the form for analytics later. */
 	source?: string;
+	/** Suppress this when the containing module already links to the sample. */
+	showSampleLink?: boolean;
 }
-const { class: cls, source = 'inline' } = Astro.props;
+const { class: cls, source = 'inline', showSampleLink = true } = Astro.props;
+const signupEnabled = settings.provider === 'mailerlite'
+	? Boolean(import.meta.env.MAILERLITE_API_KEY?.trim())
+	: settings.provider === 'beehiiv'
+		? Boolean(import.meta.env.BEEHIIV_API_KEY?.trim() && import.meta.env.BEEHIIV_PUBLICATION_ID?.trim())
+		: false;
 ---
 
+{signupEnabled ? (
 <form class:list={['js-news', cls]} data-source={source} novalidate>
 	<label class="sr-only" aria-hidden="true">
 		Website
@@ -23,3 +32,14 @@ const { class: cls, source = 'inline' } = Astro.props;
 	</div>
 	{Astro.slots.has('note') ? <slot name="note" /> : <p class="field-note" aria-live="polite"></p>}
 </form>
+) : (
+	<div class:list={['newsletter-paused', cls]}>
+		<p class="field-note">Newsletter signups are currently paused.</p>
+		{showSampleLink && <a class="tlink" href="/newsletter/sample/">Read a sample edition →</a>}
+	</div>
+)}
+
+<style>
+	.newsletter-paused { align-self: center; }
+	.newsletter-paused .field-note { margin: 0 0 12px; }
+</style>

@@ -10,6 +10,7 @@ import {
 } from '../lib/seo';
 
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const contactEnabled = Boolean(import.meta.env.RESEND_API_KEY?.trim());
 const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
@@ -43,7 +44,7 @@ const jsonLd = [
 				</p>
 			</header>
 
-			<form
+			{contactEnabled ? (<form
 				class="contact-form"
 				name="contact"
 				method="POST"
@@ -71,12 +72,18 @@ const jsonLd = [
 					<textarea id="cf-message" name="message" required minlength="10" maxlength="8000" placeholder="Tell us, unhurried."></textarea>
 				</div>
 				<button class="cf-submit" type="submit">Send <span aria-hidden="true">→</span></button>
-			</form>
+			</form>) : (
+				<div class="contact-email">
+					<p>For pitches, partnerships and corrections, write directly to the desk.</p>
+					<p><a class="tlink" data-contact-email href="mailto:onnifyworks@gmail.com">Email onnifyworks@gmail.com →</a></p>
+					<p class="field-note">For a partnership, include your brand, website, preferred format, timing and indicative budget.</p>
+				</div>
+			)}
 
-			<p class="contact-alt">
-				Prefer email? Write to <a href="mailto:hello@arahkaii.com">hello@arahkaii.com</a> — pitches,
+			{contactEnabled && <p class="contact-alt">
+				Prefer email? Write to <a href="mailto:onnifyworks@gmail.com">onnifyworks@gmail.com</a> — pitches,
 				press and partnerships all reach the desk there.
-			</p>
+			</p>}
 		</div>
 	</div>
 	<script>
@@ -85,6 +92,8 @@ const jsonLd = [
 			const success = document.querySelector<HTMLElement>('[data-contact-success]');
 			if (success) success.hidden = params.get('sent') !== '1';
 			if (params.get('enquiry') !== 'partnership') return;
+			const emailLink = document.querySelector<HTMLAnchorElement>('[data-contact-email]');
+			if (emailLink) emailLink.href = 'mailto:onnifyworks@gmail.com?subject=Partnership%20enquiry';
 			const subject = document.querySelector<HTMLInputElement>('#cf-subject');
 			const message = document.querySelector<HTMLTextAreaElement>('#cf-message');
 			if (subject && !subject.value) subject.value = 'Partnership enquiry';
@@ -93,4 +102,9 @@ const jsonLd = [
 		document.addEventListener('astro:page-load', preparePartnershipEnquiry);
 		preparePartnershipEnquiry();
 	</script>
+	<style>
+		.contact-email { padding-block: 24px; border-block: 1px solid var(--hairline); }
+		.contact-email p { margin: 0 0 18px; }
+		.contact-email .field-note { margin-bottom: 0; }
+	</style>
 </BaseLayout>

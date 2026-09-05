@@ -8,7 +8,7 @@ This release makes the homepage a coherent editorial cover and reduces unnecessa
 - A compact article masthead, wider introduction and shorter lead-image band.
 - A 700px reading column with a 72px desktop gap to a genuinely sticky sidebar; section links replace the repeated hero thumbnail. Breakout images stay clear of the rail.
 - Save, copy-link, reading-list and section controls on both article and guide templates, including mobile.
-- One newsletter form per article or guide, with a sample-edition link on articles. Related recommendations prioritise the same topic or series. The large next-story card is not repeated again in the following grid.
+- One newsletter form per article or guide when its provider is configured, with a sample-edition link on articles. Related recommendations prioritise the same topic or series. The large next-story card is not repeated again in the following grid.
 - Partnership formats, a clear brief CTA, prefilled enquiry subject, appropriate field limits and a visible contact confirmation after the existing successful-delivery redirect.
 - Search includes tags and standfirst text, retries failed index requests, and avoids duplicate listeners. Closed navigation panels and the offscreen sticky bar are inert; modal focus is restored on close.
 
@@ -18,7 +18,7 @@ The already-live console-table guide, its three existing images and quiet-luxury
 
 ## Validation
 
-`npm run verify` covers five regression tests, Astro diagnostics, redirect and content checks, production build, JSON-LD and generated-page semantics/links/sitemaps. Targeted browser checks cover article and guide layouts at 320/390/1440px, sidebar positioning, section anchors, reading-list persistence, search/menu focus and partnership form behaviour. The dependency audit reports zero known vulnerabilities at verification time.
+`npm run verify` covers seven regression tests, Astro diagnostics, redirect and content checks, production build, JSON-LD and generated-page semantics/links/sitemaps. Targeted browser checks cover article and guide layouts at 320/390/1440px, sidebar positioning, section anchors, reading-list persistence, search/menu focus and partnership form behaviour. The dependency audit reports zero known vulnerabilities at verification time.
 
 For the console-table article, the body begins at approximately 1,180px on a 1440px viewport (previously 1,566px), and 1,035px at 390px (previously 1,255px). Measurements use the local production output without third-party ad injection. The text column is 700px wide on desktop and the sidebar begins 72px after it. These are layout measurements, not conversion or Core Web Vitals results.
 
@@ -32,3 +32,12 @@ For the console-table article, the body begins at approximately 1,180px on a 144
 ## Remaining limitations
 
 The pre-release performance audit did not pass the existing 2-second mobile LCP budget. Local uncompressed measurements and production runs with third-party scripts are not directly comparable. This release does not claim that performance, editorial verification or revenue is solved. Backend email delivery, CMS authentication, revenue and GA4 conversions are not established by frontend checks. Private analytics exports and the detailed working audit remain local and are excluded from the public repository.
+
+
+## Production follow-up: dates and delivery availability
+
+Visible dates now use the Singapore editorial calendar on every build server; a midnight Singapore publication no longer appears a day early on Vercel. The UTC build and regression tests cover UTC/US/Singapore servers and month boundaries.
+
+The release review also found that the production newsletter and contact providers had not been configured. Shared signup modules now show a clear paused state with newsletter sample routes when the selected provider lacks credentials. The contact page offers the existing onnifyworks@gmail.com email route, including a partnership subject, until its sender is configured. No subscriber data is collected by an unavailable form.
+
+Newsletter activation is intentionally deferred while the owner chooses a provider. The framework supports Beehiiv and MailerLite, with the CMS selector set to Pause signups. When ready, select the provider and add its production credentials as described in `docs/newsletter-framework.md`. Contact-form delivery can be enabled separately with `RESEND_API_KEY` and the appropriate `CONTACT_FROM_EMAIL` / `CONTACT_TO_EMAIL` in Vercel. Redeploy and verify provider delivery using an authorised test recipient before treating those conversions as operational. Credentials must remain outside Git. Existing advertising and consent configuration is retained.
