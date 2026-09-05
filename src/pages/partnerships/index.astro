@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { getCards } from '../../lib/articles';
+import { SITE, organizationSchema, websiteSchema, webPageSchema, breadcrumbSchema } from '../../lib/seo';
+import { ROUTES, STORY_CALLS, DESK_EMAIL } from '../../lib/partnerships';
+import '../../styles/partnerships.css';
+
+const canonical = `${SITE.url}/partnerships/`.replace(/([^:]\/)\//g, '$1');
+const description = 'Pitch a story, offer an interview or explore a paid partnership with Arahkaii. For brands, makers, founders and places shaping contemporary Asia.';
+const deliveryEnabled = Boolean(import.meta.env.PARTNERSHIP_INTAKE_URL?.trim());
+const published = await getCards();
+const examples = ['people', 'beauty', 'living'].flatMap((category) => {
+	const card = published.find((card) => card.category === category);
+	return card ? [card] : [];
+});
+const jsonLd = [organizationSchema(), websiteSchema(), webPageSchema({ name: 'Work with Arahkaii', url: canonical, description }), breadcrumbSchema([{name: SITE.name, url: SITE.url}, {name: 'Work with us', url: canonical}])];
+---
+
+<BaseLayout title="Work with Arahkaii — stories, interviews & partnerships" description={description} jsonLd={jsonLd}>
+	<div class="partner-page wrap">
+		<Breadcrumbs schema={false} class="page-crumbs partner-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Work with us' }]} />
+		<header class="partner-hero">
+			<div class="partner-hero-copy">
+				<span class="eyebrow">An invitation from Arahkaii</span>
+				<h1>The story behind<br /><em>what you make.</em></h1>
+				<p class="partner-dek">The choice of a material. The first table you set. The idea you couldn’t leave alone. Let’s find the story worth telling.</p>
+				<p class="partner-intro">We’re an independent publication exploring contemporary Asia through its people, places and creative work. We welcome brands, makers, founders and publicists with something specific to share.</p>
+				<div class="partner-actions"><a class="tlink" href="#brief" data-partnership-cta>Bring us a story <span aria-hidden="true">↗</span></a><a class="partner-secondary" href="#ways">Find your way in ↓</a></div>
+			</div>
+			<aside class="partner-desk" aria-labelledby="desk-title">
+				<span class="eyebrow">The editorial desk</span>
+				<h2 id="desk-title">Give us a way<br />to see it for ourselves.</h2>
+				<ol>
+					<li><span aria-hidden="true">01</span><div><strong>A person to speak to</strong><p>A founder, maker or expert with first-hand knowledge.</p></div></li>
+					<li><span aria-hidden="true">02</span><div><strong>Something to examine</strong><p>A process, place, object or idea with evidence behind it.</p></div></li>
+					<li><span aria-hidden="true">03</span><div><strong>A reason to care</strong><p>What your experience helps a reader understand.</p></div></li>
+				</ol>
+				<a href="/editorial-standards/" class="partner-small-link">Our editorial standards ↗</a>
+			</aside>
+		</header>
+		<nav class="partner-jump" aria-label="On this page"><a href="#ways">Ways to work together</a><a href="#stories">Story prompts</a><a href="#process">From pitch to publication</a><a href="#brief">Your brief</a><a href="#questions">Questions</a></nav>
+
+		<section id="ways" class="partner-section" aria-labelledby="ways-title">
+			<div class="partner-section-head"><span class="eyebrow">01 / The invitation</span><h2 id="ways-title">Three ways to begin.</h2><p>A first conversation should be easy. Choose the route that matches what you have in mind.</p></div>
+			<div class="partner-routes">{Object.entries(ROUTES).map(([id, route], index) => (
+				<article><span class="partner-route-number">0{index + 1}</span><p class="eyebrow">{id === 'paid' ? 'Commercial / scoped proposal' : 'Editorial / no placement fee'}</p><h3>{route.name}</h3><p>{route.note}</p><a class="tlink" href={`?route=${id}#brief`} data-brief-route={id} data-partnership-cta>{route.label} ↗</a></article>
+			))}</div>
+		</section>
+
+		<section id="stories" class="partner-section" aria-labelledby="stories-title">
+			<div class="partner-section-head partner-section-head--split"><div><span class="eyebrow">02 / Stories we’d like to hear</span><h2 id="stories-title">Start with a better question.</h2></div><p>These are invitations to pitch, not a fixed publication schedule. A strong answer matters more than your follower count.</p></div>
+			<div class="partner-story-list">{STORY_CALLS.map((call, index) => (
+				<article><span class="partner-story-index" aria-hidden="true">0{index + 1}</span><div><p class="eyebrow">{call.category}</p><h3>{call.title}</h3></div><div><p class="partner-question">{call.question}</p><p class="partner-story-access">{call.access}</p><a class="partner-small-link" href={`?route=${call.route}&call=${call.id}#brief`} data-brief-call={call.id} data-brief-route={call.route}>Respond to this prompt ↗</a></div></article>
+			))}</div>
+			<p class="partner-footnote">Something else in mind? We also welcome stories across <a href="/style/">style</a>, <a href="/beauty/">beauty</a>, <a href="/dining/">dining</a>, <a href="/travel/">travel</a>, <a href="/living/">living</a>, <a href="/people/">people</a>, <a href="/culture/">culture</a> and <a href="/guides/">guides</a>.</p>
+		</section>
+
+		{examples.length > 0 && <section class="partner-section" aria-labelledby="reading-title">
+			<div class="partner-section-head"><span class="eyebrow">From the publication</span><h2 id="reading-title">Get a feel for Arahkaii.</h2><p>A few published stories to show our interests and editorial style.</p></div>
+			<div class="partner-reading">{examples.map((card) => <StoryCard href={card.url} title={card.title} image={card.image} eyebrow={card.categoryLabel} byline={card.byline} widths={[400, 800]} />)}</div>
+		</section>}
+
+		<section id="process" class="partner-section" aria-labelledby="process-title">
+			<div class="partner-process-grid">
+				<div><span class="eyebrow">03 / The working relationship</span><h2 id="process-title">A conversation.<br />Then a considered story.</h2><p class="partner-process-lede">An introduction is enough to start. We ask for the full interview, photography and publication permissions when there’s a clear editorial direction.</p><a class="tlink" href="/partnerships/prepare/">Read the interview &amp; image guide ↗</a></div>
+				<ol class="partner-process">
+					<li><h3>Send the short version</h3><p>Tell us the story, who we could speak to and why it matters. A press kit is optional.</p></li>
+					<li><h3>Find the angle together</h3><p>If there’s a fit, we agree the question, access and reporting needs. For paid work, we also agree scope and fees.</p></li>
+					<li><h3>Report, check and credit</h3><p>We verify claims and confirm image rights. You can check your attributed quotes and factual details; Arahkaii retains editorial judgement.</p></li>
+					<li><h3>Publish with a plan to share</h3><p>For a commissioned feature, we agree a launch handover: the article link, approved excerpts, image credits and any planned social assets.</p></li>
+				</ol>
+			</div>
+			<div class="partner-afterlife"><span class="eyebrow">Beyond launch day</span><h3>A useful story can keep working.</h3><p>We build articles around questions readers return to, connect them to relevant reporting and include a useful route to the brand. Where agreed, a later update can revisit a new collection, a changed process or what happened next. Reach, search positions and sales are never guaranteed.</p></div>
+		</section>
+
+		<section id="brief" class="partner-section partner-brief-section" aria-labelledby="brief-title">
+			<div class="partner-brief-intro"><span class="eyebrow">04 / Your first note</span><h2 id="brief-title">What should we know<br />about your work?</h2><p>Start with a few sentences. No deck, polished interview or professional shoot needed.</p><p class="partner-brief-promise">Editorial consideration is free. Paid partnerships are agreed separately and visibly labelled.</p><p class="partner-small">Prefer a direct conversation?<br /><a class="partner-small-link" href={`mailto:${DESK_EMAIL}`}>{DESK_EMAIL}</a></p></div>
+			<div class="partner-form-shell" data-partnership-form-root data-delivery-enabled={String(deliveryEnabled)}>
+				<noscript><p class="partner-notice">This brief builder needs JavaScript. Please <a href={`mailto:${DESK_EMAIL}?subject=Arahkaii%20story%20pitch`}>email your story to the desk</a>, or use our <a href="/partnerships/prepare/">preparation guide</a>.</p></noscript>
+				<form id="partnership-form" class="partner-form" novalidate hidden>
+					<div class="partner-form-progress"><p data-step-label aria-live="polite">01 / The story</p><ol aria-label="Brief progress"><li data-step-marker aria-current="step">Story</li><li data-step-marker>Details</li><li data-step-marker>Review</li></ol></div>
+					<p class="partner-form-error" role="alert" data-form-error hidden></p>
+					<div data-form-step="0">
+						<fieldset class="partner-route-picker"><legend>What do you have in mind?</legend>{Object.entries(ROUTES).map(([id, route]) => <label><input type="radio" name="route" value={id} checked={id === 'pitch'} /><span>{route.name}</span></label>)}</fieldset>
+						<p class="partner-field-error" data-error-for="route" id="error-route" hidden></p>
+						<p class="partner-route-note" data-route-note>{ROUTES.pitch.note}</p>
+						<input type="hidden" name="call" /><input type="hidden" name="referral" />
+						<p class="partner-selected-call" data-selected-call hidden></p>
+						<div class="partner-field"><label for="brief-brand">Brand or organisation <span>Required</span></label><input id="brief-brand" name="brand" autocomplete="organization" required maxlength="120" aria-describedby="error-brand" /><p class="partner-field-error" data-error-for="brand" id="error-brand" hidden></p></div>
+						<div class="partner-field"><label for="brief-story" data-story-label>The story in a few sentences <span>Required</span></label><p class="partner-hint" id="story-hint" data-story-hint>What do you do, what makes it specific, and what could a reader learn?</p><textarea id="brief-story" name="story" required minlength="40" maxlength="1600" rows="5" aria-describedby="story-hint error-story"></textarea><p class="partner-field-error" data-error-for="story" id="error-story" hidden></p></div>
+						<div class="partner-field"><label for="brief-website">Website or Instagram handle <span>Required</span></label><input id="brief-website" name="website" required maxlength="300" autocapitalize="off" spellcheck="false" placeholder="yourbrand.com or @yourbrand" aria-describedby="error-website" /><p class="partner-field-error" data-error-for="website" id="error-website" hidden></p></div>
+					</div>
+					<div data-form-step="1" hidden>
+						<h3 class="partner-step-heading" tabindex="-1">A person, a place, a way to reach you.</h3>
+						<div class="partner-fields-two"><div class="partner-field"><label for="brief-name">Your name <span>Required</span></label><input id="brief-name" name="name" autocomplete="name" required maxlength="120" aria-describedby="error-name" /><p class="partner-field-error" data-error-for="name" id="error-name" hidden></p></div><div class="partner-field"><label for="brief-email">Email <span>Required</span></label><input id="brief-email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="error-email" /><p class="partner-field-error" data-error-for="email" id="error-email" hidden></p></div></div>
+						<div class="partner-field"><label for="brief-location">City and country <span>Required</span></label><input id="brief-location" name="location" required maxlength="120" placeholder="e.g. Singapore, Singapore" aria-describedby="error-location" /><p class="partner-field-error" data-error-for="location" id="error-location" hidden></p></div>
+						<div class="partner-field"><label for="brief-access">Who could we speak to, or what could we see? <span>Optional</span></label><textarea id="brief-access" name="access" rows="3" maxlength="800" placeholder="A founder, craft demonstration, studio visit, product trial or evidence we can review." aria-describedby="error-access"></textarea><p class="partner-field-error" data-error-for="access" id="error-access" hidden></p></div>
+						<div class="partner-field"><label for="brief-timing">Timing or embargo <span>Optional</span></label><input id="brief-timing" name="timing" maxlength="160" placeholder="A launch date, preferred timing or any confidentiality restrictions." aria-describedby="error-timing" /><p class="partner-field-error" data-error-for="timing" id="error-timing" hidden></p></div>
+						<div class="partner-field" data-paid-field hidden><label for="brief-budget">Indicative budget <span>Optional</span></label><input id="brief-budget" name="budget" maxlength="160" disabled placeholder="Currency and range, or ask us to suggest a scope." aria-describedby="error-budget" /><p class="partner-field-error" data-error-for="budget" id="error-budget" hidden></p></div>
+						<details class="partner-assets"><summary>Add a press kit or images <span>Optional</span></summary><p class="partner-hint">Links are for private review. We’ll confirm permission, credits and any restrictions before publishing. Please don’t send confidential documents.</p><div class="partner-field"><label for="brief-assets">Up to five HTTPS links, one per line</label><textarea id="brief-assets" name="assets" rows="3" maxlength="1200" aria-describedby="error-assets"></textarea><p class="partner-field-error" data-error-for="assets" id="error-assets" hidden></p></div><div class="partner-field"><label for="brief-credits">Photographer credits or usage restrictions</label><textarea id="brief-credits" name="credits" rows="2" maxlength="600" aria-describedby="error-credits"></textarea><p class="partner-field-error" data-error-for="credits" id="error-credits" hidden></p></div><label class="partner-check"><input type="checkbox" name="rights" aria-describedby="error-rights" /><span>I have permission to share these materials with Arahkaii for private editorial review. Publication rights will be confirmed separately.</span></label><p class="partner-field-error" data-error-for="rights" id="error-rights" hidden></p></details>
+						<label class="partner-check"><input type="checkbox" name="consent" required aria-describedby="error-consent" /><span>Arahkaii may use these details to review my submission and contact me about it. This does not sign me up for marketing. <a href="/privacy-policy/">Privacy policy</a>.</span></label><p class="partner-field-error" data-error-for="consent" id="error-consent" hidden></p>
+						<div class="partner-honeypot" aria-hidden="true"><label>Leave empty <input name="company_fax" tabindex="-1" autocomplete="off" /></label></div>
+					</div>
+					<div data-form-step="2" hidden><h3 class="partner-step-heading" tabindex="-1">Your brief, ready for the desk.</h3><p class="partner-hint">Check the details. You can go back to edit, or keep a copy.</p><dl class="partner-review" data-brief-review></dl><p class="partner-review-policy">Sending a pitch does not secure a feature. We’ll be in touch if there’s an editorial fit or a commercial brief to develop.</p><div class="partner-actions partner-export"><button type="button" class="partner-small-link" data-copy-brief>Copy brief</button><button type="button" class="partner-small-link" data-download-brief>Download .txt</button><a class="partner-small-link" data-email-brief href={`mailto:${DESK_EMAIL}`}>Open email draft ↗</a></div><p class="partner-hint" data-copy-status role="status"></p><p class="partner-notice" data-delivery-note>{deliveryEnabled ? 'Your brief goes to Arahkaii’s private review queue. Nothing is published automatically.' : 'Email delivery: open a draft in your email app and press Send there. The website has not sent your brief.'}</p></div>
+					<div class="partner-form-nav"><button type="button" class="partner-secondary" data-back hidden>← Back</button><button type="submit" class="tlink" data-next>Continue →</button></div>
+				</form>
+				<div class="partner-received" data-receipt hidden tabindex="-1"><span class="eyebrow">Received by the desk</span><h3>Thank you for the introduction.</h3><p>Your brief is in our private review queue. We’ll contact you if there’s a fit or we need more detail. Nothing has been published.</p><p class="partner-receipt-id" data-receipt-id></p><div class="partner-actions"><button type="button" class="partner-small-link" data-download-receipt>Keep a copy</button><a class="partner-small-link" href="/partnerships/prepare/">Prepare for an interview ↗</a></div></div>
+			</div>
+		</section>
+
+		<section id="questions" class="partner-section partner-faq" aria-labelledby="questions-title"><div><span class="eyebrow">Before you write</span><h2 id="questions-title">A few good questions.</h2></div><div>
+			<details><summary>Do I have to pay to be featured?</summary><p>No fee is charged for independent editorial consideration. We select stories on their value to readers. Paid features and series follow a separate proposal and carry a clear “Paid partnership” label.</p></details>
+			<details><summary>Do you work only with fashion brands?</summary><p>No. We welcome makers, designers, beauty founders, chefs, hospitality teams, artists and other people shaping contemporary Asia. Our coverage spans eight editorial sections.</p></details>
+			<details><summary>Are you offering guaranteed traffic or a backlink?</summary><p>No. We can offer a considered reporting process and, for commissioned work, an agreed publication and distribution plan. Links help readers find useful information; they are not sold as search-ranking placements. Paid links are marked appropriately.</p></details>
+			<details><summary>Can I approve the article?</summary><p>You can check your attributed quotes, image captions and factual brand details. Arahkaii retains control of its headline, selection, conclusions and publication. Commercial review stages are agreed in the written scope.</p></details>
+			<details><summary>What if we’re a new or small brand?</summary><p>Tell us what you do and what we could learn from it. Size and follower counts are not entry requirements. A specific story, someone willing to talk and evidence we can examine are more useful.</p></details>
+			<details><summary>Can a PR agency pitch several clients?</summary><p>Yes. Send a separate short brief for each distinct story, and name the person you represent. For a commercial series spanning several brands, use the paid partnership route and explain the shared idea.</p></details>
+			<details><summary>What happens after I submit?</summary><p>We review the brief for fit, access and reporting value. We cannot promise a reply or publication date for every pitch. If selected, we agree next steps with you before arranging access or requesting publication rights. For a time-sensitive update, email the desk with your reference.</p></details>
+		</div></section>
+	</div>
+	<script src="../../scripts/partnership-form.ts"></script>
+</BaseLayout>
