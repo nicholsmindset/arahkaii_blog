@@ -45,7 +45,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 						return response.json();
 					})
 					.then((index) => (Array.isArray(index) ? index : []))
-					.catch(() => []);
+					.catch(() => { indexRequest = null; return []; });
 			}
 			return indexRequest;
 		}
@@ -70,7 +70,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 				}
 				const idx = await getIndex();
 				if (version !== queryVersion) return;
-				const hits = idx.filter((x) => (x.t + ' ' + x.c + ' ' + x.a).toLowerCase().includes(q));
+				const hits = idx.filter((x) => (x.t + ' ' + x.c + ' ' + x.a + ' ' + (x.k || '')).toLowerCase().includes(q));
 				results!.hidden = false;
 				results!.innerHTML = hits.length
 					? hits

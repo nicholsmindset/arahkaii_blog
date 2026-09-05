@@ -4,7 +4,8 @@ import BaseLayout from './BaseLayout.astro';
 import Headline from '../components/article/Headline.astro';
 import Standfirst from '../components/article/Standfirst.astro';
 import StoryCard from '../components/StoryCard.astro';
-import InlineNewsletter from '../components/InlineNewsletter.astro';
+import type { MarkdownHeading } from 'astro';
+import StoryTools from '../components/article/StoryTools.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import AtAGlance, { type AtAGlanceItem } from '../components/article/AtAGlance.astro';
 import HalalStatus, { type HalalStatusData } from '../components/article/HalalStatus.astro';
@@ -49,6 +50,7 @@ interface ReadNextItem {
 	image?: ImageMetadata;
 }
 interface Props {
+	headings?: MarkdownHeading[];
 	title: string;
 	standfirst: string;
 	category: string;
@@ -94,6 +96,7 @@ interface Props {
 }
 
 const {
+	headings = [],
 	title,
 	standfirst,
 	category,
@@ -133,6 +136,7 @@ const {
 	isDraftPreview = false,
 } = Astro.props;
 
+const additionalRelated = related.filter((item) => item.href !== readNext?.href);
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const categoryLabel = cap(category);
 const primaryTag = tags[0];
@@ -207,6 +211,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 	activeCategory={categoryLabel}
 	image={ogImage}
 	ogType="article"
+	hideFooterNewsletter
 	noindex={noindex || isDraftPreview}
 	publishedTime={datePublished}
 	modifiedTime={dateModified}
@@ -253,22 +258,24 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 			<CommercialDisclosure data={commercial} />
 		</div>
 
-		<!-- lead image, full content width 3:2 -->
-		<div class="wrap" style="margin-top:48px">
+		<div class="wrap"><StoryTools title={title} byline={`By ${author.name}`} headings={headings} /></div>
+
+		<!-- Lead image in a contained editorial band. -->
+		<div class="wrap article-image-wrap">
 			<figure class="hero-fig">
 				<div class="media ar-3-2">
 					<Image src={heroImage} alt={heroCaption || title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 				</div>
 				<figcaption class="caption fig-cap">
-					{heroCaption ? `${heroCaption} ` : ''}(Photo: {heroCredit})
+					{heroCaption ? `${heroCaption} ` : ''}(Credit: {heroCredit})
 				</figcaption>
 			</figure>
 		</div>
 
 		<!-- body + sticky rail -->
-		<div class="wrap" style="margin-top:64px">
+		<div class="wrap article-body-wrap">
 			<div class="grid art-layout">
-				<div class="article-body">
+				<div class="article-body" id="story" tabindex="-1">
 					{atAGlance.length > 0 && <AtAGlance items={atAGlance} title={listName ?? 'At a glance'} />}
 					{atAGlance.length === 0 && listItems?.length && <AtAGlance items={listItems.map((name) => ({ name, verdict: '' }))} title={listName ?? 'At a glance'} />}
 					{halalStatus && <HalalStatus data={halalStatus} />}
@@ -289,12 +296,6 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 						)
 					}
 
-					{/* Mid-article capture — relocated by script to sit after the 2nd H2. */}
-					<InlineNewsletter
-						class="js-mid-news mid-news"
-						source="article-mid"
-						line="Stories like this, gathered once a week — Sundays, in your inbox."
-					/>
 
 					<div class="sectionbreak"><span class="star">✦</span></div>
 
@@ -319,37 +320,16 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 
 				<aside class="art-rail">
 					<div class="art-rail__sticky">
-						<div class="media ar-4-5 art-rail__thumb">
-							<Image src={heroImage} alt={title} widths={[300, 500]} sizes="25vw" />
-						</div>
-						<div class="share" aria-label="Share">
-							<button
-								data-save-story
-								data-title={title}
-								data-href={Astro.url.pathname}
-								data-byline={`By ${author.name}`}
-								type="button"
-								aria-label="Save to reading list">SAVE</button
-							>
-							<button data-share-copy type="button" aria-label="Copy link">LINK</button>
-							<span class="sr-only" role="status" aria-live="polite" data-share-status></span>
-							<a
-								href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonical.toString())}&text=${encodeURIComponent(title)}`}
-								target="_blank"
-								rel="noopener"
-								aria-label="Share on X">X</a
-							>
-							<a
-								href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonical.toString())}`}
-								target="_blank"
-								rel="noopener"
-								aria-label="Share on Facebook">FB</a
-							>
-						</div>
+						{headings.filter((heading) => heading.depth === 2).length >= 3 && (
+							<nav class="rail-contents" aria-label="Article sections">
+								<p class="rail-list__h">In this story</p>
+								<ol>{headings.filter((heading) => heading.depth === 2).map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol>
+							</nav>
+						)}
 						{
 							related.length > 0 && (
 								<>
-									<p class="rail-list__h">Continue reading</p>
+									<p class="rail-list__h">From the same desk</p>
 									<nav class="rail-list" aria-label="Related">
 										{related.slice(0, 3).map((r, i) => (
 											<a class="hl-link" href={r.href} style={i === Math.min(related.length, 3) - 1 ? 'border-bottom:0' : undefined}>
@@ -360,20 +340,39 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 								</>
 							)
 						}
+						<div class="rail-newsletter">
+							<p class="rail-list__h">The Arahkaii edit</p>
+							<p>Style, culture and considered living, in your inbox.</p>
+							<a class="tlink" href="#article-newsletter">Explore the newsletter →</a>
+						</div>
 					</div>
 				</aside>
 			</div>
 		</div>
 	</article>
 
-	<!-- CONTINUE WITH (oversized next-article card) -->
+	<section class="article-end-newsletter" id="article-newsletter" aria-labelledby="article-newsletter-title">
+		<div class="wrap">
+			<div class="article-newsletter-inner">
+				<p class="eyebrow eyebrow--emerald">Keep in good company</p>
+				<h2 class="h2" id="article-newsletter-title">A little more Arahkaii.</h2>
+				<p class="dek">Our edit of style, culture and considered living, delivered to your inbox.</p>
+				<NewsletterSignup source="article-end">
+					<p slot="note" class="field-note" aria-live="polite">Free to join. Unsubscribe anytime.</p>
+				</NewsletterSignup>
+				<a class="tlink" href="/newsletter/sample/">Read a sample edition →</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- A relevant next story keeps the reading journey moving. -->
 	{
 		readNext && (
 			<section class="section article-read-next" style="border-top:1px solid var(--hairline)">
 				<div class="wrap">
 					<p class="eyebrow eyebrow--emerald" style="margin-bottom:32px">Read next →</p>
 					<a class="hl-link readnext" href={readNext.href}>
-						<div class="media ar-5-7" style="max-height:520px">
+						<div class="media ar-3-2">
 							{readNext.image ? (
 								<Image src={readNext.image} alt={readNext.title} widths={[480, 800]} sizes="(max-width:900px) 100vw, 40vw" />
 							) : (
@@ -393,13 +392,13 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 
 	<!-- ALSO FROM CATEGORY -->
 	{
-		related.length > 0 && (
+		additionalRelated.length > 0 && (
 			<section class="section--tight article-more">
 				<div class="wrap">
 					<p class="eyebrow" style="margin-bottom:24px">Also from {categoryLabel}</p>
 					<hr class="rule" style="margin-bottom:40px" />
 					<div class="more-grid">
-						{related.slice(0, 3).map((r) => (
+						{additionalRelated.slice(0, 3).map((r) => (
 							<StoryCard
 								href={r.href}
 								title={r.title}
@@ -416,59 +415,5 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 		)
 	}
 
-	<!-- NEWSLETTER BAND (identical to homepage) -->
-	<section class="tint article-end-newsletter">
-		<div class="wrap"><div class="grid">
-			<div style="grid-column:4 / 10; text-align:center">
-				<h2 class="h2" style="margin-bottom:16px">Sundays, considered.</h2>
-				<p class="dek" style="margin-bottom:40px">Our weekly edit — one essay, three things to read, one place to go.</p>
-				<NewsletterSignup source="article-end">
-					<p slot="note" class="field-note" style="text-align:center;margin-top:20px">No noise. Unsubscribe anytime.</p>
-				</NewsletterSignup>
-			</div>
-		</div></div>
-	</section>
 
-	<script>
-		// Relocate the mid-article newsletter to sit after the 2nd H2 in the body
-		// (a natural pause for an engaged reader). If the piece is short (<2 H2s),
-		// drop it — the end-of-article unit already covers the high-intent moment.
-		function placeMidNews() {
-			const mid = document.querySelector<HTMLElement>('.js-mid-news');
-			if (!mid || mid.dataset.placed) return;
-			const body = document.querySelector('.article-body');
-			const h2s = body ? Array.from(body.querySelectorAll(':scope > h2')) : [];
-			if (h2s.length >= 2) {
-				h2s[1].insertAdjacentElement('beforebegin', mid);
-				mid.dataset.placed = '1';
-			} else {
-				mid.remove();
-			}
-		}
-		function wireSaveStory() {
-			const button = document.querySelector<HTMLButtonElement>('[data-save-story]');
-			const api = (window as Window & {
-				ARAHKAII?: {
-					getSaved: () => Array<{ href: string }>;
-					toggleSave: (item: { title: string; href: string; byline?: string }) => boolean;
-				};
-			}).ARAHKAII;
-			if (!button || !api || button.dataset.wired) return;
-			button.dataset.wired = '1';
-			const story = {
-				title: button.dataset.title || '',
-				href: button.dataset.href || '',
-				byline: button.dataset.byline,
-			};
-			const reflect = (saved: boolean) => {
-				button.textContent = saved ? 'SAVED' : 'SAVE';
-				button.setAttribute('aria-pressed', String(saved));
-			};
-			reflect(api.getSaved().some((item) => item.href === story.href));
-			button.addEventListener('click', () => reflect(api.toggleSave(story)));
-		}
-		document.addEventListener('astro:page-load', placeMidNews);
-		document.addEventListener('astro:page-load', wireSaveStory);
-		wireSaveStory();
-	</script>
 </BaseLayout>

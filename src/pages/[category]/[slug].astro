@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import GuideLayout from '../../layouts/GuideLayout.astro';
+import { selectReadNext } from '../../lib/recirculation';
 import { getCards, estimateReadingMinutes, isPreviewBuild } from '../../lib/articles';
 
 export async function getStaticPaths() {
@@ -26,7 +27,7 @@ const author = await getEntry('authors', post.data.author);
 if (!author) {
 	throw new Error(`Unknown author "${post.data.author}" in ${post.id}`);
 }
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 const d = post.data;
 
 // Reading time: honour an explicit frontmatter value, else estimate from the body.
@@ -47,8 +48,8 @@ const related = sameCat.slice(0, 3).map((c) => ({
 	tone: c.tone,
 }));
 
-// Read-next: prefer a piece from another category, else the next in-category.
-const rn = others.find((c) => c.category !== d.category) ?? sameCat[0] ?? others[0];
+// Continue the reader’s subject before broadening to another desk.
+const rn = selectReadNext(cards, { url: currentUrl, category: d.category, tags: d.tags ?? [], cluster: d.cluster });
 const readNext = rn
 	? {
 			title: rn.title,
@@ -77,6 +78,7 @@ const clusterItems = d.cluster ? others.filter((card) => card.cluster === d.clus
 ---
 
 <Layout
+	headings={headings}
 	title={d.title}
 	standfirst={d.standfirst}
 	category={d.category}

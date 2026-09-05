@@ -9,7 +9,9 @@
 // dependency; npx fetches it on demand). Exits non-zero when the median LCP
 // of any audited page exceeds the budget.
 
-import { execFileSync } from 'node:child_process';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+const run = promisify(execFile);
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -50,9 +52,9 @@ server.listen(PORT, async () => {
 			const lcps = [];
 			for (let i = 0; i < RUNS; i++) {
 				const out = `/tmp/lh-${page.replaceAll('/', '_')}-${i}.json`;
-				execFileSync('npx', ['--yes', 'lighthouse', `http://localhost:${PORT}${page}`,
+				await run('npx', ['--yes', 'lighthouse', `http://localhost:${PORT}${page}`,
 					'--only-categories=performance', '--output=json', `--output-path=${out}`,
-					'--chrome-flags=--headless --no-sandbox', '--quiet'], { stdio: 'inherit' });
+					'--chrome-flags=--headless --no-sandbox', '--quiet'], { timeout: 120_000, maxBuffer: 5 * 1024 * 1024 });
 				const report = JSON.parse(fs.readFileSync(out, 'utf8'));
 				lcps.push(report.audits['largest-contentful-paint'].numericValue);
 			}
