@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const articleRailImageFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,10 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	const articleRailThumb = html.match(/<div\b[^>]*class="[^"]*\bart-rail__thumb\b[^"]*"[^>]*>([\s\S]*?)<\/div>/);
+	if (articleRailThumb && !/<img\b[^>]*\bloading="lazy"/.test(articleRailThumb[1])) {
+		articleRailImageFailures.push(`${relativeFile}: hidden mobile rail image is not lazy-loaded`);
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +152,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (articleRailImageFailures.length) {
+	console.error('\nArticle rail image failures:');
+	for (const item of articleRailImageFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +207,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	articleRailImageFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
