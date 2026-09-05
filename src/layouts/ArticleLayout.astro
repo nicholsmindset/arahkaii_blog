@@ -26,6 +26,7 @@ import {
 	type HowToStep,
 } from '../lib/seo';
 import { getTagIndex } from '../lib/articles';
+import { fmtDate } from '../lib/format';
 import '../styles/article.css';
 
 interface AuthorData {
@@ -144,14 +145,8 @@ const primaryTag = tags[0];
 // otherwise the chip falls back to the category page.
 const tagIndex = await getTagIndex();
 const tagHref = (t: string) => (tagIndex.has(t) ? `/tags/${t}/` : `/${category}/`);
-const formattedDate = new Intl.DateTimeFormat('en-GB', {
-	day: 'numeric',
-	month: 'long',
-	year: 'numeric',
-}).format(date);
-const formattedUpdatedDate = updatedDate
-	? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(updatedDate)
-	: null;
+const formattedDate = fmtDate(date);
+const formattedUpdatedDate = updatedDate ? fmtDate(updatedDate) : null;
 
 // — SEO data layer —
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -279,7 +274,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 					{atAGlance.length > 0 && <AtAGlance items={atAGlance} title={listName ?? 'At a glance'} />}
 					{atAGlance.length === 0 && listItems?.length && <AtAGlance items={listItems.map((name) => ({ name, verdict: '' }))} title={listName ?? 'At a glance'} />}
 					{halalStatus && <HalalStatus data={halalStatus} />}
-					{(franchise || cluster || lastVerified) && <p class="article-proof meta">{franchise && `Series · ${franchise}`}{franchise && cluster && ' · '}{cluster && `Topic · ${cluster.replaceAll('-', ' ')}`}{(franchise || cluster) && lastVerified && ' · '}{lastVerified && `Editorially checked ${new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' }).format(lastVerified)}`}</p>}
+					{(franchise || cluster || lastVerified) && <p class="article-proof meta">{franchise && `Series · ${franchise}`}{franchise && cluster && ' · '}{cluster && `Topic · ${cluster.replaceAll('-', ' ')}`}{(franchise || cluster) && lastVerified && ' · '}{lastVerified && `Editorially checked ${fmtDate(lastVerified, { month: 'long', year: 'numeric' })}`}</p>}
 					<slot />
 					<SourcesAndMethod sources={sources} method={method} />
 					{faq?.length && <ArticleFaq items={faq} />}

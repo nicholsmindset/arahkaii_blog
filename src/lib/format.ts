@@ -1,11 +1,11 @@
 // Shared formatting helpers — British English throughout (brand voice).
 
 /** "16 May 2026" — the publication's standard date form. */
-export function fmtDate(date: Date): string {
+export function fmtDate(date: Date, options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' }): string {
 	return new Intl.DateTimeFormat('en-GB', {
-		day: 'numeric',
-		month: 'long',
-		year: 'numeric',
+		...options,
+		// Match the Singapore editorial calendar, independent of build-server TZ.
+		timeZone: 'Asia/Singapore',
 	}).format(date);
 }
 
