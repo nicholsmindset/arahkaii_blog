@@ -1,4 +1,4 @@
-import { ROUTES, STORY_CALLS, DESK_EMAIL, validateBrief, formatBrief, type PartnershipBrief, type PartnershipRoute } from '../lib/partnerships';
+import { ROUTES, STORY_CALLS, DESK_EMAIL, COMMERCIAL_FORMATS, commercialFormat, validateBrief, formatBrief, type PartnershipBrief, type PartnershipRoute } from '../lib/partnerships';
 
 function initialisePartnershipForm() {
 	const root = document.querySelector<HTMLElement>('[data-partnership-form-root]');
@@ -31,6 +31,11 @@ function initialisePartnershipForm() {
 		const selected = form.querySelector<HTMLElement>('[data-selected-call]')!;
 		selected.hidden = !call || chosen === 'paid'; selected.textContent = call ? `Responding to: ${call.title}` : '';
 		if (chosen === 'paid') fields('call').value = '';
+		if (chosen !== 'paid') fields('format').value = '';
+		const format = commercialFormat(fields('format').value);
+		const selectedFormat = form.querySelector<HTMLElement>('[data-selected-format]')!;
+		selectedFormat.hidden = !format;
+		selectedFormat.textContent = format ? `Starting point: ${COMMERCIAL_FORMATS[format]}. We’ll confirm the scope together.` : '';
 	};
 	const showStep = (value: number, focus = true) => {
 		step = value; steps.forEach((el, index) => { el.hidden = index !== step; });
@@ -70,6 +75,7 @@ function initialisePartnershipForm() {
 		const rows: Array<[string, string]> = [
 			['Your route', ROUTES[brief.route].name], ['Brand / organisation', brief.brand], ['Your story / brief', brief.story],
 			...(call ? [['Story prompt', call.title] as [string, string]] : []),
+			...(brief.format ? [['Proposed format', COMMERCIAL_FORMATS[brief.format]] as [string, string]] : []),
 			['Website / handle', brief.website], ['Contact', `${brief.name} · ${brief.email}`], ['Location', brief.location],
 			['People, access & evidence', brief.access || 'To discuss'], ['Timing / embargo', brief.timing || 'Not specified'],
 			...(brief.route === 'paid' ? [['Indicative budget', brief.budget || 'To discuss'] as [string, string]] : []),
@@ -131,6 +137,8 @@ function initialisePartnershipForm() {
 	};
 	const params = new URLSearchParams(location.search);
 	choose(params.get('route'), params.get('call'));
+	fields('format').value = commercialFormat(params.get('format'));
+	updateRoute();
 	const referral = params.get('ref') || params.get('utm_campaign') || '';
 	fields('referral').value = /^[a-zA-Z0-9_-]{1,100}$/.test(referral) ? referral : '';
 	document.querySelectorAll<HTMLAnchorElement>('[data-brief-route]').forEach((link) => {

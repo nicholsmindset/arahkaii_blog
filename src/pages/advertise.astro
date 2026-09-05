@@ -1,85 +1,80 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getCards } from '../lib/articles';
+import { commercialOffers, paidBriefUrl } from '../lib/commercial-offers';
+import { DESK_EMAIL } from '../lib/partnerships';
+import { SITE, organizationSchema, websiteSchema, webPageSchema, breadcrumbSchema } from '../lib/seo';
+import '../styles/advertise.css';
+
+const journal = (await getCards()).find((card) => card.slug === 'console-table-styling');
+const description = 'Commission a reported feature, founder conversation or considered series with Arahkaii. Explore paid partnership formats, scope, distribution and how to brief us.';
+const canonical = `${SITE.url}/advertise/`;
+const jsonLd = [organizationSchema(), websiteSchema(), webPageSchema({ name: 'Advertise with Arahkaii', url: canonical, description }), breadcrumbSchema([{ name: SITE.name, url: SITE.url }, { name: 'Advertise', url: canonical }])];
 ---
 
-<PageLayout
-	title="Advertise"
-	eyebrow="Partnerships"
-	dek="Partner with an independent Asian modern-luxury publication without blurring the line between editorial and paid work."
-	description="Partner with Arahkaii — an eight-pillar Asian modern-luxury publication. Editorial-quality features, never banner-style ad copy."
->
-	<p>
-		Arahkaii is an early-stage independent publication for readers who expect cultural
-		intelligence and substance, not lifestyle wallpaper. If your brand is made with care
-		and meant to last, we can explore a clearly labelled founding partnership.
-	</p>
-	<p><a class="tlink" href="/partnerships/?route=paid#brief" data-partnership-cta>Discuss a paid partnership →</a></p>
-	<p>Have an independent story to pitch or an interview to offer? <a href="/partnerships/">Meet the Arahkaii partner desk</a>. Editorial consideration carries no placement fee.</p>
+<BaseLayout title="Advertise with Arahkaii — features, interviews & brand partnerships" description={description} jsonLd={jsonLd}>
+	<div class="advertise-page wrap">
+		<Breadcrumbs schema={false} class="page-crumbs advertise-crumbs" items={[{ name: 'Arahkaii', href: '/' }, { name: 'Advertise' }]} />
+		<header class:list={['advertise-hero', { 'advertise-hero--text': !journal }]}>
+			<div class="advertise-hero-copy">
+				<p class="eyebrow">Paid partnerships / Arahkaii</p>
+				<h1>Give your brand<br /><em>room to be understood.</em></h1>
+				<p class="advertise-dek">A feature with depth. A conversation with a point of view. A series that gives people a reason to return.</p>
+				<p class="advertise-intro">Commission work shaped for readers curious about contemporary Asia — its style, culture, places and ways of living.</p>
+				<div class="advertise-actions"><a class="tlink" href={paidBriefUrl()} data-partnership-cta>Start a partnership brief ↗</a><a class="advertise-text-link" href="#formats">Explore the formats ↓</a></div>
+				<p class="advertise-hero-note">An independent publication. Every paid feature clearly labelled.</p>
+			</div>
+			{journal && <figure class="advertise-journal">
+				<a class="advertise-journal-image media" href={journal.url} tabindex="-1" aria-hidden="true"><Image src={journal.image} alt="" widths={[480, 800, 1200]} sizes="(max-width: 800px) calc(100vw - 48px), 46vw" loading="eager" fetchpriority="high" /></a>
+				<figcaption><div class="advertise-journal-caption"><div><span class="eyebrow">From the journal / {journal.categoryLabel}</span><p><a href={journal.url}>{journal.title} <span aria-hidden="true">↗</span></a></p></div><span class="advertise-caption-note">A sense of our editorial approach</span></div><p class="advertise-image-credit">Illustration: Arahkaii / fal.ai · AI-generated</p></figcaption>
+			</figure>}
+		</header>
 
-	<h2>Who we are</h2>
-	<p>
-		An eight-pillar Asian modern-luxury publication — Style, Beauty, Dining, Travel,
-		Living, People, Culture and Guides — built on rigorous editorial standards and
-		a documented editorial process. Paid work is held to the same accuracy, sourcing and
-		image-rights standards as independent editorial.
-	</p>
+		<div class="advertise-premise"><p>For brands with<br /><em>more to explain.</em></p><div><p>How is it made? Why this place? What makes it useful here? We start with the questions that connect your work to a reader’s interests.</p><p class="advertise-desks"><a href="/style/">Style</a> · <a href="/beauty/">Beauty</a> · <a href="/dining/">Dining</a> · <a href="/travel/">Travel</a> · <a href="/living/">Living</a> · <a href="/people/">People</a> · <a href="/culture/">Culture</a> · <a href="/guides/">Guides</a></p></div></div>
 
-	<h2>Why partner with us</h2>
-	<ul>
-		<li><strong>An editorially defined audience.</strong> Readers interested in Asian style, tropical beauty and considered dining and travel.</li>
-		<li><strong>Editorial integration.</strong> Sponsored features written in the same pillar voice as our reported work — clearly labelled, never banner copy.</li>
-		<li><strong>Measured proposals.</strong> We share only analytics we can verify, with the reporting period and method attached.</li>
-		<li><strong>Flexible formats.</strong> Reported features, founder profiles and bespoke series, with distribution agreed to suit the work.</li>
-	</ul>
+		<section id="formats" class="advertise-section" aria-labelledby="formats-title">
+			<div class="advertise-section-head"><div><p class="eyebrow">01 / Find the format</p><h2 id="formats-title">What do you have in mind?</h2></div><p>Choose a starting point. We’ll shape the deliverables, fees and timing around the work.</p></div>
+			<div class="advertise-format-finder" data-format-finder>
+				<fieldset class="advertise-format-picker" data-format-picker hidden><legend>What would you like to do?</legend>{commercialOffers.map((offer, i) => <label><input type="radio" name="commercial-format" value={offer.id} checked={i === 0} aria-controls={`offer-${offer.id}`} /><span><strong>{offer.intent}</strong><span>{offer.title}</span></span><span class="advertise-choice-arrow" aria-hidden="true">↗</span></label>)}</fieldset>
+				<div class="advertise-format-panels">{commercialOffers.map((offer, i) => <article class="advertise-offer" id={`offer-${offer.id}`} data-format-panel={offer.id} aria-labelledby={`offer-title-${offer.id}`}>
+					<div class="advertise-offer-top"><p class="eyebrow">A starting point for your proposal</p><span aria-hidden="true">0{i + 1}</span></div>
+					<h3 id={`offer-title-${offer.id}`}>{offer.title}</h3><p class="advertise-offer-dek">{offer.description}</p>
+					<p class="advertise-scope-label">A scope to discuss</p><ul>{offer.scope.map((item) => <li>{item}</li>)}</ul>
+					<aside class="advertise-angle"><span class="eyebrow">A possible angle</span><p>{offer.angle}</p></aside>
+					<a class="tlink" href={paidBriefUrl(offer.id)} data-partnership-cta>Brief us on this format ↗</a>
+				</article>)}</div>
+				<p class="sr-only" data-format-status role="status"></p>
+			</div>
+			<p class="advertise-format-note">These are proposal formats. Original photography, social versions and additional usage rights can be scoped separately.</p>
+		</section>
 
-	<h2>What we never run</h2>
-	<p>
-		We do not publish alcohol, bar, nightclub, wine, beer, cocktail or nightlife
-		advertising in any form. This is a permanent editorial position, not a negotiable —
-		and a large part of why our readers trust what they find here.
-	</p>
+		<section class="advertise-section" aria-labelledby="commission-title">
+			<div class="advertise-section-head"><div><p class="eyebrow">02 / From brief to publication</p><h2 id="commission-title">Know what you’re commissioning.</h2></div><p>A clear agreement makes room for better creative work.</p></div>
+			<ol class="advertise-process">
+				<li><span aria-hidden="true">01</span><h3>Tell us the idea</h3><p>Share your brand, objective, timing and indicative budget. A few considered sentences are enough to begin.</p></li>
+				<li><span aria-hidden="true">02</span><h3>Agree the proposal</h3><p>Confirm the angle, deliverables, fees, payment terms, dates, review stages and permitted uses.</p></li>
+				<li><span aria-hidden="true">03</span><h3>Make the work</h3><p>Report, write and edit. Check factual details and attributed quotes; confirm imagery, credits and disclosure.</p></li>
+				<li><span aria-hidden="true">04</span><h3>Publish and follow through</h3><p>Deliver the agreed sharing materials and review available performance data at the reporting point in your scope.</p></li>
+			</ol>
+		</section>
 
-	<h2>Opportunities</h2>
-	<h3>A story with substance</h3>
-	<p>
-		A clearly labelled paid feature about a product, place or maker, with agreed
-		photography, distribution and a reporting window. Suitable for launches and brands
-		with a story that needs room. Enquire about a feature proposal.
-	</p>
-	<h3>A place in the newsletter</h3>
-	<p>
-		Newsletter signups are currently paused while we choose a provider. Newsletter
-		sponsorship can be discussed for a future edition, but is not currently available to book.
-		When it opens, we will share a verified audience and reporting period before agreeing a placement.
-	</p>
-	<h3>A considered series</h3>
-	<p>
-		A bounded partnership around a shared subject, with the number of stories,
-		creative work, usage rights and distribution agreed in advance. Paid placements
-		remain distinct from independent recommendations.
-	</p>
-	<p>
-		Every proposal specifies deliverables, fees, publication dates, approvals and
-		measurement. Sponsorship does not buy a ranking, a favourable review or guaranteed results.
-	</p>
+		<section class="advertise-distribution" aria-labelledby="distribution-title">
+			<div><p class="eyebrow">03 / Beyond publication day</p><h2 id="distribution-title">Give the work<br /><em>a way to travel.</em></h2><p>Agree how the story will reach people while we’re shaping the brief. Publication, sharing assets and measurement belong in the same conversation.</p></div>
+			<dl><div><dt>On Arahkaii</dt><dd>The commissioned article or series, with appropriate links to related reading. Any additional placement is specified in the proposal.</dd></div><div><dt>For your channels</dt><dd>A canonical article link, agreed excerpts, accurate credits and any commissioned social assets, with clear usage permissions.</dd></div><div><dt>After launch</dt><dd>A reporting period and the metrics available to assess the work. A later update can be considered when there’s something new to report.</dd></div></dl>
+		</section>
 
-	<h2>Labelling and brand safety</h2>
-	<p>
-		Paid work begins with a visible “Paid partnership” disclosure naming the partner.
-		Affiliate relationships and supplied access are disclosed separately. Partners may check
-		factual brand details, but Arahkaii retains final control of the headline, conclusions and publication.
-	</p>
+		<section class="advertise-section advertise-questions" aria-labelledby="questions-title"><div><p class="eyebrow">Before we begin</p><h2 id="questions-title">The useful details.</h2><p>Clear terms, a visible relationship and a story that earns its place.</p><a class="advertise-text-link" href="/editorial-standards/">Read our editorial standards ↗</a></div><div>
+			<details><summary>How much does a partnership cost?</summary><p>We quote against the agreed scope: reporting, writing, images, number of stories, distribution and usage rights. Share a budget range if you have one, or ask us to suggest an appropriate scope. Fees and payment terms are confirmed before work begins.</p></details>
+			<details><summary>What audience and results can you show us?</summary><p>Arahkaii is an early-stage independent publication. We share only audience and performance data we can verify, with the reporting period and measurement method. Your proposal will distinguish available metrics from information we cannot yet substantiate. Reach, search positions, sales and favourable reviews are not guaranteed.</p></details>
+			<details><summary>How are paid stories labelled and reviewed?</summary><p>Paid work carries a visible “Paid partnership” disclosure naming the partner. Review stages are agreed in advance, including checks of factual brand details, attributed quotes and image captions. Arahkaii retains responsibility for its headline, conclusions and publication. Paid links are marked appropriately.</p></details>
+			<details><summary>Can we add social assets or a newsletter placement?</summary><p>Social adaptations, additional photography and extended usage rights can be discussed as part of the proposal. Newsletter signups are currently paused, so newsletter placements are not available to book.</p></details>
+			<details><summary>Which brands are a good fit?</summary><p>Brands, makers and places with something specific to contribute to our coverage of contemporary Asia. We assess the idea, the evidence and what a reader could learn. Alcohol, pork, gambling and nightlife promotion fall outside our editorial remit.</p></details>
+			<details><summary>What if we’re offering an independent interview?</summary><p>Use the <a href="/partnerships/?route=interview#brief">interview route at our partner desk</a>. Independent editorial consideration is free and selected on its value to readers. It does not require a paid partnership.</p></details>
+		</div></section>
 
-	<h2>Get in touch</h2>
-	<p>
-		Tell us your brand, website, intended reader, preferred format, timing and indicative
-		budget. We will use your brief to assess editorial fit and prepare a scoped proposal.
-	</p>
-	<p><a class="tlink" href="/partnerships/?route=paid#brief" data-partnership-cta>Send a partnership brief →</a></p>
-	<p>
-		For current formats, founding-partner rates and a tailored proposal, write to
-		<a href="mailto:onnifyworks@gmail.com">onnifyworks@gmail.com</a>. Tell us about your brand
-		and what you'd like the reader to remember. A dated, metrics-backed media kit will be
-		published after the site has a sufficient continuous analytics history; we do not publish estimated reach as fact.
-	</p>
-</PageLayout>
+		<section class="advertise-close" aria-labelledby="brief-title"><div><p class="eyebrow">Your next step</p><h2 id="brief-title">What should readers<br /><em>understand about your work?</em></h2><p>Bring us the idea, the timing and what you want it to achieve.</p></div><div class="advertise-close-actions"><a class="tlink" href={paidBriefUrl()} data-partnership-cta>Start a paid partnership brief ↗</a><span>Or write directly to the desk</span><a class="advertise-text-link" href={`mailto:${DESK_EMAIL}?subject=Arahkaii%20paid%20partnership%20enquiry`}>{DESK_EMAIL}</a></div></section>
+	</div>
+	<script src="../scripts/commercial-format-finder.ts"></script>
+</BaseLayout>
