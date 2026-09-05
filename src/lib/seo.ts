@@ -10,7 +10,7 @@ export const SITE = {
 	// Falls back to the favicon if public/logo.png is not yet added.
 	logoUrl: 'https://www.arahkaii.com/logo.png',
 	twitter: '@arahkaii',
-	email: 'hello@arahkaii.com',
+	email: 'onnifyworks@gmail.com',
 	// Legal publisher behind the Arahkaii brand.
 	legalName: 'ONN GROUP LLP',
 	address: {

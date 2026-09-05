@@ -75,13 +75,13 @@ const jsonLd = [
 			</form>) : (
 				<div class="contact-email">
 					<p>For pitches, partnerships and corrections, write directly to the desk.</p>
-					<p><a class="tlink" data-contact-email href="mailto:hello@arahkaii.com">Email hello@arahkaii.com →</a></p>
+					<p><a class="tlink" data-contact-email href="mailto:onnifyworks@gmail.com">Email onnifyworks@gmail.com →</a></p>
 					<p class="field-note">For a partnership, include your brand, website, preferred format, timing and indicative budget.</p>
 				</div>
 			)}
 
 			{contactEnabled && <p class="contact-alt">
-				Prefer email? Write to <a href="mailto:hello@arahkaii.com">hello@arahkaii.com</a> — pitches,
+				Prefer email? Write to <a href="mailto:onnifyworks@gmail.com">onnifyworks@gmail.com</a> — pitches,
 				press and partnerships all reach the desk there.
 			</p>}
 		</div>
@@ -93,7 +93,7 @@ const jsonLd = [
 			if (success) success.hidden = params.get('sent') !== '1';
 			if (params.get('enquiry') !== 'partnership') return;
 			const emailLink = document.querySelector<HTMLAnchorElement>('[data-contact-email]');
-			if (emailLink) emailLink.href = 'mailto:hello@arahkaii.com?subject=Partnership%20enquiry';
+			if (emailLink) emailLink.href = 'mailto:onnifyworks@gmail.com?subject=Partnership%20enquiry';
 			const subject = document.querySelector<HTMLInputElement>('#cf-subject');
 			const message = document.querySelector<HTMLTextAreaElement>('#cf-message');
 			if (subject && !subject.value) subject.value = 'Partnership enquiry';

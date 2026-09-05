@@ -29,9 +29,9 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	if (!name || !EMAIL_PATTERN.test(email) || message.length < 10) return new Response('Please complete the required fields.', { status: 422 });
 
 	const apiKey = import.meta.env.RESEND_API_KEY;
-	const to = import.meta.env.CONTACT_TO_EMAIL ?? 'hello@arahkaii.com';
+	const to = import.meta.env.CONTACT_TO_EMAIL ?? 'onnifyworks@gmail.com';
 	const from = import.meta.env.CONTACT_FROM_EMAIL ?? 'Arahkaii Website <website@arahkaii.com>';
-	if (!apiKey) return new Response('Contact delivery is not configured. Please email hello@arahkaii.com.', { status: 503 });
+	if (!apiKey) return new Response('Contact delivery is not configured. Please email onnifyworks@gmail.com.', { status: 503 });
 	let response: Response;
 	try {
 		response = await fetch('https://api.resend.com/emails', {
@@ -42,11 +42,11 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 		});
 	} catch (error) {
 		console.error('Contact delivery unavailable', error);
-		return new Response('Delivery failed. Please email hello@arahkaii.com.', { status: 502 });
+		return new Response('Delivery failed. Please email onnifyworks@gmail.com.', { status: 502 });
 	}
 	if (!response.ok) {
 		console.error('Contact delivery failed', response.status, await response.text());
-		return new Response('Delivery failed. Please email hello@arahkaii.com.', { status: 502 });
+		return new Response('Delivery failed. Please email onnifyworks@gmail.com.', { status: 502 });
 	}
 	return redirect('/contact?sent=1', 303);
 };

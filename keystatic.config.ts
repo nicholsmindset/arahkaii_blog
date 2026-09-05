@@ -221,7 +221,7 @@ export default config({
 						{ label: 'Beehiiv', value: 'beehiiv' },
 						{ label: 'Pause signups', value: 'disabled' },
 					],
-					defaultValue: 'mailerlite',
+					defaultValue: 'disabled',
 				}),
 				sendWelcomeEmail: fields.checkbox({
 					label: 'Send provider welcome email',
