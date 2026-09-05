@@ -45,7 +45,13 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+<BaseLayout
+	title={title}
+	description={description}
+	prevPage={page.currentPage > 1 ? pageHref(page.currentPage - 1) : undefined}
+	nextPage={page.currentPage < page.lastPage ? pageHref(page.currentPage + 1) : undefined}
+	jsonLd={jsonLd}
+>
 	<div class="wrap latest-page">
 		<header class="latest-hero">
 			<div>
