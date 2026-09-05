@@ -8,7 +8,7 @@ import {
 
 export const prerender = false;
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-const clean = (value: FormDataEntryValue | null, max: number) => typeof value === 'string' ? value.trim().slice(0, max) : '';
+const clean = (value: FormDataEntryValue | null) => (typeof value === 'string' ? value.trim() : '');
 
 export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	if (!isSameOrigin(request)) return new Response('Forbidden', { status: 403 });
@@ -21,12 +21,13 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	} catch {
 		return new Response('Invalid form submission.', { status: 400 });
 	}
-	if (clean(form.get('bot-field'), 200)) return redirect('/contact?sent=1', 303);
-	const name = clean(form.get('name'), 120);
-	const email = clean(form.get('email'), 254).toLowerCase();
-	const subject = clean(form.get('subject'), 160) || 'Website enquiry';
-	const message = clean(form.get('message'), 8000);
-	if (!name || !EMAIL_PATTERN.test(email) || message.length < 10) return new Response('Please complete the required fields.', { status: 422 });
+	if (clean(form.get('bot-field'))) return redirect('/contact?sent=1', 303);
+	const name = clean(form.get('name'));
+	const email = clean(form.get('email')).toLowerCase();
+	const subject = clean(form.get('subject')) || 'Website enquiry';
+	const message = clean(form.get('message'));
+	if (!name || name.length > 120 || !EMAIL_PATTERN.test(email) || email.length > 254 || subject.length > 160 || message.length < 10 || message.length > 8000)
+		return new Response('Please complete the required fields.', { status: 422 });
 
 	const apiKey = import.meta.env.RESEND_API_KEY;
 	const to = import.meta.env.CONTACT_TO_EMAIL ?? 'hello@arahkaii.com';
