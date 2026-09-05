@@ -45,7 +45,10 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 						return response.json();
 					})
 					.then((index) => (Array.isArray(index) ? index : []))
-					.catch(() => []);
+					.catch(() => {
+						indexRequest = null;
+						return [];
+					});
 			}
 			return indexRequest;
 		}
