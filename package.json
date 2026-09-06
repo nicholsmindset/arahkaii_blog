@@ -21,8 +21,8 @@
     "test:publishing": "node --experimental-strip-types --test scripts/tests/*.test.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.5",
-    "@astrojs/react": "^6.0.2",
+    "@astrojs/mdx": "^8.0.0",
+    "@astrojs/react": "^6.0.5",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/vercel": "^11.0.10",
     "@fontsource-variable/inter": "^5.2.8",
