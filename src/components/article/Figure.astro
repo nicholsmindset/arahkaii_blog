@@ -26,7 +26,14 @@ const ratioClass = `r-${ratio}`;
 ---
 <figure class:list={['inline-fig', { breakout }]}>
 	<div class:list={['img', 'real', ratioClass, 'blurup']}>
-		<Image src={src} alt={alt} />
+		<Image
+			src={src}
+			alt={alt}
+			widths={[480, 700, 1024]}
+			sizes="(max-width: 760px) calc(100vw - 48px), 700px"
+			loading="lazy"
+			decoding="async"
+		/>
 	</div>
 	<figcaption class="caption">
 		{caption ? `${prefix}: ${caption} ` : ''}(Credit: {credit})
