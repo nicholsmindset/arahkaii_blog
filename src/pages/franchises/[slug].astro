@@ -27,7 +27,7 @@ if (cards.length) jsonLd.push(itemListSchema(entry.data.name, cards.map((c) => (
 	<section class="hub-list wrap" aria-label={`${entry.data.name} stories`}>
 		{cards.length ? cards.map((card, index) => (
 			<article class="hub-story">
-				<a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[480, 840]} sizes="(max-width:760px) 100vw, 42vw" /></a>
+				<a class="media" href={card.url}><Image src={card.image} alt={card.heroCaption || card.title} widths={[480, 840]} sizes="(max-width:760px) 100vw, 42vw" loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} decoding="async" /></a>
 				<div><p class="eyebrow eyebrow--emerald">{String(index + 1).padStart(2, '0')} · {card.categoryLabel}</p><h2><a href={card.url}>{card.title}</a></h2><p>{card.standfirst}</p><span>{card.byline} · {card.readingMinutes} min read</span></div>
 			</article>
 		)) : <div class="hub-empty"><h2>The first edition is being prepared.</h2><p>This franchise is visible to establish its editorial promise. Stories will appear here only after reporting and review.</p></div>}
