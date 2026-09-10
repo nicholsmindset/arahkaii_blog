@@ -137,6 +137,7 @@ const authorUrl = new URL(authorHref, SITE.url).toString();
 const crumbs = [
 	{ name: SITE.name, url: SITE.url },
 	{ name: categoryLabel, url: new URL(`/${category}`, SITE.url).toString() },
+	{ name: title, url: canonical.toString() },
 ];
 const jsonLd = [
 	organizationSchema(),
