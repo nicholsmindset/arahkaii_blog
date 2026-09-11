@@ -15,6 +15,16 @@ const loopback = new Set(['localhost', '127.0.0.1', '[::1]']);
 
 const PROVIDER_TIMEOUT_MS = 10_000;
 
+/** Standards-compliant response for endpoints that only accept POST requests. */
+export function postOnlyResponse(body = 'Method not allowed', contentType?: string): Response {
+	const headers: Record<string, string> = { Allow: 'POST', 'Cache-Control': 'no-store' };
+	if (contentType) headers['Content-Type'] = contentType;
+	return new Response(body, {
+		status: 405,
+		headers,
+	});
+}
+
 /** Abort a paid provider request before it exhausts the serverless invocation. */
 export function providerRequestSignal(): AbortSignal {
 	return AbortSignal.timeout(PROVIDER_TIMEOUT_MS);
