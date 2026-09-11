@@ -5,6 +5,7 @@ import {
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
+	postOnlyResponse,
 } from '../../lib/api-guard';
 
 export const prerender = false;
@@ -102,4 +103,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 	return reply(200, { ok: true });
 };
 
-export const ALL: APIRoute = () => reply(405, { error: 'Method not allowed' });
+export const ALL: APIRoute = () => postOnlyResponse(
+	JSON.stringify({ error: 'Method not allowed' }),
+	'application/json; charset=utf-8',
+);
