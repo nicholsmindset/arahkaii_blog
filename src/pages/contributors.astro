@@ -52,7 +52,14 @@ const jsonLd = [
 					<a class="contributor" href={`/authors/${a.id}/`}>
 						{a.data.avatar ? (
 							<div class="img real r-1x1 cb-portrait blurup">
-								<Image src={a.data.avatar} alt={a.data.name} width={240} height={240} />
+								<Image
+									src={a.data.avatar}
+									alt={a.data.name}
+									width={240}
+									height={240}
+									loading="lazy"
+									decoding="async"
+								/>
 							</div>
 						) : (
 							<div class="img ph tone-b r-1x1 cb-portrait blurup" />
