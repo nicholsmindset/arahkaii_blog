@@ -314,6 +314,8 @@ const gtmSnippet = gtmEnabled
 		}
 
 		<script>
+			import { normaliseSavedStoryHref } from '../lib/saved-stories';
+
 			import { track } from '@vercel/analytics';
 
 			// ARAHKAII v2 chrome + interactions. DOM-creating behaviours run on every
@@ -338,12 +340,16 @@ const gtmSnippet = gtmEnabled
 				try {
 					const value = JSON.parse(localStorage.getItem(SAVED_KEY) || '[]');
 					if (!Array.isArray(value)) return [];
-					return value.filter(
-						(item): item is SavedStory =>
-							typeof item?.title === 'string' &&
-							typeof item?.href === 'string' &&
-							item.href.startsWith('/'),
-					);
+					return value.flatMap((item): SavedStory[] => {
+						if (typeof item?.title !== 'string') return [];
+						const href = normaliseSavedStoryHref(item.href, location.origin);
+						if (!href) return [];
+						return [{
+							title: item.title,
+							href,
+							byline: typeof item.byline === 'string' ? item.byline : undefined,
+						}];
+					});
 				} catch {
 					return [];
 				}
