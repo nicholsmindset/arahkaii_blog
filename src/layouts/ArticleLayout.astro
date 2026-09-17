@@ -298,7 +298,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 						<a href={authorHref} class="ab-avatar-link author__portrait" aria-label={`More by ${author.name}`}>
 							{
 								author.avatar ? (
-									<Image src={author.avatar} alt={author.name} width={160} height={160} />
+									<Image src={author.avatar} alt={author.name} width={160} height={160} loading="lazy" decoding="async" />
 								) : (
 									<div class="ph" data-label="Author" />
 								)
