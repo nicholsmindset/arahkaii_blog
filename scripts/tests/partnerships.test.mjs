@@ -58,6 +58,12 @@ test('cross-origin submissions are rejected before parsing or delivery', async (
 	const response = await deliverPartnership(request(sample, 'https://other.example'), {});
 	assert.equal(response.status, 403);
 });
+test('oversized streamed briefs are rejected before the full body is buffered', async () => {
+	const oversized = request({ ...sample, story: 'x'.repeat(24_000) });
+	oversized.headers.delete('content-length');
+	const response = await deliverPartnership(oversized, {});
+	assert.equal(response.status, 413);
+});
 test('missing backend offers a truthful fallback', async () => {
 	assert.equal((await deliverPartnership(request(), {})).status, 503);
 });
