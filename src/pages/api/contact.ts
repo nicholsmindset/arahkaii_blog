@@ -4,6 +4,8 @@ import {
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
+	readLimitedBody,
+	RequestBodyTooLargeError,
 } from '../../lib/api-guard';
 
 export const prerender = false;
@@ -17,8 +19,14 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	}
 	let form: FormData;
 	try {
-		form = await request.formData();
-	} catch {
+		const body = await readLimitedBody(request, 12_000);
+		form = await new Request(request.url, {
+			method: 'POST',
+			headers: { 'Content-Type': request.headers.get('content-type') ?? 'application/x-www-form-urlencoded' },
+			body,
+		}).formData();
+	} catch (error) {
+		if (error instanceof RequestBodyTooLargeError) return new Response('Form submission is too large.', { status: 413 });
 		return new Response('Invalid form submission.', { status: 400 });
 	}
 	if (clean(form.get('bot-field'), 200)) return redirect('/contact?sent=1', 303);

@@ -5,6 +5,8 @@ import {
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
+	readLimitedBody,
+	RequestBodyTooLargeError,
 } from '../../lib/api-guard';
 
 export const prerender = false;
@@ -31,8 +33,9 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 
 	let payload: { email?: unknown; source?: unknown; website?: unknown };
 	try {
-		payload = await request.json();
-	} catch {
+		payload = JSON.parse(await readLimitedBody(request, 4_096));
+	} catch (error) {
+		if (error instanceof RequestBodyTooLargeError) return reply(413, { error: 'Request is too large' });
 		return reply(400, { error: 'Invalid request' });
 	}
 

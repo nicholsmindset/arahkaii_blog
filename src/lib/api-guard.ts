@@ -15,6 +15,37 @@ const loopback = new Set(['localhost', '127.0.0.1', '[::1]']);
 
 const PROVIDER_TIMEOUT_MS = 10_000;
 
+export class RequestBodyTooLargeError extends Error {}
+
+/** Read a request body without allowing an unbounded payload into memory. */
+export async function readLimitedBody(request: Request, maxBytes: number): Promise<string> {
+	const declaredLength = Number(request.headers.get('content-length'));
+	if (Number.isFinite(declaredLength) && declaredLength > maxBytes) {
+		throw new RequestBodyTooLargeError();
+	}
+	if (!request.body) return '';
+
+	const reader = request.body.getReader();
+	const decoder = new TextDecoder();
+	let bytesRead = 0;
+	let body = '';
+	try {
+		while (true) {
+			const { done, value } = await reader.read();
+			if (done) break;
+			bytesRead += value.byteLength;
+			if (bytesRead > maxBytes) {
+				await reader.cancel();
+				throw new RequestBodyTooLargeError();
+			}
+			body += decoder.decode(value, { stream: true });
+		}
+		return body + decoder.decode();
+	} finally {
+		reader.releaseLock();
+	}
+}
+
 /** Abort a paid provider request before it exhausts the serverless invocation. */
 export function providerRequestSignal(): AbortSignal {
 	return AbortSignal.timeout(PROVIDER_TIMEOUT_MS);

@@ -1,5 +1,5 @@
 import { validateBrief, formatBrief } from './partnerships.ts';
-import { isSameOrigin, withinRateLimit, clientIp } from './api-guard.ts';
+import { isSameOrigin, withinRateLimit, clientIp, readLimitedBody, RequestBodyTooLargeError } from './api-guard.ts';
 
 interface Options { endpoint?: string; fetcher?: typeof fetch; address?: string; }
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
@@ -8,15 +8,16 @@ const json = (body: unknown, status = 200) => new Response(JSON.stringify(body),
 export async function deliverPartnership(request: Request, options: Options): Promise<Response> {
 	if (!isSameOrigin(request)) return json({ error: 'Please submit from the Arahkaii website.' }, 403);
 	if (!withinRateLimit(`partnership:${clientIp(request, options.address)}`, 3, 60_000)) return json({ error: 'Please wait a minute before trying again.' }, 429);
-	if (Number(request.headers.get('content-length')) > 24_000) return json({ error: 'The brief is too long.' }, 413);
 	let input: Record<string, unknown>;
 	try {
-		const text = await request.text();
-		if (text.length > 24_000) return json({ error: 'The brief is too long.' }, 413);
+		const text = await readLimitedBody(request, 24_000);
 		if (!(request.headers.get('content-type') || '').includes('application/json')) return json({ error: 'Use the brief form to submit.' }, 415);
 		input = JSON.parse(text);
 		if (!input || Array.isArray(input) || typeof input !== 'object') throw new Error();
-	} catch { return json({ error: 'We could not read the brief. Your text is still in the form.' }, 400); }
+	} catch (error) {
+		if (error instanceof RequestBodyTooLargeError) return json({ error: 'The brief is too long.' }, 413);
+		return json({ error: 'We could not read the brief. Your text is still in the form.' }, 400);
+	}
 	if (input.company_fax) return json({ error: 'Please use the contact email to reach the desk.' }, 422);
 	const result = validateBrief(input);
 	if (!result.ok) return json({ error: 'Check the highlighted fields.', errors: result.errors }, 422);
