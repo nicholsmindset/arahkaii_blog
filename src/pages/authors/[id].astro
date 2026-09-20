@@ -107,7 +107,14 @@ const jsonLd = [
 			{
 				a.avatar ? (
 					<div class="img real r-4x5 ah-portrait blurup in">
-						<Image src={a.avatar} alt={a.name} />
+						<Image
+							src={a.avatar}
+							alt={a.name}
+							widths={[300, 480, 720, 960]}
+							sizes="(max-width: 860px) 300px, (max-width: 1384px) 38vw, 500px"
+							loading="eager"
+							fetchpriority="high"
+						/>
 					</div>
 				) : (
 					<div class="img ph tone-b r-4x5 ah-portrait blurup in">
