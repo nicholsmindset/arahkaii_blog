@@ -79,7 +79,7 @@ const jsonLd = [
 					<div class="latest-featured__side">
 						{featured.slice(1).map((card) => (
 							<a class="latest-side-story" href={card.url}>
-								<div class="media"><Image src={card.image} alt={card.heroCaption || card.title} widths={[420, 720]} sizes="(max-width: 860px) 50vw, 28vw" /></div>
+								<div class="media"><Image src={card.image} alt={card.heroCaption || card.title} widths={[420, 720]} sizes="(max-width: 860px) 50vw, 28vw" loading="lazy" decoding="async" /></div>
 								<p class="eyebrow eyebrow--emerald">{card.categoryLabel}</p>
 								<h2>{card.title}</h2>
 								<span class="latest-meta">{fmtDate(card.date)}{card.readingMinutes ? ` · ${card.readingMinutes} min` : ''}</span>
