@@ -30,6 +30,7 @@ const semanticFailures = [];
 const hierarchyFailures = [];
 const imageFailures = [];
 const socialImageFailures = [];
+const articleAuthorFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
@@ -62,6 +63,12 @@ for (const file of htmlFiles) {
 	}
 	if (hasSocialImage && !/<meta name="twitter:image:alt" content="[^"]+"/.test(html)) {
 		socialImageFailures.push(`${relativeFile}: Twitter image missing alt text`);
+	}
+	if (/\bdata-article-body\b/.test(html)) {
+		const authorUrl = html.match(/<meta property="article:author" content="([^"]+)"/)?.[1];
+		if (!authorUrl || !/^https:\/\/www\.arahkaii\.com\/authors\/[^/]+\/$/.test(authorUrl)) {
+			articleAuthorFailures.push(`${relativeFile}: article:author must link to an Arahkaii contributor profile`);
+		}
 	}
 	for (const form of html.matchAll(/<form\b[^>]*class="[^"]*\bjs-news\b[^"]*"[^>]*>([\s\S]*?)<\/form>/g)) {
 		if (!/class="[^"]*\bfield-note\b/.test(form[1])) {
@@ -137,6 +144,11 @@ if (socialImageFailures.length) {
 	for (const item of socialImageFailures) console.error(`- ${item}`);
 }
 
+if (articleAuthorFailures.length) {
+	console.error('\nArticle author metadata failures:');
+	for (const item of articleAuthorFailures) console.error(`- ${item}`);
+}
+
 if (newsletterFeedbackFailures.length) {
 	console.error('\nNewsletter feedback failures:');
 	for (const item of newsletterFeedbackFailures) console.error(`- ${item}`);
@@ -195,6 +207,7 @@ if (
 	hierarchyFailures.length ||
 	imageFailures.length ||
 	socialImageFailures.length ||
+	articleAuthorFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
 	sitemapFailures.length
