@@ -34,7 +34,7 @@ interface Props {
 	noindex?: boolean;
 	publishedTime?: string;
 	modifiedTime?: string;
-	authorName?: string;
+	authorUrl?: string;
 	section?: string;
 	tags?: string[];
 	jsonLd?: Record<string, unknown>[];
@@ -51,7 +51,7 @@ const {
 	noindex = false,
 	publishedTime,
 	modifiedTime,
-	authorName,
+	authorUrl,
 	section,
 	tags,
 	imageWidth = 1200,
@@ -154,7 +154,7 @@ const gtmSnippet = gtmEnabled
 			noindex={noindex}
 			publishedTime={publishedTime}
 			modifiedTime={modifiedTime}
-			authorName={authorName}
+			authorUrl={authorUrl}
 			section={section}
 			tags={tags}
 			jsonLd={jsonLd}
