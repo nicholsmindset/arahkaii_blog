@@ -2,6 +2,7 @@
 // Fails on broken internal links or invalid page-level heading/landmark counts.
 import fs from 'node:fs';
 import path from 'node:path';
+import { articlesWithUnsizedImages } from './lib/validate-html.mjs';
 
 const DIST = path.resolve('dist');
 
@@ -81,12 +82,10 @@ for (const file of htmlFiles) {
 		}
 	}
 
-	const articleHtml = mainHtml.match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1] ?? '';
-	for (const image of articleHtml.matchAll(/<img\b([^>]*)>/g)) {
-		if (!/\bwidth="\d+"/.test(image[1]) || !/\bheight="\d+"/.test(image[1])) {
-			imageFailures.push(`${relativeFile}: article image missing explicit width/height`);
-			break;
-		}
+	for (const articleIndex of articlesWithUnsizedImages(mainHtml)) {
+		imageFailures.push(
+			`${relativeFile}: article ${articleIndex} image missing explicit width/height`,
+		);
 	}
 
 	for (const match of html.matchAll(/href="([^"]+)"/g)) {
