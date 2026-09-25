@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const readNextImageFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,12 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	for (const block of html.matchAll(/<a\b[^>]*class="[^"]*\breadnext\b[^"]*"[^>]*>([\s\S]*?)<\/a>/g)) {
+		const image = block[1].match(/<img\b([^>]*)>/)?.[1];
+		if (image && (!/\bloading="lazy"/.test(image) || !/\bdecoding="async"/.test(image))) {
+			readNextImageFailures.push(`${relativeFile}: read-next image must load lazily and decode asynchronously`);
+		}
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +154,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (readNextImageFailures.length) {
+	console.error('\nRead-next image loading failures:');
+	for (const item of readNextImageFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +209,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	readNextImageFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
