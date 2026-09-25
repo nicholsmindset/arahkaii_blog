@@ -369,7 +369,7 @@ else if (listItems?.length) jsonLd.push(itemListSchema(listName ?? title, listIt
 					<a class="hl-link readnext" href={readNext.href}>
 						<div class="media ar-3-2">
 							{readNext.image ? (
-								<Image src={readNext.image} alt={readNext.title} widths={[480, 800]} sizes="(max-width:900px) 100vw, 40vw" />
+								<Image src={readNext.image} alt={readNext.title} loading="lazy" decoding="async" widths={[480, 800]} sizes="(max-width:900px) 100vw, 40vw" />
 							) : (
 								<div class="ph" data-label={`${readNext.categoryLabel} · 5:7`} />
 							)}
