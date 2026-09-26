@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const externalTabFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,14 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	for (const anchor of html.matchAll(/<a\b([^>]*)>/g)) {
+		const attributes = anchor[1];
+		if (!/\btarget=(['"])_blank\1/.test(attributes)) continue;
+		const rel = attributes.match(/\brel=(['"])(.*?)\1/)?.[2].split(/\s+/) ?? [];
+		if (!rel.includes('noopener') || !rel.includes('noreferrer')) {
+			externalTabFailures.push(`${relativeFile}: target="_blank" link must use rel="noopener noreferrer"`);
+		}
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +156,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (externalTabFailures.length) {
+	console.error('\nExternal-tab link failures:');
+	for (const item of externalTabFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,9 +211,10 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	externalTabFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
 console.log(
-	`✓ ${htmlFiles.length} HTML pages checked · headings, landmarks, article and social images, internal links and segmented sitemaps validated.`,
+	`✓ ${htmlFiles.length} HTML pages checked · headings, landmarks, images, links and segmented sitemaps validated.`,
 );
