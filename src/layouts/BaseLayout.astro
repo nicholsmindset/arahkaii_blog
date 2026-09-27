@@ -315,6 +315,7 @@ const gtmSnippet = gtmEnabled
 
 		<script>
 			import { track } from '@vercel/analytics';
+			import { normaliseSearchText } from '../lib/search';
 
 			// ARAHKAII v2 chrome + interactions. DOM-creating behaviours run on every
 			// astro:page-load; document-level listeners bind once (document persists
@@ -420,7 +421,7 @@ const gtmSnippet = gtmEnabled
 				async function run(q: string) {
 					if (!results) return;
 					const version = ++queryVersion;
-					q = (q || '').trim().toLowerCase();
+					q = normaliseSearchText((q || '').trim());
 					if (!q) {
 						results.hidden = true;
 						results.innerHTML = '';
@@ -430,7 +431,7 @@ const gtmSnippet = gtmEnabled
 					if (version !== queryVersion) return;
 					results.hidden = false;
 					const hits = idx
-						.filter((x) => (x.t + ' ' + x.c + ' ' + x.a + ' ' + (x.k || '')).toLowerCase().includes(q))
+						.filter((x) => x.s.includes(q))
 						.slice(0, 7);
 					results.innerHTML = hits.length
 						? hits

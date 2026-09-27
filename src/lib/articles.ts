@@ -3,6 +3,7 @@
 // shape of a card is defined once.
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { cap } from './format';
+import { normaliseSearchText } from './search';
 
 export type Tone = 'tone-b' | 'tone-c' | 'tone-d';
 const TONES: Tone[] = ['tone-b', 'tone-c', 'tone-d'];
@@ -142,13 +143,17 @@ export async function getTagIndex(): Promise<Map<string, PostCard[]>> {
 /** Slim, JSON-serialisable index for the client search overlay. */
 export async function getSearchIndex() {
 	const cards = await getCards();
-	return cards.map((c) => ({
-		t: c.title,
-		k: [...c.tags, c.standfirst].join(' '),
-		c: c.categoryLabel,
-		a: c.authorName,
-		h: c.url,
-		d: c.date.toISOString(),
-		r: c.readingMinutes ?? null,
-	}));
+	return cards.map((c) => {
+		const keywords = [...c.tags, c.standfirst].join(' ');
+		return {
+			t: c.title,
+			k: keywords,
+			c: c.categoryLabel,
+			a: c.authorName,
+			s: normaliseSearchText(`${c.title} ${c.categoryLabel} ${c.authorName} ${keywords}`),
+			h: c.url,
+			d: c.date.toISOString(),
+			r: c.readingMinutes ?? null,
+		};
+	});
 }
