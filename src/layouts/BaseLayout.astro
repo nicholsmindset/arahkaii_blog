@@ -80,7 +80,11 @@ const navItems = CATEGORIES.map((c) => ({
 // like a directory.
 const primaryNav = [
 	...navItems.filter((n) => ['Style', 'Beauty', 'Dining', 'Travel', 'Culture', 'Living'].includes(n.label)),
-	{ label: 'The Majlis', href: '/franchises/the-majlis/', active: false },
+	{
+		label: 'The Majlis',
+		href: '/franchises/the-majlis/',
+		active: Astro.url.pathname.startsWith('/franchises/the-majlis/'),
+	},
 ];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -173,7 +177,7 @@ const gtmSnippet = gtmEnabled
 		<div class="stickybar" inert>
 			<a class="stickybar__mark" href="/">ARAHKAII</a>
 			<nav class="stickybar__nav" aria-label="Sections">
-				{primaryNav.map((n) => <a class="navlink" href={n.href}>{n.label.toUpperCase()}</a>)}
+				{primaryNav.map((n) => <a class="navlink" href={n.href} aria-current={n.active ? 'page' : undefined}>{n.label.toUpperCase()}</a>)}
 			</nav>
 			<div class="stickybar__right">
 				<button class="masthead__util" data-search-toggle type="button" aria-expanded="false" aria-controls="site-search">SEARCH</button>
