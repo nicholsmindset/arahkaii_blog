@@ -551,7 +551,9 @@ const gtmSnippet = gtmEnabled
 				// sticky condensed bar — show after 200px, hide on scroll-down past
 				// 600px, reappear on scroll-up.
 				let lastY = window.scrollY;
-				const onScroll = () => {
+				let scrollFrame: number | null = null;
+				const updateScrollState = () => {
+					scrollFrame = null;
 					const bar = document.querySelector<HTMLElement>('.stickybar');
 					if (bar) {
 						const y = window.scrollY;
@@ -577,8 +579,11 @@ const gtmSnippet = gtmEnabled
 						}
 					}
 				};
-				window.addEventListener('scroll', onScroll, { passive: true });
-				window.addEventListener('resize', onScroll);
+				const scheduleScrollUpdate = () => {
+					if (scrollFrame === null) scrollFrame = window.requestAnimationFrame(updateScrollState);
+				};
+				window.addEventListener('scroll', scheduleScrollUpdate, { passive: true });
+				window.addEventListener('resize', scheduleScrollUpdate);
 
 				// overlay menu — modal dialog semantics: trap Tab while open and
 				// restore focus to the trigger on close (a11y).
@@ -749,7 +754,7 @@ const gtmSnippet = gtmEnabled
 					form.removeAttribute('aria-busy');
 				});
 
-				onScroll();
+				updateScrollState();
 			}
 
 			document.addEventListener('astro:page-load', initChrome);
