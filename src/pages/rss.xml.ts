@@ -7,9 +7,13 @@ import { getPosts } from '../lib/articles';
 // asset instead of invoking a serverless function for every feed reader poll.
 export const prerender = true;
 
+// Feed readers only need the recent catalogue. Keep the static response from
+// growing with the full archive while retaining a generous backlog.
+const MAX_ITEMS = 50;
+
 export async function GET(context: APIContext) {
 	// getPosts already excludes drafts, noindex and future-dated posts.
-	const posts = await getPosts();
+	const posts = (await getPosts()).slice(0, MAX_ITEMS);
 
 	return rss({
 		title: SITE.name,
