@@ -12,6 +12,9 @@ import { redirectMap } from './scripts/lib/redirects.mjs';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.arahkaii.com',
+	// Deliver page styles with the prerendered HTML to remove blocking CSS
+	// round trips on mobile. Vercel compresses the response in production.
+	build: { inlineStylesheets: 'always' },
 	// Directory output → canonical URLs carry a trailing slash; enforce it so the
 	// slashless variant 301s instead of serving a duplicate (paired with
 	// vercel.json "trailingSlash": true). Seo.astro canonical stays authoritative.

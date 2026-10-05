@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getTagIndex } from '../../lib/articles';
@@ -13,7 +14,8 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { cards } = Astro.props;
-const label = prettifyTag(tag!);
+const topic = (await getCollection('clusters')).find((entry) => entry.id === tag);
+const label = topic?.data.name ?? prettifyTag(tag!);
 const description = `Every Arahkaii story tagged ${label} — ${cards.length} ${cards.length === 1 ? 'piece' : 'pieces'} across style, beauty, dining, travel and culture.`;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -42,7 +44,8 @@ const jsonLd = [
 				<h1>{label}</h1>
 			</div>
 			<div class="latest-hero__intro">
-				<p>Every Arahkaii story on {label.toLowerCase()}.</p>
+				<p>Every Arahkaii story on {label}.</p>
+				{topic && <p><a class="tlink" href={`/topics/${topic.id}/`}>Start with our {topic.data.name} topic guide →</a></p>}
 				<span>{cards.length} {cards.length === 1 ? 'story' : 'stories'} · newest first</span>
 			</div>
 		</header>

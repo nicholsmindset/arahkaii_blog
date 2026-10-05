@@ -1,6 +1,7 @@
 ---
 import { fmtDate } from '../../lib/format';
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getCards, type PostCard } from '../../lib/articles';
@@ -47,6 +48,8 @@ const meta = META[category!] ?? dek;
 
 const all = await getCards();
 const cards = all.filter((c) => c.category === category);
+const topicIds = new Set(cards.map((card) => card.cluster).filter(Boolean));
+const topics = (await getCollection('clusters')).filter((topic) => topicIds.has(topic.id));
 const lead = cards[0];
 const pool = cards.slice(1);
 // Thin categories: cross-category stories render in their own labelled
@@ -108,6 +111,9 @@ if (cards.length)
 		<div class="wrap">
 			<h1 class="h1 reveal">{label}</h1>
 			<p class="dek reveal" data-stagger="60" style="max-width:32ch;margin:20px auto 0">{dek}</p>
+			{topics.length > 0 && <nav aria-label={`${label} topic guides`} class="chips" style="margin-top:24px">
+				{topics.map((topic) => <a class="tlink" href={`/topics/${topic.id}/`}>{topic.data.name} guide →</a>)}
+			</nav>}
 			{
 				topTags.length > 0 && (
 					<div class="chips reveal" data-stagger="120" role="group" aria-label={`Filter ${label} stories by theme`}>
@@ -270,7 +276,7 @@ if (cards.length)
 		}
 
 		<div class="loadmore" style="padding-bottom:96px">
-			<a class="tlink" href="/latest/">Load more</a>
+			<a class="tlink" href="/latest/">Explore all latest stories →</a>
 		</div>
 	</div>
 	</div>
