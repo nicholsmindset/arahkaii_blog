@@ -15,6 +15,7 @@ const run = promisify(execFile);
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
+import { brotliCompressSync, gzipSync, constants } from 'node:zlib';
 
 const DIST = fs.existsSync(path.resolve('dist/client')) ? path.resolve('dist/client') : path.resolve('dist');
 if (!fs.existsSync(DIST)) {
@@ -29,6 +30,20 @@ const PORT = 4173;
 
 const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.woff2': 'font/woff2', '.ico': 'image/x-icon', '.json': 'application/json', '.xml': 'application/xml', '.txt': 'text/plain', '.webmanifest': 'application/manifest+json' };
 
+// Match the text compression used by Vercel's CDN. Cache compressed bodies
+// so compression CPU time does not distort browser timings between runs.
+const responses = new Map();
+const COMPRESSIBLE = new Set(['.html', '.css', '.js', '.mjs', '.svg', '.json', '.xml', '.txt', '.webmanifest']);
+
+// Compress before Lighthouse starts: the CDN serves precompressed assets.
+for (const relative of fs.readdirSync(DIST, { recursive: true })) {
+	const file = path.join(DIST, relative);
+	if (!COMPRESSIBLE.has(path.extname(file)) || !fs.statSync(file).isFile()) continue;
+	const raw = fs.readFileSync(file);
+	responses.set(`${file}:br`, brotliCompressSync(raw, { params: { [constants.BROTLI_PARAM_QUALITY]: 5 } }));
+	responses.set(`${file}:gzip`, gzipSync(raw));
+}
+
 const server = http.createServer((req, res) => {
 	const url = decodeURIComponent(new URL(req.url, `http://localhost:${PORT}`).pathname);
 	let file = path.join(DIST, url);
@@ -38,8 +53,24 @@ const server = http.createServer((req, res) => {
 		res.writeHead(404).end('not found');
 		return;
 	}
-	res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] ?? 'application/octet-stream' });
-	fs.createReadStream(file).pipe(res);
+	const ext = path.extname(file);
+	const accepted = req.headers['accept-encoding'] ?? '';
+	const encoding = COMPRESSIBLE.has(ext)
+		? (/\bbr\b/.test(accepted) ? 'br' : /\bgzip\b/.test(accepted) ? 'gzip' : '')
+		: '';
+	const key = `${file}:${encoding}`;
+	if (!responses.has(key)) {
+		const raw = fs.readFileSync(file);
+		responses.set(key, encoding === 'br' ? brotliCompressSync(raw, { params: { [constants.BROTLI_PARAM_QUALITY]: 5 } }) : encoding === 'gzip' ? gzipSync(raw) : raw);
+	}
+	const body = responses.get(key);
+	res.writeHead(200, {
+		'Content-Type': MIME[ext] ?? 'application/octet-stream',
+		'Content-Length': body.length,
+		'Vary': 'Accept-Encoding',
+		...(encoding ? { 'Content-Encoding': encoding } : {}),
+	});
+	res.end(body);
 });
 
 const median = (xs) => [...xs].sort((a, b) => a - b)[Math.floor(xs.length / 2)];

@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCards } from '../../lib/articles';
 import { SITE, organizationSchema, websiteSchema, collectionPageSchema, itemListSchema, breadcrumbSchema } from '../../lib/seo';
@@ -9,6 +9,7 @@ export async function getStaticPaths() {
 	return (await getCollection('clusters')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;
+const { Content } = await render(entry);
 const cards = (await getCards()).filter((card) => card.cluster === entry.id).sort((a, b) => Number(b.isPillar) - Number(a.isPillar));
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const jsonLd = [organizationSchema(), websiteSchema(), collectionPageSchema({ name: entry.data.name, url: canonical, description: entry.data.description }), breadcrumbSchema([
@@ -21,6 +22,7 @@ if (cards.length) jsonLd.push(itemListSchema(entry.data.name, cards.map((c) => (
 	<header class="hub-head wrap">
 		<p class="eyebrow eyebrow--emerald">Topic guide</p><h1>{entry.data.name}</h1><p>{entry.data.description}</p>
 	</header>
+	{entry.body?.trim() && <section class="hub-context wrap" aria-label={`About ${entry.data.name}`}><Content /></section>}
 	<section class="hub-list wrap" aria-label={`${entry.data.name} stories`}>
 		{cards.length ? cards.map((card, index) => (
 			<article class="hub-story">
@@ -30,3 +32,9 @@ if (cards.length) jsonLd.push(itemListSchema(entry.data.name, cards.map((c) => (
 		)) : <div class="hub-empty"><h2>Reporting in progress.</h2><p>This topic will open when its first reviewed article is ready.</p></div>}
 	</section>
 </BaseLayout>
+
+<style>
+	.hub-context { max-width: 760px; padding-bottom: 48px; }
+	.hub-context :global(h2) { margin: 32px 0 12px; font-size: clamp(24px, 3vw, 32px); }
+	.hub-context :global(p) { margin: 0 0 20px; line-height: 1.75; }
+</style>

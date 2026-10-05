@@ -11,13 +11,17 @@ import '../styles/global.css';
 import '../styles/pages.css';
 
 // Self-hosted variable fonts (Fontsource) for the v2 system:
-// Source Serif 4 (readable editorial headings/body + italics) and Inter (UI/meta).
-import '@fontsource-variable/source-serif-4/opsz.css';
-import '@fontsource-variable/source-serif-4/opsz-italic.css';
+// Source Serif 4 (editorial headings/body + italics) and Inter (UI/meta).
+// Use the weight axis for the editorial face: roughly 103 KB for normal and
+// italic Latin together, versus 253 KB with the additional optical-size axis.
+import '@fontsource-variable/source-serif-4/wght.css';
+import '@fontsource-variable/source-serif-4/wght-italic.css';
 import '@fontsource-variable/inter/wght.css';
-// Preload the critical latin editorial face so the first paint doesn't wait on
-// stylesheet discovery — an LCP win on 4G.
-import serifWoff2 from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-normal.woff2?url';
+// Preload the Latin faces used in the masthead, editorial text and navigation
+// so their discovery does not depend on the first style/layout pass.
+import serifWoff2 from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
+import serifItalicWoff2 from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-italic.woff2?url';
+import sansWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 
 interface Props {
 	title: string;
@@ -127,6 +131,8 @@ const gtmSnippet = gtmEnabled
 			></script>
 		)}
 		<link rel="preload" as="font" type="font/woff2" href={serifWoff2} crossorigin />
+		<link rel="preload" as="font" type="font/woff2" href={serifItalicWoff2} crossorigin />
+		<link rel="preload" as="font" type="font/woff2" href={sansWoff2} crossorigin />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
