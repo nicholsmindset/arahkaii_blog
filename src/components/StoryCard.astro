@@ -48,7 +48,7 @@ const phLabel = label ?? `${(category ?? '').toUpperCase()}`;
 				// The headline in this same link already names its destination. Treat
 				// the thumbnail as decorative so assistive technology does not announce
 				// every story title twice.
-				<Image src={image} alt="" widths={widths} sizes={sizes} />
+				<Image src={image} alt="" widths={widths} sizes={sizes} loading="lazy" />
 			) : (
 				<div class="ph" data-label={phLabel} />
 			)
