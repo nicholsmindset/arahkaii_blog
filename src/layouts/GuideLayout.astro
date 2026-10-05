@@ -301,8 +301,13 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 				(es) => {
 					es.forEach((e) => {
 						if (e.isIntersecting) {
-							links.forEach((a) => a.classList.remove('active'));
-							links.get((e.target as HTMLElement).id)?.classList.add('active');
+							links.forEach((a) => {
+								a.classList.remove('active');
+								a.removeAttribute('aria-current');
+							});
+							const activeLink = links.get((e.target as HTMLElement).id);
+							activeLink?.classList.add('active');
+							activeLink?.setAttribute('aria-current', 'location');
 						}
 					});
 				},
