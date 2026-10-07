@@ -21,6 +21,7 @@
     "test:publishing": "node --experimental-strip-types --test scripts/tests/*.test.mjs"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "0.3.5",
     "@astrojs/mdx": "^7.0.5",
     "@astrojs/react": "^6.0.2",
     "@astrojs/rss": "^4.0.19",
