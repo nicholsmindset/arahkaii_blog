@@ -5,6 +5,8 @@ import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 import vercel from '@astrojs/vercel';
 import { redirectMap } from './scripts/lib/redirects.mjs';
+import { satteri } from '@astrojs/markdown-satteri';
+import { satteriEditorialTables } from './scripts/rehype-editorial-tables.mjs';
 
 // Tailwind v4 is wired via PostCSS (postcss.config.mjs), not @tailwindcss/vite,
 // to sidestep the Astro 6 rolldown build bug (withastro/astro#16542).
@@ -12,6 +14,7 @@ import { redirectMap } from './scripts/lib/redirects.mjs';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.arahkaii.com',
+	markdown: { processor: satteri({ hastPlugins: [satteriEditorialTables()] }) },
 	// Deliver page styles with the prerendered HTML to remove blocking CSS
 	// round trips on mobile. Vercel compresses the response in production.
 	build: { inlineStylesheets: 'always' },
