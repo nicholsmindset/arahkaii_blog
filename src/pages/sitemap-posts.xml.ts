@@ -2,6 +2,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { urlset } from '../lib/sitemap';
+import { comparePostsNewestFirst } from '../lib/post-order';
 
 export const prerender = true;
 
@@ -13,7 +14,7 @@ export const GET: APIRoute = async () => {
 	);
 	return urlset(
 		posts
-			.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+			.sort(comparePostsNewestFirst)
 			.map((post) => ({
 				path: `/${post.data.category}/${post.id.split('/').pop()}/`,
 				lastmod: post.data.updatedDate ?? post.data.date,
