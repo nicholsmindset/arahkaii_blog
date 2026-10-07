@@ -49,6 +49,7 @@ interface Props {
 	readingMinutes?: number;
 	wordCount?: number;
 	heroImage: ImageMetadata;
+	heroAlt?: string;
 	heroCaption: string;
 	heroCredit: string;
 	author: AuthorData;
@@ -92,6 +93,7 @@ const {
 	readingMinutes,
 	wordCount,
 	heroImage,
+	heroAlt,
 	heroCaption,
 	heroCredit,
 	author,
@@ -203,7 +205,7 @@ const byline = `By ${author.name}${reviewedBy ? ` · Reviewed by ${reviewedBy.na
 
 		<figure class="guide-hero">
 			<div class="img real r-16x9 blurup">
-				<Image src={heroImage} alt={heroCaption || title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
+				<Image src={heroImage} alt={heroAlt || heroCaption || title} loading="eager" fetchpriority="high" widths={[768, 1280, 1920]} sizes="(max-width:1440px) 100vw, 1280px" />
 			</div>
 			<figcaption class="caption">
 				{heroCaption ? `Above: ${heroCaption} ` : ''}(Credit: {heroCredit})
