@@ -3,6 +3,9 @@
 // shape of a card is defined once.
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { cap } from './format';
+import { estimateReadingMinutes } from './reading-time';
+
+export { estimateReadingMinutes } from './reading-time';
 
 export type Tone = 'tone-b' | 'tone-c' | 'tone-d';
 const TONES: Tone[] = ['tone-b', 'tone-c', 'tone-d'];
@@ -19,16 +22,6 @@ export const isPreviewBuild =
 /** Deterministic tonal crop for placeholder/cards, varied by position. */
 export function toneFor(i: number): Tone {
 	return TONES[i % TONES.length];
-}
-
-/**
- * Estimate reading time from raw MDX body at ~225 wpm (average adult prose
- * speed). Strips nothing fancy — frontmatter is already excluded from `.body`,
- * and the small overcount from markdown/JSX tokens is negligible at this rate.
- */
-export function estimateReadingMinutes(body: string | undefined): number {
-	const words = (body ?? '').trim().split(/\s+/).filter(Boolean).length;
-	return Math.max(1, Math.round(words / 225));
 }
 
 export interface PostCard {
