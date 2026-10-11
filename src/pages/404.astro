@@ -1,18 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { cap } from '../lib/format';
+import { CATEGORIES } from '../lib/taxonomy';
 
 // On-brand not-found page. noindex (it's an error surface, never a destination),
 // and a quiet way back: home, the eight categories, and the search overlay.
-const categories = [
-	'Style',
-	'Beauty',
-	'Dining',
-	'Travel',
-	'Culture',
-	'Living',
-	'People',
-	'Guides',
-];
 ---
 
 <BaseLayout title="Page not found — Arahkaii" description="The page you were looking for has wandered off the path." noindex={true}>
@@ -30,7 +22,7 @@ const categories = [
 		</div>
 
 		<nav class="nf-cats" aria-label="Browse categories">
-			{categories.map((c) => <a href={`/${c.toLowerCase()}/`}>{c}</a>)}
+			{CATEGORIES.map((category) => <a href={`/${category}/`}>{cap(category)}</a>)}
 		</nav>
 	</div>
 </BaseLayout>
