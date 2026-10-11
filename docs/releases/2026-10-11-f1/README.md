@@ -14,7 +14,13 @@ Each article records its AI-assisted desk-research method, citations, verificati
 
 ## Visuals
 
-Five original native 1672×941 images; high-quality WebP exports at the same dimensions. PNG masters retained separately. See image-provenance.json for hashes and representation notes. The generator did not supply a larger native size, so no 4K or upscaled-quality claim is made.
+Fifteen original native 1672×941 images (one hero and two exclusive inline illustrations per article); high-quality WebP exports at the same dimensions. PNG masters retained separately. See image-provenance.json for hashes and representation notes. The generator did not supply a larger native size, so no 4K or upscaled-quality claim is made.
+
+### Image uniqueness correction
+
+The original release reused the five heroes inside other articles. On the owner’s request, all ten inline placements were replaced with independently generated, section-specific illustrations. Captions, alt text and section placement now describe each new image. The image system records the requirement that generated editorial images belong exclusively to one article.
+
+`image-uniqueness-audit.json` records 15 distinct paths and SHA-256 hashes, three images per article and zero cross-article editorial image references. Every new master was visually inspected before export.
 
 ## Validation
 
@@ -23,6 +29,10 @@ Five original native 1672×941 images; high-quality WebP exports at the same dim
 ![Merch desktop](merch-desktop.png)
 
 ![Shopping mobile](shopping-mobile.png)
+
+![Exclusive inline illustration on desktop](unique-merch-desktop.png)
+
+![Exclusive beauty illustration on mobile](unique-beauty-mobile.png)
 
 ## Rollback
 

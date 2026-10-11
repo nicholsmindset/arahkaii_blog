@@ -7,7 +7,7 @@
     "width": 1672,
     "height": 941
   },
-  "processing": "Original PNG masters retained in cloud workspace /workspace/generated_images/arahkaii-f1-2026-10-11. WebP quality 92 exports retain native dimensions; no upscaling.",
+  "processing": "Original PNG masters retained in cloud workspace under /workspace/generated_images/arahkaii-f1-2026-10-11 (heroes) and /workspace/generated_images/arahkaii-f1-unique-2026-10-11 (inline). WebP quality 92 exports retain native dimensions; no upscaling.",
   "assets": [
     {
       "path": "src/assets/images/how-to-style-f1-merch/hero.webp",
@@ -33,6 +33,117 @@
       "path": "src/assets/images/f1-fashion-collaborations-shopping-guide/hero.webp",
       "sha256": "678e388a6127aa45e8ead2ab6d349216a7334ec2d374bf60db6391480a25ba36",
       "bytes": 281642
+    },
+    {
+      "article": "how-to-style-f1-merch",
+      "path": "src/assets/images/how-to-style-f1-merch/denim-outfit.webp",
+      "sha256": "6f18116a8934ce80d17d7134c824a9a08e23f26528193b1bdc5cdcf27eb06638",
+      "bytes": 425512,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/merch-denim-outfit.png",
+      "masterSha256": "c9fb536edfe9358cde107fa2a02f07cb8047b58e9e3bede40bf2c5a786035fb6",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "how-to-style-f1-merch",
+      "path": "src/assets/images/how-to-style-f1-merch/linen-outfit.webp",
+      "sha256": "72eef4d649217b2bd192177d69027d9f91f73aeeecd39076b7d2b9631a476228",
+      "bytes": 305316,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/merch-linen-outfit.png",
+      "masterSha256": "0c73c0ca60c78725e524ac95b76a016ef41af051a9705f71ef26efeb6f046250",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "comfortable-shoes-singapore-grand-prix",
+      "path": "src/assets/images/comfortable-shoes-singapore-grand-prix/fit-check.webp",
+      "sha256": "a643f8781ac7380ae96df9d0307467f7caef7773a1c483d7d932f4a5924154d7",
+      "bytes": 230380,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/shoes-fit-check.png",
+      "masterSha256": "404ff62f53f7ef5a1f82781af7bcf943050e2acdee4180855674a2c10db4fe9e",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "comfortable-shoes-singapore-grand-prix",
+      "path": "src/assets/images/comfortable-shoes-singapore-grand-prix/walking-day-kit.webp",
+      "sha256": "b9b1c2af3a2d325cf721361b5abb8a63e46162723daf9fc2792590a812c325cd",
+      "bytes": 303318,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/shoes-route-kit.png",
+      "masterSha256": "f1583db850ccd1a015a71b1b0ae7b5ff78d60012760f4ef3d7da1938639bdc99",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "humidity-makeup-singapore-night-race",
+      "path": "src/assets/images/humidity-makeup-singapore-night-race/base-textures.webp",
+      "sha256": "6598abadcd8df071dc7fa801588c432f01b637f3d931b298a37e580ffb2ef72d",
+      "bytes": 333884,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/beauty-base-textures.png",
+      "masterSha256": "e73b53a9ae46b5365f015607bcee35ccc5e95b89c715c51d5286a0178c79e347",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "humidity-makeup-singapore-night-race",
+      "path": "src/assets/images/humidity-makeup-singapore-night-race/touch-up-kit.webp",
+      "sha256": "d2cfb8e95524ce36a27962874d48766172850f54b97e491ec63aa85cb8363d0d",
+      "bytes": 263350,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/beauty-touch-up-kit.png",
+      "masterSha256": "691daa826645f6327df4c1f4a1f58d82e722a95eea4f15f885589a0c80019f80",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "f1-paddock-inspired-style",
+      "path": "src/assets/images/f1-paddock-inspired-style/tonal-tailoring.webp",
+      "sha256": "69d2ad66596b8bc2374790cfbac1026508974a46c2ce4d2510d7f6b8bcc44334",
+      "bytes": 146480,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/paddock-tonal-tailoring.png",
+      "masterSha256": "4693a2bf5b1a50875451734993efcb466900a26b199e479f02e7d4a9c2baf55a",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "f1-paddock-inspired-style",
+      "path": "src/assets/images/f1-paddock-inspired-style/long-skirt.webp",
+      "sha256": "77ef051b36732211b04e41c81df712ba06ee7922587323c36ff018c0472bb230",
+      "bytes": 278084,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/paddock-long-skirt.png",
+      "masterSha256": "2e2073c1f68fcff5971f929aa753d9e00cd3976fa89880c61661817f08cc9052",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "f1-fashion-collaborations-shopping-guide",
+      "path": "src/assets/images/f1-fashion-collaborations-shopping-guide/fabric-details.webp",
+      "sha256": "6b07ca44bd35d9ca7a7c203918df09839bceb9cfbea72d0896766b907ec37d52",
+      "bytes": 277654,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/shopping-fabric-details.png",
+      "masterSha256": "22c8991c4604c3d9467376ac029dd04cb63f07cb823eab540e8b1d5906f6968b",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
+    },
+    {
+      "article": "f1-fashion-collaborations-shopping-guide",
+      "path": "src/assets/images/f1-fashion-collaborations-shopping-guide/wardrobe-rail.webp",
+      "sha256": "0436dd380ac34199756831482a73460448b5d408ee86c6884fee2cae50378cb6",
+      "bytes": 223404,
+      "width": 1672,
+      "height": 941,
+      "master": "/workspace/generated_images/arahkaii-f1-unique-2026-10-11/shopping-wardrobe-rail.png",
+      "masterSha256": "ada8172e9b18eb7013ecfdffa8cd5256311c631b3d29d4d1d88cfce8bd7c413b",
+      "generation": "Independent native image_gen generation with no reference images; visually inspected."
     }
-  ]
+  ],
+  "ownership": "Each of the five articles owns one hero and two exclusive inline images. No article reuses another article\u2019s editorial images. Related-story navigation may display linked-article hero thumbnails."
 }

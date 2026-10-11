@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-11",
+  "result": "PASS",
+  "articles": 5,
+  "images": 15,
+  "uniquePaths": 15,
+  "uniqueHashes": 15,
+  "crossArticleImageReferences": 0,
+  "scope": "Article hero and editorial inline images; navigation/related-story thumbnails excluded.",
+  "assets": [
+    {
+      "article": "how-to-style-f1-merch",
+      "path": "src/assets/images/how-to-style-f1-merch/hero.webp",
+      "sha256": "6d5087472ef1bb975577c6723a5e0277984a8c52b3e5f3be6c2e75aa88c41cf5",
+      "bytes": 204594,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "how-to-style-f1-merch",
+      "path": "src/assets/images/how-to-style-f1-merch/denim-outfit.webp",
+      "sha256": "6f18116a8934ce80d17d7134c824a9a08e23f26528193b1bdc5cdcf27eb06638",
+      "bytes": 425512,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "how-to-style-f1-merch",
+      "path": "src/assets/images/how-to-style-f1-merch/linen-outfit.webp",
+      "sha256": "72eef4d649217b2bd192177d69027d9f91f73aeeecd39076b7d2b9631a476228",
+      "bytes": 305316,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "comfortable-shoes-singapore-grand-prix",
+      "path": "src/assets/images/comfortable-shoes-singapore-grand-prix/hero.webp",
+      "sha256": "975bda5aea2deebb5d122f151d204c8fa3e5010085268485e7627ab39b6df305",
+      "bytes": 435796,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "comfortable-shoes-singapore-grand-prix",
+      "path": "src/assets/images/comfortable-shoes-singapore-grand-prix/fit-check.webp",
+      "sha256": "a643f8781ac7380ae96df9d0307467f7caef7773a1c483d7d932f4a5924154d7",
+      "bytes": 230380,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "comfortable-shoes-singapore-grand-prix",
+      "path": "src/assets/images/comfortable-shoes-singapore-grand-prix/walking-day-kit.webp",
+      "sha256": "b9b1c2af3a2d325cf721361b5abb8a63e46162723daf9fc2792590a812c325cd",
+      "bytes": 303318,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "humidity-makeup-singapore-night-race",
+      "path": "src/assets/images/humidity-makeup-singapore-night-race/hero.webp",
+      "sha256": "55eb6c13e29c641c49fc4be0dde9bc9bd18cae4cbb09e96e44dced55568b35b9",
+      "bytes": 336836,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "humidity-makeup-singapore-night-race",
+      "path": "src/assets/images/humidity-makeup-singapore-night-race/base-textures.webp",
+      "sha256": "6598abadcd8df071dc7fa801588c432f01b637f3d931b298a37e580ffb2ef72d",
+      "bytes": 333884,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "humidity-makeup-singapore-night-race",
+      "path": "src/assets/images/humidity-makeup-singapore-night-race/touch-up-kit.webp",
+      "sha256": "d2cfb8e95524ce36a27962874d48766172850f54b97e491ec63aa85cb8363d0d",
+      "bytes": 263350,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "f1-paddock-inspired-style",
+      "path": "src/assets/images/f1-paddock-inspired-style/hero.webp",
+      "sha256": "1847a7a7849087efd49f2250dccd3f7842c5037a88f550f21186585d9edef53f",
+      "bytes": 305072,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "f1-paddock-inspired-style",
+      "path": "src/assets/images/f1-paddock-inspired-style/tonal-tailoring.webp",
+      "sha256": "69d2ad66596b8bc2374790cfbac1026508974a46c2ce4d2510d7f6b8bcc44334",
+      "bytes": 146480,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "f1-paddock-inspired-style",
+      "path": "src/assets/images/f1-paddock-inspired-style/long-skirt.webp",
+      "sha256": "77ef051b36732211b04e41c81df712ba06ee7922587323c36ff018c0472bb230",
+      "bytes": 278084,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "f1-fashion-collaborations-shopping-guide",
+      "path": "src/assets/images/f1-fashion-collaborations-shopping-guide/hero.webp",
+      "sha256": "678e388a6127aa45e8ead2ab6d349216a7334ec2d374bf60db6391480a25ba36",
+      "bytes": 281642,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "f1-fashion-collaborations-shopping-guide",
+      "path": "src/assets/images/f1-fashion-collaborations-shopping-guide/fabric-details.webp",
+      "sha256": "6b07ca44bd35d9ca7a7c203918df09839bceb9cfbea72d0896766b907ec37d52",
+      "bytes": 277654,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "article": "f1-fashion-collaborations-shopping-guide",
+      "path": "src/assets/images/f1-fashion-collaborations-shopping-guide/wardrobe-rail.webp",
+      "sha256": "0436dd380ac34199756831482a73460448b5d408ee86c6884fee2cae50378cb6",
+      "bytes": 223404,
+      "width": 1672,
+      "height": 941
+    }
+  ]
+}
