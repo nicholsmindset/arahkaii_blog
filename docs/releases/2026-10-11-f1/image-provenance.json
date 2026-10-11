@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-11",
+  "generator": "OpenAI image_gen (native generation)",
+  "permission": "User requested publication and explicitly approved illustrations because licensed photos were unavailable.",
+  "representation": "Original conceptual AI-generated editorial images; no reference photographs, actual merchandise claims, or real attendees.",
+  "sourceResolution": {
+    "width": 1672,
+    "height": 941
+  },
+  "processing": "Original PNG masters retained in cloud workspace /workspace/generated_images/arahkaii-f1-2026-10-11. WebP quality 92 exports retain native dimensions; no upscaling.",
+  "assets": [
+    {
+      "path": "src/assets/images/how-to-style-f1-merch/hero.webp",
+      "sha256": "6d5087472ef1bb975577c6723a5e0277984a8c52b3e5f3be6c2e75aa88c41cf5",
+      "bytes": 204594
+    },
+    {
+      "path": "src/assets/images/comfortable-shoes-singapore-grand-prix/hero.webp",
+      "sha256": "975bda5aea2deebb5d122f151d204c8fa3e5010085268485e7627ab39b6df305",
+      "bytes": 435796
+    },
+    {
+      "path": "src/assets/images/humidity-makeup-singapore-night-race/hero.webp",
+      "sha256": "55eb6c13e29c641c49fc4be0dde9bc9bd18cae4cbb09e96e44dced55568b35b9",
+      "bytes": 336836
+    },
+    {
+      "path": "src/assets/images/f1-paddock-inspired-style/hero.webp",
+      "sha256": "1847a7a7849087efd49f2250dccd3f7842c5037a88f550f21186585d9edef53f",
+      "bytes": 305072
+    },
+    {
+      "path": "src/assets/images/f1-fashion-collaborations-shopping-guide/hero.webp",
+      "sha256": "678e388a6127aa45e8ead2ab6d349216a7334ec2d374bf60db6391480a25ba36",
+      "bytes": 281642
+    }
+  ]
+}
