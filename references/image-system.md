@@ -41,6 +41,12 @@ Every image must read in one of these palette families. If the dominant colours 
 
 ---
 
+### Article image ownership
+
+Generated hero and inline images must be unique to their article. Do not reuse another article’s hero as an inline illustration, or rename, crop or re-encode an existing image to present it as a new original. Commission a distinct section-relevant composition, keep it in the owning article’s image directory, and record its provenance. Related-story cards, topic listings and other navigation thumbnails may display the owning article’s hero as a link to that article.
+
+---
+
 ## 3. CATEGORY-LOCKED PROMPT TEMPLATES
 
 Each pillar has 3 locked prompt patterns. Use these as the base, then swap the bracketed variables. **Do not invent new patterns** — that's where slop creeps in.
