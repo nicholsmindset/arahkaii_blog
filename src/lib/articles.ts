@@ -2,7 +2,7 @@
 // (home, category, latest, related, author, search) reads from here so the
 // shape of a card is defined once.
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { cap } from './format';
+import { cap, hasPublicationDateArrived } from './format';
 
 export type Tone = 'tone-b' | 'tone-c' | 'tone-d';
 const TONES: Tone[] = ['tone-b', 'tone-c', 'tone-d'];
@@ -66,7 +66,7 @@ export async function getPosts(): Promise<CollectionEntry<'posts'>[]> {
 	const now = new Date();
 	const posts = await getCollection(
 		'posts',
-		({ data }) => !data.draft && !data.noindex && data.date <= now,
+		({ data }) => !data.draft && !data.noindex && hasPublicationDateArrived(data.date, now),
 	);
 	return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }

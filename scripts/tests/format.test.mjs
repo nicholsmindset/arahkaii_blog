@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { fmtDate } from '../../src/lib/format.ts';
+import { fmtDate, hasPublicationDateArrived } from '../../src/lib/format.ts';
 
 test('publication dates retain the editorial day on UTC and US build servers', () => {
  const original = process.env.TZ;
@@ -16,4 +16,10 @@ test('publication dates retain the editorial day on UTC and US build servers', (
 });
 test('verification months retain the correct month across a UTC month boundary', () => {
  assert.equal(fmtDate(new Date('2026-03-01T00:15:00+08:00'), { month: 'long', year: 'numeric' }), 'March 2026');
+});
+test('publication dates arrive at midnight on the Singapore editorial calendar', () => {
+ const publicationDate = new Date('2026-10-12');
+ assert.equal(hasPublicationDateArrived(publicationDate, new Date('2026-10-11T15:59:59Z')), false);
+ assert.equal(hasPublicationDateArrived(publicationDate, new Date('2026-10-11T16:00:00Z')), true);
+ assert.equal(hasPublicationDateArrived(publicationDate, new Date('2026-10-12T23:59:59Z')), true);
 });
