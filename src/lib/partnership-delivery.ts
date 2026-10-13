@@ -9,11 +9,12 @@ export async function deliverPartnership(request: Request, options: Options): Pr
 	if (!isSameOrigin(request)) return json({ error: 'Please submit from the Arahkaii website.' }, 403);
 	if (!withinRateLimit(`partnership:${clientIp(request, options.address)}`, 3, 60_000)) return json({ error: 'Please wait a minute before trying again.' }, 429);
 	if (Number(request.headers.get('content-length')) > 24_000) return json({ error: 'The brief is too long.' }, 413);
+	const mediaType = request.headers.get('content-type')?.split(';', 1)[0]?.trim().toLowerCase();
+	if (mediaType !== 'application/json') return json({ error: 'Use the brief form to submit.' }, 415);
 	let input: Record<string, unknown>;
 	try {
 		const text = await request.text();
 		if (text.length > 24_000) return json({ error: 'The brief is too long.' }, 413);
-		if (!(request.headers.get('content-type') || '').includes('application/json')) return json({ error: 'Use the brief form to submit.' }, 415);
 		input = JSON.parse(text);
 		if (!input || Array.isArray(input) || typeof input !== 'object') throw new Error();
 	} catch { return json({ error: 'We could not read the brief. Your text is still in the form.' }, 400); }
