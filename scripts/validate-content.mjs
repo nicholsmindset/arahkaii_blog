@@ -26,12 +26,12 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { verificationDateIssue } from './lib/editorial-dates.mjs';
 
 const ROOT = process.cwd();
 const POSTS = path.join(ROOT, 'src/content/posts');
 const AUTHORS = path.join(ROOT, 'src/content/authors');
 const CLUSTERS = path.join(ROOT, 'src/content/clusters');
-const SIX_MONTHS_MS = 182 * 24 * 60 * 60 * 1000;
 const MIN_INBOUND = 1; // raise to 2 once each cluster carries 4+ members
 
 const walk = (dir) =>
@@ -113,8 +113,13 @@ for (const file of posts) {
 			const dateStr = fm.match(/^\s+verifiedDate:\s*["']?([\d-]+)/m)?.[1];
 			if (needsDate && !dateStr) {
 				errors.push(`${rel}: halalStatus "${status}" requires a verifiedDate`);
-			} else if (dateStr && Date.now() - new Date(dateStr).valueOf() > SIX_MONTHS_MS) {
-				errors.push(`${rel}: halal verifiedDate ${dateStr} is older than six months — re-verify before it ships`);
+			} else if (dateStr) {
+				const dateIssue = verificationDateIssue(new Date(dateStr));
+				if (dateIssue === 'future') {
+					errors.push(`${rel}: halal verifiedDate ${dateStr} is in the future — use the date the status was actually checked`);
+				} else if (dateIssue === 'stale') {
+					errors.push(`${rel}: halal verifiedDate ${dateStr} is older than six months — re-verify before it ships`);
+				}
 			}
 		}
 	}
