@@ -3,6 +3,7 @@
 // shape of a card is defined once.
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { cap } from './format';
+import { comparePostsNewestFirst } from './post-order';
 
 export type Tone = 'tone-b' | 'tone-c' | 'tone-d';
 const TONES: Tone[] = ['tone-b', 'tone-c', 'tone-d'];
@@ -68,7 +69,7 @@ export async function getPosts(): Promise<CollectionEntry<'posts'>[]> {
 		'posts',
 		({ data }) => !data.draft && !data.noindex && data.date <= now,
 	);
-	return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+	return posts.sort(comparePostsNewestFirst);
 }
 
 let cardsCache: PostCard[] | null = null;
