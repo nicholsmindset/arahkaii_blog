@@ -20,8 +20,10 @@
 //                 every cluster has exactly one published pillar; no published
 //                 clustered article is an orphan (fewer than MIN_INBOUND
 //                 inbound links from other published posts).
-//   4. CREDIT   — no published post ships a placeholder hero credit.
-//   5. EVIDENCE — every indexable post has a non-social external source or a
+//   4. FRANCHISE — every `franchise:` value resolves to
+//                  src/content/franchises/<id>.md.
+//   5. CREDIT   — no published post ships a placeholder hero credit.
+//   6. EVIDENCE — every indexable post has a non-social external source or a
 //                 visible method note explaining the first-person basis.
 
 import fs from 'node:fs';
@@ -31,6 +33,7 @@ const ROOT = process.cwd();
 const POSTS = path.join(ROOT, 'src/content/posts');
 const AUTHORS = path.join(ROOT, 'src/content/authors');
 const CLUSTERS = path.join(ROOT, 'src/content/clusters');
+const FRANCHISES = path.join(ROOT, 'src/content/franchises');
 const SIX_MONTHS_MS = 182 * 24 * 60 * 60 * 1000;
 const MIN_INBOUND = 1; // raise to 2 once each cluster carries 4+ members
 
@@ -58,6 +61,9 @@ const authorIds = new Set(fs.readdirSync(AUTHORS).map((f) => f.replace(/\.md$/, 
 const clusterIds = new Set(
 	fs.existsSync(CLUSTERS) ? fs.readdirSync(CLUSTERS).map((f) => f.replace(/\.md$/, '')) : [],
 );
+const franchiseIds = new Set(
+	fs.existsSync(FRANCHISES) ? fs.readdirSync(FRANCHISES).map((f) => f.replace(/\.md$/, '')) : [],
+);
 
 const published = [];
 for (const file of posts) {
@@ -70,6 +76,7 @@ for (const file of posts) {
 	const category = fmValue(fm, 'category');
 	const author = fmValue(fm, 'author');
 	const cluster = fmValue(fm, 'cluster');
+	const franchise = fmValue(fm, 'franchise');
 	const isPillar = fmValue(fm, 'isPillar') === 'true';
 	const noindex = fmValue(fm, 'noindex') === 'true';
 	const reviewedBy = fmValue(fm, 'reviewedBy');
@@ -89,10 +96,16 @@ for (const file of posts) {
 		errors.push(`${rel}: cluster "${cluster}" is not defined in src/content/clusters/`);
 	}
 
+	// 4. FRANCHISE reference — drafts included, so editorial previews cannot
+	// silently lose their franchise navigation before publication.
+	if (franchise && !franchiseIds.has(franchise)) {
+		errors.push(`${rel}: franchise "${franchise}" is not defined in src/content/franchises/`);
+	}
+
 	if (draft || noindex) continue;
 	published.push({ rel, fm, body, slug, category, cluster, isPillar });
 
-	// 5. EVIDENCE — social posts can be useful artefacts, but are not enough on
+	// 6. EVIDENCE — social posts can be useful artefacts, but are not enough on
 	// their own to support an indexable reported article. A method note is the
 	// honest alternative for a first-person essay or original observation.
 	const externalUrls = [...`${fm}\n${body}`.matchAll(/https?:\/\/[^\s)"']+/g)].map((match) => match[0]);
@@ -119,7 +132,7 @@ for (const file of posts) {
 		}
 	}
 
-	// 4. CREDIT — reject placeholder credits AND placeholder hero files: a
+	// 5. CREDIT — reject placeholder credits AND placeholder hero files: a
 	// stock blog-placeholder-*.jpg credited "Arahkaii" must not publish either.
 	if (/placeholder/i.test(heroCredit)) {
 		errors.push(`${rel}: published post carries a placeholder hero credit`);
@@ -166,4 +179,4 @@ if (errors.length) {
 	for (const e of errors) console.error('  - ' + e);
 	process.exit(1);
 }
-console.log('✓ Authors, halal verification, clusters and credits all pass.');
+console.log('✓ Authors, halal verification, clusters, franchises and credits all pass.');
