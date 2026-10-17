@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import StoryCard from '../../components/StoryCard.astro';
 import { getCards } from '../../lib/articles';
-import { fmtDate } from '../../lib/format';
+import { fmtDate, truncateText } from '../../lib/format';
 import {
 	SITE,
 	organizationSchema,
@@ -38,7 +38,7 @@ if (a.avatar) {
 }
 // Meta descriptions truncate around 160 chars in search results; the full bio
 // stays on-page and in Person schema context via the page itself.
-const metaDescription = a.bio.length > 158 ? `${a.bio.slice(0, a.bio.lastIndexOf(' ', 155))}…` : a.bio;
+const metaDescription = truncateText(a.bio, 160);
 const jsonLd = [
 	organizationSchema(),
 	websiteSchema(),
