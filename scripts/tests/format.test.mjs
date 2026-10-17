@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { fmtDate } from '../../src/lib/format.ts';
+import { fmtDate, truncateText } from '../../src/lib/format.ts';
 
 test('publication dates retain the editorial day on UTC and US build servers', () => {
  const original = process.env.TZ;
@@ -16,4 +16,12 @@ test('publication dates retain the editorial day on UTC and US build servers', (
 });
 test('verification months retain the correct month across a UTC month boundary', () => {
  assert.equal(fmtDate(new Date('2026-03-01T00:15:00+08:00'), { month: 'long', year: 'numeric' }), 'March 2026');
+});
+
+test('text truncation stays within the requested limit', () => {
+ assert.equal(truncateText('A short biography.', 160), 'A short biography.');
+ assert.equal(truncateText('An editorial biography with several words.', 24), 'An editorial biography…');
+ assert.equal(truncateText('x'.repeat(200), 160), `${'x'.repeat(159)}…`);
+ assert.equal(truncateText('anything', 1), '…');
+ assert.equal(truncateText('anything', 0), '');
 });

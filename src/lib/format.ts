@@ -15,3 +15,15 @@ export const cap = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1)
 /** "quiet-luxury" → "Quiet Luxury" — human-readable tag label. */
 export const prettifyTag = (t: string): string =>
 	t.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+
+/** Truncate copy to a character limit, preferring a complete final word. */
+export function truncateText(value: string, maxLength: number): string {
+	if (value.length <= maxLength) return value;
+	if (maxLength <= 1) return '…'.slice(0, maxLength);
+
+	const available = maxLength - 1;
+	const candidate = value.slice(0, available);
+	const lastWhitespace = candidate.search(/\s+\S*$/);
+	const truncated = lastWhitespace > 0 ? candidate.slice(0, lastWhitespace) : candidate;
+	return `${truncated.trimEnd()}…`;
+}
