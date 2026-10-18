@@ -540,7 +540,6 @@ a.card:hover .media img {
 	font-style: italic;
 }
 .searchbar input:focus {
-	outline: none;
 	border-bottom-color: var(--emerald);
 }
 /* live search results */
@@ -694,7 +693,6 @@ a.card:hover .media img {
 	color: var(--footer-head);
 }
 .footer__news input:focus {
-	outline: none;
 	border-bottom-color: var(--emerald);
 }
 .footer__fine {
@@ -796,7 +794,6 @@ a.card:hover .media img {
 	font-style: italic;
 }
 .news-form input:focus {
-	outline: none;
 	border-bottom-color: var(--emerald);
 }
 
@@ -998,7 +995,6 @@ a.card:hover .media img {
 	flex: 1;
 	background: none;
 	border: 0;
-	outline: none;
 	font-family: var(--serif);
 	font-size: 18px;
 	color: var(--ink);

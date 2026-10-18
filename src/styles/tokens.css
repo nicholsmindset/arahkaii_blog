@@ -135,7 +135,9 @@ p {
 /* focus */
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
 	outline: 3px solid var(--emerald);
 	outline-offset: 2px;
 }
