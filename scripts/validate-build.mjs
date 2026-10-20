@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const contributorPortraitFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,14 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	if (relativeFile === path.join('contributors', 'index.html')) {
+		for (const card of html.matchAll(/<a\b[^>]*class="[^"]*\bcontributor\b[^"]*"[^>]*>([\s\S]*?)<\/a>/g)) {
+			const portrait = card[1].match(/<img\b([^>]*)>/);
+			if (portrait && !/\balt(?:=""|(?=\s|>))/.test(portrait[1])) {
+				contributorPortraitFailures.push(`${relativeFile}: linked contributor portrait must be decorative`);
+			}
+		}
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +156,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (contributorPortraitFailures.length) {
+	console.error('\nContributor portrait accessibility failures:');
+	for (const item of contributorPortraitFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +211,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	contributorPortraitFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
