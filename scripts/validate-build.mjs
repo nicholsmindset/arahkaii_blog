@@ -17,11 +17,19 @@ const PUBLIC_ROOT = fs.existsSync(path.join(DIST, 'client'))
 	: DIST;
 
 const htmlFiles = [];
+function isGoogleVerificationFile(file) {
+	const name = path.basename(file);
+	if (!/^google[a-z0-9]+\.html$/i.test(name)) return false;
+	return fs.readFileSync(file, 'utf8').trim() === `google-site-verification: ${name}`;
+}
+
 function walk(dir) {
 	for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
 		const file = path.join(dir, entry.name);
 		if (entry.isDirectory()) walk(file);
-		else if (entry.name.endsWith('.html')) htmlFiles.push(file);
+		// Search Console ownership tokens use an .html extension but are plain-text
+		// challenge responses, not site pages with landmarks or sitemap entries.
+		else if (entry.name.endsWith('.html') && !isGoogleVerificationFile(file)) htmlFiles.push(file);
 	}
 }
 walk(PUBLIC_ROOT);
