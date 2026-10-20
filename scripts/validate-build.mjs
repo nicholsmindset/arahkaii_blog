@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const contributorImageFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,14 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	if (relativeFile === path.join('contributors', 'index.html')) {
+		for (const image of html.matchAll(/<img\b([^>]*)>/g)) {
+			if (!/\bloading="lazy"/.test(image[1]) || !/\bdecoding="async"/.test(image[1])) {
+				contributorImageFailures.push(`${relativeFile}: contributor portrait is not deferred`);
+				break;
+			}
+		}
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +156,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (contributorImageFailures.length) {
+	console.error('\nContributor image loading failures:');
+	for (const item of contributorImageFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +211,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	contributorImageFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
