@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const recoveryActionFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,12 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	if (relativeFile === '404.html') {
+		const searchAction = html.match(/<button\b[^>]*\bclass="[^"]*\bjs-search\b[^"]*"[^>]*>/)?.[0] ?? '';
+		if (!/\bdata-search-toggle\b/.test(searchAction)) {
+			recoveryActionFailures.push('404.html: archive search action is not wired to the site search');
+		}
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +154,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (recoveryActionFailures.length) {
+	console.error('\nRecovery action failures:');
+	for (const item of recoveryActionFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +209,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	recoveryActionFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
