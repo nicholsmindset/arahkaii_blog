@@ -67,9 +67,18 @@ export function withinRateLimit(key: string, limit: number, windowMs: number): b
 	return bucket.count <= limit;
 }
 
-/** Best-effort client IP for rate-limit keying (Vercel sets x-forwarded-for). */
+/**
+ * Best-effort client IP for rate-limit keying.
+ *
+ * Prefer the adapter-provided address: the left-most X-Forwarded-For value can
+ * be supplied by the caller and must not override a trusted platform value.
+ * Vercel's x-real-ip is the next-best source when the adapter has no address.
+ */
 export function clientIp(request: Request, fallback?: string): string {
+	if (fallback?.trim()) return fallback.trim();
+	const realIp = request.headers.get('x-real-ip')?.trim();
+	if (realIp) return realIp;
 	const forwarded = request.headers.get('x-forwarded-for');
-	if (forwarded) return forwarded.split(',')[0]!.trim();
-	return fallback ?? 'unknown';
+	if (forwarded) return forwarded.split(',').at(-1)?.trim() || 'unknown';
+	return 'unknown';
 }
