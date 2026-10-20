@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const articleAuthorImageFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -87,6 +88,10 @@ for (const file of htmlFiles) {
 			imageFailures.push(`${relativeFile}: article image missing explicit width/height`);
 			break;
 		}
+	}
+	const authorPortrait = articleHtml.match(/<a\b[^>]*class="[^"]*\bauthor__portrait\b[^"]*"[^>]*>([\s\S]*?)<\/a>/)?.[1];
+	if (authorPortrait && !/<img\b[^>]*\bloading="lazy"[^>]*\bdecoding="async"/.test(authorPortrait)) {
+		articleAuthorImageFailures.push(`${relativeFile}: article author portrait must load lazily and decode asynchronously`);
 	}
 
 	for (const match of html.matchAll(/href="([^"]+)"/g)) {
@@ -147,6 +152,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (articleAuthorImageFailures.length) {
+	console.error('\nArticle author portrait failures:');
+	for (const item of articleAuthorImageFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +207,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	articleAuthorImageFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
