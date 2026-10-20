@@ -50,6 +50,8 @@ for (const file of htmlFiles) {
 	const html = fs.readFileSync(file, 'utf8');
 	const rel = path.relative(DIST, file);
 	const visible = normalise(html.replace(RE, ''));
+	const articleNodes = [];
+	const breadcrumbNodes = [];
 	let m;
 	let fileHadSchema = false;
 	while ((m = RE.exec(html))) {
@@ -64,6 +66,8 @@ for (const file of htmlFiles) {
 		}
 		for (const node of [].concat(data)) {
 			const type = node['@type'];
+			if (type === 'Article' || type === 'NewsArticle' || type === 'BlogPosting') articleNodes.push(node);
+			if (type === 'BreadcrumbList') breadcrumbNodes.push(node);
 			if (!node['@context']) errors.push(`${rel}: ${type ?? '?'} missing @context`);
 			if (!type) {
 				errors.push(`${rel}: node missing @type`);
@@ -86,6 +90,14 @@ for (const file of htmlFiles) {
 				}
 			}
 		}
+	}
+	for (const article of articleNodes) {
+		const canonical = article.mainEntityOfPage?.['@id'];
+		const matchingTrail = breadcrumbNodes.find((trail) => {
+			const last = trail.itemListElement?.at(-1);
+			return last?.item === canonical && last?.name === article.headline;
+		});
+		if (!matchingTrail) errors.push(`${rel}: article breadcrumb does not end with its headline and canonical URL`);
 	}
 	if (fileHadSchema) withSchema++;
 }
