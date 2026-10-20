@@ -32,6 +32,8 @@ interface Props {
 	hideFooterNewsletter?: boolean;
 	/** Absolute URL to an OG/Twitter image. Falls back to a branded default. */
 	image?: string;
+	/** Descriptive alternative text for the OG/Twitter image. */
+	imageAlt?: string;
 	imageWidth?: number;
 	imageHeight?: number;
 	ogType?: 'website' | 'article';
@@ -51,6 +53,7 @@ const {
 	noFooter = false,
 	hideFooterNewsletter = false,
 	image,
+	imageAlt,
 	ogType = 'website',
 	noindex = false,
 	publishedTime,
@@ -154,6 +157,7 @@ const gtmSnippet = gtmEnabled
 			description={description}
 			canonical={canonical}
 			image={ogImage}
+			imageAlt={imageAlt}
 			imageWidth={imageWidth}
 			imageHeight={imageHeight}
 			ogType={ogType}
