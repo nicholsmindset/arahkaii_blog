@@ -479,44 +479,6 @@ const gtmSnippet = gtmEnabled
 				}, 1400);
 			}
 
-			// ---- rail carousels ----
-			function wireRails() {
-				document.querySelectorAll<HTMLElement>('[data-rail]').forEach((rail) => {
-					if (rail.dataset.wired) return;
-					rail.dataset.wired = '1';
-					const track = rail.querySelector<HTMLElement>('[data-rail-track]');
-					const prev = rail.querySelector<HTMLElement>('[data-rail-prev]');
-					const next = rail.querySelector<HTMLElement>('[data-rail-next]');
-					const barEl = rail.querySelector<HTMLElement>('[data-rail-bar]');
-					if (!track) return;
-					const step = () => {
-						const card = track.querySelector<HTMLElement>('.snap');
-						return card ? card.getBoundingClientRect().width + 24 : 320;
-					};
-					const update = () => {
-						if (!barEl) return;
-						const max = track.scrollWidth - track.clientWidth;
-						const p = max > 0 ? track.scrollLeft / max : 0;
-						barEl.style.transform = 'scaleX(' + Math.max(0.08, Math.min(1, p)).toFixed(3) + ')';
-					};
-					prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-					next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
-					track.addEventListener('scroll', update, { passive: true });
-					track.setAttribute('tabindex', '0');
-					track.addEventListener('keydown', (e) => {
-						if (e.key === 'ArrowRight') {
-							e.preventDefault();
-							track.scrollBy({ left: step(), behavior: 'smooth' });
-						}
-						if (e.key === 'ArrowLeft') {
-							e.preventDefault();
-							track.scrollBy({ left: -step(), behavior: 'smooth' });
-						}
-					});
-					update();
-				});
-			}
-
 			// ---- copy-link share buttons ----
 			function wireShare() {
 				document.querySelectorAll<HTMLButtonElement>('[data-share-copy]').forEach((b) => {
@@ -545,7 +507,6 @@ const gtmSnippet = gtmEnabled
 			function initChrome() {
 				scrollMilestones = new Set<number>();
 				wireSearch();
-				wireRails();
 				wireShare();
 				observe();
 				if (isSubscribed()) renderSubscribedForms();
