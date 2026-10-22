@@ -34,7 +34,7 @@ const schemaItems = items.map((c) => ({
 				) : (
 					<span aria-current="page">{c.name}</span>
 				)}
-				{i < items.length - 1 && <span class="sep">/</span>}
+				{i < items.length - 1 && <span class="sep" aria-hidden="true">/</span>}
 			</>
 		))
 	}
