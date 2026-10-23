@@ -5,6 +5,7 @@ import {
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
+	isJsonRequest,
 } from '../../lib/api-guard';
 
 export const prerender = false;
@@ -28,6 +29,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 	if (!withinRateLimit(`subscribe:${clientIp(request, clientAddress)}`, 5, 60_000)) {
 		return reply(429, { error: 'Too many requests — please try again shortly' });
 	}
+	if (!isJsonRequest(request)) return reply(415, { error: 'Content-Type must be application/json' });
 
 	let payload: { email?: unknown; source?: unknown; website?: unknown };
 	try {
