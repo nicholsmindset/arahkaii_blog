@@ -59,8 +59,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			if (!input || !results || results.dataset.wired) return;
 			results.dataset.wired = '1';
 			let queryVersion = 0;
-			async function run(q: string) {
-				const version = ++queryVersion;
+			let searchTimer: number | undefined;
+			async function run(q: string, version = ++queryVersion) {
 				q = (q || '').trim().toLowerCase();
 				if (!q) {
 					results!.hidden = true;
@@ -85,7 +85,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			const initial = new URLSearchParams(location.search).get('q') || '';
 			if (initial) input.value = initial;
 			run(initial);
-			input.addEventListener('input', () => run(input.value));
+			input.addEventListener('input', () => {
+				window.clearTimeout(searchTimer);
+				const version = ++queryVersion;
+				searchTimer = window.setTimeout(() => run(input.value, version), 120);
+			});
 		}
 		document.addEventListener('astro:page-load', wireSearchPage);
 		wireSearchPage();
