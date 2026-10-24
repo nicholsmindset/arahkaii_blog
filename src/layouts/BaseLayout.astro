@@ -423,9 +423,9 @@ const gtmSnippet = gtmEnabled
 				const input = bar.querySelector<HTMLInputElement>('.search-input');
 				const results = bar.querySelector<HTMLElement>('.search-results');
 				let queryVersion = 0;
-				async function run(q: string) {
+				let searchTimer: number | undefined;
+				async function run(q: string, version = ++queryVersion) {
 					if (!results) return;
-					const version = ++queryVersion;
 					q = (q || '').trim().toLowerCase();
 					if (!q) {
 						results.hidden = true;
@@ -447,7 +447,11 @@ const gtmSnippet = gtmEnabled
 								.join('')
 						: `<p class="sr-empty">No stories yet for “${esc(q)}”. Try a category, an author, or a place.</p>`;
 				}
-				input?.addEventListener('input', () => run(input.value));
+				input?.addEventListener('input', () => {
+					window.clearTimeout(searchTimer);
+					const version = ++queryVersion;
+					searchTimer = window.setTimeout(() => run(input.value, version), 120);
+				});
 			}
 
 			// ---- reveals (once, staggered, reduced-motion aware) ----
