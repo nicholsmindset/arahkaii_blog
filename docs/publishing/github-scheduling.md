@@ -1,5 +1,7 @@
 # Arahkaii: approve once, publish on the date
 
+**Paused on 26 October 2026 at the user’s request.** The publishing workflow is disabled and all14 queued articles are drafts. Saved dates are preserved. Resume requires an explicit request, review of dates and draft flags, and re-enabling the workflow.
+
 Setup checked 25 October 2026: Vercel is connected to `nicholsmindset/arahkaii_blog`, production branch `main`. The main-branch hook is stored as the Actions secret `VERCEL_DEPLOY_HOOK`. Workflow activation requires this reviewed change to be merged; verify its Actions run before treating scheduling as enabled.
 
 ## The team's routine

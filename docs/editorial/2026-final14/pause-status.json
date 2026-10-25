@@ -1,0 +1,107 @@
+{
+  "status": "paused",
+  "requested_on": "2026-10-26",
+  "timezone": "Asia/Singapore",
+  "workflow": "disabled_manually",
+  "reason": "User requested all scheduled articles paused",
+  "articles": [
+    {
+      "code": "B-23",
+      "file": "src/content/posts/2026/deepavali-makeup-mehndi-care.mdx",
+      "saved_date": "2026-11-02",
+      "draft": true,
+      "sha256": "639ae9c253aa6482cfec2ebe27f28c6a0a91777cbc6caedc6135c2d890e7d3d2"
+    },
+    {
+      "code": "F-34",
+      "file": "src/content/posts/2026/year-end-sale-strategy.mdx",
+      "saved_date": "2026-11-04",
+      "draft": true,
+      "sha256": "eb4a84d57e84a64edf7435a98ebcdb80635b54bf25b28d99f4e8dfc7c7a61243"
+    },
+    {
+      "code": "T-15",
+      "file": "src/content/posts/2026/school-holiday-trips-from-singapore.mdx",
+      "saved_date": "2026-11-06",
+      "draft": true,
+      "sha256": "88a884503b650f1393d8bac68d82c2219f87345822e6008ab05f071ffe92c299"
+    },
+    {
+      "code": "B-27",
+      "file": "src/content/posts/2026/beauty-advent-calendar-value.mdx",
+      "saved_date": "2026-11-09",
+      "draft": true,
+      "sha256": "64d50143d41b9f5eac0a5d6b62a75046176b7e414ae590f72cb91e84ff32f8ac"
+    },
+    {
+      "code": "T-14",
+      "file": "src/content/posts/2026/autumn-leaves-japan-korea.mdx",
+      "saved_date": "2026-11-11",
+      "draft": true,
+      "sha256": "5a023b519444af81619cedf139ae1b038e2c55ec30dcb061c0711cabee1e9b4d"
+    },
+    {
+      "code": "L-25",
+      "file": "src/content/posts/2026/singapore-home-moisture-checklist.mdx",
+      "saved_date": "2026-11-13",
+      "draft": true,
+      "sha256": "c094b089d35c3bf454609a86e080ee4ed1b1f96ed43419bad85542e316ecca7b"
+    },
+    {
+      "code": "B-25",
+      "file": "src/content/posts/2026/monsoon-skin-hair-care.mdx",
+      "saved_date": "2026-11-16",
+      "draft": true,
+      "sha256": "ae7310d5fcc40a4acac4a6d0b36b15592718af59204a15f61416a546b64b2108"
+    },
+    {
+      "code": "B-01",
+      "file": "src/content/posts/2026/humid-climate-skincare-routine.mdx",
+      "saved_date": "2026-11-20",
+      "draft": true,
+      "sha256": "bb04913aa1858c29a2e8197a7c7e66b93d007d315b4eb2cc5e3215cc3c33312a"
+    },
+    {
+      "code": "T-20",
+      "file": "src/content/posts/2026/singapore-public-holidays-2027.mdx",
+      "saved_date": "2026-11-23",
+      "draft": true,
+      "sha256": "67d753712bdf9c85ee0b95a96ec841785e52cf4010da4e5d708035311318ff58"
+    },
+    {
+      "code": "E-16",
+      "file": "src/content/posts/2026/sgiff-2026-final-weekend.mdx",
+      "saved_date": "2026-10-28",
+      "draft": true,
+      "sha256": "88846c39600c2f6b81abe7eae21e0f2b0901453fe5fafe3f9e37e605c5b6348d"
+    },
+    {
+      "code": "L-17",
+      "file": "src/content/posts/2026/thoughtful-gifts-singapore.mdx",
+      "saved_date": "2026-11-25",
+      "draft": true,
+      "sha256": "c2d5a60380b91ab9f239bb7c5ebea81dcc2794ccdf6581691fe461242a3d3cdc"
+    },
+    {
+      "code": "F-33",
+      "file": "src/content/posts/2026/singapore-rain-outfits.mdx",
+      "saved_date": "2026-11-27",
+      "draft": true,
+      "sha256": "1d92bd0a07cc9b2dcb33c812d960415867aaea10db1e58ad429e5c74ab9c1f61"
+    },
+    {
+      "code": "B-24",
+      "file": "src/content/posts/2026/beauty-gifts-by-budget.mdx",
+      "saved_date": "2026-11-30",
+      "draft": true,
+      "sha256": "1ad315491aa2f7f98dc02b072a57c33b46a20ec9f1d9243610f3b99353dea4fb"
+    },
+    {
+      "code": "T-16",
+      "file": "src/content/posts/2026/first-winter-city-trip.mdx",
+      "saved_date": "2026-12-02",
+      "draft": true,
+      "sha256": "edc7c17e585bceb79e83e7aef84aa63f36ed9f67483a79b5e5c1490b19bde09a"
+    }
+  ]
+}
