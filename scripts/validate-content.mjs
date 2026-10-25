@@ -77,7 +77,9 @@ for (const file of posts) {
 	const heroCredit = fmValue(fm, 'heroCredit') ?? '';
 
 	// 1. AUTHOR — applies to drafts too: a bad id breaks the editorial pipeline.
-	if (author && !authorIds.has(author)) {
+	if (!author) {
+		errors.push(`${rel}: author is required`);
+	} else if (!authorIds.has(author)) {
 		errors.push(`${rel}: author "${author}" has no profile in src/content/authors/`);
 	}
 	if (reviewedBy && !authorIds.has(reviewedBy)) {
