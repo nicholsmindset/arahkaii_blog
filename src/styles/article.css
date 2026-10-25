@@ -298,9 +298,9 @@
 	.console-comparison th,
 	.console-comparison td { padding-inline: 7px; }
 }
-/* drop cap — first paragraph only */
-.article-body > p:first-of-type::first-letter,
-.art-body > p:first-of-type::first-letter,
+/* Drop cap belongs to opening prose, not review metadata or image credits. */
+.article-body > :nth-child(1 of p:not(.article-proof, .article-image-credit))::first-letter,
+.art-body > :nth-child(1 of p:not(.article-proof, .article-image-credit))::first-letter,
 .article-body p.dropcap::first-letter {
 	font-family: var(--display);
 	font-weight: 500;
