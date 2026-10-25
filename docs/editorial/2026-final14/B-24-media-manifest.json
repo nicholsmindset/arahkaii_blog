@@ -1,0 +1,87 @@
+{
+  "code": "B-24",
+  "assets": [
+    {
+      "path": "hero-gift.png",
+      "role": "hero",
+      "section": null,
+      "alt": "An ivory wrapped gift with emerald ribbon, gold tissue and a blank note card on a walnut table.",
+      "caption": "AI-generated conceptual gift-wrapping scene; no actual product is shown.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "provenance": {
+        "originalPath": "generated-image:01a1733f-4d84-78c2-9d0d-6c42fd349f46/exec-c6b2d872-ab53-49ce-b108-fd6614245c7c.png",
+        "rights": "Generated for this editorial project; no copied brand imagery."
+      },
+      "sha256": "4f635cf91ee2cbc2e846e76b6c1826b19b2941387e6f6f68dbae7c13623531db",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "review": "Writer visually checked actual image; independent review pending"
+    },
+    {
+      "path": "pack-size-comparison.png",
+      "role": "section",
+      "section": "Up to S$60: choose the size for the person",
+      "alt": "L\u2019Occitane hand cream comparison: 30ml S$19, 75ml S$39, 150ml S$52; cost per 10ml S$6.33, S$5.20, S$3.47.",
+      "caption": "Original price comparison rendered with AI; figures checked against the Singapore product listing on 25 October 2026. All figures also appear in article text.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "Original editorial comparison, AI-rendered",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "provenance": {
+        "originalPath": "generated-image:01a1733f-4d84-78c2-9d0d-6c42fd349f46/exec-743fd168-6544-4375-bc28-aa773cbb0dd5.png",
+        "rights": "Generated for this editorial project; no copied brand imagery."
+      },
+      "sha256": "7b08200dfd0b8c14ec06300e41c1ac9d9b9c5107655727739f3dcde379dae69d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "review": "Writer visually checked actual image; independent review pending"
+    }
+  ],
+  "media_plan": [
+    {
+      "section": "Up to S$60: choose the size for the person",
+      "decision": "comparison image and official platform video",
+      "reason": "Actual local pack-size analysis plus credited brand presentation; no product-performance inference."
+    },
+    {
+      "section": "S$61\u2013S$100: pay for discovery only when it is wanted",
+      "decision": "text_only",
+      "reason": "Exact linked product and six-vial quantities more useful than invented product image; rights to retail photography not established."
+    },
+    {
+      "section": "S$101\u2013S$150: check the calendar, not just the countdown",
+      "decision": "text_only",
+      "reason": "Exact SKU link lets reader inspect real current edition; unrelated historic calendar images would mislead."
+    },
+    {
+      "section": "Above S$150: buy the exact wish, not the impressive guess",
+      "decision": "text_only",
+      "reason": "Named verified product links and size tradeoff are the useful content; no faux perfume photo."
+    },
+    {
+      "section": "Keep the return route with the gift",
+      "decision": "text_only",
+      "reason": "Direct localpolicy link and date-based implications; generic receipt image adds no information."
+    }
+  ],
+  "embeds": [
+    {
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=LLzdJreQbFk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/LLzdJreQbFk",
+      "credit": "L\u2019OCCITANE en Provence / YouTube",
+      "rights": "Official platform embed only; no media copied",
+      "evidence": "editorial/november-beauty/B-24/youtube-oembed-evidence.json",
+      "status": "Official watch-page and article-iframe playback verified in browser; completed15second playback; desktop1440 and mobile390 rendered",
+      "browserEvidence": "editorial/november-beauty/B-24/video-browser-evidence.json",
+      "qaEvidence": "editorial/review/B-24-preview-qa.json"
+    }
+  ]
+}

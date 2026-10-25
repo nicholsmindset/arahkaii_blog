@@ -1,0 +1,159 @@
+{
+  "code": "B-23",
+  "assets": [
+    {
+      "path": "hero-deepavali-preparation.png",
+      "role": "hero",
+      "section": null,
+      "alt": "Burgundy embroidered fabric, an emerald pouch and plain cosmetics on a bright dressing table beside a brass flower bowl.",
+      "prompt": "Generate a wide16:9 photorealistic editorial conceptual hero illustration for Deepavali beauty planning. Sunlit bright-white dressing table, folded burgundy embroidered festive sleeve, emerald cosmetic pouch, plain closed lipstick and compact, brass decorative bowl. No people, henna designs, medical application, brands, lettering or tested-result claims.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-51bebae2-e759-4a35-b7dd-568258350186.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: no text, logos, skin applications, clinical evidence or attributed artist designs; independent review pending",
+      "sha256": "2c93fd686bb6340f3811189ab5658e6e533b1cd3cf0cdda49943366580772b51",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "01-colour-and-clothing.png",
+      "role": "section",
+      "section": "1. Decide what should lead the look",
+      "alt": "Burgundy embroidered fabric beside a rose lipstick and bronze eye-colour compact.",
+      "prompt": "Folded burgundy embroidered sleeve, plain rose-toned lipstick and bronze eye-colour compact on bright white tabletop. Tactile fabric contrasts with simple makeup. No person or skin. Wide16:9 photorealistic conceptual editorial illustration at least1600px, natural light and realistic material texture, bright white with restrained deep emerald accents. No lettering, numbers, logos, watermarks, medical claims, real brands or product tests. Not a documentary photo.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-d98bb317-d049-4698-9e97-0715d029b27f.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: no text, logos, skin applications, clinical evidence or attributed artist designs; independent review pending",
+      "sha256": "ee55fbbc9f06c0727d7e6a5d32df602109e20083cf6bc72f6eecef20167cc54b",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "02-steady-routine.png",
+      "role": "section",
+      "section": "2. Keep skincare steady before the event",
+      "alt": "Three plain skincare containers in a dark green tray beside a folded white towel.",
+      "prompt": "Three plain closed unbranded skincare containers in a shallow emerald tray beside a folded white towel. Quiet familiar routine, no medical imagery or application. Wide16:9 photorealistic conceptual editorial illustration at least1600px, natural light and realistic material texture, bright white with restrained deep emerald accents. No lettering, numbers, logos, watermarks, medical claims, real brands or product tests. Not a documentary photo.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-8b0eef40-6d1d-4ce4-9abc-01c0d072f01e.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: no text, logos, skin applications, clinical evidence or attributed artist designs; independent review pending",
+      "sha256": "a77a4688c9fd900c65b6e7fa4294f55335ec13db49acaa678e2749b5ceb99219",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "03-touch-up-kit.png",
+      "role": "section",
+      "section": "3. Make the makeup maintainable",
+      "alt": "Open emerald makeup pouch with a compact mirror, folded tissue and closed lipstick.",
+      "prompt": "Small emerald cosmetic pouch open beside a clean compact mirror, folded tissue and closed lipstick. Useful compact touch-up kit on white table. Wide16:9 photorealistic conceptual editorial illustration at least1600px, natural light and realistic material texture, bright white with restrained deep emerald accents. No lettering, numbers, logos, watermarks, medical claims, real brands or product tests. Not a documentary photo.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-59ff3135-dfc3-494b-be2e-0e276e70c34e.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: no text, logos, skin applications, clinical evidence or attributed artist designs; independent review pending",
+      "sha256": "6934ed75e36574d0b4a4345a2fcd5d6cc2772d6512f4dbc3a9fd5e558d55ca10",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "04-appointment-questions.png",
+      "role": "section",
+      "section": "4. Ask a mehndi artist about the paste, not just the pattern",
+      "alt": "Blank open notebook and pencil beside a closed plain kraft carton.",
+      "prompt": "A blank open notebook and pencil beside a plain closed kraft cosmetic carton, intended as questions before a mehndi appointment. No paste, cone, skin, ingredient label or safety endorsement depicted. Wide16:9 photorealistic conceptual editorial illustration at least1600px, natural light and realistic material texture, bright white with restrained deep emerald accents. No lettering, numbers, logos, watermarks, medical claims, real brands or product tests. Not a documentary photo.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-568db426-42cb-45dd-bb62-de69432e5676.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: no text, logos, skin applications, clinical evidence or attributed artist designs; independent review pending",
+      "sha256": "18c91b84c06f98e5fd4693c57e5476685ea88621227c9ee3832ec5528af758e8",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "05-preparation-time.png",
+      "role": "section",
+      "section": "5. Plan practical time for the appointment",
+      "alt": "Empty dressing chair beside a brass tray, folded burgundy fabric and notebook.",
+      "prompt": "Prepared dressing corner, simple empty brass tray, folded burgundy sleeve and blank appointment notebook on white tabletop, empty chair. No person, artist or henna pattern. Wide16:9 photorealistic conceptual editorial illustration at least1600px, natural light and realistic material texture, bright white with restrained deep emerald accents. No lettering, numbers, logos, watermarks, medical claims, real brands or product tests. Not a documentary photo.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-a89d16e3-44b2-4ab5-b3bc-857ee9707706.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: no text, logos, skin applications, clinical evidence or attributed artist designs; independent review pending",
+      "sha256": "44d522e9a2fc147d3d13aedbe99a4cc597b46138d1aa546fc0af5f92f4bc189f",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "06-removal-ready.png",
+      "role": "section",
+      "section": "6. Make removal part of getting ready",
+      "alt": "Plain closed cosmetic bottle beside a folded white towel and ceramic sink.",
+      "prompt": "A plain closed cosmetic remover bottle beside clean folded cotton towel and dry ceramic sink, soft evening light, no application or skin. Wide16:9 photorealistic conceptual editorial illustration at least1600px, natural light and realistic material texture, bright white with restrained deep emerald accents. No lettering, numbers, logos, watermarks, medical claims, real brands or product tests. Not a documentary photo.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-3c2b19cd-b4fa-4d1a-863d-eafd640d3b6a.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: no text, logos, skin applications, clinical evidence or attributed artist designs; independent review pending",
+      "sha256": "42aa3c034d042b09cde201e3e7cf1f1cdd2ccfc7a6f4e7d851813c1e56bb34a4",
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ]
+}

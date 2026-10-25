@@ -1,0 +1,104 @@
+{
+  "file": "borneo-cultures-museum-medelam.jpg",
+  "sha256": "feaf1a502cc52c2c8eff3e724d945d67e3d016c71ad63186847b5bd07c7a2770",
+  "width": 3264,
+  "height": 2448,
+  "creator": "Medelam",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Borneo_Cultures_Museum_(2024).jpg",
+  "source_revision_url": "https://commons.wikimedia.org/w/index.php?oldid=1092044305",
+  "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Borneo_Cultures_Museum_%282024%29.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "changes": "Unmodified.",
+  "rights_checked_on": "2026-10-25",
+  "commons_metadata": {
+    "DateTime": {
+      "value": "2025-02-09 00:54:00",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Borneo Cultures Museum (2024)",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "Borneo Cultures Museum|Self-published work|Files with coordinates missing SDC location of creation",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "GPSLatitude": {
+      "value": "1.555474",
+      "source": "commons-desc-page"
+    },
+    "GPSLongitude": {
+      "value": "110.342368",
+      "source": "commons-desc-page"
+    },
+    "GPSMapDatum": {
+      "value": "WGS-84",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "Borneo Cultures Museum in 2024",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2024-07-23 11:11:46",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"//commons.wikimedia.org/wiki/User:Medelam\" title=\"User:Medelam\">Medelam</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "CC BY-SA 4.0",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Creative Commons Attribution-Share Alike 4.0",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "true",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "LicenseUrl": {
+      "value": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+      "value": "True",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "cc-by-sa-4.0",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  },
+  "visual_inspection": "Writer inspected original image; real architectural/landscape subject with no implied current conditions or first-hand visit. No image alterations.",
+  "rights_evidence": "Uploader own work and explicit licence on file description page; selected licence as cited."
+}

@@ -1,0 +1,62 @@
+{
+  "code": "F-33",
+  "assets": [
+    {
+      "path": "little-india-singapore-rain.jpg",
+      "role": "hero",
+      "section": null,
+      "alt": "Rain falls over Little India shops as two pedestrians share an umbrella on the wet street.",
+      "caption": "Little India, Singapore, photographed in February 2013. A real wet-weather street scene, not a test of the clothing or footwear discussed in this guide.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "\u7384\u53f2\u751f",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Little_India_in_Rain_20130210.jpg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/little-india-singapore-rain.rights.json",
+      "sha256": "af1bcd5cc58680c451f3566cea471cec162247bd2ab57640cbdd04987124b1e1",
+      "review": "Writer inspected actual photograph; independent review pending"
+    }
+  ],
+  "media_plan": {
+    "approach": "One strong real Singapore rainy-street photograph establishes the setting. The original outfit prose and accessible product comparison table supply specific service value; no generic school or notebook filler.",
+    "placements": [
+      {
+        "section": "Decide what needs protection",
+        "treatment": "text-or-table",
+        "rationale": "Actual garment differences and outfit instructions are expressed precisely in text/table; a generic garment photograph would imply an unverified model or wear test."
+      },
+      {
+        "section": "Three outfit starting points",
+        "treatment": "text-or-table",
+        "rationale": "Actual garment differences and outfit instructions are expressed precisely in text/table; a generic garment photograph would imply an unverified model or wear test."
+      },
+      {
+        "section": "Two jackets show why the exact description matters",
+        "treatment": "text-or-table",
+        "rationale": "Actual garment differences and outfit instructions are expressed precisely in text/table; a generic garment photograph would imply an unverified model or wear test."
+      },
+      {
+        "section": "Read the care label before the performance label",
+        "treatment": "text-or-table",
+        "rationale": "Actual garment differences and outfit instructions are expressed precisely in text/table; a generic garment photograph would imply an unverified model or wear test."
+      },
+      {
+        "section": "Protect what is inside the bag",
+        "treatment": "text-or-table",
+        "rationale": "Actual garment differences and outfit instructions are expressed precisely in text/table; a generic garment photograph would imply an unverified model or wear test."
+      },
+      {
+        "section": "Make drying part of the outfit plan",
+        "treatment": "text-or-table",
+        "rationale": "Actual garment differences and outfit instructions are expressed precisely in text/table; a generic garment photograph would imply an unverified model or wear test."
+      }
+    ]
+  },
+  "social_embeds": {
+    "status": "none selected",
+    "rationale": "No verified directly useful official video supplied; existing exact manufacturer/care links allow readers to inspect their garment. Do not force an unverified social embed."
+  }
+}

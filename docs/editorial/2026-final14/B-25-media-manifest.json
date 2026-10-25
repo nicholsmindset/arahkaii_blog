@@ -1,0 +1,162 @@
+{
+  "code": "B-25",
+  "assets": [
+    {
+      "path": "hero-rainy-day-care.png",
+      "role": "hero",
+      "section": null,
+      "alt": "Plain cosmetic containers, an emerald pouch, towel and comb on a dry bench beside a rainy window and separate umbrella stand.",
+      "prompt": "Create a premium editorial conceptual still life for Arahkaii article about rainy Singapore commutes and practical skin and hair care. Wide16:9 landscape1672x941. Inside a bright tropical apartment entryway, deep emerald zipped beauty pouch, folded clean ivory cotton towel, wide-tooth ivory comb and two plain closed white cosmetic containers on dry pale stone bench. A closed wet umbrella stands separately in a ceramic drip tray at far edge; rain streaks on window behind, soft green tropical foliage beyond. Bright natural daylight, restrained white and emerald palette, believable tactile materials, sophisticated editorial photograph look, generous composition. No people, skin, treatment demonstration, text, numbers, labels, logos, brands, fake testing results or medical imagery. Imagined objects only.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-8f396319-f342-4c39-b783-2fa3a87dfd50.png",
+        "referenceImages": [
+          "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-9f967a1b-e692-4fea-921e-782bfc3c9c54.png"
+        ],
+        "edit": "Removed generated tiny markings on white bottle using image_gen."
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "7a2864d168be6a09ab1d12201f4fb5f56474045b2b66c0866524951845d882b8",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "01-section.png",
+      "role": "section",
+      "section": "Separate weather from a diagnosis",
+      "alt": "An ivory notebook and closed emerald cosmetic pouch on a sunlit stone counter.",
+      "prompt": "A plain notebook and closed cosmetic pouch; no diagnostic skin imagery. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. Generate a single wide landscape 1672x941 image, not a collage. Objects are completely imagined and no actual product is depicted.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-9433cd8a-ff5a-479a-9e46-79a7626bd66b.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "3a4256b3ae5f49b0c3d248fc6db6192a8fad2bdc6fd45728969137e9c1512edb",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "02-section.png",
+      "role": "section",
+      "section": "A rainy-day kit should solve small problems",
+      "alt": "A folded towel and plain white tube in one tray, with a wet umbrella in a separate tray.",
+      "prompt": "Folded towel, closed plain sunscreen-format tube and a wet umbrella in a separate tray. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. Generate a single wide landscape 1672x941 image, not a collage. Objects are completely imagined and no actual product is depicted.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-cbc71b60-2ebf-49f3-829b-7b95f342a3f2.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "720edd93d1c548bfbec8dee75611a324c28981052363ff3fe8c25236b4bcdb28",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "03-section.png",
+      "role": "section",
+      "section": "Grey skies do not settle the sunscreen question",
+      "alt": "A plain white tube beside a rain-streaked window and a bowl containing a towel.",
+      "prompt": "Closed plain sunscreen-format tube by a rainy window, no protection claims. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. Generate a single wide landscape 1672x941 image, not a collage. Objects are completely imagined and no actual product is depicted.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-4330df01-5e14-4b01-8fd0-c2ce9df6130d.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "b04d526fccd7b59e91fb56ca215a03ae2a332d47be32db1b3f8385304c8bf494",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "04-section.png",
+      "role": "section",
+      "section": "Wash the scalp according to need",
+      "alt": "Two plain bottles and a wide-toothed green comb beside a dark green towel.",
+      "prompt": "Wide-tooth comb and plain shampoo and conditioner beside a towel. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. Generate a single wide landscape 1672x941 image, not a collage. Objects are completely imagined and no actual product is depicted.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-2337e1e2-e53c-41fb-821c-f7553775b97a.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "3292e2e91f4f076759e284b771a4e62d4571324f01476dce4c2cfb5292a75bdb",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "05-section.png",
+      "role": "section",
+      "section": "Avoid the seasonal reset trap",
+      "alt": "Three plain cosmetic containers set apart on stone blocks.",
+      "prompt": "Three plain cosmetic bottles with one set aside, no before-after imagery. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. Generate a single wide landscape 1672x941 image, not a collage. Objects are completely imagined and no actual product is depicted.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-3e33a48a-0acd-4530-85b0-361294541f97.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "dfdb48aae6e520878c2dd7a8db4f58a250405bd5e11cd65c17147f3901920080",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "06-section.png",
+      "role": "section",
+      "section": "Plan for a normal working day",
+      "alt": "An emerald roll-top bag and folded towel on a bench beside an umbrella stand.",
+      "prompt": "Dry bag and folded towel on an entrance shelf beside an umbrella stand. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. Generate a single wide landscape 1672x941 image, not a collage. Objects are completely imagined and no actual product is depicted.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-1e654875-0484-47ca-82e3-fd5de65b509f.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "3bf1f70b5810986a3a5c9a588f63aa3749ea769e7341e7bbcb80aec9c858eed6",
+      "dimensions": [
+        1672,
+        940
+      ]
+    }
+  ]
+}

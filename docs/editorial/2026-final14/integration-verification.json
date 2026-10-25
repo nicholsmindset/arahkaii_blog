@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-25",
+  "normal_verify": "PASS: 129 current HTML pages; future14 excluded by unchanged publication guard",
+  "isolated_future_build": "PASS: simulated 3 December 2026 in temporary copy only; all14 routes rendered",
+  "future_schema_and_build_validation": "PASS: 144 pages; JSON-LD, headings, landmarks, images, internal links and sitemaps",
+  "schema_decision": "Independent reviewer chose Article for all14 practical guides. Metadata evergreen selects Article in existing layout; calendar dates still determine scheduling.",
+  "articles": [
+    {
+      "code": "B-23",
+      "route": "https://www.arahkaii.com/beauty/deepavali-makeup-mehndi-care/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "2108d05f6f11d7e31b9652408903d0c81460ece6e4bd0bc318e328fb38864273"
+    },
+    {
+      "code": "F-34",
+      "route": "https://www.arahkaii.com/style/year-end-sale-strategy/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "f1de7e76e2993c5cf083c00e96fadfb06b543601b777b337e0c572cc42611165"
+    },
+    {
+      "code": "T-15",
+      "route": "https://www.arahkaii.com/travel/school-holiday-trips-from-singapore/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "ee910ec7db2045867f6cc5f87755b12c271ebe186c887db8dc51f4e5d5afa617"
+    },
+    {
+      "code": "B-27",
+      "route": "https://www.arahkaii.com/beauty/beauty-advent-calendar-value/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "3be718c3aff72e432a67f16f8b56c58c6cf71c1522930dc29645ae5f80093a05"
+    },
+    {
+      "code": "T-14",
+      "route": "https://www.arahkaii.com/travel/autumn-leaves-japan-korea/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "6d4b8da553c21aa6a68a85cc12c03d2a20626cc5c7975bf03961b342a118e22c"
+    },
+    {
+      "code": "L-25",
+      "route": "https://www.arahkaii.com/living/singapore-home-moisture-checklist/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "bb998bb11d766d83c8295e4e457a7525d2aea0a7f95893719a9dfd77fecfc60e"
+    },
+    {
+      "code": "B-25",
+      "route": "https://www.arahkaii.com/beauty/monsoon-skin-hair-care/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "06bc043cacfe11671ef25d9d1a102d39fdd761ae2ac89cf0b8620d633583ec52"
+    },
+    {
+      "code": "B-01",
+      "route": "https://www.arahkaii.com/beauty/humid-climate-skincare-routine/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "f85e7e8468b3e7bc74793a7c99fa6b7482e12bb08dce7fabd39db4d38b2a861b"
+    },
+    {
+      "code": "T-20",
+      "route": "https://www.arahkaii.com/travel/singapore-public-holidays-2027/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "afe6127a01bed2044777a10716bb01cddda1229f379f31bf2e9de7920ec7fb52"
+    },
+    {
+      "code": "E-16",
+      "route": "https://www.arahkaii.com/culture/sgiff-2026-final-weekend/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "429f350e1af0f5af8607313cc3e9f8d476e8ff6a3c807cd0a8c181ef8876e497"
+    },
+    {
+      "code": "L-17",
+      "route": "https://www.arahkaii.com/living/thoughtful-gifts-singapore/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "674f6b593efe3ebc8a4173ed36577e6148150aa18ebea7f74ac6affe47ab0fb2"
+    },
+    {
+      "code": "F-33",
+      "route": "https://www.arahkaii.com/style/singapore-rain-outfits/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "470f858273bacfdc13f8cc53a11b053951baa9556a43d11b833a1045de8edc7c"
+    },
+    {
+      "code": "B-24",
+      "route": "https://www.arahkaii.com/beauty/beauty-gifts-by-budget/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "ee6e8116f6ac898d9d65c7cbe9445729e8485ea4f1efebf74146827704f3d187"
+    },
+    {
+      "code": "T-16",
+      "route": "https://www.arahkaii.com/travel/first-winter-city-trip/",
+      "rendered": true,
+      "article_schema": true,
+      "production_sha256": "17249bf337e943813b266eb9a6ad6605ccd386bd30f3e8912543c1c2a5bfcf86"
+    }
+  ]
+}

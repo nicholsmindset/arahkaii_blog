@@ -1,0 +1,159 @@
+{
+  "code": "B-27",
+  "assets": [
+    {
+      "path": "hero-gift-value.png",
+      "role": "hero",
+      "section": null,
+      "alt": "Plain emerald gift box with three unbranded cosmetic containers and an open blank notebook.",
+      "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: distinct relevant concepts, no lettering, actual brand packaging or claimed test evidence; independent review pending",
+      "prompt": "Beauty gift-calendar value concept: a plain closed deep emerald gift box with simple ribbon beside three unbranded cosmetic containers and a blank open notebook, white tabletop, soft daylight. No actual calendar edition or brand packaging. Wide16:9 photorealistic editorial conceptual illustration at least1600px, bright white and restrained emerald, natural light, realistic ordinary materials. No people, lettering, numbers, logos, pseudo-text, watermark, alcohol or documentary/product-testing claim. No L'Occitane or other actual brand packaging.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-95e6c2ba-bac4-4142-8159-75016ca5d89b.png",
+        "referenceImages": []
+      },
+      "sha256": "98565d6a0e571706dccf2a808f628d8ea7f64f5bb787fd7e7cc34da2a08887e6",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "01-exact-edition.png",
+      "role": "section",
+      "section": "Start with the exact edition",
+      "alt": "Two plain gift boxes of different proportions with blank hangtags.",
+      "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: distinct relevant concepts, no lettering, actual brand packaging or claimed test evidence; independent review pending",
+      "prompt": "Two closed plain cosmetic gift boxes of different proportions, one white and one emerald, each with a blank hangtag, side-by-side on clean tabletop. Comparing exact editions concept, no real products. Wide16:9 photorealistic editorial conceptual illustration at least1600px, bright white and restrained emerald, natural light, realistic ordinary materials. No people, lettering, numbers, logos, pseudo-text, watermark, alcohol or documentary/product-testing claim. No L'Occitane or other actual brand packaging.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-fa384649-2670-4f9e-8fa0-5c1c0ff301a6.png",
+        "referenceImages": []
+      },
+      "sha256": "4a54c997b7ebbf6c172ef2eaf4bceb5497599694117cac52beeb238469cf8166",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "02-value-calculation.png",
+      "role": "section",
+      "section": "What the headline discount can\u2014and cannot\u2014say",
+      "alt": "Blank-screen calculator and notebook beside a plain cream box.",
+      "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: distinct relevant concepts, no lettering, actual brand packaging or claimed test evidence; independent review pending",
+      "prompt": "Plain cream cosmetic box beside a small calculator with screen off and unmarked keys, blank notebook and pencil. Checking claimed value concept, no sums or prices shown. Wide16:9 photorealistic editorial conceptual illustration at least1600px, bright white and restrained emerald, natural light, realistic ordinary materials. No people, lettering, numbers, logos, pseudo-text, watermark, alcohol or documentary/product-testing claim. No L'Occitane or other actual brand packaging.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-b5dc0490-2974-4d0a-a0c8-ec3f42d026ec.png",
+        "referenceImages": []
+      },
+      "sha256": "0dab8afb16dd68a35a4ec8824d7fe868c6767caa76f4352ff386424c6b2da943",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "03-useful-contents.png",
+      "role": "section",
+      "section": "Count the useful doors",
+      "alt": "Unbranded tubes, jars and bottles grouped beside an open tissue-lined box.",
+      "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: distinct relevant concepts, no lettering, actual brand packaging or claimed test evidence; independent review pending",
+      "prompt": "Top-down view: open plain gift box with unbranded cosmetic tubes and jars organised into three distinct small groups on white tabletop; selective usefulness concept, no actual kit contents. Wide16:9 photorealistic editorial conceptual illustration at least1600px, bright white and restrained emerald, natural light, realistic ordinary materials. No people, lettering, numbers, logos, pseudo-text, watermark, alcohol or documentary/product-testing claim. No L'Occitane or other actual brand packaging.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-e736f223-af55-4aa5-aed6-3c8ee95d1b91.png",
+        "referenceImages": []
+      },
+      "sha256": "d4ade1ba218c0133ddcb9c08a816d6ccfa40e4dfed862cddcf1095c34caecd04",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "04-hypothetical-example.png",
+      "role": "section",
+      "section": "Use a conservative worked example",
+      "alt": "Six plain small cosmetic tubes beside a large closed gift box and notebook.",
+      "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: distinct relevant concepts, no lettering, actual brand packaging or claimed test evidence; independent review pending",
+      "prompt": "Six plain small cosmetic tubes neatly beside a closed larger gift box and blank notebook on white tabletop. Hypothetical calculation concept, no real product collection or prices. Wide16:9 photorealistic editorial conceptual illustration at least1600px, bright white and restrained emerald, natural light, realistic ordinary materials. No people, lettering, numbers, logos, pseudo-text, watermark, alcohol or documentary/product-testing claim. No L'Occitane or other actual brand packaging.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-ce5f3f46-127b-4842-834d-c43a2c948f94.png",
+        "referenceImages": []
+      },
+      "sha256": "9f0a16558e240756730417b07151cd54e1f0dd6d4787e7136a7d873c53e35150",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "05-delivery-and-returns.png",
+      "role": "section",
+      "section": "Look beyond the checkout price",
+      "alt": "Emerald gift box beside an open delivery carton and blank slip of paper.",
+      "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: distinct relevant concepts, no lettering, actual brand packaging or claimed test evidence; independent review pending",
+      "prompt": "Closed emerald gift box beside open kraft delivery carton, clean tissue paper and blank receipt-shaped paper. Delivery and return cost concept, no retailer identifiers. Wide16:9 photorealistic editorial conceptual illustration at least1600px, bright white and restrained emerald, natural light, realistic ordinary materials. No people, lettering, numbers, logos, pseudo-text, watermark, alcohol or documentary/product-testing claim. No L'Occitane or other actual brand packaging.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-46afd76e-85c1-4898-ba77-920381b063ac.png",
+        "referenceImages": []
+      },
+      "sha256": "fb47943ba1962d4d3904e6522d845c9067b7a30367cbd77817b69bc709c345df",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "06-buy-or-wait.png",
+      "role": "section",
+      "section": "Who should buy\u2014and who should wait",
+      "alt": "One unbranded cosmetic jar in front of a wrapped gift box and closed notebook.",
+      "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visual inspection passed: distinct relevant concepts, no lettering, actual brand packaging or claimed test evidence; independent review pending",
+      "prompt": "Unopened plain gift box set aside near a closed notebook, with one simple unbranded cosmetic jar in the foreground. Choosing a familiar single item instead of a large gift concept. Wide16:9 photorealistic editorial conceptual illustration at least1600px, bright white and restrained emerald, natural light, realistic ordinary materials. No people, lettering, numbers, logos, pseudo-text, watermark, alcohol or documentary/product-testing claim. No L'Occitane or other actual brand packaging.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-e446ab00-2ffc-4e44-8276-7dc435bb5442.png",
+        "referenceImages": []
+      },
+      "sha256": "8911cf16b06b2f38b9b18a1dc4f2f0f24bd32e67c0c3c5af42f8772eba99e5e6",
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ]
+}
