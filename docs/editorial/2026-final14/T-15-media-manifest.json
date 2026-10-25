@@ -1,0 +1,77 @@
+{
+  "code": "T-15",
+  "assets": [
+    {
+      "path": "borneo-cultures-museum-medelam.jpg",
+      "role": "hero",
+      "section": null,
+      "alt": "Borneo Cultures Museum entrance beneath its sweeping pointed roof.",
+      "caption": "Borneo Cultures Museum in Kuching, photographed in July 2024. The building is a real destination discussed below; the photograph does not establish today\u2019s access or crowd levels.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "Medelam",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Borneo_Cultures_Museum_(2024).jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/borneo-cultures-museum-medelam.rights.json",
+      "sha256": "feaf1a502cc52c2c8eff3e724d945d67e3d016c71ad63186847b5bd07c7a2770",
+      "review": "writer visually inspected; independent review pending"
+    },
+    {
+      "path": "national-gallery-singapore-avin-teo.jpg",
+      "role": "section",
+      "section": "Singapore: spend the travel day on the holiday itself",
+      "alt": "Dome and colonnade of National Gallery Singapore.",
+      "caption": "National Gallery Singapore, photographed in April 2023. Check the current exhibition and ticket arrangements before planning a visit.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "Avin Teo",
+        "source_url": "https://commons.wikimedia.org/wiki/File:National_Gallery_Singapore_Building.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/national-gallery-singapore-avin-teo.rights.json",
+      "sha256": "5c6e8f1bd18ef954d54ebcbae5397329899fe657f186711e82662b33772eb0b7",
+      "review": "writer visually inspected; independent review pending"
+    }
+  ],
+  "media_plan": {
+    "approach": "Relevant licensed real photographs plus existing useful evidence graphics; no filler image per heading. User requested visual diversity.",
+    "placements": [
+      {
+        "section": "Choose the kind of effort you want to remove",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      },
+      {
+        "section": "Kuching: give one museum enough time",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      },
+      {
+        "section": "George Town: organise the day by area, not by a long checklist",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      },
+      {
+        "section": "Singapore: spend the travel day on the holiday itself",
+        "treatment": "image",
+        "rationale": "Actual place photography or checked comparison graphic supports this section."
+      },
+      {
+        "section": "Test the itinerary before paying",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      }
+    ]
+  },
+  "removed_decorative_assets": [
+    "01-trip-scale.png",
+    "02-museum-day.png",
+    "03-walking-day.png",
+    "05-flexible-plans.png"
+  ]
+}

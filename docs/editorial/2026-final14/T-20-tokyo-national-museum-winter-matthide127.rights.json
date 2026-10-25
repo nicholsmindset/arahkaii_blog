@@ -1,0 +1,104 @@
+{
+  "file": "tokyo-national-museum-winter-matthide127.jpg",
+  "sha256": "08236ff11fb6f79017e3bd4b4d086ae0ac55450beeefff8e1fb74bc235247c5b",
+  "width": 4032,
+  "height": 2268,
+  "creator": "Matthide127",
+  "source_url": "https://commons.wikimedia.org/wiki/File:20240116_Tokyo_National_Museum_10.39.15.jpg",
+  "source_revision_url": "https://commons.wikimedia.org/w/index.php?oldid=1131504082",
+  "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/20240116_Tokyo_National_Museum_10.39.15.jpg",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "changes": "Unmodified.",
+  "rights_checked_on": "2026-10-25",
+  "commons_metadata": {
+    "DateTime": {
+      "value": "2024-01-31 10:41:57",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "20240116 Tokyo National Museum 10.39.15",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "CC-Zero|Self-published work|Files with coordinates missing SDC location of creation|Views of the Tokyo National Museum from Takenodai Square",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "GPSLatitude": {
+      "value": "35.717091",
+      "source": "commons-desc-page"
+    },
+    "GPSLongitude": {
+      "value": "139.775339",
+      "source": "commons-desc-page"
+    },
+    "GPSMapDatum": {
+      "value": "WGS-84",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "G\u0142\u00f3wny budynek Muzeum Narodowego w Tokio",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2024-01-16 10:39:15",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Matthide127&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Matthide127 (page does not exist)\">Matthide127</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "CC0",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Creative Commons Zero, Public Domain Dedication",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "LicenseUrl": {
+      "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+      "value": "True",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "cc0",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  },
+  "visual_inspection": "Writer inspected original image; real architectural/landscape subject with no implied current conditions or first-hand visit. No image alterations.",
+  "rights_evidence": "Uploader own work and explicit licence on file description page; selected licence as cited."
+}

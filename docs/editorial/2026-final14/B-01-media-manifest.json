@@ -1,0 +1,203 @@
+{
+  "code": "B-01",
+  "assets": [
+    {
+      "path": "hero-considered-routine.png",
+      "role": "hero",
+      "section": null,
+      "alt": "Three plain cosmetic containers and a folded emerald towel on a bright vanity overlooking tropical foliage.",
+      "prompt": "Create a premium editorial conceptual still life for Arahkaii year-round humid-climate skincare routine guide. Wide16:9 landscape1672x941. Bright contemporary Singapore apartment bathroom with a restrained set of three different completely unbranded closed white cosmetic containers, one pump bottle, one small cream jar, one capped tube, each separate with ample spacing on pale stone vanity. Deep emerald cotton cloth folded neatly beside them, sunlit translucent window with softly blurred tropical foliage outside. Calm modern luxury, realistic material textures, subtle shadow, clean white/deep emerald palette. No people, text, numbers, labels, logos, pharmaceutical claims, skin results, clinical setting or treatment demonstrations. Generic imagined cosmetics, not identifiable products.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-8a233aca-05ad-44db-a5be-40fa0250c84a.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "6cd4a669f575fb56b1270a6409ee1ce8d76771ba70b996c9d24e2de6922ebf1f",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "01-section.png",
+      "role": "section",
+      "section": "Give every step a specific job",
+      "alt": "A plain tube, pump bottle and closed jar spaced apart on a pale stone counter.",
+      "prompt": "Three plain skincare containers each separated by clear space. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-9f00b56a-e15d-4289-96ac-092a1e0bfd80.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "d0d41ba45ae6ca61b68e9edcc3067c1e43aab2d5dd35dfba4720f986b3f7348d",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "02-section.png",
+      "role": "section",
+      "section": "Cleanse without chasing a squeaky finish",
+      "alt": "A plain pump bottle and green cloth beside a white basin.",
+      "prompt": "Clean sink, soft cloth and plain cleanser pump. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-3f1a0ecb-49a8-4400-8379-a0ca166843bd.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "ae06dd602967eb8237b4a34d21c5d2eefe2fb6453c5c6f5c88fd716d2aa42d18",
+      "dimensions": [
+        1672,
+        940
+      ]
+    },
+    {
+      "path": "03-section.png",
+      "role": "section",
+      "section": "Oily skin still needs a considered routine",
+      "alt": "Blotting papers and a plain closed jar on an emerald tray.",
+      "prompt": "Blotting paper and simple closed moisturiser container; no skin before-after. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-88e45e8c-82f3-4e83-9814-0aa52e0a6fde.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "febfacaf166cffd59da5702dc3bb9993f69602b7ca406a7d510cfdf7c9b3bf5d",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "04-section.png",
+      "role": "section",
+      "section": "Choose moisturiser by use, not by a rule about richness",
+      "alt": "Two plain closed cosmetic jars with different shapes and green lids.",
+      "prompt": "Two closed moisturiser containers of different shapes on pale stone. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-c688fc1a-2d1e-4c06-9fd6-9201a8f43d18.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "b7abeccb1510f349bf3c5a146268f5ee06f2c62ba012df5bd245c496bb12b2cd",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "05-section.png",
+      "role": "section",
+      "section": "Make sun protection workable",
+      "alt": "A plain white tube beside a straw hat and green shirt.",
+      "prompt": "Plain sunscreen-format tube beside long-sleeved cotton garment and a sunhat. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-38ddfb29-174b-49aa-846d-e4a2f799eb84.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "5fed177431c006ef841fec4d42cc08226e290608415168b087ec9e28c6009d70",
+      "dimensions": [
+        1672,
+        940
+      ]
+    },
+    {
+      "path": "06-section.png",
+      "role": "section",
+      "section": "Add treatments with a reason and a record",
+      "alt": "A plain bottle beside a blank notebook and green pen.",
+      "prompt": "One unbranded bottle beside a blank notebook and pen. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-f4cc54d5-99a1-4d80-b8d6-f95ce79b0b7b.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "929c19849510310c28422d05d9af541eaa065f7b845ecafcf9d01409f0672baf",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "07-section.png",
+      "role": "section",
+      "section": "Read local labels carefully",
+      "alt": "A completely blank white carton and closed white tube.",
+      "prompt": "A generic carton with completely blank label area and sealed tube; no invented regulatory marks. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-6438fe5f-4023-4438-bc7a-5f3f4dfd4858.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; the blank packaging is imagined, not an example of a compliant product label.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "0f7eacbda1daabed82266884df979a232247e60e43e273d29a319b5fc6398c06",
+      "dimensions": [
+        1672,
+        940
+      ]
+    },
+    {
+      "path": "08-section.png",
+      "role": "section",
+      "section": "Build around three real days",
+      "alt": "A cream beauty pouch beside a green work bag, towel and small mirror.",
+      "prompt": "A single zipped beauty pouch beside a work bag, folded towel and small mirror. Conceptual editorial still life, 16:9, minimum width 1600px, bright natural light from left, restrained white/deep emerald palette, tactile ordinary materials, centred crop-safe subject, 50mm lens look, gentle film grain. No text, numbers, logos, pseudo-text, watermarks, people, exposed bodies, alcohol or implied real product testing. One single wide landscape image1672x941, not a collage. Completely blank imaginary cosmetic packaging, no microprinting or labels. No clinical procedure demonstration.",
+      "provenance": {
+        "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-0523b3f6-777d-4445-a499-e0aa1d31cec2.png",
+        "referenceImages": []
+      },
+      "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer inspected actual image; independent visual review pending.",
+      "sha256": "bcfb7bc4aa89629df73368dfb147b85015096c54c14ca69bef6b733e776ce20a",
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ]
+}

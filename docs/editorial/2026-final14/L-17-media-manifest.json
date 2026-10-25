@@ -1,0 +1,72 @@
+{
+  "code": "L-17",
+  "status": "curated_media_ready_for_independent_review",
+  "assets": [
+    {
+      "path": "gifts-projectmanhattan.jpg",
+      "role": "hero",
+      "section": null,
+      "alt": "Red and silver wrapped presents tied with white and red ribbons, arranged on shelves.",
+      "caption": "Wrapped presents, photographed in 2013. A personal choice matters more than elaborate packaging.",
+      "sha256": "a00e20d2cec1d8e11a69fa663b7727a67585501777ed379ca99d31fa432a4cbb",
+      "credit": {
+        "creator": "ProjectManhattan",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gifts.jpg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Unmodified."
+      },
+      "provenance": {
+        "checked_on": "2026-10-25",
+        "source_revision": "https://commons.wikimedia.org/w/index.php?title=File:Gifts.jpg&oldid=1273040320",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Gifts.jpg",
+        "captured_on": "2013-11-09",
+        "rights": "Uploader own work explicitly dedicated CC0; credit retained voluntarily",
+        "visual_check": "Actual wrapped packages, no people. Generic packaging photograph; does not establish products inside or current merchant offering."
+      }
+    },
+    {
+      "path": "national-gallery-singapore-avin-teo.jpg",
+      "role": "section",
+      "section": "For the gallery visitor: check what a year actually means",
+      "alt": "The green dome and stone colonnade of National Gallery Singapore, photographed in 2023.",
+      "caption": "National Gallery Singapore, April 2023. Check the current exhibition programme before arranging a visit.",
+      "sha256": "5c6e8f1bd18ef954d54ebcbae5397329899fe657f186711e82662b33772eb0b7",
+      "credit": {
+        "creator": "Avin Teo",
+        "source_url": "https://commons.wikimedia.org/wiki/File:National_Gallery_Singapore_Building.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Unmodified."
+      },
+      "provenance": {
+        "file": "national-gallery-singapore-avin-teo.jpg",
+        "sha256": "5c6e8f1bd18ef954d54ebcbae5397329899fe657f186711e82662b33772eb0b7",
+        "width": 3978,
+        "height": 2652,
+        "creator": "Avin Teo",
+        "source_url": "https://commons.wikimedia.org/wiki/File:National_Gallery_Singapore_Building.jpg",
+        "source_revision_url": "https://commons.wikimedia.org/w/index.php?title=File:National_Gallery_Singapore_Building.jpg&oldid=1108457128",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/National_Gallery_Singapore_Building.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Unmodified.",
+        "captured_on": "2023-04-09",
+        "rights_checked_on": "2026-10-25",
+        "rights_evidence": "File description page identifies uploader as copyright holder and grants CC BY-SA4.0; attribution, licence link and changes statement required; adaptations retain same/compatible licence.",
+        "visual_inspection": "Actual dome and colonnade exterior, no identifiable people or artworks. Historical architectural photo, not evidence of current event/exhibition.",
+        "planned_use": "L17 gallery-visitor gift profile; can also illustrate actual gallery references in other articles with same attribution."
+      }
+    }
+  ],
+  "media_plan": {
+    "Ask without turning the gift into homework": "text_only",
+    "Match the gift to an actual habit": "text_only",
+    "For the gallery visitor: check what a year actually means": "photo",
+    "Compare the commitment, not just the amount": "table",
+    "Treat an experience as a booking": "text_only",
+    "Set the budget privately and keep it honest": "text_only",
+    "Make the presentation carry the personal part": "text_only"
+  },
+  "media_rationale": "Real gift photograph leads; actual Gallery architecture illustrates named place; structured comparison table and specific prose carry remaining sections without decorative filler, following user request for relevant diverse media."
+}

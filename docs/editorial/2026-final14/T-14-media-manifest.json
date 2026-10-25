@@ -1,0 +1,87 @@
+{
+  "code": "T-14",
+  "assets": [
+    {
+      "path": "shinjuku-gyoen-autumn-nesnad.jpg",
+      "role": "hero",
+      "section": null,
+      "alt": "Red and orange autumn leaves above a pond at Shinjuku Gyoen.",
+      "caption": "Shinjuku Gyoen photographed in November 2016. Historical foliage imagery; the colour shown does not predict the 2026 season.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "nesnad",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Autumn_leaves_-_Shinjuku_gyoen_-_nov_2016.jpg",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/shinjuku-gyoen-autumn-nesnad.rights.json",
+      "sha256": "855e8d99168c78c35f21dda0c99143e353facce5ae1bb87e7be530c7743909a8",
+      "review": "writer visually inspected; independent review pending"
+    },
+    {
+      "path": "05-korea-forecast-comparison.png",
+      "section": "Korea: two forecasts, two sets of dates",
+      "source": "generated-image:01a172ab-41b4-7f71-a7cb-e2c76f191429/exec-af972d3c-eb3b-4189-85d4-2e13a3ffeacc.png",
+      "prompt": "Create a polished wide16:9 editorial comparison graphic on warm ivory paper texture, precise dark charcoal typography, generous spacing and restrained rust and olive accents. NO decorative locations, maps, landscapes, logos or extra data. Exact text only as follows. Main label: '2026 foliage forecasts'. Subline: 'Published predictions \u2014 not observed peaks'. Three-column table headers: 'Mountain' | 'KTO / Weatheri \u00b7 8 Sep' | 'Forest Service \u00b7 22 Sep'. Rows: 'Seoraksan' | '25 October' | '20 October'; 'Naejangsan' | '11 November' | '4 November'; 'Hallasan' | '13 November' | '6 November'. Small bottom note: 'Different providers; do not average these dates.' Use beautiful clear large legible editorial type, subtle divider lines. This is a supplied-data visualisation: reproduce all text and dates exactly, no invented quantities. No magazine article title, no fake branding.",
+      "alt": "Forecast comparison: KTO/Weatheri versus Forest Service predicts Seoraksan 25 versus 20 October, Naejangsan 11 versus 4 November and Hallasan 13 versus 6 November.",
+      "caption": "AI-assisted editorial graphic from the cited KTO/Weatheri 8 September and Korea Forest Service 22 September 2026 forecasts. These are published predictions, not observed peaks; the accessible table and source links remain in the article.",
+      "type": "AI-generated editorial data graphic",
+      "sources": [
+        "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=177&vcontsId=1593230",
+        "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156782827"
+      ],
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Writer visually inspected; independent visual review pending. Data graphic's six dates and provider headings checked against article.",
+      "rights": "Generated for this editorial package; no third-party photographs or artworks used",
+      "generated_credit": "Arahkaii / AI-generated illustration"
+    }
+  ],
+  "rejectedVariant": {
+    "source": "generated-image:01a172ab-41b4-7f71-a7cb-e2c76f191429/exec-c3f6c690-b92d-43af-98b8-0a5a44da5346.png",
+    "reason": "Generated outdoorcity/mountainbackgroundcontrarytoconceptbrief;replacedwithplainwall,notdelivered"
+  },
+  "media_plan": {
+    "approach": "Relevant licensed real photographs plus existing useful evidence graphics; no filler image per heading. User requested visual diversity.",
+    "placements": [
+      {
+        "section": "What the timing table can\u2014and cannot\u2014tell you",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      },
+      {
+        "section": "Tokyo: make the park part of a city trip",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      },
+      {
+        "section": "Kyoto: read the column heading before the coloured leaf",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      },
+      {
+        "section": "Nikko: the town and the higher landscape are different decisions",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      },
+      {
+        "section": "Korea: two forecasts, two sets of dates",
+        "treatment": "image",
+        "rationale": "Actual place photography or checked comparison graphic supports this section."
+      },
+      {
+        "section": "Keep two decisions separate",
+        "treatment": "text-or-table",
+        "rationale": "Text or HTML comparison table is the useful evidence; omit generic decorative image."
+      }
+    ]
+  },
+  "removed_decorative_assets": [
+    "01-reading-season.png",
+    "02-city-walk.png",
+    "03-historical-record.png",
+    "04-excursion-layers.png",
+    "06-beyond-the-leaves.png"
+  ]
+}

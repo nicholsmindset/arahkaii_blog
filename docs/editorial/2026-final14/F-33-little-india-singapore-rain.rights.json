@@ -1,0 +1,92 @@
+{
+  "file": "little-india-singapore-rain.jpg",
+  "sha256": "af1bcd5cc58680c451f3566cea471cec162247bd2ab57640cbdd04987124b1e1",
+  "width": 3648,
+  "height": 2056,
+  "creator": "\u7384\u53f2\u751f",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Little_India_in_Rain_20130210.jpg",
+  "source_revision_url": "https://commons.wikimedia.org/w/index.php?oldid=1170434431",
+  "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Little_India_in_Rain_20130210.jpg",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "changes": "Unmodified.",
+  "rights_checked_on": "2026-10-25",
+  "commons_metadata": {
+    "DateTime": {
+      "value": "2013-07-25 01:34:23",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Little India in Rain 20130210",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "Taken with Olympus XZ-1|CC-Zero|Little India, Singapore|Self-published work|People with umbrellas|\u7384\u53f2\u751f\u5199\u771f\u6587\u5eab",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "\u200b\u65b0\u52a0\u5761\u5c0f\u5370\u5ea6\u96e8\u4e2d\u8857\u666f\u3002",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2013-02-10",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E7%8E%84%E5%8F%B2%E7%94%9F\" title=\"User:\u7384\u53f2\u751f\">\u7384\u53f2\u751f</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "CC0",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Creative Commons Zero, Public Domain Dedication",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "LicenseUrl": {
+      "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+      "value": "True",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "cc0",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  },
+  "visual_inspection": "Inspected original: rain falling over Little India shops, pedestrians under one umbrella, wet street and parked car. Ordinary clothing, no school imagery or promotional alcohol content. Historical contextual street photograph, not garment test.",
+  "rights_evidence": "Uploader own work and explicit licence on file description page; selected licence as cited.",
+  "captured_on": "2013-02-10"
+}

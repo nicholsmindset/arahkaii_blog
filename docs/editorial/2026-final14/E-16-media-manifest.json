@@ -1,0 +1,58 @@
+{
+  "code": "E-16",
+  "assets": [
+    {
+      "path": "national-archives-singapore-mike-peel.jpg",
+      "role": "hero",
+      "section": null,
+      "alt": "National Archives of Singapore exterior framed by trees.",
+      "caption": "The National Archives of Singapore, home to Oldham Theatre. Photograph from August 2023; it does not depict a 2026 festival screening.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "Mike Peel (www.mikepeel.net)",
+        "source_url": "https://commons.wikimedia.org/wiki/File:At_Singapore_2023_050_-_National_Archives_of_Singapore.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/national-archives-singapore-mike-peel.rights.json",
+      "sha256": "f53d9e07ff03a4b465f9eccb8a13807723bc216c02a23b013dc6ace245d42844",
+      "review": "writer visually inspected; independent review pending"
+    }
+  ],
+  "media_plan": {
+    "approach": "Relevant licensed real photographs plus existing useful evidence graphics; no filler image per heading. User requested visual diversity.",
+    "placements": [
+      {
+        "section": "Choose a question, then a section",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Five listed screenings to compare for the final weekend",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "For families, distinguish the film from the screening format",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Book the event you mean to attend",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "A sold-out screening is not a reliable plan",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Make one screening count",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      }
+    ]
+  }
+}

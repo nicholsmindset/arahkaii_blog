@@ -1,0 +1,970 @@
+{
+  "articles": [
+    {
+      "code": "B-23",
+      "source": "editorial/november-beauty/B-23.md",
+      "source_sha256": "1a80a6670acf1bf0a87fa19c9b0991c6bc592eae5b8e68b26d4afdbb9ca2222c",
+      "production_file": "src/content/posts/2026/deepavali-makeup-mehndi-care.mdx",
+      "production_sha256": "2108d05f6f11d7e31b9652408903d0c81460ece6e4bd0bc318e328fb38864273",
+      "url": "https://www.arahkaii.com/beauty/deepavali-makeup-mehndi-care/",
+      "date": "2026-11-02",
+      "review": {
+        "source_sha256": "1a80a6670acf1bf0a87fa19c9b0991c6bc592eae5b8e68b26d4afdbb9ca2222c",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/earliest-five-research-closure.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "d237b0a5b7e0ab5865079075284310eec1a49ad9ff3527040b29cf735227a3be",
+      "assets": [
+        {
+          "file": "src/assets/images/deepavali-makeup-mehndi-care/hero-deepavali-preparation.png",
+          "sha256": "2c93fd686bb6340f3811189ab5658e6e533b1cd3cf0cdda49943366580772b51",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-51bebae2-e759-4a35-b7dd-568258350186.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/deepavali-makeup-mehndi-care/01-colour-and-clothing.png",
+          "sha256": "ee55fbbc9f06c0727d7e6a5d32df602109e20083cf6bc72f6eecef20167cc54b",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-d98bb317-d049-4698-9e97-0715d029b27f.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/deepavali-makeup-mehndi-care/02-steady-routine.png",
+          "sha256": "a77a4688c9fd900c65b6e7fa4294f55335ec13db49acaa678e2749b5ceb99219",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-8b0eef40-6d1d-4ce4-9abc-01c0d072f01e.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/deepavali-makeup-mehndi-care/03-touch-up-kit.png",
+          "sha256": "6934ed75e36574d0b4a4345a2fcd5d6cc2772d6512f4dbc3a9fd5e558d55ca10",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-59ff3135-dfc3-494b-be2e-0e276e70c34e.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/deepavali-makeup-mehndi-care/04-appointment-questions.png",
+          "sha256": "18c91b84c06f98e5fd4693c57e5476685ea88621227c9ee3832ec5528af758e8",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-568db426-42cb-45dd-bb62-de69432e5676.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/deepavali-makeup-mehndi-care/05-preparation-time.png",
+          "sha256": "44d522e9a2fc147d3d13aedbe99a4cc597b46138d1aa546fc0af5f92f4bc189f",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-a89d16e3-44b2-4ab5-b3bc-857ee9707706.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/deepavali-makeup-mehndi-care/06-removal-ready.png",
+          "sha256": "42aa3c034d042b09cde201e3e7cf1f1cdd2ccfc7a6f4e7d851813c1e56bb34a4",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual product, artist work, treatment or test is depicted.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-3c2b19cd-b4fa-4d1a-863d-eafd640d3b6a.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "F-34",
+      "source": "editorial/november-style-living/F-34.md",
+      "source_sha256": "7e28904e7ae3a8e5d9e35272c11bb30a521d6f54b8d78a2a05a9236b9ad78f21",
+      "production_file": "src/content/posts/2026/year-end-sale-strategy.mdx",
+      "production_sha256": "f1de7e76e2993c5cf083c00e96fadfb06b543601b777b337e0c572cc42611165",
+      "url": "https://www.arahkaii.com/style/year-end-sale-strategy/",
+      "date": "2026-11-04",
+      "review": {
+        "source_sha256": "7e28904e7ae3a8e5d9e35272c11bb30a521d6f54b8d78a2a05a9236b9ad78f21",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/earliest-five-research-closure.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "f5edb3a84625bda56bc7b3d4ab81e83259180a49a25d7e50d8bfe6f2f2eb5d51",
+      "assets": [
+        {
+          "file": "src/assets/images/year-end-sale-strategy/hero-deliberate-shopping.png",
+          "sha256": "a0309d84520e05b1a67574b4c314b0eddf161ab152c801b11e12be01505b3fda",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration of wardrobe planning in an imagined Singapore setting; no actual home or tested products are depicted.",
+          "rights": null,
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/year-end-sale-strategy/01-wardrobe-plan.png",
+          "sha256": "e368a32c8e9d79e8f2a3731a9f7ed0f7075b2037b3bf1e8d79939690b7397c49",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration of planning a wardrobe purchase; not a product test.",
+          "rights": null,
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/year-end-sale-strategy/02-price-record.png",
+          "sha256": "f7b960dc04a67e6593c69814f9ed5e149018c3d2698aa89b5d82ef2c0e41933f",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+          "rights": null,
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/year-end-sale-strategy/03-comparing-costs.png",
+          "sha256": "20d2b03ae5c8574e627db643afacacbdd0b5f8e8458dff7ee496d75a91e93259",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+          "rights": null,
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/year-end-sale-strategy/04-return-route.png",
+          "sha256": "f56670168b90466841e7da59f9295ce8246da0211a046381f2003a9d0217ed51",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+          "rights": null,
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/year-end-sale-strategy/05-care-label.png",
+          "sha256": "0b1eb48f5524290baba8809fe9373e61bc1669007746be8eac5c69c9a602db5f",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+          "rights": null,
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/year-end-sale-strategy/06-leave-room.png",
+          "sha256": "ba3a7ab0243cf11753f7e2a3705dd5a58143c3c4fb7d592368d82ea5a30454d4",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+          "rights": null,
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "T-15",
+      "source": "editorial/november-places/T-15/article.md",
+      "source_sha256": "c83572944993433642d0d0a23550a8246db114ffdd17ae7d6e379a5765fb4c7f",
+      "production_file": "src/content/posts/2026/school-holiday-trips-from-singapore.mdx",
+      "production_sha256": "ee910ec7db2045867f6cc5f87755b12c271ebe186c887db8dc51f4e5d5afa617",
+      "url": "https://www.arahkaii.com/travel/school-holiday-trips-from-singapore/",
+      "date": "2026-11-06",
+      "review": {
+        "source_sha256": "c83572944993433642d0d0a23550a8246db114ffdd17ae7d6e379a5765fb4c7f",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/earliest-five-research-closure.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "2989a5ef868fcdec88d0922589bb6efcdf6e99ec5b59c8f7e6348951b928ecc7",
+      "assets": [
+        {
+          "file": "src/assets/images/school-holiday-trips-from-singapore/borneo-cultures-museum-medelam.jpg",
+          "sha256": "feaf1a502cc52c2c8eff3e724d945d67e3d016c71ad63186847b5bd07c7a2770",
+          "credit": {
+            "creator": "Medelam",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Borneo_Cultures_Museum_(2024).jpg",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "Borneo Cultures Museum in Kuching, photographed in July 2024. The building is a real destination discussed below; the photograph does not establish today\u2019s access or crowd levels.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/T-15-borneo-cultures-museum-medelam.rights.json"
+        },
+        {
+          "file": "src/assets/images/school-holiday-trips-from-singapore/national-gallery-singapore-avin-teo.jpg",
+          "sha256": "5c6e8f1bd18ef954d54ebcbae5397329899fe657f186711e82662b33772eb0b7",
+          "credit": {
+            "creator": "Avin Teo",
+            "source_url": "https://commons.wikimedia.org/wiki/File:National_Gallery_Singapore_Building.jpg",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "National Gallery Singapore, photographed in April 2023. Check the current exhibition and ticket arrangements before planning a visit.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/T-15-national-gallery-singapore-avin-teo.rights.json"
+        }
+      ]
+    },
+    {
+      "code": "B-27",
+      "source": "editorial/november-beauty/B-27.md",
+      "source_sha256": "dd3a94d658e780256f7079b25aad5ce430e0dd707ce1a27ef7bbd74c017d9078",
+      "production_file": "src/content/posts/2026/beauty-advent-calendar-value.mdx",
+      "production_sha256": "3be718c3aff72e432a67f16f8b56c58c6cf71c1522930dc29645ae5f80093a05",
+      "url": "https://www.arahkaii.com/beauty/beauty-advent-calendar-value/",
+      "date": "2026-11-09",
+      "review": {
+        "source_sha256": "dd3a94d658e780256f7079b25aad5ce430e0dd707ce1a27ef7bbd74c017d9078",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/earliest-five-research-closure.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "4a8862c6978593a3fdd0bf4d7003530d6a6ec2da98b0755ae0a35b419450cd64",
+      "assets": [
+        {
+          "file": "src/assets/images/beauty-advent-calendar-value/hero-gift-value.png",
+          "sha256": "98565d6a0e571706dccf2a808f628d8ea7f64f5bb787fd7e7cc34da2a08887e6",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-95e6c2ba-bac4-4142-8159-75016ca5d89b.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/beauty-advent-calendar-value/01-exact-edition.png",
+          "sha256": "4a54c997b7ebbf6c172ef2eaf4bceb5497599694117cac52beeb238469cf8166",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-fa384649-2670-4f9e-8fa0-5c1c0ff301a6.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/beauty-advent-calendar-value/02-value-calculation.png",
+          "sha256": "0dab8afb16dd68a35a4ec8824d7fe868c6767caa76f4352ff386424c6b2da943",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-b5dc0490-2974-4d0a-a0c8-ec3f42d026ec.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/beauty-advent-calendar-value/03-useful-contents.png",
+          "sha256": "d4ade1ba218c0133ddcb9c08a816d6ccfa40e4dfed862cddcf1095c34caecd04",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-e736f223-af55-4aa5-aed6-3c8ee95d1b91.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/beauty-advent-calendar-value/04-hypothetical-example.png",
+          "sha256": "9f0a16558e240756730417b07151cd54e1f0dd6d4787e7136a7d873c53e35150",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-ce5f3f46-127b-4842-834d-c43a2c948f94.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/beauty-advent-calendar-value/05-delivery-and-returns.png",
+          "sha256": "fb47943ba1962d4d3904e6522d845c9067b7a30367cbd77817b69bc709c345df",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-46afd76e-85c1-4898-ba77-920381b063ac.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/beauty-advent-calendar-value/06-buy-or-wait.png",
+          "sha256": "8911cf16b06b2f38b9b18a1dc4f2f0f24bd32e67c0c3c5af42f8772eba99e5e6",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; packaging and contents are imagined, not the L\u2019Occitane calendar or products compared in the article.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-e446ab00-2ffc-4e44-8276-7dc435bb5442.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "T-14",
+      "source": "editorial/november-places/T-14/article.md",
+      "source_sha256": "a7d49015540687361325551b60df941b502a9fee1cdb9e5f37804c8954a1b98d",
+      "production_file": "src/content/posts/2026/autumn-leaves-japan-korea.mdx",
+      "production_sha256": "6d4b8da553c21aa6a68a85cc12c03d2a20626cc5c7975bf03961b342a118e22c",
+      "url": "https://www.arahkaii.com/travel/autumn-leaves-japan-korea/",
+      "date": "2026-11-11",
+      "review": {
+        "source_sha256": "a7d49015540687361325551b60df941b502a9fee1cdb9e5f37804c8954a1b98d",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/earliest-five-research-closure.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "f8bfa77f4aed40b13bad0dca78b52ed7b853bc819cb5fe0d434c5f6608b66658",
+      "assets": [
+        {
+          "file": "src/assets/images/autumn-leaves-japan-korea/shinjuku-gyoen-autumn-nesnad.jpg",
+          "sha256": "855e8d99168c78c35f21dda0c99143e353facce5ae1bb87e7be530c7743909a8",
+          "credit": {
+            "creator": "nesnad",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Autumn_leaves_-_Shinjuku_gyoen_-_nov_2016.jpg",
+            "license": "CC BY-SA 3.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "Shinjuku Gyoen photographed in November 2016. Historical foliage imagery; the colour shown does not predict the 2026 season.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/T-14-shinjuku-gyoen-autumn-nesnad.rights.json"
+        },
+        {
+          "file": "src/assets/images/autumn-leaves-japan-korea/05-korea-forecast-comparison.png",
+          "sha256": "ef62c4421eb027234f68c9cac6624a2d6c06c461a3e027d396ad161aa93f76ad",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-assisted editorial graphic from the cited KTO/Weatheri 8 September and Korea Forest Service 22 September 2026 forecasts. These are published predictions, not observed peaks; the accessible table and source links remain in the article.",
+          "rights": "Generated for this editorial package; no third-party photographs or artworks used",
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "L-25",
+      "source": "editorial/november-style-living/L-25.md",
+      "source_sha256": "522ffcc9179a7e3871b9d03daf61f35b42c5831633d487c77f696b7223eb470f",
+      "production_file": "src/content/posts/2026/singapore-home-moisture-checklist.mdx",
+      "production_sha256": "bb998bb11d766d83c8295e4e457a7525d2aea0a7f95893719a9dfd77fecfc60e",
+      "url": "https://www.arahkaii.com/living/singapore-home-moisture-checklist/",
+      "date": "2026-11-13",
+      "review": {
+        "source_sha256": "522ffcc9179a7e3871b9d03daf61f35b42c5831633d487c77f696b7223eb470f",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/batch-02-independent-review.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "17b6cc975dd090fc67e2d06eb98582e0c51f108e662165fe31ac013f90cb4d93",
+      "assets": [
+        {
+          "file": "src/assets/images/singapore-home-moisture-checklist/00-hero.png",
+          "sha256": "c99604a50d27e1a809063b51a8b18af3382b58ba86229b126ae71a916e19a410",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual home inspection, appliance test or measured result is shown.",
+          "rights": "Generated for this editorial package; no third-party photographs used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-home-moisture-checklist/01-room-record.png",
+          "sha256": "f220379e06a3a21967924c6edd8b0821e754784e56a214acee650876c5ce5d2c",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual home inspection, appliance test or measured result is shown.",
+          "rights": "Generated for this editorial package; no third-party photographs used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-home-moisture-checklist/02-find-source.png",
+          "sha256": "b626ca0622083f15e2f0d37faa4e20be074d55f8db83fd7dd87ba108e754a251",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual home inspection, appliance test or measured result is shown.",
+          "rights": "Generated for this editorial package; no third-party photographs used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-home-moisture-checklist/03-measurement.png",
+          "sha256": "c1b56bba6693d1e5e7854d01067e45fb9a5a00474f6203ad438952e5a67565d4",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual home inspection, appliance test or measured result is shown.",
+          "rights": "Generated for this editorial package; no third-party photographs used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-home-moisture-checklist/04-specification-conditions.png",
+          "sha256": "440e57acac989f1f3a5a8a843e8334c1e55a19b616314afddc49eac8690b67fb",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated graphic of manufacturer-stated specifications checked 25 October 2026. The conditions differ; this is not an efficiency ranking. The figures also appear in the accessible table below.",
+          "rights": "Generated for this editorial package; no third-party photographs used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-home-moisture-checklist/05-running-costs.png",
+          "sha256": "a7ab405056240f6f9f2cf64ab65f12c4bafe276fa6c67d4196bc57e3b4a02706",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual home inspection, appliance test or measured result is shown.",
+          "rights": "Generated for this editorial package; no third-party photographs used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-home-moisture-checklist/06-repeatable-routine.png",
+          "sha256": "14ef10607131019cf9310c205299886d8d98421fdeefde3a3904faaff88c995f",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; no actual home inspection, appliance test or measured result is shown.",
+          "rights": "Generated for this editorial package; no third-party photographs used",
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "B-25",
+      "source": "editorial/november-beauty/B-25.md",
+      "source_sha256": "b2a3932c047be433125dca070c568411ccb19035fd136fc8abe03c0085e9f583",
+      "production_file": "src/content/posts/2026/monsoon-skin-hair-care.mdx",
+      "production_sha256": "06bc043cacfe11671ef25d9d1a102d39fdd761ae2ac89cf0b8620d633583ec52",
+      "url": "https://www.arahkaii.com/beauty/monsoon-skin-hair-care/",
+      "date": "2026-11-16",
+      "review": {
+        "source_sha256": "b2a3932c047be433125dca070c568411ccb19035fd136fc8abe03c0085e9f583",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/batch-02-independent-review.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "cc988ca25d1896f16c1a4c73712fc65ef7c5adf90113dab5c3c23babece0e2ce",
+      "assets": [
+        {
+          "file": "src/assets/images/monsoon-skin-hair-care/hero-rainy-day-care.png",
+          "sha256": "7a2864d168be6a09ab1d12201f4fb5f56474045b2b66c0866524951845d882b8",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-8f396319-f342-4c39-b783-2fa3a87dfd50.png",
+            "referenceImages": [
+              "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-9f967a1b-e692-4fea-921e-782bfc3c9c54.png"
+            ],
+            "edit": "Removed generated tiny markings on white bottle using image_gen."
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/monsoon-skin-hair-care/01-section.png",
+          "sha256": "3a4256b3ae5f49b0c3d248fc6db6192a8fad2bdc6fd45728969137e9c1512edb",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-9433cd8a-ff5a-479a-9e46-79a7626bd66b.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/monsoon-skin-hair-care/02-section.png",
+          "sha256": "720edd93d1c548bfbec8dee75611a324c28981052363ff3fe8c25236b4bcdb28",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-cbc71b60-2ebf-49f3-829b-7b95f342a3f2.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/monsoon-skin-hair-care/03-section.png",
+          "sha256": "b04d526fccd7b59e91fb56ca215a03ae2a332d47be32db1b3f8385304c8bf494",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-4330df01-5e14-4b01-8fd0-c2ce9df6130d.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/monsoon-skin-hair-care/04-section.png",
+          "sha256": "3292e2e91f4f076759e284b771a4e62d4571324f01476dce4c2cfb5292a75bdb",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-2337e1e2-e53c-41fb-821c-f7553775b97a.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/monsoon-skin-hair-care/05-section.png",
+          "sha256": "dfdb48aae6e520878c2dd7a8db4f58a250405bd5e11cd65c17147f3901920080",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-3e33a48a-0acd-4530-85b0-361294541f97.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/monsoon-skin-hair-care/06-section.png",
+          "sha256": "3bf1f70b5810986a3a5c9a588f63aa3749ea769e7341e7bbcb80aec9c858eed6",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-1e654875-0484-47ca-82e3-fd5de65b509f.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "B-01",
+      "source": "editorial/november-beauty/B-01.md",
+      "source_sha256": "38dfc60a295cea22ace99e7148650b2c258cfb9e0184fd7c534096b3fc0a488f",
+      "production_file": "src/content/posts/2026/humid-climate-skincare-routine.mdx",
+      "production_sha256": "f85e7e8468b3e7bc74793a7c99fa6b7482e12bb08dce7fabd39db4d38b2a861b",
+      "url": "https://www.arahkaii.com/beauty/humid-climate-skincare-routine/",
+      "date": "2026-11-20",
+      "review": {
+        "source_sha256": "38dfc60a295cea22ace99e7148650b2c258cfb9e0184fd7c534096b3fc0a488f",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/batch-02-independent-review.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "c71d09486634b728330acc4b31d084526748496576908091c149fcafb054ecd6",
+      "assets": [
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/hero-considered-routine.png",
+          "sha256": "6cd4a669f575fb56b1270a6409ee1ce8d76771ba70b996c9d24e2de6922ebf1f",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-8a233aca-05ad-44db-a5be-40fa0250c84a.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/01-section.png",
+          "sha256": "d0d41ba45ae6ca61b68e9edcc3067c1e43aab2d5dd35dfba4720f986b3f7348d",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-9f00b56a-e15d-4289-96ac-092a1e0bfd80.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/02-section.png",
+          "sha256": "ae06dd602967eb8237b4a34d21c5d2eefe2fb6453c5c6f5c88fd716d2aa42d18",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-3f1a0ecb-49a8-4400-8379-a0ca166843bd.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/03-section.png",
+          "sha256": "febfacaf166cffd59da5702dc3bb9993f69602b7ca406a7d510cfdf7c9b3bf5d",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-88e45e8c-82f3-4e83-9814-0aa52e0a6fde.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/04-section.png",
+          "sha256": "b7abeccb1510f349bf3c5a146268f5ee06f2c62ba012df5bd245c496bb12b2cd",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-c688fc1a-2d1e-4c06-9fd6-9201a8f43d18.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/05-section.png",
+          "sha256": "5fed177431c006ef841fec4d42cc08226e290608415168b087ec9e28c6009d70",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-38ddfb29-174b-49aa-846d-e4a2f799eb84.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/06-section.png",
+          "sha256": "929c19849510310c28422d05d9af541eaa065f7b845ecafcf9d01409f0672baf",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-f4cc54d5-99a1-4d80-b8d6-f95ce79b0b7b.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/07-section.png",
+          "sha256": "0f7eacbda1daabed82266884df979a232247e60e43e273d29a319b5fc6398c06",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; the blank packaging is imagined, not an example of a compliant product label.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-6438fe5f-4023-4438-bc7a-5f3f4dfd4858.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/humid-climate-skincare-routine/08-section.png",
+          "sha256": "bcfb7bc4aa89629df73368dfb147b85015096c54c14ca69bef6b733e776ce20a",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual illustration; imagined objects, not actual products, clinical results or a care demonstration.",
+          "rights": {
+            "originalPath": "generated-image:01a172ab-0edc-7d21-85a8-a30001a7d3b2/exec-0523b3f6-777d-4445-a499-e0aa1d31cec2.png",
+            "referenceImages": []
+          },
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "T-20",
+      "source": "editorial/november-places/T-20/article.md",
+      "source_sha256": "4d955b630d4e2427ef7d6446135f67c37dfcbbc0da6b4c29c9abd564ef06ec2f",
+      "production_file": "src/content/posts/2026/singapore-public-holidays-2027.mdx",
+      "production_sha256": "afe6127a01bed2044777a10716bb01cddda1229f379f31bf2e9de7920ec7fb52",
+      "url": "https://www.arahkaii.com/travel/singapore-public-holidays-2027/",
+      "date": "2026-11-23",
+      "review": {
+        "source_sha256": "4d955b630d4e2427ef7d6446135f67c37dfcbbc0da6b4c29c9abd564ef06ec2f",
+        "research": "Primary-source research verified for accepted current scope",
+        "independent_review": "Content passed; production/release checks separate",
+        "report": "review/batch-02-independent-review.md",
+        "reviewer": "github_schedule",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "93b67e61b45d7cb76e55e24a249292b122e125692d011768e89aff0df6f3cddc",
+      "assets": [
+        {
+          "file": "src/assets/images/singapore-public-holidays-2027/tokyo-national-museum-winter-matthide127.jpg",
+          "sha256": "08236ff11fb6f79017e3bd4b4d086ae0ac55450beeefff8e1fb74bc235247c5b",
+          "credit": {
+            "creator": "Matthide127",
+            "source_url": "https://commons.wikimedia.org/wiki/File:20240116_Tokyo_National_Museum_10.39.15.jpg",
+            "license": "CC0 1.0",
+            "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "Tokyo National Museum, photographed in January 2024. One of the destinations compared in this planning guide; current opening information appears in the text.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/T-20-tokyo-national-museum-winter-matthide127.rights.json"
+        },
+        {
+          "file": "src/assets/images/singapore-public-holidays-2027/02-five-breaks.png",
+          "sha256": "6c95f13672104213658c805741c56dd5b73ffa601f5c45ff08ca1b535ff4f82f",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated date-card illustration checked against MOM dates and calendar arithmetic; assumes a Monday-to-Friday workweek.",
+          "rights": "Generated for this editorial package; no third-party photos or documentary location images used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-public-holidays-2027/03-friday-bridge.png",
+          "sha256": "e3f68f905a7d74c35e60e4aab4c53502c68f76b43960b7f744f320b5f5c5f785",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated illustration of a Thursday-holiday leave bridge; applies to the May and October examples in the text.",
+          "rights": "Generated for this editorial package; no third-party photos or documentary location images used",
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/singapore-public-holidays-2027/04-nine-days.png",
+          "sha256": "315e6094ac991ecffa21db51bcb0f3503409f1981eb329630ec0daa190252821",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated illustration of the verified May leave calculation: three leave days make nine consecutive days off under the stated workweek assumptions.",
+          "rights": "Generated for this editorial package; no third-party photos or documentary location images used",
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "E-16",
+      "source": "editorial/november-places/E-16/article.md",
+      "source_sha256": "fc4eafcf2c5222be1634edc0915237ce5b2b44a837b82edaa41041f1c62f24c3",
+      "production_file": "src/content/posts/2026/sgiff-2026-final-weekend.mdx",
+      "production_sha256": "429f350e1af0f5af8607313cc3e9f8d476e8ff6a3c807cd0a8c181ef8876e497",
+      "url": "https://www.arahkaii.com/culture/sgiff-2026-final-weekend/",
+      "date": "2026-10-28",
+      "review": {
+        "source_sha256": "fc4eafcf2c5222be1634edc0915237ce5b2b44a837b82edaa41041f1c62f24c3",
+        "research": "Primary-source screening and ticketing comparison independently verified",
+        "independent_review": "Content passed; media and release checks separate",
+        "report": "review/E-16-independent-review.json",
+        "reviewer": "editorial_reviewer",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "ef5995f53b3e6a3eb01f49b9e3a04a66f0aac00537de3204968584d44561b891",
+      "assets": [
+        {
+          "file": "src/assets/images/sgiff-2026-final-weekend/national-archives-singapore-mike-peel.jpg",
+          "sha256": "f53d9e07ff03a4b465f9eccb8a13807723bc216c02a23b013dc6ace245d42844",
+          "credit": {
+            "creator": "Mike Peel (www.mikepeel.net)",
+            "source_url": "https://commons.wikimedia.org/wiki/File:At_Singapore_2023_050_-_National_Archives_of_Singapore.jpg",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "The National Archives of Singapore, home to Oldham Theatre. Photograph from August 2023; it does not depict a 2026 festival screening.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/E-16-national-archives-singapore-mike-peel.rights.json"
+        }
+      ]
+    },
+    {
+      "code": "L-17",
+      "source": "editorial/november-style-living/L-17.md",
+      "source_sha256": "085b2974d5cb0d6d9c3aa4977af405928a995c1e530b7d2f39907c7d410c1e89",
+      "production_file": "src/content/posts/2026/thoughtful-gifts-singapore.mdx",
+      "production_sha256": "674f6b593efe3ebc8a4173ed36577e6148150aa18ebea7f74ac6affe47ab0fb2",
+      "url": "https://www.arahkaii.com/living/thoughtful-gifts-singapore/",
+      "date": "2026-11-25",
+      "review": {
+        "source_sha256": "085b2974d5cb0d6d9c3aa4977af405928a995c1e530b7d2f39907c7d410c1e89",
+        "research": "Primary-source comparison independently verified",
+        "independent_review": "Content passed; media, link-plan metadata and release checks separate",
+        "report": "review/L-17-independent-review.json",
+        "reviewer": "editorial_reviewer",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "b5c9e376867939e0579660a47a48576a6b0220758e160dab94297342dec518de",
+      "assets": [
+        {
+          "file": "src/assets/images/thoughtful-gifts-singapore/gifts-projectmanhattan.jpg",
+          "sha256": "a00e20d2cec1d8e11a69fa663b7727a67585501777ed379ca99d31fa432a4cbb",
+          "credit": {
+            "creator": "ProjectManhattan",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Gifts.jpg",
+            "license": "CC0 1.0",
+            "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "Wrapped presents, photographed in 2013. A personal choice matters more than elaborate packaging.",
+          "rights": {
+            "checked_on": "2026-10-25",
+            "source_revision": "https://commons.wikimedia.org/w/index.php?title=File:Gifts.jpg&oldid=1273040320",
+            "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Gifts.jpg",
+            "captured_on": "2013-11-09",
+            "rights": "Uploader own work explicitly dedicated CC0; credit retained voluntarily",
+            "visual_check": "Actual wrapped packages, no people. Generic packaging photograph; does not establish products inside or current merchant offering."
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/thoughtful-gifts-singapore/national-gallery-singapore-avin-teo.jpg",
+          "sha256": "5c6e8f1bd18ef954d54ebcbae5397329899fe657f186711e82662b33772eb0b7",
+          "credit": {
+            "creator": "Avin Teo",
+            "source_url": "https://commons.wikimedia.org/wiki/File:National_Gallery_Singapore_Building.jpg",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "National Gallery Singapore, April 2023. Check the current exhibition programme before arranging a visit.",
+          "rights": {
+            "file": "national-gallery-singapore-avin-teo.jpg",
+            "sha256": "5c6e8f1bd18ef954d54ebcbae5397329899fe657f186711e82662b33772eb0b7",
+            "width": 3978,
+            "height": 2652,
+            "creator": "Avin Teo",
+            "source_url": "https://commons.wikimedia.org/wiki/File:National_Gallery_Singapore_Building.jpg",
+            "source_revision_url": "https://commons.wikimedia.org/w/index.php?title=File:National_Gallery_Singapore_Building.jpg&oldid=1108457128",
+            "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/National_Gallery_Singapore_Building.jpg",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "changes": "Unmodified.",
+            "captured_on": "2023-04-09",
+            "rights_checked_on": "2026-10-25",
+            "rights_evidence": "File description page identifies uploader as copyright holder and grants CC BY-SA4.0; attribution, licence link and changes statement required; adaptations retain same/compatible licence.",
+            "visual_inspection": "Actual dome and colonnade exterior, no identifiable people or artworks. Historical architectural photo, not evidence of current event/exhibition.",
+            "planned_use": "L17 gallery-visitor gift profile; can also illustrate actual gallery references in other articles with same attribution."
+          },
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "F-33",
+      "source": "editorial/november-style-living/F-33.md",
+      "source_sha256": "49a2d0d1b26ea5c299531f4716012cff3b6dbe65f6abffce9c7608487ca1db94",
+      "production_file": "src/content/posts/2026/singapore-rain-outfits.mdx",
+      "production_sha256": "470f858273bacfdc13f8cc53a11b053951baa9556a43d11b833a1045de8edc7c",
+      "url": "https://www.arahkaii.com/style/singapore-rain-outfits/",
+      "date": "2026-11-27",
+      "review": {
+        "source_sha256": "49a2d0d1b26ea5c299531f4716012cff3b6dbe65f6abffce9c7608487ca1db94",
+        "research": "Primary manufacturer comparison independently verified",
+        "independent_review": "Content passed; SEO metadata,media and release checks separate",
+        "report": "review/F-33-independent-review.json",
+        "reviewer": "editorial_reviewer",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "b48970bb693876f13805baf729272800baafdf1705bf6c1c6c7567ff0c4b214b",
+      "assets": [
+        {
+          "file": "src/assets/images/singapore-rain-outfits/little-india-singapore-rain.jpg",
+          "sha256": "af1bcd5cc58680c451f3566cea471cec162247bd2ab57640cbdd04987124b1e1",
+          "credit": {
+            "creator": "\u7384\u53f2\u751f",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Little_India_in_Rain_20130210.jpg",
+            "license": "CC0 1.0",
+            "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "Little India, Singapore, photographed in February 2013. A real wet-weather street scene, not a test of the clothing or footwear discussed in this guide.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/F-33-little-india-singapore-rain.rights.json"
+        }
+      ]
+    },
+    {
+      "code": "B-24",
+      "source": "editorial/november-beauty/B-24.md",
+      "source_sha256": "d88a12ef3acad61c48791b143bcc48625a9b62d6bb4ebbf178beb5ea2f261a6f",
+      "production_file": "src/content/posts/2026/beauty-gifts-by-budget.mdx",
+      "production_sha256": "ee6e8116f6ac898d9d65c7cbe9445729e8485ea4f1efebf74146827704f3d187",
+      "url": "https://www.arahkaii.com/beauty/beauty-gifts-by-budget/",
+      "date": "2026-11-30",
+      "review": {
+        "source_sha256": "d88a12ef3acad61c48791b143bcc48625a9b62d6bb4ebbf178beb5ea2f261a6f",
+        "research": "Primary-source comparison independently verified",
+        "independent_review": "Content passed; media and release checks separate",
+        "report": "review/B-24-independent-review.json",
+        "reviewer": "editorial_reviewer",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "227a6a4aa423586158e1439975e46ae98d53b015db876175fefc4b966a50dd44",
+      "assets": [
+        {
+          "file": "src/assets/images/beauty-gifts-by-budget/hero-gift.png",
+          "sha256": "4f635cf91ee2cbc2e846e76b6c1826b19b2941387e6f6f68dbae7c13623531db",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "AI-generated conceptual gift-wrapping scene; no actual product is shown.",
+          "rights": {
+            "originalPath": "generated-image:01a1733f-4d84-78c2-9d0d-6c42fd349f46/exec-c6b2d872-ab53-49ce-b108-fd6614245c7c.png",
+            "rights": "Generated for this editorial project; no copied brand imagery."
+          },
+          "rights_record": null
+        },
+        {
+          "file": "src/assets/images/beauty-gifts-by-budget/pack-size-comparison.png",
+          "sha256": "7b08200dfd0b8c14ec06300e41c1ac9d9b9c5107655727739f3dcde379dae69d",
+          "credit": "Arahkaii / AI-generated illustration",
+          "caption": "Original price comparison rendered with AI; figures checked against the Singapore product listing on 25 October 2026. All figures also appear in article text.",
+          "rights": {
+            "originalPath": "generated-image:01a1733f-4d84-78c2-9d0d-6c42fd349f46/exec-743fd168-6544-4375-bc28-aa773cbb0dd5.png",
+            "rights": "Generated for this editorial project; no copied brand imagery."
+          },
+          "rights_record": null
+        }
+      ]
+    },
+    {
+      "code": "T-16",
+      "source": "editorial/december-places/T-16/article.md",
+      "source_sha256": "41c07506bcd903fa41179e7a51779488b34520f0bf29539a9db2f0bbd690b8ad",
+      "production_file": "src/content/posts/2026/first-winter-city-trip.mdx",
+      "production_sha256": "17249bf337e943813b266eb9a6ad6605ccd386bd30f3e8912543c1c2a5bfcf86",
+      "url": "https://www.arahkaii.com/travel/first-winter-city-trip/",
+      "date": "2026-12-02",
+      "review": {
+        "source_sha256": "41c07506bcd903fa41179e7a51779488b34520f0bf29539a9db2f0bbd690b8ad",
+        "research": "Primary-source comparison independently verified",
+        "independent_review": "Content passed; media and release checks separate",
+        "report": "review/T-16-independent-review.json",
+        "reviewer": "editorial_reviewer",
+        "date": "2026-10-25"
+      },
+      "media_manifest_sha256": "0807dcab24dcf87456dc17ef8a5bf5c26c77f6e8283ab971ed0332226968b278",
+      "assets": [
+        {
+          "file": "src/assets/images/first-winter-city-trip/sapporo-winter-nkns.jpg",
+          "sha256": "5e6db02904f2f0532f09c0e68033ee804a2637178334133cb1a27145dfc0db86",
+          "credit": {
+            "creator": "Nkns",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo_city_winter.jpg",
+            "license": "CC BY-SA 3.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "Sapporo photographed from Mount Moiwa in February 2004. Historical city context, not a forecast or report of present snow conditions.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/T-16-sapporo-winter-nkns.rights.json"
+        },
+        {
+          "file": "src/assets/images/first-winter-city-trip/tokyo-national-museum-winter-matthide127.jpg",
+          "sha256": "08236ff11fb6f79017e3bd4b4d086ae0ac55450beeefff8e1fb74bc235247c5b",
+          "credit": {
+            "creator": "Matthide127",
+            "source_url": "https://commons.wikimedia.org/wiki/File:20240116_Tokyo_National_Museum_10.39.15.jpg",
+            "license": "CC0 1.0",
+            "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "Tokyo National Museum in January 2024. Check the current gallery and holiday closures before building an itinerary around a visit.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/T-16-tokyo-national-museum-winter-matthide127.rights.json"
+        },
+        {
+          "file": "src/assets/images/first-winter-city-trip/national-museum-korea-jinah78.jpg",
+          "sha256": "e6c5aeef5e4758a3dfdb0540bb2f2ac240760c65b35fb271721519c01253df61",
+          "credit": {
+            "creator": "Jinah78",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Front_view_of_national_museum_of_korea.jpg",
+            "license": "CC BY-SA 3.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "changes": "Unmodified."
+          },
+          "caption": "National Museum of Korea, photographed in 2010. This architectural view is not a winter weather observation or evidence of current gallery access.",
+          "rights": null,
+          "rights_record": "docs/editorial/2026-final14/T-16-national-museum-korea-jinah78.rights.json"
+        }
+      ]
+    }
+  ],
+  "transformations": [
+    "Removed duplicated manuscript H1 because article layout renders title.",
+    "Applied reviewed SEO description as standfirst.",
+    "Applied approved calendar date and Nadra Nichols author profile.",
+    "Inserted manifest media at exact H2 headings with visible source/licence attribution.",
+    "Converted iframe style and allowFullScreen attributes to equivalent JSX syntax.",
+    "Enabled publication flags; site publication-date guard retains future articles until scheduled date."
+  ],
+  "created": "2026-10-25"
+}

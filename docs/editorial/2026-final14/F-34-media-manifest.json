@@ -1,0 +1,90 @@
+{
+  "code": "F-34",
+  "assets": [
+    {
+      "path": "hero-deliberate-shopping.png",
+      "role": "hero",
+      "section": null,
+      "alt": "A cream blouse and navy trousers on a wooden rail beside a tan bag in an imagined sunlit Singapore apartment.",
+      "caption": "AI-generated conceptual illustration of wardrobe planning in an imagined Singapore setting; no actual home or tested products are depicted.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Root visual check passed; independent review pending",
+      "prompt": "Wide editorial concept of deliberate year-end clothing purchases: modest cream blouse and navy trousers on rail, worn tan bag, blank notebook, quiet tropical apartment and warm daylight; no branded products or documentary claim."
+    },
+    {
+      "path": "01-wardrobe-plan.png",
+      "section": "Write the brief before opening the sale",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "alt": "Folded cream shirt and dark trousers beside a tan bag and blank notebook on a wooden table.",
+      "caption": "AI-generated conceptual illustration of planning a wardrobe purchase; not a product test.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "review": "Root visual check passed: no text, brands, or invented documentary claims; final content reviewer pending",
+      "prompt": "Photorealistic editorial conceptual illustration,16:9; modest Singapore-inspired home dressing corner, soft daylight; unbranded folded cream cotton shirt, dark trousers, worn tan bag, blank notebook and pencil; no people,text,logos,prices or watermark; not product testing evidence."
+    },
+    {
+      "path": "02-price-record.png",
+      "section": "Record the price you can actually pay",
+      "alt": "A folded shirt with a blank tag beside a calculator, notebook and delivery carton.",
+      "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Root visual inspection passed for concept/absence of brand or fake documentary evidence; independent final review pending",
+      "prompt": "Folded unbranded clothing,blank tag,notebook,calculator screen off,pencil and delivery carton,light wood,soft daylight. Wide16:9 editorial photorealism at least1536px;no text,logos,watermark;not documentary evidence."
+    },
+    {
+      "path": "03-comparing-costs.png",
+      "section": "Is it really cheaper on Black Friday?",
+      "alt": "Two similar canvas bags beside a delivery box and a paper carrier.",
+      "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Root visual inspection passed for concept/absence of brand or fake documentary evidence; independent final review pending",
+      "prompt": "Two identical unbranded canvas shoulder bags,delivery carton,paper carrier,blank notebook,natural light. Wide16:9 editorial photorealism at least1536px;no text,logos,watermark;not documentary evidence."
+    },
+    {
+      "path": "04-return-route.png",
+      "section": "A local example: the payment route changes the return route",
+      "alt": "A folded navy shirt with a blank tag inside an open return parcel.",
+      "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Root visual inspection passed for concept/absence of brand or fake documentary evidence; independent final review pending",
+      "prompt": "Folded unbranded navy shirt in open brown parcel,blank hangtag,tissue,tape,blank envelope,Singapore-inspired apartment. Wide16:9 editorial photorealism at least1536px;no text,logos,watermark;not documentary evidence."
+    },
+    {
+      "path": "05-care-label.png",
+      "section": "What is worth considering",
+      "alt": "Close view of a shirt seam and blank care label with a spare button beside it.",
+      "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Root visual inspection passed for concept/absence of brand or fake documentary evidence; independent final review pending",
+      "prompt": "Cream shirt inside out,seam construction,blank care label,spare button,navy trousers out of focus,light oak. Wide16:9 editorial photorealism at least1536px;no text,logos,watermark;not documentary evidence."
+    },
+    {
+      "path": "06-leave-room.png",
+      "section": "Leave room to walk away",
+      "alt": "A closed laptop and notebook beside a folded shirt in a sunlit room.",
+      "caption": "AI-generated conceptual illustration; no actual retailer, product test or reported home is shown.",
+      "credit": "Arahkaii / AI-generated illustration",
+      "type": "AI-generated conceptual illustration",
+      "provider": "Built-in image_gen",
+      "generated": "2026-10-25",
+      "review": "Root visual inspection passed for concept/absence of brand or fake documentary evidence; independent final review pending",
+      "prompt": "Closed unbranded laptop,plain notebook,folded cream shirt,chair pulled back,tropical apartment,morning light. Wide16:9 editorial photorealism at least1536px;no text,logos,watermark;not documentary evidence."
+    }
+  ]
+}

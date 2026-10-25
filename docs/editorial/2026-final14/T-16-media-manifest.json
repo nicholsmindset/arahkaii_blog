@@ -1,0 +1,109 @@
+{
+  "code": "T-16",
+  "assets": [
+    {
+      "path": "sapporo-winter-nkns.jpg",
+      "role": "hero",
+      "section": null,
+      "alt": "Snow-covered Sapporo seen from Mount Moiwa beneath a broad pale sky.",
+      "caption": "Sapporo photographed from Mount Moiwa in February 2004. Historical city context, not a forecast or report of present snow conditions.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "Nkns",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo_city_winter.jpg",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/sapporo-winter-nkns.rights.json",
+      "sha256": "5e6db02904f2f0532f09c0e68033ee804a2637178334133cb1a27145dfc0db86",
+      "review": "writer visually inspected; independent review pending"
+    },
+    {
+      "path": "tokyo-national-museum-winter-matthide127.jpg",
+      "role": "section",
+      "section": "Tokyo: the indoor backup has to be open",
+      "alt": "Tokyo National Museum main building beyond its entrance plaza, with winter-clothed visitors.",
+      "caption": "Tokyo National Museum in January 2024. Check the current gallery and holiday closures before building an itinerary around a visit.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "Matthide127",
+        "source_url": "https://commons.wikimedia.org/wiki/File:20240116_Tokyo_National_Museum_10.39.15.jpg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/tokyo-national-museum-winter-matthide127.rights.json",
+      "sha256": "08236ff11fb6f79017e3bd4b4d086ae0ac55450beeefff8e1fb74bc235247c5b",
+      "review": "writer visually inspected; independent review pending"
+    },
+    {
+      "path": "national-museum-korea-jinah78.jpg",
+      "role": "section",
+      "section": "Seoul: culture first, with warmth built into the day",
+      "alt": "National Museum of Korea buildings and pond seen across its landscaped grounds.",
+      "caption": "National Museum of Korea, photographed in 2010. This architectural view is not a winter weather observation or evidence of current gallery access.",
+      "type": "licensed documentary photograph",
+      "credit": {
+        "creator": "Jinah78",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Front_view_of_national_museum_of_korea.jpg",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Unmodified."
+      },
+      "rights_record": "../library/national-museum-korea-jinah78.rights.json",
+      "sha256": "e6c5aeef5e4758a3dfdb0540bb2f2ac240760c65b35fb271721519c01253df61",
+      "review": "writer visually inspected; independent review pending"
+    }
+  ],
+  "media_plan": {
+    "approach": "Relevant licensed real photographs plus existing useful evidence graphics; no filler image per heading. User requested visual diversity.",
+    "placements": [
+      {
+        "section": "Compare the demands before comparing the scenery",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Sapporo: choose a base you can return to easily",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Sapporo: separate the airport journey from the last kilometre",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Tokyo: let winter change the pace, not the purpose",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Tokyo: the indoor backup has to be open",
+        "treatment": "image",
+        "rationale": "Photo establishes the actual place discussed."
+      },
+      {
+        "section": "Seoul: culture first, with warmth built into the day",
+        "treatment": "image",
+        "rationale": "Photo establishes the actual place discussed."
+      },
+      {
+        "section": "Choose the month as carefully as the city",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Pack for the plan you actually bought",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      },
+      {
+        "section": "Make the final decision before the first booking",
+        "treatment": "text-or-table",
+        "rationale": "Decision table or practical text carries the evidence; decorative imagery adds no specific information."
+      }
+    ]
+  }
+}
