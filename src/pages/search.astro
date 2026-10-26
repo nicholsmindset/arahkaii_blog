@@ -36,6 +36,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 	</div>
 
 	<script>
+		const MAX_RENDERED_RESULTS = 50;
 		let indexRequest: Promise<any[]> | null = null;
 		function getIndex(): Promise<any[]> {
 			if (!indexRequest) {
@@ -70,7 +71,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 				}
 				const idx = await getIndex();
 				if (version !== queryVersion) return;
-				const hits = idx.filter((x) => (x.t + ' ' + x.c + ' ' + x.a + ' ' + (x.k || '')).toLowerCase().includes(q));
+				const matches = idx.filter((x) => (x.t + ' ' + x.c + ' ' + x.a + ' ' + (x.k || '')).toLowerCase().includes(q));
+				const hits = matches.slice(0, MAX_RENDERED_RESULTS);
 				results!.hidden = false;
 				results!.innerHTML = hits.length
 					? hits
@@ -80,7 +82,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 							)
 							.join('')
 					: `<p class="sr-empty">No stories yet for “${escapeHtml(q)}”. Try a category, an author, or a place.</p>`;
-				if (status) status.textContent = `${hits.length} ${hits.length === 1 ? 'story' : 'stories'} found.`;
+				if (status) {
+					status.textContent = matches.length > hits.length
+						? `${matches.length} stories found. Showing the first ${hits.length}.`
+						: `${matches.length} ${matches.length === 1 ? 'story' : 'stories'} found.`;
+				}
 			}
 			const initial = new URLSearchParams(location.search).get('q') || '';
 			if (initial) input.value = initial;
