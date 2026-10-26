@@ -58,6 +58,16 @@ test('cross-origin submissions are rejected before parsing or delivery', async (
 	const response = await deliverPartnership(request(sample, 'https://other.example'), {});
 	assert.equal(response.status, 403);
 });
+test('only the application/json media type is accepted', async () => {
+	const makeRequest = (contentType) => new Request('https://www.arahkaii.com/api/partnership/', {
+		method: 'POST',
+		headers: { origin: 'https://www.arahkaii.com', 'content-type': contentType, 'x-forwarded-for': `test-${++counter}` },
+		body: JSON.stringify(sample),
+	});
+	assert.equal((await deliverPartnership(makeRequest('application/jsonp'), {})).status, 415);
+	assert.equal((await deliverPartnership(makeRequest('text/application/json'), {})).status, 415);
+	assert.equal((await deliverPartnership(makeRequest('application/json; charset=utf-8'), {})).status, 503);
+});
 test('missing backend offers a truthful fallback', async () => {
 	assert.equal((await deliverPartnership(request(), {})).status, 503);
 });
