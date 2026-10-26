@@ -20,6 +20,12 @@ export function providerRequestSignal(): AbortSignal {
 	return AbortSignal.timeout(PROVIDER_TIMEOUT_MS);
 }
 
+/** True only for JSON requests, allowing optional media-type parameters. */
+export function isJsonRequest(request: Request): boolean {
+	const mediaType = request.headers.get('content-type')?.split(';', 1)[0]?.trim().toLowerCase();
+	return mediaType === 'application/json';
+}
+
 /** True when the request carries a same-origin Origin (or, failing that, Referer). */
 export function isSameOrigin(request: Request): boolean {
 	const requestUrl = new URL(request.url);
