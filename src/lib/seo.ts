@@ -280,7 +280,8 @@ export function itemListSchema(name: string, items: Array<string | { name: strin
 		'@context': 'https://schema.org',
 		'@type': 'ItemList',
 		name,
-		itemListOrder: 'https://schema.org/ItemListOrderDescending',
+		// Positions are emitted 1 → N in the same order as the supplied items.
+		itemListOrder: 'https://schema.org/ItemListOrderAscending',
 		numberOfItems: items.length,
 		url,
 		itemListElement: items.map((item, i) => ({
