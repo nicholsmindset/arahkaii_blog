@@ -363,7 +363,9 @@ const gtmSnippet = gtmEnabled
 				try {
 					localStorage.setItem(SAVED_KEY, JSON.stringify(saved));
 				} catch {
-					return false;
+					// The stored list is unchanged, so report the state from before
+					// the attempted toggle instead of claiming a removal succeeded.
+					return !isSaved;
 				}
 				return isSaved;
 			}
