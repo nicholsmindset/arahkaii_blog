@@ -4,6 +4,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import GuideLayout from '../../layouts/GuideLayout.astro';
 import { selectReadNext } from '../../lib/recirculation';
 import { getCards, estimateReadingMinutes, isPreviewBuild } from '../../lib/articles';
+import { hasPublicationDateArrived } from '../../lib/format';
 
 export async function getStaticPaths() {
 	// noindex posts still get a page (their own meta handles robots); future-dated
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 	const now = new Date();
 	const posts = await getCollection(
 		'posts',
-		({ data }) => (isPreviewBuild || !data.draft) && data.date <= now,
+		({ data }) => (isPreviewBuild || !data.draft) && hasPublicationDateArrived(data.date, now),
 	);
 	return posts.map((post) => ({
 		// id is e.g. "2026/quiet-renaissance-…"; slug is the final segment.

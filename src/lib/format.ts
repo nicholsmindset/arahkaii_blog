@@ -9,6 +9,24 @@ export function fmtDate(date: Date, options: Intl.DateTimeFormatOptions = { day:
 	}).format(date);
 }
 
+const editorialDateParts = new Intl.DateTimeFormat('en-GB', {
+	timeZone: 'Asia/Singapore',
+	year: 'numeric',
+	month: '2-digit',
+	day: '2-digit',
+});
+
+/** Whether a publication date has arrived on Arahkaii's Singapore calendar. */
+export function hasPublicationDateArrived(date: Date, now = new Date()): boolean {
+	const key = (value: Date) => {
+		const parts = Object.fromEntries(
+			editorialDateParts.formatToParts(value).map(({ type, value: part }) => [type, part]),
+		);
+		return `${parts.year}${parts.month}${parts.day}`;
+	};
+	return key(date) <= key(now);
+}
+
 /** Capitalise the first letter (used to turn the category enum into a label). */
 export const cap = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
 

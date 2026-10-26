@@ -1,6 +1,7 @@
 // Articles segment — every published post, pillar guides weighted highest.
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import { hasPublicationDateArrived } from '../lib/format';
 import { urlset } from '../lib/sitemap';
 
 export const prerender = true;
@@ -9,7 +10,7 @@ export const GET: APIRoute = async () => {
 	const now = new Date();
 	const posts = await getCollection(
 		'posts',
-		({ data }) => !data.draft && !data.noindex && data.date <= now,
+		({ data }) => !data.draft && !data.noindex && hasPublicationDateArrived(data.date, now),
 	);
 	return urlset(
 		posts
