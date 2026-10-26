@@ -18,7 +18,7 @@ const posts = defineCollection({
 						.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Tags must use lowercase kebab-case'),
 				)
 				.optional(),
-			author: z.string(),
+			author: z.string().trim().min(1, 'Author is required'),
 			date: z.coerce.date(),
 			readingMinutes: z.number().optional(),
 			heroImage: image(),
