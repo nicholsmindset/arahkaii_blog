@@ -77,6 +77,14 @@ const posts = defineCollection({
 				partner: z.string().max(120).optional(),
 				statement: z.string().min(20).max(500),
 			}).optional(),
+		}).superRefine((post, context) => {
+			if (post.updatedDate && post.updatedDate < post.date) {
+				context.addIssue({
+					code: 'custom',
+					path: ['updatedDate'],
+					message: 'updatedDate must be on or after the publication date',
+				});
+			}
 		}),
 });
 
