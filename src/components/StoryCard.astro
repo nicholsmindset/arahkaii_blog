@@ -16,7 +16,6 @@ interface Props {
 	ratio?: string;
 	label?: string;
 	class?: string;
-	heading?: string;
 	dataTag?: string;
 	category?: string;
 	widths?: number[];
@@ -31,7 +30,6 @@ const {
 	ratio = '3x2',
 	label,
 	class: cls,
-	heading = 'h5',
 	dataTag,
 	category,
 	widths = [400, 800, 1200],
@@ -55,6 +53,6 @@ const phLabel = label ?? `${(category ?? '').toUpperCase()}`;
 		}
 	</div>
 	{eyebrow && <p class="kicker11" style="margin:14px 0 6px">{eyebrow}</p>}
-	<h3 class:list={[heading]} style="margin-top:14px"><span class="hl">{title}</span></h3>
+	<h3 class="h5" style="margin-top:14px"><span class="hl">{title}</span></h3>
 	{byline && <p class="meta" style="margin-top:8px">{byline}</p>}
 </a>
