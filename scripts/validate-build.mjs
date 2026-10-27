@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const tagImagePriorityFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,16 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	if (/^tags\/[^/]+\/index\.html$/.test(relativeFile)) {
+		const archiveHtml = html.match(/<div class="latest-grid">([\s\S]*?)<p class="loadmore"/)?.[1] ?? '';
+		const images = [...archiveHtml.matchAll(/<img\b([^>]*)>/g)].map((match) => match[1]);
+		if (images.length && (!/\bloading="eager"/.test(images[0]) || !/\bfetchpriority="high"/.test(images[0]))) {
+			tagImagePriorityFailures.push(`${relativeFile}: first story image is not eager and high priority`);
+		}
+		if (images.slice(1).some((attributes) => !/\bloading="lazy"/.test(attributes))) {
+			tagImagePriorityFailures.push(`${relativeFile}: secondary story image is not lazy loaded`);
+		}
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +158,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (tagImagePriorityFailures.length) {
+	console.error('\nTag archive image priority failures:');
+	for (const item of tagImagePriorityFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +213,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	tagImagePriorityFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
