@@ -36,6 +36,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 	</div>
 
 	<script>
+		import { normaliseSearchText } from '../lib/search';
+
 		let indexRequest: Promise<any[]> | null = null;
 		function getIndex(): Promise<any[]> {
 			if (!indexRequest) {
@@ -61,7 +63,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			let queryVersion = 0;
 			async function run(q: string) {
 				const version = ++queryVersion;
-				q = (q || '').trim().toLowerCase();
+				q = normaliseSearchText((q || '').trim());
 				if (!q) {
 					results!.hidden = true;
 					results!.innerHTML = '';
@@ -70,7 +72,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 				}
 				const idx = await getIndex();
 				if (version !== queryVersion) return;
-				const hits = idx.filter((x) => (x.t + ' ' + x.c + ' ' + x.a + ' ' + (x.k || '')).toLowerCase().includes(q));
+				const hits = idx.filter((x) => x.s.includes(q));
 				results!.hidden = false;
 				results!.innerHTML = hits.length
 					? hits
