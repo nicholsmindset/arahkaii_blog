@@ -15,7 +15,7 @@ interface Props {
 	noindex?: boolean;
 	publishedTime?: string; // ISO 8601
 	modifiedTime?: string; // ISO 8601
-	authorName?: string;
+	authorUrl?: string;
 	section?: string;
 	tags?: string[];
 	jsonLd?: Record<string, unknown>[];
@@ -33,7 +33,7 @@ const {
 	noindex = false,
 	publishedTime,
 	modifiedTime,
-	authorName,
+	authorUrl,
 	section,
 	tags = [],
 	jsonLd = [],
@@ -75,7 +75,7 @@ const twitter = SITE.twitter.trim();
 			{modifiedTime && (
 				<meta property="article:modified_time" content={modifiedTime} />
 			)}
-			{authorName && <meta property="article:author" content={authorName} />}
+			{authorUrl && <meta property="article:author" content={authorUrl} />}
 			{section && <meta property="article:section" content={section} />}
 			{tags.map((tag) => (
 				<meta property="article:tag" content={tag} />
