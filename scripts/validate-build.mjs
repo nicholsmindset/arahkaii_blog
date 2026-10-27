@@ -35,13 +35,17 @@ const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
 const missingTargets = new Map();
 
-function targetExists(href) {
+function targetFile(href) {
 	const relative = href.replace(/^\//, '');
 	return [
 		path.join(PUBLIC_ROOT, relative, 'index.html'),
 		path.join(PUBLIC_ROOT, relative),
 		path.join(PUBLIC_ROOT, `${relative}.html`),
-	].some(fs.existsSync);
+	].find((candidate) => fs.existsSync(candidate) && fs.statSync(candidate).isFile());
+}
+
+function targetExists(href) {
+	return targetFile(href) !== undefined;
 }
 
 for (const file of htmlFiles) {
@@ -167,7 +171,12 @@ if (!fs.existsSync(indexFile)) {
 		}
 		for (const m of fs.readFileSync(segmentFile, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)) {
 			const urlPath = new URL(m[1]).pathname;
-			if (!targetExists(urlPath)) sitemapFailures.push(`${segment}: ${urlPath} does not resolve to a built page`);
+			const target = targetFile(urlPath);
+			if (!target) sitemapFailures.push(`${segment}: ${urlPath} does not resolve to a built page`);
+			else if (
+				target.endsWith('.html') &&
+				/name="robots" content="noindex/.test(fs.readFileSync(target, 'utf8'))
+			) sitemapFailures.push(`${segment}: ${urlPath} is noindex`);
 			if (seen.has(urlPath)) sitemapFailures.push(`${urlPath} listed in both ${seen.get(urlPath)} and ${segment}`);
 			seen.set(urlPath, segment);
 		}
