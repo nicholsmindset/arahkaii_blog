@@ -4,6 +4,7 @@ import {
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
+	postOnlyResponse,
 } from '../../lib/api-guard';
 
 export const prerender = false;
@@ -51,4 +52,4 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	return redirect('/contact?sent=1', 303);
 };
 
-export const ALL: APIRoute = () => new Response('Method not allowed', { status: 405 });
+export const ALL: APIRoute = () => postOnlyResponse();
