@@ -91,7 +91,9 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 		}
 
 		if (!response.ok) {
-			console.error(`${provider} subscription failed`, response.status, await response.text());
+			// Provider error bodies may echo the submitted email address. Record
+			// only the status so server logs do not retain subscriber data.
+			console.error(`${provider} subscription failed`, response.status);
 			return reply(502, { error: 'Newsletter service rejected the request' });
 		}
 	} catch (error) {

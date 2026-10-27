@@ -45,7 +45,9 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 		return new Response('Delivery failed. Please email onnifyworks@gmail.com.', { status: 502 });
 	}
 	if (!response.ok) {
-		console.error('Contact delivery failed', response.status, await response.text());
+		// Provider error bodies can echo submitted contact details. Keep logs
+		// useful without persisting a visitor's personal information.
+		console.error('Contact delivery failed', response.status);
 		return new Response('Delivery failed. Please email onnifyworks@gmail.com.', { status: 502 });
 	}
 	return redirect('/contact?sent=1', 303);
