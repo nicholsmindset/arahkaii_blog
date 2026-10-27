@@ -58,7 +58,13 @@ export function withinRateLimit(key: string, limit: number, windowMs: number): b
 	if (!bucket || bucket.resetAt <= now) {
 		if (buckets.size >= MAX_BUCKETS) {
 			for (const [k, w] of buckets) if (w.resetAt <= now) buckets.delete(k);
-			if (buckets.size >= MAX_BUCKETS) buckets.clear();
+			// Keep the memory bound without resetting every caller's active limit.
+			// Map iteration follows insertion order, so evict only the oldest
+			// remaining window when all buckets are still live.
+			if (buckets.size >= MAX_BUCKETS) {
+				const oldestKey = buckets.keys().next().value;
+				if (oldestKey !== undefined) buckets.delete(oldestKey);
+			}
 		}
 		buckets.set(key, { count: 1, resetAt: now + windowMs });
 		return true;
