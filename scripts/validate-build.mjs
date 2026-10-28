@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const feedFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -147,6 +148,27 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+// The weekly digest embeds its generated hero in content:encoded. Do not also
+// emit an RSS enclosure unless its real byte length is known: length="0"
+// describes an empty file and can make feed consumers discard the image.
+const digestFile = path.join(PUBLIC_ROOT, 'digest.xml');
+if (!fs.existsSync(digestFile)) {
+	feedFailures.push('digest.xml missing from build output');
+} else {
+	const digest = fs.readFileSync(digestFile, 'utf8');
+	if (!/<content:encoded>[\s\S]*?(?:<img\b|&lt;img\b)/.test(digest)) {
+		feedFailures.push('digest.xml items have no embedded hero image');
+	}
+	if (/<enclosure\b[^>]*\blength=["']0["']/.test(digest)) {
+		feedFailures.push('digest.xml declares an empty media enclosure');
+	}
+}
+
+if (feedFailures.length) {
+	console.error('\nFeed failures:');
+	for (const item of feedFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +219,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	feedFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 
