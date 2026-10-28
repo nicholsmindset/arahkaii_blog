@@ -45,7 +45,6 @@ export async function GET(context: APIContext) {
 				link,
 				description: dek,
 				content,
-				enclosure: { url: heroUrl, length: 0, type: 'image/jpeg' },
 			};
 		}),
 	);
