@@ -33,6 +33,7 @@ const socialImageFailures = [];
 const newsletterFeedbackFailures = [];
 const redirectingInternalLinks = [];
 const shareFeedbackFailures = [];
+const shareCanonicalFailures = [];
 const missingTargets = new Map();
 
 function targetExists(href) {
@@ -70,6 +71,11 @@ for (const file of htmlFiles) {
 	}
 	if (/\bdata-share-copy\b/.test(html) && !/<[^>]+\brole="status"[^>]+\bdata-share-status\b/.test(html)) {
 		shareFeedbackFailures.push(`${relativeFile}: copy-link control has no live feedback region`);
+	}
+	const shareControl = html.match(/<button\b[^>]*\bdata-share-copy="([^"]*)"[^>]*>/);
+	const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+	if (shareControl && canonical && shareControl[1] !== new URL(canonical[1]).pathname) {
+		shareCanonicalFailures.push(`${relativeFile}: copy-link control does not use the canonical path`);
 	}
 
 	const mainHtml = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
@@ -147,6 +153,11 @@ if (shareFeedbackFailures.length) {
 	for (const item of shareFeedbackFailures) console.error(`- ${item}`);
 }
 
+if (shareCanonicalFailures.length) {
+	console.error('\nShare canonical URL failures:');
+	for (const item of shareCanonicalFailures) console.error(`- ${item}`);
+}
+
 // ── Sitemap ↔ build parity ────────────────────────────────────────────────
 // The segmented sitemaps (src/pages/sitemap-*.xml.ts) must stay in lockstep
 // with the emitted pages: every sitemap URL resolves to a real page, and
@@ -197,6 +208,7 @@ if (
 	socialImageFailures.length ||
 	newsletterFeedbackFailures.length ||
 	shareFeedbackFailures.length ||
+	shareCanonicalFailures.length ||
 	sitemapFailures.length
 ) process.exit(1);
 

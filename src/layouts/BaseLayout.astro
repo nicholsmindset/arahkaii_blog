@@ -528,7 +528,8 @@ const gtmSnippet = gtmEnabled
 						const status = b.parentElement?.querySelector<HTMLElement>('[data-share-status]');
 						try {
 							if (!navigator.clipboard) throw new Error('Clipboard API unavailable');
-							await navigator.clipboard.writeText(location.href);
+							const shareUrl = new URL(b.dataset.shareCopy || location.pathname, location.origin);
+							await navigator.clipboard.writeText(shareUrl.toString());
 							b.textContent = 'COPIED';
 							if (status) status.textContent = 'Link copied to clipboard.';
 						} catch {
