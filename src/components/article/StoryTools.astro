@@ -13,7 +13,7 @@ const sections = headings.filter((heading) => heading.depth === 2);
 	<div class="story-tools__actions">
 		<a href="#story" class="story-tools__start">Read the story ↓</a>
 		<button type="button" data-save-story data-title={title} data-href={Astro.url.pathname} data-byline={byline} aria-pressed="false">Save story</button>
-		<button type="button" data-share-copy>Copy link</button>
+		<button type="button" data-share-copy={Astro.url.pathname}>Copy link</button>
 		<a href="/reading-list/">Reading list</a>
 		<span class="sr-only" role="status" aria-live="polite" data-share-status></span>
 		<span class="sr-only" role="status" aria-live="polite" data-save-status></span>
