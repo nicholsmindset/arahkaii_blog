@@ -88,10 +88,17 @@ const jsonLd = [
 		</div>
 	</div>
 	<script>
+		import { consumeQueryFlag } from '../lib/url';
+
 		function preparePartnershipEnquiry() {
 			const params = new URLSearchParams(location.search);
 			const success = document.querySelector<HTMLElement>('[data-contact-success]');
-			if (success) success.hidden = params.get('sent') !== '1';
+			const sent = params.get('sent') === '1';
+			if (success) success.hidden = !sent;
+			if (sent) {
+				const cleanUrl = consumeQueryFlag(location.href, 'sent', '1');
+				if (cleanUrl) history.replaceState(history.state, '', cleanUrl);
+			}
 			if (params.get('enquiry') !== 'partnership') return;
 			const emailLink = document.querySelector<HTMLAnchorElement>('[data-contact-email]');
 			if (emailLink) emailLink.href = 'mailto:onnifyworks@gmail.com?subject=Partnership%20enquiry';
