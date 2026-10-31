@@ -3,6 +3,9 @@ import { glob } from 'astro/loaders';
 // Astro 6 ships Zod 4 — `z` is imported from 'astro/zod', not 'astro:content'.
 import { z } from 'astro/zod';
 import { CATEGORIES } from './lib/taxonomy';
+import { isHttpUrl } from './lib/content-url';
+
+const httpUrl = z.url().refine(isHttpUrl, 'URL must use HTTP or HTTPS');
 
 const posts = defineCollection({
 	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
@@ -60,7 +63,7 @@ const posts = defineCollection({
 				status: z.enum(['muis-certified', 'muslim-owned', 'pork-free-no-alcohol', 'mixed-status-guide', 'not-applicable']),
 				verifiedDate: z.coerce.date().optional(),
 				certificateRef: z.string().optional(),
-				sourceUrl: z.url().optional(),
+				sourceUrl: httpUrl.optional(),
 				note: z.string().optional(),
 			}).optional(),
 			reviewedBy: z.string().optional(),
@@ -68,7 +71,7 @@ const posts = defineCollection({
 			method: z.string().max(500).optional(),
 			sources: z.array(z.object({
 				name: z.string().min(2).max(160),
-				url: z.url(),
+				url: httpUrl,
 				accessed: z.coerce.date().optional(),
 			})).optional(),
 			correctionNote: z.string().max(500).optional(),
@@ -88,7 +91,7 @@ const authors = defineCollection({
 			role: z.string(),
 			bio: z.string(),
 			avatar: image().optional(),
-			sameAs: z.array(z.url()).optional(),
+			sameAs: z.array(httpUrl).optional(),
 			expertise: z.array(z.string()).optional(),
 			credentials: z.array(z.string()).optional(),
 		}),
