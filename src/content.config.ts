@@ -3,6 +3,7 @@ import { glob } from 'astro/loaders';
 // Astro 6 ships Zod 4 — `z` is imported from 'astro/zod', not 'astro:content'.
 import { z } from 'astro/zod';
 import { CATEGORIES } from './lib/taxonomy';
+import { readingMinutesSchema } from './lib/content-validation';
 
 const posts = defineCollection({
 	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
@@ -20,7 +21,7 @@ const posts = defineCollection({
 				.optional(),
 			author: z.string(),
 			date: z.coerce.date(),
-			readingMinutes: z.number().optional(),
+			readingMinutes: readingMinutesSchema.optional(),
 			heroImage: image(),
 			heroUncropped: z.boolean().default(false),
 			heroAlt: z.string().min(1).max(500).optional(),
