@@ -17,6 +17,7 @@ const posts = defineCollection({
 						.string()
 						.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Tags must use lowercase kebab-case'),
 				)
+				.refine((tags) => new Set(tags).size === tags.length, 'Tags must be unique')
 				.optional(),
 			author: z.string(),
 			date: z.coerce.date(),
