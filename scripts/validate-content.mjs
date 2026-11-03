@@ -121,7 +121,9 @@ for (const file of posts) {
 
 	// 4. CREDIT — reject placeholder credits AND placeholder hero files: a
 	// stock blog-placeholder-*.jpg credited "Arahkaii" must not publish either.
-	if (/placeholder/i.test(heroCredit)) {
+	if (!heroCredit.trim()) {
+		errors.push(`${rel}: published post has no hero credit`);
+	} else if (/placeholder/i.test(heroCredit)) {
 		errors.push(`${rel}: published post carries a placeholder hero credit`);
 	}
 	const heroImage = fmValue(fm, 'heroImage') ?? '';
