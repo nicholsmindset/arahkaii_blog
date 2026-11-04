@@ -3,6 +3,7 @@ import { glob } from 'astro/loaders';
 // Astro 6 ships Zod 4 — `z` is imported from 'astro/zod', not 'astro:content'.
 import { z } from 'astro/zod';
 import { CATEGORIES } from './lib/taxonomy';
+import { duplicateSourceUrlIndexes } from './lib/content-validation';
 
 const posts = defineCollection({
 	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
@@ -66,11 +67,22 @@ const posts = defineCollection({
 			reviewedBy: z.string().optional(),
 			lastVerified: z.coerce.date().optional(),
 			method: z.string().max(500).optional(),
-			sources: z.array(z.object({
-				name: z.string().min(2).max(160),
-				url: z.url(),
-				accessed: z.coerce.date().optional(),
-			})).optional(),
+			sources: z
+				.array(z.object({
+					name: z.string().min(2).max(160),
+					url: z.url(),
+					accessed: z.coerce.date().optional(),
+				}))
+				.superRefine((sources, ctx) => {
+					for (const index of duplicateSourceUrlIndexes(sources)) {
+						ctx.addIssue({
+							code: 'custom',
+							message: 'Source URLs must be unique',
+							path: [index, 'url'],
+						});
+					}
+				})
+				.optional(),
 			correctionNote: z.string().max(500).optional(),
 			commercial: z.object({
 				type: z.enum(['sponsored', 'affiliate', 'gifted']),
