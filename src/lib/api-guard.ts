@@ -20,6 +20,12 @@ export function providerRequestSignal(): AbortSignal {
 	return AbortSignal.timeout(PROVIDER_TIMEOUT_MS);
 }
 
+/** True when a request body uses one of the encodings supported by FormData. */
+export function hasFormContentType(request: Request): boolean {
+	const mediaType = request.headers.get('content-type')?.split(';', 1)[0]?.trim().toLowerCase();
+	return mediaType === 'application/x-www-form-urlencoded' || mediaType === 'multipart/form-data';
+}
+
 /** True when the request carries a same-origin Origin (or, failing that, Referer). */
 export function isSameOrigin(request: Request): boolean {
 	const requestUrl = new URL(request.url);

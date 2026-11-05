@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import {
 	isSameOrigin,
+	hasFormContentType,
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
@@ -12,6 +13,9 @@ const clean = (value: FormDataEntryValue | null, max: number) => typeof value ==
 
 export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	if (!isSameOrigin(request)) return new Response('Forbidden', { status: 403 });
+	if (!hasFormContentType(request)) {
+		return new Response('Content-Type must be form encoded.', { status: 415 });
+	}
 	if (!withinRateLimit(`contact:${clientIp(request, clientAddress)}`, 3, 60_000)) {
 		return new Response('Too many requests — please try again shortly.', { status: 429 });
 	}
