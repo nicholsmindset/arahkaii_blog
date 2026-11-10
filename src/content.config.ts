@@ -3,6 +3,7 @@ import { glob } from 'astro/loaders';
 // Astro 6 ships Zod 4 — `z` is imported from 'astro/zod', not 'astro:content'.
 import { z } from 'astro/zod';
 import { CATEGORIES } from './lib/taxonomy';
+import { hasUniqueNormalisedValues } from './lib/content-validation';
 
 const posts = defineCollection({
 	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
@@ -37,13 +38,27 @@ const posts = defineCollection({
 			//   faq → FAQPage · howTo → HowTo · listItems → ItemList.
 			faq: z
 				.array(z.object({ q: z.string(), a: z.string() }))
+				.refine(
+					(items) => hasUniqueNormalisedValues(items, (item) => item.q),
+					'Duplicate FAQ questions are not allowed',
+				)
 				.optional(),
 			howToName: z.string().optional(),
 			howTo: z
 				.array(z.object({ name: z.string(), text: z.string() }))
+				.refine(
+					(items) => hasUniqueNormalisedValues(items, (item) => item.name),
+					'Duplicate HowTo step names are not allowed',
+				)
 				.optional(),
 			listName: z.string().optional(),
-			listItems: z.array(z.string()).optional(),
+			listItems: z
+				.array(z.string())
+				.refine(
+					(items) => hasUniqueNormalisedValues(items, (item) => item),
+					'Duplicate list items are not allowed',
+				)
+				.optional(),
 			kicker: z.string().optional(),
 			articleType: z.enum(['feature', 'listicle', 'guide', 'profile', 'longread', 'brief']).optional(),
 			franchise: z.string().optional(),
