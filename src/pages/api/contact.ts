@@ -4,6 +4,7 @@ import {
 	withinRateLimit,
 	clientIp,
 	providerRequestSignal,
+	cleanEmailHeader,
 } from '../../lib/api-guard';
 
 export const prerender = false;
@@ -24,7 +25,7 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 	if (clean(form.get('bot-field'), 200)) return redirect('/contact?sent=1', 303);
 	const name = clean(form.get('name'), 120);
 	const email = clean(form.get('email'), 254).toLowerCase();
-	const subject = clean(form.get('subject'), 160) || 'Website enquiry';
+	const subject = cleanEmailHeader(clean(form.get('subject'), 160)) || 'Website enquiry';
 	const message = clean(form.get('message'), 8000);
 	if (!name || !EMAIL_PATTERN.test(email) || message.length < 10) return new Response('Please complete the required fields.', { status: 422 });
 

@@ -20,6 +20,11 @@ export function providerRequestSignal(): AbortSignal {
 	return AbortSignal.timeout(PROVIDER_TIMEOUT_MS);
 }
 
+/** Collapse control characters before placing reader input in an email header. */
+export function cleanEmailHeader(value: string): string {
+	return value.replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 /** True when the request carries a same-origin Origin (or, failing that, Referer). */
 export function isSameOrigin(request: Request): boolean {
 	const requestUrl = new URL(request.url);
