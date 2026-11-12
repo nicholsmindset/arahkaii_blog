@@ -84,9 +84,9 @@ const authors = defineCollection({
 	loader: glob({ pattern: '**/*.md', base: './src/content/authors' }),
 	schema: ({ image }) =>
 		z.object({
-			name: z.string(),
-			role: z.string(),
-			bio: z.string(),
+			name: z.string().trim().min(1),
+			role: z.string().trim().min(1),
+			bio: z.string().trim().min(1),
 			avatar: image().optional(),
 			sameAs: z.array(z.url()).optional(),
 			expertise: z.array(z.string()).optional(),
