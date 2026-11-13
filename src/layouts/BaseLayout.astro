@@ -334,6 +334,7 @@ const gtmSnippet = gtmEnabled
 				track(event, properties);
 			};
 			let scrollMilestones = new Set<number>();
+			let refreshScrollState = () => {};
 
 			type SavedStory = {
 				title: string;
@@ -549,6 +550,10 @@ const gtmSnippet = gtmEnabled
 				wireShare();
 				observe();
 				if (isSubscribed()) renderSubscribedForms();
+				// The document-level scroll listener persists across view transitions,
+				// but the sticky bar and article body are replaced. Recalculate against
+				// the new DOM immediately rather than waiting for reader input.
+				refreshScrollState();
 			}
 
 			if (!(window as any).__arahkaiiBound) {
@@ -583,6 +588,7 @@ const gtmSnippet = gtmEnabled
 						}
 					}
 				};
+				refreshScrollState = onScroll;
 				window.addEventListener('scroll', onScroll, { passive: true });
 				window.addEventListener('resize', onScroll);
 
