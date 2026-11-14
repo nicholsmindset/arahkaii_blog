@@ -37,14 +37,15 @@ const sections = headings.filter((heading) => heading.depth === 2);
 				toggleSave: (item: { title: string; href: string; byline?: string }) => boolean;
 			};
 		}).ARAHKAII;
-		if (!button || !api || button.dataset.wired) return;
-		button.dataset.wired = '1';
+		if (!button || !api) return;
 		const story = { title: button.dataset.title || '', href: button.dataset.href || '', byline: button.dataset.byline };
 		const reflect = (saved: boolean) => {
 			button.textContent = saved ? 'Story saved' : 'Save story';
 			button.setAttribute('aria-pressed', String(saved));
 		};
 		reflect(api.getSaved().some((item) => item.href === story.href));
+		if (button.dataset.wired) return;
+		button.dataset.wired = '1';
 		button.addEventListener('click', () => {
 			const saved = api.toggleSave(story);
 			reflect(saved);
@@ -52,6 +53,7 @@ const sections = headings.filter((heading) => heading.depth === 2);
 			if (status) status.textContent = saved ? 'Story saved to your reading list on this device.' : 'Story removed from your reading list.';
 		});
 	}
+	window.addEventListener('arahkaii:saved-change', wireStoryTools);
 	document.addEventListener('astro:page-load', wireStoryTools);
 	wireStoryTools();
 </script>
