@@ -54,7 +54,10 @@ const posts = defineCollection({
 				name: z.string(),
 				verdict: z.string(),
 				halalStatus: z.string().optional(),
-				url: z.string().optional(),
+				url: z.url().refine(
+					(value) => ['http:', 'https:'].includes(new URL(value).protocol),
+					'At-a-glance links must use HTTP or HTTPS',
+				).optional(),
 			})).optional(),
 			halalStatus: z.object({
 				status: z.enum(['muis-certified', 'muslim-owned', 'pork-free-no-alcohol', 'mixed-status-guide', 'not-applicable']),
