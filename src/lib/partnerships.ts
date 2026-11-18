@@ -42,6 +42,8 @@ export interface PartnershipBrief {
 }
 export type BriefResult = { ok: true; brief: PartnershipBrief } | { ok: false; errors: Record<string, string> };
 
+const SINGLE_LINE_FIELDS = ['brand', 'name', 'email', 'location', 'website', 'timing', 'budget', 'referral'] as const;
+
 /** Shared by the browser and server. Reject overlong input instead of silently losing copy. */
 export function validateBrief(input: Record<string, unknown>): BriefResult {
 	const errors: Record<string, string> = {};
@@ -54,10 +56,13 @@ export function validateBrief(input: Record<string, unknown>): BriefResult {
 	for (const key of ['brand', 'name', 'email', 'location', 'website', 'story'] as const) {
 		if (!values[key]) errors[key] = 'Please complete this field.';
 	}
+	for (const key of SINGLE_LINE_FIELDS) {
+		if (/[\r\n]/.test(values[key])) errors[key] = 'Please keep this field on one line.';
+	}
 	if (!Object.hasOwn(ROUTES, String(input.route))) errors.route = 'Choose how you would like to work with us.';
-	if (values.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(values.email)) errors.email = 'Enter a valid email address.';
+	if (values.email && !errors.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(values.email)) errors.email = 'Enter a valid email address.';
 	if (values.story && values.story.length < 40) errors.story = 'A few sentences will help us understand the story (at least 40 characters).';
-	if (values.website && !/^@[a-zA-Z0-9._]{1,80}$/.test(values.website)) {
+	if (values.website && !errors.website && !/^@[a-zA-Z0-9._]{1,80}$/.test(values.website)) {
 		try {
 			const url = new URL(values.website.includes('://') ? values.website : `https://${values.website}`);
 			if (!['http:', 'https:'].includes(url.protocol) || !url.hostname.includes('.') || url.username || url.password || /\s/.test(values.website)) throw new Error();
