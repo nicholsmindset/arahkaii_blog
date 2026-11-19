@@ -4,10 +4,10 @@ standfirst: "A short test page to check that an article saved in GitHub reaches 
 category: "living"
 author: "robert"
 date: "2026-11-19"
-heroImage: "../../../assets/images/display-art-on-paper-humid-home/hero.jpg"
-heroAlt: "Art panels and a console beside a sheer curtain."
-heroCaption: "Conceptual editorial illustration."
-heroCredit: "Arahkaii"
+heroImage: "../../../assets/images/publishing-test-november-2026/hero.webp"
+heroAlt: "A stone console, abstract art and greenery in a sunlit interior."
+heroCaption: "AI-generated conceptual image of a sunlit interior."
+heroCredit: "Arahkaii / AI-generated"
 draft: false
 noindex: true
 ---
