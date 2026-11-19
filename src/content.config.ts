@@ -23,7 +23,7 @@ const posts = defineCollection({
 			readingMinutes: z.number().optional(),
 			heroImage: image(),
 			heroUncropped: z.boolean().default(false),
-			heroAlt: z.string().min(1).max(500).optional(),
+			heroAlt: z.string().trim().min(1).max(500).optional(),
 			heroCaption: z.string(), // required — magazine discipline
 			heroCredit: z.string(), // required
 			draft: z.boolean().default(false),
