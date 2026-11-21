@@ -161,6 +161,7 @@ HYBE says it will publish the Singapore reward, and how many stamps you need, in
 
 **All 12 stamp locations**
 
+
 | \# | Stamp location | What's there | Dates and hours | Ticket needed? |
 | ----- | ----- | ----- | ----- | ----- |
 | 1 | **Jewel Changi Airport**, Level 4 | Welcome Experience photo spot | 1–26 Dec, 10am–10pm | No |
