@@ -73,7 +73,7 @@ If you don't have a ticket yet, keep two things in mind.
 
 Everything below comes from HYBE's official Weverse notice and the partners' own announcements. Where the dates come from secondary reporting, we say so. **Free** means free to view or enter. **Ticketed** means you need paid admission.
 
-![Illustration of the Rain Vortex illuminated red](/images/bts-singapore/jewel.webp)
+<img src="/images/bts-singapore/jewel.webp" alt="Illustration of the Rain Vortex illuminated red" width="960" height="1200" loading="lazy">
 
 ### **Jewel Changi Airport — the welcome**
 
@@ -81,7 +81,7 @@ Everything below comes from HYBE's official Weverse notice and the partners' own
 * **Welcome Experience and stamp rally:** 1–26 December, 10am–10pm, with a photo spot on Level 4\. **Free.**  
 * **Who it's for:** visiting ARMY landing at Changi, families and anyone who wants the full experience without a ticket.
 
-![Illustration of a Singapore river bridge illuminated red](/images/bts-singapore/bridge.webp)
+<img src="/images/bts-singapore/bridge.webp" alt="Illustration of a Singapore river bridge illuminated red" width="960" height="1200" loading="lazy">
 
 ### **Marina Bay and the Singapore River — the Ari Red skyline**
 
