@@ -221,6 +221,8 @@
 }
 .editorial-comparison :is(th, td):first-child { padding-left: 0; width: 32%; }
 .editorial-comparison :is(th, td):last-child { padding-right: 0; width: 42%; }
+.editorial-comparison--many-columns :is(th, td):first-child,
+.editorial-comparison--many-columns :is(th, td):last-child { width: auto; }
 .editorial-comparison td:first-child { font: 550 18px/1.4 var(--serif); color: var(--ink); }
 .editorial-comparison__label { display: none; }
 .editorial-comparison:not(.editorial-comparison--stack) { min-width: 640px; }
@@ -792,6 +794,8 @@
 .more-guides { margin-top: 56px; }
 
 @media (max-width: 600px) {
+	.article-body, .art-body { min-width: 0; text-align: left; overflow-wrap: anywhere; }
+	.article-body img { height: auto; max-width: 100%; }
 	.art-byrow { gap: 8px 12px; }
 	.art-byrow .dot { display: none; }
 	.art-standfirst { font-size: 20px; }

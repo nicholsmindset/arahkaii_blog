@@ -36,3 +36,13 @@ test('multiple tables have distinct header IDs and keep existing captions',()=>{
 	assert.notEqual(tables[0].children[1].children[0].children[0].properties.id,
 		tables[1].children[1].children[0].children[0].properties.id);
 });
+
+test('five-column article tables stack with labels on mobile',()=>{
+	const tree=fixture(5); editorialTables()(tree);
+	const table=tree.children[0].children[0];
+	assert.ok(table.properties.className.includes('editorial-comparison--stack'));
+	assert.ok(table.properties.className.includes('editorial-comparison--many-columns'));
+	const last=table.children.find(n=>n.tagName==='tbody').children[0].children[4];
+	assert.equal(last.children[0].children[0].value,'Heading 4');
+	assert.equal(last.children[1].value,'Value 4');
+});

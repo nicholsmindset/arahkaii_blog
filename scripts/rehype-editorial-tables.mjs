@@ -16,13 +16,13 @@ export default function editorialTables(start = 0) {
 				const headers = row?.children.filter((child) => child.tagName === 'th') || [];
 				const body = node.children.find((child) => child.tagName === 'tbody');
 				const rows = body?.children.filter((child) => child.tagName === 'tr') || [];
-				const simple = headers.length >= 2 && headers.length <= 4 && rows.length > 0 && rows.every((r) => {
+				const simple = headers.length >= 2 && headers.length <= 5 && rows.length > 0 && rows.every((r) => {
 					const cells = r.children.filter((child) => child.tagName === 'td');
 					return cells.length === headers.length && cells.every((cell) => !cell.properties?.colSpan && !cell.properties?.rowSpan);
 				});
 				const id = `editorial-comparison-${++count}`;
 				node.properties ||= {};
-				node.properties.className = [...(node.properties.className || []), 'editorial-comparison', ...(simple ? ['editorial-comparison--stack'] : [])];
+				node.properties.className = [...(node.properties.className || []), 'editorial-comparison', ...(headers.length >= 4 ? ['editorial-comparison--many-columns'] : []), ...(simple ? ['editorial-comparison--stack'] : [])];
 				node.properties.role = 'table';
 				if (!node.children.some((child) => child.tagName === 'caption')) {
 					node.children.unshift(element('caption', {}, [{ type: 'text', value: 'At a glance' }]));
