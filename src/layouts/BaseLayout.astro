@@ -365,6 +365,7 @@ const gtmSnippet = gtmEnabled
 				} catch {
 					return false;
 				}
+				window.dispatchEvent(new Event('arahkaii:saved-change'));
 				return isSaved;
 			}
 			Object.assign(window, {
@@ -553,6 +554,11 @@ const gtmSnippet = gtmEnabled
 
 			if (!(window as any).__arahkaiiBound) {
 				(window as any).__arahkaiiBound = true;
+				window.addEventListener('storage', (event) => {
+					if (event.key === SAVED_KEY || event.key === null) {
+						window.dispatchEvent(new Event('arahkaii:saved-change'));
+					}
+				});
 
 				// sticky condensed bar — show after 200px, hide on scroll-down past
 				// 600px, reappear on scroll-up.

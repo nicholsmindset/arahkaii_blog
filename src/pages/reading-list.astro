@@ -78,6 +78,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 			}
 			render();
 		}
+		window.addEventListener('arahkaii:saved-change', initReadingList);
 		document.addEventListener('astro:page-load', initReadingList);
 		initReadingList();
 	</script>
