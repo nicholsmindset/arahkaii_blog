@@ -28,9 +28,9 @@ const field = (block, key) =>
 		?.trim();
 
 /** Root-level WordPress post URLs → current category URLs. */
-export function postRedirects() {
+export function postRedirects(postsDir = POSTS_DIR) {
 	const redirects = {};
-	for (const file of walk(POSTS_DIR).filter((item) => /\.mdx?$/.test(item))) {
+	for (const file of walk(postsDir).filter((item) => /\.mdx?$/.test(item)).sort()) {
 		const block = frontmatter(fs.readFileSync(file, 'utf8'));
 		if (field(block, 'draft') === 'true') continue;
 		const category = field(block, 'category');
@@ -38,7 +38,14 @@ export function postRedirects() {
 		if (!category || !legacy || CATEGORIES.includes(legacy)) continue;
 		const slug = path.basename(file).replace(/\.mdx?$/, '');
 		const destination = `/${category}/${slug}/`;
-		if (`/${legacy}/` !== destination) redirects[`/${legacy}`] = destination;
+		const source = `/${legacy}`;
+		if (`${source}/` === destination) continue;
+		if (redirects[source] && redirects[source] !== destination) {
+			throw new Error(
+				`Conflicting legacyWpSlug "${legacy}": ${redirects[source]} and ${destination}`,
+			);
+		}
+		redirects[source] = destination;
 	}
 	return redirects;
 }
