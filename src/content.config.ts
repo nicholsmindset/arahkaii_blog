@@ -27,7 +27,14 @@ const posts = defineCollection({
 			heroCaption: z.string(), // required — magazine discipline
 			heroCredit: z.string(), // required
 			draft: z.boolean().default(false),
-			legacyWpSlug: z.string().optional(),
+			legacyWpSlug: z
+				.string()
+				.max(200)
+				.regex(
+					/^[a-z0-9]+(?:-[a-z0-9]+)*$/,
+					'Legacy WordPress slugs must use lowercase kebab-case',
+				)
+				.optional(),
 			// SEO overrides — all optional, additive (existing posts still build).
 			seoTitle: z.string().max(70).optional(),
 			metaDescription: z.string().max(160).optional(),
