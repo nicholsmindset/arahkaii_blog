@@ -26,6 +26,19 @@ test('material links require specific review permission; unsafe links and oversi
 	assert.equal(validateBrief({ ...sample, story: 'x'.repeat(1601) }).ok, false);
 	assert.equal(validateBrief({ ...sample, assets: 'https://example.com/press', rights: true }).ok, true);
 });
+test('single-line fields reject line breaks without blocking multiline brief copy', () => {
+	for (const field of ['brand', 'name', 'email', 'location', 'website', 'timing', 'budget', 'referral']) {
+		const result = validateBrief({ ...sample, [field]: `First line\nForged field: second line` });
+		assert.equal(result.ok, false, `${field} should reject line breaks`);
+		assert.equal(result.errors[field], 'Please keep this field on one line.');
+	}
+	const result = validateBrief({
+		...sample,
+		story: 'The first paragraph explains the proposal clearly.\nThe second adds useful reporting context.',
+		access: 'A founder interview\nA workshop visit',
+	});
+	assert.equal(result.ok, true);
+});
 test('advertising format reaches the stored brief for every paid option', async () => {
 	for (const [format, label] of Object.entries(COMMERCIAL_FORMATS)) {
 		const response = await deliverPartnership(request({ ...sample, route: 'paid', format }), {
