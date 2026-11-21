@@ -26,7 +26,7 @@ sources:
 
 At 8pm on 1 December, the 40-metre waterfall at Jewel Changi Airport will turn red. That's the starting signal. For the next 31 days Singapore becomes the last stop of BTS's 2026: the Rain Vortex plays the *ARIRANG* album, Marina Bay and the river bridges glow red at night, a ten-metre inflatable sits on Palawan Beach, and on four nights at the National Stadium 55,000 people at a time get the real thing.
 
-It's the biggest single-artist event the island has hosted. It's also a lot to keep track of. This guide covers the whole programme: concert dates, every BTS THE CITY activation with its dates and price, a map by neighbourhood and the practical details. Each topic links to a full guide.
+STB calls it Singapore's largest island-wide fan activation for a recording artist. It's also a lot to keep track of. This guide covers the whole programme: concert dates, every BTS THE CITY activation with its dates and price, a map by neighbourhood and the practical details. Each topic links to a full guide.
 
 **Quick facts**
 
@@ -35,7 +35,7 @@ It's the biggest single-artist event the island has hosted. It's also a lot to k
 | **Concerts** | BTS WORLD TOUR 'ARIRANG' at the National Stadium: Thu 17, Sat 19, Sun 20 and Tue 22 December, 7pm |
 | **Tickets** | S$148–S$388 plus VIP packages. **All four nights sold out** |
 | **City takeover** | BTS THE CITY ARIRANG – SINGAPORE, 1–31 December (STB × HYBE) |
-| **Landmarks lit Ari Red** | Nightly, 8–22 December, 7pm–1am |
+| **Landmarks lit Ari Red** | Nightly, 8–22 December, 7pm–1am (Gardens by the Bay from 11pm) |
 | **Free headline experience** | Jewel Rain Vortex show at 8pm and 9pm daily, 1–26 December |
 | **Stamp rally** | 12 stamp locations island-wide, collected on Weverse. Free to join, no concert ticket needed |
 | **Official sources** | HYBE's Weverse notice, the Singapore Tourism Board, Live Nation SG |
@@ -85,8 +85,8 @@ Everything below comes from HYBE's official Weverse notice and the partners' own
 
 ### **Marina Bay and the Singapore River — the Ari Red skyline**
 
-* **Landmark illumination:** 8–22 December, nightly from 7pm to 1am. **Free from the street.**  
-* **What lights up (15 sites in total):** the Merlion, Singapore Flyer, Gardens by the Bay, The Fullerton Hotel, Helix Bridge, OUE Bayfront, The Ritz-Carlton Millenia, Millenia Tower, the Peranakan Museum, and six river bridges: Anderson, Cavenagh, Clemenceau, Coleman, Elgin and Ord. *(Final list to be confirmed against STB's notice.)*  
+* **Landmark illumination:** 8–22 December, nightly from 7pm to 1am (Gardens by the Bay from 11pm). **Free from the street.**  
+* **What lights up (15 sites in total):** the Merlion, Singapore Flyer, Gardens by the Bay, The Fullerton Hotel, Helix Bridge, OUE Bayfront, the Asian Civilisations Museum, Millenia Tower, the Peranakan Museum, and six river bridges: Anderson, Cavenagh, Clemenceau, Coleman, Elgin and Ord.  
 * **Also lit:** the Deloitte Sphere (8–22 December) and the National Stadium roof on selected nights.  
 * **How to see it:** on foot. A loop from the Helix to the Merlion, the Fullerton and along the river bridges takes about 90 minutes at an easy pace.
 
@@ -122,7 +122,7 @@ Everything below comes from HYBE's official Weverse notice and the partners' own
 ### **Resorts World Sentosa and Universal Studios Singapore**
 
 * **Lightscape projection mapping:** on the Revenge of the Mummy façade nightly at 7.30pm, 4 December to 3 January 2027\. Needs USS admission.  
-* **Lake Hollywood fireworks to BTS music:** on 16 nights in December. *(Exact nights to be confirmed.)* Needs USS admission.  
+* **Lake Hollywood fireworks to BTS music:** on 4, 5, 11 and 12 December at 8pm; 16–20 and 22–25 December at 9pm; 21 December at 11.45pm; and 1–2 January at 8pm. Needs USS admission.  
 * **Night Out at USS:** 21 December, 8pm–1am, with a dance showcase, selected rides and fireworks at 11.45pm. Tickets from S\$58.  
 * **Fan Village, Resorts World Convention Centre:** 16–22 December, 11am–10pm. S\$10 entry, which you can spend as a voucher inside. Free for hotel guests and for same-day ticket holders to USS, the Oceanarium or Adventure Cove.  
 * **Themed hotel stays** at Hotel Ora, Equarius Hotel and The Laurus: 15–23 December, with park tickets and gift sets included.
@@ -251,7 +251,7 @@ Fill in the SG Arrival Card before you fly. A credit card or a SimplyGo EZ-Link 
 
 **What is BTS THE CITY ARIRANG Singapore?** It's a month-long takeover of the city by HYBE and the Singapore Tourism Board, running from 1 to 31 December 2026\. It includes light shows, installations, an art trail, a fun run, a drone show and themed experiences across Singapore. Most of it is free.
 
-**When will Singapore's landmarks turn red for BTS?** Every night from 8 to 22 December, from 7pm to 1am. There are 15 sites in total, including the Merlion, Singapore Flyer, Gardens by the Bay, the Helix Bridge and six bridges along the Singapore River.
+**When will Singapore's landmarks turn red for BTS?** Every night from 8 to 22 December, from 7pm to 1am; Gardens by the Bay begins at 11pm. There are 15 sites in total, including the Merlion, Singapore Flyer, Gardens by the Bay, the Helix Bridge and six bridges along the Singapore River.
 
 **What time is the BTS light show at Jewel?** At 8pm and 9pm daily from 1 to 26 December, at the Rain Vortex. It's free.
 
