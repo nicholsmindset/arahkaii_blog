@@ -97,8 +97,8 @@ const authors = defineCollection({
 const franchises = defineCollection({
 	loader: glob({ pattern: '**/*.md', base: './src/content/franchises' }),
 	schema: ({ image }) => z.object({
-		name: z.string(),
-		description: z.string(),
+		name: z.string().trim().min(1),
+		description: z.string().trim().min(1),
 		kicker: z.string().optional(),
 		cadence: z.string().optional(),
 		heroImage: image().optional(),
@@ -108,8 +108,8 @@ const franchises = defineCollection({
 const clusters = defineCollection({
 	loader: glob({ pattern: '**/*.md', base: './src/content/clusters' }),
 	schema: z.object({
-		name: z.string(),
-		description: z.string(),
+		name: z.string().trim().min(1),
+		description: z.string().trim().min(1),
 		pillarPost: z.string().optional(),
 		targetKeyword: z.string().optional(),
 	}),
