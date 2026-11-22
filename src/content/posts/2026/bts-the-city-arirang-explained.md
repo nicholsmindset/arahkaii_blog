@@ -6,8 +6,8 @@ articleType: feature
 category: culture
 author: nadra-nichols
 date: '2026-11-22T20:00:00+08:00'
-heroImage: "../../../assets/images/bts-the-city-arirang-explained/hero.webp"
-heroAlt: "AI-generated illustration of a Singapore river bridge illuminated red at night"
+heroImage: "../../../assets/images/bts-the-city-arirang-explained/seoul-dusk.webp"
+heroAlt: "AI-generated illustration of Seoul at dusk with N Seoul Tower and purple city lights"
 heroCaption: ""
 heroCredit: "Arahkaii"
 draft: false
