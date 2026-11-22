@@ -42,7 +42,7 @@ Many activations are free and do not require a concert ticket, while some experi
 
 ---
 
-![AI-generated illustration of a stamp card, transit card and city map](/images/bts-city-explained/stamp.webp)
+<img src="/images/bts-city-explained/stamp.webp" alt="AI-generated illustration of a stamp card, transit card and city map" width="960" height="1200" loading="lazy" />
 
 ## **Where did BTS THE CITY start?**
 
