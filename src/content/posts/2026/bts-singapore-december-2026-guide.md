@@ -20,6 +20,8 @@ sources:
     url: "https://www.stb.gov.sg/about-stb/media-publications/media-centre/singapore-to-host-southeast-asia-s-first-and-only--bts-the-city-arirang-/"
   - name: "HYBE on Weverse"
     url: "https://weverse.io/bts/notice/40721"
+  - name: "Weverse Go app announcement"
+    url: "https://weverse.io/bts/notice/41138"
   - name: "Live Nation Singapore"
     url: "https://www.livenation.sg/event/bts-world-tour-arirang-in-singapore-singapore-tickets-edp1675139"
 ---
@@ -37,7 +39,7 @@ STB calls it Singapore's largest island-wide fan activation for a recording arti
 | **City takeover** | BTS THE CITY ARIRANG – SINGAPORE, 1–31 December (STB × HYBE) |
 | **Landmarks lit Ari Red** | Nightly, 8–22 December, 7pm–1am (Gardens by the Bay from 11pm) |
 | **Free headline experience** | Jewel Rain Vortex show at 8pm and 9pm daily, 1–26 December |
-| **Stamp rally** | 12 stamp locations island-wide, collected on Weverse. Free to join, no concert ticket needed |
+| **Stamp rally** | Find participating locations on Weverse Go, launching 30 November. Further rally details are expected |
 | **Official sources** | HYBE's Weverse notice, the Singapore Tourism Board, Live Nation SG |
 
 ---
@@ -146,20 +148,36 @@ Everything below comes from HYBE's official Weverse notice and the partners' own
 
 ---
 
+## **Weverse Go: the new app for BTS THE CITY Singapore**
+
+**Weverse Go is scheduled to launch worldwide on 30 November 2026** on the App Store and Google Play. Sign in with your existing Weverse account to use it, including from outside Singapore.
+
+The app brings four useful tools together:
+
+* **Map:** Browse locations by category, search for a place and check details such as opening hours, crowd levels, directions and official websites.
+* **Stamp rally:** Select the Stamp Rally category on the map to see participating locations. Use the same account on Weverse Go and Weverse to sync the two apps.
+* **AI search:** Ask about schedules, locations and participation; answers draw on official notices and event information and include links to further details.
+* **Location chats:** Follow conversations and staff updates for each event location. The notice chat has push notifications for new updates and a Notices tab for previous announcements.
+
+Weverse also says download and participation events will launch with the app; details are still to come. See the [official Weverse Go announcement](https://weverse.io/bts/notice/41138).
+
+---
+
 ## **The BTS THE CITY stamp rally: every stamp location**
 
-The stamp rally ties BTS month together. It takes you across the whole island, from Changi to Mandai to Sentosa, it runs on the Weverse app and it's free. You don't need a concert ticket, and most stops don't need any ticket at all.
+The stamp rally takes fans across the city, from Changi to Mandai and Sentosa. Weverse has announced a new app to help fans find participating locations and plan their visits.
 
-### **How the stamp rally works**
+### **How to plan for the stamp rally**
 
-1. **Download Weverse and sign in.** Open the BTS THE CITY ARIRANG Singapore page and find the stamp rally.  
-2. **Visit a stamp location and join in.** Each stamp is tied to an activation: watch the show, take the photo, walk the trail.  
-3. **Scan the QR code on site** to collect your digital stamp. Look for it on a standing banner or at the activation's entrance.  
-4. **Claim your reward** from the stamp rally page once you've collected enough stamps.
+1. **From 30 November, download Weverse Go** and sign in with your existing Weverse account.
+2. **Choose Stamp Rally on the map** to find participating places and check their details.
+3. **Watch for the separate rally notice.** HYBE has yet to confirm the full participation instructions, rewards and any stamp requirements for Singapore.
 
-HYBE says it will publish the Singapore reward, and how many stamps you need, in a separate notice. Earlier editions give an idea. In Seoul, five stamps earned a special Weverse badge, and in Las Vegas the reward was a one-month trial of BTS digital membership. 
+The locations below reflect the guide's earlier reporting; check the app and the latest official notice for the confirmed list and operating details.
 
-**All 12 stamp locations**
+**Reported stamp locations**
+
+
 
 
 | \# | Stamp location | What's there | Dates and hours | Ticket needed? |
@@ -188,7 +206,7 @@ If you're starting earlier in December, you can collect eight stamps before the 
 ### **Stamp rally tips**
 
 * **Watch the closing times.** The Gallery and Museum stamps close at 7pm, the Feel Alive Zone at 8pm, and the Supertrees show lasts only 15 minutes a night.  
-* **Keep your phone charged.** You'll need data and enough battery to scan the QR codes. The Feel Alive Zone has a charging station.  
+* **Keep your phone charged.** You'll need data and enough battery to use the apps. The Feel Alive Zone has a charging station.  
 * **Check before you go.** Opening hours can change, and HYBE's separate stamp rally notice will confirm the final list.
 
 ---
@@ -256,7 +274,7 @@ Fill in the SG Arrival Card before you fly. A credit card or a SimplyGo EZ-Link 
 
 **What time is the BTS light show at Jewel?** At 8pm and 9pm daily from 1 to 26 December, at the Rain Vortex. It's free.
 
-**How does the BTS THE CITY stamp rally work in Singapore?** Join on the Weverse app, visit any of the 12 stamp locations, take part in the activation and scan the on-site QR code to collect a digital stamp. Most stamps are free and don't need a concert ticket. HYBE will announce the reward and the number of stamps needed in a separate notice.
+**How does the BTS THE CITY stamp rally work in Singapore?** Weverse Go launches on 30 November. Sign in with your Weverse account and select Stamp Rally on the map to find participating locations. HYBE says further rally details will be announced separately.
 
 **Can I experience BTS in Singapore without a concert ticket?** Yes. Jewel, the red landmarks, the Supertrees show, the National Museum installations, the Feel Alive Zone at The Kallang and Sentosa's installations are all free.
 
