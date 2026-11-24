@@ -148,11 +148,7 @@ Everything below comes from HYBE's official Weverse notice and the partners' own
 
 ---
 
-## **The BTS THE CITY stamp rally: every stamp location**
-
-The stamp rally takes fans across the city, from Changi to Mandai and Sentosa. Weverse has announced a new app to help fans find participating locations and plan their visits.
-
-### **Weverse Go: the new app for BTS THE CITY Singapore**
+## **Weverse Go: the new app for BTS THE CITY Singapore**
 
 **Weverse Go is scheduled to launch worldwide on 30 November 2026** on the App Store and Google Play. Sign in with your existing Weverse account to use it, including from outside Singapore.
 
@@ -164,6 +160,12 @@ The app brings four useful tools together:
 * **Location chats:** Follow conversations and staff updates for each event location. The notice chat has push notifications for new updates and a Notices tab for previous announcements.
 
 Weverse also says download and participation events will launch with the app; details are still to come. See the [official Weverse Go announcement](https://weverse.io/bts/notice/41138).
+
+---
+
+## **The BTS THE CITY stamp rally: every stamp location**
+
+The stamp rally takes fans across the city, from Changi to Mandai and Sentosa. Weverse has announced a new app to help fans find participating locations and plan their visits.
 
 ### **How to plan for the stamp rally**
 
