@@ -151,7 +151,7 @@ Everything below comes from HYBE's official Weverse notice and the partners' own
 ## **Weverse Go: the new app for BTS THE CITY Singapore**
 
 <figure>
-  <img src="/images/bts-singapore/weverse-go-app.webp" alt="Weverse Go app screens showing the event map, stamp rally, AI search and chat" width="1182" height="935" loading="lazy">
+  <img src="/images/bts-singapore/weverse-go-app.webp" alt="Weverse Go app screens showing the event map, stamp rally, AI search and chat" width="1182" height="925" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 1182 / 925; object-fit: cover; object-position: bottom;">
   <figcaption>Weverse Go brings the event map, stamp rally, AI search and chats together. Image: Weverse.</figcaption>
 </figure>
 
