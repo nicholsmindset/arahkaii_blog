@@ -150,6 +150,11 @@ Everything below comes from HYBE's official Weverse notice and the partners' own
 
 ## **Weverse Go: the new app for BTS THE CITY Singapore**
 
+<figure>
+  <img src="/images/bts-singapore/weverse-go-app.webp" alt="Weverse Go app screens showing the event map, stamp rally, AI search and chat" width="1182" height="935" loading="lazy">
+  <figcaption>Weverse Go brings the event map, stamp rally, AI search and chats together. Image: Weverse.</figcaption>
+</figure>
+
 **Weverse Go is scheduled to launch worldwide on 30 November 2026** on the App Store and Google Play. Sign in with your existing Weverse account to use it, including from outside Singapore.
 
 The app brings four useful tools together:
@@ -287,4 +292,4 @@ Fill in the SG Arrival Card before you fly. A credit card or a SimplyGo EZ-Link 
 
 
 
-*Images are AI-generated illustrations.*
+*Other images are AI-generated illustrations. Weverse Go screenshot: Weverse.*
