@@ -452,6 +452,15 @@ const gtmSnippet = gtmEnabled
 
 			// ---- reveals (once, staggered, reduced-motion aware) ----
 			let io: IntersectionObserver | null = null;
+			let revealFallback: number | null = null;
+			function cleanupRevealObserver() {
+				io?.disconnect();
+				io = null;
+				if (revealFallback !== null) {
+					window.clearTimeout(revealFallback);
+					revealFallback = null;
+				}
+			}
 			function observe() {
 				const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 				if (reduce || !('IntersectionObserver' in window)) {
@@ -474,10 +483,12 @@ const gtmSnippet = gtmEnabled
 					);
 				document.querySelectorAll('.reveal:not(.in)').forEach((el) => io!.observe(el));
 				// Insurance: reveal anything still hidden after 1.4s (some webviews).
-				setTimeout(() => {
+				revealFallback = window.setTimeout(() => {
 					document.querySelectorAll('.reveal:not(.in)').forEach((el) => el.classList.add('in'));
+					revealFallback = null;
 				}, 1400);
 			}
+			document.addEventListener('astro:before-swap', cleanupRevealObserver);
 
 			// ---- rail carousels ----
 			function wireRails() {
