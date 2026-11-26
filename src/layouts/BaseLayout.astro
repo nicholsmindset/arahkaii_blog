@@ -689,6 +689,7 @@ const gtmSnippet = gtmEnabled
 					const form = (e.target as HTMLElement).closest<HTMLFormElement>('.js-news');
 					if (!form) return;
 					e.preventDefault();
+					if (form.dataset.submitting === 'true') return;
 					const field = form.querySelector<HTMLElement>('.field');
 					const input = form.querySelector<HTMLInputElement>('input[type="email"]');
 					const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
@@ -706,6 +707,7 @@ const gtmSnippet = gtmEnabled
 						input?.focus();
 						return;
 					}
+					form.dataset.submitting = 'true';
 					button?.setAttribute('disabled', '');
 					form.setAttribute('aria-busy', 'true');
 					if (note) {
@@ -724,6 +726,7 @@ const gtmSnippet = gtmEnabled
 						});
 						if (!response.ok) throw new Error('Subscription request failed');
 					} catch {
+						delete form.dataset.submitting;
 						button?.removeAttribute('disabled');
 						form.removeAttribute('aria-busy');
 						if (note) {
