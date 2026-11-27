@@ -121,7 +121,7 @@ const jsonLd = [
 				page.lastPage > 1 && (
 					<nav class="latest-pagination" aria-label="Archive pages">
 						{page.currentPage > 1 ? <a class="tlink" href={pageHref(page.currentPage - 1)}>← Newer stories</a> : <span aria-hidden="true" />}
-						<span class="latest-meta">Page {page.currentPage} of {page.lastPage}</span>
+						<span class="latest-meta" aria-current="page">Page {page.currentPage} of {page.lastPage}</span>
 						{page.currentPage < page.lastPage ? <a class="tlink" href={pageHref(page.currentPage + 1)}>Older stories →</a> : <span aria-hidden="true" />}
 					</nav>
 				)
