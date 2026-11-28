@@ -2,12 +2,17 @@ import { validateBrief, formatBrief } from './partnerships.ts';
 import { isSameOrigin, withinRateLimit, clientIp } from './api-guard.ts';
 
 interface Options { endpoint?: string; fetcher?: typeof fetch; address?: string; }
-const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
+const json = (body: unknown, status = 200, headers?: HeadersInit) => new Response(JSON.stringify(body), {
+	status,
+	headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', ...headers },
+});
 
 /** The intake acknowledges only after durable storage. A timeout is never treated as a receipt. */
 export async function deliverPartnership(request: Request, options: Options): Promise<Response> {
 	if (!isSameOrigin(request)) return json({ error: 'Please submit from the Arahkaii website.' }, 403);
-	if (!withinRateLimit(`partnership:${clientIp(request, options.address)}`, 3, 60_000)) return json({ error: 'Please wait a minute before trying again.' }, 429);
+	if (!withinRateLimit(`partnership:${clientIp(request, options.address)}`, 3, 60_000)) {
+		return json({ error: 'Please wait a minute before trying again.' }, 429, { 'Retry-After': '60' });
+	}
 	if (Number(request.headers.get('content-length')) > 24_000) return json({ error: 'The brief is too long.' }, 413);
 	let input: Record<string, unknown>;
 	try {
