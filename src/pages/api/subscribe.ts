@@ -13,12 +13,13 @@ const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 type NewsletterProvider = 'mailerlite' | 'beehiiv' | 'disabled';
 const provider = newsletterSettings.provider as NewsletterProvider;
 
-function reply(status: number, body: Record<string, unknown>) {
+function reply(status: number, body: Record<string, unknown>, headers?: HeadersInit) {
 	return new Response(JSON.stringify(body), {
 		status,
 		headers: {
 			'Content-Type': 'application/json; charset=utf-8',
 			'Cache-Control': 'no-store',
+			...headers,
 		},
 	});
 }
@@ -26,7 +27,7 @@ function reply(status: number, body: Record<string, unknown>) {
 export const POST: APIRoute = async ({ request, clientAddress }) => {
 	if (!isSameOrigin(request)) return reply(403, { error: 'Forbidden' });
 	if (!withinRateLimit(`subscribe:${clientIp(request, clientAddress)}`, 5, 60_000)) {
-		return reply(429, { error: 'Too many requests — please try again shortly' });
+		return reply(429, { error: 'Too many requests — please try again shortly' }, { 'Retry-After': '60' });
 	}
 
 	let payload: { email?: unknown; source?: unknown; website?: unknown };

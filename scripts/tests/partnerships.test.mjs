@@ -10,8 +10,8 @@ const sample = {
 	submission_id: 'ara-9f7b2254-7594-4fae-a5df-0f91e6f4a0ba',
 };
 let counter = 0;
-const request = (body = sample, origin = 'https://www.arahkaii.com') => new Request('https://www.arahkaii.com/api/partnership/', {
-	method: 'POST', headers: { origin, 'content-type': 'application/json', 'x-forwarded-for': `test-${++counter}` }, body: JSON.stringify(body),
+const request = (body = sample, origin = 'https://www.arahkaii.com', ip = `test-${++counter}`) => new Request('https://www.arahkaii.com/api/partnership/', {
+	method: 'POST', headers: { origin, 'content-type': 'application/json', 'x-forwarded-for': ip }, body: JSON.stringify(body),
 });
 
 test('editorial pitch can be submitted without photos, publication rights or a budget', () => {
@@ -57,6 +57,15 @@ test('invalid routes, missing consent and malformed emails never reach delivery'
 test('cross-origin submissions are rejected before parsing or delivery', async () => {
 	const response = await deliverPartnership(request(sample, 'https://other.example'), {});
 	assert.equal(response.status, 403);
+});
+test('rate-limited submissions say when it is safe to retry', async () => {
+	const ip = `rate-limit-${++counter}`;
+	for (let attempt = 0; attempt < 3; attempt += 1) {
+		assert.equal((await deliverPartnership(request(sample, undefined, ip), {})).status, 503);
+	}
+	const response = await deliverPartnership(request(sample, undefined, ip), {});
+	assert.equal(response.status, 429);
+	assert.equal(response.headers.get('retry-after'), '60');
 });
 test('missing backend offers a truthful fallback', async () => {
 	assert.equal((await deliverPartnership(request(), {})).status, 503);
